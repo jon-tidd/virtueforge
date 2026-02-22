@@ -17,9 +17,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "VirtueQuest — Classical Character Formation Through Story",
+  title: "VirtueForge — Classical Character Formation Through Story",
   description:
-    "Help your children build character through the timeless power of story. Based on the classical cardinal virtues of Prudence, Justice, Courage, and Temperance.",
+    "Help your children build character through the timeless power of story. Based on the classical cardinal virtues of Courage, Justice, Prudence, and Temperance.",
 };
 
 export default function RootLayout({
