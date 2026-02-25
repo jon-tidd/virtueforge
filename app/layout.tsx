@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { Crimson_Text, Cormorant_Garamond } from "next/font/google";
+import { Inter, Crimson_Text, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const crimson = Crimson_Text({
   subsets: ["latin"],
@@ -17,9 +22,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "VirtueForge — Classical Character Formation Through Story",
+  title: "Virtue Forge — Build Your Child's Character Through Story",
   description:
-    "Help your children build character through the timeless power of story. Based on the classical cardinal virtues of Courage, Justice, Prudence, and Temperance.",
+    "Children who read 20 minutes a day score in the 90th percentile. Virtue Forge matches your family with the right stories to build courage, wisdom, justice, and self-mastery — backed by 2,500 years of philosophy and modern research.",
 };
 
 export default function RootLayout({
@@ -28,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimson.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${inter.variable} ${crimson.variable} ${cormorant.variable}`}>
       <body>{children}</body>
     </html>
   );

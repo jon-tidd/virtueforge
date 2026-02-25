@@ -1,49 +1,78 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --parchment: #FFFDF7;
-  --parchment-dark: #F8F4EC;
-  --ink: #2A1F14;
-  --ink-light: #3A3028;
-  --gold: #F5A623;
-  --gold-dark: #C4A87C;
-  --border: #e0d8cc;
-  --border-dark: #8B7355;
-  --prudence: #2B4C7E;
-  --justice: #8B5E3C;
-  --courage: #8B2500;
-  --temperance: #2E5E4E;
-}
-
+/* ─── BASE RESET ──────────────────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background: var(--parchment);
-  color: var(--ink);
-  font-family: var(--font-crimson), Georgia, serif;
+html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #FAFBFC;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ─── SCROLLBAR ───────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--parchment-dark);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-dark);
-  border-radius: 4px;
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
 }
 
-/* Selection color */
+/* ─── SELECTION ───────────────────────────────────────────────────────────── */
 ::selection {
-  background: var(--gold);
-  color: var(--ink);
+  background: #D4A846;
+  color: #0A1628;
+}
+
+/* ─── FOCUS STYLES ────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* ─── UTILITY ANIMATIONS ──────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
