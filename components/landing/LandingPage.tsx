@@ -20,12 +20,27 @@ const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
 };
 
+export type DemoScenario = {
+  label: string;
+  childName: string;
+  age: number;
+  sex: string;
+  virtue: string;
+  situation: string;
+};
+
+export const DEMO_SCENARIOS: DemoScenario[] = [
+  { label: "Try: 6-year-old afraid of the dark", childName: "Alex", age: 6, sex: "boy", virtue: "perseverance", situation: "afraid of the dark" },
+  { label: "Try: 8-year-old struggling with honesty", childName: "Maya", age: 8, sex: "girl", virtue: "honesty", situation: "struggling to tell the truth" },
+  { label: "Try: 5-year-old won't share", childName: "Sam", age: 5, sex: "boy", virtue: "generosity", situation: "won't share with new sibling" },
+];
+
 const RESEARCH_STATS = [
   {
-    number: "90th",
-    label: "percentile",
-    desc: "Children who read 20 minutes daily score in the 90th percentile on standardized tests.",
-    source: "Anderson, Wilson & Fielding",
+    number: "20–25%",
+    label: "fewer behavior issues",
+    desc: "Kids in virtue-based programs show 20–25% fewer behavior issues.",
+    source: "Brown et al., 2023 meta-analysis of 214 studies",
     color: VC.prudence.main,
     bg: VC.prudence.light,
   },
@@ -38,18 +53,18 @@ const RESEARCH_STATS = [
     bg: VC.justice.light,
   },
   {
-    number: "72.6%",
-    label: "fewer suspensions",
-    desc: "Schools with character education saw suspensions drop 72.6% and math scores rise 51.4%.",
-    source: "Berkowitz & Bier, Journal of Character Ed.",
+    number: "Stronger",
+    label: "predictor of success",
+    desc: "Gratitude + perseverance are the strongest predictors of long-term well-being and academic success.",
+    source: "VIA Institute & Duckworth research",
     color: VC.courage.main,
     bg: VC.courage.light,
   },
   {
-    number: "1 in 3",
-    label: "families read nightly",
-    desc: "Down from 2 in 3 a decade ago. The bedtime story is disappearing — and character suffers.",
-    source: "Scholastic Kids & Family Reading Report",
+    number: "More",
+    label: "effective than lectures",
+    desc: "Story-based character education is more effective than lectures or worksheets.",
+    source: "Jubilee Centre for Character & Virtues",
     color: VC.temperance.main,
     bg: VC.temperance.light,
   },
@@ -73,9 +88,10 @@ const STEPS = [
   },
 ];
 
-export default function LandingPage({ onStart, onPricing, hasAccount }: {
+export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: {
   onStart: () => void;
   onPricing: () => void;
+  onDemo?: (scenario: DemoScenario) => void;
   hasAccount: boolean;
 }) {
   return (
@@ -98,15 +114,15 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             Virtue Forge
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <a href="#science" style={{
+            <a href="#science" className="hidden md:inline" style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 500,
               color: T.gray600, textDecoration: "none",
             }}>Research</a>
-            <a href="#how" style={{
+            <a href="#how" className="hidden md:inline" style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 500,
               color: T.gray600, textDecoration: "none",
             }}>How It Works</a>
-            <button onClick={onPricing} style={{
+            <button onClick={onPricing} className="hidden md:inline" style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 500,
               color: T.gray600, background: "none", border: "none", cursor: "pointer",
             }}>Pricing</button>
@@ -122,8 +138,8 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section style={{
-        padding: "100px 24px 80px", textAlign: "center", background: T.white,
+      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-4 md:px-6" style={{
+        textAlign: "center", background: T.white,
         position: "relative", overflow: "hidden",
       }}>
         {/* Subtle gradient orbs */}
@@ -150,7 +166,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             marginBottom: 28, border: `1px solid ${T.gold}30`,
           }}>
             <Sparkles size={14} />
-            Backed by 2,500 years of wisdom and modern research
+            Backed by 2,400 years of wisdom and modern research
           </div>
 
           <h1 style={{
@@ -158,17 +174,16 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             fontWeight: 800, color: T.navy, lineHeight: 1.08,
             letterSpacing: "-0.03em", marginBottom: 24,
           }}>
-            Every great person was<br />
-            once a child who heard<br />
-            <span style={{ color: T.gold }}>the right story</span>
+            Stories That Actually<br />
+            Build <span style={{ color: T.gold }}>Character</span>
           </h1>
 
           <p style={{
             fontFamily: T.fontSans, fontSize: "clamp(17px, 2vw, 20px)",
             color: T.gray500, lineHeight: 1.6, maxWidth: 560, margin: "0 auto 40px",
           }}>
-            Build your child&apos;s character through the world&apos;s oldest method — great stories.
-            Curated books, AI-generated tales, and a virtue tracking system rooted in classical philosophy.
+            Personalized AI adventures rooted in 2,400 years of wisdom.
+            Courage. Justice. Wisdom. Self-Mastery.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
@@ -183,7 +198,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
               onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(10,22,40,0.35)"; }}
               onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(10,22,40,0.3)"; }}
             >
-              Start Building Character — Free
+              Generate Your First Story Free
               <ArrowRight size={18} />
             </button>
           </div>
@@ -192,8 +207,34 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
             marginTop: 16,
           }}>
-            Free forever. No credit card required.
+            3 free stories a month. No credit card required.
           </p>
+
+          {/* Demo scenario buttons */}
+          {onDemo && (
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3" style={{
+              marginTop: 24, justifyContent: "center", alignItems: "center",
+            }}>
+              {DEMO_SCENARIOS.map((scenario) => (
+                <button
+                  key={scenario.label}
+                  onClick={() => onDemo(scenario)}
+                  style={{
+                    fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
+                    padding: "8px 16px", borderRadius: 100,
+                    background: T.goldSubtle, color: T.gold,
+                    border: `1px solid ${T.gold}30`,
+                    cursor: "pointer",
+                    transition: "all 0.15s",
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.background = T.gold + "30"; }}
+                  onMouseOut={(e) => { e.currentTarget.style.background = T.goldSubtle; }}
+                >
+                  {scenario.label}
+                </button>
+              ))}
+            </div>
+          )}
         </motion.div>
       </section>
 
@@ -364,7 +405,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
               fontWeight: 800, color: T.navy, lineHeight: 1.15,
               letterSpacing: "-0.02em", marginBottom: 16,
             }}>
-              Built on 2,500 years of wisdom.<br />Backed by modern research.
+              Backed by 2,400 Years of Wisdom<br />+ Modern Science
             </h2>
             <p style={{
               fontFamily: T.fontSans, fontSize: 18, color: T.gray500,
@@ -375,9 +416,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             </p>
           </motion.div>
 
-          <div style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20,
-          }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {
                 icon: BookMarked, title: "Narrative Moral Reasoning",
@@ -584,9 +623,10 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
                 key={i}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={fadeUp} custom={i + 1}
+                className="flex flex-col sm:flex-row gap-5 sm:gap-8"
                 style={{
-                  display: "flex", gap: 32, alignItems: "flex-start",
-                  padding: 40, borderRadius: T.radiusLg,
+                  alignItems: "flex-start",
+                  padding: "24px", borderRadius: T.radiusLg,
                   background: T.white, border: `1px solid ${T.gray100}`,
                   marginBottom: 20,
                 }}
@@ -655,7 +695,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             </p>
           </motion.div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Free Tier */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -783,7 +823,7 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
             display: "inline-flex", alignItems: "center", gap: 8,
             boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
           }}>
-            Begin Your Family&apos;s Quest
+            Generate Your First Story Free
             <ArrowRight size={18} />
           </button>
         </motion.div>
@@ -794,9 +834,9 @@ export default function LandingPage({ onStart, onPricing, hasAccount }: {
         padding: "40px 24px", borderTop: `1px solid ${T.gray100}`,
         background: T.white,
       }}>
-        <div style={{
+        <div className="flex flex-col md:flex-row gap-4 items-center" style={{
           maxWidth: 900, margin: "0 auto",
-          display: "flex", justifyContent: "space-between", alignItems: "center",
+          justifyContent: "space-between",
         }}>
           <div style={{
             display: "flex", alignItems: "center", gap: 8,

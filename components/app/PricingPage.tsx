@@ -45,7 +45,7 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
             fontWeight: 800, color: T.navy, lineHeight: 1.15,
             letterSpacing: "-0.02em", marginBottom: 12,
           }}>
-            {premium ? "You're on Premium" : "Invest in character"}
+            {premium ? "You're on Premium" : "Unlock Unlimited Stories"}
           </h1>
           <p style={{
             fontFamily: T.fontSans, fontSize: 18, color: T.gray500,
@@ -98,7 +98,7 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
         )}
 
         {/* Pricing cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Free Tier */}
           <motion.div
             initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}

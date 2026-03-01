@@ -126,7 +126,7 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
               placeholder="e.g., Mason" style={inputStyle} />
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5" style={{ marginBottom: 14 }}>
             <div>
               <label style={{
                 display: "block", fontFamily: T.fontSans, fontSize: 13,
@@ -165,7 +165,7 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
               display: "block", fontFamily: T.fontSans, fontSize: 13,
               fontWeight: 600, color: T.navy, marginBottom: 10,
             }}>What is this child struggling with?</label>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
               {Object.entries(STRUGGLES_MAP).map(([key, val]) => {
                 const active = struggles.includes(key);
                 return (

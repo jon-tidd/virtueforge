@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Crimson_Text, Cormorant_Garamond } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,10 +23,30 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "Virtue Forge — Build Your Child's Character Through Story",
+  title: "Virtue Forge | Stories That Build Character",
   description:
-    "Children who read 20 minutes a day score in the 90th percentile. Virtue Forge matches your family with the right stories to build courage, wisdom, justice, and self-mastery — backed by 2,500 years of philosophy and modern research.",
+    "Personalized AI stories rooted in 2,400 years of wisdom. Build courage, justice, wisdom & self-mastery in your child.",
+  openGraph: {
+    title: "Virtue Forge — Character-Building Stories for Kids",
+    description:
+      "Instant, personalized adventures that actually develop virtues.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Virtue Forge | Stories That Build Character",
+    description:
+      "Personalized AI stories rooted in 2,400 years of wisdom.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +56,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${crimson.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

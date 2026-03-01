@@ -87,14 +87,13 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
       )}
 
       {/* Shield + Stats */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "auto 1fr", gap: 32,
+      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-8" style={{
         padding: 32, borderRadius: T.radiusLg, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 20,
       }}>
         {/* Shield SVG */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <svg viewBox={`0 0 ${s} ${s + 20}`} width={260}>
+          <svg viewBox={`0 0 ${s} ${s + 20}`} className="w-full max-w-[260px] mx-auto">
             <defs>
               <clipPath id="sc"><path d={sp} /></clipPath>
               <linearGradient id="sbg" x1="0" y1="0" x2="0" y2="1">
@@ -275,7 +274,7 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
         }}>
           Record time spent reading, discussing, or practicing virtues.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {Object.entries(VIRTUES).map(([key, virtue]) =>
             virtue.subVirtues.map((sv) => {
               const logged = child?.virtueProgress?.[sv.id] || 0;

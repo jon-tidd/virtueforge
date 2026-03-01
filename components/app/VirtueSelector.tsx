@@ -61,7 +61,7 @@ export default function VirtueSelector({ familyVirtues, onUpdate, onNext }: {
 
       {/* Mode selector (only shown if no virtues selected yet) */}
       {mode === "choose" && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 24 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5" style={{ marginBottom: 24 }}>
           <button onClick={() => setMode("quiz")} style={{
             padding: 24, borderRadius: T.radius, textAlign: "left",
             background: T.white, border: `1px solid ${T.gray200}`,
@@ -216,7 +216,7 @@ export default function VirtueSelector({ familyVirtues, onUpdate, onNext }: {
                       border: `1px solid ${vc.main}20`, borderTop: "none",
                       borderRadius: `0 0 ${T.radius}px ${T.radius}px`,
                     }}>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {virtue.subVirtues.map((sv) => {
                           const active = familyVirtues.includes(sv.id);
                           return (

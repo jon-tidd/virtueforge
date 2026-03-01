@@ -7,7 +7,7 @@ import {
 } from "@/lib/data";
 import { loadData, saveData, isPremium, setPremium, getMonthlyStoryCount } from "@/lib/storage";
 import { T, VC, PLANS } from "@/lib/tokens";
-import LandingPage from "./landing/LandingPage";
+import LandingPage, { type DemoScenario } from "./landing/LandingPage";
 import AppNav from "./app/AppNav";
 import Dashboard from "./app/Dashboard";
 import BookExplorer from "./app/BookExplorer";
@@ -25,6 +25,7 @@ export default function VirtueForgeApp() {
   const [loaded, setLoaded] = useState(false);
   const [premium, setPremiumState] = useState(false);
   const [selChild, setSelChild] = useState(0);
+  const [demoScenario, setDemoScenario] = useState<DemoScenario | null>(null);
 
   useEffect(() => {
     const data = loadData();
@@ -87,6 +88,26 @@ export default function VirtueForgeApp() {
     }
   };
 
+  const handleDemo = (scenario: DemoScenario) => {
+    // Create a temporary child profile for the demo
+    const demoChild: ChildProfile = {
+      name: scenario.childName,
+      age: scenario.age,
+      sex: scenario.sex,
+      readingLevel: getDefaultReadingLevel(scenario.age),
+      struggles: [],
+      readBooks: [],
+      virtueProgress: {},
+    };
+    // Add the demo child if no children exist yet
+    if (appData.children.length === 0) {
+      upd({ children: [demoChild], setupComplete: true });
+      setSelChild(0);
+    }
+    setDemoScenario(scenario);
+    setPage("stories");
+  };
+
   if (!loaded) {
     return (
       <div style={{
@@ -109,6 +130,7 @@ export default function VirtueForgeApp() {
       <LandingPage
         onStart={startJourney}
         onPricing={() => setPage("pricing")}
+        onDemo={handleDemo}
         hasAccount={appData.setupComplete}
       />
     );
@@ -135,7 +157,7 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
       />
 
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 24px 80px" }}>
+      <main className="px-4 md:px-6 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto" }}>
         <AnimatePresence mode="wait">
           {page === "dashboard" && (
             <Dashboard
@@ -187,6 +209,8 @@ export default function VirtueForgeApp() {
               setSelChild={setSelChild}
               premium={premium}
               onPricing={() => setPage("pricing")}
+              demoScenario={demoScenario}
+              onDemoConsumed={() => setDemoScenario(null)}
             />
           )}
 

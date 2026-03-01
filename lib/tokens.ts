@@ -65,12 +65,12 @@ export const PLANS = {
   free: {
     name: "Free",
     price: 0,
-    stories: 2,
+    stories: 3,
     children: 1,
     features: [
       "1 child profile",
       "Browse full book catalog",
-      "2 AI stories per month",
+      "3 AI stories per month",
       "Basic virtue tracking",
       "Amazon & free book links",
     ],

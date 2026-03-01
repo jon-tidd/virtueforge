@@ -240,7 +240,7 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
               border: `1px solid ${isRead ? T.green + "30" : T.gray100}`,
               transition: "border-color 0.15s",
             }}>
-              <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:justify-between">
                 <div style={{ flex: 1 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                     <h3 style={{
@@ -287,10 +287,7 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
                   </div>
                 </div>
 
-                <div style={{
-                  display: "flex", flexDirection: "column", gap: 6,
-                  flexShrink: 0, minWidth: 120,
-                }}>
+                <div className="flex flex-row sm:flex-col gap-2 flex-wrap sm:flex-nowrap sm:shrink-0 sm:min-w-[120px]">
                   {book.amazon && (
                     <a href={getAmazonLink(book.amazon)} target="_blank" rel="noopener noreferrer" style={{
                       display: "flex", alignItems: "center", justifyContent: "center", gap: 6,

@@ -79,9 +79,7 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
 
       {!hasChildren ? (
         /* Empty state for new users */
-        <div style={{
-          display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16,
-        }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: "Choose Virtues", desc: "Select the virtues your family wants to cultivate", page: "virtues", icon: Heart, color: VC.prudence.main },
             { title: "Add Children", desc: "Create profiles for personalized recommendations", page: "children", icon: BookOpen, color: VC.justice.main },
@@ -108,8 +106,7 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
       ) : (
         <>
           {/* Virtue Shield Overview */}
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12,
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3" style={{
             marginBottom: 24,
           }}>
             {virtueStats.map((stat) => {
@@ -153,8 +150,7 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
           </div>
 
           {/* Quick Actions */}
-          <div style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12,
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" style={{
             marginBottom: 24,
           }}>
             {[
