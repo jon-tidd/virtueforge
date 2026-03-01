@@ -1,12 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import { Brain, Heart, Flame, TreePine, Plus, Trophy, AlertCircle } from "lucide-react";
-import { VIRTUES, getSubVirtue, getVirtueParent, type AppData } from "@/lib/data";
+import { VIRTUES, getVirtueParent, type AppData } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
 
 const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
 };
+
+// Target minutes per sub-virtue for "full" on the compass
+const TARGET_MINUTES = 60;
+
+function polarToCartesian(cx: number, cy: number, radius: number, angleDeg: number) {
+  const angleRad = ((angleDeg - 90) * Math.PI) / 180;
+  return { x: cx + radius * Math.cos(angleRad), y: cy + radius * Math.sin(angleRad) };
+}
 
 export default function ShieldTracker({ appData, selChild, setSelChild, onLogTime }: {
   appData: AppData;
@@ -31,6 +39,11 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
     );
   }
 
+  // Build 16 sub-virtue spokes in cardinal-virtue order
+  const allSubVirtues = Object.entries(VIRTUES).flatMap(([key, virtue]) =>
+    virtue.subVirtues.map((sv) => ({ ...sv, parentKey: key }))
+  );
+
   const quadrants = Object.entries(VIRTUES).map(([key, virtue]) => {
     const total = virtue.subVirtues.length;
     const covered = virtue.subVirtues.filter((sv) => (child?.virtueProgress?.[sv.id] || 0) > 0).length;
@@ -42,13 +55,31 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
   const totalTime = quadrants.reduce((s, q) => s + q.time, 0);
   const gaps = Object.values(VIRTUES).flatMap((v) => v.subVirtues).filter((sv) => !(child?.virtueProgress?.[sv.id]));
 
-  // Shield SVG dimensions
-  const s = 300;
-  const cx = s / 2;
-  const cy = s / 2 + 10;
-  const W = 120;
-  const H = 150;
-  const sp = `M${cx},${cy - H / 2} Q${cx + W * 0.6},${cy - H / 2} ${cx + W / 2},${cy - H * 0.15} L${cx + W / 2},${cy + H * 0.15} Q${cx + W * 0.35},${cy + H / 2} ${cx},${cy + H / 2 + 15} Q${cx - W * 0.35},${cy + H / 2} ${cx - W / 2},${cy + H * 0.15} L${cx - W / 2},${cy - H * 0.15} Q${cx - W * 0.6},${cy - H / 2} ${cx},${cy - H / 2} Z`;
+  // Compass SVG dimensions
+  const size = 400;
+  const cx = size / 2;
+  const cy = size / 2;
+  const maxR = 150;
+  const spokeCount = allSubVirtues.length; // 16
+  const angleStep = 360 / spokeCount;
+
+  // Guide circles
+  const guideRadii = [0.25, 0.5, 0.75, 1.0].map((f) => f * maxR);
+
+  // Build data points for the progress polygon
+  const dataPoints = allSubVirtues.map((sv, i) => {
+    const angleDeg = i * angleStep;
+    const minutes = child?.virtueProgress?.[sv.id] || 0;
+    const pct = Math.min(minutes / TARGET_MINUTES, 1);
+    const r = Math.max(pct * maxR, 8); // minimum 8px so polygon is always visible
+    const pos = polarToCartesian(cx, cy, r, angleDeg);
+    const outerPos = polarToCartesian(cx, cy, maxR, angleDeg);
+    const labelPos = polarToCartesian(cx, cy, maxR + 18, angleDeg);
+    const vc = VC[sv.parentKey as keyof typeof VC];
+    return { sv, angleDeg, pct, pos, outerPos, labelPos, vc, minutes };
+  });
+
+  const polygonPath = dataPoints.map((d, i) => `${i === 0 ? "M" : "L"}${d.pos.x},${d.pos.y}`).join(" ") + " Z";
 
   return (
     <motion.div
@@ -60,7 +91,7 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
           fontFamily: T.fontSans, fontSize: 28, fontWeight: 700,
           color: T.navy, marginBottom: 6,
         }}>
-          The Virtue Shield
+          Character Compass
         </h1>
         <p style={{
           fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
@@ -86,66 +117,94 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
         </div>
       )}
 
-      {/* Shield + Stats */}
+      {/* Compass + Stats */}
       <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-8" style={{
         padding: 32, borderRadius: T.radiusLg, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 20,
       }}>
-        {/* Shield SVG */}
+        {/* Compass SVG */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <svg viewBox={`0 0 ${s} ${s + 20}`} className="w-full max-w-[260px] mx-auto">
+          <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[320px] mx-auto animate-compass-reveal">
             <defs>
-              <clipPath id="sc"><path d={sp} /></clipPath>
-              <linearGradient id="sbg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor={T.gray50} /><stop offset="100%" stopColor={T.gray100} />
+              <linearGradient id="compassFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={T.gold} stopOpacity="0.25" />
+                <stop offset="100%" stopColor={T.gold} stopOpacity="0.08" />
               </linearGradient>
             </defs>
-            <path d={sp} fill="url(#sbg)" stroke={T.gray200} strokeWidth="2" />
-            <g clipPath="url(#sc)">
-              <rect x={cx - W / 2} y={cy - H / 2} width={W / 2} height={H / 2 + 15}
-                fill={VC.prudence.main} opacity={quadrants[0].pct * 0.75 + 0.1} />
-              <rect x={cx} y={cy - H / 2} width={W / 2} height={H / 2 + 15}
-                fill={VC.justice.main} opacity={quadrants[1].pct * 0.75 + 0.1} />
-              <rect x={cx - W / 2} y={cy + 15} width={W / 2} height={H / 2 + 15}
-                fill={VC.courage.main} opacity={quadrants[2].pct * 0.75 + 0.1} />
-              <rect x={cx} y={cy + 15} width={W / 2} height={H / 2 + 15}
-                fill={VC.temperance.main} opacity={quadrants[3].pct * 0.75 + 0.1} />
-              <line x1={cx} y1={cy - H / 2} x2={cx} y2={cy + H / 2 + 15} stroke={T.white} strokeWidth="2" opacity="0.5" />
-              <line x1={cx - W / 2} y1={cy + 10} x2={cx + W / 2} y2={cy + 10} stroke={T.white} strokeWidth="2" opacity="0.5" />
-            </g>
-            {/* Labels */}
-            {[
-              { x: cx - 30, y: cy - 10, name: "Prudence", Icon: Brain, q: quadrants[0] },
-              { x: cx + 30, y: cy - 10, name: "Justice", Icon: Heart, q: quadrants[1] },
-              { x: cx - 30, y: cy + 40, name: "Courage", Icon: Flame, q: quadrants[2] },
-              { x: cx + 30, y: cy + 40, name: "Temperance", Icon: TreePine, q: quadrants[3] },
-            ].map((item, i) => (
-              <g key={i}>
-                <text x={item.x} y={item.y} textAnchor="middle" fill="#fff" fontSize="10"
-                  fontWeight="600" fontFamily="Inter, sans-serif">{item.name}</text>
-                <text x={item.x} y={item.y + 14} textAnchor="middle" fill="#fff" fontSize="9"
-                  opacity="0.8" fontFamily="Inter, sans-serif">{item.q.covered}/{item.q.total}</text>
-              </g>
+
+            {/* Guide circles */}
+            {guideRadii.map((r, i) => (
+              <circle key={i} cx={cx} cy={cy} r={r} fill="none"
+                stroke={T.gray200} strokeWidth={i === guideRadii.length - 1 ? 1.5 : 0.75}
+                strokeDasharray={i < guideRadii.length - 1 ? "4 4" : "none"} />
             ))}
-            <path d={sp} fill="none" stroke={T.navy} strokeWidth="3" />
-            {/* Name plate */}
-            <rect x={cx - 55} y={cy + H / 2 + 20} width={110} height={22} rx={4} fill={T.navy} />
-            <text x={cx} y={cy + H / 2 + 35} textAnchor="middle" fill={T.gold} fontSize="11"
-              fontWeight="700" fontFamily="Inter, sans-serif">
+
+            {/* Spokes */}
+            {dataPoints.map((d, i) => (
+              <line key={i} x1={cx} y1={cy} x2={d.outerPos.x} y2={d.outerPos.y}
+                stroke={T.gray200} strokeWidth={0.5} />
+            ))}
+
+            {/* Cardinal virtue labels at compass points */}
+            {[
+              { label: "Prudence", angleDeg: 0 + angleStep * 1.5, color: VC.prudence.main },
+              { label: "Justice", angleDeg: angleStep * 4 + angleStep * 1.5, color: VC.justice.main },
+              { label: "Courage", angleDeg: angleStep * 8 + angleStep * 1.5, color: VC.courage.main },
+              { label: "Temperance", angleDeg: angleStep * 12 + angleStep * 1.5, color: VC.temperance.main },
+            ].map((cv, i) => {
+              const pos = polarToCartesian(cx, cy, maxR + 34, cv.angleDeg);
+              return (
+                <text key={i} x={pos.x} y={pos.y}
+                  textAnchor="middle" dominantBaseline="central"
+                  fill={cv.color} fontSize="11" fontWeight="700"
+                  fontFamily="Inter, sans-serif">
+                  {cv.label}
+                </text>
+              );
+            })}
+
+            {/* Progress polygon */}
+            <motion.path
+              d={polygonPath}
+              fill="url(#compassFill)"
+              stroke={T.gold}
+              strokeWidth={2}
+              strokeLinejoin="round"
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              style={{ transformOrigin: `${cx}px ${cy}px` }}
+            />
+
+            {/* Sub-virtue dots */}
+            {dataPoints.map((d, i) => (
+              <circle key={i} cx={d.outerPos.x} cy={d.outerPos.y} r={4}
+                fill={d.minutes > 0 ? d.vc.main : T.gray300}
+                stroke={T.white} strokeWidth={1.5} />
+            ))}
+
+            {/* Data point dots on polygon */}
+            {dataPoints.map((d, i) => (
+              d.minutes > 0 && (
+                <circle key={`dp-${i}`} cx={d.pos.x} cy={d.pos.y} r={3}
+                  fill={T.gold} stroke={T.white} strokeWidth={1} />
+              )
+            ))}
+
+            {/* Center label */}
+            <text x={cx} y={cy - 8} textAnchor="middle" fill={T.navy}
+              fontSize="28" fontWeight="800" fontFamily="Inter, sans-serif">
+              {overallPct}%
+            </text>
+            <text x={cx} y={cy + 12} textAnchor="middle" fill={T.gray400}
+              fontSize="10" fontFamily="Inter, sans-serif">
+              overall coverage
+            </text>
+            <text x={cx} y={cy + 28} textAnchor="middle" fill={T.gold}
+              fontSize="12" fontWeight="700" fontFamily="Inter, sans-serif">
               {child?.name}
             </text>
           </svg>
-          <div style={{
-            fontFamily: T.fontSans, fontSize: 32, fontWeight: 800,
-            color: T.navy, marginTop: 16,
-          }}>
-            {overallPct}%
-          </div>
-          <div style={{
-            fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
-          }}>
-            overall coverage
-          </div>
         </div>
 
         {/* Virtue breakdown */}
@@ -248,7 +307,7 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
           <div style={{
             fontFamily: T.fontSans, fontSize: 18, fontWeight: 700, color: T.green,
           }}>
-            {child?.name}&apos;s shield is complete!
+            {child?.name}&apos;s compass is complete!
           </div>
           <p style={{
             fontFamily: T.fontSans, fontSize: 14, color: T.gray500, marginTop: 4,

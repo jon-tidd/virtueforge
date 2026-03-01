@@ -156,7 +156,7 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
             {[
               { title: "Browse Books", desc: `${totalBooks} read so far`, page: "books", icon: BookOpen, color: VC.prudence.main, bg: VC.prudence.light },
               { title: "Forge a Story", desc: "AI-generated tales", page: "stories", icon: Pen, color: VC.courage.main, bg: VC.courage.light },
-              { title: "View Shield", desc: `${overallPct}% complete`, page: "shield", icon: BarChart3, color: VC.temperance.main, bg: VC.temperance.light },
+              { title: "View Compass", desc: `${overallPct}% complete`, page: "shield", icon: BarChart3, color: VC.temperance.main, bg: VC.temperance.light },
             ].map((action) => {
               const Icon = action.icon;
               return (

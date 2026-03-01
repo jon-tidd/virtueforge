@@ -131,6 +131,13 @@ export default function VirtueForgeApp() {
         onStart={startJourney}
         onPricing={() => setPage("pricing")}
         onDemo={handleDemo}
+        onNavigate={(p: string) => {
+          if (!appData.setupComplete || appData.children.length === 0) {
+            startJourney();
+          } else {
+            setPage(p as AppPage);
+          }
+        }}
         hasAccount={appData.setupComplete}
       />
     );
@@ -157,7 +164,7 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
       />
 
-      <main className="px-4 md:px-6 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto" }}>
+      <main className="px-5 md:px-6 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto", overflowX: "hidden" }}>
         <AnimatePresence mode="wait">
           {page === "dashboard" && (
             <Dashboard

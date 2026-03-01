@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import {
   BookOpen, Shield, Sparkles, ChevronRight, ArrowRight,
   Brain, Heart, Flame, TreePine, Star, Users, TrendingUp,
-  BookMarked, Pen, BarChart3, Zap, Check
+  BookMarked, Pen, BarChart3, Zap, Check, Sun, RefreshCw,
+  Image as ImageIcon,
 } from "lucide-react";
 import { VIRTUES } from "@/lib/data";
 import { T, VC, PLANS } from "@/lib/tokens";
@@ -30,41 +31,41 @@ export type DemoScenario = {
 };
 
 export const DEMO_SCENARIOS: DemoScenario[] = [
-  { label: "Try: 6-year-old afraid of the dark", childName: "Alex", age: 6, sex: "boy", virtue: "perseverance", situation: "afraid of the dark" },
-  { label: "Try: 8-year-old struggling with honesty", childName: "Maya", age: 8, sex: "girl", virtue: "honesty", situation: "struggling to tell the truth" },
-  { label: "Try: 5-year-old won't share", childName: "Sam", age: 5, sex: "boy", virtue: "generosity", situation: "won't share with new sibling" },
+  { label: "My 5-year-old won't share with his brother", childName: "Sam", age: 5, sex: "boy", virtue: "generosity", situation: "won't share with new sibling" },
+  { label: "My 8-year-old struggles with telling the truth", childName: "Maya", age: 8, sex: "girl", virtue: "honesty", situation: "struggling to tell the truth" },
+  { label: "My 6-year-old gives up when things get hard", childName: "Alex", age: 6, sex: "boy", virtue: "perseverance", situation: "gives up easily when things get difficult" },
 ];
 
 const RESEARCH_STATS = [
   {
-    number: "20–25%",
-    label: "fewer behavior issues",
-    desc: "Kids in virtue-based programs show 20–25% fewer behavior issues.",
+    number: "25%",
+    label: "fewer behavior problems",
+    desc: "Children in virtue-based character programs show 20\u201325% fewer behavioral issues including aggression, defiance, and withdrawal.",
     source: "Brown et al., 2023 meta-analysis of 214 studies",
     color: VC.prudence.main,
     bg: VC.prudence.light,
   },
   {
-    number: "11",
-    label: "point gain",
-    desc: "Social-emotional learning programs produce an 11-percentile-point academic gain — across 270,034 students.",
+    number: "11%",
+    label: "academic percentile gain",
+    desc: "SEL programs boost academics by 11 percentile points across 270,034 students \u2014 that\u2019s moving from the 50th to 61st percentile.",
     source: "Durlak et al., CASEL Meta-Analysis",
     color: VC.justice.main,
     bg: VC.justice.light,
   },
   {
-    number: "Stronger",
-    label: "predictor of success",
-    desc: "Gratitude + perseverance are the strongest predictors of long-term well-being and academic success.",
-    source: "VIA Institute & Duckworth research",
+    number: "2\u00d7",
+    label: "more retained than lectures",
+    desc: "Children who learn morals through stories retain twice as much and show stronger transfer to real-life behavior than lecture-based approaches.",
+    source: "Jubilee Centre, University of Birmingham",
     color: VC.courage.main,
     bg: VC.courage.light,
   },
   {
-    number: "More",
-    label: "effective than lectures",
-    desc: "Story-based character education is more effective than lectures or worksheets.",
-    source: "Jubilee Centre for Character & Virtues",
+    number: "75%",
+    label: "stronger wellbeing predictor",
+    desc: "Gratitude and perseverance predict long-term wellbeing 75% better than IQ or socioeconomic status.",
+    source: "VIA Institute; Duckworth, UPenn",
     color: VC.temperance.main,
     bg: VC.temperance.light,
   },
@@ -73,25 +74,58 @@ const RESEARCH_STATS = [
 const STEPS = [
   {
     icon: Heart,
-    title: "Choose your family's virtues",
+    title: "Choose your family\u2019s virtues",
     desc: "Take a 2-minute guided quiz or select from 16 classical virtues rooted in Aristotelian philosophy.",
   },
   {
     icon: BookOpen,
     title: "Get matched with great stories",
-    desc: "57+ hand-curated books mapped to specific virtues and your child's reading level. Plus AI-generated stories for any situation.",
+    desc: "57+ hand-curated books mapped to specific virtues and your child\u2019s reading level. Plus AI-generated stories for any situation.",
   },
   {
     icon: Shield,
     title: "Watch character grow",
-    desc: "Track your family's virtue journey with a visual shield that fills as you read together. Spot gaps. Celebrate progress.",
+    desc: "Track your family\u2019s virtue journey with a visual compass that fills as you read together. Spot gaps. Celebrate progress.",
   },
 ];
 
-export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: {
+const CHARACTER_CYCLE = [
+  { icon: BookOpen, title: "Stories", desc: "The child encounters virtue in narrative" },
+  { icon: Sparkles, title: "Moral Imagination", desc: "The child sees themselves as the hero" },
+  { icon: RefreshCw, title: "Habituation", desc: "Daily practice builds lasting habit" },
+  { icon: Shield, title: "Virtue", desc: "Habit crystallizes into character" },
+  { icon: Sun, title: "Flourishing", desc: "Character enables a life well-lived" },
+];
+
+function ImagePlaceholder({ label, height = 200, aspectRatio }: {
+  label: string; height?: number; aspectRatio?: string;
+}) {
+  return (
+    <div style={{
+      width: "100%", height: aspectRatio ? undefined : height,
+      aspectRatio: aspectRatio || undefined,
+      background: T.gray50, border: `2px dashed ${T.gray300}`,
+      borderRadius: T.radius, display: "flex", alignItems: "center",
+      justifyContent: "center", padding: 24,
+    }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+        <ImageIcon size={24} color={T.gray300} />
+        <span style={{
+          fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
+          textAlign: "center", fontStyle: "italic",
+        }}>
+          {label}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, hasAccount }: {
   onStart: () => void;
   onPricing: () => void;
   onDemo?: (scenario: DemoScenario) => void;
+  onNavigate?: (page: string) => void;
   hasAccount: boolean;
 }) {
   return (
@@ -138,7 +172,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-4 md:px-6" style={{
+      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-5 md:px-6" style={{
         textAlign: "center", background: T.white,
         position: "relative", overflow: "hidden",
       }}>
@@ -159,16 +193,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
           transition={{ duration: 0.6 }}
           style={{ position: "relative", zIndex: 1, maxWidth: 800, margin: "0 auto" }}
         >
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "6px 16px", borderRadius: 100, background: T.goldSubtle,
-            fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, color: T.gold,
-            marginBottom: 28, border: `1px solid ${T.gold}30`,
-          }}>
-            <Sparkles size={14} />
-            Backed by 2,400 years of wisdom and modern research
-          </div>
-
           <h1 style={{
             fontFamily: T.fontSans, fontSize: "clamp(40px, 6vw, 72px)",
             fontWeight: 800, color: T.navy, lineHeight: 1.08,
@@ -180,16 +204,18 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
 
           <p style={{
             fontFamily: T.fontSans, fontSize: "clamp(17px, 2vw, 20px)",
-            color: T.gray500, lineHeight: 1.6, maxWidth: 560, margin: "0 auto 40px",
+            color: T.gray500, lineHeight: 1.6, maxWidth: 620, margin: "0 auto 40px",
           }}>
-            Personalized AI adventures rooted in 2,400 years of wisdom.
-            Courage. Justice. Wisdom. Self-Mastery.
+            AI-generated adventures for your child&apos;s real struggles.
+            57+ hand-curated classics mapped to classical virtues.
+            Two paths, one mission.
           </p>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-            <button onClick={onStart} style={{
+          {/* Two-path CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4" style={{ justifyContent: "center", alignItems: "center" }}>
+            <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
-              color: T.white, background: T.navy, border: "none", cursor: "pointer",
+              color: T.gold, background: T.navy, border: "none", cursor: "pointer",
               padding: "14px 32px", borderRadius: T.radiusSm,
               display: "flex", alignItems: "center", gap: 8,
               boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
@@ -198,8 +224,21 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
               onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(10,22,40,0.35)"; }}
               onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(10,22,40,0.3)"; }}
             >
-              Generate Your First Story Free
-              <ArrowRight size={18} />
+              <Pen size={18} />
+              Generate a Story
+            </button>
+            <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
+              fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
+              color: T.navy, background: T.white, border: `2px solid ${T.navy}`,
+              cursor: "pointer", padding: "12px 32px", borderRadius: T.radiusSm,
+              display: "flex", alignItems: "center", gap: 8,
+              transition: "transform 0.15s, box-shadow 0.15s",
+            }}
+              onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(10,22,40,0.12)"; }}
+              onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+            >
+              <BookOpen size={18} />
+              Discover Great Books
             </button>
           </div>
 
@@ -210,31 +249,39 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
             3 free stories a month. No credit card required.
           </p>
 
-          {/* Demo scenario buttons */}
+          {/* Demo scenario buttons — redesigned navy pills */}
           {onDemo && (
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3" style={{
-              marginTop: 24, justifyContent: "center", alignItems: "center",
+              marginTop: 28, justifyContent: "center", alignItems: "center",
             }}>
               {DEMO_SCENARIOS.map((scenario) => (
                 <button
                   key={scenario.label}
                   onClick={() => onDemo(scenario)}
                   style={{
-                    fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
-                    padding: "8px 16px", borderRadius: 100,
-                    background: T.goldSubtle, color: T.gold,
-                    border: `1px solid ${T.gold}30`,
+                    fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+                    padding: "10px 20px", borderRadius: 100,
+                    background: T.navy, color: T.white,
+                    border: "none",
                     cursor: "pointer",
+                    boxShadow: T.shadowMd,
                     transition: "all 0.15s",
+                    display: "flex", alignItems: "center", gap: 8,
                   }}
-                  onMouseOver={(e) => { e.currentTarget.style.background = T.gold + "30"; }}
-                  onMouseOut={(e) => { e.currentTarget.style.background = T.goldSubtle; }}
+                  onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = T.shadowLg; }}
+                  onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = T.shadowMd; }}
                 >
+                  <Sparkles size={14} />
                   {scenario.label}
                 </button>
               ))}
             </div>
           )}
+
+          {/* Hero image placeholder */}
+          <div style={{ marginTop: 48, maxWidth: 700, margin: "48px auto 0" }}>
+            <ImagePlaceholder label="Hero illustration: Parent reading to child by firelight" height={300} />
+          </div>
         </motion.div>
       </section>
 
@@ -252,29 +299,36 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
               color: T.gold, letterSpacing: "0.08em", textTransform: "uppercase",
               marginBottom: 16,
             }}>
-              The Problem
+              The Crisis
             </p>
             <h2 style={{
               fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
               fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.02em",
               marginBottom: 20,
             }}>
-              Character isn&apos;t inherited.<br />It&apos;s built.
+              The stories that built every generation&apos;s<br />character are disappearing.
             </h2>
             <p style={{
               fontFamily: T.fontSans, fontSize: 18, color: T.gray300,
-              lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px",
+              lineHeight: 1.7, maxWidth: 680, margin: "0 auto 32px",
             }}>
-              Screen time is up 50%. Only 1 in 3 families read bedtime stories nightly — down from 2 in 3 a decade ago.
-              The habit that built every generation&apos;s moral imagination is vanishing.
+              Children now spend 7+ hours per day on screens. Only 1 in 3 families read bedtime stories nightly &mdash;
+              down from 2 in 3 a decade ago. Algorithmic content has replaced the moral narratives that once shaped
+              every generation&apos;s character. The short-form scroll is eroding the deep storytelling that teaches
+              children how to live.
             </p>
           </motion.div>
+
+          {/* Crisis image placeholder */}
+          <div style={{ maxWidth: 600, margin: "0 auto 40px" }}>
+            <ImagePlaceholder label="Illustration: Screen time vs. reading time" height={240} />
+          </div>
 
           <div style={{
             display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: 20,
           }}>
-            {RESEARCH_STATS.map((stat, i) => (
+            {RESEARCH_STATS.slice(0, 3).map((stat, i) => (
               <motion.div
                 key={i}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -316,89 +370,128 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
         </div>
       </section>
 
-      {/* ═══ HOW IT WORKS ═══ */}
-      <section id="how" style={{ padding: "100px 24px", background: T.white }}>
+      {/* ═══ CLASSICAL WISDOM ═══ */}
+      <section style={{ padding: "100px 24px", background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={0}
-            style={{ textAlign: "center", marginBottom: 64 }}
+            style={{ textAlign: "center", marginBottom: 48 }}
           >
             <p style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
-              color: VC.prudence.main, letterSpacing: "0.08em", textTransform: "uppercase",
+              color: T.gold, letterSpacing: "0.08em", textTransform: "uppercase",
               marginBottom: 16,
             }}>
-              How It Works
+              Classical Foundations
             </p>
             <h2 style={{
               fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
               fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.02em", marginBottom: 20,
             }}>
-              Three steps. One family tradition.
+              What the ancients knew &mdash;<br />and we have forgotten
             </h2>
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 18, color: T.gray500,
+              lineHeight: 1.7, maxWidth: 640, margin: "0 auto",
+            }}>
+              Plato taught that the stories we tell children shape their souls before reason takes hold.
+              Aristotle called it <em>hexis</em> &mdash; the forging of character through habitual practice,
+              not lectures. For 2,400 years, every civilization that endured understood this truth:
+              character is not inherited &mdash; it is forged.
+            </p>
           </motion.div>
 
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: 32,
-          }}>
-            {STEPS.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial="hidden" whileInView="visible" viewport={{ once: true }}
-                  variants={fadeUp} custom={i + 1}
-                  style={{ textAlign: "center" }}
-                >
-                  <div style={{
-                    width: 64, height: 64, borderRadius: 16,
-                    background: T.bg, display: "flex", alignItems: "center",
-                    justifyContent: "center", margin: "0 auto 20px",
-                  }}>
-                    <Icon size={28} color={T.navy} strokeWidth={1.5} />
+          {/* The Cycle of Character Formation */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={1}
+            style={{ marginBottom: 48 }}
+          >
+            <h3 style={{
+              fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
+              color: T.navy, textAlign: "center", marginBottom: 32,
+            }}>
+              The Cycle of Character Formation
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-3">
+              {CHARACTER_CYCLE.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <div key={i} style={{ textAlign: "center", position: "relative" }}>
+                    <div style={{
+                      width: 56, height: 56, borderRadius: 14,
+                      background: T.goldSubtle, display: "flex", alignItems: "center",
+                      justifyContent: "center", margin: "0 auto 12px",
+                      border: `1px solid ${T.gold}30`,
+                    }}>
+                      <Icon size={24} color={T.gold} strokeWidth={2} />
+                    </div>
+                    <div style={{
+                      fontFamily: T.fontSans, fontSize: 14, fontWeight: 700,
+                      color: T.navy, marginBottom: 4,
+                    }}>
+                      {step.title}
+                    </div>
+                    <p style={{
+                      fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
+                      lineHeight: 1.4,
+                    }}>
+                      {step.desc}
+                    </p>
+                    {/* Arrow between steps (hidden on last) */}
+                    {i < CHARACTER_CYCLE.length - 1 && (
+                      <div className="hidden md:block" style={{
+                        position: "absolute", right: -16, top: 24,
+                        color: T.gray300, fontSize: 18,
+                      }}>
+                        <ChevronRight size={18} />
+                      </div>
+                    )}
                   </div>
-                  <div style={{
-                    fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
-                    color: T.gray400, marginBottom: 8,
-                  }}>
-                    STEP {i + 1}
-                  </div>
-                  <h3 style={{
-                    fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
-                    color: T.navy, marginBottom: 10,
-                  }}>
-                    {step.title}
-                  </h3>
-                  <p style={{
-                    fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
-                    lineHeight: 1.6,
-                  }}>
-                    {step.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+                );
+              })}
+            </div>
+          </motion.div>
+
+          {/* Cycle image placeholder */}
+          <div style={{ marginBottom: 48 }}>
+            <ImagePlaceholder label="Diagram: Circular Cycle of Character Formation" height={280} />
           </div>
+
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={2}
+            style={{ textAlign: "center" }}
+          >
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 17, color: T.gray600,
+              lineHeight: 1.7, maxWidth: 640, margin: "0 auto",
+            }}>
+              In an age of algorithmic manipulation, moral relativism, and instant gratification,
+              the classical virtues aren&apos;t a relic &mdash; they&apos;re the counterbalance.
+              Stories are how children rehearse virtue before they encounter it in life.
+              This matters more now than ever.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* ═══ THE SCIENCE ═══ */}
+      {/* ═══ THE RESEARCH ═══ */}
       <section id="science" style={{ padding: "100px 24px", background: T.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={0}
-            style={{ textAlign: "center", marginBottom: 64 }}
+            style={{ textAlign: "center", marginBottom: 48 }}
           >
             <p style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
               color: VC.courage.main, letterSpacing: "0.08em", textTransform: "uppercase",
               marginBottom: 16,
             }}>
-              The Science
+              The Research
             </p>
             <h2 style={{
               fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
@@ -411,12 +504,51 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
               fontFamily: T.fontSans, fontSize: 18, color: T.gray500,
               lineHeight: 1.6, maxWidth: 600, margin: "0 auto",
             }}>
-              Aristotle called it <em>hexis</em> — character formed through practice.
+              Aristotle called it <em>hexis</em> &mdash; character formed through practice.
               Modern psychology calls it social-emotional learning. Both agree: stories are how children rehearse virtue before they encounter it in life.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Research stats cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ marginBottom: 48 }}>
+            {RESEARCH_STATS.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={fadeUp} custom={i + 1}
+                style={{
+                  padding: 24, borderRadius: T.radiusLg,
+                  background: T.white, border: `1px solid ${T.gray100}`,
+                  textAlign: "center",
+                }}
+              >
+                <div style={{
+                  fontFamily: T.fontSans, fontSize: 40, fontWeight: 800,
+                  color: stat.color, lineHeight: 1,
+                }}>
+                  {stat.number}
+                </div>
+                <div style={{
+                  fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+                  color: T.gray500, textTransform: "uppercase", letterSpacing: "0.04em",
+                  marginTop: 6, marginBottom: 8,
+                }}>
+                  {stat.label}
+                </div>
+                <p style={{
+                  fontFamily: T.fontSans, fontSize: 12, color: T.gray400,
+                  lineHeight: 1.4,
+                }}>
+                  {stat.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Science deep-dive cards */}
+          <ImagePlaceholder label="Infographic: The science behind virtue-based character education" height={200} />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginTop: 32 }}>
             {[
               {
                 icon: BookMarked, title: "Narrative Moral Reasoning",
@@ -427,12 +559,12 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
               {
                 icon: Brain, title: "Brain Development",
                 desc: "MRI studies show children read to regularly develop significantly more activity in brain regions linked to narrative comprehension and empathy.",
-                cite: "Neuroscience News / Cincinnati Children's Hospital",
+                cite: "Neuroscience News / Cincinnati Children\u2019s Hospital",
                 color: VC.justice.main, bg: VC.justice.light,
               },
               {
                 icon: TrendingUp, title: "Academic Achievement",
-                desc: "Children read to daily from age 1 score significantly higher in both reading and math by age 10 — regardless of family income.",
+                desc: "Children read to daily from age 1 score significantly higher in both reading and math by age 10 \u2014 regardless of family income.",
                 cite: "Kalb & van Ours; UCL 2020 study of 160,000+ children",
                 color: VC.courage.main, bg: VC.courage.light,
               },
@@ -486,6 +618,205 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
         </div>
       </section>
 
+      {/* ═══ TWO PATHS ═══ */}
+      <section style={{ padding: "100px 24px", background: T.white }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={0}
+            style={{ textAlign: "center", marginBottom: 48 }}
+          >
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+              color: VC.prudence.main, letterSpacing: "0.08em", textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              Two Paths
+            </p>
+            <h2 style={{
+              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
+              fontWeight: 800, color: T.navy, lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+            }}>
+              Your family. Your journey. Your choice.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Story Forge card */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} custom={1}
+              style={{
+                padding: 32, borderRadius: T.radiusLg,
+                background: T.white, border: `1px solid ${T.gray100}`,
+                display: "flex", flexDirection: "column",
+              }}
+            >
+              <span style={{
+                fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
+                color: VC.courage.main, textTransform: "uppercase", letterSpacing: "0.08em",
+                marginBottom: 12,
+              }}>
+                AI-Powered
+              </span>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 24, fontWeight: 700,
+                color: T.navy, marginBottom: 10,
+              }}>
+                Generate Personalized Stories
+              </h3>
+              <p style={{
+                fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
+                lineHeight: 1.6, marginBottom: 20,
+              }}>
+                Tell us your child&apos;s name, age, and what they&apos;re facing. Our AI writes an original story
+                in the classical tradition &mdash; starring themes your child needs right now.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 24 }}>
+                {["Personalized to your child", "Aligned to classical virtues", "Discussion guide included", "Print or share"].map((item) => (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <Check size={14} color={VC.courage.main} strokeWidth={3} />
+                    <span style={{ fontFamily: T.fontSans, fontSize: 14, color: T.gray600 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <ImagePlaceholder label="Screenshot: Story Forge generating a story" aspectRatio="16/9" />
+              <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
+                marginTop: 20, padding: "12px 24px", borderRadius: T.radiusSm,
+                fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
+                background: T.navy, color: T.white, border: "none", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              }}>
+                <Pen size={16} />
+                Try Story Forge
+              </button>
+            </motion.div>
+
+            {/* Book Explorer card */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }}
+              variants={fadeUp} custom={2}
+              style={{
+                padding: 32, borderRadius: T.radiusLg,
+                background: T.white, border: `1px solid ${T.gray100}`,
+                display: "flex", flexDirection: "column",
+              }}
+            >
+              <span style={{
+                fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
+                color: VC.prudence.main, textTransform: "uppercase", letterSpacing: "0.08em",
+                marginBottom: 12,
+              }}>
+                Hand-Curated
+              </span>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 24, fontWeight: 700,
+                color: T.navy, marginBottom: 10,
+              }}>
+                Discover History&apos;s Best Books
+              </h3>
+              <p style={{
+                fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
+                lineHeight: 1.6, marginBottom: 20,
+              }}>
+                57+ books spanning 2,600 years &mdash; from Aesop&apos;s Fables to modern classics.
+                Hand-selected for moral clarity, then mapped to specific virtues and reading levels.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 24 }}>
+                {["57+ curated books", "Mapped to 16 virtues", "Reading level matched", "Free & Amazon links"].map((item) => (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <Check size={14} color={VC.prudence.main} strokeWidth={3} />
+                    <span style={{ fontFamily: T.fontSans, fontSize: 14, color: T.gray600 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <ImagePlaceholder label="Screenshot: Book Explorer with filters" aspectRatio="16/9" />
+              <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
+                marginTop: 20, padding: "12px 24px", borderRadius: T.radiusSm,
+                fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
+                background: T.white, color: T.navy, border: `2px solid ${T.navy}`,
+                cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              }}>
+                <BookOpen size={16} />
+                Explore Library
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ HOW IT WORKS ═══ */}
+      <section id="how" style={{ padding: "100px 24px", background: T.bg }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={0}
+            style={{ textAlign: "center", marginBottom: 64 }}
+          >
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+              color: VC.prudence.main, letterSpacing: "0.08em", textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              How It Works
+            </p>
+            <h2 style={{
+              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
+              fontWeight: 800, color: T.navy, lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+            }}>
+              Three steps. One family tradition.
+            </h2>
+          </motion.div>
+
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: 32,
+          }}>
+            {STEPS.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }}
+                  variants={fadeUp} custom={i + 1}
+                  style={{ textAlign: "center" }}
+                >
+                  <div style={{
+                    width: 64, height: 64, borderRadius: 16,
+                    background: T.white, display: "flex", alignItems: "center",
+                    justifyContent: "center", margin: "0 auto 20px",
+                    border: `1px solid ${T.gray100}`,
+                  }}>
+                    <Icon size={28} color={T.navy} strokeWidth={1.5} />
+                  </div>
+                  <div style={{
+                    fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+                    color: T.gray400, marginBottom: 8,
+                  }}>
+                    STEP {i + 1}
+                  </div>
+                  <h3 style={{
+                    fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
+                    color: T.navy, marginBottom: 10,
+                  }}>
+                    {step.title}
+                  </h3>
+                  <p style={{
+                    fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
+                    lineHeight: 1.6,
+                  }}>
+                    {step.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ THE FOUR VIRTUES ═══ */}
       <section style={{ padding: "100px 24px", background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -517,6 +848,12 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
             {Object.entries(VIRTUES).map(([key, virtue], i) => {
               const vc = VC[key as keyof typeof VC];
               const Icon = VIRTUE_ICONS[key];
+              const VIRTUE_PLACEHOLDERS: Record<string, string> = {
+                prudence: "Illustration: Prudence \u2014 An owl perched on ancient scrolls",
+                justice: "Illustration: Justice \u2014 Scales balanced with golden light",
+                courage: "Illustration: Courage \u2014 A lion standing before a storm",
+                temperance: "Illustration: Temperance \u2014 A tree with deep roots in calm water",
+              };
               return (
                 <motion.div
                   key={key}
@@ -528,10 +865,11 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
                     textAlign: "center",
                   }}
                 >
+                  <ImagePlaceholder label={VIRTUE_PLACEHOLDERS[key] || `Illustration: ${virtue.name}`} height={120} />
                   <div style={{
                     width: 56, height: 56, borderRadius: 14,
                     background: T.white, display: "flex", alignItems: "center",
-                    justifyContent: "center", margin: "0 auto 16px",
+                    justifyContent: "center", margin: "16px auto 16px",
                     boxShadow: T.shadow,
                   }}>
                     <Icon size={26} color={vc.main} strokeWidth={2} />
@@ -573,100 +911,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
         </div>
       </section>
 
-      {/* ═══ FEATURES ═══ */}
-      <section style={{ padding: "100px 24px", background: T.bg }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={fadeUp} custom={0}
-            style={{ textAlign: "center", marginBottom: 64 }}
-          >
-            <p style={{
-              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
-              color: VC.temperance.main, letterSpacing: "0.08em", textTransform: "uppercase",
-              marginBottom: 16,
-            }}>
-              Features
-            </p>
-            <h2 style={{
-              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-            }}>
-              Everything you need to raise<br />children of character
-            </h2>
-          </motion.div>
-
-          {[
-            {
-              icon: BookOpen, color: VC.prudence.main, bg: VC.prudence.light,
-              title: "57+ hand-curated books, mapped to virtues",
-              desc: "Every book in our library is selected for its moral clarity and literary quality — then tagged to specific virtues and reading levels. Find the perfect story in seconds. Amazon and free online links included.",
-              tag: "Book Discovery",
-            },
-            {
-              icon: Pen, color: VC.courage.main, bg: VC.courage.light,
-              title: "AI stories tailored to your child's real struggles",
-              desc: "Is your child dealing with a new sibling? Afraid of the dark? Struggling with honesty? The Story Forge creates original tales in the classical tradition — starring themes your child needs right now.",
-              tag: "Story Forge",
-            },
-            {
-              icon: BarChart3, color: VC.temperance.main, bg: VC.temperance.light,
-              title: "Track your family's character growth",
-              desc: "The Virtue Shield fills as you read together. See which virtues you've covered, spot the gaps, and celebrate milestones. Character isn't built in a day — it's built in the daily habit of reading.",
-              tag: "Virtue Shield",
-            },
-          ].map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={i}
-                initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i + 1}
-                className="flex flex-col sm:flex-row gap-5 sm:gap-8"
-                style={{
-                  alignItems: "flex-start",
-                  padding: "24px", borderRadius: T.radiusLg,
-                  background: T.white, border: `1px solid ${T.gray100}`,
-                  marginBottom: 20,
-                }}
-              >
-                <div style={{
-                  width: 56, height: 56, borderRadius: 14, flexShrink: 0,
-                  background: feature.bg, display: "flex", alignItems: "center",
-                  justifyContent: "center",
-                }}>
-                  <Icon size={26} color={feature.color} strokeWidth={2} />
-                </div>
-                <div>
-                  <span style={{
-                    fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
-                    color: feature.color, textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                  }}>
-                    {feature.tag}
-                  </span>
-                  <h3 style={{
-                    fontFamily: T.fontSans, fontSize: 22, fontWeight: 700,
-                    color: T.navy, marginTop: 6, marginBottom: 10,
-                  }}>
-                    {feature.title}
-                  </h3>
-                  <p style={{
-                    fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
-                    lineHeight: 1.6,
-                  }}>
-                    {feature.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </section>
-
       {/* ═══ PRICING PREVIEW ═══ */}
-      <section id="pricing" style={{ padding: "100px 24px", background: T.white }}>
+      <section id="pricing" style={{ padding: "100px 24px", background: T.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -702,7 +948,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
               variants={fadeUp} custom={1}
               style={{
                 padding: 32, borderRadius: T.radiusLg,
-                background: T.bg, border: `1px solid ${T.gray200}`,
+                background: T.white, border: `1px solid ${T.gray200}`,
               }}
             >
               <h3 style={{
@@ -796,7 +1042,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
 
       {/* ═══ FINAL CTA ═══ */}
       <section style={{
-        padding: "100px 24px", background: T.bg, textAlign: "center",
+        padding: "100px 24px", background: T.white, textAlign: "center",
       }}>
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -816,23 +1062,34 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
           }}>
             Join families who are using the world&apos;s oldest wisdom to raise children of courage, wisdom, justice, and self-mastery.
           </p>
-          <button onClick={onStart} style={{
-            fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
-            color: T.white, background: T.navy, border: "none", cursor: "pointer",
-            padding: "16px 40px", borderRadius: T.radiusSm,
-            display: "inline-flex", alignItems: "center", gap: 8,
-            boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
-          }}>
-            Generate Your First Story Free
-            <ArrowRight size={18} />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3" style={{ justifyContent: "center", alignItems: "center" }}>
+            <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
+              fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
+              color: T.gold, background: T.navy, border: "none", cursor: "pointer",
+              padding: "16px 36px", borderRadius: T.radiusSm,
+              display: "inline-flex", alignItems: "center", gap: 8,
+              boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
+            }}>
+              <Pen size={18} />
+              Generate a Story
+            </button>
+            <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
+              fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
+              color: T.navy, background: T.white, border: `2px solid ${T.navy}`,
+              cursor: "pointer", padding: "14px 36px", borderRadius: T.radiusSm,
+              display: "inline-flex", alignItems: "center", gap: 8,
+            }}>
+              <BookOpen size={18} />
+              Explore Books
+            </button>
+          </div>
         </motion.div>
       </section>
 
       {/* ═══ FOOTER ═══ */}
       <footer style={{
         padding: "40px 24px", borderTop: `1px solid ${T.gray100}`,
-        background: T.white,
+        background: T.bg,
       }}>
         <div className="flex flex-col md:flex-row gap-4 items-center" style={{
           maxWidth: 900, margin: "0 auto",
@@ -849,7 +1106,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, hasAccount }: 
             fontFamily: T.fontSerif, fontSize: 14, color: T.gray400,
             fontStyle: "italic",
           }}>
-            &ldquo;We are what we repeatedly do.&rdquo; — Aristotle
+            &ldquo;We are what we repeatedly do.&rdquo; &mdash; Aristotle
           </p>
         </div>
       </footer>

@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { id: "virtues", label: "Virtues", icon: Heart },
   { id: "books", label: "Books", icon: BookOpen },
   { id: "stories", label: "Story Forge", icon: Pen },
-  { id: "shield", label: "Shield", icon: BarChart3 },
+  { id: "shield", label: "Compass", icon: BarChart3 },
 ] as const;
 
 export default function AppNav({ currentPage, onNavigate, premium, onPricing }: {
