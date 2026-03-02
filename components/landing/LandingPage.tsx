@@ -4,10 +4,15 @@ import {
   BookOpen, Shield, Sparkles, ChevronRight, ArrowRight,
   Brain, Heart, Flame, TreePine, Star, Users, TrendingUp,
   BookMarked, Pen, BarChart3, Zap, Check, Sun, RefreshCw,
-  Image as ImageIcon,
 } from "lucide-react";
 import { VIRTUES } from "@/lib/data";
 import { T, VC, PLANS } from "@/lib/tokens";
+import {
+  HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
+  ScienceInfographic, StoryForgeMockup, BookExplorerMockup,
+  PrudenceOwl, JusticeScales, CourageLion, TemperanceTree,
+  PhilosopherPortrait, CAROUSEL_BOOKS,
+} from "./Illustrations";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -97,26 +102,64 @@ const CHARACTER_CYCLE = [
   { icon: Sun, title: "Flourishing", desc: "Character enables a life well-lived" },
 ];
 
-function ImagePlaceholder({ label, height = 200, aspectRatio }: {
-  label: string; height?: number; aspectRatio?: string;
-}) {
+// Book Carousel — auto-scrolling CSS animation
+function BookCarousel() {
+  // Double the array for seamless loop
+  const books = [...CAROUSEL_BOOKS, ...CAROUSEL_BOOKS];
   return (
-    <div style={{
-      width: "100%", height: aspectRatio ? undefined : height,
-      aspectRatio: aspectRatio || undefined,
-      background: T.gray50, border: `2px dashed ${T.gray300}`,
-      borderRadius: T.radius, display: "flex", alignItems: "center",
-      justifyContent: "center", padding: 24,
-    }}>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-        <ImageIcon size={24} color={T.gray300} />
-        <span style={{
-          fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
-          textAlign: "center", fontStyle: "italic",
-        }}>
-          {label}
-        </span>
+    <div style={{ overflow: "hidden", width: "100%", marginTop: 32 }}>
+      <div style={{
+        display: "flex", gap: 16, width: "max-content",
+        animation: "scrollCarousel 40s linear infinite",
+      }}>
+        {books.map((book, i) => (
+          <div key={i} style={{
+            width: 140, flexShrink: 0, padding: "16px 12px",
+            background: T.white, borderRadius: T.radiusSm,
+            border: `1px solid ${T.gray100}`, textAlign: "center",
+          }}>
+            {/* Mini book cover */}
+            <div style={{
+              width: 60, height: 80, margin: "0 auto 10px",
+              background: `linear-gradient(135deg, ${book.color}22, ${book.color}08)`,
+              borderRadius: 4, border: `1px solid ${book.color}30`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 6,
+            }}>
+              <BookOpen size={20} color={book.color} strokeWidth={1.5} />
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 11, fontWeight: 600,
+              color: T.navy, lineHeight: 1.3, marginBottom: 4,
+              whiteSpace: "pre-line",
+            }}>
+              {book.title}
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 10, color: T.gray400,
+              marginBottom: 6,
+            }}>
+              {book.author}
+            </div>
+            <span style={{
+              fontFamily: T.fontSans, fontSize: 9, fontWeight: 600,
+              padding: "2px 8px", borderRadius: 100,
+              background: `${book.color}10`, color: book.color,
+            }}>
+              {book.virtue}
+            </span>
+          </div>
+        ))}
       </div>
+      <style>{`
+        @keyframes scrollCarousel {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .scroll-carousel { animation: none !important; }
+        }
+      `}</style>
     </div>
   );
 }
@@ -278,11 +321,28 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </div>
           )}
 
-          {/* Hero image placeholder */}
+          {/* Hero illustration */}
           <div style={{ marginTop: 48, maxWidth: 700, margin: "48px auto 0" }}>
-            <ImagePlaceholder label="Hero illustration: Parent reading to child by firelight" height={300} />
+            <HeroIllustration />
           </div>
         </motion.div>
+      </section>
+
+      {/* ═══ BOOK CAROUSEL — auto-scrolling ═══ */}
+      <section style={{
+        paddingTop: 0, paddingBottom: 48, background: T.white,
+        overflow: "hidden",
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <p style={{
+            fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+            color: T.gray400, textAlign: "center", letterSpacing: "0.06em",
+            textTransform: "uppercase", marginBottom: 16,
+          }}>
+            From the Library &mdash; 57+ Curated Classics
+          </p>
+          <BookCarousel />
+        </div>
       </section>
 
       {/* ═══ THE CRISIS ═══ */}
@@ -319,9 +379,9 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </p>
           </motion.div>
 
-          {/* Crisis image placeholder */}
+          {/* Screen time vs reading illustration */}
           <div style={{ maxWidth: 600, margin: "0 auto 40px" }}>
-            <ImagePlaceholder label="Illustration: Screen time vs. reading time" height={240} />
+            <ScreenTimeIllustration />
           </div>
 
           <div style={{
@@ -512,14 +572,27 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </div>
           </motion.div>
 
-          {/* Cycle image placeholder */}
-          <div style={{ marginBottom: 48 }}>
-            <ImagePlaceholder label="Diagram: Circular Cycle of Character Formation" height={280} />
+          {/* Circular cycle diagram */}
+          <div style={{ marginBottom: 48, maxWidth: 500, margin: "0 auto 48px" }}>
+            <CharacterCycleDiagram />
           </div>
 
+          {/* Philosopher Portraits */}
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={2}
+            style={{ marginBottom: 48 }}
+          >
+            <div className="grid grid-cols-3 gap-4" style={{ maxWidth: 540, margin: "0 auto" }}>
+              <PhilosopherPortrait name="Aristotle" quote="We are what we repeatedly do." />
+              <PhilosopherPortrait name="Plato" quote="The soul takes nothing with her to the next world but her education and culture." />
+              <PhilosopherPortrait name="C.S. Lewis" quote="Since it is so likely that children will meet cruel enemies, let them at least have heard of brave knights." />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={3}
             style={{ textAlign: "center" }}
           >
             <p style={{
@@ -602,8 +675,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             ))}
           </div>
 
-          {/* Science deep-dive cards */}
-          <ImagePlaceholder label="Infographic: The science behind virtue-based character education" height={200} />
+          {/* Science infographic */}
+          <ScienceInfographic />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginTop: 32 }}>
             {[
@@ -738,7 +811,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   </div>
                 ))}
               </div>
-              <ImagePlaceholder label="Screenshot: Story Forge generating a story" aspectRatio="16/9" />
+              <StoryForgeMockup />
               <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
                 marginTop: 20, padding: "12px 24px", borderRadius: T.radiusSm,
                 fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
@@ -788,7 +861,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   </div>
                 ))}
               </div>
-              <ImagePlaceholder label="Screenshot: Book Explorer with filters" aspectRatio="16/9" />
+              <BookExplorerMockup />
               <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
                 marginTop: 20, padding: "12px 24px", borderRadius: T.radiusSm,
                 fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
@@ -905,11 +978,11 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             {Object.entries(VIRTUES).map(([key, virtue], i) => {
               const vc = VC[key as keyof typeof VC];
               const Icon = VIRTUE_ICONS[key];
-              const VIRTUE_PLACEHOLDERS: Record<string, string> = {
-                prudence: "Illustration: Prudence \u2014 An owl perched on ancient scrolls",
-                justice: "Illustration: Justice \u2014 Scales balanced with golden light",
-                courage: "Illustration: Courage \u2014 A lion standing before a storm",
-                temperance: "Illustration: Temperance \u2014 A tree with deep roots in calm water",
+              const VIRTUE_ILLUSTRATIONS: Record<string, React.ReactNode> = {
+                prudence: <PrudenceOwl color={vc.main} bg={vc.light} />,
+                justice: <JusticeScales color={vc.main} bg={vc.light} />,
+                courage: <CourageLion color={vc.main} bg={vc.light} />,
+                temperance: <TemperanceTree color={vc.main} bg={vc.light} />,
               };
               return (
                 <motion.div
@@ -922,7 +995,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                     textAlign: "center",
                   }}
                 >
-                  <ImagePlaceholder label={VIRTUE_PLACEHOLDERS[key] || `Illustration: ${virtue.name}`} height={120} />
+                  {VIRTUE_ILLUSTRATIONS[key]}
                   <div style={{
                     width: 56, height: 56, borderRadius: 14,
                     background: T.white, display: "flex", alignItems: "center",
