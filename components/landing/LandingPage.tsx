@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   BookOpen, Shield, Sparkles, ChevronRight, ArrowRight,
   Brain, Heart, Flame, TreePine, Star, Users, TrendingUp,
@@ -13,6 +13,10 @@ import {
   PrudenceOwl, JusticeScales, CourageLion, TemperanceTree,
   PhilosopherPortrait, CAROUSEL_BOOKS,
 } from "./Illustrations";
+import {
+  TypingStoryDemo, BeforeAfterComparison, WaveDivider,
+  GlowingStatNumber,
+} from "./Animations";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -171,6 +175,10 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
   onNavigate?: (page: string) => void;
   hasAccount: boolean;
 }) {
+  const { scrollY } = useScroll();
+  const heroParallax = useTransform(scrollY, [0, 600], [0, 80]);
+  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.6]);
+
   return (
     <div style={{ background: T.white, minHeight: "100vh" }}>
       {/* ═══ NAV BAR ═══ */}
@@ -321,10 +329,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </div>
           )}
 
-          {/* Hero illustration */}
-          <div style={{ marginTop: 48, maxWidth: 700, margin: "48px auto 0" }}>
+          {/* Hero illustration with parallax */}
+          <motion.div style={{
+            marginTop: 48, maxWidth: 700, margin: "48px auto 0",
+            y: heroParallax, opacity: heroOpacity,
+          }}>
             <HeroIllustration />
-          </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -344,6 +355,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           <BookCarousel />
         </div>
       </section>
+
+      <WaveDivider color={T.navy} />
 
       {/* ═══ THE CRISIS ═══ */}
       <section id="crisis" className="px-6 sm:px-8 md:px-10" style={{
@@ -427,8 +440,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               </motion.div>
             ))}
           </div>
+
+          {/* Before / After comparison */}
+          <BeforeAfterComparison />
         </div>
       </section>
+
+      <WaveDivider color={T.white} />
 
       {/* ═══ CLASSICAL WISDOM ═══ */}
       <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
@@ -656,7 +674,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   fontFamily: T.fontSans, fontSize: 40, fontWeight: 800,
                   color: stat.color, lineHeight: 1,
                 }}>
-                  {stat.number}
+                  <GlowingStatNumber value={stat.number} color={stat.color} />
                 </div>
                 <div style={{
                   fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
@@ -747,6 +765,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           </div>
         </div>
       </section>
+
+      <WaveDivider color={T.white} />
 
       {/* ═══ TWO PATHS ═══ */}
       <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
@@ -876,6 +896,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           </div>
         </div>
       </section>
+
+      <WaveDivider color={T.navy} />
+
+      {/* ═══ TYPING STORY DEMO ═══ */}
+      <TypingStoryDemo />
+
+      <WaveDivider color={T.bg} />
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section id="how" className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.bg }}>
