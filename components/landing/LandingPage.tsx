@@ -135,8 +135,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
         position: "sticky", top: 0, zIndex: 50, background: "rgba(255,255,255,0.92)",
         backdropFilter: "blur(12px)", borderBottom: `1px solid ${T.gray100}`,
       }}>
-        <div style={{
-          maxWidth: 1200, margin: "0 auto", padding: "0 24px",
+        <div className="px-5 sm:px-6 md:px-10" style={{
+          maxWidth: 1200, margin: "0 auto",
           display: "flex", alignItems: "center", justifyContent: "space-between",
           height: 64,
         }}>
@@ -286,8 +286,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ THE CRISIS ═══ */}
-      <section id="crisis" style={{
-        padding: "80px 24px", background: T.navy, color: T.white,
+      <section id="crisis" className="px-6 sm:px-8 md:px-10" style={{
+        paddingTop: 80, paddingBottom: 80, background: T.navy, color: T.white,
       }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <motion.div
@@ -371,7 +371,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ CLASSICAL WISDOM ═══ */}
-      <section style={{ padding: "100px 24px", background: T.white }}>
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -415,7 +415,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             }}>
               The Cycle of Character Formation
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-3">
+            {/* Desktop: horizontal row with arrows */}
+            <div className="hidden md:grid" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
               {CHARACTER_CYCLE.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -440,13 +441,69 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                     }}>
                       {step.desc}
                     </p>
-                    {/* Arrow between steps (hidden on last) */}
                     {i < CHARACTER_CYCLE.length - 1 && (
-                      <div className="hidden md:block" style={{
-                        position: "absolute", right: -16, top: 24,
-                        color: T.gray300, fontSize: 18,
+                      <div style={{
+                        position: "absolute", right: -12, top: 24,
+                        color: T.gold,
                       }}>
-                        <ChevronRight size={18} />
+                        <ArrowRight size={18} />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Mobile: vertical flow with connecting arrows */}
+            <div className="flex md:hidden flex-col items-center gap-0">
+              {CHARACTER_CYCLE.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <div key={i}>
+                    <div style={{
+                      display: "flex", alignItems: "center", gap: 16,
+                      padding: "16px 20px", borderRadius: T.radius,
+                      background: T.white, border: `1px solid ${T.gray100}`,
+                      width: "100%", maxWidth: 380,
+                    }}>
+                      <div style={{
+                        width: 48, height: 48, borderRadius: 12, flexShrink: 0,
+                        background: T.goldSubtle, display: "flex", alignItems: "center",
+                        justifyContent: "center", border: `1px solid ${T.gold}30`,
+                        position: "relative",
+                      }}>
+                        <Icon size={22} color={T.gold} strokeWidth={2} />
+                        <div style={{
+                          position: "absolute", top: -8, right: -8,
+                          width: 20, height: 20, borderRadius: "50%",
+                          background: T.navy, color: T.white,
+                          fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                        }}>
+                          {i + 1}
+                        </div>
+                      </div>
+                      <div>
+                        <div style={{
+                          fontFamily: T.fontSans, fontSize: 15, fontWeight: 700,
+                          color: T.navy, marginBottom: 2,
+                        }}>
+                          {step.title}
+                        </div>
+                        <p style={{
+                          fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
+                          lineHeight: 1.4, margin: 0,
+                        }}>
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                    {i < CHARACTER_CYCLE.length - 1 && (
+                      <div style={{
+                        display: "flex", justifyContent: "center", padding: "6px 0",
+                        color: T.gold,
+                      }}>
+                        <ChevronRight size={18} style={{ transform: "rotate(90deg)" }} />
                       </div>
                     )}
                   </div>
@@ -479,7 +536,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ THE RESEARCH ═══ */}
-      <section id="science" style={{ padding: "100px 24px", background: T.bg }}>
+      <section id="science" className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -619,7 +676,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ TWO PATHS ═══ */}
-      <section style={{ padding: "100px 24px", background: T.white }}>
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -748,7 +805,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ HOW IT WORKS ═══ */}
-      <section id="how" style={{ padding: "100px 24px", background: T.bg }}>
+      <section id="how" className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -818,7 +875,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ THE FOUR VIRTUES ═══ */}
-      <section style={{ padding: "100px 24px", background: T.white }}>
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -912,7 +969,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ PRICING PREVIEW ═══ */}
-      <section id="pricing" style={{ padding: "100px 24px", background: T.bg }}>
+      <section id="pricing" className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -1041,8 +1098,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ FINAL CTA ═══ */}
-      <section style={{
-        padding: "100px 24px", background: T.white, textAlign: "center",
+      <section className="px-6 sm:px-8 md:px-10" style={{
+        paddingTop: 100, paddingBottom: 100, background: T.white, textAlign: "center",
       }}>
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -1087,8 +1144,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </section>
 
       {/* ═══ FOOTER ═══ */}
-      <footer style={{
-        padding: "40px 24px", borderTop: `1px solid ${T.gray100}`,
+      <footer className="px-6 sm:px-8 md:px-10" style={{
+        paddingTop: 40, paddingBottom: 40, borderTop: `1px solid ${T.gray100}`,
         background: T.bg,
       }}>
         <div className="flex flex-col md:flex-row gap-4 items-center" style={{

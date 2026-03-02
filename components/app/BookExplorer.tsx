@@ -32,6 +32,7 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
   const [levelFilter, setLevelFilter] = useState<string>("all");
   const [availFilter, setAvailFilter] = useState<string>("all");
   const [showRead, setShowRead] = useState(true);
+  const [showCount, setShowCount] = useState(10);
 
   const child = appData.children[selChild];
   const hasChildren = appData.children.length > 0;
@@ -177,7 +178,7 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
             <span style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500 }}>Filters:</span>
           </div>
 
-          <select value={virtueFilter} onChange={(e) => setVirtueFilter(e.target.value)} style={selectStyle}>
+          <select value={virtueFilter} onChange={(e) => { setVirtueFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
             <option value="all">All Virtues</option>
             {Object.entries(VIRTUES).map(([key, v]) => (
               <optgroup key={key} label={v.name}>
@@ -189,14 +190,14 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
             ))}
           </select>
 
-          <select value={levelFilter} onChange={(e) => setLevelFilter(e.target.value)} style={selectStyle}>
+          <select value={levelFilter} onChange={(e) => { setLevelFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
             <option value="all">All Levels</option>
             {READING_LEVELS.map((r) => (
               <option key={r.value} value={r.value}>{r.label}</option>
             ))}
           </select>
 
-          <select value={availFilter} onChange={(e) => setAvailFilter(e.target.value)} style={selectStyle}>
+          <select value={availFilter} onChange={(e) => { setAvailFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
             <option value="all">All Availability</option>
             <option value="free">Free Online</option>
             <option value="purchase">Purchase</option>
@@ -220,14 +221,14 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
           <span style={{
             fontFamily: T.fontSans, fontSize: 12, color: T.gray400, marginLeft: "auto",
           }}>
-            {filteredBooks.length} books
+            {Math.min(showCount, filteredBooks.length)} of {filteredBooks.length} books
           </span>
         </div>
       </div>
 
       {/* Book List */}
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        {filteredBooks.map((book) => {
+        {filteredBooks.slice(0, showCount).map((book) => {
           const pk = getVirtueParent(book.virtues[0]);
           const vc = pk ? VC[pk as keyof typeof VC] : { main: T.gray500, light: T.gray50 };
           const isRead = child?.readBooks?.includes(book.title) || false;
@@ -340,6 +341,40 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
             </div>
           );
         })}
+
+        {filteredBooks.length > showCount && (
+          <button
+            onClick={() => setShowCount((c) => c + 10)}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%", padding: "14px 20px", borderRadius: T.radius,
+              background: T.white, border: `1px solid ${T.gray200}`,
+              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+              color: T.navy, cursor: "pointer",
+              transition: "background 0.15s",
+            }}
+            onMouseOver={(e) => { e.currentTarget.style.background = T.gray50; }}
+            onMouseOut={(e) => { e.currentTarget.style.background = T.white; }}
+          >
+            <ChevronDown size={16} />
+            Show More Books ({filteredBooks.length - showCount} remaining)
+          </button>
+        )}
+
+        {filteredBooks.length > 10 && showCount > 10 && showCount >= filteredBooks.length && (
+          <button
+            onClick={() => setShowCount(10)}
+            style={{
+              display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+              width: "100%", padding: "12px 20px", borderRadius: T.radius,
+              background: "transparent", border: `1px solid ${T.gray200}`,
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
+              color: T.gray500, cursor: "pointer",
+            }}
+          >
+            Show Fewer
+          </button>
+        )}
 
         {filteredBooks.length === 0 && (
           <div style={{

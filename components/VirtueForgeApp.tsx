@@ -26,6 +26,7 @@ export default function VirtueForgeApp() {
   const [premium, setPremiumState] = useState(false);
   const [selChild, setSelChild] = useState(0);
   const [demoScenario, setDemoScenario] = useState<DemoScenario | null>(null);
+  const [pendingDest, setPendingDest] = useState<AppPage | null>(null);
 
   useEffect(() => {
     const data = loadData();
@@ -133,6 +134,8 @@ export default function VirtueForgeApp() {
         onDemo={handleDemo}
         onNavigate={(p: string) => {
           if (!appData.setupComplete || appData.children.length === 0) {
+            // Track where the user wants to go after setup
+            setPendingDest(p as AppPage);
             startJourney();
           } else {
             setPage(p as AppPage);
@@ -182,7 +185,16 @@ export default function VirtueForgeApp() {
               key="virtues"
               familyVirtues={appData.familyVirtues}
               onUpdate={(v) => upd({ familyVirtues: v })}
-              onNext={() => setPage(appData.children.length > 0 ? "books" : "children")}
+              onNext={() => {
+                if (appData.children.length > 0) {
+                  // Setup already done — go to intended destination or books
+                  const dest = pendingDest || "books";
+                  setPendingDest(null);
+                  setPage(dest);
+                } else {
+                  setPage("children");
+                }
+              }}
             />
           )}
 
@@ -193,7 +205,11 @@ export default function VirtueForgeApp() {
               onAdd={addChild}
               onRemove={removeChild}
               premium={premium}
-              onNext={() => setPage("books")}
+              onNext={() => {
+                const dest = pendingDest || "books";
+                setPendingDest(null);
+                setPage(dest);
+              }}
               onPricing={() => setPage("pricing")}
             />
           )}

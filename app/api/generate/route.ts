@@ -1,5 +1,70 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// ─── Rate Limiting ───────────────────────────────────────────────────────────
+// In-memory rate limiter (resets on cold start / redeploy, which is fine for
+// Vercel serverless). Tracks requests per IP with a sliding window.
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX_REQUESTS = 5; // max 5 requests per minute per IP
+const DAILY_LIMIT_MAX = 30; // hard daily cap per IP
+const DAILY_WINDOW_MS = 24 * 60 * 60 * 1000;
+
+type RateEntry = { timestamps: number[]; dailyTimestamps: number[] };
+const rateLimitMap = new Map<string, RateEntry>();
+
+// Clean up stale entries every 10 minutes to prevent memory leaks
+let lastCleanup = Date.now();
+function cleanupRateLimitMap() {
+  const now = Date.now();
+  if (now - lastCleanup < 10 * 60 * 1000) return;
+  lastCleanup = now;
+  for (const [ip, entry] of rateLimitMap.entries()) {
+    entry.timestamps = entry.timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+    entry.dailyTimestamps = entry.dailyTimestamps.filter((t) => now - t < DAILY_WINDOW_MS);
+    if (entry.timestamps.length === 0 && entry.dailyTimestamps.length === 0) {
+      rateLimitMap.delete(ip);
+    }
+  }
+}
+
+function checkRateLimit(ip: string): { allowed: boolean; retryAfter?: number } {
+  cleanupRateLimitMap();
+  const now = Date.now();
+  let entry = rateLimitMap.get(ip);
+  if (!entry) {
+    entry = { timestamps: [], dailyTimestamps: [] };
+    rateLimitMap.set(ip, entry);
+  }
+
+  // Clean current entry
+  entry.timestamps = entry.timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  entry.dailyTimestamps = entry.dailyTimestamps.filter((t) => now - t < DAILY_WINDOW_MS);
+
+  // Check daily limit
+  if (entry.dailyTimestamps.length >= DAILY_LIMIT_MAX) {
+    const oldestDaily = entry.dailyTimestamps[0];
+    return { allowed: false, retryAfter: Math.ceil((oldestDaily + DAILY_WINDOW_MS - now) / 1000) };
+  }
+
+  // Check per-minute limit
+  if (entry.timestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+    const oldest = entry.timestamps[0];
+    return { allowed: false, retryAfter: Math.ceil((oldest + RATE_LIMIT_WINDOW_MS - now) / 1000) };
+  }
+
+  entry.timestamps.push(now);
+  entry.dailyTimestamps.push(now);
+  return { allowed: true };
+}
+
+function getClientIP(req: NextRequest): string {
+  return (
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
+// ─── System Prompt ───────────────────────────────────────────────────────────
 const SYSTEM_PROMPT = `You are a master children's storyteller in the tradition of Aesop, the Brothers Grimm, C.S. Lewis, and George MacDonald.
 
 ABSOLUTE RULES:
@@ -10,8 +75,38 @@ ABSOLUTE RULES:
 5. SAFE REDIRECTION: If the user's situation seems inappropriate, redirect to a wholesome interpretation.
 6. PERSONALIZATION: Use the child's name, age, and sex to calibrate language, character relatability, and themes.`;
 
+// ─── Prompt Sanitization ─────────────────────────────────────────────────────
+// Strip common injection patterns from user prompts
+function sanitizePrompt(prompt: string): string {
+  // Remove any system/assistant role injection attempts
+  let cleaned = prompt
+    .replace(/\b(system|assistant)\s*:/gi, "")
+    .replace(/```\s*(system|xml|json)\b/gi, "```")
+    .replace(/<\/?system>/gi, "")
+    .replace(/ignore\s+(all\s+)?(previous|above|prior)\s+(instructions?|rules?|prompts?)/gi, "[redacted]")
+    .replace(/you\s+are\s+now\s+(a|an)\s+/gi, "the child is ")
+    .replace(/pretend\s+(to\s+be|you('re|\s+are))/gi, "imagine ");
+
+  // Trim excessive whitespace
+  cleaned = cleaned.replace(/\s{3,}/g, "  ").trim();
+  return cleaned;
+}
+
 export async function POST(req: NextRequest) {
   try {
+    // ── Rate Limiting ──
+    const clientIP = getClientIP(req);
+    const rateCheck = checkRateLimit(clientIP);
+    if (!rateCheck.allowed) {
+      return NextResponse.json(
+        { error: "Too many requests. Please wait a moment before generating another story." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(rateCheck.retryAfter || 60) },
+        }
+      );
+    }
+
     const { prompt } = await req.json();
 
     if (!prompt || typeof prompt !== "string") {
@@ -36,6 +131,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Sanitize the user prompt
+    const cleanPrompt = sanitizePrompt(prompt);
+
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -47,7 +145,7 @@ export async function POST(req: NextRequest) {
         model: "claude-sonnet-4-20250514",
         max_tokens: 3000,
         system: SYSTEM_PROMPT,
-        messages: [{ role: "user", content: prompt }],
+        messages: [{ role: "user", content: cleanPrompt }],
       }),
     });
 
