@@ -17,6 +17,9 @@ import {
   TypingStoryDemo, BeforeAfterComparison, WaveDivider,
   GlowingStatNumber,
 } from "./Animations";
+import FAQ from "./FAQ";
+import EmailCapture from "./EmailCapture";
+import SocialProof from "./SocialProof";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -298,6 +301,12 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             marginTop: 16,
           }}>
             3 free stories a month. No credit card required.
+          </p>
+          <p style={{
+            fontFamily: T.fontSans, fontSize: 12, color: T.gray300,
+            marginTop: 8,
+          }}>
+            Free to use. No account required. Your data stays on your device.
           </p>
 
           {/* Demo scenario buttons — redesigned navy pills */}
@@ -589,11 +598,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               })}
             </div>
           </motion.div>
-
-          {/* Circular cycle diagram */}
-          <div style={{ marginBottom: 48, maxWidth: 500, margin: "0 auto 48px" }}>
-            <CharacterCycleDiagram />
-          </div>
 
           {/* Philosopher Portraits */}
           <motion.div
@@ -1190,16 +1194,70 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                 color: T.navy, background: T.gold, border: "none",
                 borderRadius: T.radiusSm, cursor: "pointer",
               }}>
-                Start Premium Trial
+                Upgrade to Premium
               </button>
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* ═══ SOCIAL PROOF ═══ */}
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 80, paddingBottom: 80, background: T.white }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={0}
+            style={{ textAlign: "center", marginBottom: 40 }}
+          >
+            <h2 style={{
+              fontFamily: T.fontSans, fontSize: "clamp(24px, 3vw, 36px)",
+              fontWeight: 800, color: T.navy, lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+            }}>
+              What families are saying
+            </h2>
+          </motion.div>
+          <SocialProof />
+        </div>
+      </section>
+
+      {/* ═══ FAQ ═══ */}
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 80, paddingBottom: 80, background: T.bg }}>
+        <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={0}
+            style={{ textAlign: "center", marginBottom: 40 }}
+          >
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+              color: T.gold, letterSpacing: "0.08em", textTransform: "uppercase",
+              marginBottom: 16,
+            }}>
+              FAQ
+            </p>
+            <h2 style={{
+              fontFamily: T.fontSans, fontSize: "clamp(24px, 3vw, 36px)",
+              fontWeight: 800, color: T.navy, lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+            }}>
+              Common questions
+            </h2>
+          </motion.div>
+          <FAQ />
+        </div>
+      </section>
+
+      {/* ═══ EMAIL CAPTURE ═══ */}
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 80, paddingBottom: 80, background: T.white }}>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+          <EmailCapture />
+        </div>
+      </section>
+
       {/* ═══ FINAL CTA ═══ */}
       <section className="px-6 sm:px-8 md:px-10" style={{
-        paddingTop: 100, paddingBottom: 100, background: T.white, textAlign: "center",
+        paddingTop: 100, paddingBottom: 100, background: T.bg, textAlign: "center",
       }}>
         <motion.div
           initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -1245,26 +1303,123 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
 
       {/* ═══ FOOTER ═══ */}
       <footer className="px-6 sm:px-8 md:px-10" style={{
-        paddingTop: 40, paddingBottom: 40, borderTop: `1px solid ${T.gray100}`,
-        background: T.bg,
+        paddingTop: 48, paddingBottom: 48, borderTop: `1px solid ${T.gray100}`,
+        background: T.navy,
       }}>
-        <div className="flex flex-col md:flex-row gap-4 items-center" style={{
-          maxWidth: 900, margin: "0 auto",
-          justifyContent: "space-between",
-        }}>
-          <div style={{
-            display: "flex", alignItems: "center", gap: 8,
-            fontFamily: T.fontSans, fontSize: 14, fontWeight: 600, color: T.gray500,
-          }}>
-            <Shield size={16} color={T.gold} />
-            Virtue Forge
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16" style={{ marginBottom: 32 }}>
+            {/* Brand */}
+            <div style={{ flex: 1 }}>
+              <div style={{
+                display: "flex", alignItems: "center", gap: 8,
+                fontFamily: T.fontSans, fontSize: 16, fontWeight: 700, color: T.white,
+                marginBottom: 12,
+              }}>
+                <Shield size={18} color={T.gold} />
+                Virtue Forge
+              </div>
+              <p style={{
+                fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
+                lineHeight: 1.6, maxWidth: 280,
+              }}>
+                Building character through story. AI-generated adventures and 57+ hand-curated classics
+                mapped to classical virtues.
+              </p>
+            </div>
+
+            {/* Links */}
+            <div style={{ display: "flex", gap: 32, flexWrap: "wrap" }}>
+              <div>
+                <h4 style={{
+                  fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+                  color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
+                  marginBottom: 12,
+                }}>Product</h4>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {[
+                    { label: "Story Forge", action: () => onNavigate ? onNavigate("stories") : onStart() },
+                    { label: "Book Library", action: () => onNavigate ? onNavigate("books") : onStart() },
+                    { label: "Pricing", action: onPricing },
+                  ].map((link) => (
+                    <button key={link.label} onClick={link.action} style={{
+                      fontFamily: T.fontSans, fontSize: 13, color: T.gray300,
+                      background: "none", border: "none", cursor: "pointer",
+                      textAlign: "left", padding: 0,
+                    }}>
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 style={{
+                  fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+                  color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
+                  marginBottom: 12,
+                }}>Legal</h4>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {[
+                    { label: "Privacy Policy", action: () => onNavigate?.("privacy") },
+                    { label: "Terms of Service", action: () => onNavigate?.("terms") },
+                  ].map((link) => (
+                    <button key={link.label} onClick={link.action} style={{
+                      fontFamily: T.fontSans, fontSize: 13, color: T.gray300,
+                      background: "none", border: "none", cursor: "pointer",
+                      textAlign: "left", padding: 0,
+                    }}>
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 style={{
+                  fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+                  color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
+                  marginBottom: 12,
+                }}>Contact</h4>
+                <a href="mailto:hello@virtueforge.ai" style={{
+                  fontFamily: T.fontSans, fontSize: 13, color: T.gray300,
+                  textDecoration: "none",
+                }}>
+                  hello@virtueforge.ai
+                </a>
+              </div>
+            </div>
           </div>
-          <p style={{
-            fontFamily: T.fontSerif, fontSize: 14, color: T.gray400,
-            fontStyle: "italic",
+
+          {/* Newsletter inline */}
+          <div style={{
+            display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between",
+            gap: 16, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.1)",
+            marginBottom: 20,
           }}>
-            &ldquo;We are what we repeatedly do.&rdquo; &mdash; Aristotle
-          </p>
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
+            }}>
+              Get weekly virtue stories &amp; reading ideas
+            </p>
+            <EmailCapture variant="inline" />
+          </div>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col md:flex-row gap-3 items-center" style={{
+            justifyContent: "space-between",
+            paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.1)",
+          }}>
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
+            }}>
+              &copy; 2026 Virtue Forge. All rights reserved.
+              Virtue Forge is a participant in the Amazon Services LLC Associates Program.
+            </p>
+            <p style={{
+              fontFamily: T.fontSerif, fontSize: 13, color: T.gray500,
+              fontStyle: "italic",
+            }}>
+              &ldquo;We are what we repeatedly do.&rdquo; &mdash; Aristotle
+            </p>
+          </div>
         </div>
       </footer>
     </div>

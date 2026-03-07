@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, ArrowLeft, Crown, Shield, Zap } from "lucide-react";
 import { T, PLANS } from "@/lib/tokens";
+import { trackEvent } from "@/lib/analytics";
 
 export default function PricingPage({ premium, onUpgrade, onBack }: {
   premium: boolean;
@@ -10,6 +11,30 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
   onBack: () => void;
 }) {
   const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const handleStripeCheckout = async () => {
+    setCheckoutLoading(true);
+    trackEvent("checkout_started");
+    try {
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: billing }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else if (data.error) {
+        // Stripe not configured — fall back to local upgrade
+        onUpgrade();
+      }
+    } catch {
+      // Fallback to local upgrade if Stripe unavailable
+      onUpgrade();
+    }
+    setCheckoutLoading(false);
+  };
   const yearlyDiscount = Math.round((1 - PLANS.premium.yearlyPrice / (PLANS.premium.monthlyPrice * 12)) * 100);
 
   return (
@@ -203,14 +228,15 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
                 Active
               </div>
             ) : (
-              <button onClick={onUpgrade} style={{
+              <button onClick={handleStripeCheckout} disabled={checkoutLoading} style={{
                 width: "100%", marginTop: 28, padding: "12px 20px",
                 fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
                 color: T.navy, background: T.gold, border: "none",
-                borderRadius: T.radiusSm, cursor: "pointer",
+                borderRadius: T.radiusSm, cursor: checkoutLoading ? "default" : "pointer",
                 transition: "opacity 0.15s",
+                opacity: checkoutLoading ? 0.6 : 1,
               }}>
-                Start Premium — {billing === "yearly" ? `$${PLANS.premium.yearlyPrice}/year` : `$${PLANS.premium.monthlyPrice}/month`}
+                {checkoutLoading ? "Loading..." : `Start Premium — ${billing === "yearly" ? `$${PLANS.premium.yearlyPrice}/year` : `$${PLANS.premium.monthlyPrice}/month`}`}
               </button>
             )}
           </motion.div>
@@ -222,56 +248,11 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
             <p style={{
               fontFamily: T.fontSans, fontSize: 14, color: T.gray400,
             }}>
-              7-day free trial · Cancel anytime · No credit card required to start
+              Cancel anytime · No credit card required to start
             </p>
           </div>
         )}
 
-        {/* Story Packs Teaser */}
-        {!premium && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            style={{
-              marginTop: 48, padding: 32, borderRadius: T.radiusLg,
-              background: T.white, border: `1px solid ${T.gray100}`,
-              textAlign: "center",
-            }}
-          >
-            <h3 style={{
-              fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
-              color: T.navy, marginBottom: 8,
-            }}>
-              Coming Soon: Virtue Story Packs
-            </h3>
-            <p style={{
-              fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
-              lineHeight: 1.6, maxWidth: 500, margin: "0 auto",
-            }}>
-              Beautifully formatted, printable story collections — curated by virtue and age group.
-              7 original stories with discussion guides, ready for bedtime.
-            </p>
-            <div style={{
-              display: "flex", justifyContent: "center", gap: 12, marginTop: 20,
-              flexWrap: "wrap",
-            }}>
-              {[
-                "7 Courage Stories (Ages 4-6)",
-                "30-Day Virtue Tales",
-                "Wisdom Stories (Ages 8-10)",
-              ].map((pack) => (
-                <span key={pack} style={{
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
-                  padding: "6px 14px", borderRadius: 100,
-                  background: T.goldSubtle, color: T.gold,
-                  border: `1px solid ${T.gold}30`,
-                }}>
-                  {pack}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        )}
       </div>
     </div>
   );

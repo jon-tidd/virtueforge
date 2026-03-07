@@ -16,8 +16,10 @@ import ShieldTracker from "./app/ShieldTracker";
 import VirtueSelector from "./app/VirtueSelector";
 import ChildManager from "./app/ChildManager";
 import PricingPage from "./app/PricingPage";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfService from "./TermsOfService";
 
-type AppPage = "landing" | "dashboard" | "virtues" | "children" | "books" | "stories" | "shield" | "pricing";
+type AppPage = "landing" | "dashboard" | "virtues" | "children" | "books" | "stories" | "shield" | "pricing" | "privacy" | "terms";
 
 export default function VirtueForgeApp() {
   const [page, setPage] = useState<AppPage>("landing");
@@ -155,6 +157,15 @@ export default function VirtueForgeApp() {
         onBack={() => setPage(appData.setupComplete ? "dashboard" : "landing")}
       />
     );
+  }
+
+  // Legal pages
+  if (page === "privacy") {
+    return <PrivacyPolicy onBack={() => setPage(appData.setupComplete ? "dashboard" : "landing")} />;
+  }
+
+  if (page === "terms") {
+    return <TermsOfService onBack={() => setPage(appData.setupComplete ? "dashboard" : "landing")} />;
   }
 
   // App pages (post-setup)

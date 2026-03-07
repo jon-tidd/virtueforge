@@ -4,17 +4,12 @@ import { motion } from "framer-motion";
 import { Search, Filter, BookOpen, ExternalLink, Check, Star, ChevronDown } from "lucide-react";
 import {
   VIRTUES, BOOKS_DATABASE, READING_LEVELS, STRUGGLES_MAP,
-  getSubVirtue, getVirtueParent, getRecommendedBooks, type AppData,
+  getSubVirtue, getVirtueParent, getRecommendedBooks, getAmazonUrl, type AppData,
 } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
 
-// Affiliate link helpers — add tracking tags
-function getAmazonLink(url: string): string {
-  if (!url) return "";
-  // Append affiliate tag (replace with your real tag)
-  const separator = url.includes("?") ? "&" : "?";
-  return `${url}${separator}tag=virtueforge-20`;
-}
+// Use centralized affiliate link helper
+const getAmazonLink = getAmazonUrl;
 
 function getBookshopLink(title: string, author: string): string {
   const query = encodeURIComponent(`${title} ${author}`);
@@ -127,6 +122,12 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
         }}>
           {BOOKS_DATABASE.length} hand-curated books mapped to classical virtues.
           {hasChildren ? ` Showing recommendations for ${child?.name}.` : ""}
+        </p>
+        <p style={{
+          fontFamily: T.fontSans, fontSize: 11, color: T.gray400,
+          marginTop: 4,
+        }}>
+          Links to Amazon are affiliate links. We may earn a small commission at no cost to you.
         </p>
       </div>
 

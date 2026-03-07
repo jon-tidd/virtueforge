@@ -1,3 +1,12 @@
+// Amazon Associates affiliate tag — append to all Amazon URLs
+export const AMAZON_AFFILIATE_TAG = "virtueforge-20";
+
+export function getAmazonUrl(baseUrl: string): string {
+  if (!baseUrl.includes("amazon.com")) return baseUrl;
+  const separator = baseUrl.includes("?") ? "&" : "?";
+  return `${baseUrl}${separator}tag=${AMAZON_AFFILIATE_TAG}`;
+}
+
 export const VIRTUES: Record<string, Virtue> = {
   prudence: {
     name: "Prudence",
