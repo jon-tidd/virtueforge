@@ -112,6 +112,7 @@ export default function PrivacyPolicy({ onBack }: { onBack: () => void }) {
           <li style={liStyle}><strong>Supabase:</strong> User authentication and data storage (when account features are enabled). See <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: T.navy }}>Supabase&apos;s Privacy Policy</a>.</li>
           <li style={liStyle}><strong>Stripe:</strong> Payment processing for Premium subscriptions. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: T.navy }}>Stripe&apos;s Privacy Policy</a>.</li>
           <li style={liStyle}><strong>Amazon:</strong> We link to books on Amazon through the Amazon Associates Program. Amazon&apos;s own privacy policy governs their site.</li>
+          <li style={liStyle}><strong>Bookshop.org:</strong> We link to books on Bookshop.org through their affiliate program. Bookshop.org&apos;s own privacy policy governs their site.</li>
         </ul>
 
         <h2 style={h2Style}>Data Storage &amp; Security</h2>

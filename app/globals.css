@@ -86,3 +86,52 @@ body {
 .animate-compass-reveal {
   animation: compassReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* ─── GOLD GRADIENT TEXT ─────────────────────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4A846 0%, #F0C94B 40%, #D4A846 70%, #B8922E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── CTA GLOW HOVER ────────────────────────────────────────────────────── */
+.cta-glow {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(212, 168, 70, 0.25), 0 4px 12px rgba(10, 22, 40, 0.15);
+}
+.cta-glow:active {
+  transform: translateY(0);
+}
+
+/* ─── CARD LIFT ──────────────────────────────────────────────────────────── */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── SUBTLE FLOAT ANIMATION ─────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ─── HERO GRADIENT ORB PULSE ────────────────────────────────────────────── */
+@keyframes orbPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-orb-pulse {
+  animation: orbPulse 4s ease-in-out infinite;
+}

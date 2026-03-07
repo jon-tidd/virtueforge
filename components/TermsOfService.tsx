@@ -110,11 +110,11 @@ export default function TermsOfService({ onBack }: { onBack: () => void }) {
           ownership of those works.
         </p>
 
-        <h2 style={h2Style}>7. Amazon Associates</h2>
+        <h2 style={h2Style}>7. Affiliate Programs</h2>
         <p style={pStyle}>
           Virtue Forge is a participant in the Amazon Services LLC Associates Program, an affiliate
-          advertising program. Links to books on Amazon are affiliate links, and we may earn commissions
-          from qualifying purchases.
+          advertising program, and the Bookshop.org Affiliate Program. Links to books on Amazon and
+          Bookshop.org are affiliate links, and we may earn commissions from qualifying purchases.
         </p>
 
         <h2 style={h2Style}>8. Prohibited Uses</h2>

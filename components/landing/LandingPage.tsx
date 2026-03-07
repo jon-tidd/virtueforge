@@ -231,15 +231,15 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
         position: "relative", overflow: "hidden",
       }}>
         {/* Subtle gradient orbs */}
-        <div style={{
+        <div className="animate-orb-pulse" style={{
           position: "absolute", top: -200, right: -200, width: 600, height: 600,
           borderRadius: "50%", background: `radial-gradient(circle, ${VC.prudence.light} 0%, transparent 70%)`,
           pointerEvents: "none", opacity: 0.5,
         }} />
-        <div style={{
+        <div className="animate-orb-pulse" style={{
           position: "absolute", bottom: -200, left: -200, width: 500, height: 500,
           borderRadius: "50%", background: `radial-gradient(circle, ${T.goldSubtle} 0%, transparent 70%)`,
-          pointerEvents: "none", opacity: 0.6,
+          pointerEvents: "none", opacity: 0.6, animationDelay: "2s",
         }} />
 
         <motion.div
@@ -253,7 +253,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             letterSpacing: "-0.03em", marginBottom: 24,
           }}>
             Stories That Actually<br />
-            Build <span style={{ color: T.gold }}>Character</span>
+            Build <span className="text-gold-gradient">Character</span>
           </h1>
 
           <p style={{
@@ -267,30 +267,22 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
 
           {/* Two-path CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4" style={{ justifyContent: "center", alignItems: "center" }}>
-            <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
+            <button className="cta-glow" onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
               color: T.gold, background: T.navy, border: "none", cursor: "pointer",
               padding: "14px 32px", borderRadius: T.radiusSm,
               display: "flex", alignItems: "center", gap: 8,
               boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
-              transition: "transform 0.15s, box-shadow 0.15s",
-            }}
-              onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(10,22,40,0.35)"; }}
-              onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(10,22,40,0.3)"; }}
-            >
+            }}>
               <Pen size={18} />
               Generate a Story
             </button>
-            <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
+            <button className="card-lift" onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
               color: T.navy, background: T.white, border: `2px solid ${T.navy}`,
               cursor: "pointer", padding: "12px 32px", borderRadius: T.radiusSm,
               display: "flex", alignItems: "center", gap: 8,
-              transition: "transform 0.15s, box-shadow 0.15s",
-            }}
-              onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 14px rgba(10,22,40,0.12)"; }}
-              onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-            >
+            }}>
               <BookOpen size={18} />
               Discover Great Books
             </button>
@@ -298,15 +290,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
 
           <p style={{
             fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
-            marginTop: 16,
+            marginTop: 16, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 16px",
           }}>
-            3 free stories a month. No credit card required.
-          </p>
-          <p style={{
-            fontFamily: T.fontSans, fontSize: 12, color: T.gray300,
-            marginTop: 8,
-          }}>
-            Free to use. No account required. Your data stays on your device.
+            <span>Free to use</span>
+            <span style={{ color: T.gray300 }}>&middot;</span>
+            <span>No account required</span>
+            <span style={{ color: T.gray300 }}>&middot;</span>
+            <span>Your data stays on your device</span>
           </p>
 
           {/* Demo scenario buttons — redesigned navy pills */}
@@ -318,18 +308,16 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                 <button
                   key={scenario.label}
                   onClick={() => onDemo(scenario)}
+                  className="cta-glow"
                   style={{
                     fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
                     padding: "10px 20px", borderRadius: 100,
-                    background: T.navy, color: T.white,
-                    border: "none",
+                    background: T.navyMid, color: T.white,
+                    border: `1px solid rgba(255,255,255,0.1)`,
                     cursor: "pointer",
                     boxShadow: T.shadowMd,
-                    transition: "all 0.15s",
                     display: "flex", alignItems: "center", gap: 8,
                   }}
-                  onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = T.shadowLg; }}
-                  onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = T.shadowMd; }}
                 >
                   <Sparkles size={14} />
                   {scenario.label}
@@ -1018,6 +1006,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               return (
                 <motion.div
                   key={key}
+                  className="card-lift"
                   initial="hidden" whileInView="visible" viewport={{ once: true }}
                   variants={fadeUp} custom={i + 1}
                   style={{
@@ -1278,7 +1267,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             Join families who are using the world&apos;s oldest wisdom to raise children of courage, wisdom, justice, and self-mastery.
           </p>
           <div className="flex flex-col sm:flex-row gap-3" style={{ justifyContent: "center", alignItems: "center" }}>
-            <button onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
+            <button className="cta-glow" onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
               color: T.gold, background: T.navy, border: "none", cursor: "pointer",
               padding: "16px 36px", borderRadius: T.radiusSm,
@@ -1288,7 +1277,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               <Pen size={18} />
               Generate a Story
             </button>
-            <button onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
+            <button className="card-lift" onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
               color: T.navy, background: T.white, border: `2px solid ${T.navy}`,
               cursor: "pointer", padding: "14px 36px", borderRadius: T.radiusSm,
@@ -1411,7 +1400,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
             }}>
               &copy; 2026 Virtue Forge. All rights reserved.
-              Virtue Forge is a participant in the Amazon Services LLC Associates Program.
+              Virtue Forge is a participant in the Amazon Services LLC Associates Program
+              and the Bookshop.org Affiliate Program.
             </p>
             <p style={{
               fontFamily: T.fontSerif, fontSize: 13, color: T.gray500,
