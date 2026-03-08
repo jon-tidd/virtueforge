@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { id: "dashboard", label: "Home", icon: LayoutDashboard },
   { id: "virtues", label: "Virtues", icon: Heart },
   { id: "books", label: "Books", icon: BookOpen },
-  { id: "stories", label: "Story Forge", icon: Pen },
+  { id: "stories", label: "Story Studio", icon: Pen },
   { id: "shield", label: "Compass", icon: BarChart3 },
 ] as const;
 
@@ -45,7 +45,7 @@ export default function AppNav({ currentPage, onNavigate, premium, onPricing }: 
           }}
         >
           <Shield size={20} strokeWidth={2.5} color={T.gold} />
-          Virtue Forge
+          Bedtime Virtues
         </button>
 
         {/* Desktop Navigation */}

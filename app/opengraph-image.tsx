@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Virtue Forge — Stories That Build Character";
+export const alt = "Bedtime Virtues — Stories That Build Character";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -51,7 +51,7 @@ export default async function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Virtue Forge
+            Bedtime Virtues
           </span>
         </div>
 

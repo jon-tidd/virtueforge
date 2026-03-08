@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${req.nextUrl.origin}/?upgraded=true`,
       cancel_url: `${req.nextUrl.origin}/?canceled=true`,
-      metadata: { source: "virtueforge" },
+      metadata: { source: "bedtimevirtues" },
     });
 
     return NextResponse.json({ url: session.url });

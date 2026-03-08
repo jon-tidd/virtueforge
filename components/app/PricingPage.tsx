@@ -77,7 +77,7 @@ export default function PricingPage({ premium, onUpgrade, onBack }: {
             lineHeight: 1.6, maxWidth: 500, margin: "0 auto",
           }}>
             {premium
-              ? "Thank you for supporting Virtue Forge. You have unlimited access to all features."
+              ? "Thank you for supporting Bedtime Virtues. You have unlimited access to all features."
               : "Everything you need to get started is free. Upgrade when your family is ready for more."
             }
           </p>

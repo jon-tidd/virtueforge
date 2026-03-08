@@ -61,14 +61,14 @@ export default function PrivacyPolicy({ onBack }: { onBack: () => void }) {
         </p>
 
         <p style={pStyle}>
-          Virtue Forge (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the websites at virtueforge.ai
-          and virtueforge.org (the &ldquo;Service&rdquo;). This Privacy Policy explains how we collect, use, and
+          Bedtime Virtues (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website at bedtimevirtues.com
+          (the &ldquo;Service&rdquo;). This Privacy Policy explains how we collect, use, and
           protect information when you use our Service.
         </p>
 
         <h2 style={h2Style}>Children&apos;s Privacy &amp; COPPA Compliance</h2>
         <p style={pStyle}>
-          Virtue Forge is designed for use by <strong>parents and guardians</strong>, not by children directly.
+          Bedtime Virtues is designed for use by <strong>parents and guardians</strong>, not by children directly.
           We do not knowingly collect personal information directly from children under 13.
           All child-related information (first name, age, and optional behavioral challenges) is provided
           by and controlled by the parent or guardian for the purpose of generating personalized stories.
@@ -160,7 +160,7 @@ export default function PrivacyPolicy({ onBack }: { onBack: () => void }) {
           If you have questions about this Privacy Policy or your child&apos;s data, please contact us at:
         </p>
         <p style={{ ...pStyle, fontWeight: 600 }}>
-          hello@virtueforge.ai
+          hello@bedtimevirtues.com
         </p>
       </div>
     </div>

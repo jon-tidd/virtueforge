@@ -13,7 +13,7 @@ const getAmazonLink = getAmazonUrl;
 
 function getBookshopLink(title: string, author: string): string {
   const query = encodeURIComponent(`${title} ${author}`);
-  return `https://bookshop.org/search?keywords=${query}&affiliate=virtueforge`;
+  return `https://bookshop.org/search?keywords=${query}&affiliate=bedtimevirtues`;
 }
 
 export default function BookExplorer({ appData, selChild, setSelChild, onMarkRead }: {

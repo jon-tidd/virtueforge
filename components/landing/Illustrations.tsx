@@ -1,5 +1,5 @@
 "use client";
-// ─── SVG Illustrations for VirtueForge Landing Page ──────────────────────────
+// ─── SVG Illustrations for Bedtime Virtues Landing Page ──────────────────────
 // Geometric/minimal style using navy (#0A1628) + gold (#D4A846) palette
 
 const NAVY = "#0A1628";
@@ -426,7 +426,7 @@ export function StoryForgeMockup() {
         {/* URL bar */}
         <rect x="100" y="8" width="280" height="14" rx="3" fill={WHITE} />
         <text x="130" y="18" fontSize="7" fill={GRAY400} fontFamily="Inter, sans-serif">
-          virtueforge.vercel.app/stories
+          bedtimevirtues.com/stories
         </text>
 
         {/* App header */}
@@ -518,7 +518,7 @@ export function BookExplorerMockup() {
         <circle cx="42" cy="15" r="4" fill="#28C840" />
         <rect x="100" y="8" width="280" height="14" rx="3" fill={WHITE} />
         <text x="130" y="18" fontSize="7" fill={GRAY400} fontFamily="Inter, sans-serif">
-          virtueforge.vercel.app/books
+          bedtimevirtues.com/books
         </text>
 
         {/* App header */}

@@ -30,21 +30,21 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Virtue Forge | Stories That Build Character",
+  title: "Bedtime Virtues | Stories That Build Character",
   description:
-    "Personalized AI stories rooted in 2,400 years of wisdom. Build courage, justice, wisdom & self-mastery in your child.",
+    "Personalized AI bedtime stories rooted in 2,400 years of wisdom. Build courage, justice, wisdom & self-mastery in your child.",
   openGraph: {
-    title: "Virtue Forge — Character-Building Stories for Kids",
+    title: "Bedtime Virtues — Character-Building Stories for Kids",
     description:
-      "Instant, personalized adventures that actually develop virtues.",
+      "Personalized bedtime adventures that actually develop virtues.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Virtue Forge | Stories That Build Character",
+    title: "Bedtime Virtues | Stories That Build Character",
     description:
-      "Personalized AI stories rooted in 2,400 years of wisdom.",
+      "Personalized AI bedtime stories rooted in 2,400 years of wisdom.",
     images: ["/og-image.jpg"],
   },
 };

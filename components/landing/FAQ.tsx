@@ -11,26 +11,26 @@ const FAQ_ITEMS = [
   },
   {
     question: "How is this different from ChatGPT?",
-    answer: "Virtue Forge is purpose-built for character education. Unlike general-purpose AI chatbots, our stories are grounded in the Aristotelian virtue framework (Prudence, Justice, Courage, Temperance) with 2,400 years of philosophical tradition behind them. Every story is calibrated to your child\u2019s age, reading level, and real-life struggles \u2014 and includes discussion questions and family activities. We also offer 57+ hand-curated classic books mapped to specific virtues.",
+    answer: "Bedtime Virtues is purpose-built for character education. Unlike general-purpose AI chatbots, our stories are grounded in the Aristotelian virtue framework (Prudence, Justice, Courage, Temperance) with 2,400 years of philosophical tradition behind them. Every story is calibrated to your child\u2019s age, reading level, and real-life struggles \u2014 and includes discussion questions and family activities. We also offer 57+ hand-curated classic books mapped to specific virtues.",
   },
   {
     question: "Who curated the book library?",
     answer: "Our library of 57+ books was hand-selected from 2,600 years of children\u2019s literature \u2014 from Aesop\u2019s Fables to modern classics. Each book was chosen for moral clarity, narrative quality, and age-appropriateness, then mapped to specific virtues and reading levels. We include both Amazon links and free public domain editions where available.",
   },
   {
-    question: "What ages is Virtue Forge designed for?",
-    answer: "Virtue Forge supports children from Pre-K (ages 2\u20134) through Middle School (ages 12\u201314). AI-generated stories are automatically calibrated to your child\u2019s age and reading level \u2014 shorter and simpler for younger children, more complex for older ones. Our book library spans the same range with reading level filters.",
+    question: "What ages is Bedtime Virtues designed for?",
+    answer: "Bedtime Virtues supports children from Pre-K (ages 2\u20134) through Middle School (ages 12\u201314). AI-generated stories are automatically calibrated to your child\u2019s age and reading level \u2014 shorter and simpler for younger children, more complex for older ones. Our book library spans the same range with reading level filters.",
   },
   {
     question: "Is my child\u2019s data private?",
     answer: "Absolutely. When used without an account, all data stays on your device in browser storage \u2014 we never see it. When you generate a story, your child\u2019s first name, age, and situation are sent securely to our AI provider (Anthropic) to generate the story, then immediately discarded. We don\u2019t store child data on our servers, don\u2019t use it for advertising, and don\u2019t sell it. See our Privacy Policy for full details.",
   },
   {
-    question: "Do I need to pay to use Virtue Forge?",
+    question: "Do I need to pay to use Bedtime Virtues?",
     answer: "No. The free tier includes access to our full 57-book library, 3 AI-generated stories per month, basic virtue tracking, and one child profile. Premium unlocks unlimited stories, unlimited child profiles, printable PDFs, and advanced tracking. You can use the free tier indefinitely.",
   },
   {
-    question: "What virtues does Virtue Forge teach?",
+    question: "What virtues does Bedtime Virtues teach?",
     answer: "We use the four cardinal virtues from the Aristotelian-Thomistic tradition: Prudence (wisdom), Justice (right relationship with others), Courage (strength of heart), and Temperance (self-mastery). Each cardinal virtue has four sub-virtues \u2014 16 virtues total, including curiosity, honesty, perseverance, patience, generosity, resilience, and more.",
   },
 ];

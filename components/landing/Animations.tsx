@@ -372,7 +372,7 @@ export function BeforeAfterComparison() {
           color: T.gold, textTransform: "uppercase", letterSpacing: "0.08em",
           marginBottom: 16,
         }}>
-          With Virtue Forge
+          With Bedtime Virtues
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {WITH_ITEMS.map((item, i) => {

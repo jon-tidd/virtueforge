@@ -199,7 +199,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             fontFamily: T.fontSans, fontWeight: 700, fontSize: 18, color: T.navy,
           }}>
             <Shield size={22} strokeWidth={2.5} color={T.gold} />
-            Virtue Forge
+            Bedtime Virtues
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
             <a href="#science" className="hidden md:inline" style={{
@@ -1305,13 +1305,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                 marginBottom: 12,
               }}>
                 <Shield size={18} color={T.gold} />
-                Virtue Forge
+                Bedtime Virtues
               </div>
               <p style={{
                 fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
                 lineHeight: 1.6, maxWidth: 280,
               }}>
-                Building character through story. AI-generated adventures and 57+ hand-curated classics
+                Building character through story. Personalized AI bedtime stories and 57+ hand-curated classics
                 mapped to classical virtues.
               </p>
             </div>
@@ -1326,7 +1326,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                 }}>Product</h4>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {[
-                    { label: "Story Forge", action: () => onNavigate ? onNavigate("stories") : onStart() },
+                    { label: "Story Studio", action: () => onNavigate ? onNavigate("stories") : onStart() },
                     { label: "Book Library", action: () => onNavigate ? onNavigate("books") : onStart() },
                     { label: "Pricing", action: onPricing },
                   ].map((link) => (
@@ -1367,11 +1367,11 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
                   marginBottom: 12,
                 }}>Contact</h4>
-                <a href="mailto:hello@virtueforge.ai" style={{
+                <a href="mailto:hello@bedtimevirtues.com" style={{
                   fontFamily: T.fontSans, fontSize: 13, color: T.gray300,
                   textDecoration: "none",
                 }}>
-                  hello@virtueforge.ai
+                  hello@bedtimevirtues.com
                 </a>
               </div>
             </div>
@@ -1399,8 +1399,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             <p style={{
               fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
             }}>
-              &copy; 2026 Virtue Forge. All rights reserved.
-              Virtue Forge is a participant in the Amazon Services LLC Associates Program
+              &copy; 2026 Bedtime Virtues. All rights reserved.
+              Bedtime Virtues is a participant in the Amazon Services LLC Associates Program
               and the Bookshop.org Affiliate Program.
             </p>
             <p style={{

@@ -1,4 +1,4 @@
-// ─── VIRTUE FORGE DESIGN SYSTEM ──────────────────────────────────────────────
+// ─── BEDTIME VIRTUES DESIGN SYSTEM ───────────────────────────────────────────
 // Notion-inspired: clean, bold, generous whitespace, section color-coding
 
 export const T = {
