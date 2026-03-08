@@ -9,7 +9,7 @@ import {
 import { VIRTUES } from "@/lib/data";
 import { T, VC, PLANS } from "@/lib/tokens";
 import {
-  HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
+  HeroIllustration, ScreenTimeIllustration,
   StoryForgeMockup, BookExplorerMockup,
   CAROUSEL_BOOKS,
 } from "./Illustrations";
@@ -439,10 +439,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             }}>
               The Cycle of Character Formation
             </h3>
-            {/* Character cycle illustration */}
-            <div style={{ maxWidth: 500, margin: "0 auto 40px" }}>
-              <CharacterCycleDiagram />
-            </div>
             {/* Desktop: horizontal row with arrows */}
             <div className="hidden md:grid" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
               {CHARACTER_CYCLE.map((step, i) => {
@@ -1107,24 +1103,25 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                 designed to help your child connect the virtue to their own life. This is the
                 Aristotelian cycle in action:
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+              {/* Desktop: horizontal with arrows */}
+              <div className="hidden sm:grid" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
                 {[
-                  { icon: BookOpen, label: "Story", color: VC.prudence.main, desc: "Encounter virtue in narrative" },
-                  { icon: Sparkles, label: "Imagination", color: VC.justice.main, desc: "See themselves as the hero" },
-                  { icon: RefreshCw, label: "Habituation", color: VC.courage.main, desc: "Daily practice builds habit" },
-                  { icon: Shield, label: "Virtue", color: VC.temperance.main, desc: "Habit becomes character" },
-                  { icon: Sun, label: "Flourishing", color: T.gold, desc: "Character enables a good life" },
-                ].map((step, i) => {
+                  { icon: BookOpen, label: "Story", desc: "Encounter virtue in narrative" },
+                  { icon: Sparkles, label: "Imagination", desc: "See themselves as the hero" },
+                  { icon: RefreshCw, label: "Habituation", desc: "Daily practice builds habit" },
+                  { icon: Shield, label: "Virtue", desc: "Habit becomes character" },
+                  { icon: Sun, label: "Flourishing", desc: "Character enables a good life" },
+                ].map((step, i, arr) => {
                   const CycleIcon = step.icon;
                   return (
-                    <div key={i} style={{ textAlign: "center" }}>
+                    <div key={i} style={{ textAlign: "center", position: "relative" }}>
                       <div style={{
-                        width: 44, height: 44, borderRadius: 12,
-                        background: `${step.color}12`, display: "flex",
-                        alignItems: "center", justifyContent: "center",
-                        margin: "0 auto 8px",
+                        width: 48, height: 48, borderRadius: 14,
+                        background: T.goldSubtle, display: "flex", alignItems: "center",
+                        justifyContent: "center", margin: "0 auto 10px",
+                        border: `1px solid ${T.gold}30`,
                       }}>
-                        <CycleIcon size={20} color={step.color} strokeWidth={2} />
+                        <CycleIcon size={22} color={T.gold} strokeWidth={2} />
                       </div>
                       <div style={{
                         fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
@@ -1134,6 +1131,41 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                         fontFamily: T.fontSans, fontSize: 11, color: T.gray400,
                         lineHeight: 1.4, margin: 0,
                       }}>{step.desc}</p>
+                      {i < arr.length - 1 && (
+                        <div style={{
+                          position: "absolute", right: -12, top: 20,
+                          color: T.gold,
+                        }}>
+                          <ArrowRight size={18} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+              {/* Mobile: vertical list */}
+              <div className="flex sm:hidden flex-col gap-3">
+                {[
+                  { icon: BookOpen, label: "Story", desc: "Encounter virtue in narrative" },
+                  { icon: Sparkles, label: "Imagination", desc: "See themselves as the hero" },
+                  { icon: RefreshCw, label: "Habituation", desc: "Daily practice builds habit" },
+                  { icon: Shield, label: "Virtue", desc: "Habit becomes character" },
+                  { icon: Sun, label: "Flourishing", desc: "Character enables a good life" },
+                ].map((step, i) => {
+                  const CycleIcon = step.icon;
+                  return (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <div style={{
+                        width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                        background: T.goldSubtle, display: "flex", alignItems: "center",
+                        justifyContent: "center", border: `1px solid ${T.gold}30`,
+                      }}>
+                        <CycleIcon size={18} color={T.gold} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <span style={{ fontFamily: T.fontSans, fontSize: 13, fontWeight: 700, color: T.navy }}>{step.label}</span>
+                        <span style={{ fontFamily: T.fontSans, fontSize: 12, color: T.gray400, marginLeft: 6 }}>{step.desc}</span>
+                      </div>
                     </div>
                   );
                 })}
