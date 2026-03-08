@@ -186,7 +186,7 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
       />
 
-      <main className="px-6 sm:px-8 md:px-10 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto", overflowX: "hidden" }}>
+      <main className="px-6 sm:px-8 md:px-10" style={{ maxWidth: 960, margin: "0 auto", overflowX: "hidden", paddingTop: 24, paddingBottom: 80 }}>
         <AnimatePresence mode="wait">
           {page === "dashboard" && (
             <Dashboard
