@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   BookOpen, Shield, Sparkles, ChevronRight, ArrowRight,
@@ -10,7 +11,6 @@ import { T, VC, PLANS } from "@/lib/tokens";
 import {
   HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
   ScienceInfographic, StoryForgeMockup, BookExplorerMockup,
-  PrudenceOwl, JusticeScales, CourageLion, TemperanceTree,
   CAROUSEL_BOOKS,
 } from "./Illustrations";
 import {
@@ -31,6 +31,13 @@ const fadeUp = {
 
 const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
+};
+
+const VIRTUE_IMAGES: Record<string, { src: string; alt: string }> = {
+  prudence: { src: "/images/prudence-owl-sq.png", alt: "Wise owl representing prudence" },
+  justice: { src: "/images/justice-scales-sq.png", alt: "Golden scales representing justice" },
+  courage: { src: "/images/courage-lion-sq.png", alt: "Majestic lion representing courage" },
+  temperance: { src: "/images/temperance-tree-sq.png", alt: "Ancient tree representing temperance" },
 };
 
 export type DemoScenario = {
@@ -194,13 +201,17 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           display: "flex", alignItems: "center", justifyContent: "space-between",
           height: 64,
         }}>
-          <div style={{
-            display: "flex", alignItems: "center", gap: 10,
-            fontFamily: T.fontSans, fontWeight: 700, fontSize: 18, color: T.navy,
-          }}>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{
+              display: "flex", alignItems: "center", gap: 10,
+              fontFamily: T.fontSans, fontWeight: 700, fontSize: 18, color: T.navy,
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+            }}
+          >
             <Shield size={22} strokeWidth={2.5} color={T.gold} />
             Bedtime Virtues
-          </div>
+          </button>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
             <a href="#science" className="hidden md:inline" style={{
               fontFamily: T.fontSans, fontSize: 14, fontWeight: 500,
@@ -918,7 +929,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       <WaveDivider color={T.navy} />
 
       {/* ═══ TYPING STORY DEMO ═══ */}
-      <TypingStoryDemo />
+      <TypingStoryDemo onTryStoryForge={() => onNavigate ? onNavigate("stories") : onStart()} />
 
       <WaveDivider color={T.bg} />
 
@@ -1022,13 +1033,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           }}>
             {Object.entries(VIRTUES).map(([key, virtue], i) => {
               const vc = VC[key as keyof typeof VC];
-              const Icon = VIRTUE_ICONS[key];
-              const VIRTUE_ILLUSTRATIONS: Record<string, React.ReactNode> = {
-                prudence: <PrudenceOwl color={vc.main} bg={vc.light} />,
-                justice: <JusticeScales color={vc.main} bg={vc.light} />,
-                courage: <CourageLion color={vc.main} bg={vc.light} />,
-                temperance: <TemperanceTree color={vc.main} bg={vc.light} />,
-              };
+              const virtueImg = VIRTUE_IMAGES[key];
               return (
                 <motion.div
                   key={key}
@@ -1041,14 +1046,20 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                     textAlign: "center",
                   }}
                 >
-                  {VIRTUE_ILLUSTRATIONS[key]}
                   <div style={{
-                    width: 56, height: 56, borderRadius: 14,
-                    background: T.white, display: "flex", alignItems: "center",
-                    justifyContent: "center", margin: "16px auto 16px",
-                    boxShadow: T.shadow,
+                    width: 100, height: 100, borderRadius: 20, overflow: "hidden",
+                    margin: "0 auto 20px", boxShadow: T.shadow,
+                    border: `3px solid ${vc.main}30`,
                   }}>
-                    <Icon size={26} color={vc.main} strokeWidth={2} />
+                    {virtueImg && (
+                      <Image
+                        src={virtueImg.src}
+                        alt={virtueImg.alt}
+                        width={400}
+                        height={400}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    )}
                   </div>
                   <h3 style={{
                     fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,

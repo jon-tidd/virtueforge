@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles, BookOpen, Shield, Pen, Monitor, Heart,
-  Smartphone, Clock, X, Check, Users,
+  Smartphone, Clock, X, Check, Users, ArrowRight,
 } from "lucide-react";
 import { T, VC } from "@/lib/tokens";
 
@@ -80,7 +80,7 @@ const DEMO_STORIES = [
 
 type Phase = "typing" | "waiting" | "transitioning";
 
-export function TypingStoryDemo() {
+export function TypingStoryDemo({ onTryStoryForge }: { onTryStoryForge?: () => void } = {}) {
   const [storyIdx, setStoryIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("typing");
@@ -141,12 +141,22 @@ export function TypingStoryDemo() {
           </h2>
         </div>
 
-        {/* Story demo card */}
-        <div style={{
-          background: T.navyMid, borderRadius: T.radiusLg,
-          border: `1px solid rgba(255,255,255,0.08)`,
-          overflow: "hidden",
-        }}>
+        {/* Story demo card — clickable to Story Forge */}
+        <div
+          onClick={onTryStoryForge}
+          role={onTryStoryForge ? "button" : undefined}
+          tabIndex={onTryStoryForge ? 0 : undefined}
+          onKeyDown={onTryStoryForge ? (e) => { if (e.key === "Enter") onTryStoryForge(); } : undefined}
+          style={{
+            background: T.navyMid, borderRadius: T.radiusLg,
+            border: `1px solid rgba(255,255,255,0.08)`,
+            overflow: "hidden",
+            cursor: onTryStoryForge ? "pointer" : undefined,
+            transition: "border-color 0.2s ease, box-shadow 0.2s ease",
+          }}
+          onMouseEnter={(e) => { if (onTryStoryForge) { e.currentTarget.style.borderColor = "rgba(212,168,70,0.35)"; e.currentTarget.style.boxShadow = "0 0 30px rgba(212,168,70,0.1)"; } }}
+          onMouseLeave={(e) => { if (onTryStoryForge) { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; } }}
+        >
           {/* Top bar mimicking app UI */}
           <div style={{
             padding: "14px 20px", display: "flex", alignItems: "center",
@@ -275,6 +285,33 @@ export function TypingStoryDemo() {
             ))}
           </div>
         </div>
+
+        {/* CTA button below the demo */}
+        {onTryStoryForge && (
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            <button
+              onClick={onTryStoryForge}
+              className="cta-glow"
+              style={{
+                padding: "16px 36px", borderRadius: T.radiusSm,
+                fontFamily: T.fontSans, fontSize: 17, fontWeight: 700,
+                background: T.gold, color: T.navy, border: "none",
+                cursor: "pointer",
+                display: "inline-flex", alignItems: "center", gap: 10,
+              }}
+            >
+              <Sparkles size={18} />
+              Create Your Child&apos;s Story Now
+              <ArrowRight size={18} />
+            </button>
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
+              marginTop: 12,
+            }}>
+              Personalized bedtime stories in under 60 seconds
+            </p>
+          </div>
+        )}
       </div>
 
       <style>{`
