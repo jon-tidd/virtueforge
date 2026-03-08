@@ -11,7 +11,7 @@ import {
   HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
   ScienceInfographic, StoryForgeMockup, BookExplorerMockup,
   PrudenceOwl, JusticeScales, CourageLion, TemperanceTree,
-  PhilosopherPortrait, CAROUSEL_BOOKS,
+  CAROUSEL_BOOKS,
 } from "./Illustrations";
 import {
   TypingStoryDemo, BeforeAfterComparison, WaveDivider,
@@ -591,16 +591,38 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </div>
           </motion.div>
 
-          {/* Philosopher Portraits */}
+          {/* Philosopher Video */}
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={2}
             style={{ marginBottom: 48 }}
           >
-            <div className="grid grid-cols-3 gap-4" style={{ maxWidth: 540, margin: "0 auto" }}>
-              <PhilosopherPortrait name="Aristotle" quote="We are what we repeatedly do." />
-              <PhilosopherPortrait name="Plato" quote="The soul takes nothing with her to the next world but her education and culture." />
-              <PhilosopherPortrait name="C.S. Lewis" quote="Since it is so likely that children will meet cruel enemies, let them at least have heard of brave knights." />
+            <div style={{ maxWidth: 640, margin: "0 auto", borderRadius: 16, overflow: "hidden" }}>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: "100%", display: "block" }}
+              >
+                <source src="/videos/philosophers.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="grid grid-cols-3 gap-4" style={{ maxWidth: 640, margin: "16px auto 0" }}>
+              {[
+                { name: "Aristotle", quote: "We are what we repeatedly do." },
+                { name: "Plato", quote: "The soul takes nothing with her to the next world but her education and culture." },
+                { name: "Socrates", quote: "Education is the kindling of a flame, not the filling of a vessel." },
+              ].map((p) => (
+                <div key={p.name} style={{ textAlign: "center" }}>
+                  <p style={{
+                    fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
+                    lineHeight: 1.5, margin: 0, fontStyle: "italic",
+                  }}>
+                    &ldquo;{p.quote}&rdquo;
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
 
