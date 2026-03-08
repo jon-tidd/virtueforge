@@ -10,12 +10,11 @@ import { VIRTUES } from "@/lib/data";
 import { T, VC, PLANS } from "@/lib/tokens";
 import {
   HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
-  ScienceInfographic, StoryForgeMockup, BookExplorerMockup,
+  StoryForgeMockup, BookExplorerMockup,
   CAROUSEL_BOOKS,
 } from "./Illustrations";
 import {
   TypingStoryDemo, BeforeAfterComparison, WaveDivider,
-  GlowingStatNumber,
 } from "./Animations";
 import FAQ from "./FAQ";
 import EmailCapture from "./EmailCapture";
@@ -388,50 +387,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             <ScreenTimeIllustration />
           </div>
 
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 20,
-          }}>
-            {RESEARCH_STATS.slice(0, 3).map((stat, i) => (
-              <motion.div
-                key={i}
-                initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i + 1}
-                style={{
-                  padding: 28, borderRadius: T.radiusLg,
-                  background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
-                  textAlign: "left",
-                }}
-              >
-                <div style={{
-                  fontFamily: T.fontSans, fontSize: 36, fontWeight: 800,
-                  color: stat.color, lineHeight: 1,
-                }}>
-                  {stat.number}
-                </div>
-                <div style={{
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                  color: T.gray400, textTransform: "uppercase", letterSpacing: "0.05em",
-                  marginTop: 4, marginBottom: 12,
-                }}>
-                  {stat.label}
-                </div>
-                <p style={{
-                  fontFamily: T.fontSans, fontSize: 14, color: T.gray300,
-                  lineHeight: 1.5, marginBottom: 12,
-                }}>
-                  {stat.desc}
-                </p>
-                <p style={{
-                  fontFamily: T.fontSans, fontSize: 11, color: T.gray500,
-                  fontStyle: "italic",
-                }}>
-                  {stat.source}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
           {/* Before / After comparison */}
           <BeforeAfterComparison />
         </div>
@@ -684,29 +639,32 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               >
                 <div style={{
                   fontFamily: T.fontSans, fontSize: 40, fontWeight: 800,
-                  color: stat.color, lineHeight: 1,
+                  color: stat.color, lineHeight: 1, marginBottom: 6,
                 }}>
-                  <GlowingStatNumber value={stat.number} color={stat.color} />
+                  {stat.number}
                 </div>
                 <div style={{
                   fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
                   color: T.gray500, textTransform: "uppercase", letterSpacing: "0.04em",
-                  marginTop: 6, marginBottom: 8,
+                  marginBottom: 8,
                 }}>
                   {stat.label}
                 </div>
                 <p style={{
                   fontFamily: T.fontSans, fontSize: 12, color: T.gray400,
-                  lineHeight: 1.4,
+                  lineHeight: 1.4, marginBottom: 8,
                 }}>
                   {stat.desc}
+                </p>
+                <p style={{
+                  fontFamily: T.fontSans, fontSize: 11, color: T.gray400,
+                  fontStyle: "italic", margin: 0,
+                }}>
+                  {stat.source}
                 </p>
               </motion.div>
             ))}
           </div>
-
-          {/* Science infographic */}
-          <ScienceInfographic />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginTop: 32 }}>
             {[
