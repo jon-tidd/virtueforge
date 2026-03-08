@@ -8,14 +8,14 @@ import {
 import { VIRTUES } from "@/lib/data";
 import { T, VC, PLANS } from "@/lib/tokens";
 import {
-  HeroIllustration, ScreenTimeIllustration, CharacterCycleDiagram,
+  HeroIllustration, ScreenTimeIllustration,
   ScienceInfographic, StoryForgeMockup, BookExplorerMockup,
   PrudenceOwl, JusticeScales, CourageLion, TemperanceTree,
-  PhilosopherPortrait, CAROUSEL_BOOKS,
+  CAROUSEL_BOOKS,
 } from "./Illustrations";
 import {
   TypingStoryDemo, BeforeAfterComparison, WaveDivider,
-  GlowingStatNumber,
+  AnimatedCounter,
 } from "./Animations";
 
 const fadeUp = {
@@ -446,10 +446,8 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
         </div>
       </section>
 
-      <WaveDivider color={T.white} />
-
       {/* ═══ CLASSICAL WISDOM ═══ */}
-      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
+      <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 80, paddingBottom: 80, background: T.white }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -590,24 +588,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </div>
           </motion.div>
 
-          {/* Circular cycle diagram */}
-          <div style={{ marginBottom: 48, maxWidth: 500, margin: "0 auto 48px" }}>
-            <CharacterCycleDiagram />
-          </div>
-
-          {/* Philosopher Portraits */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={fadeUp} custom={2}
-            style={{ marginBottom: 48 }}
-          >
-            <div className="grid grid-cols-3 gap-4" style={{ maxWidth: 540, margin: "0 auto" }}>
-              <PhilosopherPortrait name="Aristotle" quote="We are what we repeatedly do." />
-              <PhilosopherPortrait name="Plato" quote="The soul takes nothing with her to the next world but her education and culture." />
-              <PhilosopherPortrait name="C.S. Lewis" quote="Since it is so likely that children will meet cruel enemies, let them at least have heard of brave knights." />
-            </div>
-          </motion.div>
-
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={3}
@@ -674,7 +654,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   fontFamily: T.fontSans, fontSize: 40, fontWeight: 800,
                   color: stat.color, lineHeight: 1,
                 }}>
-                  <GlowingStatNumber value={stat.number} color={stat.color} />
+                  {stat.number}
                 </div>
                 <div style={{
                   fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,

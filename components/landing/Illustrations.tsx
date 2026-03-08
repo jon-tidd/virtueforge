@@ -121,12 +121,12 @@ export function ScreenTimeIllustration() {
       style={{ width: "100%", height: "auto", maxHeight: 240, borderRadius: 12 }}>
       <defs>
         <linearGradient id="screen-bad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1a1a2e" />
-          <stop offset="100%" stopColor="#16213e" />
+          <stop offset="0%" stopColor="#1F1F3A" />
+          <stop offset="100%" stopColor="#1A2744" />
         </linearGradient>
         <linearGradient id="book-good" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={NAVY_LIGHT} />
-          <stop offset="100%" stopColor={NAVY_MID} />
+          <stop offset="0%" stopColor="#1A2E4A" />
+          <stop offset="100%" stopColor="#152238" />
         </linearGradient>
       </defs>
 
@@ -135,34 +135,34 @@ export function ScreenTimeIllustration() {
 
       {/* Phone shape */}
       <rect x="105" y="50" width="80" height="130" rx="8" fill="none"
-        stroke={GRAY400} strokeWidth="1.5" opacity="0.5" />
+        stroke="#8892A8" strokeWidth="2" opacity="0.7" />
       {/* Screen glare lines */}
-      <rect x="115" y="65" width="60" height="4" rx="2" fill="#4a5568" opacity="0.4" />
-      <rect x="115" y="75" width="45" height="4" rx="2" fill="#4a5568" opacity="0.3" />
-      <rect x="115" y="85" width="55" height="4" rx="2" fill="#4a5568" opacity="0.35" />
-      <rect x="115" y="100" width="60" height="35" rx="3" fill="#2d3748" opacity="0.4" />
-      <rect x="115" y="140" width="35" height="4" rx="2" fill="#4a5568" opacity="0.3" />
-      <rect x="115" y="150" width="50" height="4" rx="2" fill="#4a5568" opacity="0.25" />
+      <rect x="115" y="65" width="60" height="5" rx="2" fill="#5A6580" opacity="0.6" />
+      <rect x="115" y="76" width="45" height="5" rx="2" fill="#5A6580" opacity="0.5" />
+      <rect x="115" y="87" width="55" height="5" rx="2" fill="#5A6580" opacity="0.55" />
+      <rect x="115" y="100" width="60" height="35" rx="3" fill="#3A4560" opacity="0.6" />
+      <rect x="115" y="142" width="35" height="5" rx="2" fill="#5A6580" opacity="0.5" />
+      <rect x="115" y="153" width="50" height="5" rx="2" fill="#5A6580" opacity="0.45" />
       {/* Notification bubbles - distracting */}
-      <circle cx="190" cy="55" r="6" fill="#E53E3E" opacity="0.6" />
-      <text x="190" y="58" textAnchor="middle" fontSize="7" fill={WHITE} fontWeight="bold">3</text>
-      <circle cx="100" cy="90" r="5" fill="#E53E3E" opacity="0.5" />
+      <circle cx="190" cy="55" r="7" fill="#E53E3E" opacity="0.8" />
+      <text x="190" y="58.5" textAnchor="middle" fontSize="8" fill={WHITE} fontWeight="bold">3</text>
+      <circle cx="100" cy="90" r="5.5" fill="#E53E3E" opacity="0.7" />
       {/* Scattered fragments representing algorithmic noise */}
-      <rect x="30" y="70" width="50" height="30" rx="4" fill="#2d3748" opacity="0.3"
+      <rect x="30" y="70" width="50" height="30" rx="4" fill="#3A4560" opacity="0.5"
         transform="rotate(-8 55 85)" />
-      <rect x="200" y="80" width="45" height="25" rx="4" fill="#2d3748" opacity="0.25"
+      <rect x="200" y="80" width="45" height="25" rx="4" fill="#3A4560" opacity="0.4"
         transform="rotate(5 222 92)" />
-      <rect x="40" y="130" width="40" height="20" rx="3" fill="#2d3748" opacity="0.2"
+      <rect x="40" y="130" width="40" height="20" rx="3" fill="#3A4560" opacity="0.35"
         transform="rotate(-3 60 140)" />
-      <rect x="210" y="140" width="50" height="22" rx="3" fill="#2d3748" opacity="0.2"
+      <rect x="210" y="140" width="50" height="22" rx="3" fill="#3A4560" opacity="0.35"
         transform="rotate(7 235 151)" />
 
       {/* Clock icon - wasted time */}
-      <circle cx="145" cy="200" r="12" fill="none" stroke={GRAY400} strokeWidth="1" opacity="0.4" />
-      <line x1="145" y1="193" x2="145" y2="200" stroke={GRAY400} strokeWidth="1" opacity="0.4" />
-      <line x1="145" y1="200" x2="150" y2="203" stroke={GRAY400} strokeWidth="1" opacity="0.4" />
-      <text x="145" y="225" textAnchor="middle" fontSize="10" fill={GRAY400} opacity="0.5"
-        fontFamily="Inter, sans-serif">7+ hrs/day</text>
+      <circle cx="145" cy="200" r="12" fill="none" stroke="#8892A8" strokeWidth="1.5" opacity="0.6" />
+      <line x1="145" y1="193" x2="145" y2="200" stroke="#8892A8" strokeWidth="1.5" opacity="0.6" />
+      <line x1="145" y1="200" x2="150" y2="203" stroke="#8892A8" strokeWidth="1.5" opacity="0.6" />
+      <text x="145" y="225" textAnchor="middle" fontSize="11" fill="#8892A8" opacity="0.7"
+        fontFamily="Inter, sans-serif" fontWeight="600">7+ hrs/day</text>
 
       {/* Diagonal divider */}
       <path d="M280 0 L310 0 L310 240 L280 240 Z" fill={NAVY} />
@@ -174,15 +174,15 @@ export function ScreenTimeIllustration() {
 
       {/* Open book - larger, central */}
       <path d="M410 60 L455 50 L500 60 L500 140 L455 130 L410 140 Z"
-        fill={GOLD_SUBTLE} fillOpacity="0.15" stroke={GOLD} strokeWidth="1.5" opacity="0.7" />
-      <line x1="455" y1="50" x2="455" y2="130" stroke={GOLD} strokeWidth="0.5" opacity="0.5" />
+        fill={GOLD_SUBTLE} fillOpacity="0.2" stroke={GOLD} strokeWidth="2" opacity="0.8" />
+      <line x1="455" y1="50" x2="455" y2="130" stroke={GOLD} strokeWidth="0.8" opacity="0.6" />
       {/* Text lines */}
       {[65, 75, 85, 95, 105, 115].map((y, i) => (
         <g key={i}>
           <line x1="420" y1={y} x2={440 + (i % 2) * 10} y2={y - 3}
-            stroke={GOLD} strokeWidth="0.5" opacity="0.3" />
+            stroke={GOLD} strokeWidth="0.8" opacity="0.45" />
           <line x1="460" y1={y - 3} x2={480 + (i % 2) * 10} y2={y}
-            stroke={GOLD} strokeWidth="0.5" opacity="0.3" />
+            stroke={GOLD} strokeWidth="0.8" opacity="0.45" />
         </g>
       ))}
 
@@ -193,116 +193,31 @@ export function ScreenTimeIllustration() {
         const y2 = 90 + Math.sin(rad) * 60;
         return (
           <line key={i} x1="455" y1="90" x2={x2} y2={y2}
-            stroke={GOLD} strokeWidth="0.5" opacity={0.1 + i * 0.02} />
+            stroke={GOLD} strokeWidth="0.8" opacity={0.12 + i * 0.03} />
         );
       })}
 
       {/* Growing tree/roots from book - virtue growth */}
       <path d="M455 50 L455 35 Q455 25 460 20 Q465 15 460 10"
-        fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.5" />
-      <path d="M455 35 Q448 28 445 20" fill="none" stroke={GOLD} strokeWidth="1" opacity="0.4" />
-      <path d="M455 30 Q462 22 468 18" fill="none" stroke={GOLD} strokeWidth="1" opacity="0.4" />
+        fill="none" stroke={GOLD} strokeWidth="2" opacity="0.6" />
+      <path d="M455 35 Q448 28 445 20" fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.5" />
+      <path d="M455 30 Q462 22 468 18" fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.5" />
       {/* Leaves */}
-      <ellipse cx="460" cy="8" rx="5" ry="3" fill={GOLD} opacity="0.3" transform="rotate(-20 460 8)" />
-      <ellipse cx="443" cy="18" rx="4" ry="2.5" fill={GOLD} opacity="0.25" transform="rotate(15 443 18)" />
-      <ellipse cx="470" cy="16" rx="4" ry="2.5" fill={GOLD} opacity="0.25" transform="rotate(-30 470 16)" />
+      <ellipse cx="460" cy="8" rx="5" ry="3" fill={GOLD} opacity="0.4" transform="rotate(-20 460 8)" />
+      <ellipse cx="443" cy="18" rx="4" ry="2.5" fill={GOLD} opacity="0.35" transform="rotate(15 443 18)" />
+      <ellipse cx="470" cy="16" rx="4" ry="2.5" fill={GOLD} opacity="0.35" transform="rotate(-30 470 16)" />
 
       {/* Heart / roots going down */}
       <path d="M455 140 L455 155 Q450 165 440 170 Q448 162 455 155 Q462 162 470 170 Q460 165 455 155"
-        fill={GOLD} opacity="0.2" />
+        fill={GOLD} opacity="0.3" />
 
       {/* Connection / family */}
-      <circle cx="430" cy="180" r="10" fill="none" stroke={GOLD} strokeWidth="1" opacity="0.4" />
-      <circle cx="455" cy="175" r="13" fill="none" stroke={GOLD} strokeWidth="1" opacity="0.5" />
-      <circle cx="480" cy="180" r="8" fill="none" stroke={GOLD} strokeWidth="1" opacity="0.35" />
+      <circle cx="430" cy="180" r="10" fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.5" />
+      <circle cx="455" cy="175" r="13" fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.6" />
+      <circle cx="480" cy="180" r="8" fill="none" stroke={GOLD} strokeWidth="1.5" opacity="0.45" />
 
-      <text x="455" y="215" textAnchor="middle" fontSize="10" fill={GOLD} opacity="0.6"
-        fontFamily="Inter, sans-serif">Character. Connection. Growth.</text>
-    </svg>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// 3. CHARACTER CYCLE — Circular formation diagram
-// ═══════════════════════════════════════════════════════════════════════════════
-export function CharacterCycleDiagram() {
-  const cx = 200, cy = 150, r = 100;
-  const steps = [
-    { label: "Stories", angle: -90 },
-    { label: "Imagination", angle: -18 },
-    { label: "Habituation", angle: 54 },
-    { label: "Virtue", angle: 126 },
-    { label: "Flourishing", angle: 198 },
-  ];
-
-  const points = steps.map((s) => {
-    const rad = (s.angle * Math.PI) / 180;
-    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad), label: s.label };
-  });
-
-  // Draw arrow arcs between consecutive points
-  function arcArrow(i: number) {
-    const from = points[i];
-    const to = points[(i + 1) % points.length];
-    const midAngle = ((steps[i].angle + steps[(i + 1) % steps.length].angle) / 2 +
-      (steps[(i + 1) % steps.length].angle < steps[i].angle ? 180 : 0)) * Math.PI / 180;
-    const bulge = 0.3;
-    const mx = cx + r * (1 + bulge) * Math.cos(midAngle);
-    const my = cy + r * (1 + bulge) * Math.sin(midAngle);
-    return `M ${from.x} ${from.y} Q ${mx} ${my} ${to.x} ${to.y}`;
-  }
-
-  return (
-    <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", height: "auto", maxHeight: 280, borderRadius: 12 }}>
-      <defs>
-        <marker id="cycle-arrow" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
-          <path d="M0 0 L8 3 L0 6 Z" fill={GOLD} opacity="0.6" />
-        </marker>
-      </defs>
-
-      {/* Background */}
-      <rect width="400" height="300" fill={GOLD_SUBTLE} rx="12" opacity="0.3" />
-
-      {/* Concentric guide circles */}
-      <circle cx={cx} cy={cy} r={r + 30} fill="none" stroke={GOLD} strokeWidth="0.5" opacity="0.1" />
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={GOLD} strokeWidth="0.5" opacity="0.15" strokeDasharray="4 4" />
-
-      {/* Arrow arcs connecting steps */}
-      {steps.map((_, i) => (
-        <path key={i} d={arcArrow(i)} fill="none" stroke={GOLD} strokeWidth="1.5"
-          opacity="0.35" markerEnd="url(#cycle-arrow)" />
-      ))}
-
-      {/* Step nodes */}
-      {points.map((p, i) => (
-        <g key={i}>
-          {/* Node circle */}
-          <circle cx={p.x} cy={p.y} r="22" fill={WHITE} stroke={GOLD} strokeWidth="1.5" />
-          {/* Step number */}
-          <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="central"
-            fontSize="14" fill={NAVY} fontFamily="Inter, sans-serif" fontWeight="800">
-            {i + 1}
-          </text>
-          {/* Label */}
-          <text x={p.x} y={p.y + (p.y < cy ? -30 : 34)} textAnchor="middle"
-            fontSize="11" fill={NAVY} fontFamily="Inter, sans-serif" fontWeight="600"
-            opacity="0.8">
-            {p.label}
-          </text>
-        </g>
-      ))}
-
-      {/* Center emblem */}
-      <circle cx={cx} cy={cy} r="24" fill={NAVY} opacity="0.05" />
-      <text x={cx} y={cy - 4} textAnchor="middle" fontSize="9" fill={NAVY}
-        fontFamily="Inter, sans-serif" fontWeight="600" opacity="0.5">
-        HEXIS
-      </text>
-      <text x={cx} y={cy + 8} textAnchor="middle" fontSize="7" fill={GRAY500}
-        fontFamily="Inter, sans-serif">
-        Character Formation
-      </text>
+      <text x="455" y="215" textAnchor="middle" fontSize="11" fill={GOLD} opacity="0.75"
+        fontFamily="Inter, sans-serif" fontWeight="600">Character. Connection. Growth.</text>
     </svg>
   );
 }
@@ -581,46 +496,49 @@ export function BookExplorerMockup() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// 7–10. VIRTUE ILLUSTRATIONS — Iconic, minimal
+// 7–10. VIRTUE ILLUSTRATIONS — Bold, visible, professional
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export function PrudenceOwl({ color = "#2563EB", bg = "#EFF6FF" }: { color?: string; bg?: string }) {
   return (
     <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"
       style={{ width: "100%", height: "auto", maxHeight: 120 }}>
-      <rect width="200" height="120" fill={bg} rx="8" opacity="0.5" />
+      <rect width="200" height="120" fill={bg} rx="8" />
 
       {/* Scroll base */}
-      <rect x="55" y="85" width="90" height="8" rx="4" fill={color} opacity="0.15" />
-      <ellipse cx="55" cy="89" rx="5" ry="4" fill={color} opacity="0.2" />
-      <ellipse cx="145" cy="89" rx="5" ry="4" fill={color} opacity="0.2" />
+      <rect x="55" y="85" width="90" height="8" rx="4" fill={color} opacity="0.25" />
+      <ellipse cx="55" cy="89" rx="5" ry="4" fill={color} opacity="0.3" />
+      <ellipse cx="145" cy="89" rx="5" ry="4" fill={color} opacity="0.3" />
       {/* Scroll text lines */}
-      <line x1="70" y1="88" x2="95" y2="88" stroke={color} strokeWidth="0.5" opacity="0.2" />
-      <line x1="100" y1="88" x2="130" y2="88" stroke={color} strokeWidth="0.5" opacity="0.2" />
+      <line x1="70" y1="88" x2="95" y2="88" stroke={color} strokeWidth="0.8" opacity="0.35" />
+      <line x1="100" y1="88" x2="130" y2="88" stroke={color} strokeWidth="0.8" opacity="0.35" />
 
       {/* Owl body */}
-      <ellipse cx="100" cy="65" rx="22" ry="26" fill={color} opacity="0.12" />
+      <ellipse cx="100" cy="65" rx="22" ry="26" fill={color} opacity="0.2" />
       {/* Owl face disc */}
       <ellipse cx="100" cy="55" rx="18" ry="16" fill={WHITE} stroke={color}
-        strokeWidth="1" opacity="0.5" />
+        strokeWidth="1.5" opacity="0.8" />
       {/* Eyes */}
-      <circle cx="92" cy="52" r="6" fill={WHITE} stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <circle cx="108" cy="52" r="6" fill={WHITE} stroke={color} strokeWidth="1.5" opacity="0.5" />
-      <circle cx="93" cy="52" r="2.5" fill={color} opacity="0.6" />
-      <circle cx="109" cy="52" r="2.5" fill={color} opacity="0.6" />
+      <circle cx="92" cy="52" r="6" fill={WHITE} stroke={color} strokeWidth="2" opacity="0.8" />
+      <circle cx="108" cy="52" r="6" fill={WHITE} stroke={color} strokeWidth="2" opacity="0.8" />
+      <circle cx="93" cy="52" r="3" fill={color} opacity="0.85" />
+      <circle cx="109" cy="52" r="3" fill={color} opacity="0.85" />
+      {/* Eye glints */}
+      <circle cx="94.5" cy="50.5" r="1" fill={WHITE} />
+      <circle cx="110.5" cy="50.5" r="1" fill={WHITE} />
       {/* Beak */}
-      <path d="M98 58 L100 63 L102 58" fill={color} opacity="0.3" />
+      <path d="M98 58 L100 63 L102 58" fill={color} opacity="0.5" />
       {/* Ear tufts */}
-      <path d="M85 42 L88 35 L92 42" fill={color} opacity="0.2" />
-      <path d="M108 42 L112 35 L115 42" fill={color} opacity="0.2" />
+      <path d="M85 42 L88 35 L92 42" fill={color} opacity="0.35" />
+      <path d="M108 42 L112 35 L115 42" fill={color} opacity="0.35" />
       {/* Wing markings */}
-      <path d="M78 60 Q75 70 80 80" fill="none" stroke={color} strokeWidth="1" opacity="0.2" />
-      <path d="M122 60 Q125 70 120 80" fill="none" stroke={color} strokeWidth="1" opacity="0.2" />
+      <path d="M78 60 Q75 70 80 80" fill="none" stroke={color} strokeWidth="1.5" opacity="0.35" />
+      <path d="M122 60 Q125 70 120 80" fill="none" stroke={color} strokeWidth="1.5" opacity="0.35" />
 
       {/* Stars of wisdom */}
-      <circle cx="68" cy="30" r="1.5" fill={color} opacity="0.3" />
-      <circle cx="135" cy="35" r="1" fill={color} opacity="0.25" />
-      <circle cx="75" cy="20" r="1" fill={color} opacity="0.2" />
+      <circle cx="68" cy="30" r="2" fill={color} opacity="0.4" />
+      <circle cx="135" cy="35" r="1.5" fill={color} opacity="0.35" />
+      <circle cx="75" cy="20" r="1.5" fill={color} opacity="0.3" />
     </svg>
   );
 }
@@ -629,47 +547,47 @@ export function JusticeScales({ color = "#D97706", bg = "#FFFBEB" }: { color?: s
   return (
     <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"
       style={{ width: "100%", height: "auto", maxHeight: 120 }}>
-      <rect width="200" height="120" fill={bg} rx="8" opacity="0.5" />
+      <rect width="200" height="120" fill={bg} rx="8" />
 
       {/* Central pillar */}
-      <rect x="97" y="25" width="6" height="70" rx="3" fill={color} opacity="0.2" />
+      <rect x="97" y="25" width="6" height="70" rx="3" fill={color} opacity="0.35" />
 
       {/* Top ornament */}
-      <circle cx="100" cy="22" r="5" fill={color} opacity="0.25" />
+      <circle cx="100" cy="22" r="5" fill={color} opacity="0.4" />
 
       {/* Balance beam */}
-      <line x1="45" y1="40" x2="155" y2="40" stroke={color} strokeWidth="2.5" opacity="0.35" />
+      <line x1="45" y1="40" x2="155" y2="40" stroke={color} strokeWidth="3" opacity="0.5" />
 
       {/* Left pan */}
-      <line x1="55" y1="40" x2="45" y2="65" stroke={color} strokeWidth="1" opacity="0.25" />
-      <line x1="55" y1="40" x2="65" y2="65" stroke={color} strokeWidth="1" opacity="0.25" />
-      <path d="M40 65 Q55 72 70 65" fill={color} opacity="0.12" stroke={color}
-        strokeWidth="1" />
+      <line x1="55" y1="40" x2="45" y2="65" stroke={color} strokeWidth="1.5" opacity="0.4" />
+      <line x1="55" y1="40" x2="65" y2="65" stroke={color} strokeWidth="1.5" opacity="0.4" />
+      <path d="M40 65 Q55 72 70 65" fill={color} opacity="0.2" stroke={color}
+        strokeWidth="1.5" />
       {/* Items in left pan */}
-      <circle cx="50" cy="62" r="3" fill={color} opacity="0.2" />
-      <circle cx="58" cy="61" r="2.5" fill={color} opacity="0.15" />
+      <circle cx="50" cy="62" r="3.5" fill={color} opacity="0.35" />
+      <circle cx="58" cy="61" r="3" fill={color} opacity="0.3" />
 
       {/* Right pan */}
-      <line x1="145" y1="40" x2="135" y2="65" stroke={color} strokeWidth="1" opacity="0.25" />
-      <line x1="145" y1="40" x2="155" y2="65" stroke={color} strokeWidth="1" opacity="0.25" />
-      <path d="M130 65 Q145 72 160 65" fill={color} opacity="0.12" stroke={color}
-        strokeWidth="1" />
+      <line x1="145" y1="40" x2="135" y2="65" stroke={color} strokeWidth="1.5" opacity="0.4" />
+      <line x1="145" y1="40" x2="155" y2="65" stroke={color} strokeWidth="1.5" opacity="0.4" />
+      <path d="M130 65 Q145 72 160 65" fill={color} opacity="0.2" stroke={color}
+        strokeWidth="1.5" />
       {/* Items in right pan */}
-      <circle cx="142" cy="62" r="3" fill={color} opacity="0.2" />
-      <circle cx="150" cy="61" r="2.5" fill={color} opacity="0.15" />
+      <circle cx="142" cy="62" r="3.5" fill={color} opacity="0.35" />
+      <circle cx="150" cy="61" r="3" fill={color} opacity="0.3" />
 
       {/* Golden rays from center */}
       {[-60, -30, 0, 30, 60].map((angle, i) => {
         const rad = ((angle - 90) * Math.PI) / 180;
         return (
           <line key={i} x1="100" y1="22" x2={100 + Math.cos(rad) * 20} y2={22 + Math.sin(rad) * 20}
-            stroke={color} strokeWidth="0.8" opacity="0.15" />
+            stroke={color} strokeWidth="1" opacity="0.25" />
         );
       })}
 
       {/* Base pedestal */}
-      <rect x="85" y="92" width="30" height="5" rx="2" fill={color} opacity="0.15" />
-      <rect x="80" y="95" width="40" height="4" rx="2" fill={color} opacity="0.1" />
+      <rect x="85" y="92" width="30" height="5" rx="2" fill={color} opacity="0.25" />
+      <rect x="80" y="95" width="40" height="4" rx="2" fill={color} opacity="0.18" />
     </svg>
   );
 }
@@ -678,7 +596,7 @@ export function CourageLion({ color = "#DC2626", bg = "#FEF2F2" }: { color?: str
   return (
     <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"
       style={{ width: "100%", height: "auto", maxHeight: 120 }}>
-      <rect width="200" height="120" fill={bg} rx="8" opacity="0.5" />
+      <rect width="200" height="120" fill={bg} rx="8" />
 
       {/* Mane - rays going outward */}
       {Array.from({ length: 16 }, (_, i) => {
@@ -689,47 +607,46 @@ export function CourageLion({ color = "#DC2626", bg = "#FEF2F2" }: { color?: str
           <line key={i}
             x1={100 + Math.cos(angle) * inner} y1={52 + Math.sin(angle) * inner}
             x2={100 + Math.cos(angle) * outer} y2={52 + Math.sin(angle) * outer}
-            stroke={color} strokeWidth={2.5} strokeLinecap="round" opacity={0.15 + (i % 3) * 0.05}
+            stroke={color} strokeWidth={3} strokeLinecap="round" opacity={0.25 + (i % 3) * 0.08}
           />
         );
       })}
 
       {/* Mane circle */}
-      <circle cx="100" cy="52" r="30" fill={color} opacity="0.08" />
+      <circle cx="100" cy="52" r="30" fill={color} opacity="0.12" />
 
       {/* Head */}
-      <ellipse cx="100" cy="52" rx="20" ry="22" fill={color} opacity="0.12" />
+      <ellipse cx="100" cy="52" rx="20" ry="22" fill={color} opacity="0.2" />
 
       {/* Face features */}
       {/* Eyes - determined */}
-      <ellipse cx="92" cy="46" rx="3" ry="2.5" fill={color} opacity="0.35" />
-      <ellipse cx="108" cy="46" rx="3" ry="2.5" fill={color} opacity="0.35" />
+      <ellipse cx="92" cy="46" rx="3.5" ry="3" fill={color} opacity="0.55" />
+      <ellipse cx="108" cy="46" rx="3.5" ry="3" fill={color} opacity="0.55" />
       {/* Eye glint */}
-      <circle cx="93" cy="45" r="1" fill={WHITE} opacity="0.5" />
-      <circle cx="109" cy="45" r="1" fill={WHITE} opacity="0.5" />
+      <circle cx="93.5" cy="45" r="1.2" fill={WHITE} opacity="0.7" />
+      <circle cx="109.5" cy="45" r="1.2" fill={WHITE} opacity="0.7" />
 
       {/* Nose */}
-      <path d="M97 54 L100 58 L103 54 Z" fill={color} opacity="0.25" />
+      <path d="M97 54 L100 58 L103 54 Z" fill={color} opacity="0.4" />
 
       {/* Mouth - brave expression */}
-      <path d="M94 61 Q100 65 106 61" fill="none" stroke={color} strokeWidth="1" opacity="0.2" />
+      <path d="M94 61 Q100 65 106 61" fill="none" stroke={color} strokeWidth="1.5" opacity="0.35" />
 
       {/* Ears */}
-      <ellipse cx="82" cy="38" rx="5" ry="7" fill={color} opacity="0.1" />
-      <ellipse cx="118" cy="38" rx="5" ry="7" fill={color} opacity="0.1" />
+      <ellipse cx="82" cy="38" rx="5" ry="7" fill={color} opacity="0.18" />
+      <ellipse cx="118" cy="38" rx="5" ry="7" fill={color} opacity="0.18" />
 
       {/* Storm elements behind */}
       <path d="M35 30 L40 20 L43 28 L48 15 L50 28" fill="none" stroke={color}
-        strokeWidth="1" opacity="0.15" />
+        strokeWidth="1.5" opacity="0.25" />
       <path d="M155 25 L158 18 L162 26 L165 12" fill="none" stroke={color}
-        strokeWidth="1" opacity="0.12" />
+        strokeWidth="1.5" opacity="0.2" />
       {/* Wind lines */}
-      <line x1="30" y1="70" x2="55" y2="68" stroke={color} strokeWidth="0.8" opacity="0.1" />
-      <line x1="145" y1="72" x2="170" y2="70" stroke={color} strokeWidth="0.8" opacity="0.1" />
-      <line x1="35" y1="80" x2="50" y2="79" stroke={color} strokeWidth="0.5" opacity="0.08" />
+      <line x1="30" y1="70" x2="55" y2="68" stroke={color} strokeWidth="1.2" opacity="0.18" />
+      <line x1="145" y1="72" x2="170" y2="70" stroke={color} strokeWidth="1.2" opacity="0.18" />
 
       {/* Ground line */}
-      <path d="M50 100 Q100 95 150 100" fill="none" stroke={color} strokeWidth="1" opacity="0.1" />
+      <path d="M50 100 Q100 95 150 100" fill="none" stroke={color} strokeWidth="1.5" opacity="0.18" />
     </svg>
   );
 }
@@ -738,124 +655,58 @@ export function TemperanceTree({ color = "#059669", bg = "#ECFDF5" }: { color?: 
   return (
     <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg"
       style={{ width: "100%", height: "auto", maxHeight: 120 }}>
-      <rect width="200" height="120" fill={bg} rx="8" opacity="0.5" />
+      <rect width="200" height="120" fill={bg} rx="8" />
 
       {/* Water line */}
-      <line x1="40" y1="75" x2="160" y2="75" stroke={color} strokeWidth="0.5" opacity="0.2" />
+      <line x1="40" y1="75" x2="160" y2="75" stroke={color} strokeWidth="0.8" opacity="0.3" />
 
       {/* Tree trunk */}
-      <rect x="96" y="35" width="8" height="40" rx="2" fill={color} opacity="0.25" />
+      <rect x="96" y="35" width="8" height="40" rx="2" fill={color} opacity="0.4" />
 
       {/* Branches */}
-      <path d="M100 45 Q85 35 75 30" fill="none" stroke={color} strokeWidth="2" opacity="0.2" strokeLinecap="round" />
-      <path d="M100 45 Q115 35 125 30" fill="none" stroke={color} strokeWidth="2" opacity="0.2" strokeLinecap="round" />
-      <path d="M100 38 Q80 25 70 20" fill="none" stroke={color} strokeWidth="1.5" opacity="0.18" strokeLinecap="round" />
-      <path d="M100 38 Q120 25 130 20" fill="none" stroke={color} strokeWidth="1.5" opacity="0.18" strokeLinecap="round" />
-      <path d="M100 32 Q90 22 85 15" fill="none" stroke={color} strokeWidth="1" opacity="0.15" strokeLinecap="round" />
-      <path d="M100 32 Q110 22 115 15" fill="none" stroke={color} strokeWidth="1" opacity="0.15" strokeLinecap="round" />
+      <path d="M100 45 Q85 35 75 30" fill="none" stroke={color} strokeWidth="2.5" opacity="0.35" strokeLinecap="round" />
+      <path d="M100 45 Q115 35 125 30" fill="none" stroke={color} strokeWidth="2.5" opacity="0.35" strokeLinecap="round" />
+      <path d="M100 38 Q80 25 70 20" fill="none" stroke={color} strokeWidth="2" opacity="0.3" strokeLinecap="round" />
+      <path d="M100 38 Q120 25 130 20" fill="none" stroke={color} strokeWidth="2" opacity="0.3" strokeLinecap="round" />
+      <path d="M100 32 Q90 22 85 15" fill="none" stroke={color} strokeWidth="1.5" opacity="0.25" strokeLinecap="round" />
+      <path d="M100 32 Q110 22 115 15" fill="none" stroke={color} strokeWidth="1.5" opacity="0.25" strokeLinecap="round" />
 
       {/* Canopy - layered circles */}
-      <circle cx="100" cy="25" r="22" fill={color} opacity="0.08" />
-      <circle cx="82" cy="30" r="15" fill={color} opacity="0.06" />
-      <circle cx="118" cy="30" r="15" fill={color} opacity="0.06" />
-      <circle cx="75" cy="28" r="10" fill={color} opacity="0.05" />
-      <circle cx="125" cy="28" r="10" fill={color} opacity="0.05" />
+      <circle cx="100" cy="25" r="22" fill={color} opacity="0.14" />
+      <circle cx="82" cy="30" r="15" fill={color} opacity="0.1" />
+      <circle cx="118" cy="30" r="15" fill={color} opacity="0.1" />
+      <circle cx="75" cy="28" r="10" fill={color} opacity="0.08" />
+      <circle cx="125" cy="28" r="10" fill={color} opacity="0.08" />
 
       {/* Leaves */}
       {[
         [70, 22, -20], [80, 15, 10], [90, 12, -15], [100, 10, 5],
         [110, 12, 15], [120, 15, -10], [130, 22, 20],
       ].map(([cx, cy, rot], i) => (
-        <ellipse key={i} cx={cx} cy={cy} rx="5" ry="2.5" fill={color} opacity="0.15"
+        <ellipse key={i} cx={cx} cy={cy} rx="5" ry="2.5" fill={color} opacity="0.25"
           transform={`rotate(${rot} ${cx} ${cy})`} />
       ))}
 
       {/* Roots going down - visible below ground */}
       <path d="M100 75 Q95 85 85 95 Q80 100 75 100" fill="none" stroke={color}
-        strokeWidth="2" opacity="0.15" strokeLinecap="round" />
+        strokeWidth="2.5" opacity="0.25" strokeLinecap="round" />
       <path d="M100 75 Q105 85 115 95 Q120 100 125 100" fill="none" stroke={color}
-        strokeWidth="2" opacity="0.15" strokeLinecap="round" />
+        strokeWidth="2.5" opacity="0.25" strokeLinecap="round" />
       <path d="M100 75 Q97 90 90 100 Q88 105 85 108" fill="none" stroke={color}
-        strokeWidth="1.5" opacity="0.12" strokeLinecap="round" />
+        strokeWidth="2" opacity="0.2" strokeLinecap="round" />
       <path d="M100 75 Q103 90 110 100 Q112 105 115 108" fill="none" stroke={color}
-        strokeWidth="1.5" opacity="0.12" strokeLinecap="round" />
+        strokeWidth="2" opacity="0.2" strokeLinecap="round" />
       {/* Center root */}
-      <path d="M100 75 L100 108" fill="none" stroke={color} strokeWidth="1.5" opacity="0.1" />
+      <path d="M100 75 L100 108" fill="none" stroke={color} strokeWidth="2" opacity="0.18" />
 
       {/* Water reflection - mirrored tree hint */}
-      <ellipse cx="100" cy="85" rx="20" ry="8" fill={color} opacity="0.04" />
+      <ellipse cx="100" cy="85" rx="20" ry="8" fill={color} opacity="0.06" />
 
       {/* Subtle ripples */}
       <ellipse cx="80" cy="78" rx="8" ry="1.5" fill="none" stroke={color}
-        strokeWidth="0.5" opacity="0.1" />
+        strokeWidth="0.8" opacity="0.18" />
       <ellipse cx="120" cy="80" rx="6" ry="1" fill="none" stroke={color}
-        strokeWidth="0.5" opacity="0.08" />
-    </svg>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// BONUS: Philosopher Portraits — stylized silhouettes
-// ═══════════════════════════════════════════════════════════════════════════════
-export function PhilosopherPortrait({ name, quote }: { name: string; quote: string }) {
-  // Simple bust silhouette with scroll/name
-  const isAristotle = name === "Aristotle";
-  const isPlato = name === "Plato";
-  const isLewis = name === "C.S. Lewis";
-  return (
-    <svg viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg"
-      style={{ width: "100%", height: "auto" }}>
-      <rect width="160" height="180" fill="none" />
-
-      {/* Bust silhouette */}
-      <ellipse cx="80" cy="65" rx="26" ry="30" fill={NAVY} opacity="0.1" />
-      {/* Head */}
-      <circle cx="80" cy="42" r="22" fill={NAVY} opacity="0.12" />
-      {/* Shoulders */}
-      <path d="M44 95 Q60 75 80 72 Q100 75 116 95" fill={NAVY} opacity="0.08" />
-
-      {/* Distinguishing features */}
-      {isAristotle && (
-        <>
-          {/* Beard */}
-          <path d="M68 52 Q80 68 92 52" fill={NAVY} opacity="0.06" />
-          {/* Laurel wreath hint */}
-          <path d="M60 35 Q70 28 80 30 Q90 28 100 35" fill="none"
-            stroke={GOLD} strokeWidth="1" opacity="0.3" />
-        </>
-      )}
-      {isPlato && (
-        <>
-          {/* Longer beard */}
-          <path d="M70 52 Q80 72 90 52" fill={NAVY} opacity="0.05" />
-          {/* High forehead */}
-          <path d="M62 32 Q80 24 98 32" fill="none"
-            stroke={NAVY} strokeWidth="1" opacity="0.08" />
-        </>
-      )}
-      {isLewis && (
-        <>
-          {/* Glasses hint */}
-          <circle cx="72" cy="40" r="7" fill="none" stroke={NAVY}
-            strokeWidth="1" opacity="0.1" />
-          <circle cx="88" cy="40" r="7" fill="none" stroke={NAVY}
-            strokeWidth="1" opacity="0.1" />
-          <line x1="79" y1="40" x2="81" y2="40" stroke={NAVY}
-            strokeWidth="0.5" opacity="0.1" />
-        </>
-      )}
-
-      {/* Name */}
-      <text x="80" y="115" textAnchor="middle" fontSize="12" fill={NAVY}
-        fontFamily="'Cormorant Garamond', Georgia, serif" fontWeight="700" opacity="0.7">
-        {name}
-      </text>
-
-      {/* Quote */}
-      <text x="80" y="135" textAnchor="middle" fontSize="8" fill={GRAY500}
-        fontFamily="'Cormorant Garamond', Georgia, serif" fontStyle="italic">
-        {quote.length > 45 ? quote.slice(0, 42) + "..." : quote}
-      </text>
+        strokeWidth="0.8" opacity="0.15" />
     </svg>
   );
 }
