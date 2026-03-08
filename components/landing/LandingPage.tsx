@@ -90,23 +90,6 @@ const RESEARCH_STATS = [
   },
 ];
 
-const STEPS = [
-  {
-    icon: Heart,
-    title: "Choose your family\u2019s virtues",
-    desc: "Take a 2-minute guided quiz or select from 16 classical virtues rooted in Aristotelian philosophy.",
-  },
-  {
-    icon: BookOpen,
-    title: "Get matched with great stories",
-    desc: "57+ hand-curated books mapped to specific virtues and your child\u2019s reading level. Plus AI-generated stories for any situation.",
-  },
-  {
-    icon: Shield,
-    title: "Watch character grow",
-    desc: "Track your family\u2019s virtue journey with a visual compass that fills as you read together. Spot gaps. Celebrate progress.",
-  },
-];
 
 const CHARACTER_CYCLE = [
   { icon: BookOpen, title: "Stories", desc: "The child encounters virtue in narrative" },
@@ -935,7 +918,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
 
       {/* ═══ HOW IT WORKS ═══ */}
       <section id="how" className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.bg }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }}
             variants={fadeUp} custom={0}
@@ -951,55 +934,310 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             <h2 style={{
               fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
               fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.02em", marginBottom: 16,
             }}>
-              Three steps. One family tradition.
+              A complete system for character formation
             </h2>
+            <p style={{
+              fontFamily: T.fontSans, fontSize: 17, color: T.gray500,
+              lineHeight: 1.7, maxWidth: 640, margin: "0 auto",
+            }}>
+              Bedtime Virtues gives your family two powerful paths to build character through story &mdash;
+              plus the tools to track growth over time.
+            </p>
           </motion.div>
 
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: 32,
-          }}>
-            {STEPS.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial="hidden" whileInView="visible" viewport={{ once: true }}
-                  variants={fadeUp} custom={i + 1}
-                  style={{ textAlign: "center" }}
-                >
+          {/* ── Phase 1: Start ── */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={1}
+            style={{ marginBottom: 48 }}
+          >
+            <div style={{
+              display: "flex", alignItems: "center", gap: 12, marginBottom: 20,
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, background: T.navy,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: T.fontSans, fontSize: 14, fontWeight: 800, color: T.white,
+              }}>1</div>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 20, fontWeight: 700, color: T.navy, margin: 0,
+              }}>
+                Set up your family profile
+              </h3>
+            </div>
+            <div style={{
+              padding: 28, borderRadius: T.radiusLg, background: T.white,
+              border: `1px solid ${T.gray100}`,
+            }}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {[
+                  { icon: Users, title: "Add your children", desc: "Names, ages, and reading levels so every recommendation fits." },
+                  { icon: Heart, title: "Choose focus virtues", desc: "Take a 2-minute guided quiz or pick from 16 classical virtues rooted in Aristotle." },
+                  { icon: BarChart3, title: "Get your Virtue Compass", desc: "A personalized dashboard that maps your family\u2019s character-building journey." },
+                ].map((item, i) => {
+                  const StepIcon = item.icon;
+                  return (
+                    <div key={i} style={{ display: "flex", gap: 14 }}>
+                      <div style={{
+                        width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                        background: `${VC.prudence.main}10`, display: "flex",
+                        alignItems: "center", justifyContent: "center",
+                      }}>
+                        <StepIcon size={20} color={VC.prudence.main} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <div style={{
+                          fontFamily: T.fontSans, fontSize: 15, fontWeight: 700,
+                          color: T.navy, marginBottom: 4,
+                        }}>{item.title}</div>
+                        <p style={{
+                          fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
+                          lineHeight: 1.5, margin: 0,
+                        }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── Phase 2: Two Paths ── */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={2}
+            style={{ marginBottom: 48 }}
+          >
+            <div style={{
+              display: "flex", alignItems: "center", gap: 12, marginBottom: 20,
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, background: T.navy,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: T.fontSans, fontSize: 14, fontWeight: 800, color: T.white,
+              }}>2</div>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 20, fontWeight: 700, color: T.navy, margin: 0,
+              }}>
+                Choose your path &mdash; or use both
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Path A: Story Forge */}
+              <div style={{
+                padding: 28, borderRadius: T.radiusLg, background: T.white,
+                border: `1px solid ${T.gray100}`,
+                borderTop: `3px solid ${VC.courage.main}`,
+              }}>
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 10, marginBottom: 16,
+                }}>
                   <div style={{
-                    width: 64, height: 64, borderRadius: 16,
-                    background: T.white, display: "flex", alignItems: "center",
-                    justifyContent: "center", margin: "0 auto 20px",
-                    border: `1px solid ${T.gray100}`,
+                    width: 36, height: 36, borderRadius: 10,
+                    background: `${VC.courage.main}12`, display: "flex",
+                    alignItems: "center", justifyContent: "center",
                   }}>
-                    <Icon size={28} color={T.navy} strokeWidth={1.5} />
+                    <Sparkles size={18} color={VC.courage.main} />
                   </div>
+                  <div>
+                    <span style={{
+                      fontFamily: T.fontSans, fontSize: 10, fontWeight: 700,
+                      color: VC.courage.main, textTransform: "uppercase", letterSpacing: "0.08em",
+                    }}>Path A &middot; AI-Powered</span>
+                    <h4 style={{
+                      fontFamily: T.fontSans, fontSize: 18, fontWeight: 700,
+                      color: T.navy, margin: 0,
+                    }}>Story Forge</h4>
+                  </div>
+                </div>
+                <p style={{
+                  fontFamily: T.fontSans, fontSize: 14, color: T.gray500,
+                  lineHeight: 1.6, marginBottom: 16,
+                }}>
+                  Tell us your child&apos;s name, age, and what they&apos;re going through.
+                  Our AI writes an original bedtime story in the classical tradition &mdash;
+                  starring themes your child needs <em>right now</em>.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {["Personalized to your child\u2019s real life", "Targets specific virtues you choose", "Includes a parent discussion guide", "Print, save, or share as PDF"].map((item) => (
+                    <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <Check size={13} color={VC.courage.main} strokeWidth={3} />
+                      <span style={{ fontFamily: T.fontSans, fontSize: 13, color: T.gray600 }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Path B: Book Explorer */}
+              <div style={{
+                padding: 28, borderRadius: T.radiusLg, background: T.white,
+                border: `1px solid ${T.gray100}`,
+                borderTop: `3px solid ${VC.prudence.main}`,
+              }}>
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 10, marginBottom: 16,
+                }}>
                   <div style={{
-                    fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
-                    color: T.gray400, marginBottom: 8,
+                    width: 36, height: 36, borderRadius: 10,
+                    background: `${VC.prudence.main}12`, display: "flex",
+                    alignItems: "center", justifyContent: "center",
                   }}>
-                    STEP {i + 1}
+                    <BookMarked size={18} color={VC.prudence.main} />
                   </div>
-                  <h3 style={{
-                    fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
-                    color: T.navy, marginBottom: 10,
-                  }}>
-                    {step.title}
-                  </h3>
-                  <p style={{
-                    fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
-                    lineHeight: 1.6,
-                  }}>
-                    {step.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+                  <div>
+                    <span style={{
+                      fontFamily: T.fontSans, fontSize: 10, fontWeight: 700,
+                      color: VC.prudence.main, textTransform: "uppercase", letterSpacing: "0.08em",
+                    }}>Path B &middot; Hand-Curated</span>
+                    <h4 style={{
+                      fontFamily: T.fontSans, fontSize: 18, fontWeight: 700,
+                      color: T.navy, margin: 0,
+                    }}>Book Explorer</h4>
+                  </div>
+                </div>
+                <p style={{
+                  fontFamily: T.fontSans, fontSize: 14, color: T.gray500,
+                  lineHeight: 1.6, marginBottom: 16,
+                }}>
+                  Browse 57+ books spanning 2,600 years &mdash; from Aesop&apos;s Fables to modern classics.
+                  Every title hand-selected for moral clarity, then mapped to specific virtues
+                  and reading levels.
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {["57+ classics from Aesop to C.S. Lewis", "Mapped to 16 virtues with sub-traits", "Filtered by your child\u2019s reading level", "Free downloads + Amazon links"].map((item) => (
+                    <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <Check size={13} color={VC.prudence.main} strokeWidth={3} />
+                      <span style={{ fontFamily: T.fontSans, fontSize: 13, color: T.gray600 }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── Phase 3: Read & Grow ── */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={3}
+            style={{ marginBottom: 48 }}
+          >
+            <div style={{
+              display: "flex", alignItems: "center", gap: 12, marginBottom: 20,
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, background: T.navy,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: T.fontSans, fontSize: 14, fontWeight: 800, color: T.white,
+              }}>3</div>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 20, fontWeight: 700, color: T.navy, margin: 0,
+              }}>
+                Read together &amp; build the habit
+              </h3>
+            </div>
+            <div style={{
+              padding: 28, borderRadius: T.radiusLg, background: T.white,
+              border: `1px solid ${T.gray100}`,
+            }}>
+              <p style={{
+                fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
+                lineHeight: 1.7, marginBottom: 20, maxWidth: 700,
+              }}>
+                Each story becomes a conversation. Every book is paired with discussion prompts
+                designed to help your child connect the virtue to their own life. This is the
+                Aristotelian cycle in action:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                {[
+                  { icon: BookOpen, label: "Story", color: VC.prudence.main, desc: "Encounter virtue in narrative" },
+                  { icon: Sparkles, label: "Imagination", color: VC.justice.main, desc: "See themselves as the hero" },
+                  { icon: RefreshCw, label: "Habituation", color: VC.courage.main, desc: "Daily practice builds habit" },
+                  { icon: Shield, label: "Virtue", color: VC.temperance.main, desc: "Habit becomes character" },
+                  { icon: Sun, label: "Flourishing", color: T.gold, desc: "Character enables a good life" },
+                ].map((step, i) => {
+                  const CycleIcon = step.icon;
+                  return (
+                    <div key={i} style={{ textAlign: "center" }}>
+                      <div style={{
+                        width: 44, height: 44, borderRadius: 12,
+                        background: `${step.color}12`, display: "flex",
+                        alignItems: "center", justifyContent: "center",
+                        margin: "0 auto 8px",
+                      }}>
+                        <CycleIcon size={20} color={step.color} strokeWidth={2} />
+                      </div>
+                      <div style={{
+                        fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
+                        color: T.navy, marginBottom: 2,
+                      }}>{step.label}</div>
+                      <p style={{
+                        fontFamily: T.fontSans, fontSize: 11, color: T.gray400,
+                        lineHeight: 1.4, margin: 0,
+                      }}>{step.desc}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── Phase 4: Track Progress ── */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }}
+            variants={fadeUp} custom={4}
+          >
+            <div style={{
+              display: "flex", alignItems: "center", gap: 12, marginBottom: 20,
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8, background: T.navy,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: T.fontSans, fontSize: 14, fontWeight: 800, color: T.white,
+              }}>4</div>
+              <h3 style={{
+                fontFamily: T.fontSans, fontSize: 20, fontWeight: 700, color: T.navy, margin: 0,
+              }}>
+                Watch character grow
+              </h3>
+            </div>
+            <div style={{
+              padding: 28, borderRadius: T.radiusLg, background: T.white,
+              border: `1px solid ${T.gray100}`,
+            }}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {[
+                  { icon: BarChart3, title: "Virtue Compass", desc: "A visual dashboard tracks which virtues your family has explored and where to go next.", color: VC.justice.main },
+                  { icon: TrendingUp, title: "Spot gaps early", desc: "See which virtues are underserved. Get smart recommendations to fill them.", color: VC.courage.main },
+                  { icon: Star, title: "Celebrate milestones", desc: "Mark favorites, track reading streaks, and watch the compass fill over time.", color: T.gold },
+                ].map((item, i) => {
+                  const TrackIcon = item.icon;
+                  return (
+                    <div key={i} style={{ display: "flex", gap: 14 }}>
+                      <div style={{
+                        width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                        background: `${item.color}12`, display: "flex",
+                        alignItems: "center", justifyContent: "center",
+                      }}>
+                        <TrackIcon size={20} color={item.color} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <div style={{
+                          fontFamily: T.fontSans, fontSize: 15, fontWeight: 700,
+                          color: T.navy, marginBottom: 4,
+                        }}>{item.title}</div>
+                        <p style={{
+                          fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
+                          lineHeight: 1.5, margin: 0,
+                        }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
