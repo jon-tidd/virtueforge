@@ -490,6 +490,10 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             }}>
               The Cycle of Character Formation
             </h3>
+            {/* Character cycle illustration */}
+            <div style={{ maxWidth: 500, margin: "0 auto 40px" }}>
+              <CharacterCycleDiagram />
+            </div>
             {/* Desktop: horizontal row with arrows */}
             <div className="hidden md:grid" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
               {CHARACTER_CYCLE.map((step, i) => {
