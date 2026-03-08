@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, Pen, BarChart3, ChevronRight, Flame, Brain, Heart, TreePine } from "lucide-react";
+import { BookOpen, Pen, BarChart3, ChevronRight, Flame, Brain, Heart, TreePine, Settings, RotateCcw, UserCog } from "lucide-react";
 import { VIRTUES, getSubVirtue, getVirtueParent, getRecommendedBooks, STRUGGLES_MAP } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
 import type { AppData } from "@/lib/data";
@@ -9,12 +9,13 @@ const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
 };
 
-export default function Dashboard({ appData, selChild, setSelChild, onNavigate, premium }: {
+export default function Dashboard({ appData, selChild, setSelChild, onNavigate, premium, onResetAll }: {
   appData: AppData;
   selChild: number;
   setSelChild: (i: number) => void;
   onNavigate: (page: any) => void;
   premium: boolean;
+  onResetAll?: () => void;
 }) {
   const child = appData.children[selChild];
   const hasChildren = appData.children.length > 0;
@@ -257,6 +258,58 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
               </div>
             ) : null;
           })()}
+
+          {/* Manage & Settings */}
+          <div style={{
+            marginTop: 32, paddingTop: 24,
+            borderTop: `1px solid ${T.gray100}`,
+          }}>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+              color: T.gray400, textTransform: "uppercase", letterSpacing: "0.05em",
+              marginBottom: 12,
+            }}>
+              Manage
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button onClick={() => onNavigate("children")} style={{
+                display: "flex", alignItems: "center", gap: 6,
+                padding: "8px 14px", borderRadius: T.radiusSm,
+                background: T.white, color: T.gray600,
+                border: `1px solid ${T.gray200}`, cursor: "pointer",
+                fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
+              }}>
+                <UserCog size={14} />
+                Edit Children
+              </button>
+              <button onClick={() => onNavigate("virtues")} style={{
+                display: "flex", alignItems: "center", gap: 6,
+                padding: "8px 14px", borderRadius: T.radiusSm,
+                background: T.white, color: T.gray600,
+                border: `1px solid ${T.gray200}`, cursor: "pointer",
+                fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
+              }}>
+                <Heart size={14} />
+                Edit Virtues
+              </button>
+              {onResetAll && (
+                <button onClick={() => {
+                  if (window.confirm("Reset all data? This will clear your children, virtues, reading history, and all progress. This cannot be undone.")) {
+                    onResetAll();
+                  }
+                }} style={{
+                  display: "flex", alignItems: "center", gap: 6,
+                  padding: "8px 14px", borderRadius: T.radiusSm,
+                  background: T.white, color: T.red,
+                  border: `1px solid ${T.gray200}`, cursor: "pointer",
+                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
+                }}>
+                  <RotateCcw size={14} />
+                  Reset All Data
+                </button>
+              )}
+            </div>
+          </div>
         </>
       )}
     </motion.div>

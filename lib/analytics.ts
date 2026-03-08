@@ -14,6 +14,8 @@ type EventName =
   | "consent_declined"
   | "upgrade_clicked"
   | "pdf_exported"
+  | "story_shared"
+  | "data_reset"
   | "checkout_started";
 
 export function trackEvent(name: EventName, properties?: Record<string, string | number>) {

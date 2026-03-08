@@ -7,6 +7,7 @@ import {
 } from "@/lib/data";
 import { loadData, saveData, isPremium, setPremium, getMonthlyStoryCount } from "@/lib/storage";
 import { T, VC, PLANS } from "@/lib/tokens";
+import { trackEvent } from "@/lib/analytics";
 import LandingPage, { type DemoScenario } from "./landing/LandingPage";
 import AppNav from "./app/AppNav";
 import Dashboard from "./app/Dashboard";
@@ -81,6 +82,13 @@ export default function VirtueForgeApp() {
 
   const addChild = (child: ChildProfile) => {
     upd({ children: [...appData.children, child], setupComplete: true });
+  };
+
+  const resetAll = () => {
+    trackEvent("data_reset");
+    setAppData({ children: [], familyVirtues: [], setupComplete: false });
+    setSelChild(0);
+    setPage("landing");
   };
 
   const startJourney = () => {
@@ -178,7 +186,7 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
       />
 
-      <main className="px-5 md:px-6 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto", overflowX: "hidden" }}>
+      <main className="px-6 sm:px-8 md:px-10 pt-6 md:pt-8 pb-16 md:pb-20" style={{ maxWidth: 960, margin: "0 auto", overflowX: "hidden" }}>
         <AnimatePresence mode="wait">
           {page === "dashboard" && (
             <Dashboard
@@ -188,6 +196,7 @@ export default function VirtueForgeApp() {
               setSelChild={setSelChild}
               onNavigate={setPage}
               premium={premium}
+              onResetAll={resetAll}
             />
           )}
 

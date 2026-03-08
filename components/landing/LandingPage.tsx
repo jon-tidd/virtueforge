@@ -189,7 +189,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
         position: "sticky", top: 0, zIndex: 50, background: "rgba(255,255,255,0.92)",
         backdropFilter: "blur(12px)", borderBottom: `1px solid ${T.gray100}`,
       }}>
-        <div className="px-5 sm:px-6 md:px-10" style={{
+        <div className="px-6 sm:px-8 md:px-10" style={{
           maxWidth: 1200, margin: "0 auto",
           display: "flex", alignItems: "center", justifyContent: "space-between",
           height: 64,
@@ -226,7 +226,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-5 md:px-6" style={{
+      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-6 sm:px-8 md:px-10" style={{
         textAlign: "center", background: T.white,
         position: "relative", overflow: "hidden",
       }}>
