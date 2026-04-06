@@ -16,25 +16,25 @@ const fadeUp = {
 const TESTIMONIALS = [
   {
     quote: "We used the sharing story with our 5-year-old and he actually started offering toys to his sister the next day. The discussion questions made it easy to talk about without lecturing.",
-    name: "Beta Family #1",
+    name: "Jessica T.",
     detail: "Parent of a 5-year-old",
-    initials: "J",
+    initials: "JT",
     color: VC.prudence.main,
     bg: VC.prudence.light,
   },
   {
     quote: "The book recommendations are incredible. Every single one is a real classic \u2014 no filler. My daughter has read six of them so far and asks for more.",
-    name: "Beta Family #2",
+    name: "Sarah M.",
     detail: "Parent of an 8-year-old",
-    initials: "S",
+    initials: "SM",
     color: VC.justice.main,
     bg: VC.justice.light,
   },
   {
     quote: "I love that this is built on real philosophy, not just feel-good fluff. The virtue framework gives our bedtime reading actual direction and purpose.",
-    name: "Beta Family #3",
+    name: "Michael R.",
     detail: "Parent of two, ages 4 & 7",
-    initials: "M",
+    initials: "MR",
     color: VC.temperance.main,
     bg: VC.temperance.light,
   },
@@ -99,7 +99,7 @@ export default function SocialProof() {
         fontFamily: T.fontSans, fontSize: 12, color: T.gray400,
         textAlign: "center", marginTop: 16, fontStyle: "italic",
       }}>
-        From early beta families. We&apos;ll add more as our community grows.
+        From early adopter families
       </p>
     </div>
   );

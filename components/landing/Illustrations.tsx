@@ -21,14 +21,16 @@ const GRAY500 = "#6B7280";
 // ═══════════════════════════════════════════════════════════════════════════════
 export function HeroIllustration() {
   return (
-    <Image
-      src="/images/hero-firelight.png"
-      alt="Parent and child reading a glowing storybook together by firelight"
-      width={1400}
-      height={600}
-      priority
-      style={{ width: "100%", height: "auto", maxHeight: 400, objectFit: "cover", borderRadius: 12 }}
-    />
+    <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 30px rgba(10,22,40,0.18)" }}>
+      <Image
+        src="/images/hero-firelight.png"
+        alt="Parent and child reading a glowing storybook together by firelight"
+        width={1400}
+        height={600}
+        priority
+        style={{ width: "100%", height: "auto", objectFit: "cover", display: "block" }}
+      />
+    </div>
   );
 }
 
@@ -457,16 +459,16 @@ export function PhilosopherPortrait({ name, quote }: { name: string; quote: stri
 // BOOK CAROUSEL DATA — for the animated carousel component
 // ═══════════════════════════════════════════════════════════════════════════════
 export const CAROUSEL_BOOKS = [
-  { title: "The Lion, the Witch\nand the Wardrobe", author: "C.S. Lewis", color: "#DC2626", virtue: "Courage" },
-  { title: "Charlotte's Web", author: "E.B. White", color: "#059669", virtue: "Temperance" },
-  { title: "Aesop's Fables", author: "Aesop", color: "#2563EB", virtue: "Prudence" },
-  { title: "The Hobbit", author: "J.R.R. Tolkien", color: "#D97706", virtue: "Courage" },
-  { title: "Little Women", author: "Louisa May Alcott", color: "#059669", virtue: "Temperance" },
-  { title: "Pinocchio", author: "Carlo Collodi", color: "#D97706", virtue: "Justice" },
-  { title: "The Secret Garden", author: "F.H. Burnett", color: "#059669", virtue: "Temperance" },
-  { title: "Pilgrim's Progress", author: "John Bunyan", color: "#2563EB", virtue: "Prudence" },
-  { title: "The Phantom Tollbooth", author: "Norton Juster", color: "#2563EB", virtue: "Prudence" },
-  { title: "Anne of Green Gables", author: "L.M. Montgomery", color: "#DC2626", virtue: "Courage" },
-  { title: "A Little Princess", author: "F.H. Burnett", color: "#D97706", virtue: "Justice" },
-  { title: "The Wind in\nthe Willows", author: "Kenneth Grahame", color: "#059669", virtue: "Temperance" },
+  { title: "The Lion, the Witch\nand the Wardrobe", author: "C.S. Lewis", color: "#DC2626", virtue: "Courage", cover: "https://covers.openlibrary.org/b/id/8441376-M.jpg" },
+  { title: "Charlotte's Web", author: "E.B. White", color: "#059669", virtue: "Temperance", cover: "https://covers.openlibrary.org/b/id/8461797-M.jpg" },
+  { title: "Aesop's Fables", author: "Aesop", color: "#2563EB", virtue: "Prudence", cover: "https://covers.openlibrary.org/b/id/3043711-M.jpg" },
+  { title: "The Hobbit", author: "J.R.R. Tolkien", color: "#D97706", virtue: "Courage", cover: "https://covers.openlibrary.org/b/id/8406766-M.jpg" },
+  { title: "Little Women", author: "Louisa May Alcott", color: "#059669", virtue: "Temperance", cover: "https://covers.openlibrary.org/b/id/8775559-M.jpg" },
+  { title: "Pinocchio", author: "Carlo Collodi", color: "#D97706", virtue: "Justice", cover: "https://covers.openlibrary.org/b/id/8597022-M.jpg" },
+  { title: "The Secret Garden", author: "F.H. Burnett", color: "#059669", virtue: "Temperance", cover: "https://covers.openlibrary.org/b/id/12622062-M.jpg" },
+  { title: "Pilgrim's Progress", author: "John Bunyan", color: "#2563EB", virtue: "Prudence", cover: "https://covers.openlibrary.org/b/id/8229224-M.jpg" },
+  { title: "The Phantom Tollbooth", author: "Norton Juster", color: "#2563EB", virtue: "Prudence", cover: "https://covers.openlibrary.org/b/id/8578174-M.jpg" },
+  { title: "Anne of Green Gables", author: "L.M. Montgomery", color: "#DC2626", virtue: "Courage", cover: "https://covers.openlibrary.org/b/id/14641084-M.jpg" },
+  { title: "A Little Princess", author: "F.H. Burnett", color: "#D97706", virtue: "Justice", cover: "https://covers.openlibrary.org/b/id/2328315-M.jpg" },
+  { title: "The Wind in\nthe Willows", author: "Kenneth Grahame", color: "#059669", virtue: "Temperance", cover: "https://covers.openlibrary.org/b/id/13335427-M.jpg" },
 ];
