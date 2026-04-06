@@ -98,35 +98,50 @@ const CHARACTER_CYCLE = [
   { icon: Sun, title: "Flourishing", desc: "Character enables a life well-lived" },
 ];
 
-// Book Carousel — auto-scrolling CSS animation
+// Book Carousel — auto-scrolling CSS animation with real covers
 function BookCarousel() {
-  // Double the array for seamless loop
   const books = [...CAROUSEL_BOOKS, ...CAROUSEL_BOOKS];
   return (
     <div style={{ overflow: "hidden", width: "100%", marginTop: 32 }}>
       <div style={{
-        display: "flex", gap: 16, width: "max-content",
-        animation: "scrollCarousel 40s linear infinite",
+        display: "flex", gap: 20, width: "max-content",
+        animation: "scrollCarousel 45s linear infinite",
       }}>
         {books.map((book, i) => (
           <div key={i} style={{
-            width: 140, flexShrink: 0, padding: "16px 12px",
-            background: T.white, borderRadius: T.radiusSm,
-            border: `1px solid ${T.gray100}`, textAlign: "center",
+            width: 130, flexShrink: 0, textAlign: "center",
           }}>
-            {/* Mini book cover */}
+            {/* Real book cover */}
             <div style={{
-              width: 60, height: 80, margin: "0 auto 10px",
-              background: `linear-gradient(135deg, ${book.color}22, ${book.color}08)`,
-              borderRadius: 4, border: `1px solid ${book.color}30`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              padding: 6,
+              width: 100, height: 148, margin: "0 auto 10px",
+              borderRadius: 6, overflow: "hidden",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
+              background: `linear-gradient(135deg, ${book.color}15, ${book.color}05)`,
             }}>
-              <BookOpen size={20} color={book.color} strokeWidth={1.5} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={book.cover}
+                alt={`${book.title} by ${book.author}`}
+                loading="lazy"
+                style={{
+                  width: "100%", height: "100%", objectFit: "cover",
+                  display: "block",
+                }}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = "none";
+                  if (target.parentElement) {
+                    target.parentElement.style.display = "flex";
+                    target.parentElement.style.alignItems = "center";
+                    target.parentElement.style.justifyContent = "center";
+                    target.parentElement.style.padding = "12px";
+                  }
+                }}
+              />
             </div>
             <div style={{
               fontFamily: T.fontSans, fontSize: 11, fontWeight: 600,
-              color: T.navy, lineHeight: 1.3, marginBottom: 4,
+              color: T.navy, lineHeight: 1.3, marginBottom: 3,
               whiteSpace: "pre-line",
             }}>
               {book.title}
@@ -168,8 +183,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
   hasAccount: boolean;
 }) {
   const { scrollY } = useScroll();
-  const heroParallax = useTransform(scrollY, [0, 600], [0, 80]);
-  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0.6]);
+  const heroParallax = useTransform(scrollY, [0, 600], [0, 30]);
 
   return (
     <div style={{ background: T.white, minHeight: "100vh" }}>
@@ -223,16 +237,16 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
         textAlign: "center", background: T.white,
         position: "relative", overflow: "hidden",
       }}>
-        {/* Subtle gradient orbs */}
+        {/* Subtle gradient orbs — decorative, kept away from hero image */}
         <div className="animate-orb-pulse" style={{
-          position: "absolute", top: -200, right: -200, width: 600, height: 600,
+          position: "absolute", top: -280, right: -280, width: 500, height: 500,
           borderRadius: "50%", background: `radial-gradient(circle, ${VC.prudence.light} 0%, transparent 70%)`,
-          pointerEvents: "none", opacity: 0.5,
+          pointerEvents: "none", opacity: 0.3,
         }} />
         <div className="animate-orb-pulse" style={{
-          position: "absolute", bottom: -200, left: -200, width: 500, height: 500,
+          position: "absolute", bottom: -280, left: -280, width: 400, height: 400,
           borderRadius: "50%", background: `radial-gradient(circle, ${T.goldSubtle} 0%, transparent 70%)`,
-          pointerEvents: "none", opacity: 0.6, animationDelay: "2s",
+          pointerEvents: "none", opacity: 0.35, animationDelay: "2s",
         }} />
 
         <motion.div
@@ -322,7 +336,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           {/* Hero illustration with parallax */}
           <motion.div style={{
             marginTop: 48, maxWidth: 700, margin: "48px auto 0",
-            y: heroParallax, opacity: heroOpacity,
+            y: heroParallax,
           }}>
             <HeroIllustration />
           </motion.div>
@@ -425,115 +439,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               not lectures. For 2,400 years, every civilization that endured understood this truth:
               character is not inherited &mdash; it is forged.
             </p>
-          </motion.div>
-
-          {/* The Cycle of Character Formation */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }}
-            variants={fadeUp} custom={1}
-            style={{ marginBottom: 48 }}
-          >
-            <h3 style={{
-              fontFamily: T.fontSans, fontSize: 20, fontWeight: 700,
-              color: T.navy, textAlign: "center", marginBottom: 32,
-            }}>
-              The Cycle of Character Formation
-            </h3>
-            {/* Desktop: horizontal row with arrows */}
-            <div className="hidden md:grid" style={{ gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
-              {CHARACTER_CYCLE.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <div key={i} style={{ textAlign: "center", position: "relative" }}>
-                    <div style={{
-                      width: 56, height: 56, borderRadius: 14,
-                      background: T.goldSubtle, display: "flex", alignItems: "center",
-                      justifyContent: "center", margin: "0 auto 12px",
-                      border: `1px solid ${T.gold}30`,
-                    }}>
-                      <Icon size={24} color={T.gold} strokeWidth={2} />
-                    </div>
-                    <div style={{
-                      fontFamily: T.fontSans, fontSize: 14, fontWeight: 700,
-                      color: T.navy, marginBottom: 4,
-                    }}>
-                      {step.title}
-                    </div>
-                    <p style={{
-                      fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
-                      lineHeight: 1.4,
-                    }}>
-                      {step.desc}
-                    </p>
-                    {i < CHARACTER_CYCLE.length - 1 && (
-                      <div style={{
-                        position: "absolute", right: -12, top: 24,
-                        color: T.gold,
-                      }}>
-                        <ArrowRight size={18} />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Mobile: vertical flow with connecting arrows */}
-            <div className="flex md:hidden flex-col items-center gap-0">
-              {CHARACTER_CYCLE.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <div key={i}>
-                    <div style={{
-                      display: "flex", alignItems: "center", gap: 16,
-                      padding: "16px 20px", borderRadius: T.radius,
-                      background: T.white, border: `1px solid ${T.gray100}`,
-                      width: "100%", maxWidth: 380,
-                    }}>
-                      <div style={{
-                        width: 48, height: 48, borderRadius: 12, flexShrink: 0,
-                        background: T.goldSubtle, display: "flex", alignItems: "center",
-                        justifyContent: "center", border: `1px solid ${T.gold}30`,
-                        position: "relative",
-                      }}>
-                        <Icon size={22} color={T.gold} strokeWidth={2} />
-                        <div style={{
-                          position: "absolute", top: -8, right: -8,
-                          width: 20, height: 20, borderRadius: "50%",
-                          background: T.navy, color: T.white,
-                          fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                        }}>
-                          {i + 1}
-                        </div>
-                      </div>
-                      <div>
-                        <div style={{
-                          fontFamily: T.fontSans, fontSize: 15, fontWeight: 700,
-                          color: T.navy, marginBottom: 2,
-                        }}>
-                          {step.title}
-                        </div>
-                        <p style={{
-                          fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
-                          lineHeight: 1.4, margin: 0,
-                        }}>
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                    {i < CHARACTER_CYCLE.length - 1 && (
-                      <div style={{
-                        display: "flex", justifyContent: "center", padding: "6px 0",
-                        color: T.gold,
-                      }}>
-                        <ChevronRight size={18} style={{ transform: "rotate(90deg)" }} />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
           </motion.div>
 
           {/* Philosopher Video */}
@@ -731,8 +636,6 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           </div>
         </div>
       </section>
-
-      <WaveDivider color={T.white} />
 
       {/* ═══ TWO PATHS ═══ */}
       <section className="px-6 sm:px-8 md:px-10" style={{ paddingTop: 100, paddingBottom: 100, background: T.white }}>
@@ -1255,8 +1158,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             </h2>
           </motion.div>
 
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          <div className="grid grid-cols-2 md:grid-cols-4" style={{
             gap: 20,
           }}>
             {Object.entries(VIRTUES).map(([key, virtue], i) => {
