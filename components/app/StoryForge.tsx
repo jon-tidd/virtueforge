@@ -57,9 +57,10 @@ export default function StoryForge({
     }
   }, [selChild, savedChild]);
 
-  // Pre-fill virtue from family virtues, or use sensible default.
-  const initialVirtue = appData.familyVirtues[0] || DEFAULT_VIRTUE;
-  const [selectedVirtue, setSelectedVirtue] = useState(initialVirtue);
+  // Pre-fill virtues from family virtues, or use sensible default. Multi-select.
+  const [selectedVirtues, setSelectedVirtues] = useState<string[]>(
+    appData.familyVirtues.length > 0 ? [appData.familyVirtues[0]] : [DEFAULT_VIRTUE]
+  );
   const [customSituation, setCustomSituation] = useState("");
   const [personalTouches, setPersonalTouches] = useState("");
   const [length, setLength] = useState<StoryLength>("medium");
@@ -89,19 +90,35 @@ export default function StoryForge({
       setDraftAge(demoScenario.age);
       setDraftSex(demoScenario.sex);
       setDraftReading(getDefaultReadingLevel(demoScenario.age));
-      setSelectedVirtue(demoScenario.virtue);
+      setSelectedVirtues([demoScenario.virtue]);
       setCustomSituation(demoScenario.situation);
       onDemoConsumed?.();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [demoScenario]);
 
-  // Quick virtue chips — show ≤ 4 preselected virtues from family, plus the current one
+  const toggleVirtue = (id: string) => {
+    setSelectedVirtues((prev) => {
+      if (prev.includes(id)) {
+        // Keep at least one virtue selected
+        return prev.length === 1 ? prev : prev.filter((v) => v !== id);
+      }
+      return [...prev, id];
+    });
+  };
+
+  const addVirtueFromDropdown = (id: string) => {
+    if (!id) return;
+    setSelectedVirtues((prev) => (prev.includes(id) ? prev : [...prev, id]));
+  };
+
+  // Quick virtue chips — union of family virtues and currently-selected virtues.
+  // No hard-coded default so the user's picks are authoritative.
   const quickVirtueChips = useMemo(() => {
-    const pool = [...new Set([...appData.familyVirtues, selectedVirtue, DEFAULT_VIRTUE])];
-    return pool.slice(0, 6).map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
+    const pool = [...new Set([...appData.familyVirtues, ...selectedVirtues])];
+    return pool.map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
       .filter((x) => x.sv && x.pk);
-  }, [appData.familyVirtues, selectedVirtue]);
+  }, [appData.familyVirtues, selectedVirtues]);
 
   const effectiveName = draftName.trim() || "a brave child";
   const effectiveAge = draftAge || 6;
@@ -109,7 +126,7 @@ export default function StoryForge({
   const effectiveReading = draftReading || getDefaultReadingLevel(effectiveAge);
 
   const generateStory = async () => {
-    if (!selectedVirtue) { setError("Pick a virtue to anchor the story."); return; }
+    if (selectedVirtues.length === 0) { setError("Pick at least one virtue to anchor the story."); return; }
     if (atLimit) { onPricing(); return; }
 
     if (!hasParentalConsent()) {
@@ -122,10 +139,22 @@ export default function StoryForge({
     setStory(null);
     setCopied(false);
 
-    const sv = getSubVirtue(selectedVirtue);
-    const pk = getVirtueParent(selectedVirtue);
-    const pv = pk ? VIRTUES[pk] : null;
-    if (!sv || !pv) { setError("Invalid virtue."); setGenerating(false); return; }
+    // Resolve all selected virtues. The first is the primary anchor; the rest are
+    // supporting threads the storyteller can weave in naturally.
+    const resolved = selectedVirtues
+      .map((id) => {
+        const sv = getSubVirtue(id);
+        const pk = getVirtueParent(id);
+        const pv = pk ? VIRTUES[pk] : null;
+        return sv && pv ? { sv, pv } : null;
+      })
+      .filter((x): x is { sv: NonNullable<ReturnType<typeof getSubVirtue>>; pv: typeof VIRTUES[keyof typeof VIRTUES] } => x !== null);
+
+    if (resolved.length === 0) { setError("Invalid virtue selection."); setGenerating(false); return; }
+
+    const primary = resolved[0];
+    const supporting = resolved.slice(1);
+    const cardinalSet = [...new Set(resolved.map((r) => r.pv.name))];
 
     const ageLabel = effectiveAge <= 4 ? "a very young child (ages 2-4)" :
       effectiveAge <= 7 ? "a young child (ages 5-7)" :
@@ -136,7 +165,15 @@ export default function StoryForge({
       : effectiveSex === "girl" ? "a girl"
       : "a child";
 
-    const prompt = `You are a master storyteller in the tradition of Aesop, the Brothers Grimm, and C.S. Lewis. Write an original children's story that teaches the virtue of ${sv.name} (${sv.desc}), which falls under the cardinal virtue of ${pv.name}.
+    const primaryClause = `the virtue of ${primary.sv.name} (${primary.sv.desc}), which falls under the cardinal virtue of ${primary.pv.name}`;
+    const supportingClause = supporting.length > 0
+      ? `\nWeave in these supporting virtues where they emerge naturally from the action (don't force them, let them surface through character choices): ${supporting.map((s) => `${s.sv.name} (${s.sv.desc})`).join("; ")}.`
+      : "";
+    const cardinalClause = cardinalSet.length > 1
+      ? ` The story should honor the harmony between ${cardinalSet.join(", ")}.`
+      : "";
+
+    const prompt = `You are a master storyteller in the tradition of Aesop, the Brothers Grimm, and C.S. Lewis. Write an original children's story that teaches ${primaryClause}.${cardinalClause}${supportingClause}
 
 The story is for ${effectiveName}, ${ageLabel}, who is ${genderClause}.
 Reading level: ${effectiveReading}.
@@ -188,7 +225,10 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           }
         }
 
-        setStory({ title, body, discussionQuestions, familyActivity, virtueTag: sv.name });
+        setStory({
+          title, body, discussionQuestions, familyActivity,
+          virtueTag: resolved.map((r) => r.sv.name).join(" \u00B7 "),
+        });
         incrementStoryCount();
         trackEvent("story_generated");
 
@@ -409,37 +449,52 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         border: `1px solid ${T.gray100}`, marginBottom: 14,
       }}>
         <div style={sectionTitleStyle}>What should the story teach?</div>
+        <div style={{
+          fontFamily: T.fontSans, fontSize: 12, color: T.gray400, marginBottom: 10,
+        }}>
+          Pick one or more virtues. The first is the main thread; the rest are woven in.
+        </div>
 
-        {/* Quick-pick virtue chips */}
+        {/* Quick-pick virtue chips — multi-select, tap to toggle */}
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
           {quickVirtueChips.map(({ id, sv, pk }) => {
-            const active = selectedVirtue === id;
+            const active = selectedVirtues.includes(id);
             const vc = VC[pk as keyof typeof VC];
             return (
-              <button key={id} onClick={() => setSelectedVirtue(id)} style={{
-                padding: "6px 12px", borderRadius: 100, fontSize: 13, fontWeight: 600,
-                fontFamily: T.fontSans, cursor: "pointer",
-                background: active ? vc.main : T.white,
-                color: active ? T.white : vc.main,
-                border: active ? `1px solid ${vc.main}` : `1px solid ${vc.main}40`,
-              }}>
+              <button
+                key={id}
+                onClick={() => toggleVirtue(id)}
+                aria-pressed={active}
+                style={{
+                  padding: "6px 12px", borderRadius: 100, fontSize: 13, fontWeight: 600,
+                  fontFamily: T.fontSans, cursor: "pointer",
+                  background: active ? vc.main : T.white,
+                  color: active ? T.white : vc.main,
+                  border: active ? `1px solid ${vc.main}` : `1px solid ${vc.main}40`,
+                  display: "flex", alignItems: "center", gap: 4,
+                }}
+              >
+                {active && <span style={{ fontWeight: 700 }}>✓</span>}
                 {sv!.name}
               </button>
             );
           })}
         </div>
 
-        {/* Full dropdown (secondary) */}
+        {/* Add-another dropdown — value stays empty, selecting appends */}
         <select
-          value={selectedVirtue}
-          onChange={(e) => setSelectedVirtue(e.target.value)}
-          style={{ ...inputStyle, marginBottom: 16 }}
+          value=""
+          onChange={(e) => { addVirtueFromDropdown(e.target.value); e.currentTarget.value = ""; }}
+          style={{ ...inputStyle, marginBottom: 16, color: T.gray500 }}
         >
+          <option value="">+ Add another virtue...</option>
           {Object.entries(VIRTUES).map(([key, v]) => (
             <optgroup key={key} label={v.name}>
-              {v.subVirtues.map((sv) => (
-                <option key={sv.id} value={sv.id}>{sv.name} &mdash; {sv.desc}</option>
-              ))}
+              {v.subVirtues
+                .filter((sv) => !selectedVirtues.includes(sv.id))
+                .map((sv) => (
+                  <option key={sv.id} value={sv.id}>{sv.name} &mdash; {sv.desc}</option>
+                ))}
             </optgroup>
           ))}
         </select>
