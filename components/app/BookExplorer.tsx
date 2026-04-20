@@ -1,12 +1,14 @@
 "use client";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, BookOpen, ExternalLink, Check, Star, ChevronDown } from "lucide-react";
+import { Search, Filter, BookOpen, ExternalLink, Check, ChevronDown, Sparkles, X } from "lucide-react";
 import {
   VIRTUES, BOOKS_DATABASE, READING_LEVELS, STRUGGLES_MAP,
-  getSubVirtue, getVirtueParent, getRecommendedBooks, getAmazonUrl, type AppData,
+  getSubVirtue, getVirtueParent, getAmazonUrl, type AppData,
 } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
+import VirtueQuiz from "./VirtueQuiz";
+import ChildPills from "./ChildPills";
 
 // Use centralized affiliate link helper
 const getAmazonLink = getAmazonUrl;
@@ -16,36 +18,50 @@ function getBookshopLink(title: string, author: string): string {
   return `https://bookshop.org/search?keywords=${query}&affiliate=bedtimevirtues`;
 }
 
-export default function BookExplorer({ appData, selChild, setSelChild, onMarkRead }: {
+export default function BookExplorer({ appData, selChild, setSelChild, onMarkRead, onUpdateFamilyVirtues }: {
   appData: AppData;
   selChild: number;
   setSelChild: (i: number) => void;
   onMarkRead: (ci: number, title: string, vids: string[]) => void;
+  onUpdateFamilyVirtues: (virtues: string[]) => void;
 }) {
   const [search, setSearch] = useState("");
-  const [virtueFilter, setVirtueFilter] = useState<string>("all");
   const [levelFilter, setLevelFilter] = useState<string>("all");
   const [availFilter, setAvailFilter] = useState<string>("all");
   const [showRead, setShowRead] = useState(true);
   const [showCount, setShowCount] = useState(10);
+  const [quizOpen, setQuizOpen] = useState(false);
+  const [focusMode, setFocusMode] = useState(false);
 
   const child = appData.children[selChild];
   const hasChildren = appData.children.length > 0;
+  const familyVirtues = appData.familyVirtues;
 
-  // Get recommended virtue IDs for this child
+  const toggleFamilyVirtue = (id: string) => {
+    onUpdateFamilyVirtues(
+      familyVirtues.includes(id)
+        ? familyVirtues.filter((v) => v !== id)
+        : [...familyVirtues, id]
+    );
+  };
+
+  const addFamilyVirtue = (id: string) => {
+    if (!id || familyVirtues.includes(id)) return;
+    onUpdateFamilyVirtues([...familyVirtues, id]);
+  };
+
+  // Recommendation pool: family virtues + child struggles
   const recVirtueIds = useMemo(() => {
-    if (!child) return [];
     const ids = new Set<string>();
-    child.struggles.forEach((s) => { STRUGGLES_MAP[s]?.virtues.forEach((v) => ids.add(v)); });
-    appData.familyVirtues.forEach((v) => ids.add(v));
+    if (child) child.struggles.forEach((s) => { STRUGGLES_MAP[s]?.virtues.forEach((v) => ids.add(v)); });
+    familyVirtues.forEach((v) => ids.add(v));
     return [...ids];
-  }, [child, appData.familyVirtues]);
+  }, [child, familyVirtues]);
 
   // Filter and sort books
   const filteredBooks = useMemo(() => {
     let books = [...BOOKS_DATABASE];
 
-    // Search
     if (search.trim()) {
       const q = search.toLowerCase();
       books = books.filter((b) =>
@@ -55,35 +71,24 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
       );
     }
 
-    // Virtue filter
-    if (virtueFilter !== "all") {
-      if (virtueFilter.startsWith("cardinal:")) {
-        const cardinal = virtueFilter.replace("cardinal:", "");
-        const svIds = VIRTUES[cardinal]?.subVirtues.map((sv) => sv.id) || [];
-        books = books.filter((b) => b.virtues.some((v) => svIds.includes(v)));
-      } else {
-        books = books.filter((b) => b.virtues.includes(virtueFilter));
-      }
+    // Focus mode: only show books matching family virtues
+    if (focusMode && familyVirtues.length > 0) {
+      books = books.filter((b) => b.virtues.some((v) => familyVirtues.includes(v)));
     }
 
-    // Level filter
     if (levelFilter !== "all") {
       books = books.filter((b) => b.readingLevel === levelFilter);
     }
-
-    // Availability filter
     if (availFilter === "free") {
       books = books.filter((b) => b.publicDomain);
     } else if (availFilter === "purchase") {
       books = books.filter((b) => b.amazon);
     }
-
-    // Read filter
     if (!showRead && child) {
       books = books.filter((b) => !child.readBooks.includes(b.title));
     }
 
-    // Sort: recommended first (if child has data), then by match score
+    // Sort: books matching family virtues / struggles rise to top
     if (recVirtueIds.length > 0) {
       books.sort((a, b) => {
         const aMatch = a.virtues.filter((v) => recVirtueIds.includes(v)).length;
@@ -93,7 +98,7 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
     }
 
     return books;
-  }, [search, virtueFilter, levelFilter, availFilter, showRead, child, recVirtueIds]);
+  }, [search, levelFilter, availFilter, showRead, child, recVirtueIds, focusMode, familyVirtues]);
 
   const selectStyle: React.CSSProperties = {
     padding: "8px 12px", borderRadius: T.radiusSm,
@@ -131,29 +136,119 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
         </p>
       </div>
 
-      {/* Child selector */}
-      {appData.children.length > 1 && (
-        <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
-          {appData.children.map((c, i) => (
-            <button key={i} onClick={() => setSelChild(i)} style={{
-              padding: "6px 16px", borderRadius: 100,
-              background: selChild === i ? T.navy : T.white,
-              color: selChild === i ? T.white : T.gray600,
-              border: selChild === i ? "none" : `1px solid ${T.gray200}`,
-              cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-            }}>
-              {c.name}
-            </button>
-          ))}
-        </div>
-      )}
+      <ChildPills children={appData.children} selected={selChild} onSelect={setSelChild} />
 
-      {/* Search & Filters */}
+      {/* Family Virtues — chips drive recommendations and optional focus filter */}
+      <div style={{
+        padding: 20, borderRadius: T.radius, background: T.white,
+        border: `1px solid ${T.gray100}`, marginBottom: 12,
+      }}>
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          gap: 12, marginBottom: 10, flexWrap: "wrap",
+        }}>
+          <div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+              color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
+            }}>
+              Family Virtues
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 12, color: T.gray500, marginTop: 2,
+            }}>
+              Books matching these rise to the top{familyVirtues.length > 0 ? "." : " — add a few to personalize."}
+            </div>
+          </div>
+          <button
+            onClick={() => setQuizOpen(true)}
+            style={{
+              display: "flex", alignItems: "center", gap: 4,
+              padding: "6px 10px", borderRadius: T.radiusSm,
+              background: T.goldSubtle, border: `1px solid ${T.gold}30`,
+              cursor: "pointer", fontFamily: T.fontSans,
+              fontSize: 12, fontWeight: 600, color: T.gold,
+            }}
+          >
+            <Sparkles size={12} />
+            Help me choose
+          </button>
+        </div>
+
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+          {familyVirtues.map((id) => {
+            const sv = getSubVirtue(id);
+            const pk = getVirtueParent(id);
+            if (!sv || !pk) return null;
+            const vc = VC[pk as keyof typeof VC];
+            return (
+              <button
+                key={id}
+                onClick={() => toggleFamilyVirtue(id)}
+                aria-label={`Remove ${sv.name}`}
+                style={{
+                  display: "flex", alignItems: "center", gap: 4,
+                  padding: "5px 10px 5px 12px", borderRadius: 100,
+                  background: vc.main, color: T.white,
+                  border: "none", cursor: "pointer",
+                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+                }}
+              >
+                {sv.name}
+                <X size={12} strokeWidth={2.5} />
+              </button>
+            );
+          })}
+
+          <select
+            value=""
+            onChange={(e) => { addFamilyVirtue(e.target.value); e.currentTarget.value = ""; }}
+            style={{
+              padding: "6px 28px 6px 12px", borderRadius: 100,
+              border: `1px dashed ${T.gray300}`, background: T.white,
+              fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
+              cursor: "pointer", appearance: "none" as const,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
+              backgroundRepeat: "no-repeat", backgroundPosition: "right 10px center",
+            }}
+          >
+            <option value="">+ Add virtue</option>
+            {Object.entries(VIRTUES).map(([key, v]) => (
+              <optgroup key={key} label={v.name}>
+                {v.subVirtues
+                  .filter((sv) => !familyVirtues.includes(sv.id))
+                  .map((sv) => (
+                    <option key={sv.id} value={sv.id}>{sv.name} — {sv.desc}</option>
+                  ))}
+              </optgroup>
+            ))}
+          </select>
+
+          {familyVirtues.length > 0 && (
+            <button
+              onClick={() => setFocusMode(!focusMode)}
+              aria-pressed={focusMode}
+              style={{
+                padding: "6px 12px", borderRadius: 100,
+                background: focusMode ? T.navy : T.white,
+                color: focusMode ? T.white : T.gray500,
+                border: focusMode ? "none" : `1px solid ${T.gray200}`,
+                cursor: "pointer",
+                fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+                marginLeft: "auto",
+              }}
+            >
+              {focusMode ? "Focus: on" : "Focus only"}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Search & secondary filters */}
       <div style={{
         padding: 16, borderRadius: T.radius, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 20,
       }}>
-        {/* Search */}
         <div style={{
           display: "flex", alignItems: "center", gap: 10,
           padding: "10px 14px", borderRadius: T.radiusSm,
@@ -172,35 +267,22 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
           />
         </div>
 
-        {/* Filters row */}
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <Filter size={14} color={T.gray400} />
-            <span style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500 }}>Filters:</span>
+            <span style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500 }}>Filter:</span>
           </div>
 
-          <select value={virtueFilter} onChange={(e) => { setVirtueFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
-            <option value="all">All Virtues</option>
-            {Object.entries(VIRTUES).map(([key, v]) => (
-              <optgroup key={key} label={v.name}>
-                <option value={`cardinal:${key}`}>All {v.name}</option>
-                {v.subVirtues.map((sv) => (
-                  <option key={sv.id} value={sv.id}>{sv.name}</option>
-                ))}
-              </optgroup>
-            ))}
-          </select>
-
           <select value={levelFilter} onChange={(e) => { setLevelFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
-            <option value="all">All Levels</option>
+            <option value="all">All reading levels</option>
             {READING_LEVELS.map((r) => (
               <option key={r.value} value={r.value}>{r.label}</option>
             ))}
           </select>
 
           <select value={availFilter} onChange={(e) => { setAvailFilter(e.target.value); setShowCount(10); }} style={selectStyle}>
-            <option value="all">All Availability</option>
-            <option value="free">Free Online</option>
+            <option value="all">All availability</option>
+            <option value="free">Free online</option>
             <option value="purchase">Purchase</option>
           </select>
 
@@ -391,6 +473,14 @@ export default function BookExplorer({ appData, selChild, setSelChild, onMarkRea
           </div>
         )}
       </div>
+
+      <VirtueQuiz
+        open={quizOpen}
+        onClose={() => setQuizOpen(false)}
+        onComplete={(ids) => {
+          onUpdateFamilyVirtues([...new Set([...familyVirtues, ...ids])]);
+        }}
+      />
     </motion.div>
   );
 }

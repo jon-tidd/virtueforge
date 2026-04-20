@@ -49,12 +49,12 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
           fontFamily: T.fontSans, fontSize: 28, fontWeight: 700,
           color: T.navy, marginBottom: 6,
         }}>
-          My Children
+          Children
         </h1>
         <p style={{
           fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
         }}>
-          Add your children for personalized book recommendations and character tracking.
+          Add a profile to personalize book recommendations and track virtue progress.
         </p>
       </div>
 
@@ -246,7 +246,7 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
             fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
             cursor: "pointer",
           }}>
-            See Book Recommendations
+            Continue
             <ArrowRight size={16} />
           </button>
         </div>

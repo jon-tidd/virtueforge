@@ -14,6 +14,8 @@ import { T, VC, PLANS } from "@/lib/tokens";
 import { getMonthlyStoryCount, incrementStoryCount } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import ParentalConsentModal, { hasParentalConsent } from "@/components/ParentalConsentModal";
+import VirtueQuiz from "./VirtueQuiz";
+import ChildPills from "./ChildPills";
 
 type StoryLength = "short" | "medium" | "long";
 
@@ -66,6 +68,7 @@ export default function StoryForge({
   const [length, setLength] = useState<StoryLength>("medium");
   const [showAdvanced, setShowAdvanced] = useState(false);
 
+  const [quizOpen, setQuizOpen] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [story, setStory] = useState<{
     title: string;
@@ -350,21 +353,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
       </div>
 
       {/* Existing saved-children pills (only if multiple) */}
-      {appData.children.length > 1 && (
-        <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
-          {appData.children.map((c, i) => (
-            <button key={i} onClick={() => setSelChild(i)} style={{
-              padding: "6px 16px", borderRadius: 100,
-              background: selChild === i ? T.navy : T.white,
-              color: selChild === i ? T.white : T.gray600,
-              border: selChild === i ? "none" : `1px solid ${T.gray200}`,
-              cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-            }}>
-              {c.name}
-            </button>
-          ))}
-        </div>
-      )}
+      <ChildPills children={appData.children} selected={selChild} onSelect={setSelChild} />
 
       {/* ── Step 1: Who it's for ─────────────────────────────── */}
       <div style={{
@@ -448,7 +437,24 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         padding: 24, borderRadius: T.radius, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 14,
       }}>
-        <div style={sectionTitleStyle}>What should the story teach?</div>
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          gap: 12, marginBottom: 6,
+        }}>
+          <div style={sectionTitleStyle}>What should the story teach?</div>
+          <button
+            type="button"
+            onClick={() => setQuizOpen(true)}
+            style={{
+              display: "flex", alignItems: "center", gap: 4,
+              padding: 0, background: "none", border: "none", cursor: "pointer",
+              fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gold,
+            }}
+          >
+            <Sparkles size={12} />
+            Help me choose
+          </button>
+        </div>
         <div style={{
           fontFamily: T.fontSans, fontSize: 12, color: T.gray400, marginBottom: 10,
         }}>
@@ -774,6 +780,15 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           generateStory();
         }}
         onDecline={() => setShowConsentModal(false)}
+      />
+
+      <VirtueQuiz
+        open={quizOpen}
+        onClose={() => setQuizOpen(false)}
+        onComplete={(ids) => {
+          // Merge quiz suggestions into the current story's virtues
+          setSelectedVirtues((prev) => [...new Set([...prev, ...ids])]);
+        }}
       />
 
       <div style={{

@@ -1,19 +1,18 @@
 "use client";
 import { useState } from "react";
-import { Shield, LayoutDashboard, BookOpen, Pen, BarChart3, Heart, Crown, Menu, X } from "lucide-react";
+import { Shield, LayoutDashboard, BookOpen, Pen, BarChart3, Crown, Menu, X } from "lucide-react";
 import { T } from "@/lib/tokens";
 
 const NAV_ITEMS = [
   { id: "dashboard", label: "Home", icon: LayoutDashboard },
-  { id: "virtues", label: "Virtues", icon: Heart },
-  { id: "books", label: "Books", icon: BookOpen },
   { id: "stories", label: "Story Studio", icon: Pen },
+  { id: "books", label: "Books", icon: BookOpen },
   { id: "shield", label: "Compass", icon: BarChart3 },
 ] as const;
 
 export default function AppNav({ currentPage, onNavigate, premium, onPricing }: {
   currentPage: string;
-  onNavigate: (page: any) => void;
+  onNavigate: (page: string) => void;
   premium: boolean;
   onPricing: () => void;
 }) {

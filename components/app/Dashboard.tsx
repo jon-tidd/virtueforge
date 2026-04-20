@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, Pen, BarChart3, ChevronRight, Flame, Brain, Heart, TreePine, Settings, RotateCcw, UserCog } from "lucide-react";
+import { BookOpen, Pen, BarChart3, ChevronRight, Flame, Brain, Heart, TreePine, RotateCcw, UserCog, Sparkles } from "lucide-react";
 import { VIRTUES, getSubVirtue, getVirtueParent, getRecommendedBooks, STRUGGLES_MAP } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
 import type { AppData } from "@/lib/data";
+import ChildPills from "./ChildPills";
 
 const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
@@ -56,53 +57,86 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
         }}>
           {hasChildren
             ? `${totalBooks} books read · ${totalMinutes} minutes logged · ${overallPct}% virtue coverage`
-            : "Get started by selecting your family's virtues and adding your children."
+            : "Start with a story in under a minute — no setup required."
           }
         </p>
       </div>
 
-      {/* Child selector */}
-      {appData.children.length > 1 && (
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-          {appData.children.map((c, i) => (
-            <button key={i} onClick={() => setSelChild(i)} style={{
-              padding: "8px 18px", borderRadius: 100,
-              background: selChild === i ? T.navy : T.white,
-              color: selChild === i ? T.white : T.gray600,
-              border: selChild === i ? "none" : `1px solid ${T.gray200}`,
-              cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-            }}>
-              {c.name}
-            </button>
-          ))}
-        </div>
-      )}
+      <ChildPills children={appData.children} selected={selChild} onSelect={setSelChild} />
 
       {!hasChildren ? (
-        /* Empty state for new users */
+        /* Empty state — lead straight into a story */
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { title: "Choose Virtues", desc: "Select the virtues your family wants to cultivate", page: "virtues", icon: Heart, color: VC.prudence.main },
-            { title: "Add Children", desc: "Create profiles for personalized recommendations", page: "children", icon: BookOpen, color: VC.justice.main },
-          ].map((card) => {
-            const Icon = card.icon;
-            return (
-              <button key={card.page} onClick={() => onNavigate(card.page)} style={{
-                padding: 28, borderRadius: T.radiusLg, textAlign: "left",
-                background: T.white, border: `1px solid ${T.gray200}`,
-                cursor: "pointer", transition: "border-color 0.15s",
-              }}>
-                <Icon size={24} color={card.color} strokeWidth={2} style={{ marginBottom: 12 }} />
-                <div style={{
-                  fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
-                  color: T.navy, marginBottom: 6,
-                }}>{card.title}</div>
-                <div style={{
-                  fontFamily: T.fontSans, fontSize: 14, color: T.gray500,
-                }}>{card.desc}</div>
-              </button>
-            );
-          })}
+          <button onClick={() => onNavigate("stories")} style={{
+            padding: 28, borderRadius: T.radiusLg, textAlign: "left",
+            background: T.navy, color: T.white, border: "none",
+            cursor: "pointer", boxShadow: T.shadowMd,
+            display: "flex", flexDirection: "column", gap: 6,
+          }}>
+            <div style={{
+              width: 40, height: 40, borderRadius: 10,
+              background: T.goldSubtle, display: "flex",
+              alignItems: "center", justifyContent: "center",
+              marginBottom: 6, border: `1px solid ${T.gold}30`,
+            }}>
+              <Sparkles size={20} color={T.gold} strokeWidth={2} />
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 17, fontWeight: 700, color: T.white,
+            }}>Generate a story</div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 14, color: T.gray300, lineHeight: 1.5,
+            }}>
+              A personalized virtue story in 3 clicks. No setup required.
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, color: T.gold,
+              marginTop: 6, display: "flex", alignItems: "center", gap: 4,
+            }}>
+              Start now <ChevronRight size={14} />
+            </div>
+          </button>
+
+          <button onClick={() => onNavigate("books")} style={{
+            padding: 28, borderRadius: T.radiusLg, textAlign: "left",
+            background: T.white, border: `1px solid ${T.gray200}`,
+            cursor: "pointer",
+            display: "flex", flexDirection: "column", gap: 6,
+          }}>
+            <div style={{
+              width: 40, height: 40, borderRadius: 10,
+              background: VC.prudence.light, display: "flex",
+              alignItems: "center", justifyContent: "center",
+              marginBottom: 6,
+            }}>
+              <BookOpen size={20} color={VC.prudence.main} strokeWidth={2} />
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 17, fontWeight: 700, color: T.navy,
+            }}>Browse the library</div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 14, color: T.gray500, lineHeight: 1.5,
+            }}>
+              60+ hand-curated classics mapped to classical virtues.
+            </div>
+            <div style={{
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+              color: VC.prudence.main,
+              marginTop: 6, display: "flex", alignItems: "center", gap: 4,
+            }}>
+              Explore books <ChevronRight size={14} />
+            </div>
+          </button>
+
+          {/* Subtle link to add a child for tracking */}
+          <button onClick={() => onNavigate("children")} style={{
+            gridColumn: "1 / -1", padding: "12px 16px",
+            background: "none", border: "none", cursor: "pointer",
+            fontFamily: T.fontSans, fontSize: 13, color: T.gray500,
+            textAlign: "center",
+          }}>
+            Want to track progress? Add a child profile →
+          </button>
         </div>
       ) : (
         <>
@@ -281,16 +315,6 @@ export default function Dashboard({ appData, selChild, setSelChild, onNavigate, 
               }}>
                 <UserCog size={14} />
                 Edit Children
-              </button>
-              <button onClick={() => onNavigate("virtues")} style={{
-                display: "flex", alignItems: "center", gap: 6,
-                padding: "8px 14px", borderRadius: T.radiusSm,
-                background: T.white, color: T.gray600,
-                border: `1px solid ${T.gray200}`, cursor: "pointer",
-                fontFamily: T.fontSans, fontSize: 13, fontWeight: 500,
-              }}>
-                <Heart size={14} />
-                Edit Virtues
               </button>
               {onResetAll && (
                 <button onClick={() => {

@@ -821,7 +821,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               <h3 style={{
                 fontFamily: T.fontSans, fontSize: 20, fontWeight: 700, color: T.navy, margin: 0,
               }}>
-                Set up your family profile
+                Start in under a minute — no signup
               </h3>
             </div>
             <div style={{
@@ -830,9 +830,9 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             }}>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
-                  { icon: Users, title: "Add your children", desc: "Names, ages, and reading levels so every recommendation fits." },
-                  { icon: Heart, title: "Choose focus virtues", desc: "Take a 2-minute guided quiz or pick from 16 classical virtues rooted in Aristotle." },
-                  { icon: BarChart3, title: "Get your Virtue Compass", desc: "A personalized dashboard that maps your family\u2019s character-building journey." },
+                  { icon: Sparkles, title: "Type a name, tap Create", desc: "A personalized virtue story in three clicks. Nothing else required." },
+                  { icon: Heart, title: "Pick any virtue", desc: "Choose from 16 classical virtues, or tap \u201CHelp me choose\u201D for a 30-second quiz." },
+                  { icon: BarChart3, title: "Track as you go", desc: "Add a child profile later to see books read, virtues practiced, and gaps to fill." },
                 ].map((item, i) => {
                   const StepIcon = item.icon;
                   return (

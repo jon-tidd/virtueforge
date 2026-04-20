@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { Brain, Heart, Flame, TreePine, Plus, Trophy, AlertCircle } from "lucide-react";
+import { Brain, Heart, Flame, TreePine, Plus, Trophy, AlertCircle, UserPlus, ArrowRight } from "lucide-react";
 import { VIRTUES, getVirtueParent, type AppData } from "@/lib/data";
 import { T, VC } from "@/lib/tokens";
+import ChildPills from "./ChildPills";
 
 const VIRTUE_ICONS: Record<string, typeof Brain> = {
   prudence: Brain, justice: Heart, courage: Flame, temperance: TreePine,
@@ -16,11 +17,12 @@ function polarToCartesian(cx: number, cy: number, radius: number, angleDeg: numb
   return { x: cx + radius * Math.cos(angleRad), y: cy + radius * Math.sin(angleRad) };
 }
 
-export default function ShieldTracker({ appData, selChild, setSelChild, onLogTime }: {
+export default function ShieldTracker({ appData, selChild, setSelChild, onLogTime, onAddChild }: {
   appData: AppData;
   selChild: number;
   setSelChild: (i: number) => void;
   onLogTime: (ci: number, vid: string, min: number) => void;
+  onAddChild: () => void;
 }) {
   const child = appData.children[selChild];
   const hasChildren = appData.children.length > 0;
@@ -30,11 +32,57 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
       <motion.div
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        style={{ padding: 40, borderRadius: T.radius, background: T.white, border: `1px solid ${T.gray100}`, textAlign: "center" }}
       >
-        <p style={{ fontFamily: T.fontSans, fontSize: 15, color: T.gray500 }}>
-          Add your children first to track virtue progress.
-        </p>
+        <div style={{ marginBottom: 20 }}>
+          <h1 style={{
+            fontFamily: T.fontSans, fontSize: 28, fontWeight: 700,
+            color: T.navy, marginBottom: 6,
+          }}>
+            Character Compass
+          </h1>
+          <p style={{ fontFamily: T.fontSans, fontSize: 15, color: T.gray500 }}>
+            A visual map of which virtues your child has practiced and where to go next.
+          </p>
+        </div>
+        <div style={{
+          padding: 40, borderRadius: T.radiusLg, background: T.white,
+          border: `1px solid ${T.gray100}`, textAlign: "center",
+        }}>
+          <div style={{
+            width: 56, height: 56, borderRadius: 14,
+            background: T.goldSubtle, display: "inline-flex",
+            alignItems: "center", justifyContent: "center",
+            marginBottom: 14, border: `1px solid ${T.gold}30`,
+          }}>
+            <UserPlus size={26} color={T.gold} strokeWidth={2} />
+          </div>
+          <h3 style={{
+            fontFamily: T.fontSans, fontSize: 18, fontWeight: 700,
+            color: T.navy, marginBottom: 6,
+          }}>
+            Add a child profile to start tracking
+          </h3>
+          <p style={{
+            fontFamily: T.fontSans, fontSize: 14, color: T.gray500,
+            lineHeight: 1.5, maxWidth: 400, margin: "0 auto 20px",
+          }}>
+            The Compass maps growth across the four cardinal virtues as you read
+            books, generate stories, and log time together.
+          </p>
+          <button
+            onClick={onAddChild}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 6,
+              padding: "10px 20px", borderRadius: T.radiusSm,
+              background: T.navy, color: T.gold, border: "none",
+              cursor: "pointer",
+              fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+            }}
+          >
+            Add a child
+            <ArrowRight size={14} />
+          </button>
+        </div>
       </motion.div>
     );
   }
@@ -100,22 +148,7 @@ export default function ShieldTracker({ appData, selChild, setSelChild, onLogTim
         </p>
       </div>
 
-      {/* Child selector */}
-      {appData.children.length > 1 && (
-        <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-          {appData.children.map((c, i) => (
-            <button key={i} onClick={() => setSelChild(i)} style={{
-              padding: "6px 16px", borderRadius: 100,
-              background: selChild === i ? T.navy : T.white,
-              color: selChild === i ? T.white : T.gray600,
-              border: selChild === i ? "none" : `1px solid ${T.gray200}`,
-              cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-            }}>
-              {c.name}
-            </button>
-          ))}
-        </div>
-      )}
+      <ChildPills children={appData.children} selected={selChild} onSelect={setSelChild} />
 
       {/* Compass + Stats */}
       <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-8" style={{

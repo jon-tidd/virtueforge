@@ -14,13 +14,12 @@ import Dashboard from "./app/Dashboard";
 import BookExplorer from "./app/BookExplorer";
 import StoryForge from "./app/StoryForge";
 import ShieldTracker from "./app/ShieldTracker";
-import VirtueSelector from "./app/VirtueSelector";
 import ChildManager from "./app/ChildManager";
 import PricingPage from "./app/PricingPage";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsOfService from "./TermsOfService";
 
-type AppPage = "landing" | "dashboard" | "virtues" | "children" | "books" | "stories" | "shield" | "pricing" | "privacy" | "terms";
+type AppPage = "landing" | "dashboard" | "children" | "books" | "stories" | "shield" | "pricing" | "privacy" | "terms";
 
 export default function VirtueForgeApp() {
   const [page, setPage] = useState<AppPage>("landing");
@@ -92,10 +91,12 @@ export default function VirtueForgeApp() {
   };
 
   const startJourney = () => {
+    // Go straight to Story Studio — the fastest path to value.
+    // StoryForge has inline setup, so no funnel is required.
     if (appData.setupComplete && appData.children.length > 0) {
       setPage("dashboard");
     } else {
-      setPage("virtues");
+      setPage("stories");
     }
   };
 
@@ -143,9 +144,10 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
         onDemo={handleDemo}
         onNavigate={(p: string) => {
-          // Stories can be generated directly — StoryForge has an inline mini-form
-          // so there is no setup gate. Books still requires a saved profile (reading level).
-          if (p === "stories" || appData.setupComplete) {
+          // Stories and Books both work without any prior setup — browsing the
+          // catalog doesn't require a profile, and StoryForge has inline setup.
+          // Only tracking pages (dashboard, compass) need a saved child.
+          if (p === "stories" || p === "books" || appData.setupComplete) {
             setPage(p as AppPage);
           } else {
             setPendingDest(p as AppPage);
@@ -182,7 +184,7 @@ export default function VirtueForgeApp() {
     <div style={{ minHeight: "100vh", background: T.bg }}>
       <AppNav
         currentPage={page}
-        onNavigate={setPage}
+        onNavigate={(p) => setPage(p as AppPage)}
         premium={premium}
         onPricing={() => setPage("pricing")}
       />
@@ -198,24 +200,6 @@ export default function VirtueForgeApp() {
               onNavigate={setPage}
               premium={premium}
               onResetAll={resetAll}
-            />
-          )}
-
-          {page === "virtues" && (
-            <VirtueSelector
-              key="virtues"
-              familyVirtues={appData.familyVirtues}
-              onUpdate={(v) => upd({ familyVirtues: v })}
-              onNext={() => {
-                if (appData.children.length > 0) {
-                  // Setup already done — go to intended destination or books
-                  const dest = pendingDest || "books";
-                  setPendingDest(null);
-                  setPage(dest);
-                } else {
-                  setPage("children");
-                }
-              }}
             />
           )}
 
@@ -242,6 +226,7 @@ export default function VirtueForgeApp() {
               selChild={selChild}
               setSelChild={setSelChild}
               onMarkRead={markRead}
+              onUpdateFamilyVirtues={(virtues) => upd({ familyVirtues: virtues })}
             />
           )}
 
@@ -273,6 +258,7 @@ export default function VirtueForgeApp() {
               selChild={selChild}
               setSelChild={setSelChild}
               onLogTime={logTime}
+              onAddChild={() => setPage("children")}
             />
           )}
         </AnimatePresence>
