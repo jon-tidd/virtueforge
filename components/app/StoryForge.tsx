@@ -112,13 +112,13 @@ export default function StoryForge({
     setSelectedVirtues((prev) => (prev.includes(id) ? prev : [...prev, id]));
   };
 
-  // Quick virtue chips — union of family virtues and currently-selected virtues.
-  // No hard-coded default so the user's picks are authoritative.
+  // Chips mirror the current selection only. Family virtues seed the initial
+  // selection above; unselected family virtues don't clutter the row.
   const quickVirtueChips = useMemo(() => {
-    const pool = [...new Set([...appData.familyVirtues, ...selectedVirtues])];
-    return pool.map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
+    return selectedVirtues
+      .map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
       .filter((x) => x.sv && x.pk);
-  }, [appData.familyVirtues, selectedVirtues]);
+  }, [selectedVirtues]);
 
   const effectiveName = draftName.trim() || "a brave child";
   const effectiveAge = draftAge || 6;
