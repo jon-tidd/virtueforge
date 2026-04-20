@@ -1,15 +1,34 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Pen, Lock, Crown, FileText, Copy, Mail, Sparkles, MessageCircle, Users, Info, Share2, Download } from "lucide-react";
-import { VIRTUES, getSubVirtue, getVirtueParent, type AppData } from "@/lib/data";
+import {
+  Pen, Crown, Copy, Mail, Sparkles, MessageCircle, Users,
+  Info, Share2, Download, ChevronDown, ChevronUp, Clock,
+} from "lucide-react";
+import {
+  VIRTUES, getSubVirtue, getVirtueParent, READING_LEVELS,
+  getDefaultReadingLevel, type AppData, type ChildProfile,
+} from "@/lib/data";
 import type { DemoScenario } from "@/components/landing/LandingPage";
 import { T, VC, PLANS } from "@/lib/tokens";
 import { getMonthlyStoryCount, incrementStoryCount } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import ParentalConsentModal, { hasParentalConsent } from "@/components/ParentalConsentModal";
 
-export default function StoryForge({ appData, selChild, setSelChild, premium, onPricing, demoScenario, onDemoConsumed }: {
+type StoryLength = "short" | "medium" | "long";
+
+const LENGTH_OPTIONS: { id: StoryLength; label: string; minutes: string; wordCount: string }[] = [
+  { id: "short", label: "Short", minutes: "~3 min", wordCount: "300\u2013500" },
+  { id: "medium", label: "Medium", minutes: "~5 min", wordCount: "500\u2013800" },
+  { id: "long", label: "Long", minutes: "~10 min", wordCount: "900\u20131400" },
+];
+
+// Sensible default virtue if no family virtue selected
+const DEFAULT_VIRTUE = "perseverance";
+
+export default function StoryForge({
+  appData, selChild, setSelChild, premium, onPricing, demoScenario, onDemoConsumed, onSilentAddChild,
+}: {
   appData: AppData;
   selChild: number;
   setSelChild: (i: number) => void;
@@ -17,7 +36,35 @@ export default function StoryForge({ appData, selChild, setSelChild, premium, on
   onPricing: () => void;
   demoScenario?: DemoScenario | null;
   onDemoConsumed?: () => void;
+  onSilentAddChild?: (child: ChildProfile) => void;
 }) {
+  const savedChild = appData.children[selChild];
+  const hasSavedChildren = appData.children.length > 0;
+
+  // Inline draft state (used when there's no saved child, or when user edits in-line)
+  const [draftName, setDraftName] = useState(savedChild?.name ?? "");
+  const [draftAge, setDraftAge] = useState<number>(savedChild?.age ?? 6);
+  const [draftSex, setDraftSex] = useState<string>(savedChild?.sex ?? "");
+  const [draftReading, setDraftReading] = useState<string>(savedChild?.readingLevel ?? "");
+
+  // If saved child changes (user switched pills), sync draft fields to that child
+  useEffect(() => {
+    if (savedChild) {
+      setDraftName(savedChild.name);
+      setDraftAge(savedChild.age);
+      setDraftSex(savedChild.sex);
+      setDraftReading(savedChild.readingLevel);
+    }
+  }, [selChild, savedChild]);
+
+  // Pre-fill virtue from family virtues, or use sensible default.
+  const initialVirtue = appData.familyVirtues[0] || DEFAULT_VIRTUE;
+  const [selectedVirtue, setSelectedVirtue] = useState(initialVirtue);
+  const [customSituation, setCustomSituation] = useState("");
+  const [personalTouches, setPersonalTouches] = useState("");
+  const [length, setLength] = useState<StoryLength>("medium");
+  const [showAdvanced, setShowAdvanced] = useState(false);
+
   const [generating, setGenerating] = useState(false);
   const [story, setStory] = useState<{
     title: string;
@@ -26,31 +73,45 @@ export default function StoryForge({ appData, selChild, setSelChild, premium, on
     familyActivity: string;
     virtueTag: string;
   } | null>(null);
-  const [selectedVirtue, setSelectedVirtue] = useState("");
-  const [customSituation, setCustomSituation] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
 
-  const child = appData.children[selChild];
-  const hasChildren = appData.children.length > 0;
   const monthlyCount = getMonthlyStoryCount();
   const atLimit = !premium && monthlyCount >= PLANS.free.stories;
 
-  // Pre-fill from demo scenario
+  // If family virtues change (e.g., set on another page), re-apply the first one only if the user
+  // hasn't explicitly changed the picker yet — simpler: only apply on initial mount.
+  // Pre-fill from demo scenario (one-click landing demos)
   useEffect(() => {
     if (demoScenario) {
+      setDraftName(demoScenario.childName);
+      setDraftAge(demoScenario.age);
+      setDraftSex(demoScenario.sex);
+      setDraftReading(getDefaultReadingLevel(demoScenario.age));
       setSelectedVirtue(demoScenario.virtue);
       setCustomSituation(demoScenario.situation);
       onDemoConsumed?.();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [demoScenario]);
 
+  // Quick virtue chips — show ≤ 4 preselected virtues from family, plus the current one
+  const quickVirtueChips = useMemo(() => {
+    const pool = [...new Set([...appData.familyVirtues, selectedVirtue, DEFAULT_VIRTUE])];
+    return pool.slice(0, 6).map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
+      .filter((x) => x.sv && x.pk);
+  }, [appData.familyVirtues, selectedVirtue]);
+
+  const effectiveName = draftName.trim() || "a brave child";
+  const effectiveAge = draftAge || 6;
+  const effectiveSex = draftSex; // may be ""
+  const effectiveReading = draftReading || getDefaultReadingLevel(effectiveAge);
+
   const generateStory = async () => {
-    if (!selectedVirtue || !child) return;
+    if (!selectedVirtue) { setError("Pick a virtue to anchor the story."); return; }
     if (atLimit) { onPricing(); return; }
 
-    // Gate behind parental consent
     if (!hasParentalConsent()) {
       setShowConsentModal(true);
       return;
@@ -66,18 +127,24 @@ export default function StoryForge({ appData, selChild, setSelChild, premium, on
     const pv = pk ? VIRTUES[pk] : null;
     if (!sv || !pv) { setError("Invalid virtue."); setGenerating(false); return; }
 
-    const ageLabel = child.age <= 4 ? "a very young child (ages 2-4)" :
-      child.age <= 7 ? "a young child (ages 5-7)" :
-      child.age <= 10 ? "a child (ages 8-10)" : "an older child (ages 11-13)";
+    const ageLabel = effectiveAge <= 4 ? "a very young child (ages 2-4)" :
+      effectiveAge <= 7 ? "a young child (ages 5-7)" :
+      effectiveAge <= 10 ? "a child (ages 8-10)" : "an older child (ages 11-13)";
+
+    const lengthCfg = LENGTH_OPTIONS.find((l) => l.id === length)!;
+    const genderClause = effectiveSex === "boy" ? "a boy"
+      : effectiveSex === "girl" ? "a girl"
+      : "a child";
 
     const prompt = `You are a master storyteller in the tradition of Aesop, the Brothers Grimm, and C.S. Lewis. Write an original children's story that teaches the virtue of ${sv.name} (${sv.desc}), which falls under the cardinal virtue of ${pv.name}.
 
-The story is for ${child.name}, ${ageLabel}, who is ${child.sex === "boy" ? "a boy" : "a girl"}.
-Reading level: ${child.readingLevel}.
+The story is for ${effectiveName}, ${ageLabel}, who is ${genderClause}.
+Reading level: ${effectiveReading}.
 ${customSituation ? `The child is currently dealing with: ${customSituation}. Weave this theme naturally into the story.` : ""}
+${personalTouches ? `Incorporate these personal details naturally if they fit the narrative (do not force all of them, pick what works): ${personalTouches}.` : ""}
 
 Requirements:
-- ${child.age <= 5 ? "300-500" : child.age <= 8 ? "500-800" : "800-1200"} words
+- Target length: ${lengthCfg.wordCount} words (${lengthCfg.minutes} read aloud)
 - Vivid, memorable characters and settings
 - The moral emerges naturally, never stated explicitly
 - Show virtue practiced through action and habit
@@ -107,8 +174,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         const title = lines[0].replace(/^#+\s*/, "").replace(/^\*+/, "").replace(/\*+$/, "").trim();
         const body = lines.slice(1).join("\n").trim();
 
-        // Parse discussion guide (defensive — works without it)
-        let discussionQuestions: string[] = [];
+        const discussionQuestions: string[] = [];
         let familyActivity = "";
         if (parts[1]) {
           const guideLines = parts[1].trim().split("\n");
@@ -122,21 +188,31 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           }
         }
 
-        setStory({
-          title, body, discussionQuestions, familyActivity,
-          virtueTag: sv?.name || "",
-        });
+        setStory({ title, body, discussionQuestions, familyActivity, virtueTag: sv.name });
         incrementStoryCount();
         trackEvent("story_generated");
+
+        // Silent profile save: if no saved children yet and the user typed a real name,
+        // persist this child so future sessions remember them.
+        if (!hasSavedChildren && draftName.trim() && onSilentAddChild) {
+          onSilentAddChild({
+            name: draftName.trim(),
+            age: effectiveAge,
+            sex: effectiveSex || "",
+            readingLevel: effectiveReading,
+            struggles: [],
+            readBooks: [],
+            virtueProgress: {},
+          });
+        }
       } else setError("No story generated. Try again.");
     } catch { setError("Failed to connect. Check your internet connection."); }
     setGenerating(false);
   };
 
-  const [showPdfTip, setShowPdfTip] = useState(false);
-
   const buildStoryHTML = () => {
-    if (!story || !child) return "";
+    if (!story) return "";
+    const displayName = draftName.trim() || "a young reader";
     return `<!DOCTYPE html><html><head><title>${story.title}</title>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
@@ -153,10 +229,10 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
       </style>
     </head><body>
       <div class="tip-banner">
-        📄 <strong>To save as PDF:</strong> Tap the <strong>Share button</strong> (square with arrow) then choose <strong>"Print"</strong> or <strong>"Save to Files"</strong>. On desktop, choose <strong>"Save as PDF"</strong> in the print dialog.
+        \uD83D\uDCC4 <strong>To save as PDF:</strong> Tap the <strong>Share button</strong> (square with arrow) then choose <strong>"Print"</strong> or <strong>"Save to Files"</strong>. On desktop, choose <strong>"Save as PDF"</strong> in the print dialog.
       </div>
       <h1>${story.title}</h1>
-      <div class="meta">A story for ${child.name} · Generated by Bedtime Virtues</div>
+      <div class="meta">A story for ${displayName} \u00B7 Generated by Bedtime Virtues</div>
       ${story.body.split("\n\n").map((p: string) => `<p>${p}</p>`).join("")}
       ${story.discussionQuestions.length > 0 ? `
       <div style="margin-top: 40px; padding: 24px; border: 2px solid #D4A846; border-radius: 12px; background: #FFFBEB;">
@@ -171,40 +247,30 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </div>` : ""}
       </div>
       ` : ""}
-      <div class="footer">Bedtime Virtues — Building Character Through Story · bedtimevirtues.com</div>
+      <div class="footer">Bedtime Virtues \u2014 Building Character Through Story \u00B7 bedtimevirtues.com</div>
     </body></html>`;
   };
 
   const exportPDF = () => {
-    if (!story || !child) return;
+    if (!story) return;
     trackEvent("pdf_exported");
     const html = buildStoryHTML();
     const win = window.open("", "_blank");
     if (!win) return;
     win.document.write(html);
     win.document.close();
-    // On desktop, auto-trigger print. On mobile, the tip banner guides users.
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) {
-      setTimeout(() => win.print(), 500);
-    }
+    if (!isMobile) setTimeout(() => win.print(), 500);
   };
 
   const shareStory = async () => {
-    if (!story || !child) return;
+    if (!story) return;
     trackEvent("story_shared");
-    const text = `${story.title}\n\nA story for ${child.name}, generated by Bedtime Virtues.\n\n${story.body}`;
+    const displayName = draftName.trim() || "a young reader";
+    const text = `${story.title}\n\nA story for ${displayName}, generated by Bedtime Virtues.\n\n${story.body}`;
     if (navigator.share) {
-      try {
-        await navigator.share({
-          title: story.title,
-          text,
-        });
-      } catch {
-        // User cancelled share — that's fine
-      }
+      try { await navigator.share({ title: story.title, text }); } catch { /* cancelled */ }
     } else {
-      // Fallback: copy to clipboard
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -217,12 +283,18 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
     color: T.gray800, background: T.white, outline: "none",
   };
 
+  const sectionTitleStyle: React.CSSProperties = {
+    fontFamily: T.fontSans, fontSize: 12, fontWeight: 700,
+    color: T.gray400, textTransform: "uppercase", letterSpacing: "0.06em",
+    marginBottom: 10,
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.3 }}
     >
-      <div style={{ marginBottom: 24 }}>
+      <div style={{ marginBottom: 20 }}>
         <h1 style={{
           fontFamily: T.fontSans, fontSize: 28, fontWeight: 700,
           color: T.navy, marginBottom: 6,
@@ -232,335 +304,438 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         <p style={{
           fontFamily: T.fontSans, fontSize: 15, color: T.gray500,
         }}>
-          Generate original stories tailored to your child&apos;s virtue journey.
-          {!premium && ` ${PLANS.free.stories - monthlyCount} of ${PLANS.free.stories} free stories remaining this month.`}
+          A personalized virtue story in under a minute.
+          {!premium && ` ${Math.max(0, PLANS.free.stories - monthlyCount)} of ${PLANS.free.stories} free stories left this month.`}
         </p>
       </div>
 
-      {!hasChildren ? (
-        <div style={{
-          padding: 40, borderRadius: T.radius, background: T.white,
-          border: `1px solid ${T.gray100}`, textAlign: "center",
-        }}>
-          <p style={{ fontFamily: T.fontSans, fontSize: 15, color: T.gray500, marginBottom: 16 }}>
-            Add your children first to generate personalized stories.
-          </p>
-        </div>
-      ) : (
-        <>
-          {/* Child selector */}
-          {appData.children.length > 1 && (
-            <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
-              {appData.children.map((c, i) => (
-                <button key={i} onClick={() => setSelChild(i)} style={{
-                  padding: "6px 16px", borderRadius: 100,
-                  background: selChild === i ? T.navy : T.white,
-                  color: selChild === i ? T.white : T.gray600,
-                  border: selChild === i ? "none" : `1px solid ${T.gray200}`,
-                  cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                }}>
-                  {c.name}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Story Generator Form */}
-          <div style={{
-            padding: 28, borderRadius: T.radius, background: T.white,
-            border: `1px solid ${T.gray100}`, marginBottom: 20,
-          }}>
-            <div style={{
-              fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
-              marginBottom: 20,
+      {/* Existing saved-children pills (only if multiple) */}
+      {appData.children.length > 1 && (
+        <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
+          {appData.children.map((c, i) => (
+            <button key={i} onClick={() => setSelChild(i)} style={{
+              padding: "6px 16px", borderRadius: 100,
+              background: selChild === i ? T.navy : T.white,
+              color: selChild === i ? T.white : T.gray600,
+              border: selChild === i ? "none" : `1px solid ${T.gray200}`,
+              cursor: "pointer", fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
             }}>
-              Creating for <strong style={{ color: T.navy }}>{child?.name}</strong> (age {child?.age})
-            </div>
+              {c.name}
+            </button>
+          ))}
+        </div>
+      )}
 
-            <div style={{ marginBottom: 18 }}>
-              <label style={{
-                display: "block", fontFamily: T.fontSans, fontSize: 14,
-                fontWeight: 600, color: T.navy, marginBottom: 6,
-              }}>
-                Which virtue should this story teach?
+      {/* ── Step 1: Who it's for ─────────────────────────────── */}
+      <div style={{
+        padding: 24, borderRadius: T.radius, background: T.white,
+        border: `1px solid ${T.gray100}`, marginBottom: 14,
+      }}>
+        <div style={sectionTitleStyle}>Who&apos;s this story for?</div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_120px] gap-3">
+          <div>
+            <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+              Name
+            </label>
+            <input
+              value={draftName}
+              onChange={(e) => setDraftName(e.target.value)}
+              placeholder="e.g., Mason"
+              autoFocus={!savedChild}
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+              Age
+            </label>
+            <input
+              type="number"
+              min={2} max={14}
+              value={draftAge}
+              onChange={(e) => setDraftAge(parseInt(e.target.value) || 6)}
+              style={inputStyle}
+            />
+          </div>
+        </div>
+
+        {/* Advanced: sex + reading level */}
+        <button
+          type="button"
+          onClick={() => setShowAdvanced(!showAdvanced)}
+          style={{
+            marginTop: 12, display: "flex", alignItems: "center", gap: 6,
+            background: "none", border: "none", cursor: "pointer", padding: 0,
+            fontFamily: T.fontSans, fontSize: 13, fontWeight: 500, color: T.gray500,
+          }}
+        >
+          {showAdvanced ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          {showAdvanced ? "Hide details" : "Add more details (optional)"}
+        </button>
+        {showAdvanced && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ marginTop: 12 }}>
+            <div>
+              <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+                Gender (optional)
               </label>
-              <select value={selectedVirtue} onChange={(e) => setSelectedVirtue(e.target.value)} style={inputStyle}>
-                <option value="">Choose a virtue...</option>
-                {Object.entries(VIRTUES).map(([key, v]) => (
-                  <optgroup key={key} label={v.name}>
-                    {v.subVirtues.map((sv) => (
-                      <option key={sv.id} value={sv.id}>{sv.name} — {sv.desc}</option>
-                    ))}
-                  </optgroup>
+              <select value={draftSex} onChange={(e) => setDraftSex(e.target.value)} style={inputStyle}>
+                <option value="">Skip / either</option>
+                <option value="boy">Boy</option>
+                <option value="girl">Girl</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+                Reading level
+              </label>
+              <select
+                value={draftReading || getDefaultReadingLevel(effectiveAge)}
+                onChange={(e) => setDraftReading(e.target.value)}
+                style={inputStyle}
+              >
+                {READING_LEVELS.map((r) => (
+                  <option key={r.value} value={r.value}>{r.label}</option>
                 ))}
               </select>
             </div>
+          </div>
+        )}
+      </div>
 
-            <div style={{ marginBottom: 20 }}>
-              <label style={{
-                display: "block", fontFamily: T.fontSans, fontSize: 14,
-                fontWeight: 600, color: T.navy, marginBottom: 6,
+      {/* ── Step 2: Virtue + situation + touches ──────────────── */}
+      <div style={{
+        padding: 24, borderRadius: T.radius, background: T.white,
+        border: `1px solid ${T.gray100}`, marginBottom: 14,
+      }}>
+        <div style={sectionTitleStyle}>What should the story teach?</div>
+
+        {/* Quick-pick virtue chips */}
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
+          {quickVirtueChips.map(({ id, sv, pk }) => {
+            const active = selectedVirtue === id;
+            const vc = VC[pk as keyof typeof VC];
+            return (
+              <button key={id} onClick={() => setSelectedVirtue(id)} style={{
+                padding: "6px 12px", borderRadius: 100, fontSize: 13, fontWeight: 600,
+                fontFamily: T.fontSans, cursor: "pointer",
+                background: active ? vc.main : T.white,
+                color: active ? T.white : vc.main,
+                border: active ? `1px solid ${vc.main}` : `1px solid ${vc.main}40`,
               }}>
-                Specific situation <span style={{ fontWeight: 400, color: T.gray400 }}>(optional)</span>
-              </label>
-              <input
-                value={customSituation}
-                onChange={(e) => setCustomSituation(e.target.value)}
-                placeholder="e.g., struggling to share with a new sibling"
-                style={inputStyle}
-              />
+                {sv!.name}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Full dropdown (secondary) */}
+        <select
+          value={selectedVirtue}
+          onChange={(e) => setSelectedVirtue(e.target.value)}
+          style={{ ...inputStyle, marginBottom: 16 }}
+        >
+          {Object.entries(VIRTUES).map(([key, v]) => (
+            <optgroup key={key} label={v.name}>
+              {v.subVirtues.map((sv) => (
+                <option key={sv.id} value={sv.id}>{sv.name} &mdash; {sv.desc}</option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+
+        <div style={{ marginBottom: 14 }}>
+          <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+            Situation <span style={{ fontWeight: 400, color: T.gray400 }}>(optional)</span>
+          </label>
+          <input
+            value={customSituation}
+            onChange={(e) => setCustomSituation(e.target.value)}
+            placeholder="e.g., struggling to share with a new sibling"
+            style={inputStyle}
+          />
+        </div>
+
+        <div>
+          <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+            Personal touches <span style={{ fontWeight: 400, color: T.gray400 }}>(optional)</span>
+          </label>
+          <textarea
+            value={personalTouches}
+            onChange={(e) => setPersonalTouches(e.target.value)}
+            placeholder="Stuffed animal, sibling, favorite food, pet, hobby, setting..."
+            rows={2}
+            style={{ ...inputStyle, resize: "vertical", fontFamily: T.fontSans }}
+          />
+          <div style={{ fontSize: 11, color: T.gray400, marginTop: 4, fontFamily: T.fontSans }}>
+            Weaved in naturally where it fits. Examples: &ldquo;loves her teddy Bramble, has a little
+            brother Theo, favorite food is pancakes.&rdquo;
+          </div>
+        </div>
+      </div>
+
+      {/* ── Step 3: Length ──────────────────────────────────── */}
+      <div style={{
+        padding: 24, borderRadius: T.radius, background: T.white,
+        border: `1px solid ${T.gray100}`, marginBottom: 16,
+      }}>
+        <div style={sectionTitleStyle}>How long?</div>
+        <div className="grid grid-cols-3 gap-2">
+          {LENGTH_OPTIONS.map((opt) => {
+            const active = length === opt.id;
+            return (
+              <button key={opt.id} onClick={() => setLength(opt.id)} style={{
+                padding: "12px 8px", borderRadius: T.radiusSm,
+                background: active ? T.navy : T.white,
+                color: active ? T.white : T.navy,
+                border: active ? `1px solid ${T.navy}` : `1px solid ${T.gray200}`,
+                cursor: "pointer", fontFamily: T.fontSans, textAlign: "center",
+              }}>
+                <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 2 }}>{opt.label}</div>
+                <div style={{
+                  fontSize: 11, display: "flex", alignItems: "center", justifyContent: "center",
+                  gap: 4, color: active ? "rgba(255,255,255,0.8)" : T.gray500,
+                }}>
+                  <Clock size={10} />
+                  {opt.minutes}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Create button ───────────────────────────────────── */}
+      {atLimit ? (
+        <button onClick={onPricing} style={{
+          display: "flex", alignItems: "center", gap: 8,
+          padding: "14px 24px", borderRadius: T.radiusSm,
+          background: T.navy, color: T.gold, border: "none",
+          fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
+          cursor: "pointer",
+        }}>
+          <Crown size={16} />
+          Upgrade for Unlimited Stories
+        </button>
+      ) : (
+        <button
+          onClick={generateStory}
+          disabled={generating}
+          style={{
+            display: "flex", alignItems: "center", gap: 8,
+            padding: "14px 28px", borderRadius: T.radiusSm,
+            background: generating ? T.gray200 : T.navy,
+            color: generating ? T.gray400 : T.gold,
+            border: "none", cursor: generating ? "default" : "pointer",
+            fontFamily: T.fontSans, fontSize: 15, fontWeight: 700,
+            boxShadow: generating ? "none" : "0 4px 14px rgba(10,22,40,0.25)",
+          }}
+        >
+          {generating ? (
+            <>
+              <Sparkles size={16} className="animate-pulse-subtle" />
+              Weaving the story...
+            </>
+          ) : (
+            <>
+              <Pen size={16} />
+              Create Story
+            </>
+          )}
+        </button>
+      )}
+
+      {error && (
+        <div style={{
+          marginTop: 14, padding: 12, borderRadius: T.radiusSm,
+          background: T.redLight, border: `1px solid ${T.red}20`,
+          fontFamily: T.fontSans, fontSize: 14, color: T.red,
+        }}>
+          {error}
+        </div>
+      )}
+
+      {/* ── Generated Story ─────────────────────────────────── */}
+      {story && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          style={{ marginTop: 24 }}
+        >
+          <div className="p-5 md:p-10" style={{
+            borderRadius: T.radiusLg, background: T.white,
+            border: `1px solid ${T.gold}30`, boxShadow: T.shadowLg,
+            marginBottom: 16,
+          }}>
+            <h2 style={{
+              fontFamily: T.fontDisplay, fontSize: 32, fontWeight: 700,
+              color: T.navy, textAlign: "center", marginBottom: 8,
+            }}>
+              {story.title}
+            </h2>
+            <div style={{
+              textAlign: "center", fontFamily: T.fontSans, fontSize: 13,
+              color: T.gray400, marginBottom: 32,
+              paddingBottom: 24, borderBottom: `2px solid ${T.gold}40`,
+            }}>
+              A story for {draftName.trim() || "a young reader"} &middot; by Bedtime Virtues
             </div>
-
-            {atLimit ? (
-              <button onClick={onPricing} style={{
-                display: "flex", alignItems: "center", gap: 8,
-                padding: "12px 24px", borderRadius: T.radiusSm,
-                background: T.navy, color: T.gold, border: "none",
-                fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
-                cursor: "pointer",
-              }}>
-                <Crown size={16} />
-                Upgrade for Unlimited Stories
-              </button>
-            ) : (
-              <button
-                onClick={generateStory}
-                disabled={!selectedVirtue || generating}
-                style={{
-                  display: "flex", alignItems: "center", gap: 8,
-                  padding: "12px 24px", borderRadius: T.radiusSm,
-                  background: (!selectedVirtue || generating) ? T.gray200 : T.navy,
-                  color: (!selectedVirtue || generating) ? T.gray400 : T.gold,
-                  border: "none", cursor: (!selectedVirtue || generating) ? "default" : "pointer",
-                  fontFamily: T.fontSans, fontSize: 15, fontWeight: 600,
-                }}
-              >
-                {generating ? (
-                  <>
-                    <Sparkles size={16} className="animate-pulse-subtle" />
-                    Creating story...
-                  </>
-                ) : (
-                  <>
-                    <Pen size={16} />
-                    Create Story
-                  </>
-                )}
-              </button>
-            )}
-
-            {error && (
-              <div style={{
-                marginTop: 14, padding: 12, borderRadius: T.radiusSm,
-                background: T.redLight, border: `1px solid ${T.red}20`,
-                fontFamily: T.fontSans, fontSize: 14, color: T.red,
-              }}>
-                {error}
-              </div>
-            )}
+            <div style={{
+              fontFamily: T.fontSerif, fontSize: 18, lineHeight: 1.9,
+              color: T.gray800, whiteSpace: "pre-wrap",
+            }}>
+              {story.body}
+            </div>
           </div>
 
-          {/* Generated Story */}
-          {story && (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              {/* Story Display */}
-              <div className="p-5 md:p-10" style={{
-                borderRadius: T.radiusLg, background: T.white,
-                border: `1px solid ${T.gold}30`, boxShadow: T.shadowLg,
-                marginBottom: 16,
-              }}>
-                <h2 style={{
-                  fontFamily: T.fontDisplay, fontSize: 32, fontWeight: 700,
-                  color: T.navy, textAlign: "center", marginBottom: 8,
-                }}>
-                  {story.title}
-                </h2>
-                <div style={{
-                  textAlign: "center", fontFamily: T.fontSans, fontSize: 13,
-                  color: T.gray400, marginBottom: 32,
-                  paddingBottom: 24, borderBottom: `2px solid ${T.gold}40`,
-                }}>
-                  A story for {child?.name} · by Bedtime Virtues
-                </div>
-                <div style={{
-                  fontFamily: T.fontSerif, fontSize: 18, lineHeight: 1.9,
-                  color: T.gray800, whiteSpace: "pre-wrap",
-                }}>
-                  {story.body}
-                </div>
+          {story.discussionQuestions.length > 0 && (
+            <div style={{
+              padding: 24, borderRadius: T.radiusLg,
+              background: T.goldSubtle, border: `2px solid ${T.gold}30`,
+              marginBottom: 16,
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                <MessageCircle size={20} color={T.gold} />
+                <h3 style={{ fontFamily: T.fontSans, fontSize: 18, fontWeight: 700, color: T.navy }}>
+                  Discussion Guide
+                </h3>
+                {story.virtueTag && (
+                  <span style={{
+                    fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+                    padding: "3px 10px", borderRadius: 100,
+                    background: T.gold + "20", color: T.gold,
+                  }}>
+                    {story.virtueTag}
+                  </span>
+                )}
               </div>
-
-              {/* Discussion Guide */}
-              {story.discussionQuestions.length > 0 && (
-                <div style={{
-                  padding: 24, borderRadius: T.radiusLg,
-                  background: T.goldSubtle, border: `2px solid ${T.gold}30`,
-                  marginBottom: 16,
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                    <MessageCircle size={20} color={T.gold} />
-                    <h3 style={{
-                      fontFamily: T.fontSans, fontSize: 18, fontWeight: 700,
-                      color: T.navy,
-                    }}>Discussion Guide</h3>
-                    {story.virtueTag && (
-                      <span style={{
-                        fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
-                        padding: "3px 10px", borderRadius: 100,
-                        background: T.gold + "20", color: T.gold,
-                      }}>
-                        {story.virtueTag}
-                      </span>
-                    )}
-                  </div>
-
-                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    {story.discussionQuestions.map((q, i) => (
-                      <div key={i} style={{
-                        padding: 16, borderRadius: T.radius,
-                        background: T.white, border: `1px solid ${T.gray100}`,
-                      }}>
-                        <div style={{
-                          fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
-                          color: T.gold, marginBottom: 6,
-                          textTransform: "uppercase", letterSpacing: "0.05em",
-                        }}>
-                          Question {i + 1}
-                        </div>
-                        <div style={{
-                          fontFamily: T.fontSans, fontSize: 15, color: T.gray800,
-                          lineHeight: 1.5,
-                        }}>
-                          {q}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {story.familyActivity && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {story.discussionQuestions.map((q, i) => (
+                  <div key={i} style={{
+                    padding: 16, borderRadius: T.radius,
+                    background: T.white, border: `1px solid ${T.gray100}`,
+                  }}>
                     <div style={{
-                      marginTop: 12, padding: 16, borderRadius: T.radius,
-                      background: T.gold + "15", border: `1px solid ${T.gold}30`,
+                      fontFamily: T.fontSans, fontSize: 11, fontWeight: 700,
+                      color: T.gold, marginBottom: 6,
+                      textTransform: "uppercase", letterSpacing: "0.05em",
                     }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                        <Users size={16} color={T.gold} />
-                        <span style={{
-                          fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
-                          color: T.gold, textTransform: "uppercase", letterSpacing: "0.05em",
-                        }}>
-                          Family Activity
-                        </span>
-                      </div>
-                      <div style={{
-                        fontFamily: T.fontSans, fontSize: 15, color: T.gray800,
-                        lineHeight: 1.5,
-                      }}>
-                        {story.familyActivity}
-                      </div>
+                      Question {i + 1}
                     </div>
-                  )}
+                    <div style={{ fontFamily: T.fontSans, fontSize: 15, color: T.gray800, lineHeight: 1.5 }}>
+                      {q}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {story.familyActivity && (
+                <div style={{
+                  marginTop: 12, padding: 16, borderRadius: T.radius,
+                  background: T.gold + "15", border: `1px solid ${T.gold}30`,
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                    <Users size={16} color={T.gold} />
+                    <span style={{
+                      fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
+                      color: T.gold, textTransform: "uppercase", letterSpacing: "0.05em",
+                    }}>
+                      Family Activity
+                    </span>
+                  </div>
+                  <div style={{ fontFamily: T.fontSans, fontSize: 15, color: T.gray800, lineHeight: 1.5 }}>
+                    {story.familyActivity}
+                  </div>
                 </div>
               )}
-
-              {/* Export controls */}
-              <div style={{
-                display: "flex", gap: 10, flexWrap: "wrap",
-                padding: 16, borderRadius: T.radius, background: T.gray50,
-                border: `1px solid ${T.gray100}`,
-              }}>
-                <button onClick={shareStory} style={{
-                  display: "flex", alignItems: "center", gap: 6,
-                  padding: "8px 16px", borderRadius: T.radiusSm,
-                  background: T.navy, color: T.white, border: "none",
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                  cursor: "pointer",
-                }}>
-                  <Share2 size={14} />
-                  Share
-                </button>
-                <button onClick={exportPDF} style={{
-                  display: "flex", alignItems: "center", gap: 6,
-                  padding: "8px 16px", borderRadius: T.radiusSm,
-                  background: T.white, color: T.gray700,
-                  border: `1px solid ${T.gray200}`,
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                  cursor: "pointer",
-                }}>
-                  <Download size={14} />
-                  Save PDF
-                </button>
-                <button onClick={() => {
-                  if (story) {
-                    navigator.clipboard.writeText(`${story.title}\n\n${story.body}`);
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 2000);
-                  }
-                }} style={{
-                  display: "flex", alignItems: "center", gap: 6,
-                  padding: "8px 16px", borderRadius: T.radiusSm,
-                  background: T.white, color: T.gray700,
-                  border: `1px solid ${T.gray200}`,
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                  cursor: "pointer",
-                }}>
-                  <Copy size={14} />
-                  {copied ? "Copied!" : "Copy"}
-                </button>
-                <button onClick={() => {
-                  if (story && child) {
-                    const subject = encodeURIComponent(`Story for ${child.name}: ${story.title}`);
-                    const body = encodeURIComponent(`${story.title}\n\nA story for ${child.name}, generated by Bedtime Virtues.\n\n${story.body}\n\n---\nBedtime Virtues — Building Character Through Story\nbedtimevirtues.com`);
-                    window.open(`mailto:?subject=${subject}&body=${body}`);
-                  }
-                }} style={{
-                  display: "flex", alignItems: "center", gap: 6,
-                  padding: "8px 16px", borderRadius: T.radiusSm,
-                  background: T.white, color: T.gray700,
-                  border: `1px solid ${T.gray200}`,
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
-                  cursor: "pointer",
-                }}>
-                  <Mail size={14} />
-                  Email
-                </button>
-              </div>
-            </motion.div>
+            </div>
           )}
-        </>
+
+          <div style={{
+            display: "flex", gap: 10, flexWrap: "wrap",
+            padding: 16, borderRadius: T.radius, background: T.gray50,
+            border: `1px solid ${T.gray100}`,
+          }}>
+            <button onClick={shareStory} style={{
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "8px 16px", borderRadius: T.radiusSm,
+              background: T.navy, color: T.white, border: "none",
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            }}>
+              <Share2 size={14} />
+              Share
+            </button>
+            <button onClick={exportPDF} style={{
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "8px 16px", borderRadius: T.radiusSm,
+              background: T.white, color: T.gray700,
+              border: `1px solid ${T.gray200}`,
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            }}>
+              <Download size={14} />
+              Save PDF
+            </button>
+            <button onClick={() => {
+              if (story) {
+                navigator.clipboard.writeText(`${story.title}\n\n${story.body}`);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }
+            }} style={{
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "8px 16px", borderRadius: T.radiusSm,
+              background: T.white, color: T.gray700,
+              border: `1px solid ${T.gray200}`,
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            }}>
+              <Copy size={14} />
+              {copied ? "Copied!" : "Copy"}
+            </button>
+            <button onClick={() => {
+              if (story) {
+                const displayName = draftName.trim() || "a young reader";
+                const subject = encodeURIComponent(`Story for ${displayName}: ${story.title}`);
+                const body = encodeURIComponent(`${story.title}\n\nA story for ${displayName}, generated by Bedtime Virtues.\n\n${story.body}\n\n---\nBedtime Virtues\nbedtimevirtues.com`);
+                window.open(`mailto:?subject=${subject}&body=${body}`);
+              }
+            }} style={{
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "8px 16px", borderRadius: T.radiusSm,
+              background: T.white, color: T.gray700,
+              border: `1px solid ${T.gray200}`,
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, cursor: "pointer",
+            }}>
+              <Mail size={14} />
+              Email
+            </button>
+          </div>
+        </motion.div>
       )}
-      {/* Consent Modal */}
+
       <ParentalConsentModal
         open={showConsentModal}
         onConsent={() => {
           setShowConsentModal(false);
-          // Re-trigger generation after consent
           generateStory();
         }}
         onDecline={() => setShowConsentModal(false)}
       />
 
-      {/* AI Content Disclaimer */}
-      {hasChildren && (
-        <div style={{
-          display: "flex", alignItems: "flex-start", gap: 8,
-          padding: 14, borderRadius: T.radiusSm,
-          background: T.gray50, border: `1px solid ${T.gray100}`,
-          marginTop: 16,
+      <div style={{
+        display: "flex", alignItems: "flex-start", gap: 8,
+        padding: 14, borderRadius: T.radiusSm,
+        background: T.gray50, border: `1px solid ${T.gray100}`,
+        marginTop: 16,
+      }}>
+        <Info size={16} color={T.gray400} style={{ marginTop: 2, flexShrink: 0 }} />
+        <p style={{
+          fontFamily: T.fontSans, fontSize: 12, color: T.gray400,
+          lineHeight: 1.5, margin: 0,
         }}>
-          <Info size={16} color={T.gray400} style={{ marginTop: 2, flexShrink: 0 }} />
-          <p style={{
-            fontFamily: T.fontSans, fontSize: 12, color: T.gray400,
-            lineHeight: 1.5, margin: 0,
-          }}>
-            Stories are generated by AI (Anthropic Claude) and may occasionally contain unexpected content.
-            Please review all stories before sharing with your child.
-          </p>
-        </div>
-      )}
+          Stories are generated by AI (Anthropic Claude) and may occasionally contain unexpected
+          content. Please review before sharing with your child.
+        </p>
+      </div>
     </motion.div>
   );
 }

@@ -143,12 +143,13 @@ export default function VirtueForgeApp() {
         onPricing={() => setPage("pricing")}
         onDemo={handleDemo}
         onNavigate={(p: string) => {
-          if (!appData.setupComplete || appData.children.length === 0) {
-            // Track where the user wants to go after setup
+          // Stories can be generated directly — StoryForge has an inline mini-form
+          // so there is no setup gate. Books still requires a saved profile (reading level).
+          if (p === "stories" || appData.setupComplete) {
+            setPage(p as AppPage);
+          } else {
             setPendingDest(p as AppPage);
             startJourney();
-          } else {
-            setPage(p as AppPage);
           }
         }}
         hasAccount={appData.setupComplete}
@@ -254,6 +255,14 @@ export default function VirtueForgeApp() {
               onPricing={() => setPage("pricing")}
               demoScenario={demoScenario}
               onDemoConsumed={() => setDemoScenario(null)}
+              onSilentAddChild={(child) => {
+                setAppData((p) => ({
+                  ...p,
+                  children: [...p.children, child],
+                  setupComplete: true,
+                }));
+                setSelChild(appData.children.length);
+              }}
             />
           )}
 
