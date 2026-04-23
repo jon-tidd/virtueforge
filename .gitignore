@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 .claude
 dev.sh
+
+# local planning/reference artifacts — kept locally, not in repo
+/*.pdf
+/generate_journey_pdf.py
