@@ -101,13 +101,13 @@ export default function StoryForge({
   }, [demoScenario]);
 
   const toggleVirtue = (id: string) => {
-    setSelectedVirtues((prev) => {
-      if (prev.includes(id)) {
-        // Keep at least one virtue selected
-        return prev.length === 1 ? prev : prev.filter((v) => v !== id);
-      }
-      return [...prev, id];
-    });
+    setSelectedVirtues((prev) =>
+      prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
+    );
+  };
+
+  const removeVirtue = (id: string) => {
+    setSelectedVirtues((prev) => prev.filter((v) => v !== id));
   };
 
   const addVirtueFromDropdown = (id: string) => {
@@ -456,33 +456,44 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           </button>
         </div>
         <div style={{
-          fontFamily: T.fontSans, fontSize: 12, color: T.gray400, marginBottom: 10,
+          fontFamily: T.fontSans, fontSize: 12,
+          color: selectedVirtues.length === 0 ? VC.courage.main : T.gray400,
+          marginBottom: 10,
         }}>
-          Pick one or more virtues. The first is the main thread; the rest are woven in.
+          {selectedVirtues.length === 0
+            ? "Select at least one virtue from the dropdown below."
+            : "Pick one or more virtues. The first is the main thread; the rest are woven in."}
         </div>
 
-        {/* Quick-pick virtue chips — multi-select, tap to toggle */}
+        {/* Quick-pick virtue chips — with explicit remove button */}
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
           {quickVirtueChips.map(({ id, sv, pk }) => {
-            const active = selectedVirtues.includes(id);
             const vc = VC[pk as keyof typeof VC];
             return (
-              <button
+              <span
                 key={id}
-                onClick={() => toggleVirtue(id)}
-                aria-pressed={active}
                 style={{
-                  padding: "6px 12px", borderRadius: 100, fontSize: 13, fontWeight: 600,
-                  fontFamily: T.fontSans, cursor: "pointer",
-                  background: active ? vc.main : T.white,
-                  color: active ? T.white : vc.main,
-                  border: active ? `1px solid ${vc.main}` : `1px solid ${vc.main}40`,
-                  display: "flex", alignItems: "center", gap: 4,
+                  padding: "6px 8px 6px 12px", borderRadius: 100, fontSize: 13, fontWeight: 600,
+                  fontFamily: T.fontSans,
+                  background: vc.main, color: T.white,
+                  border: `1px solid ${vc.main}`,
+                  display: "inline-flex", alignItems: "center", gap: 6,
                 }}
               >
-                {active && <span style={{ fontWeight: 700 }}>✓</span>}
                 {sv!.name}
-              </button>
+                <button
+                  onClick={() => removeVirtue(id)}
+                  aria-label={`Remove ${sv!.name}`}
+                  style={{
+                    background: "rgba(255,255,255,0.25)", border: "none", cursor: "pointer",
+                    borderRadius: "50%", width: 18, height: 18, padding: 0,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: T.white, fontSize: 12, fontWeight: 700, lineHeight: 1,
+                  }}
+                >
+                  ×
+                </button>
+              </span>
             );
           })}
         </div>
