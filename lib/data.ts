@@ -235,6 +235,29 @@ export interface ChildProfile {
   struggles: string[];
   readBooks: string[];
   virtueProgress: Record<string, number>;
+  // Free-text "looks like / loves" details woven into generated stories.
+  // Example: "long brown hair, loves dinosaurs and his stuffed wolf Bramble"
+  description?: string;
+}
+
+// Read-aloud word count math used by the length picker and the prompt.
+// 130 wpm is the midpoint for an adult reading children's prose with
+// expression but without picture-book pauses. We band it ±15% so the LLM
+// has some breathing room around the target.
+export const WPM_BEDTIME = 130;
+export function wordsForMinutes(min: number): { target: number; lo: number; hi: number } {
+  const target = Math.round(min * WPM_BEDTIME);
+  return {
+    target,
+    lo: Math.round(target * 0.85),
+    hi: Math.round(target * 1.15),
+  };
+}
+export function countWords(text: string): number {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+export function minutesForWords(words: number): number {
+  return words / WPM_BEDTIME;
 }
 
 export interface AppData {
