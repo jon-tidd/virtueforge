@@ -35,10 +35,8 @@ export default function VirtueForgeApp() {
     setAppData(data);
     setPremiumState(isPremium());
     setLoaded(true);
-    // If returning user with setup done, go to dashboard
-    if (data.setupComplete && data.children.length > 0) {
-      setPage("dashboard");
-    }
+    // Always start at the landing page — even returning visitors should see
+    // the marketing surface (and the "Continue with [child]" CTA there).
   }, []);
 
   useEffect(() => {
@@ -83,6 +81,12 @@ export default function VirtueForgeApp() {
     upd({ children: [...appData.children, child], setupComplete: true });
   };
 
+  const updateChild = (i: number, child: ChildProfile) => {
+    const next = [...appData.children];
+    next[i] = child;
+    upd({ children: next });
+  };
+
   const resetAll = () => {
     trackEvent("data_reset");
     setAppData({ children: [], familyVirtues: [], setupComplete: false });
@@ -91,13 +95,10 @@ export default function VirtueForgeApp() {
   };
 
   const startJourney = () => {
-    // Go straight to Story Studio — the fastest path to value.
-    // StoryForge has inline setup, so no funnel is required.
-    if (appData.setupComplete && appData.children.length > 0) {
-      setPage("dashboard");
-    } else {
-      setPage("stories");
-    }
+    // Always land in Story Studio — the fastest path to value. StoryForge
+    // shows saved characters at the top if any exist, so returning users
+    // can jump straight to picking one and generating.
+    setPage("stories");
   };
 
   const handleDemo = (scenario: DemoScenario) => {
@@ -248,6 +249,8 @@ export default function VirtueForgeApp() {
                 }));
                 setSelChild(appData.children.length);
               }}
+              onUpdateChild={updateChild}
+              onRemoveChild={removeChild}
             />
           )}
 

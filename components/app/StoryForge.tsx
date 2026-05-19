@@ -1,13 +1,16 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Pen, Crown, Copy, Mail, Sparkles, MessageCircle, Users,
-  Info, Share2, Download, ChevronDown, ChevronUp, Clock,
+  Info, Share2, Download, ChevronDown, ChevronUp, Clock, Plus, X,
+  RefreshCw, Edit3, BookMarked,
 } from "lucide-react";
 import {
   VIRTUES, getSubVirtue, getVirtueParent, READING_LEVELS,
-  getDefaultReadingLevel, type AppData, type ChildProfile,
+  getDefaultReadingLevel, wordsForMinutes, countWords, minutesForWords,
+  WPM_BEDTIME,
+  type AppData, type ChildProfile,
 } from "@/lib/data";
 import type { DemoScenario } from "@/components/landing/LandingPage";
 import { T, VC, PLANS } from "@/lib/tokens";
@@ -15,21 +18,63 @@ import { getMonthlyStoryCount, incrementStoryCount } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import ParentalConsentModal, { hasParentalConsent } from "@/components/ParentalConsentModal";
 import VirtueQuiz from "./VirtueQuiz";
-import ChildPills from "./ChildPills";
 
-type StoryLength = "short" | "medium" | "long";
-
-const LENGTH_OPTIONS: { id: StoryLength; label: string; minutes: string; wordCount: string }[] = [
-  { id: "short", label: "Short", minutes: "~3 min", wordCount: "300\u2013500" },
-  { id: "medium", label: "Medium", minutes: "~5 min", wordCount: "500\u2013800" },
-  { id: "long", label: "Long", minutes: "~10 min", wordCount: "900\u20131400" },
+const LENGTH_PRESETS: { id: string; label: string; minutes: number }[] = [
+  { id: "quick", label: "Quick", minutes: 3 },
+  { id: "standard", label: "Standard", minutes: 6 },
+  { id: "long", label: "Long", minutes: 10 },
 ];
 
-// Sensible default virtue if no family virtue selected
 const DEFAULT_VIRTUE = "perseverance";
+const MIN_MIN = 1;
+const MAX_MIN = 20;
+
+type SavedStory = {
+  id: string;
+  title: string;
+  body: string;
+  discussionQuestions: string[];
+  familyActivity: string;
+  virtueTag: string;
+  virtueDetail: string;
+  characterNames: string;
+  createdAt: number;
+};
+const LIBRARY_KEY = "virtueforge-library";
+const LIBRARY_MAX = 8;
+function loadLibrary(): SavedStory[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(LIBRARY_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+function saveLibrary(items: SavedStory[]) {
+  if (typeof window === "undefined") return;
+  try { localStorage.setItem(LIBRARY_KEY, JSON.stringify(items)); } catch { /* */ }
+}
+
+type CharDraft = {
+  name: string;
+  age: number;
+  sex: string;
+  readingLevel: string;
+  description: string;
+};
+const EMPTY_DRAFT: CharDraft = { name: "", age: 6, sex: "", readingLevel: "", description: "" };
+function draftFromChild(c: ChildProfile): CharDraft {
+  return {
+    name: c.name,
+    age: c.age,
+    sex: c.sex || "",
+    readingLevel: c.readingLevel || "",
+    description: c.description || "",
+  };
+}
 
 export default function StoryForge({
-  appData, selChild, setSelChild, premium, onPricing, demoScenario, onDemoConsumed, onSilentAddChild,
+  appData, selChild, setSelChild, premium, onPricing,
+  demoScenario, onDemoConsumed, onSilentAddChild, onUpdateChild, onRemoveChild,
 }: {
   appData: AppData;
   selChild: number;
@@ -39,34 +84,29 @@ export default function StoryForge({
   demoScenario?: DemoScenario | null;
   onDemoConsumed?: () => void;
   onSilentAddChild?: (child: ChildProfile) => void;
+  onUpdateChild?: (i: number, child: ChildProfile) => void;
+  onRemoveChild?: (i: number) => void;
 }) {
-  const savedChild = appData.children[selChild];
-  const hasSavedChildren = appData.children.length > 0;
+  // Which saved characters belong to this story
+  const [selectedChildren, setSelectedChildren] = useState<number[]>(
+    appData.children.length > 0 ? [Math.min(selChild, appData.children.length - 1)] : []
+  );
 
-  // Inline draft state (used when there's no saved child, or when user edits in-line)
-  const [draftName, setDraftName] = useState(savedChild?.name ?? "");
-  const [draftAge, setDraftAge] = useState<number>(savedChild?.age ?? 6);
-  const [draftSex, setDraftSex] = useState<string>(savedChild?.sex ?? "");
-  const [draftReading, setDraftReading] = useState<string>(savedChild?.readingLevel ?? "");
+  // Inline editor: null = closed, -1 = creating new, >=0 = editing index
+  const [editorIndex, setEditorIndex] = useState<number | null>(
+    appData.children.length === 0 ? -1 : null
+  );
+  const [editorDraft, setEditorDraft] = useState<CharDraft>(EMPTY_DRAFT);
 
-  // If saved child changes (user switched pills), sync draft fields to that child
-  useEffect(() => {
-    if (savedChild) {
-      setDraftName(savedChild.name);
-      setDraftAge(savedChild.age);
-      setDraftSex(savedChild.sex);
-      setDraftReading(savedChild.readingLevel);
-    }
-  }, [selChild, savedChild]);
-
-  // Pre-fill virtues from family virtues, or use sensible default. Multi-select.
+  // Virtue picker (multi-select)
   const [selectedVirtues, setSelectedVirtues] = useState<string[]>(
     appData.familyVirtues.length > 0 ? [appData.familyVirtues[0]] : [DEFAULT_VIRTUE]
   );
   const [customSituation, setCustomSituation] = useState("");
   const [personalTouches, setPersonalTouches] = useState("");
-  const [length, setLength] = useState<StoryLength>("medium");
-  const [showAdvanced, setShowAdvanced] = useState(false);
+
+  // Length: minutes is source of truth
+  const [minutes, setMinutes] = useState<number>(6);
 
   const [quizOpen, setQuizOpen] = useState(false);
   const [generating, setGenerating] = useState(false);
@@ -77,23 +117,30 @@ export default function StoryForge({
     familyActivity: string;
     virtueTag: string;
     virtueDetail: string;
+    actualWords: number;
   } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
+  const [library, setLibrary] = useState<SavedStory[]>([]);
+  const [libraryOpen, setLibraryOpen] = useState(false);
+
+  useEffect(() => { setLibrary(loadLibrary()); }, []);
 
   const monthlyCount = getMonthlyStoryCount();
   const atLimit = !premium && monthlyCount >= PLANS.free.stories;
 
-  // If family virtues change (e.g., set on another page), re-apply the first one only if the user
-  // hasn't explicitly changed the picker yet — simpler: only apply on initial mount.
-  // Pre-fill from demo scenario (one-click landing demos)
+  // ── Demo scenario from landing → load into editor with virtue pre-set ──
   useEffect(() => {
     if (demoScenario) {
-      setDraftName(demoScenario.childName);
-      setDraftAge(demoScenario.age);
-      setDraftSex(demoScenario.sex);
-      setDraftReading(getDefaultReadingLevel(demoScenario.age));
+      setEditorDraft({
+        name: demoScenario.childName,
+        age: demoScenario.age,
+        sex: demoScenario.sex,
+        readingLevel: getDefaultReadingLevel(demoScenario.age),
+        description: "",
+      });
+      setEditorIndex(-1);
       setSelectedVirtues([demoScenario.virtue]);
       setCustomSituation(demoScenario.situation);
       onDemoConsumed?.();
@@ -101,38 +148,98 @@ export default function StoryForge({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [demoScenario]);
 
-  const toggleVirtue = (id: string) => {
-    setSelectedVirtues((prev) =>
-      prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
+  // Drop deleted indices from selection
+  useEffect(() => {
+    setSelectedChildren((prev) => prev.filter((i) => i < appData.children.length));
+  }, [appData.children.length]);
+
+  const toggleChild = (i: number) => {
+    setSelectedChildren((prev) =>
+      prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]
     );
+    setSelChild(i);
   };
 
-  const removeVirtue = (id: string) => {
-    setSelectedVirtues((prev) => prev.filter((v) => v !== id));
+  const openNewEditor = () => {
+    setEditorIndex(-1);
+    setEditorDraft(EMPTY_DRAFT);
   };
 
+  const openEditEditor = (i: number) => {
+    setEditorIndex(i);
+    setEditorDraft(draftFromChild(appData.children[i]));
+  };
+
+  const cancelEditor = () => {
+    setEditorIndex(null);
+    setEditorDraft(EMPTY_DRAFT);
+    setError(null);
+  };
+
+  const saveEditor = () => {
+    const trimmedName = editorDraft.name.trim();
+    if (!trimmedName) { setError("Please give the character a name."); return; }
+    const age = Math.max(1, Math.min(16, editorDraft.age || 6));
+    const isUpdate = editorIndex !== null && editorIndex >= 0;
+    const existing = isUpdate ? appData.children[editorIndex as number] : null;
+    const child: ChildProfile = {
+      name: trimmedName,
+      age,
+      sex: editorDraft.sex,
+      readingLevel: editorDraft.readingLevel || getDefaultReadingLevel(age),
+      struggles: existing?.struggles ?? [],
+      readBooks: existing?.readBooks ?? [],
+      virtueProgress: existing?.virtueProgress ?? {},
+      description: editorDraft.description.trim() || undefined,
+    };
+    if (editorIndex === -1) {
+      const newIdx = appData.children.length;
+      onSilentAddChild?.(child);
+      setSelectedChildren((prev) => [...new Set([...prev, newIdx])]);
+      setSelChild(newIdx);
+    } else if (isUpdate) {
+      onUpdateChild?.(editorIndex as number, child);
+    }
+    setEditorIndex(null);
+    setEditorDraft(EMPTY_DRAFT);
+    setError(null);
+  };
+
+  const deleteCharacter = (i: number) => {
+    onRemoveChild?.(i);
+    setSelectedChildren((prev) =>
+      prev.filter((x) => x !== i).map((x) => (x > i ? x - 1 : x))
+    );
+    setEditorIndex(null);
+  };
+
+  // ── Virtues ──────────────────────────────────────────────────────────
+  const removeVirtue = (id: string) => setSelectedVirtues((prev) => prev.filter((v) => v !== id));
   const addVirtueFromDropdown = (id: string) => {
     if (!id) return;
     setSelectedVirtues((prev) => (prev.includes(id) ? prev : [...prev, id]));
   };
-
-  // Chips mirror the current selection only. Family virtues seed the initial
-  // selection above; unselected family virtues don't clutter the row.
   const quickVirtueChips = useMemo(() => {
     return selectedVirtues
       .map((id) => ({ id, sv: getSubVirtue(id), pk: getVirtueParent(id) }))
       .filter((x) => x.sv && x.pk);
   }, [selectedVirtues]);
 
-  const effectiveName = draftName.trim() || "a brave child";
-  const effectiveAge = draftAge || 6;
-  const effectiveSex = draftSex; // may be ""
-  const effectiveReading = draftReading || getDefaultReadingLevel(effectiveAge);
+  // ── Length ──────────────────────────────────────────────────────────
+  const wordTarget = useMemo(() => wordsForMinutes(minutes), [minutes]);
+  const isPreset = LENGTH_PRESETS.some((p) => p.minutes === minutes);
 
+  // ── Build the prompt + call the API ──────────────────────────────────
   const generateStory = async () => {
-    if (selectedVirtues.length === 0) { setError("Pick at least one virtue to anchor the story."); return; }
+    if (selectedChildren.length === 0) {
+      setError("Pick or create at least one character first.");
+      return;
+    }
+    if (selectedVirtues.length === 0) {
+      setError("Pick at least one virtue to anchor the story.");
+      return;
+    }
     if (atLimit) { onPricing(); return; }
-
     if (!hasParentalConsent()) {
       setShowConsentModal(true);
       return;
@@ -143,9 +250,11 @@ export default function StoryForge({
     setStory(null);
     setCopied(false);
 
-    // Resolve all selected virtues. The first is the primary anchor; the rest are
-    // supporting threads the storyteller can weave in naturally.
-    const resolved = selectedVirtues
+    const chosen = selectedChildren
+      .map((i) => appData.children[i])
+      .filter((c): c is ChildProfile => Boolean(c));
+
+    const resolvedVirtues = selectedVirtues
       .map((id) => {
         const sv = getSubVirtue(id);
         const pk = getVirtueParent(id);
@@ -154,20 +263,31 @@ export default function StoryForge({
       })
       .filter((x): x is { sv: NonNullable<ReturnType<typeof getSubVirtue>>; pv: typeof VIRTUES[keyof typeof VIRTUES] } => x !== null);
 
-    if (resolved.length === 0) { setError("Invalid virtue selection."); setGenerating(false); return; }
+    if (resolvedVirtues.length === 0) {
+      setError("Invalid virtue selection.");
+      setGenerating(false);
+      return;
+    }
 
-    const primary = resolved[0];
-    const supporting = resolved.slice(1);
-    const cardinalSet = [...new Set(resolved.map((r) => r.pv.name))];
+    const primary = resolvedVirtues[0];
+    const supporting = resolvedVirtues.slice(1);
+    const cardinalSet = [...new Set(resolvedVirtues.map((r) => r.pv.name))];
 
-    const ageLabel = effectiveAge <= 4 ? "a very young child (ages 2-4)" :
-      effectiveAge <= 7 ? "a young child (ages 5-7)" :
-      effectiveAge <= 10 ? "a child (ages 8-10)" : "an older child (ages 11-13)";
+    const charDescriptions = chosen.map((c) => {
+      const ageBand = c.age <= 4 ? "ages 2-4" :
+        c.age <= 7 ? "ages 5-7" :
+        c.age <= 10 ? "ages 8-10" : "ages 11-13";
+      const gender = c.sex === "boy" ? "boy" : c.sex === "girl" ? "girl" : "child";
+      const desc = c.description ? `. Looks/loves: ${c.description}` : "";
+      return `${c.name} (age ${c.age}, ${ageBand}, ${gender}${desc})`;
+    });
+    const characterClause = chosen.length === 1
+      ? `The story is for ${charDescriptions[0]}.`
+      : `The story features these characters together in a single shared adventure (siblings or friends, not separate vignettes): ${charDescriptions.join("; ")}. Give each character a meaningful role.`;
 
-    const lengthCfg = LENGTH_OPTIONS.find((l) => l.id === length)!;
-    const genderClause = effectiveSex === "boy" ? "a boy"
-      : effectiveSex === "girl" ? "a girl"
-      : "a child";
+    const youngestAge = Math.min(...chosen.map((c) => c.age));
+    const readingLevel = chosen.find((c) => c.age === youngestAge)?.readingLevel
+      || getDefaultReadingLevel(youngestAge);
 
     const primaryClause = `the virtue of ${primary.sv.name} (${primary.sv.desc}), which falls under the cardinal virtue of ${primary.pv.name}`;
     const supportingClause = supporting.length > 0
@@ -179,20 +299,24 @@ export default function StoryForge({
 
     const prompt = `You are a master storyteller in the tradition of Aesop, the Brothers Grimm, and C.S. Lewis. Write an original children's story that teaches ${primaryClause}.${cardinalClause}${supportingClause}
 
-The story is for ${effectiveName}, ${ageLabel}, who is ${genderClause}.
-Reading level: ${effectiveReading}.
+${characterClause}
+Reading level: ${readingLevel}.
 ${customSituation ? `The child is currently dealing with: ${customSituation}. Weave this theme naturally into the story.` : ""}
 ${personalTouches ? `Incorporate these personal details naturally if they fit the narrative (do not force all of them, pick what works): ${personalTouches}.` : ""}
 
-Requirements:
-- Target length: ${lengthCfg.wordCount} words (${lengthCfg.minutes} read aloud)
+CRITICAL LENGTH REQUIREMENT:
+- Target story body length: ${wordTarget.target} words (acceptable range: ${wordTarget.lo}-${wordTarget.hi} words).
+- This is calibrated for ~${minutes} minute${minutes === 1 ? "" : "s"} of read-aloud time at ~${WPM_BEDTIME} words per minute (a parent reading a bedtime story to a child).
+- Count words deliberately. Do NOT write significantly shorter or longer than ${wordTarget.target}.
+- The word count target applies to the STORY BODY ONLY, not the title or discussion guide.
+
+Story requirements:
 - Vivid, memorable characters and settings
-- The moral emerges naturally, never stated explicitly
-- Show virtue practiced through action and habit
+- The moral emerges naturally through action, never stated explicitly
+- Show virtue practiced through habit and choice
 - Rich, beautiful language for the reading level
 - Include a compelling title
-- Classical storytelling tradition
-- No modern ideology or didactic lecturing
+- Classical storytelling tradition; no modern ideology or didactic lecturing
 
 Format: Title on first line, then the story. After the story, include a discussion guide separated by the exact delimiter "---DISCUSSION_GUIDE---" on its own line. The discussion guide should have:
 Q1: [A thought-provoking question about the story for parent-child discussion]
@@ -229,88 +353,183 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           }
         }
 
-        setStory({
+        const actualWords = countWords(body);
+        const newStory = {
           title, body, discussionQuestions, familyActivity,
-          virtueTag: resolved.map((r) => r.sv.name).join(" \u00B7 "),
-          virtueDetail: resolved.map((r) => `${r.sv.name} (${r.pv.name}) \u2014 ${r.sv.desc}`).join(" \u00B7 "),
-        });
+          virtueTag: resolvedVirtues.map((r) => r.sv.name).join(" · "),
+          virtueDetail: resolvedVirtues.map((r) => `${r.sv.name} (${r.pv.name}) — ${r.sv.desc}`).join(" · "),
+          actualWords,
+        };
+        setStory(newStory);
         incrementStoryCount();
         trackEvent("story_generated");
 
-        // Silent profile save: if no saved children yet and the user typed a real name,
-        // persist this child so future sessions remember them.
-        if (!hasSavedChildren && draftName.trim() && onSilentAddChild) {
-          onSilentAddChild({
-            name: draftName.trim(),
-            age: effectiveAge,
-            sex: effectiveSex || "",
-            readingLevel: effectiveReading,
-            struggles: [],
-            readBooks: [],
-            virtueProgress: {},
-          });
-        }
+        const saved: SavedStory = {
+          id: String(Date.now()),
+          title: newStory.title,
+          body: newStory.body,
+          discussionQuestions: newStory.discussionQuestions,
+          familyActivity: newStory.familyActivity,
+          virtueTag: newStory.virtueTag,
+          virtueDetail: newStory.virtueDetail,
+          characterNames: chosen.map((c) => c.name).join(", "),
+          createdAt: Date.now(),
+        };
+        const next = [saved, ...library].slice(0, LIBRARY_MAX);
+        saveLibrary(next);
+        setLibrary(next);
       } else setError("No story generated. Try again.");
     } catch { setError("Failed to connect. Check your internet connection."); }
     setGenerating(false);
   };
 
+  const generateAnother = () => {
+    setStory(null);
+    setTimeout(() => generateStory(), 50);
+  };
+
+  const openSavedStory = (s: SavedStory) => {
+    setStory({
+      title: s.title,
+      body: s.body,
+      discussionQuestions: s.discussionQuestions,
+      familyActivity: s.familyActivity,
+      virtueTag: s.virtueTag,
+      virtueDetail: s.virtueDetail,
+      actualWords: countWords(s.body),
+    });
+    setLibraryOpen(false);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
+
+  const deleteSavedStory = (id: string) => {
+    const next = library.filter((s) => s.id !== id);
+    saveLibrary(next);
+    setLibrary(next);
+  };
+
   const buildStoryHTML = () => {
     if (!story) return "";
-    const displayName = draftName.trim() || "a young reader";
+    const displayName = chosen0Name() || "a young reader";
     return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${story.title}</title>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { width: 100%; }
-        body { font-family: 'Crimson Text', Georgia, serif; width: 100%; margin: 0; padding: 0.75in 1in; color: #1F2937; line-height: 1.8; font-size: 16px; }
-        h1 { text-align: center; font-size: 26px; color: #0A1628; border-bottom: 3px solid #D4A846; padding-bottom: 14px; margin-bottom: 8px; }
+        body {
+          font-family: 'Crimson Text', Georgia, serif;
+          width: 100%; margin: 0; padding: 0.75in 1in;
+          color: #1F2937; line-height: 1.8; font-size: 16px;
+        }
+        h1 {
+          text-align: center; font-size: 26px; color: #0A1628;
+          border-bottom: 3px solid #B8941F; padding-bottom: 14px; margin-bottom: 10px;
+        }
         .virtue-label { text-align: center; margin-bottom: 6px; }
-        .virtue-label span { display: inline-block; padding: 4px 14px; border-radius: 100px; background: #D4A84618; color: #B8941F; font-size: 13px; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        .virtue-desc { text-align: center; font-size: 13px; color: #9CA3AF; font-style: italic; margin-bottom: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        .meta { text-align: center; font-size: 13px; color: #9CA3AF; margin-bottom: 28px; }
+        .virtue-label span {
+          display: inline-block; padding: 5px 16px; border-radius: 100px;
+          background: #FEF3C7; color: #0A1628;
+          border: 1.5px solid #B8941F;
+          font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .virtue-desc {
+          text-align: center; font-size: 12px; color: #4B5563;
+          font-style: italic; margin-bottom: 8px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .meta { text-align: center; font-size: 13px; color: #6B7280; margin-bottom: 28px; }
         .story-body p { font-size: 16px; margin-bottom: 14px; text-indent: 1.5em; }
         .story-body p:first-child { text-indent: 0; }
-        .footer { margin-top: 36px; text-align: center; font-size: 12px; color: #D1D5DB; border-top: 1px solid #E5E7EB; padding-top: 14px; }
+        .discussion-box {
+          margin-top: 36px; padding: 20px;
+          border: 2px solid #B8941F; border-radius: 12px;
+          background: #FFFBEB;
+          break-inside: avoid; page-break-inside: avoid;
+        }
+        .discussion-box h2 {
+          font-size: 18px; color: #0A1628; margin-bottom: 14px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .discussion-box ol { padding-left: 22px; margin: 0; }
+        .discussion-box li {
+          margin-bottom: 10px; font-size: 15px;
+          font-family: 'Crimson Text', Georgia, serif;
+        }
+        .family-activity {
+          margin-top: 14px; padding: 14px;
+          background: #FEF3C7; border-radius: 8px;
+          break-inside: avoid; page-break-inside: avoid;
+        }
+        .family-activity strong {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-size: 13px; color: #0A1628; letter-spacing: 0.02em;
+        }
+        .family-activity p { font-size: 14px; margin-top: 4px; }
+        .footer {
+          margin-top: 36px; text-align: center; font-size: 12px;
+          color: #9CA3AF; border-top: 1px solid #E5E7EB; padding-top: 14px;
+        }
         .tip-banner { display: none; }
         @media print {
+          *, *::before, *::after {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+          }
           body { padding: 0; margin: 0; width: 100%; }
           .tip-banner { display: none !important; }
+          .discussion-box, .family-activity { break-inside: avoid; page-break-inside: avoid; }
           @page { size: letter; margin: 0.75in 1in; }
         }
         @media screen {
           body { max-width: 8.5in; margin: 0 auto; }
-          .tip-banner { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+          .tip-banner {
+            display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 999;
             background: #0A1628; color: white; padding: 14px 20px; text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px; line-height: 1.5;
+          }
         }
       </style>
     </head><body>
       <div class="tip-banner">
-        \uD83D\uDCC4 <strong>To save as PDF:</strong> Tap the <strong>Share button</strong> (square with arrow) then choose <strong>"Print"</strong> or <strong>"Save to Files"</strong>. On desktop, choose <strong>"Save as PDF"</strong> in the print dialog.
+        📄 <strong>To save as PDF:</strong> Tap the <strong>Share button</strong> (square with arrow) then choose <strong>"Print"</strong> or <strong>"Save to Files"</strong>. On desktop, choose <strong>"Save as PDF"</strong> in the print dialog.
       </div>
       <h1>${story.title}</h1>
       ${story.virtueTag ? `<div class="virtue-label"><span>${story.virtueTag}</span></div>` : ""}
       ${story.virtueDetail ? `<div class="virtue-desc">${story.virtueDetail}</div>` : ""}
-      <div class="meta">A story for ${displayName} \u00B7 Generated by Bedtime Virtues</div>
+      <div class="meta">A story for ${displayName} · Generated by Bedtime Virtues</div>
       <div class="story-body">
         ${story.body.split("\n\n").map((p: string) => `<p>${p}</p>`).join("")}
       </div>
       ${story.discussionQuestions.length > 0 ? `
-      <div style="margin-top: 36px; padding: 20px; border: 2px solid #D4A846; border-radius: 12px; background: #FFFBEB;">
-        <h2 style="font-size: 18px; color: #0A1628; margin-bottom: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">Discussion Guide</h2>
-        <ol style="padding-left: 20px;">
-          ${story.discussionQuestions.map((q: string) => `<li style="margin-bottom: 10px; font-size: 15px;">${q}</li>`).join("")}
+      <div class="discussion-box">
+        <h2>Discussion Guide</h2>
+        <ol>
+          ${story.discussionQuestions.map((q: string) => `<li>${q}</li>`).join("")}
         </ol>
-        ${story.familyActivity ? `<div style="margin-top: 14px; padding: 14px; background: #D4A84615; border-radius: 8px;">
-          <strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: #0A1628;">Family Activity:</strong>
-          <p style="font-size: 14px; margin-top: 4px;">${story.familyActivity}</p>
+        ${story.familyActivity ? `<div class="family-activity">
+          <strong>Family Activity:</strong>
+          <p>${story.familyActivity}</p>
         </div>` : ""}
       </div>
       ` : ""}
-      <div class="footer">Bedtime Virtues \u2014 Building Character Through Story \u00B7 bedtimevirtues.com</div>
+      <div class="footer">Bedtime Virtues — Building Character Through Story · bedtimevirtues.com</div>
     </body></html>`;
   };
+
+  function chosen0Name(): string {
+    const c = appData.children[selectedChildren[0]];
+    return c?.name ?? "";
+  }
+
+  function chosenNames(): string {
+    return selectedChildren
+      .map((i) => appData.children[i]?.name)
+      .filter(Boolean)
+      .join(" & ");
+  }
 
   const exportPDF = () => {
     if (!story) return;
@@ -327,7 +546,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
   const shareStory = async () => {
     if (!story) return;
     trackEvent("story_shared");
-    const displayName = draftName.trim() || "a young reader";
+    const displayName = chosen0Name() || "a young reader";
     const text = `${story.title}\n\nA story for ${displayName}, generated by Bedtime Virtues.\n\n${story.body}`;
     if (navigator.share) {
       try { await navigator.share({ title: story.title, text }); } catch { /* cancelled */ }
@@ -338,10 +557,14 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
     }
   };
 
+  // ── Styles ──
   const inputStyle: React.CSSProperties = {
     width: "100%", padding: "10px 14px", borderRadius: T.radiusSm,
     border: `1px solid ${T.gray200}`, fontFamily: T.fontSans, fontSize: 14,
     color: T.gray800, background: T.white, outline: "none",
+    // Hide native number-input spinners in webkit/firefox
+    appearance: "textfield",
+    MozAppearance: "textfield",
   };
 
   const sectionTitleStyle: React.CSSProperties = {
@@ -350,11 +573,27 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
     marginBottom: 10,
   };
 
+  const labelStyle: React.CSSProperties = {
+    fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+    color: T.gray500, display: "block", marginBottom: 4,
+  };
+
+  const hasAnyCharacters = appData.children.length > 0;
+  const wordsActual = story?.actualWords ?? 0;
+  const minutesActual = wordsActual > 0 ? minutesForWords(wordsActual) : 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.3 }}
     >
+      {/* Hide native number-input spinners */}
+      <style>{`
+        input.no-spin::-webkit-outer-spin-button,
+        input.no-spin::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input.no-spin { -moz-appearance: textfield; }
+      `}</style>
+
       <div style={{ marginBottom: 20 }}>
         <h1 style={{
           fontFamily: T.fontSans, fontSize: 28, fontWeight: 700,
@@ -370,87 +609,282 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </p>
       </div>
 
-      {/* Existing saved-children pills (only if multiple) */}
-      <ChildPills children={appData.children} selected={selChild} onSelect={setSelChild} />
-
-      {/* ── Step 1: Who it's for ─────────────────────────────── */}
+      {/* ── Section 1: Characters ────────────────────────────────────── */}
       <div style={{
-        padding: 24, borderRadius: T.radius, background: T.white,
+        padding: 20, borderRadius: T.radius, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 14,
       }}>
-        <div style={sectionTitleStyle}>Who&apos;s this story for?</div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_120px] gap-3">
-          <div>
-            <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
-              Name
-            </label>
-            <input
-              value={draftName}
-              onChange={(e) => setDraftName(e.target.value)}
-              placeholder="e.g., Mason"
-              autoFocus={!savedChild}
-              style={inputStyle}
-            />
-          </div>
-          <div>
-            <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
-              Age
-            </label>
-            <input
-              type="number"
-              min={2} max={14}
-              value={draftAge}
-              onChange={(e) => setDraftAge(parseInt(e.target.value) || 6)}
-              style={inputStyle}
-            />
-          </div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+          <div style={sectionTitleStyle}>Who&apos;s this story for?</div>
+          {selectedChildren.length > 1 && (
+            <span style={{
+              fontFamily: T.fontSans, fontSize: 11, fontWeight: 600,
+              padding: "3px 10px", borderRadius: 100,
+              background: T.navy, color: T.gold,
+            }}>
+              {selectedChildren.length} characters in one story
+            </span>
+          )}
         </div>
 
-        {/* Advanced: sex + reading level */}
-        <button
-          type="button"
-          onClick={() => setShowAdvanced(!showAdvanced)}
-          style={{
-            marginTop: 12, display: "flex", alignItems: "center", gap: 6,
-            background: "none", border: "none", cursor: "pointer", padding: 0,
-            fontFamily: T.fontSans, fontSize: 13, fontWeight: 500, color: T.gray500,
-          }}
-        >
-          {showAdvanced ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-          {showAdvanced ? "Hide details" : "Add more details (optional)"}
-        </button>
-        {showAdvanced && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ marginTop: 12 }}>
-            <div>
-              <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
-                Gender (optional)
-              </label>
-              <select value={draftSex} onChange={(e) => setDraftSex(e.target.value)} style={inputStyle}>
-                <option value="">Skip / either</option>
-                <option value="boy">Boy</option>
-                <option value="girl">Girl</option>
-              </select>
-            </div>
-            <div>
-              <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
-                Reading level
-              </label>
-              <select
-                value={draftReading || getDefaultReadingLevel(effectiveAge)}
-                onChange={(e) => setDraftReading(e.target.value)}
-                style={inputStyle}
+        {/* Character chips */}
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+          {appData.children.map((c, i) => {
+            const active = selectedChildren.includes(i);
+            return (
+              <div
+                key={i}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  padding: "6px 4px 6px 14px", borderRadius: 100,
+                  background: active ? T.navy : T.white,
+                  border: active ? `1px solid ${T.navy}` : `1px solid ${T.gray200}`,
+                  color: active ? T.white : T.gray700,
+                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+                  transition: "all 0.15s",
+                }}
               >
-                {READING_LEVELS.map((r) => (
-                  <option key={r.value} value={r.value}>{r.label}</option>
-                ))}
-              </select>
-            </div>
+                <button
+                  onClick={() => toggleChild(i)}
+                  aria-pressed={active}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 8,
+                    padding: 0, background: "none", border: "none", cursor: "pointer",
+                    color: "inherit", fontFamily: "inherit", fontSize: "inherit", fontWeight: "inherit",
+                  }}
+                >
+                  <span>{c.name}</span>
+                  <span style={{
+                    fontWeight: 400, opacity: 0.7, fontSize: 11,
+                  }}>
+                    {c.age}
+                  </span>
+                </button>
+                <button
+                  onClick={() => openEditEditor(i)}
+                  aria-label={`Edit ${c.name}`}
+                  style={{
+                    background: active ? "rgba(255,255,255,0.18)" : T.gray100,
+                    border: "none", cursor: "pointer",
+                    borderRadius: "50%", width: 22, height: 22, padding: 0,
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    color: active ? T.white : T.gray500,
+                  }}
+                >
+                  <Edit3 size={11} />
+                </button>
+              </div>
+            );
+          })}
+          {!atLimit && (
+            <button
+              onClick={openNewEditor}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                padding: "6px 14px", borderRadius: 100,
+                background: T.bg, border: `1px dashed ${T.gray300 || T.gray200}`,
+                color: T.gray600, cursor: "pointer",
+                fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+              }}
+            >
+              <Plus size={13} />
+              {hasAnyCharacters ? "Add character" : "New character"}
+            </button>
+          )}
+        </div>
+
+        {/* Selected character details + hint */}
+        {hasAnyCharacters && selectedChildren.length > 0 && editorIndex === null && (
+          <div style={{ fontFamily: T.fontSans, fontSize: 12, color: T.gray500 }}>
+            {selectedChildren.length === 1 ? (
+              (() => {
+                const c = appData.children[selectedChildren[0]];
+                if (!c) return null;
+                const parts: string[] = [`Age ${c.age}`];
+                if (c.sex) parts.push(c.sex === "boy" ? "Boy" : "Girl");
+                if (c.readingLevel) {
+                  const rl = READING_LEVELS.find((r) => r.value === c.readingLevel);
+                  if (rl) parts.push(rl.label);
+                }
+                return (
+                  <div>
+                    <span>{parts.join(" · ")}</span>
+                    {c.description && (
+                      <div style={{ marginTop: 4, fontStyle: "italic" }}>
+                        &ldquo;{c.description}&rdquo;
+                      </div>
+                    )}
+                  </div>
+                );
+              })()
+            ) : (
+              <span>Tap multiple to feature them all in one story together. Tap again to remove.</span>
+            )}
           </div>
         )}
+
+        {hasAnyCharacters && selectedChildren.length === 0 && (
+          <div style={{
+            padding: 10, borderRadius: T.radiusSm,
+            background: VC.courage.light, color: VC.courage.main,
+            fontFamily: T.fontSans, fontSize: 13,
+          }}>
+            Tap a character above to pick who the story is for.
+          </div>
+        )}
+
+        {/* Inline character editor */}
+        <AnimatePresence>
+          {editorIndex !== null && (
+            <motion.div
+              key="editor"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{ overflow: "hidden", marginTop: 16 }}
+            >
+              <div style={{
+                padding: 18, borderRadius: T.radius, background: T.bg,
+                border: `1px solid ${T.gray200}`,
+              }}>
+                <div style={{
+                  display: "flex", justifyContent: "space-between", alignItems: "center",
+                  marginBottom: 14,
+                }}>
+                  <div style={{
+                    fontFamily: T.fontSans, fontSize: 14, fontWeight: 700, color: T.navy,
+                  }}>
+                    {editorIndex === -1 ? "New character" : `Edit ${appData.children[editorIndex]?.name}`}
+                  </div>
+                  <button
+                    onClick={cancelEditor}
+                    aria-label="Close editor"
+                    style={{
+                      background: "none", border: "none", cursor: "pointer",
+                      padding: 4, color: T.gray400,
+                    }}
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-[1fr_100px] gap-3" style={{ marginBottom: 10 }}>
+                  <div>
+                    <label style={labelStyle}>Name</label>
+                    <input
+                      value={editorDraft.name}
+                      onChange={(e) => setEditorDraft((d) => ({ ...d, name: e.target.value }))}
+                      placeholder="e.g., Mason"
+                      autoFocus
+                      style={inputStyle}
+                    />
+                  </div>
+                  <div>
+                    <label style={labelStyle}>Age</label>
+                    <input
+                      className="no-spin"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      value={editorDraft.age || ""}
+                      onChange={(e) => {
+                        const v = e.target.value.replace(/[^0-9]/g, "");
+                        setEditorDraft((d) => ({ ...d, age: v ? parseInt(v, 10) : 0 }));
+                      }}
+                      style={inputStyle}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ marginBottom: 10 }}>
+                  <div>
+                    <label style={labelStyle}>Gender (optional)</label>
+                    <select
+                      value={editorDraft.sex}
+                      onChange={(e) => setEditorDraft((d) => ({ ...d, sex: e.target.value }))}
+                      style={inputStyle}
+                    >
+                      <option value="">Skip / either</option>
+                      <option value="boy">Boy</option>
+                      <option value="girl">Girl</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style={labelStyle}>Reading level</label>
+                    <select
+                      value={editorDraft.readingLevel || getDefaultReadingLevel(editorDraft.age || 6)}
+                      onChange={(e) => setEditorDraft((d) => ({ ...d, readingLevel: e.target.value }))}
+                      style={inputStyle}
+                    >
+                      {READING_LEVELS.map((r) => (
+                        <option key={r.value} value={r.value}>{r.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: 12 }}>
+                  <label style={labelStyle}>
+                    Looks &amp; loves <span style={{ fontWeight: 400, color: T.gray400 }}>(optional, woven into every story)</span>
+                  </label>
+                  <textarea
+                    value={editorDraft.description}
+                    onChange={(e) => setEditorDraft((d) => ({ ...d, description: e.target.value }))}
+                    placeholder="e.g., long brown hair, loves dinosaurs and her stuffed wolf Bramble"
+                    rows={2}
+                    style={{ ...inputStyle, resize: "vertical" }}
+                  />
+                </div>
+
+                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                  <button
+                    onClick={saveEditor}
+                    style={{
+                      padding: "9px 18px", borderRadius: T.radiusSm,
+                      background: T.navy, color: T.gold, border: "none",
+                      fontFamily: T.fontSans, fontSize: 13, fontWeight: 700, cursor: "pointer",
+                    }}
+                  >
+                    {editorIndex === -1 ? "Save & use" : "Save changes"}
+                  </button>
+                  <button
+                    onClick={cancelEditor}
+                    style={{
+                      padding: "9px 14px", borderRadius: T.radiusSm,
+                      background: T.white, color: T.gray600,
+                      border: `1px solid ${T.gray200}`,
+                      fontFamily: T.fontSans, fontSize: 13, cursor: "pointer",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  {editorIndex !== null && editorIndex >= 0 && (
+                    <button
+                      onClick={() => {
+                        if (confirm(`Delete ${appData.children[editorIndex as number]?.name}? Their progress will be lost.`)) {
+                          deleteCharacter(editorIndex as number);
+                        }
+                      }}
+                      style={{
+                        marginLeft: "auto",
+                        padding: "9px 14px", borderRadius: T.radiusSm,
+                        background: "none", color: T.red || "#B91C1C",
+                        border: "none",
+                        fontFamily: T.fontSans, fontSize: 13, cursor: "pointer",
+                      }}
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* ── Step 2: Virtue + situation + touches ──────────────── */}
+      {/* ── Section 2: Virtue + situation + touches ─────────────────── */}
       <div style={{
         padding: 24, borderRadius: T.radius, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 14,
@@ -464,8 +898,11 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             type="button"
             onClick={() => setQuizOpen(true)}
             style={{
-              display: "flex", alignItems: "center", gap: 4,
-              padding: 0, background: "none", border: "none", cursor: "pointer",
+              display: "flex", alignItems: "center", gap: 5,
+              padding: "5px 10px", background: T.goldSubtle,
+              border: `1px solid ${T.gold}40`,
+              borderRadius: 100,
+              cursor: "pointer",
               fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gold,
             }}
           >
@@ -483,7 +920,6 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             : "Pick one or more virtues. The first is the main thread; the rest are woven in."}
         </div>
 
-        {/* Quick-pick virtue chips — with explicit remove button */}
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
           {quickVirtueChips.map(({ id, sv, pk }) => {
             const vc = VC[pk as keyof typeof VC];
@@ -516,7 +952,6 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           })}
         </div>
 
-        {/* Add-another dropdown — value stays empty, selecting appends */}
         <select
           value=""
           onChange={(e) => { addVirtueFromDropdown(e.target.value); e.currentTarget.value = ""; }}
@@ -535,7 +970,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </select>
 
         <div style={{ marginBottom: 14 }}>
-          <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
+          <label style={labelStyle}>
             Situation <span style={{ fontWeight: 400, color: T.gray400 }}>(optional)</span>
           </label>
           <input
@@ -547,55 +982,97 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </div>
 
         <div>
-          <label style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 600, color: T.gray500, display: "block", marginBottom: 4 }}>
-            Personal touches <span style={{ fontWeight: 400, color: T.gray400 }}>(optional)</span>
+          <label style={labelStyle}>
+            Story extras <span style={{ fontWeight: 400, color: T.gray400 }}>(optional, one-off details for this story)</span>
           </label>
           <textarea
             value={personalTouches}
             onChange={(e) => setPersonalTouches(e.target.value)}
-            placeholder="Stuffed animal, sibling, favorite food, pet, hobby, setting..."
+            placeholder="A setting, a stuffed animal, a sibling, a favorite food..."
             rows={2}
             style={{ ...inputStyle, resize: "vertical", fontFamily: T.fontSans }}
           />
           <div style={{ fontSize: 11, color: T.gray400, marginTop: 4, fontFamily: T.fontSans }}>
-            Weaved in naturally where it fits. Examples: &ldquo;loves her teddy Bramble, has a little
-            brother Theo, favorite food is pancakes.&rdquo;
+            Save the things that stay the same (hair, favorite toy) in the character details above so they appear in every story.
           </div>
         </div>
       </div>
 
-      {/* ── Step 3: Length ──────────────────────────────────── */}
+      {/* ── Section 3: Length ───────────────────────────────────────── */}
       <div style={{
-        padding: 24, borderRadius: T.radius, background: T.white,
+        padding: 20, borderRadius: T.radius, background: T.white,
         border: `1px solid ${T.gray100}`, marginBottom: 16,
       }}>
-        <div style={sectionTitleStyle}>How long?</div>
-        <div className="grid grid-cols-3 gap-2">
-          {LENGTH_OPTIONS.map((opt) => {
-            const active = length === opt.id;
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+          <div style={sectionTitleStyle}>How long?</div>
+          <span style={{
+            fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
+          }}>
+            ~{wordTarget.target} words · ~{minutes} min read-aloud
+          </span>
+        </div>
+
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+          {LENGTH_PRESETS.map((opt) => {
+            const active = minutes === opt.minutes;
             return (
-              <button key={opt.id} onClick={() => setLength(opt.id)} style={{
-                padding: "12px 8px", borderRadius: T.radiusSm,
-                background: active ? T.navy : T.white,
-                color: active ? T.white : T.navy,
-                border: active ? `1px solid ${T.navy}` : `1px solid ${T.gray200}`,
-                cursor: "pointer", fontFamily: T.fontSans, textAlign: "center",
-              }}>
-                <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 2 }}>{opt.label}</div>
-                <div style={{
-                  fontSize: 11, display: "flex", alignItems: "center", justifyContent: "center",
-                  gap: 4, color: active ? "rgba(255,255,255,0.8)" : T.gray500,
-                }}>
-                  <Clock size={10} />
-                  {opt.minutes}
-                </div>
+              <button
+                key={opt.id}
+                onClick={() => setMinutes(opt.minutes)}
+                style={{
+                  padding: "9px 18px", borderRadius: 100,
+                  background: active ? T.navy : T.white,
+                  color: active ? T.white : T.gray700,
+                  border: active ? `1px solid ${T.navy}` : `1px solid ${T.gray200}`,
+                  cursor: "pointer", fontFamily: T.fontSans,
+                  fontSize: 13, fontWeight: 600,
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                }}
+              >
+                <Clock size={12} />
+                {opt.label}
+                <span style={{ opacity: 0.7, fontWeight: 400 }}>{opt.minutes} min</span>
               </button>
             );
           })}
+
+          {/* Custom: inline number input always visible */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            padding: "4px 6px 4px 14px", borderRadius: 100,
+            background: !isPreset ? T.navy : T.white,
+            border: !isPreset ? `1px solid ${T.navy}` : `1px solid ${T.gray200}`,
+            color: !isPreset ? T.white : T.gray700,
+            fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+          }}>
+            <Pen size={12} />
+            <span>Custom</span>
+            <input
+              className="no-spin"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              value={!isPreset ? String(minutes) : ""}
+              placeholder={String(minutes)}
+              onChange={(e) => {
+                const v = e.target.value.replace(/[^0-9]/g, "");
+                if (!v) return;
+                const n = Math.max(MIN_MIN, Math.min(MAX_MIN, parseInt(v, 10)));
+                setMinutes(n);
+              }}
+              style={{
+                width: 38, padding: "4px 6px", borderRadius: 8,
+                border: "none", background: !isPreset ? "rgba(255,255,255,0.18)" : T.bg,
+                color: "inherit", fontFamily: "inherit", fontSize: 13, fontWeight: 700,
+                textAlign: "center", outline: "none",
+              }}
+            />
+            <span style={{ opacity: 0.7, fontWeight: 400, paddingRight: 8 }}>min</span>
+          </div>
         </div>
       </div>
 
-      {/* ── Create button ───────────────────────────────────── */}
+      {/* ── Create button ───────────────────────────────────────────── */}
       {atLimit ? (
         <button onClick={onPricing} style={{
           display: "flex", alignItems: "center", gap: 8,
@@ -629,7 +1106,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
           ) : (
             <>
               <Pen size={16} />
-              Create Story
+              Create story for {chosenNames() || "..."}
             </>
           )}
         </button>
@@ -645,7 +1122,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </div>
       )}
 
-      {/* ── Generated Story ─────────────────────────────────── */}
+      {/* ── Generated Story ─────────────────────────────────────────── */}
       {story && (
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -667,9 +1144,11 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             {story.virtueTag && (
               <div style={{ textAlign: "center", marginBottom: 6 }}>
                 <span style={{
-                  display: "inline-block", padding: "4px 14px", borderRadius: 100,
-                  background: `${T.gold}18`, color: T.gold,
-                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+                  display: "inline-block", padding: "5px 16px", borderRadius: 100,
+                  background: "#FEF3C7", color: T.navy,
+                  border: `1.5px solid #B8941F`,
+                  fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
+                  letterSpacing: "0.02em",
                 }}>
                   {story.virtueTag}
                 </span>
@@ -677,19 +1156,32 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             )}
             {story.virtueDetail && (
               <div style={{
-                textAlign: "center", fontFamily: T.fontSans, fontSize: 13,
-                color: T.gray400, fontStyle: "italic", marginBottom: 6,
+                textAlign: "center", fontFamily: T.fontSans, fontSize: 12,
+                color: T.gray500, fontStyle: "italic", marginBottom: 6,
               }}>
                 {story.virtueDetail}
               </div>
             )}
             <div style={{
               textAlign: "center", fontFamily: T.fontSans, fontSize: 13,
-              color: T.gray400, marginBottom: 32,
-              paddingBottom: 24, borderBottom: `2px solid ${T.gold}40`,
+              color: T.gray400, marginBottom: 12,
             }}>
-              A story for {draftName.trim() || "a young reader"} &middot; by Bedtime Virtues
+              A story for {chosenNames() || "a young reader"} &middot; by Bedtime Virtues
             </div>
+            {story.actualWords > 0 && (
+              <div style={{
+                textAlign: "center", fontFamily: T.fontSans, fontSize: 11,
+                color: T.gray400, marginBottom: 24,
+                paddingBottom: 24, borderBottom: `2px solid ${T.gold}40`,
+              }}>
+                {story.actualWords} words · ~{minutesActual.toFixed(1)} min read-aloud
+                {Math.abs(minutesActual - minutes) > 1 && (
+                  <span style={{ color: VC.courage.main, marginLeft: 6 }}>
+                    (target was {minutes} min)
+                  </span>
+                )}
+              </div>
+            )}
             <div style={{
               fontFamily: T.fontSerif, fontSize: 18, lineHeight: 1.9,
               color: T.gray800, whiteSpace: "pre-wrap",
@@ -765,10 +1257,22 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             padding: 16, borderRadius: T.radius, background: T.gray50,
             border: `1px solid ${T.gray100}`,
           }}>
+            <button onClick={generateAnother} disabled={generating} style={{
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "8px 16px", borderRadius: T.radiusSm,
+              background: T.navy, color: T.gold, border: "none",
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 700,
+              cursor: generating ? "default" : "pointer",
+              opacity: generating ? 0.5 : 1,
+            }}>
+              <RefreshCw size={14} />
+              Another like this
+            </button>
             <button onClick={shareStory} style={{
               display: "flex", alignItems: "center", gap: 6,
               padding: "8px 16px", borderRadius: T.radiusSm,
-              background: T.navy, color: T.white, border: "none",
+              background: T.white, color: T.gray700,
+              border: `1px solid ${T.gray200}`,
               fontFamily: T.fontSans, fontSize: 13, fontWeight: 600, cursor: "pointer",
             }}>
               <Share2 size={14} />
@@ -802,7 +1306,7 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
             </button>
             <button onClick={() => {
               if (story) {
-                const displayName = draftName.trim() || "a young reader";
+                const displayName = chosenNames() || "a young reader";
                 const subject = encodeURIComponent(`Story for ${displayName}: ${story.title}`);
                 const body = encodeURIComponent(`${story.title}\n\nA story for ${displayName}, generated by Bedtime Virtues.\n\n${story.body}\n\n---\nBedtime Virtues\nbedtimevirtues.com`);
                 window.open(`mailto:?subject=${subject}&body=${body}`);
@@ -821,6 +1325,80 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         </motion.div>
       )}
 
+      {/* ── Story library ───────────────────────────────────────────── */}
+      {library.length > 0 && (
+        <div style={{ marginTop: 24 }}>
+          <button
+            onClick={() => setLibraryOpen(!libraryOpen)}
+            style={{
+              display: "flex", alignItems: "center", gap: 8, width: "100%",
+              padding: "12px 16px", borderRadius: T.radius,
+              background: T.white, border: `1px solid ${T.gray100}`,
+              cursor: "pointer", fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+              color: T.navy,
+            }}
+          >
+            <BookMarked size={16} color={T.gold} />
+            Your recent stories ({library.length})
+            <span style={{ marginLeft: "auto", color: T.gray400 }}>
+              {libraryOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </span>
+          </button>
+
+          <AnimatePresence>
+            {libraryOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                style={{ overflow: "hidden", marginTop: 8 }}
+              >
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {library.map((s) => (
+                    <div key={s.id} style={{
+                      padding: 12, borderRadius: T.radius,
+                      background: T.white, border: `1px solid ${T.gray100}`,
+                      display: "flex", alignItems: "center", gap: 12,
+                    }}>
+                      <button
+                        onClick={() => openSavedStory(s)}
+                        style={{
+                          flex: 1, textAlign: "left",
+                          background: "none", border: "none", cursor: "pointer",
+                          padding: 0,
+                        }}
+                      >
+                        <div style={{
+                          fontFamily: T.fontSans, fontSize: 14, fontWeight: 600,
+                          color: T.navy, marginBottom: 2,
+                        }}>
+                          {s.title}
+                        </div>
+                        <div style={{
+                          fontFamily: T.fontSans, fontSize: 12, color: T.gray500,
+                        }}>
+                          {s.characterNames || "—"} · {s.virtueTag} · {new Date(s.createdAt).toLocaleDateString()}
+                        </div>
+                      </button>
+                      <button
+                        onClick={() => deleteSavedStory(s.id)}
+                        aria-label="Remove from library"
+                        style={{
+                          background: "none", border: "none", cursor: "pointer",
+                          color: T.gray300, padding: 4,
+                        }}
+                      >
+                        <X size={14} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
+
       <ParentalConsentModal
         open={showConsentModal}
         onConsent={() => {
@@ -834,7 +1412,6 @@ ACTIVITY: [A simple, fun family activity (5-10 minutes) that practices the virtu
         open={quizOpen}
         onClose={() => setQuizOpen(false)}
         onComplete={(ids) => {
-          // Merge quiz suggestions into the current story's virtues
           setSelectedVirtues((prev) => [...new Set([...prev, ...ids])]);
         }}
       />

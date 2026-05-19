@@ -143,7 +143,9 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-20250514",
-        max_tokens: 3000,
+        // Headroom for ~2500-word custom stories (long bedtime sagas).
+        // Sonnet bills on actual output, not the cap, so raising this is free.
+        max_tokens: 8000,
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: cleanPrompt }],
       }),

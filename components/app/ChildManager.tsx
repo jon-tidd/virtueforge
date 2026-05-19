@@ -19,6 +19,7 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
   const [sex, setSex] = useState("boy");
   const [readingLevel, setReadingLevel] = useState("");
   const [struggles, setStruggles] = useState<string[]>([]);
+  const [description, setDescription] = useState("");
 
   const atLimit = !premium && children.length >= PLANS.free.children;
 
@@ -28,8 +29,9 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
       name: name.trim(), age, sex,
       readingLevel: readingLevel || getDefaultReadingLevel(age),
       struggles, readBooks: [], virtueProgress: {},
+      description: description.trim() || undefined,
     });
-    setName(""); setAge(5); setSex("boy"); setReadingLevel(""); setStruggles([]);
+    setName(""); setAge(5); setSex("boy"); setReadingLevel(""); setStruggles([]); setDescription("");
     setShowForm(false);
   };
 
@@ -132,8 +134,17 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
                 display: "block", fontFamily: T.fontSans, fontSize: 13,
                 fontWeight: 600, color: T.navy, marginBottom: 6,
               }}>Age</label>
-              <input type="number" value={age} onChange={(e) => setAge(parseInt(e.target.value) || 0)}
-                min={1} max={16} style={inputStyle} />
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                value={age || ""}
+                onChange={(e) => {
+                  const v = e.target.value.replace(/[^0-9]/g, "");
+                  setAge(v ? parseInt(v, 10) : 0);
+                }}
+                style={{ ...inputStyle, appearance: "textfield" as React.CSSProperties["appearance"], MozAppearance: "textfield" }}
+              />
             </div>
             <div>
               <label style={{
@@ -158,6 +169,24 @@ export default function ChildManager({ children, onAdd, onRemove, premium, onNex
                 <option key={r.value} value={r.value}>{r.label}</option>
               ))}
             </select>
+          </div>
+
+          <div style={{ marginBottom: 14 }}>
+            <label style={{
+              display: "block", fontFamily: T.fontSans, fontSize: 13,
+              fontWeight: 600, color: T.navy, marginBottom: 6,
+            }}>
+              Looks &amp; loves <span style={{ fontWeight: 400, color: T.gray500 }}>
+                (optional, woven into every story)
+              </span>
+            </label>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="e.g., long brown hair, loves dinosaurs and her stuffed wolf Bramble"
+              rows={2}
+              style={{ ...inputStyle, resize: "vertical" }}
+            />
           </div>
 
           <div style={{ marginBottom: 20 }}>
