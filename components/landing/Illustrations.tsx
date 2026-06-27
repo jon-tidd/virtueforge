@@ -21,7 +21,7 @@ const GRAY500 = "#6B7280";
 // ═══════════════════════════════════════════════════════════════════════════════
 export function HeroIllustration() {
   return (
-    <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 30px rgba(10,22,40,0.18)" }}>
+    <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3)" }}>
       <Image
         src="/images/hero-firelight.png"
         alt="Parent and child reading a glowing storybook together by firelight"

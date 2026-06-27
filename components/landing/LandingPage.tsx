@@ -233,20 +233,20 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-16 md:pt-24 pb-12 md:pb-20 px-6 sm:px-8 md:px-10" style={{
-        textAlign: "center", background: T.white,
+      <section className="pt-16 md:pt-24 pb-0 px-6 sm:px-8 md:px-10" style={{
+        textAlign: "center", background: T.navy,
         position: "relative", overflow: "hidden",
       }}>
-        {/* Subtle gradient orbs — decorative, kept away from hero image */}
+        {/* Dramatic gradient orbs on dark background */}
         <div className="animate-orb-pulse" style={{
-          position: "absolute", top: -280, right: -280, width: 500, height: 500,
-          borderRadius: "50%", background: `radial-gradient(circle, ${VC.prudence.light} 0%, transparent 70%)`,
-          pointerEvents: "none", opacity: 0.3,
+          position: "absolute", top: -200, right: -200, width: 700, height: 700,
+          borderRadius: "50%", background: "radial-gradient(circle, rgba(212,168,70,0.18) 0%, transparent 65%)",
+          pointerEvents: "none",
         }} />
         <div className="animate-orb-pulse" style={{
-          position: "absolute", bottom: -280, left: -280, width: 400, height: 400,
-          borderRadius: "50%", background: `radial-gradient(circle, ${T.goldSubtle} 0%, transparent 70%)`,
-          pointerEvents: "none", opacity: 0.35, animationDelay: "2s",
+          position: "absolute", bottom: -300, left: -300, width: 800, height: 800,
+          borderRadius: "50%", background: "radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)",
+          pointerEvents: "none", animationDelay: "2s",
         }} />
 
         <motion.div
@@ -254,10 +254,24 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           transition={{ duration: 0.6 }}
           style={{ position: "relative", zIndex: 1, maxWidth: 800, margin: "0 auto" }}
         >
+          {/* Eyebrow badge */}
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
+            <span style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              padding: "6px 16px", borderRadius: 100,
+              background: "rgba(212,168,70,0.12)", border: "1px solid rgba(212,168,70,0.3)",
+              fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
+              color: T.gold, letterSpacing: "0.05em",
+            }}>
+              <Shield size={13} />
+              2,400 Years of Wisdom · Modern AI
+            </span>
+          </div>
+
           <h1 style={{
-            fontFamily: T.fontSans, fontSize: "clamp(40px, 6vw, 72px)",
-            fontWeight: 800, color: T.navy, lineHeight: 1.08,
-            letterSpacing: "-0.03em", marginBottom: 24,
+            fontFamily: T.fontDisplay, fontSize: "clamp(52px, 7vw, 92px)",
+            fontWeight: 700, color: T.white, lineHeight: 1.04,
+            letterSpacing: "-0.01em", marginBottom: 24,
           }}>
             Stories That Actually<br />
             Build <span className="text-gold-gradient">Character</span>
@@ -265,7 +279,7 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
 
           <p style={{
             fontFamily: T.fontSans, fontSize: "clamp(17px, 2vw, 20px)",
-            color: T.gray500, lineHeight: 1.6, maxWidth: 620, margin: "0 auto 40px",
+            color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: 620, margin: "0 auto 40px",
           }}>
             AI-generated adventures for your child&apos;s real struggles.
             57+ hand-curated classics mapped to classical virtues.
@@ -276,17 +290,17 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4" style={{ justifyContent: "center", alignItems: "center" }}>
             <button className="cta-glow" onClick={() => onNavigate ? onNavigate("stories") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
-              color: T.gold, background: T.navy, border: "none", cursor: "pointer",
+              color: T.navy, background: T.gold, border: "none", cursor: "pointer",
               padding: "14px 32px", borderRadius: T.radiusSm,
               display: "flex", alignItems: "center", gap: 8,
-              boxShadow: "0 4px 14px rgba(10,22,40,0.3)",
+              boxShadow: "0 4px 24px rgba(212,168,70,0.4)",
             }}>
               <Pen size={18} />
               Generate a Story
             </button>
             <button className="card-lift" onClick={() => onNavigate ? onNavigate("books") : onStart()} style={{
               fontFamily: T.fontSans, fontSize: 17, fontWeight: 600,
-              color: T.navy, background: T.white, border: `2px solid ${T.navy}`,
+              color: T.white, background: "rgba(255,255,255,0.08)", border: "2px solid rgba(255,255,255,0.2)",
               cursor: "pointer", padding: "12px 32px", borderRadius: T.radiusSm,
               display: "flex", alignItems: "center", gap: 8,
             }}>
@@ -296,13 +310,13 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
           </div>
 
           <p style={{
-            fontFamily: T.fontSans, fontSize: 13, color: T.gray400,
+            fontFamily: T.fontSans, fontSize: 13, color: "rgba(255,255,255,0.5)",
             marginTop: 16, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 16px",
           }}>
             <span>Free to use</span>
-            <span style={{ color: T.gray300 }}>&middot;</span>
+            <span style={{ color: "rgba(255,255,255,0.25)" }}>&middot;</span>
             <span>No account required</span>
-            <span style={{ color: T.gray300 }}>&middot;</span>
+            <span style={{ color: "rgba(255,255,255,0.25)" }}>&middot;</span>
             <span>Your data stays on your device</span>
           </p>
 
@@ -319,10 +333,10 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
                   style={{
                     fontFamily: T.fontSans, fontSize: 13, fontWeight: 600,
                     padding: "10px 20px", borderRadius: 100,
-                    background: T.navyMid, color: T.white,
-                    border: `1px solid rgba(255,255,255,0.1)`,
+                    background: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.85)",
+                    border: "1px solid rgba(255,255,255,0.13)",
                     cursor: "pointer",
-                    boxShadow: T.shadowMd,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
                     display: "flex", alignItems: "center", gap: 8,
                   }}
                 >
@@ -341,11 +355,12 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
             <HeroIllustration />
           </motion.div>
         </motion.div>
+        <WaveDivider color={T.white} />
       </section>
 
       {/* ═══ BOOK CAROUSEL — auto-scrolling ═══ */}
       <section style={{
-        paddingTop: 0, paddingBottom: 48, background: T.white,
+        paddingTop: 32, paddingBottom: 48, background: T.white,
         overflow: "hidden",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -424,9 +439,9 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               Classical Foundations
             </p>
             <h2 style={{
-              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em", marginBottom: 20,
+              fontFamily: T.fontDisplay, fontSize: "clamp(34px, 5vw, 56px)",
+              fontWeight: 700, color: T.navy, lineHeight: 1.1,
+              letterSpacing: "-0.01em", marginBottom: 20,
             }}>
               What the ancients knew &mdash;<br />and we have forgotten
             </h2>
@@ -653,9 +668,9 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               Two Paths
             </p>
             <h2 style={{
-              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              fontFamily: T.fontDisplay, fontSize: "clamp(34px, 5vw, 56px)",
+              fontWeight: 700, color: T.navy, lineHeight: 1.1,
+              letterSpacing: "-0.01em",
             }}>
               Your family. Your journey. Your choice.
             </h2>
@@ -1150,9 +1165,9 @@ export default function LandingPage({ onStart, onPricing, onDemo, onNavigate, ha
               The Framework
             </p>
             <h2 style={{
-              fontFamily: T.fontSans, fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 800, color: T.navy, lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              fontFamily: T.fontDisplay, fontSize: "clamp(34px, 5vw, 56px)",
+              fontWeight: 700, color: T.navy, lineHeight: 1.1,
+              letterSpacing: "-0.01em",
             }}>
               Four pillars of human excellence
             </h2>

@@ -37,9 +37,9 @@ export const T = {
   redLight: "#FEF2F2",
 
   // Typography
-  fontSans: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  fontSerif: "'Crimson Text', Georgia, 'Times New Roman', serif",
-  fontDisplay: "'Cormorant Garamond', Georgia, serif",
+  fontSans: "var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  fontSerif: "var(--font-crimson), Georgia, 'Times New Roman', serif",
+  fontDisplay: "var(--font-cormorant), Georgia, serif",
 
   // Effects
   radius: 12,
