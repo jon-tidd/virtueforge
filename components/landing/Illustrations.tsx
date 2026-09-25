@@ -21,13 +21,14 @@ const GRAY500 = "#6B7280";
 // ═══════════════════════════════════════════════════════════════════════════════
 export function HeroIllustration() {
   return (
-    <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3)" }}>
+    <div style={{ maxWidth: 480, margin: "0 auto", borderRadius: 16, overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3)" }}>
       <Image
-        src="/images/hero-firelight.png"
-        alt="Parent and child reading a glowing storybook together by firelight"
-        width={1400}
-        height={600}
+        src="/images/hero-kids.jpg"
+        alt="Three siblings and a fox on a moonlit hillside, the oldest holding up a glowing lantern"
+        width={1122}
+        height={1402}
         priority
+        sizes="(max-width: 520px) 100vw, 480px"
         style={{ width: "100%", height: "auto", objectFit: "cover", display: "block" }}
       />
     </div>
