@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Draw your hero</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6A5D4B}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.chip{display:inline-flex;align-items:center;min-height:42px;padding:0 15px;border-radius:999px;border:1.5px solid #E2D5BC;background:#FFFCF5;font:600 14px 'Figtree',sans-serif;color:#3B3226;cursor:pointer}
+.sw{width:40px;height:40px;border-radius:50%;border:3px solid #FFFCF5;cursor:pointer;padding:0}
+.tab{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 14px 0 6px;border-radius:999px;font-weight:700;font-size:14.5px}
+</style>
+</helmet>
+<div style="width:390px;height:1040px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 24px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+    <a href="Welcome.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+    <div style="display:flex;gap:6px"><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span><span style="width:26px;height:6px;border-radius:3px;background:#E2D5BC"></span><span style="width:26px;height:6px;border-radius:3px;background:#E2D5BC"></span></div>
+    <span style="width:44px"></span>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:6px">
+    <span class="tab" style="background:#16203A;color:#F4E9D2"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;display:block">Theo</span>
+    <span class="tab" style="background:#EFE4CE;color:#6A5D4B;padding-left:14px">June</span>
+    <span class="tab" style="background:#EFE4CE;color:#6A5D4B;padding-left:14px">Max</span>
+  </div>
+  <div style="position:relative;margin-top:16px;align-self:center">
+    <img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="Storybook portrait of Theo" style="width:250px;height:250px;border-radius:32px;object-fit:cover;display:block;box-shadow:0 18px 38px rgba(60,40,10,.22)">
+    <span style="position:absolute;left:12px;bottom:12px;background:#FFFCF5;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="2" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>Drawn just now</span>
+  </div>
+  <div class="disp" style="text-align:center;font-size:22px;font-weight:600;margin-top:12px">Does this look like Theo?</div>
+  <div class="lbl" style="margin-top:18px">Skin</div>
+  <div style="display:flex;gap:8px;margin-top:8px">
+    <button class="sw" aria-label="Skin tone 1" style="background:#F7D7BD;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Skin tone 2, selected" style="background:#EDC19C;box-shadow:0 0 0 2.5px #16203A"></button>
+    <button class="sw" aria-label="Skin tone 3" style="background:#C98F66;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Skin tone 4" style="background:#9A6443;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Skin tone 5" style="background:#6B4430;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+  </div>
+  <div class="lbl" style="margin-top:16px">Hair</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+    <sc-for list="{{hair}}" as="h" hint-placeholder-count="5"><button class="chip" onClick="{{h.pick}}" style="{{h.style}}">{{h.label}}</button></sc-for>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:10px">
+    <button class="sw" aria-label="Black hair" style="background:#2A1B12;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Brown hair, selected" style="background:#7A4A22;box-shadow:0 0 0 2.5px #16203A"></button>
+    <button class="sw" aria-label="Light brown hair" style="background:#B7793F;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Blond hair" style="background:#E3C27A;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+    <button class="sw" aria-label="Red hair" style="background:#B2472A;box-shadow:0 0 0 1.5px #E2D5BC"></button>
+  </div>
+  <div class="lbl" style="margin-top:16px">Details</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+    <sc-for list="{{extras}}" as="x" hint-placeholder-count="5"><button class="chip" onClick="{{x.pick}}" style="{{x.style}}">{{x.label}}</button></sc-for>
+  </div>
+  <label for="loves" class="lbl" style="margin-top:16px;display:block">One thing Theo loves</label>
+  <input id="loves" value="Maps and beetles" style="margin-top:8px;min-height:50px;border-radius:14px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:0 14px;font:600 15.5px 'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box;width:100%">
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="Favorites.dc.html">That's Theo! Next: June</a>
+  <div style="text-align:center;font-size:12.5px;color:#6A5D4B;margin-top:10px">We never ask for a photo. Nothing here identifies your child.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1040}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { hair: 'Messy curls', extras: { 'Freckles': true, 'Green cloak': true } }; }
+  renderVals() {
+    const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
+    const off = {};
+    const hair = ['Messy curls', 'Short', 'Straight', 'Braids', 'Long'].map((label) => ({
+      label, style: this.state.hair === label ? on : off, pick: () => this.setState({ hair: label })
+    }));
+    const extras = ['Freckles', 'Glasses', 'Green cloak', 'Gap tooth', 'Band-aid on knee'].map((label) => ({
+      label, style: this.state.extras[label] ? on : off,
+      pick: () => this.setState({ extras: { ...this.state.extras, [label]: !this.state.extras[label] } })
+    }));
+    return { hair, extras };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Weekly booklet</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.seg{flex:1;min-height:44px;border-radius:999px;border:none;font:700 13.5px 'Figtree',sans-serif;cursor:pointer}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.12em;color:#6A5D4B;margin-top:18px}
+</style>
+</helmet>
+<div style="width:390px;height:1000px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="SundayPlan.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Screens off at bedtime</div>
+  <h1 class="disp" style="margin:8px 0 0;font-size:32px;line-height:1.08;font-weight:600">The week's chapters, as a little book.</h1>
+  <p style="margin:10px 0 0;font-size:15px;line-height:1.5;color:#4A4034">Print, fold, staple. Read it by lamplight, and the kids color in the pictures.</p>
+  <div style="margin-top:18px;display:flex;justify-content:center">
+    <div style="display:flex;box-shadow:0 18px 34px rgba(60,40,10,.2);border-radius:4px;transform:rotate(-1deg)">
+      <div style="width:170px;height:230px;background:#FFFCF5;border-right:1px solid #E2D5BC;padding:14px 12px;box-sizing:border-box;display:flex;flex-direction:column">
+        <div style="font-size:9px;font-weight:800;letter-spacing:.1em;color:#8A5212">CHAPTER 5</div>
+        <div class="disp" style="font-size:14px;font-weight:600;margin-top:4px;line-height:1.15">The Dragon Who Was Afraid of the Dark</div>
+        <p class="story" style="margin:8px 0 0;font-size:10.5px;line-height:1.55;color:#2A2118">Deep in the Hollow, something was crying. Not roaring. Crying. Theo lifted the lantern, and there, curled around a rock, was the smallest dragon Max had ever seen…</p>
+        <div style="flex-grow:1"></div>
+        <div style="font-size:9px;color:#6A5D4B;text-align:center">5</div>
+      </div>
+      <div style="width:170px;height:230px;background:#FFFCF5;padding:12px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center">
+        <svg width="146" height="170" viewBox="0 0 146 170" fill="none" stroke="#1F1A14" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 150c10-40 30-60 56-62 24-2 40 14 44 34 3 16-6 28-20 28H20z"/>
+          <path d="M76 88c-4-18 4-34 20-38 14-3 24 6 24 18 0 10-8 16-16 16"/>
+          <circle cx="104" cy="66" r="2.4" fill="#1F1A14"/>
+          <path d="M92 52l-4-12 10 8M110 50l4-12-10 8"/>
+          <path d="M40 104c-14-10-26-8-32 0 10 0 18 6 24 14"/>
+          <path d="M112 76c4 2 8 2 10-2"/>
+          <path d="M30 40h14M37 40v6M31 48h12l-2 20h-8zM30 70h14v4H30z"/>
+          <path d="M37 54c3 3 3 7 0 10-3-3-3-7 0-10z"/>
+          <path d="M126 20l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM10 18l1.5 3.5 3.5 1.5-3.5 1.5L10 28l-1.5-3.5L5 23l3.5-1.5z"/>
+        </svg>
+        <div style="font-size:9px;font-weight:700;color:#6A5D4B;margin-top:4px">Color me in</div>
+      </div>
+    </div>
+  </div>
+  <div class="lbl">WHAT'S IN IT</div>
+  <div style="display:flex;gap:4px;margin-top:8px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{scopes}}" as="s" hint-placeholder-count="2"><button class="seg" onClick="{{s.pick}}" style="{{s.style}}">{{s.label}}</button></sc-for>
+  </div>
+  <div class="lbl">INK</div>
+  <div style="display:flex;gap:4px;margin-top:8px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{inks}}" as="s" hint-placeholder-count="2"><button class="seg" onClick="{{s.pick}}" style="{{s.style}}">{{s.label}}</button></sc-for>
+  </div>
+  <div style="margin-top:16px;display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:#4A4034"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg><span>Pediatricians advise no screens in the hour before bed. Paper nights still light a lamp: tap "We read it" in the morning.</span></div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="SundayPlan.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>Print {{pages}}</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { scope: 'Whole week', ink: 'Ink saver' }; }
+  renderVals() {
+    const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    const off = { background: 'transparent', color: '#6A5D4B' };
+    const seg = (list, key) => list.map((label) => ({ label, style: this.state[key] === label ? on : off, pick: () => this.setState({ [key]: label }) }));
+    return {
+      scopes: seg(['Tonight only', 'Whole week'], 'scope'),
+      inks: seg(['Ink saver', 'Full color'], 'ink'),
+      pages: this.state.scope === 'Whole week' ? '5 chapters · 12 pages' : 'tonight · 3 pages'
+    };
+  }
+}
+</script>
+</body>
+</html>

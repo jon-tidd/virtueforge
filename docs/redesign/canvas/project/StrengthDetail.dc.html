@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Keep Going</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.age{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;border-radius:999px;border:none;background:transparent;font:700 14px 'Figtree',sans-serif;color:#6A5D4B;cursor:pointer}
+.age img{width:30px;height:30px;border-radius:50%;object-fit:cover;display:block}
+.blk{border-radius:20px;background:#FFFCF5;border:1px solid #E7DCC7;padding:14px 16px;margin-top:10px}
+.k{font-size:11px;font-weight:800;letter-spacing:.12em;color:#8A5212}
+.sign{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;padding:6px 0}
+</style>
+</helmet>
+<div style="width:390px;height:1400px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 0 24px">
+  <div style="background:#F6E5C4;padding:0 20px 20px">
+    <div style="display:flex;align-items:center;padding:10px 0">
+      <a href="Strengths.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#16203A"/><path d="M18 64h48" stroke="#5A6A8E" stroke-width="2"/><path d="M24 64V48h10v16M37 64V38h10v26M50 64V26h10v38" fill="#E9A23B" opacity=".9"/><path d="M55 16l1.8 4.2 4.2 1.8-4.2 1.8L55 28l-1.8-4.2-4.2-1.8 4.2-1.8z" fill="#FFF1C9"/></svg>
+      <div style="flex:1">
+        <div class="eyebrow" style="color:#8A5212">Brave family · Grit</div>
+        <h1 class="disp" style="margin:2px 0 0;font-size:40px;line-height:1;font-weight:700">Keep Going</h1>
+        <div style="font-size:13.5px;color:#5B4B33;margin-top:4px">Grown-up word: perseverance, or grit</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;border-radius:18px;background:#16203A;color:#FBF3E2;padding:14px 16px;display:flex;gap:14px;align-items:center">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="#E9A23B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40V8M8 14h10M8 24h10M8 34h10M18 40V8"/><path d="M30 30c0-5 3-8 6-8M33 16a3 3 0 1 0 0 .1M30 30l-3 8M30 30l5 8M30 24l-5 4"/></svg>
+      <div style="flex:1"><div class="k" style="color:#E9A23B">POWER PHRASE + MOVE</div><div class="disp" style="font-size:22px;font-weight:600;margin-top:2px">"Not yet… keep going!"</div><div style="font-size:13px;color:#B8AE9A;margin-top:2px">Hands climb an invisible ladder.</div></div>
+    </div>
+  </div>
+  <div style="padding:16px 20px 0">
+    <div class="eyebrow" style="color:#6A5D4B">At each age</div>
+    <div style="display:flex;gap:4px;margin-top:8px;background:#EFE4CE;border-radius:999px;padding:4px">
+      <sc-for list="{{ages}}" as="a" hint-placeholder-count="3"><button class="age" onClick="{{a.pick}}" style="{{a.style}}"><img src="{{a.img}}" alt="">{{a.label}}</button></sc-for>
+    </div>
+    <div class="blk"><div class="k">I CAN…</div><div class="story" style="font-size:19px;line-height:1.4;margin-top:4px">"{{ican}}"</div></div>
+    <div class="blk"><div class="k">WHAT IT LOOKS LIKE</div><div style="font-size:14.5px;line-height:1.5;margin-top:4px">{{looks}}</div></div>
+    <div class="blk" style="background:#16203A;border-color:#16203A;color:#F4E9D2"><div class="k" style="color:#E9A23B">THE IF-THEN PLAN</div><div class="story" style="font-size:17px;line-height:1.45;margin-top:4px">{{plan}}</div><a href="IfThen.dc.html" style="display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:14px;margin-top:4px;color:#E9A23B">Let them build their own plan</a></div>
+  </div>
+  <div style="padding:18px 20px 0">
+    <div class="eyebrow" style="color:#6A5D4B">Where they'll meet it</div>
+    <div class="blk" style="display:flex;gap:12px;align-items:center"><img src="/_blob/a1437857e9dfd88dc783c6e5dc0eb642" alt="" style="width:56px;height:56px;border-radius:12px;object-fit:cover;display:block"><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Ch. 7 · The Keeper's Riddle</div><div style="font-size:13px;line-height:1.4;color:#4A4034">Theo gets the riddle wrong twice, then tries it a third way.</div></div></div>
+    <div class="blk" style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:58px;border-radius:3px 8px 8px 3px;background:#4E6A45;flex-shrink:0"></div><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Paired classics</div><div style="font-size:13px;line-height:1.4;color:#4A4034"><i>The Carrot Seed</i> for Max, <i>The Little Engine That Could</i> for June, <i>After the Fall</i> for everyone.</div></div></div>
+  </div>
+  <div style="padding:18px 20px 0">
+    <div class="eyebrow" style="color:#6A5D4B">How you'll know it's growing</div>
+    <div style="margin-top:6px">
+      <div class="sign"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>They say "not yet" instead of "I can't."</div>
+      <div class="sign"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>They try a different way before asking for help.</div>
+      <div class="sign"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>They tell you about something hard they stuck with.</div>
+    </div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="margin:16px 20px 0;border-radius:18px;background:#E7EEDD;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#3F5739"><b>What to say when you spot it:</b> praise the effort and the new way they tried ("You tried it a different way!"), not how smart they are. Toddlers who hear that kind of praise are more likely to enjoy challenges years later (Gunderson et al., 2013).</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { a: 1 }; }
+  renderVals() {
+    const ages = [
+      { label: 'Max · 3', img: '/_blob/89224e240d4677b215293a2283578be4', ican: 'I can try one more time.', looks: 'Tries the puzzle piece again, a different way round, before handing it to you.', plan: 'If I feel grumpy, then I take a lantern breath and try once more.' },
+      { label: 'June · 5', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', ican: 'I can keep going when something is tricky.', looks: 'Finishes the row of letters, even the wobbly S, and asks for help on just that one.', plan: 'If I want to quit, then I say “not yet” and try a new way.' },
+      { label: 'Theo · 8', img: '/_blob/49c6eb96321a54a534a7d5155073c868', ican: 'I can stick with hard things and break them into small steps.', looks: 'Practices the tricky four bars of the piano piece, not the whole song, until they click.', plan: 'If I get stuck, then I try two different ways before I ask for help.' }
+    ];
+    const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    const c = ages[this.state.a];
+    return {
+      ages: ages.map((x, i) => ({ label: x.label, img: x.img, style: this.state.a === i ? on : {}, pick: () => this.setState({ a: i }) })),
+      ican: c.ican, looks: c.looks, plan: c.plan
+    };
+  }
+}
+</script>
+</body>
+</html>

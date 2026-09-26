@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Family settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.card{background:#FFFCF5;border:1px solid #E7DCC7;border-radius:20px;padding:0 16px;margin-top:8px}
+.row{display:flex;align-items:center;gap:12px;min-height:56px;border-bottom:1px solid #EFE6D2;color:#1F1A14;font-size:15px}
+.row:hover{color:#1F1A14}
+.row img{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block}
+.val{font-size:14px;color:#6A5D4B}
+.tog{display:flex;align-items:center;gap:12px;min-height:56px;border:none;border-bottom:1px solid #EFE6D2;background:transparent;width:100%;font:500 15px 'Figtree',sans-serif;color:#1F1A14;cursor:pointer;padding:0;text-align:left}
+.sec{margin-top:20px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:#8E99B5;text-decoration:none;min-height:48px;justify-content:center}
+.tab:hover{color:#DCD2BE}
+</style>
+</helmet>
+<div style="width:390px;height:1300px;background:#F7F1E5;display:flex;flex-direction:column">
+  <div style="padding:18px 20px 0;flex:1">
+    <h1 class="disp" style="margin:0;font-size:32px;font-weight:600">Our family</h1>
+    <div class="sec"><div class="eyebrow" style="color:#6A5D4B">Heroes</div>
+      <div class="card">
+        <a class="row" href="DrawHero.dc.html"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt=""><span style="flex:1"><b>Theo</b>, 8</span><span class="val">Chapter-book mode</span></a>
+        <a class="row" href="DrawHero.dc.html"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt=""><span style="flex:1"><b>June</b>, 5</span><span class="val">Picture-book mode</span></a>
+        <a class="row" href="DrawHero.dc.html"><img src="/_blob/89224e240d4677b215293a2283578be4" alt=""><span style="flex:1"><b>Max</b>, 3</span><span class="val">Picture-book mode</span></a>
+        <a class="row" href="Sidekick.dc.html" style="border-bottom:none"><span style="width:40px;height:40px;border-radius:50%;background:#F3DDB1;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8452E" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l4 5h8l4-5v8c0 5-4 8-8 8s-8-3-8-8z"/><path d="M9 13h.1M15 13h.1M11 16h2"/></svg></span><span style="flex:1"><b>Pip</b>, the fox</span><span class="val">Sidekick</span></a>
+      </div>
+    </div>
+    <div class="sec"><div class="eyebrow" style="color:#6A5D4B">Story time</div>
+      <div class="card">
+        <a class="row" href="Bedtime.dc.html"><span style="flex:1">Bedtime</span><span class="val">7:30 pm · Sun–Thu</span></a>
+        <a class="row" href="Values.dc.html"><span style="flex:1">What matters in our house</span><span class="val">Courage, Honesty, Kindness</span></a>
+        <a class="row" href="Voices.dc.html"><span style="flex:1">Who reads</span><span class="val">Us, or Grandma Ruth</span></a>
+        <button class="tog" onClick="{{faith.toggle}}" style="border-bottom:none"><span style="flex:1">Faith-friendly<span style="display:block;font-size:12.5px;color:#6A5D4B">A weekly verse and Bible stories in the library</span></span><span style="{{faith.sw}}"><span style="{{faith.knob}}"></span></span></button>
+      </div>
+    </div>
+    <div class="sec"><div class="eyebrow" style="color:#6A5D4B">Nudges</div>
+      <div class="card">
+        <button class="tog" onClick="{{sunday.toggle}}"><span style="flex:1">Sunday email with the week ahead</span><span style="{{sunday.sw}}"><span style="{{sunday.knob}}"></span></span></button>
+        <button class="tog" onClick="{{bed.toggle}}"><span style="flex:1">Reminder 15 min before bedtime</span><span style="{{bed.sw}}"><span style="{{bed.knob}}"></span></span></button>
+        <div class="row" style="border-bottom:none;font-size:13.5px;color:#6A5D4B;line-height:1.45;padding:10px 0">We never send guilt. Miss a night and the story simply waits.</div>
+      </div>
+    </div>
+    <div class="sec"><div class="eyebrow" style="color:#6A5D4B">Grown-ups</div>
+      <div class="card">
+        <div class="row"><span style="flex:1"><b>Jon</b> (you)</span><span class="val">Owner</span></div>
+        <div class="row"><span style="flex:1"><b>Grandma Ruth</b></span><span class="val">Reads along, records</span></div>
+        <a class="row" href="ShareMessage.dc.html" style="border-bottom:none;color:#8A5212;font-weight:700">+ Invite a partner or grandparent</a>
+      </div>
+    </div>
+    <div class="sec"><div class="eyebrow" style="color:#6A5D4B">Plan &amp; privacy</div>
+      <div class="card">
+        <a class="row" href="Paywall.dc.html"><span style="flex:1">Heirloom · yearly</span><span class="val">Renews Nov 3</span></a>
+        <a class="row" href="Privacy.dc.html" style="border-bottom:none"><span style="flex:1">Privacy &amp; your data</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;border-top:1px solid #2F3E62;background:#131B31;padding:6px 8px 10px;margin-top:20px">
+    <a class="tab" href="Tonight.dc.html"><svg width="22" height="24" viewBox="0 0 22 26" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2h6M11 2v3"/><path d="M6 7h10l-1.2 13H7.2z"/><path d="M5 21h12v3H5z"/></svg>Tonight</a>
+    <a class="tab" href="StoryMap.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Story map</a>
+    <a class="tab" href="SundayPlan.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>This week</a>
+    <a class="tab" href="Classics.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg>Library</a>
+    <a class="tab" href="Settings.dc.html" style="color:#E9A23B"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 11a3 3 0 1 0 0-6M22 21a6 6 0 0 0-5-5.7"/></svg>Family</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1300}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { faith: true, sunday: true, bed: true }; }
+  renderVals() {
+    const make = (key) => {
+      const on = this.state[key];
+      return {
+        sw: { width: '48px', height: '28px', borderRadius: '999px', background: on ? '#4E6A45' : '#CFC3AA', display: 'flex', alignItems: 'center', padding: '3px', boxSizing: 'border-box', justifyContent: on ? 'flex-end' : 'flex-start', flexShrink: 0 },
+        knob: { width: '22px', height: '22px', borderRadius: '50%', background: '#FFFCF5', display: 'block' },
+        toggle: () => this.setState({ [key]: !on })
+      };
+    };
+    return { faith: make('faith'), sunday: make('sunday'), bed: make('bed') };
+  }
+}
+</script>
+</body>
+</html>

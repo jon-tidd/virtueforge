@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Approve tonight's legend</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.opt{flex:1;min-height:46px;border-radius:999px;border:1.5px solid #D8C9AB;background:#FFFCF5;font:700 13.5px 'Figtree',sans-serif;color:#4A4034;cursor:pointer}
+.ok{display:flex;gap:8px;align-items:center;font-size:13.5px;color:#3F5739}
+</style>
+</helmet>
+<div style="width:390px;height:900px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="SpottedIt.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Only you see this first</div>
+  <h1 class="disp" style="margin:8px 0 0;font-size:32px;line-height:1.08;font-weight:600">Tonight's chapter will open like this.</h1>
+  <div style="margin-top:18px;background:#F4EAD5;border-radius:6px 20px 20px 6px;padding:22px 20px;box-shadow:0 16px 34px rgba(60,40,10,.16)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="Theo" style="width:40px;height:40px;border-radius:50%;object-fit:cover;display:block"><span class="eyebrow" style="color:#8A5212;font-size:10.5px">A legend of Theo</span></div>
+    <p class="story" style="margin:0;font-size:18.5px;line-height:1.65;color:#2A2118"><span class="disp" style="float:left;font-size:52px;line-height:.8;color:#A56A1C;margin:6px 8px 0 0;font-weight:600">I</span>n the village of Brindlewick they still tell of <b style="background:#F1D9A6;padding:0 3px;border-radius:4px">Theo of the Lantern</b>, who spoke the truth before anyone asked, even when it was hard to say, and who was trusted ever after.</p>
+  </div>
+  <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+    <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Praises what he did, not who he is</div>
+    <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>No lamp, no blame, nobody else embarrassed</div>
+    <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Saved to Theo's Hall of Deeds</div>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:18px">
+    <button class="opt">Edit words</button><button class="opt">Gentler</button><button class="opt">Try again</button>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="Tonight.dc.html">Looks right, use it tonight</a>
+  <a href="Tonight.dc.html" style="text-align:center;font-weight:600;font-size:14.5px;padding:12px">Keep it private, skip tonight</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>What matters in your house</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6A5D4B}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.tile{display:flex;align-items:center;gap:10px;min-height:64px;border-radius:18px;border:1.5px solid #E2D5BC;background:#FFFCF5;font:700 15px 'Figtree',sans-serif;color:#1F1A14;cursor:pointer;padding:8px;text-align:left}
+.tile img{width:46px;height:46px;border-radius:12px;object-fit:cover;display:block}
+.chip{display:inline-flex;align-items:center;min-height:42px;padding:0 15px;border-radius:999px;border:1.5px solid #E2D5BC;background:#FFFCF5;font:600 14px 'Figtree',sans-serif;color:#3B3226;cursor:pointer}
+</style>
+</helmet>
+<div style="width:390px;height:1000px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 24px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+    <a href="Sidekick.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+    <div style="display:flex;gap:6px"><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span><span style="width:26px;height:6px;border-radius:3px;background:#16203A"></span></div>
+    <span style="width:44px"></span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+    <div class="eyebrow" style="color:#8A5212">Step 4 · Your house</div>
+    <h1 class="disp" style="margin:0;font-size:34px;line-height:1.06;font-weight:600">Where should the adventure start?</h1>
+    <p style="margin:0;font-size:15px;line-height:1.5;color:#4A4034">Pick the season your family needs first. You'll get all four over the year.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px">
+    <sc-for list="{{seasons}}" as="s" hint-placeholder-count="4">
+      <button class="tile" onClick="{{s.pick}}" style="{{s.style}}"><img src="{{s.img}}" alt=""><span><span style="display:block">{{s.label}}</span><span style="display:block;font-size:12px;font-weight:600;opacity:.7">{{s.sub}}</span></span></button>
+    </sc-for>
+  </div>
+  <a href="Strengths.dc.html" style="font-size:14px;font-weight:700;margin-top:10px;padding:8px 0">See all 16 strengths we teach</a>
+  <div class="lbl" style="margin-top:14px">Anything hard lately? (optional)</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+    <sc-for list="{{struggles}}" as="c" hint-placeholder-count="6"><button class="chip" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button></sc-for>
+  </div>
+  <div style="font-size:12.5px;color:#6A5D4B;margin-top:8px">We'll weave these into the story gently. Nobody gets called out.</div>
+  <div style="margin-top:18px;background:#FFFCF5;border:1px solid #E7DCC7;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center">
+    <div style="flex:1"><div style="font-size:15px;font-weight:700">Faith-friendly touches</div><div style="font-size:13px;line-height:1.45;color:#4A4034;margin-top:2px">A short blessing at lights-out, and stories from Scripture in the rotation.</div></div>
+    <button onClick="{{toggleFaith}}" aria-label="Faith-friendly touches" aria-pressed="{{faith}}" style="{{faithTrack}}"><span style="{{faithKnob}}"></span></button>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="MeetHeroes.dc.html">Meet your heroes</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { season: 'Brave', hard: { 'Giving up': true }, faith: true }; }
+  renderVals() {
+    const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
+    const seasons = [
+      { label: 'Brave', sub: 'Courage', img: '/_blob/96b77cd46610c0a9e7acd723281b459b' },
+      { label: 'Kind & Fair', sub: 'Justice', img: '/_blob/81fd8db7e5b784189ca3c59e5bb25b5c' },
+      { label: 'Wise', sub: 'Wisdom', img: '/_blob/87fa6a0f68a364726e3776ce8c5bcf09' },
+      { label: 'Steady', sub: 'Self-control', img: '/_blob/f9cbc04c35602906b8b5594a609a5e80' }
+    ].map((s) => ({ ...s, style: this.state.season === s.label ? on : {}, pick: () => this.setState({ season: s.label }) }));
+    const struggles = ['Sharing', 'Telling the truth', 'Giving up', 'Big feelings', 'Scared at night', 'Sibling fights'].map((label) => ({
+      label, style: this.state.hard[label] ? on : {}, pick: () => this.setState({ hard: { ...this.state.hard, [label]: !this.state.hard[label] } })
+    }));
+    const f = this.state.faith;
+    return {
+      seasons, struggles, faith: f ? 'true' : 'false',
+      toggleFaith: () => this.setState({ faith: !f }),
+      faithTrack: { width: '56px', height: '32px', borderRadius: '999px', border: 'none', cursor: 'pointer', padding: '3px', display: 'flex', justifyContent: f ? 'flex-end' : 'flex-start', background: f ? '#4E6A45' : '#D8C9AB', flexShrink: 0 },
+      faithKnob: { width: '26px', height: '26px', borderRadius: '50%', background: '#FFFCF5', display: 'block' }
+    };
+  }
+}
+</script>
+</body>
+</html>

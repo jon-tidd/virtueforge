@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Record your story voice</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.dot{flex:1;height:8px;border-radius:4px}
+</style>
+</helmet>
+<div style="width:390px;height:1040px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 22px 22px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 0 8px">
+    <span style="display:flex;align-items:center;gap:8px"><svg width="20" height="24" viewBox="0 0 22 26" fill="none" stroke="#1F1A14" stroke-width="1.6" aria-hidden="true"><path d="M8 2h6M11 2v3"/><path d="M6 7h10l-1.2 13H7.2z"/><path d="M5 21h12v3H5z"/><path d="M11 11c1.6 1.8 1.6 3.6 0 5.4-1.6-1.8-1.6-3.6 0-5.4z" fill="#E9A23B" stroke="none"/></svg><span class="disp" style="font-size:18px;font-weight:600">Grit <em style="color:#B87718">&amp;</em> Grace</span></span>
+    <span style="font-size:13px;font-weight:700;color:#6A5D4B">On Ruth's phone</span>
+  </div>
+  <div style="display:flex;gap:6px;margin-top:10px">
+    <sc-for list="{{dots}}" as="d" hint-placeholder-count="4"><span class="dot" style="{{d}}"></span></sc-for>
+  </div>
+  <div class="eyebrow" style="color:#8A5212;margin-top:18px">{{eyebrow}}</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:30px;line-height:1.1;font-weight:600">{{title}}</h1>
+  <div style="font-size:15.5px;line-height:1.5;color:#4A4034;margin-top:8px">{{help}}</div>
+  <div style="margin-top:18px;border-radius:22px;background:#FFFCF5;border:2px solid #E9A23B;padding:20px 18px">
+    <p class="story" style="margin:0;font-size:22px;line-height:1.6;color:#1F1A14">{{script}}</p>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:4px;height:50px">
+    <sc-for list="{{bars}}" as="b" hint-placeholder-count="28"><span style="{{b}}"></span></sc-for>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;margin-top:12px">
+    <button onClick="{{next}}" aria-label="{{aria}}" style="width:96px;height:96px;border-radius:50%;border:6px solid #F3DDB1;background:#D9573A;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="{{icon}}"/></svg></button>
+    <div style="font-size:15px;font-weight:700;color:#4A4034;margin-top:10px">{{cta}}</div>
+  </div>
+  <a href="VoiceReady.dc.html" style="text-align:center;font-size:14px;font-weight:700;padding:14px 0 0">{{skip}}</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1040}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { s: 0 }; }
+  renderVals() {
+    const steps = [
+      { eyebrow: 'Before we start · your permission', title: 'First, please read this out loud.', help: 'This is how we know it’s really you, and that you said yes.', script: '“I’m Ruth, and I’d like Grit & Grace to make my story voice, only for reading stories to Theo, June and Max. I can switch it off whenever I want.”', cta: 'Tap and read' },
+      { eyebrow: 'Step 2 of 3 · Warm-up', title: 'Now a little story, nice and slow.', help: 'Read like you would at bedtime. Pauses are good.', script: '“Once, in the village of Brindlewick, there lived a fox named Pip, who could find the way home from anywhere at all.”', cta: 'Tap and read' },
+      { eyebrow: 'Step 3 of 3 · Big feelings', title: 'Give the characters voices!', help: 'A whisper, a roar, a giggle. It helps your story voice sound like you.', script: '“‘I’m not scared,’ whispered the little dragon. Then, very loudly: ‘Okay. I’m a LITTLE bit scared.’”', cta: 'Tap and read' },
+      { eyebrow: 'All done · 3 minutes', title: 'Thank you, Ruth.', help: 'We’ll let you know when your story voice is ready, usually within the hour. Your recordings are kept private.', script: 'You can listen to it first, and switch it off anytime from this same link.', cta: 'Hear it when it’s ready' }
+    ];
+    const s = this.state.s, cur = steps[s];
+    const h = [10, 18, 28, 16, 34, 22, 12, 30, 40, 24, 14, 26, 36, 20, 10, 28, 38, 18, 12, 24, 32, 16, 22, 30, 14, 20, 12, 8];
+    return {
+      dots: steps.map((x, i) => ({ background: i <= s ? '#E9A23B' : '#E2D5BC' })),
+      eyebrow: cur.eyebrow, title: cur.title, help: cur.help, script: cur.script, cta: cur.cta,
+      bars: h.map((v, i) => ({ width: '4px', borderRadius: '2px', height: (s === 3 ? 4 : v) + 'px', background: i < 10 + s * 5 ? '#D9573A' : '#E2D5BC' })),
+      icon: s === 3 ? 'M5 12l5 5L20 7' : 'M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3',
+      aria: cur.cta,
+      skip: s === 3 ? 'See what the family will hear' : 'I’d rather record real chapters',
+      next: () => this.setState({ s: s === 3 ? 0 : s + 1 })
+    };
+  }
+}
+</script>
+</body>
+</html>

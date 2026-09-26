@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Keep the lantern lit</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:17px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.seg{flex:1;min-height:44px;border-radius:999px;border:none;font:700 13.5px 'Figtree',sans-serif;cursor:pointer}
+.plan{width:100%;text-align:left;border-radius:20px;border:2px solid #2F3E62;background:#1F2B48;padding:14px 16px;cursor:pointer;font-family:'Figtree',sans-serif;color:#F4E9D2;display:flex;gap:12px;align-items:center;box-sizing:border-box}
+.have{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;font-size:12px;color:#B8AE9A;text-align:center}
+</style>
+</helmet>
+<div style="width:390px;height:1100px;background:#16203A;color:#F4E9D2;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="position:relative;margin:0 -20px;height:210px;overflow:hidden">
+    <img src="/_blob/9f7b824c4366566e6fae1852352f50fb" alt="The kids by firelight" style="width:100%;height:210px;object-fit:cover;display:block;opacity:.75">
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 20px;background:#16203A;background:rgba(22,32,58,.85)">
+      <div class="eyebrow" style="color:#E9A23B">End of Chapter 3</div>
+      <p class="story" style="margin:6px 0 0;font-size:16px;line-height:1.5;font-style:italic;color:#EAD9BC">…and far below the bridge, something in the dark opened one enormous eye.</p>
+    </div>
+  </div>
+  <h1 class="disp" style="margin:18px 0 0;font-size:32px;line-height:1.08;font-weight:600;color:#FBF3E2">Keep the lantern lit.</h1>
+  <div style="display:flex;margin-top:14px;border-radius:18px;background:#1F2B48;border:1px solid #2F3E62;padding:14px 8px">
+    <div class="have"><div style="display:flex"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"><img src="/_blob/89224e240d4677b215293a2283578be4" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"></div>3 heroes drawn</div>
+    <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">3</span>chapters read</div>
+    <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">1</span>legend earned</div>
+    <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">1</span>idea waiting</div>
+  </div>
+  <div style="display:flex;gap:4px;margin-top:16px;background:#131B31;border-radius:999px;padding:4px">
+    <sc-for list="{{periods}}" as="p" hint-placeholder-count="2"><button class="seg" onClick="{{p.pick}}" style="{{p.style}}">{{p.label}}</button></sc-for>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+    <sc-for list="{{plans}}" as="p" hint-placeholder-count="2">
+      <button class="plan" onClick="{{p.pick}}" style="{{p.style}}"><span style="{{p.radio}}"></span><span style="flex:1"><span style="display:block;font-weight:800;font-size:16px">{{p.name}} <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#E9A23B;margin-left:4px">{{p.tag}}</span></span><span style="display:block;font-size:13px;color:#B8AE9A;margin-top:3px;line-height:1.35">{{p.what}}</span></span><span style="text-align:right"><span class="disp" style="display:block;font-size:22px;font-weight:600">{{p.price}}</span><span style="display:block;font-size:11.5px;color:#B8AE9A">{{p.sub}}</span></span></button>
+    </sc-for>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="ReaderPicture.dc.html">Read Chapter 4 tonight</a>
+  <div style="text-align:center;font-size:13px;line-height:1.5;color:#B8AE9A;margin-top:10px">Cancel in two taps. We email you 3 days before any charge.</div>
+  <a href="Tonight.dc.html" style="text-align:center;font-weight:600;font-size:14.5px;padding:12px 0 0">Not now. Keep the free classics and fridge cards.</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { yearly: true, plan: 'Family' }; }
+  renderVals() {
+    const y = this.state.yearly;
+    const plans = [
+      { name: 'Family', tag: 'FOUNDING PRICE', what: 'Every sibling, a chapter every night, all four seasons', price: y ? '$39' : '$5.99', sub: y ? 'first year, then $49' : 'per month' },
+      { name: 'Heirloom', tag: '', what: 'Plus Grandma’s voice and a hardcover of each season', price: y ? '$89' : '$9.99', sub: y ? 'per year' : 'per month' }
+    ];
+    const segOn = { background: '#E9A23B', color: '#16203A' };
+    const segOff = { background: 'transparent', color: '#B8AE9A' };
+    const radio = (on) => ({ width: '22px', height: '22px', borderRadius: '50%', flexShrink: 0, boxSizing: 'border-box', border: on ? '7px solid #E9A23B' : '2px solid #4A5878', background: '#16203A' });
+    return {
+      periods: [{ label: 'Yearly · save 30%', v: true }, { label: 'Monthly', v: false }].map((p) => ({ label: p.label, style: y === p.v ? segOn : segOff, pick: () => this.setState({ yearly: p.v }) })),
+      plans: plans.map((p) => ({ ...p, style: this.state.plan === p.name ? { borderColor: '#E9A23B' } : {}, radio: radio(this.state.plan === p.name), pick: () => this.setState({ plan: p.name }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

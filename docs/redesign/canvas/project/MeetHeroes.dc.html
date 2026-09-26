@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Meet your heroes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.hero{display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero img{width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 3px #16203A,0 0 0 5px #E9A23B}
+</style>
+</helmet>
+<div style="width:390px;height:960px;background:#16203A;color:#F4E9D2;display:flex;flex-direction:column;box-sizing:border-box;padding:24px 20px">
+  <svg width="350" height="40" viewBox="0 0 350 40" aria-hidden="true" style="display:block"><g fill="#E9A23B"><circle cx="30" cy="12" r="1.6"/><circle cx="92" cy="28" r="1.2"/><circle cx="150" cy="8" r="1.8"/><circle cx="212" cy="24" r="1.2"/><circle cx="268" cy="10" r="1.6"/><circle cx="322" cy="30" r="1.2"/></g></svg>
+  <div class="eyebrow" style="color:#E9A23B;text-align:center">Your heroes are ready</div>
+  <h1 class="disp" style="margin:10px 0 0;font-size:36px;line-height:1.05;font-weight:600;text-align:center;color:#FBF3E2">Theo, June and Max, meet the Lantern Road.</h1>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:22px">
+    <div class="hero"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="Theo"><span class="disp" style="font-size:18px">Theo, 8</span></div>
+    <div class="hero"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="June"><span class="disp" style="font-size:18px">June, 5</span></div>
+    <div class="hero"><img src="/_blob/89224e240d4677b215293a2283578be4" alt="Max"><span class="disp" style="font-size:18px">Max, 3</span></div>
+  </div>
+  <div style="margin-top:22px;border-radius:22px;overflow:hidden;background:#F4EAD5;color:#1F1A14;box-shadow:0 20px 44px rgba(0,0,0,.45)">
+    <img src="/_blob/cad61d914887b2f743a2f499c1d01aae" alt="Theo, June and Max with Pip the fox" style="width:100%;height:230px;object-fit:cover;object-position:50% 28%;display:block">
+    <div style="padding:14px 16px 16px">
+      <div class="eyebrow" style="color:#8A5212;font-size:10.5px">Season 1 · Courage · Chapter 1</div>
+      <div class="disp" style="font-size:25px;font-weight:600;margin-top:4px">The Lantern in the Attic</div>
+      <div style="font-size:13.5px;color:#4A4034;margin-top:4px">7 min · starring Theo, June, Max and Pip</div>
+    </div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="ReaderPicture.dc.html">Read Chapter 1 now</a>
+  <a href="SaveFamily.dc.html" style="text-align:center;font-weight:600;font-size:15px;padding:14px">Save it for bedtime</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

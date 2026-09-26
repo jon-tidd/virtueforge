@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Record a chapter</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.small{min-height:48px;min-width:48px;border-radius:999px;border:1.5px solid #3A4A70;background:transparent;color:#DCD2BE;font:700 14px 'Figtree',sans-serif;cursor:pointer;padding:0 16px}
+</style>
+</helmet>
+<div style="width:390px;height:960px;background:#150F0A;color:#EAD9BC;display:flex;flex-direction:column;box-sizing:border-box;padding:0 22px 22px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+    <a href="ReadAlong.dc.html" aria-label="Back" style="color:#B8AE9A;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+    <span style="font-size:13px;font-weight:700;color:#A99F8C">Page 2 of 9</span>
+    <span style="width:44px"></span>
+  </div>
+  <div class="eyebrow" style="color:#E9A23B">Grandma Ruth reads Chapter 5</div>
+  <div class="disp" style="font-size:24px;font-weight:600;color:#FBF0DA;margin-top:4px">The Dragon Who Was Afraid of the Dark</div>
+  <div style="margin-top:22px;display:flex;flex-direction:column;gap:14px">
+    <p class="story" style="margin:0;font-size:21px;line-height:1.6;color:#7D705E">Deep in the Hollow, something was crying.</p>
+    <p class="story" style="margin:0;font-size:21px;line-height:1.6;color:#FBF0DA;background:#2A2012;border-radius:10px;padding:8px 10px;margin-left:-10px;margin-right:-10px">Not roaring. Crying. Theo lifted the lantern, and there, curled around a rock, was the smallest dragon Max had ever seen.</p>
+    <p class="story" style="margin:0;font-size:21px;line-height:1.6;color:#7D705E">"Are you lost?" asked June.</p>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:3px;height:60px">
+    <sc-for list="{{bars}}" as="b" hint-placeholder-count="36"><span style="{{b.style}}"></span></sc-for>
+  </div>
+  <div style="text-align:center;font-size:15px;font-weight:700;color:#DCD2BE;margin-top:8px">{{status}}</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px">
+    <button class="small">Redo page</button>
+    <button onClick="{{toggle}}" aria-label="{{aria}}" style="width:88px;height:88px;border-radius:50%;border:4px solid #F4E9D2;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0"><span style="{{dot}}"></span></button>
+    <button class="small">Next page</button>
+  </div>
+  <div style="text-align:center;font-size:13px;line-height:1.5;color:#8E99B5;margin-top:18px">Take your time. The kids hear it when they tap Listen, turning the pages with you.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { rec: true }; }
+  renderVals() {
+    const h = [8, 14, 22, 30, 18, 40, 26, 12, 34, 46, 28, 16, 38, 22, 10, 30, 44, 36, 20, 12, 26, 40, 32, 18, 8, 22, 36, 28, 14, 30, 42, 24, 16, 10, 20, 12];
+    const rec = this.state.rec;
+    return {
+      bars: h.map((v, i) => ({ style: { width: '4px', borderRadius: '2px', height: (rec ? v : 4) + 'px', background: i < 24 ? '#E9A23B' : '#4A3C28' } })),
+      status: rec ? 'Recording · 0:42' : 'Paused · tap to keep going',
+      aria: rec ? 'Pause recording' : 'Resume recording',
+      dot: rec ? { width: '32px', height: '32px', borderRadius: '8px', background: '#D9573A' } : { width: '64px', height: '64px', borderRadius: '50%', background: '#D9573A' },
+      toggle: () => this.setState({ rec: !rec })
+    };
+  }
+}
+</script>
+</body>
+</html>

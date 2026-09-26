@@ -1,0 +1,257 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{background:#1a1a1a;width:390px}
+.frame{background:#FBF6EC;color:#1C2233;position:relative;overflow:hidden}
+.cap{background:#111;padding:14px 20px 13px}
+.cap b{display:block;font:700 10.5px var(--sans);letter-spacing:.14em;color:var(--gold);margin-bottom:3px}
+.cap h2{font:700 15.5px/1.3 var(--sans);color:#fff}
+.cap p{font:400 12px/1.45 var(--sans);color:#aaa;margin-top:4px}
+.sec{padding:30px 20px}
+.dark{background:#0E1830;color:#FBEFD2}
+.eyebrow{font:700 10.5px var(--sans);letter-spacing:.15em;text-transform:uppercase;color:#A77B22}
+.dark .eyebrow{color:#F3D48A}
+h2.t{font:600 30px/1.08 var(--display);margin-top:6px}
+.lead{font:400 14.5px/1.55 var(--sans);color:#5B5346;margin-top:8px}
+.dark .lead{color:rgba(251,239,210,.7)}
+.cta{display:block;border-radius:100px;padding:15px;text-align:center;font:700 16px var(--sans);color:#1A1206;background:linear-gradient(180deg,#FFD978,#E0A83C);box-shadow:0 6px 26px rgba(240,180,60,.3)}
+.ghost{display:block;border-radius:100px;padding:13px;text-align:center;font:700 14.5px var(--sans);border:1.5px solid #1C2233;color:#1C2233}
+.card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(60,40,10,.08);padding:16px;margin-top:14px}
+.dcard{border-radius:16px;background:rgba(255,236,190,.05);border:1px solid rgba(243,230,200,.12);padding:14px;margin-top:12px}
+.face{border-radius:50%;background-size:cover;background-position:center;flex-shrink:0;box-shadow:0 0 0 3px #FBF6EC,0 0 0 4.5px #D9C08A}
+.dark .face{box-shadow:0 0 0 3px #0E1830,0 0 0 4.5px #C99A2E}
+.row{display:flex;gap:12px;align-items:center}
+.step{display:flex;gap:14px;margin-top:18px;align-items:flex-start}
+.n{width:32px;height:32px;border-radius:50%;background:#1C2233;color:#F3D48A;font:700 16px var(--display);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step b{display:block;font:700 15px var(--sans)} .step p{font:400 13.5px/1.45 var(--sans);color:#5B5346;margin-top:2px}
+.page{background:#F4EAD5;border-radius:6px 14px 14px 6px;box-shadow:0 14px 30px rgba(60,40,10,.2), inset 7px 0 12px -7px rgba(90,60,20,.35);overflow:hidden}
+.serif{font:400 16.5px/1.58 var(--serif);color:#2A2118}
+.drop{float:left;font:700 46px/.8 var(--display);color:#A77B22;margin:5px 7px 0 0}
+.ican{font:500 15px/1.4 var(--serif)}
+.small{font:500 11px var(--sans);color:#9A8F7C}
+.spine{width:44px;height:150px;border-radius:3px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font:600 12.5px var(--display);color:#F7E9C4;letter-spacing:.03em;box-shadow:inset -3px 0 0 rgba(0,0,0,.2),0 4px 8px rgba(0,0,0,.2);flex-shrink:0}
+.evid{display:flex;gap:12px;padding:12px 0;border-top:1px solid #EFE6D2}.evid:first-child{border:none}
+.ic{width:30px;height:30px;border-radius:8px;background:#FDF1D6;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.evid b{font:700 13.5px var(--sans)} .evid p{font:400 12.5px/1.45 var(--sans);color:#5B5346;margin-top:2px} .evid i{font:italic 400 11px var(--sans);color:#9A8F7C;display:block;margin-top:3px}
+.promise{display:flex;gap:10px;align-items:flex-start;margin-top:12px}.promise span{font-size:17px}.promise b{font:700 14px var(--sans);display:block}.promise p{font:400 12.5px/1.45 var(--sans);color:rgba(251,239,210,.65)}
+.price{border-radius:16px;padding:16px;margin-top:12px;border:1.5px solid #E6DCC6;background:#fff}
+.price.hot{border-color:#1C2233;background:#1C2233;color:#FBEFD2}
+.price .top{display:flex;justify-content:space-between;align-items:baseline}
+.price h3{font:600 22px var(--display)} .price .amt{font:700 22px var(--sans)} .price .amt small{font:500 12px var(--sans);opacity:.7}
+.price ul{list-style:none;margin-top:8px}.price li{font:400 13px/1.55 var(--sans);padding-left:18px;position:relative}.price li:before{content:"✓";position:absolute;left:0;color:#C99A2E;font-weight:700}
+.faq{padding:13px 0;border-top:1px solid #E6DCC6;display:flex;justify-content:space-between;font:600 14px var(--sans)}
+.chip{display:inline-block;font:600 12px var(--sans);padding:8px 12px;border-radius:100px;border:1.5px solid #E2D8C4;background:#fff;margin:0 6px 8px 0;color:#4B4436}
+.chip.on{border-color:#1C2233;background:#1C2233;color:#FBEFD2}
+.sw{display:inline-block;width:28px;height:28px;border-radius:50%;margin-right:7px;border:3px solid #fff;box-shadow:0 0 0 1.5px #E2D8C4}.sw.on{box-shadow:0 0 0 2.5px #1C2233}
+.lbl{font:700 10.5px var(--sans);letter-spacing:.12em;color:#9A8F7C;text-transform:uppercase;margin:14px 0 8px}
+.lamps{display:flex;gap:8px;margin-top:10px}.lamps i{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle,#FFE7A3 0%,#F4B64A 42%,rgba(244,182,74,0) 72%)}.lamps i.off{background:none;border:1px solid rgba(243,230,200,.25)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+.logo{display:flex;gap:8px;align-items:center;font:600 19px var(--display)}
+.tabbar{display:flex;justify-content:space-around;padding:10px 0 14px;border-top:1px solid rgba(243,230,200,.1);font:600 10.5px var(--sans);color:rgba(243,230,200,.45);text-align:center}
+.tabbar .on{color:#F3D48A}
+</style></head><body>
+
+<!-- ======================= HOMEPAGE ======================= -->
+
+<section class="frame" id="h1">
+<div class="cap"><b>HOMEPAGE 1/5 · FIRST SCREEN</b><h2>Your kids as heroes, one promise, one button.</h2><p>No "AI" or "2,400 years" badge. The trust line answers the three questions parents ask first: is it for my kid's age, does it work for siblings, and is it safe.</p></div>
+<div style="position:relative;height:760px;background:#0E1830 url(img/hero-kids.png) center 8%/cover">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,24,48,.55) 0%,rgba(14,24,48,0) 16%,rgba(14,24,48,0) 50%,rgba(14,24,48,.85) 66%,#0E1830 78%)"></div>
+  <div class="nav" style="position:absolute;top:0;left:0;right:0;color:#FBEFD2"><div class="logo"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M10 1 L19 4 V10 C19 16 15 19.5 10 21 C5 19.5 1 16 1 10 V4 Z" fill="none" stroke="#F3D48A" stroke-width="2"/></svg>Bedtime Virtues</div><div style="display:flex;gap:14px;align-items:center;font:600 12.5px var(--sans)"><span style="opacity:.8">Sign in</span><span style="color:#1A1206;background:#F3D48A;padding:8px 13px;border-radius:100px">Start free</span></div></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:0 22px 26px;text-align:center;color:#FBEFD2">
+    <h1 style="font:600 36px/1.04 var(--display)">Your kids, drawn into<br>a story that <em style="color:#F3D48A">grows them.</em></h1>
+    <p style="font:400 15px/1.5 var(--sans);color:rgba(251,239,210,.78);margin:12px auto 18px;max-width:330px">A new chapter every night starring your children. Written by people, read by you, one virtue a week.</p>
+    <div class="cta">Draw your child in, free</div>
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;font:500 11.5px var(--sans);color:rgba(251,239,210,.6)"><span>Ages 3–9</span>·<span>Siblings in one story</span>·<span>Never a photo</span></div>
+  </div>
+</div>
+</section>
+
+<section class="frame" id="h2">
+<div class="cap"><b>HOMEPAGE 2/5 · SHOW IT, THEN EXPLAIN IT</b><h2>A real page from a real chapter comes before any explanation.</h2><p>Parents see the product before they read about it. Three simple steps replace the old "two paths" and four-phase system.</p></div>
+<div class="sec" style="padding-top:26px">
+  <div class="eyebrow">Tonight's chapter</div>
+  <h2 class="t">This is what bedtime looks like.</h2>
+  <div class="page" style="margin-top:16px">
+    <div style="height:230px;background:url(img/kids-group.jpg) center 30%/cover"></div>
+    <div style="padding:14px 18px 16px">
+      <div class="row" style="justify-content:space-between"><div class="eyebrow" style="font-size:9.5px">The Lantern Road · Chapter 4 · Courage</div><div class="small">7 min</div></div>
+      <p class="serif" style="margin-top:8px"><span class="drop">T</span>heo lifted the lantern while June held tight to Max's hand. The old bridge creaked. "I'll go first," Theo said, even though his knees were shaking.</p>
+      <div style="margin-top:12px;border-left:3px solid #C99A2E;padding:4px 0 4px 11px;font:500 italic 15.5px/1.35 var(--display);color:#6B5530">Pause & ask: "Why do you think Theo went first, even though he was scared?"</div>
+    </div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:8px">Theo (8), June (5) and Max (3), drawn from their parents' choices</p>
+
+  <div class="eyebrow" style="margin-top:30px">How it works</div>
+  <h2 class="t">Twenty minutes a night.</h2>
+  <div class="step"><div class="n">1</div><div><b>Draw them in, once</b><p>Hair, eyes, glasses, a favorite sweater. Each child becomes the same recognizable hero in every chapter. No photo, ever.</p></div></div>
+  <div class="step"><div class="n">2</div><div><b>Read tonight's chapter together</b><p>A continuing adventure written by people, with a question to ask along the way and a classic book to pair with it.</p></div></div>
+  <div class="step"><div class="n">3</div><div><b>Carry it into tomorrow</b><p>Each child gets one small mission. Tell us when you spot it, and the story tells it back as a legend.</p></div></div>
+</div>
+</section>
+
+<section class="frame" id="h3">
+<div class="cap"><b>HOMEPAGE 3/5 · THE WEEKLY RHYTHM + THE LIBRARY</b><h2>One virtue a week, pitched at each child's age, paired with real classics.</h2><p>Your poster research ("I can…" at ages 3, 5 and 8) becomes the curriculum. The existing library of 60+ books stays as the classic paired with each chapter.</p></div>
+<div class="sec dark">
+  <div class="eyebrow">One virtue a week</div>
+  <h2 class="t">Same story. Every child grows at their own level.</h2>
+  <p class="lead">This week: <b style="color:#F3D48A">Courage</b>, doing what's right even when it's scary.</p>
+  <div class="dcard">
+    <div class="row" style="padding:8px 0"><div class="face" style="width:48px;height:48px;background-image:url(img/max-face.jpg)"></div><div><div class="small" style="color:#C99A2E">MAX · 3</div><div class="ican">"I can try the big slide, even if it looks tall."</div></div></div>
+    <div class="row" style="padding:8px 0;border-top:1px solid rgba(243,230,200,.08)"><div class="face" style="width:48px;height:48px;background-image:url(img/june-face.jpg)"></div><div><div class="small" style="color:#C99A2E">JUNE · 5</div><div class="ican">"I can say my idea out loud at dinner."</div></div></div>
+    <div class="row" style="padding:8px 0;border-top:1px solid rgba(243,230,200,.08)"><div class="face" style="width:48px;height:48px;background-image:url(img/theo-face.jpg)"></div><div><div class="small" style="color:#C99A2E">THEO · 8</div><div class="ican">"I can tell the truth about a mistake, even when it's scary."</div></div></div>
+  </div>
+  <div class="dcard row" style="gap:14px">
+    <div style="width:74px;height:94px;background:#F4EAD5;border-radius:4px;transform:rotate(-4deg);padding:8px 6px;flex-shrink:0;box-shadow:0 6px 14px rgba(0,0,0,.4)"><div style="font:700 13px var(--display);color:#2A2118;text-align:center">Courage</div><div style="height:2px;background:#cdbb93;margin:5px 0"></div><div style="height:5px;background:#e3d6b8;margin:4px 0;border-radius:2px"></div><div style="height:5px;background:#e3d6b8;margin:4px 0;border-radius:2px"></div><div style="height:5px;background:#e3d6b8;margin:4px 0;border-radius:2px"></div></div>
+    <div><b style="font:700 14px var(--sans)">A fridge card every Sunday</b><p style="font:400 12.5px/1.45 var(--sans);color:rgba(251,239,210,.65);margin-top:3px">Print it, pin it, check the box when you spot it. The lesson lives in the kitchen, not on a screen.</p></div>
+  </div>
+  <div class="eyebrow" style="margin-top:28px">The library</div>
+  <h2 class="t" style="font-size:26px">Every chapter pairs with a classic worth keeping.</h2>
+  <div style="display:flex;gap:7px;margin-top:16px;align-items:flex-end;overflow:hidden">
+    <div class="spine" style="background:#7A2E1F;height:150px">Aesop's Fables</div><div class="spine" style="background:#1F3A5F;height:164px">The Courage of Sarah Noble</div><div class="spine" style="background:#2F5233;height:140px">Charlotte's Web</div><div class="spine" style="background:#5B3A1A;height:170px">The Hobbit</div><div class="spine" style="background:#4A2C4F;height:152px">Little Women</div><div class="spine" style="background:#244B5A;height:146px">Frog and Toad</div><div class="spine" style="background:#7A5A1F;height:160px">The Secret Garden</div>
+  </div>
+  <div style="height:8px;background:#5B3A1A;border-radius:2px"></div>
+  <p class="lead" style="font-size:13px;margin-top:10px">60+ hand-picked books, Aesop to C.S. Lewis, matched to the week's virtue and your child's reading level.</p>
+</div>
+</section>
+
+<section class="frame" id="h4">
+<div class="cap"><b>HOMEPAGE 4/5 · WHY IT WORKS + OUR PROMISES</b><h2>Four findings with sources, then the promises that earn a parent's trust.</h2><p>Replaces the eight-stat research wall. Every claim here was verified in the research pass. The promises answer the real objections: AI, photos, screens, data.</p></div>
+<div class="sec">
+  <div class="eyebrow">Why it works</div>
+  <h2 class="t">Built on how children actually learn.</h2>
+  <div class="card" style="padding:4px 16px">
+    <div class="evid"><div class="ic">🪞</div><div><b>Seeing themselves changes behavior</b><p>Kids who heard a sharing story featuring themselves shared more than kids who heard the same story without it.</p><i>Early Childhood Education Journal, 2025 · 315 children</i></div></div>
+    <div class="evid"><div class="ic">🌟</div><div><b>Goodness rewarded, not vice punished</b><p>Stories where honesty turned out well made kids more truthful. Pinocchio didn't.</p><i>Psychological Science, 2014 · replicated 2025</i></div></div>
+    <div class="evid"><div class="ic">💬</div><div><b>"Why do you think…?" beats a lecture</b><p>Kids who explain the lesson apply it to new situations better than kids who are told the moral.</p><i>Cognition, 2017</i></div></div>
+    <div class="evid"><div class="ic">📖</div><div><b>Stories that continue keep kids coming back</b><p>Serialized stories held children's engagement over time; stand-alone episodes lost it.</p><i>Communication Research, 2025</i></div></div>
+  </div>
+</div>
+<div class="sec dark">
+  <div class="eyebrow">Our promises</div>
+  <h2 class="t">What we'll never do.</h2>
+  <div class="promise"><span>✍️</span><div><b>Stories written by people</b><p>Every chapter is written and reviewed by a person. Illustrations are generated only to draw your kids in, and we check every one.</p></div></div>
+  <div class="promise"><span>🔒</span><div><b>Never a photo of your child</b><p>You describe them; we draw them. Nothing we store can identify your kids. No ads, no data sales.</p></div></div>
+  <div class="promise"><span>🌙</span><div><b>Screens off by lights-out</b><p>Read it from a printed booklet, press play on audio, or use nightlight mode. Pediatricians advise no screens an hour before bed, and we built around that.</p></div></div>
+  <div class="promise"><span>🕊️</span><div><b>Five nights a week is plenty</b><p>No guilt-trip streaks. Rest nights are built in.</p></div></div>
+</div>
+</section>
+
+<section class="frame" id="h5">
+<div class="cap"><b>HOMEPAGE 5/5 · PRICING, GIFTS, FOUNDER, FAQ</b><h2>A low starting price, one plan for the whole family, and a founder's face.</h2><p>$49/yr with all siblings included (the typical education app charges $44). Heirloom and gifts raise what each family spends. The founder note is a draft of your words, from your Notion.</p></div>
+<div class="sec">
+  <div class="eyebrow">Pricing</div>
+  <h2 class="t">Start free. Stay for the story.</h2>
+  <div class="price"><div class="top"><h3>Free</h3><div class="amt">$0</div></div><ul><li>Draw in every child</li><li>The first 3 chapters, starring them</li><li>Weekly fridge card · classics library</li></ul></div>
+  <div class="price hot"><div class="top"><h3>Family</h3><div class="amt">$49<small>/yr</small></div></div><div style="font:500 12px var(--sans);opacity:.7">or $5.99/mo · every sibling included</div><ul><li>A new chapter every night, all kids drawn in</li><li>Missions, "spotted it" legends, printable booklets</li><li>Chapter-book mode for ages 6–9</li></ul></div>
+  <div class="price"><div class="top"><h3>Heirloom</h3><div class="amt">$89<small>/yr</small></div></div><ul><li>Everything in Family</li><li>Chapters narrated in your voice or a grandparent's</li><li>Their year printed as a hardcover</li></ul></div>
+  <div class="card row" style="gap:14px;background:#FDF3DC;box-shadow:none;border:1.5px dashed #D9C08A"><span style="font-size:26px">🎁</span><div><b style="font:700 14px var(--sans)">Grandparent? Give a year.</b><p style="font:400 12.5px/1.45 var(--sans);color:#5B5346;margin-top:2px">Gift the story, or record chapters in your own voice from anywhere.</p></div></div>
+
+  <div class="card" style="margin-top:24px">
+    <div class="row"><div class="face" style="width:52px;height:52px;background:#D9C08A;display:flex;align-items:center;justify-content:center;font:600 18px var(--display);color:#fff">JT</div><div><b style="font:700 14px var(--sans)">Jon, dad of three</b><div class="small">Founder · Burke, Virginia</div></div></div>
+    <p style="font:400 italic 15px/1.55 var(--serif);color:#2A2118;margin-top:10px">"I built this because I watched my kids get swallowed by screens, and the stories that shaped my own character were disappearing from their childhood. This is the bedtime I want for my three."</p>
+    <div class="small" style="margin-top:6px;color:#C0504D">[Draft from your Notion founder note. Your words to edit.]</div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:26px">Questions</div>
+  <div style="margin-top:8px"><div class="faq"><span>Is this AI? What's written by people?</span><span>+</span></div><div class="faq"><span>How do you draw my child without a photo?</span><span>+</span></div><div class="faq"><span>What ages is it for?</span><span>+</span></div><div class="faq"><span>Can grandparents read along?</span><span>+</span></div></div>
+  <div class="cta" style="margin-top:22px">Draw your child in, free</div>
+  <p style="text-align:center;font:italic 400 13px var(--serif);color:#9A8F7C;margin-top:18px">"We are what we repeatedly do." · Aristotle</p>
+</div>
+</section>
+
+<!-- ======================= APP FLOW ======================= -->
+
+<section class="frame" id="a1">
+<div class="cap"><b>APP 1/6 · AFTER "START FREE" · DRAW YOUR HERO</b><h2>Draw the child in with a few taps, before any signup.</h2><p>Each choice redraws the portrait in the storybook style. The portrait becomes that child's reference image, so they look the same in every chapter.</p></div>
+<div class="sec" style="padding-top:16px">
+  <div class="row" style="justify-content:space-between"><span class="small" style="letter-spacing:.1em">DRAW YOUR HERO</span><span class="small">CHILD 1 OF 3 ·  <u>skip</u></span></div>
+  <div class="row" style="margin-top:12px;gap:16px">
+    <div style="width:150px;height:170px;border-radius:18px;background:url(img/theo-face.jpg) center/cover;box-shadow:0 10px 24px rgba(60,40,10,.25);position:relative;flex-shrink:0"><span style="position:absolute;bottom:8px;left:8px;font:600 10px var(--sans);background:rgba(255,255,255,.9);padding:3px 8px;border-radius:100px">✨ drawn just now</span></div>
+    <div><div style="font:600 30px var(--display)">Theo</div><div class="row" style="gap:6px;margin-top:6px"><span class="chip on" style="margin:0">Age 8</span><span class="chip" style="margin:0">Boy</span></div><div class="small" style="margin-top:10px;line-height:1.4">Looks right? The goal of this screen is a kid saying "That's me!"</div></div>
+  </div>
+  <div class="lbl">Hair</div><span class="chip on">Messy curls</span><span class="chip">Short</span><span class="chip">Straight</span><span class="chip">Braids</span>
+  <div><span class="sw" style="background:#2A1B12"></span><span class="sw on" style="background:#7A4A22"></span><span class="sw" style="background:#B7793F"></span><span class="sw" style="background:#E3C27A"></span><span class="sw" style="background:#B2472A"></span></div>
+  <div class="lbl">Skin</div><span class="sw" style="background:#F7D7BD"></span><span class="sw on" style="background:#EDC19C"></span><span class="sw" style="background:#C98F66"></span><span class="sw" style="background:#9A6443"></span><span class="sw" style="background:#6B4430"></span>
+  <div class="lbl">Details</div><span class="chip on">Freckles</span><span class="chip">Glasses</span><span class="chip on">Green cloak</span><span class="chip">+ Favorite thing</span>
+  <div class="cta" style="margin-top:14px">Next: add June →</div>
+  <p class="small" style="text-align:center;margin-top:9px">🔒 No photos. Nothing here identifies your child.</p>
+</div>
+</section>
+
+<section class="frame" id="a2">
+<div class="cap"><b>APP 2/6 · MEET YOUR HEROES</b><h2>The whole family in the storybook style, and Chapter 1 ready right away.</h2><p>This is the moment that has to happen in the first session, since most trial cancellations happen on day one. We only ask for an email here, to save the family.</p></div>
+<div class="sec dark" style="padding-top:26px;text-align:center">
+  <div class="eyebrow">Your heroes</div>
+  <div style="display:flex;justify-content:center;gap:14px;margin-top:18px">
+    <div><div class="face" style="width:86px;height:86px;background-image:url(img/theo-face.jpg);margin:0 auto"></div><div style="font:600 18px var(--display);margin-top:8px">Theo, 8</div></div>
+    <div><div class="face" style="width:86px;height:86px;background-image:url(img/june-face.jpg);margin:0 auto"></div><div style="font:600 18px var(--display);margin-top:8px">June, 5</div></div>
+    <div><div class="face" style="width:86px;height:86px;background-image:url(img/max-face.jpg);margin:0 auto"></div><div style="font:600 18px var(--display);margin-top:8px">Max, 3</div></div>
+  </div>
+  <div style="margin-top:22px;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.5)"><div style="height:220px;background:url(img/kids-group.jpg) center 28%/cover"></div>
+    <div style="background:#F4EAD5;color:#2A2118;padding:14px 16px;text-align:left"><div class="eyebrow" style="font-size:9.5px;color:#A77B22">The Lantern Road · Chapter 1</div><div style="font:600 23px var(--display);margin-top:3px">The Lantern in the Attic</div><div class="small" style="margin-top:3px">Courage · 6 min · starring Theo, June & Max</div></div></div>
+  <div class="cta" style="margin-top:18px">Read Chapter 1 tonight</div>
+  <div style="margin-top:12px;display:flex;gap:8px"><div style="flex:1;border-radius:100px;border:1px solid rgba(243,230,200,.3);padding:10px;font:600 12.5px var(--sans)">Save my family: email</div><div style="flex:1;border-radius:100px;border:1px solid rgba(243,230,200,.3);padding:10px;font:600 12.5px var(--sans)">Print this week's card</div></div>
+</div>
+</section>
+
+<section class="frame" id="a3" style="background:#0B0F19;color:#F3E6C8">
+<div class="cap"><b>APP 3/6 · RETURN VISIT, 7:30 PM · THE WHOLE HOME SCREEN</b><h2>One button. Tonight's chapter is already written.</h2><p>No prompts to type and nothing to choose at bedtime. Five lit lamps out of seven means a great week. The day's note is optional.</p></div>
+<div style="padding:16px 18px 0">
+  <div class="row" style="justify-content:space-between;font:600 11px var(--sans);letter-spacing:.08em;color:rgba(243,230,200,.5)"><span>GOOD EVENING</span><span>WEEK 6 · COURAGE</span></div>
+  <div style="margin-top:12px;border-radius:16px;overflow:hidden"><div style="height:200px;background:url(img/sky-lantern.jpg) center 60%/cover;position:relative"><div style="position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.6))"></div><div style="position:absolute;left:14px;bottom:10px;font:700 10.5px var(--sans);letter-spacing:.12em;color:#fff">CHAPTER 4 · 7 MIN</div></div>
+    <div style="background:#F4EAD5;color:#2A2118;padding:13px 15px"><div style="font:600 23px var(--display)">The Creaking Bridge</div><p style="font:italic 400 14.5px/1.45 var(--serif);color:#5b4b33;margin-top:4px">Last time: the fox was hurt, the storm was coming, and the only way home was across the ravine…</p></div></div>
+  <div class="cta" style="margin-top:14px">Read tonight's chapter</div>
+  <div style="display:flex;gap:8px;margin-top:10px">
+    <div class="dcard" style="flex:1;margin:0;padding:10px;text-align:center;font:600 12px var(--sans)">🎧 Listen<div class="small">Grandma's voice</div></div>
+    <div class="dcard" style="flex:1;margin:0;padding:10px;text-align:center;font:600 12px var(--sans)">🖨 Print<div class="small">booklet</div></div>
+    <div class="dcard" style="flex:1;margin:0;padding:10px;text-align:center;font:600 12px var(--sans)">🎙 Today<div class="small">optional note</div></div>
+  </div>
+  <div class="dcard"><div class="row" style="justify-content:space-between"><span class="small" style="letter-spacing:.1em">THIS WEEK'S LAMPS</span><span style="font:700 11px var(--sans);color:#F3D48A">3 OF 5</span></div><div class="lamps"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div></div>
+</div>
+<div class="tabbar" style="margin-top:14px"><div class="on">🏮<br>Tonight</div><div>📚<br>Library</div><div>🛡<br>Heroes</div><div>👪<br>Family</div></div>
+</section>
+
+<section class="frame" id="a4" style="background:#120D07;color:#E9C9A0">
+<div class="cap"><b>APP 4/6 · THE READING PAGE</b><h2>Low light, one illustration, a pause that asks the child to explain.</h2><p>Warm, dim colors and large type for reading aloud. Aa changes the text size, and the page icon switches between picture-book and chapter layouts. One illustration per chapter keeps image costs around $1 per family per month.</p></div>
+<div style="padding:14px 18px 22px">
+  <div class="row" style="justify-content:space-between;font:600 11px var(--sans);letter-spacing:.08em;color:rgba(233,201,160,.5)"><span>◐ NIGHTLIGHT</span><span>Aa · ▤ · 3/7</span></div>
+  <div style="height:190px;border-radius:12px;margin-top:10px;background:url(img/kids-group.jpg) center 22%/cover;filter:brightness(.85) sepia(.15)"></div>
+  <p style="font:400 19px/1.62 var(--serif);margin-top:14px">On the far side of the bridge, the little fox lay very still. Max wanted to run home. June wanted to cry. But Theo remembered what Grandpa said about brave people: <i>they are scared, and they go anyway.</i></p>
+  <div style="margin-top:14px;border-radius:14px;border:1px solid rgba(243,212,138,.35);background:rgba(243,212,138,.07);padding:13px 14px"><div class="small" style="color:#F3D48A;letter-spacing:.14em;font-weight:700">PAUSE & ASK</div><div style="font:500 italic 19px/1.3 var(--display);color:#F7EBD0;margin-top:5px">"Why do you think Theo kept going?"</div><div class="small" style="margin-top:6px;color:rgba(233,201,160,.5)">Let them answer in their own words. There's no wrong answer.</div></div>
+</div>
+</section>
+
+<section class="frame" id="a5" style="background:#0B0F19;color:#F3E6C8">
+<div class="cap"><b>APP 5/6 · THE LAST PAGE</b><h2>One mission per child at their level, then a cliffhanger to bring them back.</h2><p>The reward for reading is more story, never prizes for being good. After three free chapters, this is where the $49 Family plan unlocks the rest.</p></div>
+<div style="padding:22px 18px 24px">
+  <div style="text-align:center"><div class="small" style="letter-spacing:.14em">END OF CHAPTER 4</div><div style="font:500 italic 28px/1.2 var(--display);color:#F7EBD0;margin-top:10px">"Theo was scared,<br>and he went anyway."</div></div>
+  <div class="dcard">
+    <div class="small" style="letter-spacing:.14em;color:#F3D48A">TOMORROW'S MISSIONS</div>
+    <div class="row" style="padding:9px 0"><div class="face" style="width:40px;height:40px;background-image:url(img/theo-face.jpg)"></div><div class="ican" style="color:#F7EBD0">Tell the truth about one mistake.</div></div>
+    <div class="row" style="padding:9px 0"><div class="face" style="width:40px;height:40px;background-image:url(img/june-face.jpg)"></div><div class="ican" style="color:#F7EBD0">Share one idea out loud at dinner.</div></div>
+    <div class="row" style="padding:9px 0"><div class="face" style="width:40px;height:40px;background-image:url(img/max-face.jpg)"></div><div class="ican" style="color:#F7EBD0">Try the big slide.</div></div>
+  </div>
+  <div class="dcard row" style="gap:14px"><div style="width:44px;height:44px;border-radius:12px;background:rgba(243,230,200,.07);display:flex;align-items:center;justify-content:center;font-size:20px">🔒</div><div><div class="small" style="letter-spacing:.1em">UNLOCKS TOMORROW NIGHT</div><div style="font:600 19px var(--display);color:#F7EBD0">Ch. 5 · Who Lives Under the Bridge?</div></div></div>
+  <div class="dcard" style="border-color:rgba(243,212,138,.35);background:rgba(243,212,138,.06)"><div class="row" style="justify-content:space-between"><div><div style="font:700 14px var(--sans);color:#F7EBD0">Free chapters used: 3 of 3</div><div class="small" style="margin-top:2px">Keep Theo, June & Max's story going</div></div><div style="font:700 13px var(--sans);color:#1A1206;background:#F3D48A;padding:9px 12px;border-radius:100px">$49/yr</div></div></div>
+</div>
+</section>
+
+<section class="frame" id="a6">
+<div class="cap"><b>APP 6/6 · NEXT DAY · SPOTTED IT + SHARE WITH GRANDMA</b><h2>A parent's note becomes tonight's legend, and a story card goes to Grandma.</h2><p>The parent approves every personalized line. The share card is how new families find you: grandparents spend about $2,654 a year on grandkids.</p></div>
+<div class="sec" style="padding-top:18px">
+  <div class="card">
+    <div class="small" style="letter-spacing:.12em">SPOTTED TODAY · 4:12 PM</div>
+    <div class="row" style="margin-top:8px"><div class="face" style="width:40px;height:40px;background-image:url(img/theo-face.jpg)"></div><div style="font:400 15.5px/1.4 var(--serif)">Theo admitted he broke the lamp before anyone asked.</div></div>
+    <div class="small" style="margin-top:10px;letter-spacing:.1em">TONIGHT'S CHAPTER WILL OPEN WITH…</div>
+    <p class="serif" style="background:#F4EAD5;border-radius:10px;padding:12px;margin-top:6px;font-size:15.5px">In the village they still tell of <b>Theo of the Lantern</b>, who spoke the truth before anyone asked, and was trusted ever after.</p>
+    <div class="row" style="gap:8px;margin-top:10px"><div class="ghost" style="flex:1;padding:10px;font-size:13px">Edit</div><div class="cta" style="flex:1;padding:11px;font-size:13.5px;box-shadow:none">Approve ✓</div></div>
+  </div>
+  <div class="small" style="text-align:center;margin-top:20px">Shared to Grandma Ruth</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-top:8px">
+    <div style="height:170px;background:url(img/kids-group.jpg) center 25%/cover"></div>
+    <div style="padding:13px 15px 15px"><div style="font:600 21px/1.15 var(--display)">Theo, June & Max crossed the Creaking Bridge tonight</div>
+      <div class="row" style="gap:8px;margin-top:11px"><div class="cta" style="flex:1;padding:11px;font-size:13px;box-shadow:none">Read their story</div><div class="ghost" style="flex:1;padding:10px;font-size:13px">🎙 Record a chapter</div></div>
+      <div style="text-align:center;font:600 12.5px var(--sans);color:#A77B22;margin-top:10px">🎁 Give the kids a year of stories</div></div>
+  </div>
+</div>
+</section>
+</body></html>

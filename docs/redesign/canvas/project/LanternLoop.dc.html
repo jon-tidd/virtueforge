@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Lantern Loop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.node{position:absolute;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:800 12px 'Figtree',sans-serif;padding:0;box-sizing:border-box}
+.day{flex:1;border-radius:12px;background:#1F2B48;border:1px solid #2F3E62;padding:8px 4px;text-align:center;font-size:11px;line-height:1.3;color:#C9C0AE}
+.day b{display:block;color:#E9A23B;font-size:11.5px;letter-spacing:.06em}
+.spin{transform-origin:173px 173px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.spin{animation:none}}
+</style>
+</helmet>
+<div style="width:390px;height:1320px;background:#16203A;color:#F4E9D2;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 24px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="Strengths.dc.html" aria-label="Back" style="color:#B8AE9A;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#E9A23B">The method</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:34px;line-height:1.05;font-weight:600;color:#FBF3E2">The Lantern Loop</h1>
+  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#B8AE9A">Stories alone don't build character. Practice does. Every strength goes around this loop, and comes back around weeks later. Tap a step.</p>
+  <div style="position:relative;width:346px;height:346px;margin:16px auto 0">
+    <svg width="346" height="346" viewBox="0 0 346 346" aria-hidden="true" style="position:absolute;inset:0">
+      <g class="spin"><circle cx="173" cy="173" r="126" fill="none" stroke="#2F3E62" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/></g>
+      <circle cx="173" cy="173" r="126" fill="none" stroke="#E9A23B" stroke-width="2.5" stroke-dasharray="{{arc}}" transform="rotate(-90 173 173)" opacity=".85"/>
+      <circle cx="173" cy="173" r="64" fill="#1F2B48"/>
+    </svg>
+    <div style="position:absolute;left:109px;top:124px;width:128px;text-align:center">
+      <svg width="30" height="45" viewBox="0 0 40 60" aria-hidden="true"><path d="M11 17l4-6.5h10l4 6.5z" fill="#B87718"/><rect x="8.5" y="16.5" width="23" height="3.2" rx="1.6" fill="#8A5212"/><path d="M10.5 19.7h19l-2 24h-15z" fill="#F6BE5C" stroke="#6B3E0C" stroke-width="1.4"/><path d="M20 25.5c3.4 4 3.4 8.2 0 11-3.4-2.8-3.4-7 0-11z" fill="#FFFBEA"/><rect x="9" y="43.7" width="22" height="3.6" rx="1.8" fill="#8A5212"/></svg>
+      <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#E9A23B">ONE STRENGTH</div>
+      <div style="font-size:11px;color:#B8AE9A">~3 weeks, then back</div>
+    </div>
+    <sc-for list="{{steps}}" as="s" hint-placeholder-count="6"><button class="node" onClick="{{s.pick}}" style="{{s.style}}"><span style="font-size:15px;font-family:'Fraunces',serif">{{s.n}}</span>{{s.short}}</button></sc-for>
+  </div>
+  <div style="margin-top:14px;border-radius:22px;background:#F4EAD5;color:#1F1A14;padding:18px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><span class="eyebrow" style="color:#8A5212">Step {{n}} · {{when}}</span></div>
+    <div class="disp" style="font-size:25px;font-weight:600;margin-top:4px">{{title}}</div>
+    <div style="font-size:14.5px;line-height:1.5;margin-top:6px;color:#2A2118">{{what}}</div>
+    <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E2D5BC;font-size:13px;line-height:1.5;color:#4A4034"><b>Why it works:</b> {{why}}</div>
+    <div style="font-size:12px;color:#6A5D4B;font-style:italic;margin-top:6px">{{cite}}</div>
+  </div>
+  <div class="eyebrow" style="color:#A99F8C;margin-top:18px">A week of Keep Going</div>
+  <div style="display:flex;gap:5px;margin-top:8px">
+    <div class="day"><b>SUN</b>Plan + fridge card</div>
+    <div class="day"><b>M–F</b>Chapter, question, mission</div>
+    <div class="day"><b>DAY</b>Spot it, legend</div>
+    <div class="day"><b>SAT</b>Family trial</div>
+    <div class="day"><b>+3 WK</b>"Remember when…"</div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <p class="story" style="margin:16px 0 0;text-align:center;font-style:italic;color:#C9C0AE;font-size:15px;line-height:1.5">"We become brave by doing brave acts." Aristotle, Nicomachean Ethics</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1320}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { i: 0 }; }
+  renderVals() {
+    const steps = [
+      { short: 'Meet', title: 'Meet it in a story', when: 'Every night', what: 'Your kids watch themselves use the strength in the chapter: Theo tries the riddle a third way. Real people and real stakes, not talking-animal morals.', why: 'Children act more on a lesson when they see themselves as the hero, and realistic human characters carry over to real life better than animals do.', cite: 'Early Childhood Education Journal 2025 (315 children); Larsen, Lee & Ganea 2018' },
+      { short: 'Name', title: 'Give it a name and a move', when: 'Sunday', what: 'Every strength has a kid word, a power phrase and a hand move: "Not yet… keep going!" with hands climbing a ladder. Easy to say in the moment.', why: 'A word paired with a gesture is remembered longer than a word alone, and a handy label is easier to reach for when feelings run high.', cite: 'Cook, Mitchell & Goldin-Meadow 2008, Cognition' },
+      { short: 'Ask', title: 'Ask why, don’t preach', when: 'Mid-chapter', what: 'One pause question per chapter: "Why do you think Theo tried again?" The kids explain it. The story never states the moral.', why: 'Kids who explain a story’s lesson apply it to new situations better than kids who are told it. Back-and-forth reading beats reading at them.', cite: 'Walker & Lombrozo 2017, Cognition; dialogic reading meta-analysis, Mol et al. 2008' },
+      { short: 'Plan', title: 'Make an if-then plan', when: 'Last page', what: 'Each child picks one tiny plan at their level: "If I want to quit, then I say not yet and try a new way." It goes on the fridge card.', why: 'If-then plans are one of the best-proven ways to turn good intentions into action, including for school kids.', cite: 'Gollwitzer & Sheeran 2006 (94 studies); Duckworth et al. 2013' },
+      { short: 'Spot', title: 'Try it, and get spotted', when: 'During the day', what: 'Kids try their mission. You notice, tap "Spotted it", and that night the story tells it back as a legend. Praise the action, never the child’s worth.', why: 'Toddlers already help without rewards, and prizes can make them help less. Recognition and praise for effort keep the motivation their own.', cite: 'Warneken & Tomasello 2008; Gunderson et al. 2013' },
+      { short: 'Recall', title: 'Remember it, weeks later', when: '+3 weeks, +2 months', what: 'Past strengths come back in "remember when" moments and Saturday trials, mixed in with the new one. Every season revisits the other three.', why: 'Coming back to something after a gap makes it stick far longer than cramming it all in one week.', cite: 'Spacing effect, Cepeda et al. 2006 (meta-analysis)' }
+    ];
+    const cx = 173, cy = 173, r = 126;
+    const cur = steps[this.state.i];
+    const circ = 2 * Math.PI * r, frac = (this.state.i + 1) / 6;
+    return {
+      steps: steps.map((s, i) => {
+        const a = -Math.PI / 2 + i * Math.PI / 3, sel = i === this.state.i, done = i < this.state.i;
+        return { ...s, n: i + 1, pick: () => this.setState({ i }), style: { left: (cx + r * Math.cos(a)) + 'px', top: (cy + r * Math.sin(a)) + 'px', background: sel ? '#E9A23B' : (done ? '#3A3020' : '#1F2B48'), color: sel ? '#16203A' : '#F4E9D2', border: sel ? '3px solid #FFF1C9' : '2px solid ' + (done ? '#E9A23B' : '#3A4A70') } };
+      }),
+      arc: (circ * frac) + ' ' + circ,
+      n: this.state.i + 1, title: cur.title, when: cur.when, what: cur.what, why: cur.why, cite: cur.cite
+    };
+  }
+}
+</script>
+</body>
+</html>

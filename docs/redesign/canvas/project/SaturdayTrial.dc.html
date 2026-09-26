@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Saturday trial</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.task{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:14px;border-radius:18px;border:1.5px solid #E7DCC7;background:#FFFCF5;cursor:pointer;font-family:'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box}
+.task img{width:48px;height:48px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0}
+</style>
+</helmet>
+<div style="width:390px;height:960px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="SundayPlan.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Saturday trial · off the page, into real life</div>
+  <h1 class="disp" style="margin:8px 0 0;font-size:34px;line-height:1.06;font-weight:600">The Lantern Quest</h1>
+  <p class="story" style="margin:10px 0 0;font-size:16px;line-height:1.55;color:#4A4034">The Keeper has hidden the paper lantern somewhere in your house. Each hero earns a clue by doing one brave thing.</p>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
+    <sc-for list="{{tasks}}" as="t" hint-placeholder-count="3">
+      <button class="task" onClick="{{t.toggle}}" style="{{t.style}}"><img src="{{t.img}}" alt=""><span style="flex:1"><span style="display:block;font-size:12px;font-weight:800;letter-spacing:.06em;color:#8A5212">{{t.name}} · CLUE {{t.n}}</span><span class="story" style="display:block;font-size:15px;line-height:1.4;margin-top:2px">{{t.text}}</span></span><span style="{{t.box}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFCF5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span></button>
+    </sc-for>
+  </div>
+  <div style="margin-top:16px;border-radius:18px;background:#EFE4CE;padding:14px 16px;font-size:14px;line-height:1.5;color:#4A4034"><b>Grown-ups:</b> hide the lantern from this week's booklet (or any flashlight). About 20 minutes, no screens needed.</div>
+  <div style="flex-grow:1"></div>
+  <div style="text-align:center;font-size:14px;font-weight:700;color:#3F5739;margin-bottom:10px">{{status}}</div>
+  <a class="btn" href="StoryMap.dc.html" style="{{cta}}">We found it! Stamp the map</a>
+  <div style="text-align:center;font-size:13px;color:#6A5D4B;margin-top:10px">Monday's chapter opens with the quest they just did.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { done: { Max: true } }; }
+  renderVals() {
+    const list = [
+      { name: 'Max', n: 1, img: '/_blob/89224e240d4677b215293a2283578be4', text: 'Say hello to a neighbor, with a grown-up close by.' },
+      { name: 'June', n: 2, img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', text: 'Order her own pancake at breakfast.' },
+      { name: 'Theo', n: 3, img: '/_blob/49c6eb96321a54a534a7d5155073c868', text: 'Tell the family one mistake from this week, and what he learned.' }
+    ];
+    const count = list.filter((k) => this.state.done[k.name]).length;
+    const box = (on) => ({ width: '30px', height: '30px', borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: on ? '#4E6A45' : '#FFFCF5', border: on ? '2px solid #4E6A45' : '2px solid #CFC3AA', boxSizing: 'border-box' });
+    return {
+      tasks: list.map((k) => ({ ...k, style: this.state.done[k.name] ? { borderColor: '#4E6A45', background: '#F1F5EA' } : {}, box: box(this.state.done[k.name]), toggle: () => this.setState({ done: { ...this.state.done, [k.name]: !this.state.done[k.name] } }) })),
+      status: count === 3 ? 'All three clues! The lantern is in the laundry basket.' : count + ' of 3 clues earned',
+      cta: count === 3 ? {} : { opacity: 0.45 }
+    };
+  }
+}
+</script>
+</body>
+</html>

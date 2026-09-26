@@ -1,0 +1,102 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{background:#1a1a1a;width:390px}
+.frame{background:#0B0F19;color:#F3E6C8;position:relative;overflow:hidden;padding-bottom:26px}
+.cap{background:#111;padding:18px 20px 16px;border-bottom:1px solid #2a2a2a}
+.cap b{display:block;font:700 11px var(--sans);letter-spacing:.14em;color:var(--gold);margin-bottom:5px}
+.cap h2{font:700 19px/1.25 var(--sans);color:#fff}
+.cap p{font:400 13px/1.5 var(--sans);color:#bdbdbd;margin-top:7px}
+.cap .sci{margin-top:9px;font:500 11.5px/1.45 var(--sans);color:#9fc3a3;border-left:2px solid #4c7a52;padding-left:9px}
+.in{padding:0 18px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px;font:600 11px var(--sans);letter-spacing:.08em;color:rgba(243,230,200,.5)}
+.lbl{font:600 10px var(--sans);letter-spacing:.14em;color:rgba(243,230,200,.45);text-transform:uppercase}
+.card{border-radius:16px;background:rgba(255,236,190,.05);border:1px solid rgba(243,230,200,.11);padding:14px;margin-top:12px}
+.muted{color:rgba(243,230,200,.58)}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}
+.d{border-radius:10px;padding:8px 0 7px;text-align:center;font:600 10px var(--sans);color:rgba(243,230,200,.5);border:1px solid rgba(243,230,200,.1)}
+.d i{display:block;width:14px;height:14px;border-radius:50%;margin:5px auto 0;background:radial-gradient(circle,#FFE7A3 0%,#F4B64A 45%,rgba(244,182,74,0) 75%)}
+.d.no i{background:none;border:1px solid rgba(243,230,200,.2)}
+.d.now{border-color:#F3D48A;color:#F3D48A}
+.kid{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(243,230,200,.07)}
+.kid:last-child{border:none}
+.age{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 15px var(--display);flex-shrink:0}
+.ican{font:500 15.5px/1.4 var(--serif);color:#F7EBD0}
+.gbtn{border-radius:100px;padding:15px;text-align:center;font:600 15px var(--sans);color:#1A1206;background:linear-gradient(180deg,#FFD978,#E0A83C)}
+/* fridge card */
+.fridge{background:#F4EAD5;color:#2A2118;margin:18px;border-radius:6px;padding:22px 20px 18px;box-shadow:0 12px 30px rgba(0,0,0,.5);position:relative}
+.fridge:before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e45b4b,#9b2418);box-shadow:0 3px 6px rgba(0,0,0,.4)}
+.fr-row{display:flex;gap:12px;padding:12px 0;border-top:1px dashed #cdbb93}
+.box{width:20px;height:20px;border:2px solid #8a7348;border-radius:4px;flex-shrink:0;margin-top:2px}
+/* flywheel */
+.step{display:flex;gap:12px;align-items:flex-start;margin-top:12px}
+.num{width:30px;height:30px;border-radius:50%;background:#F3D48A;color:#1A1206;font:700 14px var(--sans);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gate{font:600 10.5px var(--sans);color:#9fc3a3;margin-top:5px;letter-spacing:.02em}
+.arrow{margin:2px 0 0 14px;height:14px;border-left:2px dotted rgba(243,212,138,.5)}
+.pill{display:inline-block;font:600 10.5px var(--sans);padding:4px 9px;border-radius:100px;margin:6px 5px 0 0}
+</style></head><body>
+
+<!-- V1: THE WEEK -->
+<section class="frame" id="v1">
+<div class="cap"><b>REVISED · A · THE WEEKLY RHYTHM</b><h2>One virtue a week. One story for the whole family. Each child gets an "I can…" at their own level.</h2>
+<p>Your poster research turned into a nightly habit. Seven chapters of one virtue, the same words for every sibling, and a Saturday "Trial" to show it in real life. That's the AlphaTest idea without the $75K school.</p>
+<div class="sci">From your poster research: fewer concepts repeated beats a long list; one virtue at a time (Franklin, Character Counts!); skills are shown, not just displayed (Alpha). From the business report: celebrate showing up (reading), not results.</div></div>
+<div class="top"><span>WEEK 6 · COURAGE</span><span>THE LANTERN ROAD</span></div>
+<div class="in">
+  <div class="days">
+    <div class="d">M<i></i></div><div class="d">T<i></i></div><div class="d">W<i></i></div><div class="d now">T<i></i></div><div class="d no">F<i></i></div><div class="d no">S<br><span style="font-size:8px">TRIAL</span></div><div class="d no">S<i></i></div>
+  </div>
+  <div class="card">
+    <div class="lbl">This week, each child can…</div>
+    <div class="kid"><div class="age" style="background:#DC2626;color:#fff">3</div><div><div class="ican">"I can try the slide even if it looks big."</div><div class="muted" style="font:500 11px var(--sans);margin-top:3px">MAX · Try Again</div></div></div>
+    <div class="kid"><div class="age" style="background:#D97706;color:#fff">5</div><div><div class="ican">"I can say my idea out loud at dinner."</div><div class="muted" style="font:500 11px var(--sans);margin-top:3px">JUNE · Speaking Up</div></div></div>
+    <div class="kid"><div class="age" style="background:#2563EB;color:#fff">8</div><div><div class="ican">"I can tell the truth about a mistake, even when it's scary."</div><div class="muted" style="font:500 11px var(--sans);margin-top:3px">THEO · Courage &amp; Honesty</div></div></div>
+  </div>
+  <div class="card" style="display:flex;justify-content:space-between;align-items:center">
+    <div><div class="lbl">Saturday Trial</div><div style="font:600 18px/1.2 var(--display);color:#F7EBD0;margin-top:3px">Each kid does one brave thing.<br>You tell us, the story tells it back.</div></div>
+  </div>
+  <div class="gbtn" style="margin-top:14px">Tonight: Chapter 4 · 8 min · read by Jon</div>
+</div>
+</section>
+
+<!-- V2: FRIDGE CARD -->
+<section class="frame" id="v2" style="background:#2b2622">
+<div class="cap"><b>REVISED · B · THE FRIDGE CARD (PRINTS SUNDAY)</b><h2>The story leaves the screen. The virtue goes on the fridge, where the day actually happens.</h2>
+<p>One printed page a week: the virtue, each child's "I can…", and boxes to check when you spot it. It's your poster system, made weekly and automatic. There's no app to open during the day, and the fridge reminds everyone.</p>
+<div class="sci">Why: seeing the routine on paper takes the load off memory (Harvard's executive-function research; the "First-Then" boards in your Drive doc). It also collects no child data, which helps with COPPA.</div></div>
+<div class="fridge">
+  <div style="text-align:center">
+    <div style="font:600 10px var(--sans);letter-spacing:.2em;color:#8a7348">OUR HOUSE · WEEK 6</div>
+    <div style="font:700 40px/1 var(--display);margin-top:6px">Courage</div>
+    <div style="font:italic 400 14px var(--serif);color:#6b5a3c;margin-top:4px">doing what's right even when it's scary</div>
+  </div>
+  <div style="margin-top:16px">
+    <div class="fr-row"><div class="box"></div><div><b style="font:700 13px var(--sans)">Max (3)</b><div style="font:400 15px/1.35 var(--serif)">I can try the slide even if it looks big.</div></div></div>
+    <div class="fr-row"><div class="box"></div><div><b style="font:700 13px var(--sans)">June (5)</b><div style="font:400 15px/1.35 var(--serif)">I can say my idea out loud at dinner.</div></div></div>
+    <div class="fr-row"><div class="box"></div><div><b style="font:700 13px var(--sans)">Theo (8)</b><div style="font:400 15px/1.35 var(--serif)">I can tell the truth about a mistake, even when it's scary.</div></div></div>
+  </div>
+  <div style="border-top:1px dashed #cdbb93;padding-top:12px;margin-top:2px;display:flex;justify-content:space-between;align-items:flex-end">
+    <div style="font:400 12px/1.4 var(--sans);color:#6b5a3c">Spotted it? Scan to tell tonight's story.<br><i style="font-family:var(--serif)">"We are what we repeatedly do."</i></div>
+    <div style="width:52px;height:52px;background:repeating-linear-gradient(90deg,#2A2118 0 4px,transparent 4px 7px),repeating-linear-gradient(0deg,#2A2118 0 4px,transparent 4px 7px);opacity:.8;border:3px solid #2A2118"></div>
+  </div>
+</div>
+</section>
+
+<!-- V3: FLYWHEEL -->
+<section class="frame" id="v3">
+<div class="cap"><b>REVISED · C · HOW THIS BECOMES A BUSINESS</b><h2>One saga in your voice, sold four ways. The AI story generator becomes an extra, not the product.</h2>
+<p>Your business report is right that anyone can generate a story, so that's not a moat. What can't be copied is a curated series, a voice parents trust, and a family ritual. Build around those and personalize lightly.</p>
+<div class="sci">From your report: hard paywalls convert about 5× better than freemium (RevenueCat 2026). Rebel Girls made its app free and made money on books. The biggest risk is getting found, not the technology.</div></div>
+<div class="in" style="padding-top:16px">
+  <div class="step"><div class="num">1</div><div><div style="font:600 17px var(--display);color:#F7EBD0">Free podcast: one saga chapter a week</div><div class="muted" style="font:400 12.5px/1.45 var(--sans)">Your narration. Short clips for Instagram and TikTok. Pitch to homeschool and read-aloud communities.</div><div class="gate">GATE: 1,000 emails · 2,000 downloads/episode</div></div></div>
+  <div class="arrow"></div>
+  <div class="step"><div class="num">2</div><div><div style="font:600 17px var(--display);color:#F7EBD0">Paid web membership · $79/yr</div><div class="muted" style="font:400 12.5px/1.45 var(--sans)">Every chapter nightly, the kids' names in the text, missions, the fridge card, "story remembers" legends (the parent approves each line), and print and Yoto exports.</div><div class="gate">GATE: 200+ paying · 8%+ of trials convert</div></div></div>
+  <div class="arrow"></div>
+  <div class="step"><div class="num">3</div><div><div style="font:600 17px var(--display);color:#F7EBD0">Season 1 hardcover on Kickstarter</div><div class="muted" style="font:400 12.5px/1.45 var(--sans)">The same curated saga, illustrated. A personalized edition ("with Theo in it") as the premium tier.</div><div class="gate">GATE: $25K+ raised</div></div></div>
+  <div class="arrow"></div>
+  <div class="step"><div class="num">4</div><div><div style="font:600 17px var(--display);color:#F7EBD0">Library of classics you've vetted</div><div class="muted" style="font:400 12.5px/1.45 var(--sans)">Your existing 60+ books with Bookshop.org affiliate links. Small income, builds editorial authority.</div></div></div>
+  <div class="card" style="margin-top:16px">
+    <div class="lbl">Wait until $10K MRR</div>
+    <span class="pill" style="background:rgba(220,38,38,.15);color:#f19a9a">Kids' faces in illustrations</span><span class="pill" style="background:rgba(220,38,38,.15);color:#f19a9a">Unreviewed AI stories</span><span class="pill" style="background:rgba(220,38,38,.15);color:#f19a9a">Multilingual</span><span class="pill" style="background:rgba(220,38,38,.15);color:#f19a9a">Native apps</span>
+  </div>
+</div>
+</section>
+</body></html>

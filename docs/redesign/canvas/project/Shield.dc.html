@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Each child's shield</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.kid{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:999px;border:none;background:transparent;font:700 14px 'Figtree',sans-serif;color:#6A5D4B;cursor:pointer}
+.kid img{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block}
+.gem{display:flex;align-items:center;gap:6px;min-height:36px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:700}
+.q{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #EFE6D2;font-size:14px}
+</style>
+</helmet>
+<div style="width:390px;height:1120px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="StoryMap.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Shields</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:32px;line-height:1.08;font-weight:600">What each hero has explored.</h1>
+  <div style="display:flex;gap:4px;margin-top:14px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{kids}}" as="k" hint-placeholder-count="3"><button class="kid" onClick="{{k.pick}}" style="{{k.style}}"><img src="{{k.img}}" alt="">{{k.name}}</button></sc-for>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:18px">
+    <svg width="230" height="270" viewBox="0 0 230 270" aria-label="Shield with four quarters: Prudence, Justice, Courage, Temperance">
+      <defs><clipPath id="sh"><path d="M115 8l100 30v80c0 70-42 120-100 144C57 238 15 188 15 118V38z"/></clipPath></defs>
+      <g clip-path="url(#sh)">
+        <rect x="0" y="0" width="115" height="130" style="{{q1}}"/>
+        <rect x="115" y="0" width="115" height="130" style="{{q2}}"/>
+        <rect x="0" y="130" width="115" height="140" style="{{q3}}"/>
+        <rect x="115" y="130" width="115" height="140" style="{{q4}}"/>
+      </g>
+      <path d="M115 8l100 30v80c0 70-42 120-100 144C57 238 15 188 15 118V38z" fill="none" stroke="#16203A" stroke-width="5"/>
+      <path d="M115 10v250M17 130h196" stroke="#16203A" stroke-width="3"/>
+      <g fill="none" stroke="#16203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M52 62c0-10 8-16 16-16s16 6 16 16v16H52zM60 60a3 3 0 1 0 0 .1M76 60a3 3 0 1 0 0 .1M64 70l4 3 4-3"/>
+        <path d="M165 50v40M150 56h30M150 56l-8 16h16zM180 56l-8 16h16z"/>
+        <path d="M50 178c6-14 30-14 36 0 4 10-2 24-18 24s-22-14-18-24zM56 176l-6-8M80 176l6-8M62 186h.1M74 186h.1M64 194c3 2 5 2 8 0"/>
+        <path d="M165 212v-40M165 186c-12 0-18-8-18-16 8 0 18 4 18 16zM165 180c10 0 16-8 16-14-8 0-16 4-16 14z"/>
+      </g>
+    </svg>
+  </div>
+  <div style="text-align:center;font-size:13.5px;color:#6A5D4B;margin-top:6px">{{sub}}</div>
+  <div style="margin-top:14px;background:#FFFCF5;border:1px solid #E7DCC7;border-radius:20px;padding:4px 14px">
+    <div class="q"><span style="width:10px;height:10px;border-radius:50%;background:#C98A2B"></span><span style="flex:1;font-weight:700">Brave <span style="font-weight:500;color:#6A5D4B">· Courage</span></span><span style="color:#6A5D4B">{{c}}</span></div>
+    <div class="q"><span style="width:10px;height:10px;border-radius:50%;background:#6C8FB0"></span><span style="flex:1;font-weight:700">Wise <span style="font-weight:500;color:#6A5D4B">· Prudence</span></span><span style="color:#6A5D4B">{{p}}</span></div>
+    <div class="q"><span style="width:10px;height:10px;border-radius:50%;background:#7E9A6E"></span><span style="flex:1;font-weight:700">Kind &amp; Fair <span style="font-weight:500;color:#6A5D4B">· Justice</span></span><span style="color:#6A5D4B">{{j}}</span></div>
+    <div class="q" style="border-bottom:none"><span style="width:10px;height:10px;border-radius:50%;background:#A7869E"></span><span style="flex:1;font-weight:700">Steady <span style="font-weight:500;color:#6A5D4B">· Temperance</span></span><span style="color:#6A5D4B">{{t}}</span></div>
+  </div>
+  <div class="eyebrow" style="color:#6A5D4B;margin-top:18px">Strengths found in Brave</div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+    <span class="gem" style="background:#16203A;color:#F2B559">Brave</span><span class="gem" style="background:#16203A;color:#F2B559">Keep Going</span>
+    <span class="gem" style="background:#16203A;color:#F2B559">Truth-Teller</span>
+    <span class="gem" style="background:#EFE4CE;color:#6A5D4B">Bounce Back · next week</span>
+    
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="border-radius:18px;background:#E7EEDD;padding:14px 16px;font-size:14px;line-height:1.5;color:#3F5739"><b>The shield fills with what they explore, not how "good" they were.</b> Kids who are paid for kindness tend to do less of it. So the shield never goes down.</div>
+  <a href="Strengths.dc.html" style="margin-top:12px;min-height:52px;border-radius:999px;background:#16203A;color:#F4E9D2;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">All 16 strengths, in kid words</a>
+  <a href="HallOfDeeds.dc.html" style="margin-top:10px;min-height:52px;border-radius:999px;border:1.5px solid #D8C9AB;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">See {{name}}'s Hall of Deeds</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1120}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { kid: 'Theo' }; }
+  renderVals() {
+    const data = {
+      Theo: { img: '/_blob/49c6eb96321a54a534a7d5155073c868', fill: [0, 0, 0.7, 0], c: '6 chapters · 2 legends', p: 'Season 3', j: 'Season 2', t: 'Season 4' },
+      June: { img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', fill: [0, 0, 0.55, 0], c: '6 chapters · 1 legend', p: 'Season 3', j: 'Season 2', t: 'Season 4' },
+      Max: { img: '/_blob/89224e240d4677b215293a2283578be4', fill: [0, 0, 0.6, 0], c: '6 chapters · 1 idea used', p: 'Season 3', j: 'Season 2', t: 'Season 4' }
+    };
+    const d = data[this.state.kid];
+    const cols = ['#6C8FB0', '#7E9A6E', '#C98A2B', '#A7869E'];
+    const q = (i) => ({ fill: cols[i], opacity: 0.18 + d.fill[i] * 0.82 });
+    const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    return {
+      kids: Object.keys(data).map((name) => ({ name, img: data[name].img, style: this.state.kid === name ? on : {}, pick: () => this.setState({ kid: name }) })),
+      q1: q(0), q2: q(1), q3: q(2), q4: q(3),
+      sub: 'Brave is glowing. Three quarters still to explore.',
+      c: d.c, p: d.p, j: d.j, t: d.t, name: this.state.kid
+    };
+  }
+}
+</script>
+</body>
+</html>

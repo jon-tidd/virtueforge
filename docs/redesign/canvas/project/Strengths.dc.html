@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 16 strengths</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.seg{flex:1;min-height:44px;border-radius:999px;border:none;font:700 13.5px 'Figtree',sans-serif;cursor:pointer}
+.fam{border-radius:22px;background:#FFFCF5;border:1px solid #E7DCC7;overflow:hidden;margin-top:10px}
+.fh{display:flex;gap:12px;align-items:center;padding:12px 14px}
+.fh img{width:52px;height:52px;border-radius:50%;object-fit:cover;display:block;flex-shrink:0}
+.s{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 14px;border-top:1px solid #EFE6D2;color:#1F1A14}
+.s:hover{background:#FBF4E6;color:#1F1A14}
+.fut{font-size:10px;font-weight:800;letter-spacing:.08em;padding:4px 7px;border-radius:999px;background:#E3ECF4;color:#2E5575;flex-shrink:0}
+.half{display:flex;align-items:baseline;gap:10px;margin-top:22px}
+</style>
+</helmet>
+<div style="width:390px;height:1800px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 24px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="Shield.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">What your kids will grow</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:34px;line-height:1.05;font-weight:600">16 strengths. Old wisdom, words kids use.</h1>
+  <p style="margin:10px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">The four classical virtues are the backbone. We named each strength so a 3-year-old can say it, and added the ones kids will need most in the world they're growing into.</p>
+  <div style="display:flex;gap:4px;margin-top:14px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{modes}}" as="m" hint-placeholder-count="2"><button class="seg" onClick="{{m.pick}}" style="{{m.style}}">{{m.label}}</button></sc-for>
+  </div>
+
+  <div class="half"><span class="disp" style="font-size:30px;font-weight:700">Grit</span><span style="font-size:14px;color:#4A4034">the strength to do hard things</span></div>
+  <sc-for list="{{grit}}" as="f" hint-placeholder-count="2">
+    <div class="fam">
+      <div class="fh" style="{{f.band}}"><img src="{{f.img}}" alt=""><div style="flex:1"><div class="disp" style="font-size:22px;font-weight:600">{{f.name}}</div><div style="font-size:12.5px;font-weight:700;opacity:.8">{{f.classic}} · Season {{f.season}}</div></div></div>
+      <sc-for list="{{f.items}}" as="s" hint-placeholder-count="4"><a class="s" href="StrengthDetail.dc.html"><span style="{{s.dot}}"></span><span style="flex:1;min-width:0"><span style="display:block;font-weight:800;font-size:15px">{{s.label}}</span><span style="display:block;font-size:12.5px;color:#6A5D4B;margin-top:1px">{{s.sub}}</span></span><sc-if value="{{s.future}}" hint-placeholder-val="{{ false }}"><span class="fut">FUTURE-READY</span></sc-if></a></sc-for>
+    </div>
+  </sc-for>
+
+  <div class="half"><span class="disp" style="font-size:30px;font-weight:700;color:#4E6A45">Grace</span><span style="font-size:14px;color:#4A4034">the heart and mind to do them well</span></div>
+  <sc-for list="{{grace}}" as="f" hint-placeholder-count="2">
+    <div class="fam">
+      <div class="fh" style="{{f.band}}"><img src="{{f.img}}" alt=""><div style="flex:1"><div class="disp" style="font-size:22px;font-weight:600">{{f.name}}</div><div style="font-size:12.5px;font-weight:700;opacity:.8">{{f.classic}} · Season {{f.season}}</div></div></div>
+      <sc-for list="{{f.items}}" as="s" hint-placeholder-count="4"><a class="s" href="StrengthDetail.dc.html"><span style="{{s.dot}}"></span><span style="flex:1;min-width:0"><span style="display:block;font-weight:800;font-size:15px">{{s.label}}</span><span style="display:block;font-size:12.5px;color:#6A5D4B;margin-top:1px">{{s.sub}}</span></span><sc-if value="{{s.future}}" hint-placeholder-val="{{ false }}"><span class="fut">FUTURE-READY</span></sc-if></a></sc-for>
+    </div>
+  </sc-for>
+
+  <div style="flex-grow:1"></div>
+  <div style="margin-top:18px;border-radius:18px;background:#EFE4CE;padding:14px 16px;font-size:13px;line-height:1.5;color:#4A4034"><b>Where these come from:</b> the four cardinal virtues (Plato, Aristotle, Aquinas); Character Lab's strengths of heart, mind and will; and the skills the World Economic Forum expects to matter most by 2030, like creative thinking, resilience, curiosity and empathy.</div>
+  <a href="LanternLoop.dc.html" style="margin-top:12px;min-height:52px;border-radius:999px;background:#16203A;color:#F4E9D2;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">How each strength is taught</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { grown: false }; }
+  renderVals() {
+    const g = this.state.grown;
+    const fams = [
+      { half: 'grit', name: 'Brave', classic: 'Courage', season: 1, img: '/_blob/96b77cd46610c0a9e7acd723281b459b', color: '#C98A2B', band: { background: '#F6E5C4' }, items: [
+        ['Brave', 'Courage', 'I do the right thing while my knees shake', 0],
+        ['Keep Going', 'Perseverance (grit)', 'Not yet… try again, a new way', 1],
+        ['Bounce Back', 'Resilience', 'Fall down, feel it, get back up', 1],
+        ['Truth-Teller', 'Honesty and integrity', 'I say what’s true, even when it’s hard', 0]] },
+      { half: 'grit', name: 'Steady', classic: 'Temperance', season: 4, img: '/_blob/f9cbc04c35602906b8b5594a609a5e80', color: '#8A6A9A', band: { background: '#EDE3EF' }, items: [
+        ['Pause Button', 'Self-control', 'Stop, breathe, then choose', 1],
+        ['Wait Well', 'Patience', 'Good things can take a while', 0],
+        ['One Thing', 'Focus and attention', 'I put the rest down and do this', 1],
+        ['Enough', 'Contentment and moderation', 'Happy with what I have', 0]] },
+      { half: 'grace', name: 'Kind & Fair', classic: 'Justice', season: 2, img: '/_blob/81fd8db7e5b784189ca3c59e5bb25b5c', color: '#4E6A45', band: { background: '#E7EEDD' }, items: [
+        ['Kind', 'Compassion and empathy', 'I notice how you feel, and help', 1],
+        ['Fair Play', 'Fairness', 'Everyone gets a turn and a say', 0],
+        ['Thankful', 'Gratitude', 'I see the good things people do for me', 0],
+        ['Better Together', 'Teamwork', 'We can do more side by side', 1]] },
+      { half: 'grace', name: 'Wise', classic: 'Prudence', season: 3, img: '/_blob/87fa6a0f68a364726e3776ce8c5bcf09', color: '#3E6A8E', band: { background: '#E3ECF4' }, items: [
+        ['Curious', 'Love of learning', 'I wonder, I ask, I find out', 1],
+        ['Think It Through', 'Good judgment', 'Stop, think, then choose the wise way', 1],
+        ['Open Mind', 'Humility', 'I might be wrong, and that’s okay', 0],
+        ['Make Something New', 'Creativity and imagination', 'I dream it up and make it real', 1]] }
+    ];
+    const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    const off = { background: 'transparent', color: '#6A5D4B' };
+    const map = (f) => ({ ...f, name: g ? f.classic : f.name, classic: g ? 'Kids call it ' + f.name : f.classic, items: f.items.map(([kid, grown, line, fut]) => ({
+      label: g ? grown : kid, sub: g ? 'Kids call it “' + kid + '”' : line, future: !!fut,
+      dot: { width: '10px', height: '10px', borderRadius: '50%', background: f.color, flexShrink: 0 } })) });
+    return {
+      modes: [['Kid words', false], ['Grown-up words', true]].map(([label, v]) => ({ label, style: g === v ? on : off, pick: () => this.setState({ grown: v }) })),
+      grit: fams.filter((f) => f.half === 'grit').map(map),
+      grace: fams.filter((f) => f.half === 'grace').map(map)
+    };
+  }
+}
+</script>
+</body>
+</html>

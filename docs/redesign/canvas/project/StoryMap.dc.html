@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Story map</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.stop{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font:800 13px 'Figtree',sans-serif;padding:0}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:#8E99B5;text-decoration:none;min-height:48px;justify-content:center}
+.tab:hover{color:#DCD2BE}
+</style>
+</helmet>
+<div style="width:390px;height:1000px;background:#16203A;color:#F4E9D2;display:flex;flex-direction:column">
+  <div style="padding:18px 20px 0;position:relative">
+    <a href="Shield.dc.html" style="position:absolute;right:20px;top:16px;min-height:44px;padding:0 14px;border-radius:999px;background:#1F2B48;border:1px solid #2F3E62;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Shields</a>
+    <div class="eyebrow" style="color:#E9A23B">Season 1 · Courage</div>
+    <div class="disp" style="font-size:30px;font-weight:600;color:#FBF3E2;margin-top:4px">The Lantern Road</div>
+    <div style="font-size:14px;color:#A99F8C;margin-top:2px">4 of 12 chapters · 2 quests stamped</div>
+  </div>
+  <div style="position:relative;margin:14px 16px 0;height:560px;border-radius:24px;background:#EBDDBF;overflow:hidden">
+    <svg width="358" height="560" viewBox="0 0 358 560" aria-hidden="true" style="position:absolute;inset:0">
+      <rect width="358" height="560" fill="#EBDDBF"/>
+      <path d="M0 440c60-20 120 10 180-10s120-40 178-20v150H0z" fill="#D7C39A"/>
+      <path d="M250 0c-10 40 20 70 60 80s48 30 48 30V0z" fill="#9DB3C4" opacity=".7"/>
+      <g fill="#7E9A6E" opacity=".75"><circle cx="40" cy="250" r="16"/><circle cx="62" cy="240" r="13"/><circle cx="30" cy="272" r="12"/><circle cx="300" cy="300" r="15"/><circle cx="318" cy="316" r="12"/><circle cx="282" cy="318" r="10"/></g>
+      <g fill="none" stroke="#6B4A22" stroke-width="1.6"><path d="M30 500h26v-18l-13-10-13 10zM62 506h22v-14l-11-8-11 8z"/><path d="M296 52v-30M290 22h12M292 30h8"/><path d="M288 52h16v6h-16z"/></g>
+      <path d="M190 330l40-6M190 338l40-6" stroke="#6B4A22" stroke-width="2"/>
+      <path d="M200 324v12M210 322v12M220 320v12" stroke="#6B4A22" stroke-width="1.4"/>
+      <path d="M52 470C110 470 150 440 120 400S60 350 110 310s120-10 100-60-110-40-90-90 110-30 150-60 20-60 20-60" fill="none" stroke="#8A5212" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+      <text x="16" y="530" font-family="Fraunces, Georgia, serif" font-size="13" font-weight="600" fill="#5B4B33">Brindlewick</text>
+      <text x="20" y="232" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#3F5739">Whispering Wood</text>
+      <text x="236" y="352" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#5B4B33">Creaking Bridge</text>
+      <text x="236" y="84" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#3E5568">Lighthouse</text>
+      <text x="112" y="150" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#5B4B33">Dragon's Hollow</text>
+    </svg>
+    <sc-for list="{{stops}}" as="s" hint-placeholder-count="8"><button class="stop" onClick="{{s.pick}}" style="{{s.style}}" aria-label="{{s.aria}}">{{s.n}}</button></sc-for>
+    <div style="position:absolute;left:16px;top:16px;display:flex;gap:6px">
+      <span style="background:#16203A;color:#E9A23B;font-size:11px;font-weight:800;letter-spacing:.08em;padding:6px 10px;border-radius:999px">STAMPED: LANTERN QUEST</span>
+    </div>
+  </div>
+  <div style="margin:12px 16px 0;border-radius:20px;background:#1F2B48;border:1px solid #2F3E62;padding:14px 16px;min-height:88px;box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="eyebrow" style="color:#E9A23B">{{tag}}</span><span style="font-size:12px;font-weight:700;color:#A99F8C">{{meta}}</span></div>
+    <div class="disp" style="font-size:20px;font-weight:600;color:#FBF3E2;margin-top:4px">{{title}}</div>
+    <div class="story" style="font-size:14px;line-height:1.45;color:#C9C0AE;margin-top:4px">{{line}}</div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;border-top:1px solid #2F3E62;background:#131B31;padding:6px 8px 10px">
+    <a class="tab" href="Tonight.dc.html"><svg width="22" height="24" viewBox="0 0 22 26" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2h6M11 2v3"/><path d="M6 7h10l-1.2 13H7.2z"/><path d="M5 21h12v3H5z"/></svg>Tonight</a>
+    <a class="tab" href="StoryMap.dc.html" style="color:#E9A23B"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Story map</a>
+    <a class="tab" href="SundayPlan.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>This week</a>
+    <a class="tab" href="Classics.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg>Library</a>
+    <a class="tab" href="Settings.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 11a3 3 0 1 0 0-6M22 21a6 6 0 0 0-5-5.7"/></svg>Family</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { pick: 4 }; }
+  renderVals() {
+    const stops = [
+      { n: 1, x: 70, y: 468, title: 'The Lantern in the Attic', line: 'Theo found the lantern. It only lights for someone brave.', meta: 'Read Sep 1' },
+      { n: 2, x: 124, y: 404, title: 'The First Dark Village', line: 'June spoke up when no one else would.', meta: 'Read Sep 2' },
+      { n: 3, x: 108, y: 314, title: 'Pip and the Thornbush', line: 'Max was scared, and helped anyway.', meta: 'Read Sep 4' },
+      { n: 4, x: 214, y: 254, title: 'The Creaking Bridge', line: 'Pip was hurt, a storm was coming, and the only way home was across.', meta: 'Tonight' },
+      { n: 5, x: 130, y: 162, title: 'The Dragon Who Was Afraid of the Dark', line: 'Max’s idea from the jar. Coming tomorrow.', meta: 'Tomorrow' },
+      { n: 6, x: 240, y: 106, title: '???', line: 'Nobody knows what waits in the fog. Not even us, yet.', meta: 'Locked' },
+      { n: 7, x: 290, y: 64, title: '???', line: 'Keep reading to find out.', meta: 'Locked' },
+      { n: 12, x: 300, y: 32, title: 'The Lighthouse', line: 'The season finale. Where the lantern was always meant to go.', meta: 'Finale' }
+    ];
+    const cur = stops.find((s) => s.n === this.state.pick) || stops[3];
+    const style = (s) => {
+      const read = s.n < 4, now = s.n === 4, sel = s.n === this.state.pick;
+      const base = { left: s.x + 'px', top: s.y + 'px' };
+      if (now) return { ...base, background: '#E9A23B', color: '#16203A', boxShadow: '0 0 0 8px rgba(233,162,59,.35)' };
+      if (read) return { ...base, background: '#16203A', color: '#E9A23B', boxShadow: sel ? '0 0 0 4px #E9A23B' : 'none' };
+      return { ...base, background: '#F7F1E5', color: '#8A7A60', border: '2px dashed #A99F8C', boxShadow: sel ? '0 0 0 4px #16203A' : 'none' };
+    };
+    return {
+      stops: stops.map((s) => ({ ...s, style: style(s), aria: 'Chapter ' + s.n, pick: () => this.setState({ pick: s.n }) })),
+      tag: 'Chapter ' + cur.n, meta: cur.meta, title: cur.title, line: cur.line
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{background:#1a1a1a;width:390px}
+.frame{background:#FBF6EC;color:#1C2233;position:relative;overflow:hidden}
+.cap{background:#111;padding:16px 20px 14px}
+.cap b{display:block;font:700 11px var(--sans);letter-spacing:.14em;color:var(--gold);margin-bottom:4px}
+.cap h2{font:700 17px/1.3 var(--sans);color:#fff}
+.cap p{font:400 12.5px/1.5 var(--sans);color:#bbb;margin-top:5px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;position:absolute;top:0;left:0;right:0;z-index:5}
+.logo{display:flex;gap:8px;align-items:center;font:600 19px var(--display);color:#FBEFD2;letter-spacing:.01em}
+.navbtn{font:600 12.5px var(--sans);color:#1A1206;background:#F3D48A;padding:8px 13px;border-radius:100px}
+.hero{position:relative;height:700px;background:linear-gradient(180deg,#0E1830 0%,#1B2A4E 55%,#2B3A5E 100%);overflow:hidden}
+.hero .scene{position:absolute;left:0;right:0;top:40px}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;padding:0 22px 26px;text-align:center;background:linear-gradient(180deg,rgba(14,24,48,0) 0%,rgba(14,24,48,.92) 26%,#0E1830 100%);padding-top:70px}
+h1{font:600 38px/1.04 var(--display);color:#FBEFD2}
+h1 em{color:#F3D48A}
+.sub{font:400 15px/1.5 var(--sans);color:rgba(251,239,210,.75);margin:12px auto 18px;max-width:330px}
+.cta{display:block;border-radius:100px;padding:15px;text-align:center;font:700 16px var(--sans);color:#1A1206;background:linear-gradient(180deg,#FFD978,#E0A83C);box-shadow:0 6px 26px rgba(240,180,60,.35)}
+.trust{display:flex;justify-content:center;gap:14px;margin-top:12px;font:500 11.5px var(--sans);color:rgba(251,239,210,.55)}
+.sec{padding:30px 20px}
+.eyebrow{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#A77B22}
+h2.t{font:600 30px/1.08 var(--display);color:#1C2233;margin-top:6px}
+.lead{font:400 14.5px/1.55 var(--sans);color:#5B5346;margin-top:8px}
+.step{display:flex;gap:14px;margin-top:18px;align-items:flex-start}
+.step .n{width:34px;height:34px;border-radius:50%;background:#1C2233;color:#F3D48A;font:700 16px var(--display);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step b{display:block;font:700 15px var(--sans)}
+.step p{font:400 13.5px/1.45 var(--sans);color:#5B5346;margin-top:2px}
+.card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(60,40,10,.08);padding:16px;margin-top:14px}
+.page{background:#F4EAD5;border-radius:6px 14px 14px 6px;box-shadow:0 14px 30px rgba(60,40,10,.18), inset 7px 0 12px -7px rgba(90,60,20,.35);overflow:hidden}
+.evid{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #EFE6D2}
+.evid:first-child{border:none}
+.evid .ic{width:30px;height:30px;border-radius:8px;background:#FDF1D6;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.evid b{font:700 13.5px var(--sans)}
+.evid p{font:400 12.5px/1.45 var(--sans);color:#5B5346;margin-top:2px}
+.evid i{font:italic 400 11px var(--sans);color:#9A8F7C;display:block;margin-top:3px}
+.price{border-radius:16px;padding:16px;margin-top:12px;border:1.5px solid #E6DCC6;background:#fff}
+.price.hot{border-color:#1C2233;background:#1C2233;color:#FBEFD2}
+.price .row{display:flex;justify-content:space-between;align-items:baseline}
+.price h3{font:600 22px var(--display)}
+.price .amt{font:700 22px var(--sans)}
+.price .amt small{font:500 12px var(--sans);opacity:.7}
+.price ul{list-style:none;margin-top:8px}
+.price li{font:400 13px/1.5 var(--sans);padding-left:18px;position:relative;opacity:.9}
+.price li:before{content:"✓";position:absolute;left:0;color:#C99A2E;font-weight:700}
+.chip{display:inline-block;font:600 12px var(--sans);padding:8px 12px;border-radius:100px;border:1.5px solid #E2D8C4;background:#fff;margin:0 6px 8px 0;color:#4B4436}
+.chip.on{border-color:#1C2233;background:#1C2233;color:#FBEFD2}
+.sw{display:inline-block;width:30px;height:30px;border-radius:50%;margin-right:8px;border:3px solid #fff;box-shadow:0 0 0 1.5px #E2D8C4}
+.sw.on{box-shadow:0 0 0 2.5px #1C2233}
+.lbl{font:700 10.5px var(--sans);letter-spacing:.12em;color:#9A8F7C;text-transform:uppercase;margin:14px 0 8px}
+</style></head><body>
+
+<!-- ============ 1. HOMEPAGE HERO ============ -->
+<section class="frame" id="s1">
+<div class="cap"><b>1 · HOMEPAGE · WHAT A PARENT SEES FIRST</b><h2>Lead with the outcome parents feel: their kids, drawn into a real story.</h2><p>No "AI" in the headline. One button. The promise, the virtue and the trust signal (no photos) all fit in one screen.</p></div>
+<div class="hero">
+  <nav><div class="logo"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M10 1 L19 4 V10 C19 16 15 19.5 10 21 C5 19.5 1 16 1 10 V4 Z" fill="none" stroke="#F3D48A" stroke-width="2"/></svg>Bedtime Virtues</div><div class="navbtn">Start free</div></nav>
+  <div class="scene" style="top:0;height:520px;background:url(img/hero-kids.png) center 18%/cover"></div>
+  <div class="txt">
+    <h1>Your kids, drawn into<br>a story that <em>grows them.</em></h1>
+    <p class="sub">A new chapter every night starring your children, written by people and read by you. One virtue a week, from courage to kindness.</p>
+    <div class="cta">Draw your child in: free</div>
+    <div class="trust"><span>Ages 3–9</span><span>·</span><span>All siblings, one story</span><span>·</span><span>Never a photo</span></div>
+  </div>
+</div>
+</section>
+
+<!-- ============ 2. HOW IT WORKS ============ -->
+<section class="frame" id="s2">
+<div class="cap"><b>2 · HOMEPAGE · HOW IT WORKS</b><h2>Three steps: draw them in, read tonight's chapter, carry it into tomorrow.</h2><p>This replaces the "two paths" (AI generator vs. book list). The book library becomes part of step 2 instead of a competing product.</p></div>
+<div class="sec">
+  <div class="eyebrow">How it works</div>
+  <h2 class="t">Twenty minutes a night. A habit for life.</h2>
+  <div class="step"><div class="n">1</div><div><b>Draw them in, once</b><p>Pick hair, eyes, glasses, a favorite outfit. Each child becomes the same recognizable hero in every chapter. No photo needed.</p></div></div>
+  <div class="step"><div class="n">2</div><div><b>Read tonight's chapter together</b><p>A human-written adventure that continues every night, plus the classic book that teaches the same virtue.</p></div></div>
+  <div class="step"><div class="n">3</div><div><b>Carry it into the day</b><p>A two-minute question at lights-out, one small mission, and a fridge card. When you spot it, the story remembers.</p></div></div>
+  <div class="page" style="margin-top:20px">
+    <div id="pageScene" style="height:190px"></div>
+    <div style="padding:14px 18px 16px">
+      <div style="font:700 10px var(--sans);letter-spacing:.14em;color:#A77B22">CHAPTER 4 · COURAGE</div>
+      <p style="font:400 16px/1.55 var(--serif);color:#2A2118;margin-top:6px"><span style="float:left;font:700 44px/.8 var(--display);color:#A77B22;margin:5px 7px 0 0">T</span>heo held the lantern high while June squeezed Max's hand. The bridge creaked. "I'll go first," Theo said, though his knees were shaking.</p>
+    </div>
+  </div>
+  <p style="text-align:center;font:italic 400 12px var(--sans);color:#9A8F7C;margin-top:8px">A real page: Theo (8), June (5) and Max (3), drawn from their parents' choices</p>
+</div>
+</section>
+
+<!-- ============ 3. WHY IT WORKS + PRICING ============ -->
+<section class="frame" id="s3">
+<div class="cap"><b>3 · HOMEPAGE · WHY IT WORKS & PRICING</b><h2>Real research stated plainly, then a price parents won't flinch at.</h2><p>Four verified findings replace the eight-card research wall. Pricing is $49/yr with all siblings included; print and voice raise the total per family.</p></div>
+<div class="sec">
+  <div class="eyebrow">Why it works</div>
+  <h2 class="t">Built on how children actually learn.</h2>
+  <div class="card" style="padding:4px 16px">
+    <div class="evid"><div class="ic">🪞</div><div><b>Seeing themselves changes behavior</b><p>Kids who heard a sharing story with their own face and name shared more than kids who heard the same story without it.</p><i>Early Childhood Education Journal, 2025 (315 children)</i></div></div>
+    <div class="evid"><div class="ic">🌟</div><div><b>Goodness rewarded, not vice punished</b><p>Stories where honesty turns out well made kids more truthful. Pinocchio didn't.</p><i>Psychological Science, 2014; replicated 2025</i></div></div>
+    <div class="evid"><div class="ic">💬</div><div><b>"Why do you think…?" beats a lecture</b><p>Asking kids to explain the lesson helps them apply it to new situations better than telling them the moral.</p><i>Cognition, 2017</i></div></div>
+    <div class="evid"><div class="ic">🌙</div><div><b>Five nights a week is enough</b><p>The benefits of a bedtime routine grow with each night, so missing one isn't failure.</p><i>Sleep, 2015</i></div></div>
+  </div>
+  <div class="eyebrow" style="margin-top:26px">Pricing</div>
+  <div class="price"><div class="row"><h3>Free</h3><div class="amt">$0</div></div><ul><li>Draw in every child</li><li>The first 3 chapters, starring them</li><li>Weekly fridge card & classics library</li></ul></div>
+  <div class="price hot"><div class="row"><h3>Family</h3><div class="amt">$49<small>/yr</small></div></div><div style="font:500 12px var(--sans);opacity:.7">or $5.99/mo · all siblings included</div><ul><li>A new chapter every night, all kids drawn in</li><li>Missions, "spotted it" legends, lamps</li><li>Printable booklets · chapter-book mode for ages 6–9</li></ul></div>
+  <div class="price"><div class="row"><h3>Heirloom</h3><div class="amt">$89<small>/yr</small></div></div><ul><li>Everything in Family</li><li>Chapters narrated in your voice or a grandparent's</li><li>Their year printed as a hardcover</li></ul></div>
+</div>
+</section>
+
+<!-- ============ 4. ONBOARDING: AVATAR BUILDER ============ -->
+<section class="frame" id="s4">
+<div class="cap"><b>4 · AFTER "START FREE" · THE 60-SECOND WOW</b><h2>The first thing a parent does is draw their child in, and it lands immediately.</h2><p>Most people who cancel a free trial do it on day one, so the child has to appear as the hero before any signup or paywall. This is a tap-to-choose builder, not a photo upload.</p></div>
+<div class="sec" style="padding-top:18px">
+  <div style="display:flex;justify-content:space-between;font:600 11px var(--sans);color:#9A8F7C;letter-spacing:.1em"><span>DRAW YOUR HERO</span><span>1 OF 3 CHILDREN</span></div>
+  <div style="display:flex;gap:14px;align-items:center;margin-top:10px">
+    <div id="builderAvatar" style="width:150px;height:190px;border-radius:18px;background:radial-gradient(circle at 50% 40%,#FFF3D6,#F1E2BF);display:flex;align-items:flex-end;justify-content:center;flex-shrink:0"></div>
+    <div><div style="font:600 30px var(--display)">Theo, 8</div><div style="font:400 13px/1.45 var(--sans);color:#5B5346;margin-top:4px">"That's me!" is the goal of this screen.</div>
+      <div style="margin-top:10px"><span class="chip on">Boy</span><span class="chip">Girl</span></div></div>
+  </div>
+  <div class="lbl">Skin</div>
+  <span class="sw" style="background:#F7D7BD"></span><span class="sw on" style="background:#EDC19C"></span><span class="sw" style="background:#C98F66"></span><span class="sw" style="background:#9A6443"></span><span class="sw" style="background:#6B4430"></span>
+  <div class="lbl">Hair</div>
+  <span class="chip on">Messy</span><span class="chip">Short</span><span class="chip">Curly</span><span class="chip">Braids</span><span class="chip">Long</span>
+  <div><span class="sw" style="background:#2A1B12"></span><span class="sw on" style="background:#6B4423"></span><span class="sw" style="background:#B7793F"></span><span class="sw" style="background:#E3C27A"></span><span class="sw" style="background:#B2472A"></span></div>
+  <div class="lbl">Extras</div>
+  <span class="chip on">Round glasses</span><span class="chip">Freckles</span><span class="chip on">Green hoodie</span><span class="chip">Dino boots</span>
+  <div class="cta" style="margin-top:16px">Next: add June →</div>
+  <p style="text-align:center;font:500 11.5px var(--sans);color:#9A8F7C;margin-top:9px">🔒 We never ask for a photo. Nothing here identifies your child.</p>
+</div>
+</section>
+
+<!-- ============ 5. FIRST CHAPTER READER ============ -->
+<section class="frame" id="s5" style="background:#120D07">
+<div class="cap"><b>5 · TONIGHT · THE READING PAGE</b><h2>Chapter 1, starring all three. Low-light, made to be read aloud.</h2><p>One illustration of the kids per chapter keeps costs near $1 per family per month. The pause asks the child to explain, and the chapter ends on a cliffhanger.</p></div>
+<div style="padding:14px 18px 22px">
+  <div style="display:flex;justify-content:space-between;font:600 11px var(--sans);letter-spacing:.08em;color:rgba(233,201,160,.5)"><span>◐ NIGHTLIGHT</span><span>Aa &nbsp; 🎧 &nbsp; 🖨 &nbsp; 2 / 6</span></div>
+  <div id="readerScene" style="height:200px;border-radius:12px;overflow:hidden;margin-top:10px;filter:brightness(.88) sepia(.12)"></div>
+  <p style="font:400 19px/1.62 var(--serif);color:#E9C9A0;margin-top:14px">On the far side of the bridge sat a little fox with a thorn in its paw. Max wanted to run. June wanted to cry. But Theo remembered what Grandpa said about brave people: they are scared <i>and</i> they go anyway.</p>
+  <div style="margin-top:14px;border-radius:14px;border:1px solid rgba(243,212,138,.35);background:rgba(243,212,138,.07);padding:13px 14px">
+    <div style="font:700 10px var(--sans);letter-spacing:.14em;color:#F3D48A">PAUSE & ASK</div>
+    <div style="font:500 italic 19px/1.3 var(--display);color:#F7EBD0;margin-top:5px">"Why do you think Theo went first, even though he was scared?"</div>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:12px">
+    <div style="flex:1;border-radius:12px;border:1px solid rgba(243,230,200,.12);padding:10px;text-align:center;font:500 11.5px var(--sans);color:rgba(243,230,200,.65)">Tonight's classic pairing<br><b style="color:#F3D48A">The Courage of Sarah Noble</b></div>
+    <div style="flex:1;border-radius:12px;border:1px solid rgba(243,230,200,.12);padding:10px;text-align:center;font:500 11.5px var(--sans);color:rgba(243,230,200,.65)">Tomorrow's mission<br><b style="color:#F3D48A">Try one scary thing</b></div>
+  </div>
+</div>
+</section>
+
+<!-- ============ 6. GRANDPARENT SHARE ============ -->
+<section class="frame" id="s6">
+<div class="cap"><b>6 · THE GROWTH LOOP · SHARE WITH GRANDMA</b><h2>A picture of the grandkids as heroes is the best free marketing there is.</h2><p>One tap sends a story card. Grandparents spend about $2,654 a year on grandkids (AARP 2026), so the card leads to "gift a year" or "record a chapter in your voice." This replaces the podcast as the main way new families arrive.</p></div>
+<div class="sec">
+  <div style="font:500 12px var(--sans);color:#9A8F7C;text-align:center">Message preview · sent from Jon</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-top:10px">
+    <div id="shareScene" style="height:210px"></div>
+    <div style="padding:14px 16px 16px">
+      <div style="font:600 22px/1.15 var(--display)">Theo, June & Max are on an adventure</div>
+      <p style="font:400 13px/1.45 var(--sans);color:#5B5346;margin-top:5px">Tonight they crossed the Creaking Bridge. Tap to read Chapter 4, then tell Theo what you'd have done.</p>
+      <div class="cta" style="margin-top:12px;padding:12px;font-size:14.5px">Read their story</div>
+      <div style="display:flex;gap:8px;margin-top:9px">
+        <div style="flex:1;text-align:center;font:600 12.5px var(--sans);padding:10px;border-radius:100px;border:1.5px solid #1C2233">🎙 Read a chapter aloud</div>
+        <div style="flex:1;text-align:center;font:600 12.5px var(--sans);padding:10px;border-radius:100px;border:1.5px solid #1C2233">🎁 Gift a year</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+// ---- simple storybook avatar system ----
+function kid(o){
+  const s=o.skin||'#EDC19C', h=o.hair||'#6B4423', top=o.top||'#2F6B45', legs=o.legs||'#3B3F5C', boots=o.boots||'#5B3A1A';
+  const hairSvg={
+    messy:`<path d="M29 40 C27 22 42 14 52 16 C66 16 75 26 72 42 C68 33 62 30 56 31 C57 35 50 35 47 31 C43 36 35 36 29 40Z" fill="${h}"/>`,
+    braids:`<path d="M29 42 C28 22 42 15 50 15 C60 15 73 22 71 42 C67 30 58 27 50 27 C42 27 33 30 29 42Z" fill="${h}"/><path d="M27 40 C22 52 24 64 27 70 C31 64 32 52 31 42Z" fill="${h}"/><path d="M73 40 C78 52 76 64 73 70 C69 64 68 52 69 42Z" fill="${h}"/><circle cx="27" cy="71" r="3" fill="#D9534F"/><circle cx="73" cy="71" r="3" fill="#D9534F"/>`,
+    short:`<path d="M30 40 C29 24 41 17 50 17 C61 17 72 24 70 40 C66 31 58 29 50 29 C42 29 34 31 30 40Z" fill="${h}"/>`
+  }[o.style||'messy'];
+  const glasses=o.glasses?`<circle cx="43" cy="44" r="6" fill="none" stroke="#2A2118" stroke-width="1.8"/><circle cx="57" cy="44" r="6" fill="none" stroke="#2A2118" stroke-width="1.8"/><path d="M49 44h2" stroke="#2A2118" stroke-width="1.8"/>`:'';
+  const hood=o.hood?`<path d="M26 58 C28 48 72 48 74 58 L70 66 L30 66Z" fill="${top}" opacity=".9"/>`:'';
+  const arm=o.lantern?`<path d="M70 72 L84 58" stroke="${top}" stroke-width="8" stroke-linecap="round"/><circle cx="85" cy="56" r="4" fill="${s}"/><line x1="85" y1="56" x2="85" y2="63" stroke="#6B5a3c" stroke-width="1.5"/><rect x="79" y="63" width="12" height="15" rx="3" fill="#C99A2E"/><rect x="81.5" y="65.5" width="7" height="10" rx="2" fill="#FFE9A8"/>`:`<path d="M70 72 L76 94" stroke="${top}" stroke-width="8" stroke-linecap="round"/><circle cx="76" cy="96" r="4" fill="${s}"/>`;
+  return `<svg viewBox="0 0 100 150" width="${o.w||100}" height="${(o.w||100)*1.5}">
+    ${hood}
+    <path d="M30 66 C30 60 70 60 70 66 L74 112 L26 112Z" fill="${top}"/>
+    ${o.smock?`<path d="M34 80 L66 80 L68 112 L32 112Z" fill="#F4EAD5"/><circle cx="44" cy="92" r="2.5" fill="#E07A5F"/><circle cx="56" cy="99" r="2.5" fill="#3D7DCA"/><circle cx="50" cy="88" r="2" fill="#F2C94C"/>`:''}
+    <path d="M30 72 L24 94" stroke="${top}" stroke-width="8" stroke-linecap="round"/><circle cx="24" cy="96" r="4" fill="${s}"/>
+    ${arm}
+    <rect x="36" y="110" width="11" height="24" rx="4" fill="${legs}"/><rect x="53" y="110" width="11" height="24" rx="4" fill="${legs}"/>
+    <path d="M33 132 h16 v8 h-18 z" fill="${boots}"/><path d="M51 132 h16 v8 h-16 z" fill="${boots}"/>
+    ${o.dino?`<path d="M33 132 l3 -4 l3 4 l3 -4 l3 4" fill="${boots}"/><path d="M51 132 l3 -4 l3 4 l3 -4 l3 4" fill="${boots}"/>`:''}
+    <rect x="45" y="56" width="10" height="7" fill="${s}"/>
+    <circle cx="50" cy="42" r="19" fill="${s}"/>
+    <circle cx="43" cy="44" r="2" fill="#2A2118"/><circle cx="57" cy="44" r="2" fill="#2A2118"/>
+    ${glasses}
+    ${o.freckles?`<g fill="#B5764F" opacity=".6"><circle cx="40" cy="50" r=".9"/><circle cx="43" cy="51.5" r=".9"/><circle cx="57" cy="51.5" r=".9"/><circle cx="60" cy="50" r=".9"/></g>`:''}
+    <path d="M45 52 Q50 56 55 52" fill="none" stroke="#9a5b3c" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="38" cy="50" r="3" fill="#F2A58E" opacity=".55"/><circle cx="62" cy="50" r="3" fill="#F2A58E" opacity=".55"/>
+    ${hairSvg}
+  </svg>`;
+}
+const theo=w=>kid({w,skin:'#EDC19C',hair:'#6B4423',style:'messy',glasses:1,top:'#2F6B45',hood:1,lantern:1,boots:'#4A3020'});
+const june=w=>kid({w,skin:'#EDC19C',hair:'#B7793F',style:'braids',top:'#C0504D',smock:1,freckles:1,legs:'#5B4B6B',boots:'#8A5A3A'});
+const max=w=>kid({w,skin:'#EDC19C',hair:'#E3C27A',style:'short',top:'#3D7DCA',legs:'#3B3F5C',boots:'#4CAF50',dino:1});
+function fox(w){return `<svg viewBox="0 0 80 60" width="${w}" height="${w*.75}"><path d="M10 45 C5 35 12 22 26 24 L50 26 C60 20 66 24 68 30 L74 22 L74 36 C72 44 64 48 52 48 L22 50 C16 50 12 49 10 45Z" fill="#D9713A"/><path d="M12 44 C-4 44 -4 22 8 20 C6 30 8 38 16 40Z" fill="#D9713A"/><path d="M0 26 C1 20 5 19 8 20 C6 23 5 26 5 29Z" fill="#fff"/><path d="M58 27 L61 13 L67 25Z" fill="#D9713A"/><path d="M65 25 L70 13 L73 27Z" fill="#D9713A"/><path d="M60 24 L61.5 17 L64 24Z" fill="#6B3A1C"/><circle cx="65" cy="31" r="1.8" fill="#2A2118"/><circle cx="75" cy="34" r="1.8" fill="#2A2118"/><path d="M60 38 C64 40 70 40 72 36" fill="#fff"/><rect x="26" y="46" width="5" height="10" rx="2" fill="#6B3A1C"/><rect x="44" y="46" width="5" height="10" rx="2" fill="#6B3A1C"/></svg>`}
+function sky(id,h,opts={}){
+  const el=document.getElementById(id); el.style.position='relative'; el.style.overflow='hidden';
+  let seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};const stars=Array.from({length:34},()=>`<circle cx="${rnd()*390}" cy="${rnd()*h*.5}" r="${rnd()*1.1+.5}" fill="#FFF7DE" opacity="${.35+rnd()*.5}"/>`).join('');
+  el.innerHTML=`<svg viewBox="0 0 390 ${h}" width="390" height="${h}" style="position:absolute;inset:0">
+   <defs><radialGradient id="glow${id}" cx="${opts.gx||.55}" cy="${opts.gy||.62}" r=".45"><stop offset="0" stop-color="#FFD978" stop-opacity=".55"/><stop offset="1" stop-color="#FFD978" stop-opacity="0"/></radialGradient>
+   <linearGradient id="sk${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1830"/><stop offset="1" stop-color="#2B3A5E"/></linearGradient></defs>
+   <rect width="390" height="${h}" fill="url(#sk${id})"/>${stars}
+   <circle cx="${opts.mx||320}" cy="${opts.my||60}" r="24" fill="#FFF3C8"/><circle cx="${(opts.mx||320)+9}" cy="${(opts.my||60)-5}" r="21" fill="#16223F"/>
+   <path d="M0 ${h*.62} C80 ${h*.52} 160 ${h*.6} 240 ${h*.55} C300 ${h*.51} 350 ${h*.56} 390 ${h*.53} L390 ${h} L0 ${h}Z" fill="#1F3B3A"/>
+   <path d="M0 ${h*.74} C100 ${h*.66} 200 ${h*.76} 390 ${h*.68} L390 ${h} L0 ${h}Z" fill="#274B45"/>
+   ${[20,60,300,350].map((x,i)=>`<path d="M${x} ${h*.7} l14 -${60+i*8} l14 ${60+i*8}Z" fill="#163230"/>`).join('')}
+   <rect width="390" height="${h}" fill="url(#glow${id})"/>
+  </svg>`;
+  return el;
+}
+function place(el,html,x,y){const d=document.createElement('div');d.style.cssText=`position:absolute;left:${x}px;top:${y}px`;d.innerHTML=html;el.appendChild(d);}
+// hero
+let e;
+// page
+e=sky('pageScene',190,{gy:.6,mx:60,my:40});
+place(e,max(56),120,88); place(e,june(64),160,76); place(e,theo(78),215,58);
+e.insertAdjacentHTML('beforeend',`<svg style="position:absolute;left:0;top:150px" width="390" height="40"><path d="M0 8 Q195 -6 390 8" stroke="#6B4A2A" stroke-width="6" fill="none"/><g stroke="#6B4A2A" stroke-width="3">${Array.from({length:14},(_,i)=>`<line x1="${i*30}" y1="6" x2="${i*30}" y2="40"/>`).join('')}</g></svg>`);
+// reader
+e=sky('readerScene',200,{gy:.62,gx:.4,mx:340,my:40});
+place(e,max(54),40,98); place(e,june(62),84,86); place(e,theo(80),128,64); place(e,fox(62),270,150);
+// share
+e=sky('shareScene',210,{gy:.6});
+place(e,max(58),90,98); place(e,june(68),138,84); place(e,theo(86),195,58); place(e,fox(56),296,160);
+// builder
+document.getElementById('builderAvatar').innerHTML=theo(130);
+</script>
+</body></html>

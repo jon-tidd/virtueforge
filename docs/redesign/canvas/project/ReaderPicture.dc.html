@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reader, picture-book layout</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.seg{flex:1;min-height:40px;border-radius:999px;border:none;font:700 13px 'Figtree',sans-serif;cursor:pointer}
+.ctl{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:#C9B89A;background:none;border:none;cursor:pointer}
+</style>
+</helmet>
+<div style="width:390px;height:844px;background:#150F0A;color:#EAD9BC;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px">
+    <a class="ctl" href="Tonight.dc.html" aria-label="Close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+    <div style="display:flex;gap:4px;background:#241A10;border-radius:999px;padding:3px;width:210px">
+      <button class="seg" style="background:#E9A23B;color:#150F0A">Picture book</button>
+      <button class="seg" style="background:transparent;color:#C9B89A">Chapter</button>
+    </div>
+    <button class="ctl" aria-label="Text size"><span style="font-family:'Literata',serif;font-size:17px;font-weight:600">Aa</span></button>
+  </div>
+  <div style="margin:6px 16px 0;background:#241A10;border-radius:14px;padding:10px 14px;font-size:13.5px;line-height:1.45;color:#C9B89A"><b style="color:#EAD9BC">Last time:</b> Pip hurt his paw, and a storm rolled in over the ravine.</div>
+  <img src="/_blob/cad61d914887b2f743a2f499c1d01aae" alt="Max and June holding hands near Pip the fox" style="width:358px;height:360px;margin:14px 16px 0;border-radius:22px;object-fit:cover;object-position:18% 45%;display:block">
+  <p class="story" style="margin:22px 24px 0;font-size:25px;line-height:1.5;color:#F4E4C6">Max looked at the long, wobbly bridge.<br>It was very, very long.</p>
+  <p class="story" style="margin:12px 24px 0;font-size:25px;line-height:1.5;color:#F4E4C6">June squeezed his hand. "Together?"</p>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px 18px">
+    <span style="font-size:12.5px;color:#8C7B5E;font-weight:600">For Max · age 3</span>
+    <div style="display:flex;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#5A4526"></span><span style="width:20px;height:7px;border-radius:4px;background:#E9A23B"></span><span style="width:7px;height:7px;border-radius:50%;background:#5A4526"></span><span style="width:7px;height:7px;border-radius:50%;background:#5A4526"></span><span style="width:7px;height:7px;border-radius:50%;background:#5A4526"></span></div>
+    <a href="ReaderChapter.dc.html" aria-label="Next page" style="width:52px;height:52px;border-radius:50%;background:#E9A23B;color:#150F0A;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sunday: the week ahead</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.kid{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:74px;border-radius:18px;border:1.5px solid transparent;background:transparent;font:700 13px 'Figtree',sans-serif;color:#6A5D4B;cursor:pointer;padding:6px 0}
+.kid img{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block}
+.day{display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #EFE6D2}
+.dn{width:34px;font-size:12px;font-weight:800;color:#8A5212;letter-spacing:.06em}
+.go{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:84px;border-radius:18px;background:#FFFCF5;border:1px solid #E7DCC7;padding:10px 12px;color:#1F1A14;font-size:13.5px;font-weight:700}
+.go:hover{background:#FBF4E6;color:#1F1A14}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:#8E99B5;text-decoration:none;min-height:48px;justify-content:center}
+.tab:hover{color:#DCD2BE}
+</style>
+</helmet>
+<div style="width:390px;height:1100px;background:#F7F1E5;display:flex;flex-direction:column">
+  <div style="position:relative;height:250px;overflow:hidden;background:#16203A">
+    <img src="/_blob/96b77cd46610c0a9e7acd723281b459b" alt="A lion standing in lantern light" style="width:100%;height:250px;object-fit:cover;display:block;opacity:.9">
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;background:#16203A;background:rgba(22,32,58,.82);color:#FBF3E2">
+      <div class="eyebrow" style="color:#E9A23B">Sunday · Week 6 of the Lantern Road</div>
+      <div class="disp" style="font-size:34px;line-height:1.05;font-weight:600;margin-top:6px">This week: Brave</div>
+      <div style="font-size:14.5px;color:#DCD2BE;margin-top:4px">Doing the right thing while your knees shake. <span style="color:#A99F8C">(Courage)</span></div>
+    </div>
+  </div>
+  <div style="padding:18px 20px 0">
+    <div class="eyebrow" style="color:#6A5D4B">Each child's "I can…" this week</div>
+    <div style="display:flex;gap:6px;margin-top:10px">
+      <sc-for list="{{kids}}" as="k" hint-placeholder-count="3"><button class="kid" onClick="{{k.pick}}" style="{{k.style}}"><img src="{{k.img}}" alt="">{{k.label}}</button></sc-for>
+    </div>
+    <div style="margin-top:10px;border-radius:20px;background:#16203A;color:#FBF3E2;padding:18px 18px 16px">
+      <div class="story" style="font-size:21px;line-height:1.35">"I can {{ican}}"</div>
+      <div style="font-size:13.5px;line-height:1.45;color:#B8AE9A;margin-top:10px">{{how}}</div>
+    </div>
+  </div>
+  <div style="padding:18px 20px 0">
+    <div class="eyebrow" style="color:#6A5D4B">The week in the story</div>
+    <div style="margin-top:6px">
+      <div class="day"><span class="dn">MON</span><span class="story" style="flex:1;font-size:15px">Ch. 4 · The Creaking Bridge</span><svg width="16" height="18" viewBox="0 0 22 26" aria-hidden="true"><path d="M6 7h10l-1.2 13H7.2z" fill="#E9A23B"/></svg></div>
+      <div class="day"><span class="dn">TUE</span><span class="story" style="flex:1;font-size:15px">Ch. 5 · The Dragon Who Was Afraid of the Dark</span><span style="font-size:11px;font-weight:800;color:#7A4A10;background:#F3E1BE;padding:4px 8px;border-radius:999px">MAX'S IDEA</span></div>
+      <div class="day"><span class="dn">WED</span><span class="story" style="flex:1;font-size:15px">Ch. 6 · Lanterns in the Fog</span></div>
+      <div class="day"><span class="dn">THU</span><span class="story" style="flex:1;font-size:15px">Ch. 7 · The Keeper's Riddle</span></div>
+      <div class="day"><span class="dn">FRI</span><span class="story" style="flex:1;font-size:15px">Ch. 8 · Home by Starlight</span></div>
+      <a class="day" href="SaturdayTrial.dc.html" style="border-bottom:none;color:#1F1A14"><span class="dn">SAT</span><span style="flex:1;font-size:15px;font-weight:700">Saturday trial: The Lantern Quest</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div style="padding:14px 20px 0;display:flex;gap:8px">
+    <a class="go" href="FridgeCard.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="1.8" aria-hidden="true"><path d="M6 3h12v18H6zM6 10h12M9 6v2M9 13v3"/></svg>Fridge card</a>
+    <a class="go" href="Booklet.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v14"/></svg>Booklet</a>
+    <a class="go" href="TalkCards.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Talk cards</a>
+  </div>
+  <a href="Classics.dc.html" style="margin:12px 20px 0;display:flex;gap:12px;align-items:center;border-radius:18px;background:#EFE4CE;padding:12px 14px;color:#1F1A14">
+    <div style="width:44px;height:58px;border-radius:4px 8px 8px 4px;background:#4E6A45;display:flex;align-items:center;justify-content:center;color:#F4E9D2;font:600 9px 'Fraunces',serif;text-align:center;flex-shrink:0;padding:0 3px;box-sizing:border-box">Sarah Noble</div>
+    <div style="flex:1;font-size:14px;line-height:1.4"><b>This week's library pick:</b> <i>The Courage of Sarah Noble</i>, about an 8-year-old girl as brave as Theo. Borrow it, or read a retold classic.</div>
+  </a>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;border-top:1px solid #2F3E62;background:#131B31;padding:6px 8px 10px">
+    <a class="tab" href="Tonight.dc.html"><svg width="22" height="24" viewBox="0 0 22 26" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2h6M11 2v3"/><path d="M6 7h10l-1.2 13H7.2z"/><path d="M5 21h12v3H5z"/></svg>Tonight</a>
+    <a class="tab" href="StoryMap.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>Story map</a>
+    <a class="tab" href="SundayPlan.dc.html" style="color:#E9A23B"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>This week</a>
+    <a class="tab" href="Classics.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg>Library</a>
+    <a class="tab" href="Settings.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 11a3 3 0 1 0 0-6M22 21a6 6 0 0 0-5-5.7"/></svg>Family</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { kid: 'Theo' }; }
+  renderVals() {
+    const data = {
+      Theo: { img: '/_blob/49c6eb96321a54a534a7d5155073c868', age: 8, ican: 'tell the truth about a mistake, even when it’s scary.', how: 'Age 8: courage as honesty. Watch for it at school pickup, when things go wrong.' },
+      June: { img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', age: 5, ican: 'say my idea out loud.', how: 'Age 5: courage as speaking up. Give her the first turn at dinner.' },
+      Max: { img: '/_blob/89224e240d4677b215293a2283578be4', age: 3, ican: 'try something new with a grown-up close by.', how: 'Age 3: courage as trying. The big slide counts. So does a new food.' }
+    };
+    const on = { background: '#FFFCF5', borderColor: '#E9A23B', color: '#1F1A14' };
+    const d = data[this.state.kid];
+    return {
+      kids: Object.keys(data).map((name) => ({ img: data[name].img, label: name + ' · ' + data[name].age, style: this.state.kid === name ? on : {}, pick: () => this.setState({ kid: name }) })),
+      ican: d.ican, how: d.how
+    };
+  }
+}
+</script>
+</body>
+</html>

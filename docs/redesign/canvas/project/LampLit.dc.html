@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lantern lit, goodnight</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.hang{position:absolute;width:34px;display:flex;flex-direction:column;align-items:center}
+.sway{transform-origin:50% 0;animation:sway 4.2s ease-in-out infinite;display:flex;justify-content:center}
+.bigsway{transform-origin:50% 0;animation:sway 6s ease-in-out infinite}
+.flick{animation:flick 1.7s ease-in-out infinite}
+.glow{animation:glow 3.2s ease-in-out infinite}
+.tw{animation:flick 2.8s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes flick{0%,100%{opacity:1}50%{opacity:.65}}
+@keyframes glow{0%,100%{opacity:.9}50%{opacity:.6}}
+@media (prefers-reduced-motion: reduce){.sway,.bigsway,.flick,.glow,.tw{animation:none}}
+</style>
+</helmet>
+<div style="width:390px;height:900px;background:#0E1428;color:#EAD9BC;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;padding:0 22px 22px;position:relative;overflow:hidden">
+  <svg width="390" height="330" viewBox="0 0 390 330" aria-hidden="true" style="position:absolute;left:0;top:0">
+    <defs>
+      <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F6BE5C" stop-opacity=".55"/><stop offset=".45" stop-color="#E9A23B" stop-opacity=".16"/><stop offset="1" stop-color="#E9A23B" stop-opacity="0"/></radialGradient>
+      <radialGradient id="bigglass" cx="50%" cy="60%" r="65%"><stop offset="0" stop-color="#FFF7DA"/><stop offset=".45" stop-color="#F9C96C"/><stop offset="1" stop-color="#B8651A"/></radialGradient>
+      <linearGradient id="brass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A4A12"/><stop offset=".45" stop-color="#D9A04A"/><stop offset="1" stop-color="#6B3E0C"/></linearGradient>
+    </defs>
+    <circle class="glow" cx="195" cy="200" r="170" fill="url(#halo)"/>
+    <g fill="#F2D38A"><circle class="tw" cx="40" cy="60" r="1.8"/><circle cx="350" cy="40" r="1.4"/><circle class="tw" cx="320" cy="120" r="2"/><circle cx="60" cy="180" r="1.2"/><circle cx="24" cy="280" r="1.6"/><circle class="tw" cx="366" cy="250" r="1.4"/><path d="M90 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path class="tw" d="M300 72l1.6 4 4 1.6-4 1.6-1.6 4-1.6-4-4-1.6 4-1.6z"/></g>
+    <path d="M195 0v40" stroke="#6B5A3A" stroke-width="2"/>
+    <g class="bigsway" style="transform-box:fill-box">
+      <circle cx="195" cy="52" r="12" fill="none" stroke="url(#brass)" stroke-width="4"/>
+      <path d="M195 64v12" stroke="#B87718" stroke-width="4"/>
+      <path d="M148 110l24-34h46l24 34z" fill="url(#brass)"/>
+      <path d="M160 96h70" stroke="#6B3E0C" stroke-width="2" opacity=".6"/>
+      <rect x="138" y="108" width="114" height="14" rx="7" fill="#8A5212"/>
+      <path d="M146 122h98l-10 132h-78z" fill="url(#bigglass)"/>
+      <path d="M146 122h98l-10 132h-78z" fill="none" stroke="#5A340A" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M172 122l3 132M218 122l-3 132" stroke="#5A340A" stroke-width="3" opacity=".7"/>
+      <path d="M156 150h78" stroke="#FFF7DA" stroke-width="2" opacity=".35"/>
+      <ellipse cx="195" cy="236" rx="12" ry="4" fill="#6B3E0C" opacity=".5"/>
+      <path class="flick" d="M195 164c20 22 20 46 0 66-20-20-20-44 0-66z" fill="#FFE39A"/>
+      <path class="flick" d="M195 184c10 12 10 24 0 36-10-12-10-24 0-36z" fill="#FFFDF2"/>
+      <rect x="140" y="254" width="110" height="16" rx="8" fill="#8A5212"/>
+      <path d="M160 270h70l-8 18h-54z" fill="url(#brass)"/>
+    </g>
+  </svg>
+  <div style="height:318px;flex-shrink:0"></div>
+  <div class="eyebrow" style="color:#E9A23B;position:relative">Friday's lantern is lit</div>
+  <h1 class="disp" style="margin:10px 0 0;font-size:36px;line-height:1.08;font-weight:600;text-align:center;color:#FBF0DA;position:relative">Goodnight, Theo, June and Max.</h1>
+  <p style="margin:10px 0 0;font-size:15.5px;line-height:1.5;color:#B8AE9A;text-align:center">Four lanterns this week. That's a great week.</p>
+  <div style="position:relative;width:346px;height:96px;margin-top:10px">
+    <svg width="346" height="40" viewBox="0 0 346 40" aria-hidden="true" style="position:absolute;left:0;top:0"><path d="M0 6 Q173 46 346 6" fill="none" stroke="#4A5878" stroke-width="1.4"/></svg>
+    <sc-for list="{{week}}" as="d" hint-placeholder-count="7">
+      <div class="hang" style="{{d.pos}}">
+        <div style="width:1.4px;height:7px;background:#4A5878"></div>
+        <div class="sway" style="{{d.delay}}">
+          <sc-if value="{{d.lit}}" hint-placeholder-val="{{ true }}"><svg width="28" height="42" viewBox="0 0 40 60" aria-hidden="true"><defs><radialGradient id="lgw" cx="50%" cy="58%" r="62%"><stop offset="0" stop-color="#FFF4CF"/><stop offset=".55" stop-color="#F6BE5C"/><stop offset="1" stop-color="#C9771C"/></radialGradient></defs><circle cx="20" cy="33" r="19" fill="#F2B559" opacity=".18"/><circle cx="20" cy="4.5" r="3" fill="none" stroke="#C99A4A" stroke-width="1.6"/><path d="M20 7.5v3" stroke="#C99A4A" stroke-width="1.6"/><path d="M11 17l4-6.5h10l4 6.5z" fill="#B87718"/><rect x="8.5" y="16.5" width="23" height="3.2" rx="1.6" fill="#8A5212"/><path d="M10.5 19.7h19l-2 24h-15z" fill="url(#lgw)" stroke="#6B3E0C" stroke-width="1.4" stroke-linejoin="round"/><path d="M15.3 19.7l.6 24M24.7 19.7l-.6 24" stroke="#6B3E0C" stroke-width=".9" opacity=".55"/><path class="flick" d="M20 25.5c3.4 4 3.4 8.2 0 11-3.4-2.8-3.4-7 0-11z" fill="#FFFBEA"/><rect x="9" y="43.7" width="22" height="3.6" rx="1.8" fill="#8A5212"/><path d="M14 47.3h12l-1.6 4h-8.8z" fill="#6B3E0C"/></svg></sc-if>
+          <sc-if value="{{d.dark}}" hint-placeholder-val="{{ false }}"><svg width="28" height="42" viewBox="0 0 40 60" aria-hidden="true"><circle cx="20" cy="4.5" r="3" fill="none" stroke="#4A5878" stroke-width="1.6"/><path d="M20 7.5v3" stroke="#4A5878" stroke-width="1.6"/><path d="M11 17l4-6.5h10l4 6.5z" fill="#34436A"/><rect x="8.5" y="16.5" width="23" height="3.2" rx="1.6" fill="#2C3960"/><path d="M10.5 19.7h19l-2 24h-15z" fill="#1A2440" stroke="#4A5878" stroke-width="1.4" stroke-linejoin="round"/><path d="M15.3 19.7l.6 24M24.7 19.7l-.6 24" stroke="#4A5878" stroke-width=".9" opacity=".6"/><path d="M20 31v5" stroke="#4A5878" stroke-width="1.4" stroke-linecap="round"/><rect x="9" y="43.7" width="22" height="3.6" rx="1.8" fill="#2C3960"/><path d="M14 47.3h12l-1.6 4h-8.8z" fill="#26324F"/></svg></sc-if>
+        </div>
+        <div style="{{d.labelStyle}}">{{d.label}}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a href="ShareMessage.dc.html" style="width:100%;border-radius:20px;background:#1A2340;border:1px solid #2F3E62;padding:12px;display:flex;gap:12px;align-items:center;color:#F4E9D2;box-sizing:border-box">
+    <img src="/_blob/cad61d914887b2f743a2f499c1d01aae" alt="" style="width:64px;height:64px;border-radius:14px;object-fit:cover;object-position:50% 28%;display:block">
+    <div style="flex:1"><div style="font-size:15px;font-weight:700">Send tonight's picture to Grandma Ruth</div><div style="font-size:13px;color:#A99F8C;margin-top:2px">She can read along, or record tomorrow's chapter</div></div>
+  </a>
+  <a href="Tonight.dc.html" style="margin-top:12px;min-height:52px;width:100%;border-radius:999px;border:1.5px solid #3A4A70;color:#DCD2BE;font-weight:700;font-size:15.5px;display:flex;align-items:center;justify-content:center">Done</a>
+  <div style="font-size:12px;color:#6F7896;margin-top:12px">Screen dims in 10 seconds</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const days = [['M', 1], ['T', 1], ['W', 0], ['T', 1], ['F', 1], ['S', 0], ['S', 0]];
+    return { week: days.map(([label, l], i) => {
+      const x = 14 + i * 49, t = (x + 17) / 346, y = 5 + 80 * t * (1 - t);
+      return { label, lit: !!l, dark: !l, pos: { left: x + 'px', top: y + 'px' }, delay: { animationDelay: (-i * 0.6) + 's' },
+        labelStyle: { fontSize: '11px', fontWeight: 700, marginTop: '1px', color: i === 4 ? '#E9A23B' : '#6F7896' } };
+    }) };
+  }
+}
+</script>
+</body>
+</html>

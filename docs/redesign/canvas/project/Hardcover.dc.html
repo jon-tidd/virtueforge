@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Order the hardcover</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.cov{width:64px;height:64px;border-radius:12px;border:3px solid transparent;padding:0;cursor:pointer;overflow:hidden;background:none}
+.cov img{width:100%;height:100%;object-fit:cover;display:block}
+.inc{display:flex;gap:10px;align-items:center;font-size:14px;padding:8px 0}
+</style>
+</helmet>
+<div style="width:390px;height:1040px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="SeasonFinale.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">A keepsake for the shelf</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:32px;line-height:1.08;font-weight:600">Their season, bound in cloth.</h1>
+  <div style="display:flex;justify-content:center;margin-top:20px">
+    <div style="position:relative;width:220px;height:280px">
+      <div style="position:absolute;left:10px;top:8px;width:210px;height:272px;background:#E3D2AE;border-radius:4px 12px 12px 4px"></div>
+      <div style="position:absolute;left:0;top:0;width:210px;height:272px;border-radius:4px 12px 12px 4px;background:#16203A;overflow:hidden;box-shadow:0 22px 40px rgba(20,20,40,.3)">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:14px;background:#0E1428"></div>
+        <img src="{{cover}}" alt="Cover picture" style="position:absolute;left:28px;top:24px;width:168px;height:150px;object-fit:cover;border-radius:6px;display:block">
+        <div style="position:absolute;left:28px;right:14px;top:186px;color:#FBF3E2">
+          <div class="disp" style="font-size:17px;font-weight:600;line-height:1.15">Theo, June &amp; Max and the Lantern Road</div>
+          <div style="font-size:10px;letter-spacing:.14em;color:#E9A23B;margin-top:8px;font-weight:700">A GRIT &amp; GRACE BOOK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="eyebrow" style="color:#6A5D4B;margin-top:22px">Cover picture</div>
+  <div style="display:flex;gap:10px;margin-top:8px">
+    <sc-for list="{{covers}}" as="c" hint-placeholder-count="3"><button class="cov" onClick="{{c.pick}}" style="{{c.style}}" aria-label="{{c.label}}"><img src="{{c.src}}" alt=""></button></sc-for>
+  </div>
+  <label for="ded" class="eyebrow" style="color:#6A5D4B;margin-top:18px">Dedication</label>
+  <textarea id="ded" style="margin-top:8px;min-height:72px;border-radius:16px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:12px 14px;font:italic 400 16px/1.5 'Literata',serif;color:#1F1A14;box-sizing:border-box;width:100%;resize:none">For Theo, June and Max. Be brave, be kind, and always come home. Love, Mom and Dad</textarea>
+  <div style="margin-top:12px">
+    <div class="inc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>All 12 chapters, with each child drawn in</div>
+    <div class="inc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>The Hall of Deeds: all 9 legends</div>
+    <div class="inc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>The story map, as the endpapers</div>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><span style="font-size:14px;color:#4A4034">Included with Heirloom · extra copies $29</span><span class="disp" style="font-size:22px;font-weight:600">$0</span></div>
+  <a class="btn" href="SeasonFinale.dc.html">Order our hardcover</a>
+  <div style="text-align:center;font-size:13px;color:#6A5D4B;margin-top:10px">Arrives in about 2 weeks. Extra copies make great grandparent gifts.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1040}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { c: 0 }; }
+  renderVals() {
+    const covers = [
+      { label: 'The three heroes', src: '/_blob/59f80592758fe0f95373165f59fb9c3a' },
+      { label: 'Lantern under the stars', src: '/_blob/a1437857e9dfd88dc783c6e5dc0eb642' },
+      { label: 'By the firelight', src: '/_blob/9f7b824c4366566e6fae1852352f50fb' }
+    ];
+    return {
+      cover: covers[this.state.c].src,
+      covers: covers.map((c, i) => ({ ...c, style: this.state.c === i ? { borderColor: '#E9A23B' } : {}, pick: () => this.setState({ c: i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

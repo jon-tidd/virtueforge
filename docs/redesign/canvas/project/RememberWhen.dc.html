@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Remember when</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.ans{min-height:48px;border-radius:999px;border:1.5px solid #4A3C28;background:transparent;color:#EAD9BC;font:700 14px 'Figtree',sans-serif;cursor:pointer;padding:0 16px}
+</style>
+</helmet>
+<div style="width:390px;height:920px;background:#150F0A;color:#EAD9BC;display:flex;flex-direction:column;box-sizing:border-box;padding:0 24px 22px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+    <a href="Tonight.dc.html" aria-label="Close" style="color:#8A7A60;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+    <span style="font-size:12.5px;font-weight:700;color:#8A7A60">Ch. 5 · page 6</span>
+    <span style="width:44px"></span>
+  </div>
+  <p class="story" style="margin:18px 0 0;font-size:20px;line-height:1.7;color:#EAD9BC">The little dragon wouldn't come out. "Everyone's too big and too loud," it sniffed.</p>
+  <p class="story" style="margin:14px 0 0;font-size:20px;line-height:1.7;color:#EAD9BC">Pip's ears twitched. He looked at <b style="color:#F2B559">June</b>.</p>
+  <div style="margin-top:18px;border-radius:20px;background:#2A2012;border:1px solid #4A3C28;padding:16px;display:flex;gap:14px;align-items:flex-start">
+    <img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="June" style="width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;border:3px solid #E9A23B;flex-shrink:0">
+    <div style="flex:1">
+      <div class="eyebrow" style="color:#E9A23B;font-size:10.5px">Remember when… · Week 2</div>
+      <p class="story" style="margin:6px 0 0;font-size:17px;line-height:1.55;font-style:italic;color:#F4E6CC">"Remember the First Dark Village?" Pip whispered. "When nobody would speak, you did, even with a wobbly voice."</p>
+    </div>
+  </div>
+  <p class="story" style="margin:18px 0 0;font-size:20px;line-height:1.7;color:#EAD9BC">June knelt down. "My voice gets small too," she said. "Want to hear my plan?"</p>
+  <div style="margin-top:22px;border-radius:20px;background:#F4EAD5;color:#1F1A14;padding:16px">
+    <div class="eyebrow" style="color:#8A5212">Ask June</div>
+    <div class="disp" style="font-size:20px;font-weight:600;line-height:1.25;margin-top:4px">What did you do in the First Dark Village?</div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <button class="ans" onClick="{{reveal}}" style="{{btn}}">{{label}}</button>
+    </div>
+    <sc-if value="{{shown}}" hint-placeholder-val="{{ false }}"><div style="font-size:14px;line-height:1.5;color:#4A4034;margin-top:10px">She spoke up for the lamplighter when the grown-ups wouldn't. Let her tell it first; help only if she gets stuck.</div></sc-if>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="font-size:12.5px;line-height:1.5;color:#8A7A60;text-align:center">Callbacks bring back an old strength a few weeks later, so it sticks.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":920}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { shown: false }; }
+  renderVals() {
+    const s = this.state.shown;
+    return {
+      shown: s,
+      label: s ? 'Hint shown' : 'Show a hint for grown-ups',
+      btn: { borderColor: '#D8C9AB', color: '#4A4034' },
+      reveal: () => this.setState({ shown: !s })
+    };
+  }
+}
+</script>
+</body>
+</html>

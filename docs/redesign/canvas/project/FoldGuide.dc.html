@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fold it into a book</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.st{flex:1;min-height:48px;border-radius:999px;border:none;font:800 15px 'Fraunces',serif;cursor:pointer}
+</style>
+</helmet>
+<div style="width:390px;height:1100px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="PrintHub.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">One sheet · one snip · a real little book</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:34px;line-height:1.05;font-weight:600">Tonight's chapter, folded into a book.</h1>
+  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">8 pages from one piece of paper: a cover, six story pages, and a back. Kids love making it almost as much as reading it.</p>
+  <div style="display:flex;gap:4px;margin-top:16px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4"><button class="st" onClick="{{t.pick}}" style="{{t.style}}" aria-label="{{t.aria}}">{{t.n}}</button></sc-for>
+  </div>
+  <div style="margin-top:14px;height:300px;border-radius:24px;background:#FFFCF5;border:1px solid #E7DCC7;display:flex;align-items:center;justify-content:center">
+    <sc-if value="{{s1}}" hint-placeholder-val="{{ true }}">
+      <svg width="300" height="220" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="30" width="260" height="160" rx="4" fill="#FFFFFF" stroke="#1F1A14" stroke-width="2"/><g stroke="#A99F8C" stroke-width="1.4" stroke-dasharray="3 5"><path d="M85 30v160M150 30v160M215 30v160M20 110h260"/></g><path d="M150 16v-6M144 10l6-6 6 6" stroke="#E9A23B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M150 204v8" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round"/><text x="150" y="214" text-anchor="middle" font-family="Figtree" font-size="12" font-weight="700" fill="#8A5212" dy="0"></text></svg>
+    </sc-if>
+    <sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+      <svg width="300" height="220" viewBox="0 0 300 220" aria-hidden="true"><rect x="20" y="70" width="260" height="80" rx="4" fill="#FFFFFF" stroke="#1F1A14" stroke-width="2"/><path d="M20 70h260" stroke="#1F1A14" stroke-width="3"/><g stroke="#A99F8C" stroke-width="1.4" stroke-dasharray="3 5"><path d="M85 70v80M215 70v80"/></g><path d="M150 70v80" stroke="#1F1A14" stroke-width="2" stroke-dasharray="8 5"/><g transform="translate(150 50)"><circle cx="-6" cy="0" r="5" fill="none" stroke="#E9A23B" stroke-width="2"/><circle cx="6" cy="0" r="5" fill="none" stroke="#E9A23B" stroke-width="2"/><path d="M-3 4l6 14M3 4l-6 14" stroke="#E9A23B" stroke-width="2"/></g></svg>
+    </sc-if>
+    <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+      <svg width="300" height="220" viewBox="0 0 300 220" aria-hidden="true"><path d="M40 110l60-50h100l60 50-60 50H100z" fill="#FFFFFF" stroke="#1F1A14" stroke-width="2" stroke-linejoin="round"/><path d="M100 60v100M200 60v100" stroke="#A99F8C" stroke-width="1.4" stroke-dasharray="3 5"/><path d="M130 110h40" stroke="#1F1A14" stroke-width="2"/><path d="M22 110h12M28 104l6 6-6 6M278 110h-12M272 104l-6 6 6 6" stroke="#E9A23B" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </sc-if>
+    <sc-if value="{{s4}}" hint-placeholder-val="{{ false }}">
+      <svg width="300" height="220" viewBox="0 0 300 220" aria-hidden="true"><path d="M110 40h90v140h-90z" fill="#FFFFFF" stroke="#1F1A14" stroke-width="2"/><path d="M110 40l-12 6v140l12-6" fill="#F4EAD5" stroke="#1F1A14" stroke-width="2" stroke-linejoin="round"/><text x="155" y="80" text-anchor="middle" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#1F1A14">The Dragon</text><text x="155" y="96" text-anchor="middle" font-family="Fraunces, serif" font-size="13" font-weight="600" fill="#1F1A14">Who Was Afraid</text><path d="M140 130h30M155 118v12M146 140h18l-2 20h-14z" stroke="#1F1A14" stroke-width="1.6" fill="none"/><g fill="#E9A23B"><path d="M230 60l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M70 150l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g></svg>
+    </sc-if>
+  </div>
+  <div style="margin-top:14px;border-radius:20px;background:#16203A;color:#FBF3E2;padding:16px 18px">
+    <div class="eyebrow" style="color:#E9A23B">Step {{n}} of 4</div>
+    <div class="disp" style="font-size:22px;font-weight:600;margin-top:4px">{{title}}</div>
+    <div style="font-size:14.5px;line-height:1.5;color:#C9C0AE;margin-top:4px">{{how}}</div>
+  </div>
+  <div style="display:flex;gap:10px;margin-top:14px">
+    <button onClick="{{prev}}" style="flex:1;min-height:50px;border-radius:999px;border:1.5px solid #D8C9AB;background:#FFFCF5;font:700 15px 'Figtree',sans-serif;color:#4A4034;cursor:pointer">Back</button>
+    <button onClick="{{next}}" style="flex:1;min-height:50px;border-radius:999px;border:none;background:#16203A;font:700 15px 'Figtree',sans-serif;color:#F4E9D2;cursor:pointer">Next step</button>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="FoldSheet.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>Print tonight's book (1 page)</a>
+  <div style="text-align:center;font-size:13px;color:#6A5D4B;margin-top:10px">Longer chapters print as a staple booklet instead.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1100}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { s: 0 }; }
+  renderVals() {
+    const steps = [
+      { title: 'Fold into 8 boxes', how: 'Print the page. Fold it in half the long way, then in half twice the short way, and unfold. You’ll see 8 boxes.' },
+      { title: 'Snip the middle', how: 'Fold it in half the short way. Snip along the dashed line in the middle, from the fold to the center only. Grown-ups do the scissors.' },
+      { title: 'Push it into a star', how: 'Open it the long way, then push the two ends toward each other. The slit opens into a diamond, then folds flat.' },
+      { title: 'Fold it flat, it’s a book!', how: 'Wrap the pages around so the cover is on the front. Color the dragon, then read it at bedtime, no screen needed.' }
+    ];
+    const s = this.state.s;
+    const on = { background: '#16203A', color: '#E9A23B' };
+    const off = { background: 'transparent', color: '#6A5D4B' };
+    return {
+      tabs: steps.map((x, i) => ({ n: i + 1, aria: 'Step ' + (i + 1), style: s === i ? on : off, pick: () => this.setState({ s: i }) })),
+      s1: s === 0, s2: s === 1, s3: s === 2, s4: s === 3,
+      n: s + 1, title: steps[s].title, how: steps[s].how,
+      prev: () => this.setState({ s: Math.max(0, s - 1) }),
+      next: () => this.setState({ s: Math.min(3, s + 1) })
+    };
+  }
+}
+</script>
+</body>
+</html>

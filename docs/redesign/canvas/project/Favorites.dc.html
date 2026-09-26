@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>What makes them them</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.story{font-family:'Literata',Georgia,serif}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
+.btn:hover{background:#F2B559;color:#16203A}
+.kid{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;border-radius:999px;border:none;background:transparent;font:700 14px 'Figtree',sans-serif;color:#6A5D4B;cursor:pointer}
+.kid img{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.12em;color:#6A5D4B;margin-top:16px}
+.chip{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid #D8C9AB;background:#FFFCF5;font:700 14px 'Figtree',sans-serif;color:#4A4034;cursor:pointer}
+</style>
+</helmet>
+<div style="width:390px;height:1060px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
+    <a href="DrawHero.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+    <a href="Sidekick.dc.html" style="font-size:14px;font-weight:700;padding:12px 4px">Skip</a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Step 2 · The little details</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:32px;line-height:1.08;font-weight:600">What makes {{name}}, {{name}}?</h1>
+  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Three taps each. These show up in the story, so it feels written just for them.</p>
+  <div style="display:flex;gap:4px;margin-top:14px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{kids}}" as="k" hint-placeholder-count="3"><button class="kid" onClick="{{k.pick}}" style="{{k.style}}"><img src="{{k.img}}" alt="">{{k.name}}</button></sc-for>
+  </div>
+  <div class="lbl">FAVORITE ANIMAL</div>
+  <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><sc-for list="{{animals}}" as="c" hint-placeholder-count="5"><button class="chip" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button></sc-for></div>
+  <div class="lbl">LOVES TO…</div>
+  <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><sc-for list="{{loves}}" as="c" hint-placeholder-count="5"><button class="chip" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button></sc-for></div>
+  <div class="lbl">A WORRY THE STORY CAN HELP WITH (OPTIONAL)</div>
+  <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><sc-for list="{{worries}}" as="c" hint-placeholder-count="4"><button class="chip" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button></sc-for></div>
+  <div style="margin-top:18px;border-radius:6px 20px 20px 6px;background:#F4EAD5;padding:16px 18px;box-shadow:0 12px 24px rgba(60,40,10,.12)">
+    <div class="eyebrow" style="color:#8A5212;font-size:10.5px">In the story, it might sound like…</div>
+    <p class="story" style="margin:8px 0 0;font-size:16.5px;line-height:1.6;color:#2A2118">{{preview}}</p>
+  </div>
+  <div style="flex-grow:1"></div>
+  <a class="btn" href="Sidekick.dc.html">Next: pick a sidekick</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1060}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { k: 'June', June: { a: 'Otters', l: 'Paint', w: 'The dark' }, Theo: { a: 'Owls', l: 'Build things', w: 'Making mistakes' }, Max: { a: 'Dinosaurs', l: 'Climb', w: 'Loud noises' } }; }
+  renderVals() {
+    const imgs = { Theo: '/_blob/49c6eb96321a54a534a7d5155073c868', June: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', Max: '/_blob/89224e240d4677b215293a2283578be4' };
+    const k = this.state.k, me = this.state[k];
+    const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
+    const segOn = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    const set = (field, v) => this.setState({ [k]: { ...me, [field]: me[field] === v ? '' : v } });
+    const chips = (list, field) => list.map((label) => ({ label, style: me[field] === label ? on : {}, pick: () => set(field, label) }));
+    const verbs = { 'Paint': 'painted', 'Build things': 'built', 'Climb': 'climbed', 'Sing': 'sang', 'Dance': 'danced' };
+    const things = { 'Paint': 'a door on the wall of the Hollow', 'Build things': 'a bridge out of fallen branches', 'Climb': 'right up the lookout tree', 'Sing': 'a song so bright the fog lifted', 'Dance': 'a dance that made the fireflies follow' };
+    const animal = me.a || 'fox', love = me.l || 'Sing';
+    const worry = me.w ? ' And when ' + me.w.toLowerCase() + ' felt big, ' + k + ' remembered the lantern breath.' : '';
+    return {
+      name: k,
+      kids: ['Theo', 'June', 'Max'].map((n) => ({ name: n, img: imgs[n], style: k === n ? segOn : {}, pick: () => this.setState({ k: n }) })),
+      animals: chips(['Otters', 'Owls', 'Dinosaurs', 'Horses', 'Dragons'], 'a'),
+      loves: chips(['Paint', 'Build things', 'Climb', 'Sing', 'Dance'], 'l'),
+      worries: chips(['The dark', 'Making mistakes', 'Loud noises', 'New places'], 'w'),
+      preview: k + ' ' + verbs[love] + ' ' + things[love] + ', and a small ' + animal.toLowerCase().replace(/s$/, '') + ' peeked out to watch.' + worry
+    };
+  }
+}
+</script>
+</body>
+</html>

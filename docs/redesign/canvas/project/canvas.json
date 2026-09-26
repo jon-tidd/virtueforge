@@ -1,0 +1,754 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-26T02:00:00Z"
+ },
+ "title": "Grit & Grace: Full Product Mockup",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 900,
+   "title": "Start here",
+   "is_interactive": true
+  },
+  "Home.dc.html": {
+   "x": 0,
+   "y": 1260,
+   "w": 390,
+   "h": 6900,
+   "title": "M1 · Homepage",
+   "is_interactive": true
+  },
+  "HowItWorks.dc.html": {
+   "x": 470,
+   "y": 1260,
+   "w": 390,
+   "h": 2300,
+   "title": "M2 · How it works",
+   "is_interactive": true
+  },
+  "Research.dc.html": {
+   "x": 940,
+   "y": 1260,
+   "w": 390,
+   "h": 2500,
+   "title": "M3 · The science, plainly",
+   "is_interactive": true
+  },
+  "Pricing.dc.html": {
+   "x": 1410,
+   "y": 1260,
+   "w": 390,
+   "h": 2100,
+   "title": "M4 · Pricing",
+   "is_interactive": true
+  },
+  "Faq.dc.html": {
+   "x": 1880,
+   "y": 1260,
+   "w": 390,
+   "h": 1900,
+   "title": "M5 · Questions",
+   "is_interactive": true
+  },
+  "About.dc.html": {
+   "x": 2350,
+   "y": 1260,
+   "w": 390,
+   "h": 1700,
+   "title": "M6 · About / founder",
+   "is_interactive": true
+  },
+  "Grandparents.dc.html": {
+   "x": 2820,
+   "y": 1260,
+   "w": 390,
+   "h": 1900,
+   "title": "M7 · For grandparents",
+   "is_interactive": true
+  },
+  "Homeschool.dc.html": {
+   "x": 3290,
+   "y": 1260,
+   "w": 390,
+   "h": 2100,
+   "title": "M8 · Homeschool, classical & faith",
+   "is_interactive": true
+  },
+  "SampleChapter.dc.html": {
+   "x": 3760,
+   "y": 1260,
+   "w": 390,
+   "h": 1900,
+   "title": "M9 · Free sample chapter",
+   "is_interactive": true
+  },
+  "Strengths.dc.html": {
+   "x": 0,
+   "y": 8530,
+   "w": 390,
+   "h": 1800,
+   "is_interactive": true,
+   "title": "V1 · The 16 strengths (Grit + Grace)"
+  },
+  "StrengthDetail.dc.html": {
+   "x": 470,
+   "y": 8530,
+   "w": 390,
+   "h": 1400,
+   "is_interactive": true,
+   "title": "V2 · One strength, every age"
+  },
+  "LanternLoop.dc.html": {
+   "x": 940,
+   "y": 8530,
+   "w": 390,
+   "h": 1320,
+   "is_interactive": true,
+   "title": "V3 · The Lantern Loop (the method)"
+  },
+  "IfThen.dc.html": {
+   "x": 1410,
+   "y": 8530,
+   "w": 390,
+   "h": 1040,
+   "is_interactive": true,
+   "title": "V4 · Kids build an if-then plan"
+  },
+  "RememberWhen.dc.html": {
+   "x": 1880,
+   "y": 8530,
+   "w": 390,
+   "h": 920,
+   "is_interactive": true,
+   "title": "V5 · \"Remember when\": spaced review"
+  },
+  "Welcome.dc.html": {
+   "x": 0,
+   "y": 10700,
+   "w": 390,
+   "h": 844,
+   "title": "O1 · Who's in the story?",
+   "is_interactive": true
+  },
+  "DrawHero.dc.html": {
+   "x": 470,
+   "y": 10700,
+   "w": 390,
+   "h": 1040,
+   "title": "O2 · Draw your hero",
+   "is_interactive": true
+  },
+  "Favorites.dc.html": {
+   "x": 940,
+   "y": 10700,
+   "w": 390,
+   "h": 1060,
+   "is_interactive": true,
+   "title": "O2b · The little details"
+  },
+  "Sidekick.dc.html": {
+   "x": 1410,
+   "y": 10700,
+   "w": 390,
+   "h": 900,
+   "title": "O3 · Pick a sidekick",
+   "is_interactive": true
+  },
+  "Values.dc.html": {
+   "x": 1880,
+   "y": 10700,
+   "w": 390,
+   "h": 1000,
+   "title": "O4 · What matters in your house",
+   "is_interactive": true
+  },
+  "MeetHeroes.dc.html": {
+   "x": 2350,
+   "y": 10700,
+   "w": 390,
+   "h": 960,
+   "title": "O5 · Meet your heroes",
+   "is_interactive": true
+  },
+  "SaveFamily.dc.html": {
+   "x": 2820,
+   "y": 10700,
+   "w": 390,
+   "h": 900,
+   "title": "O6 · Save your family",
+   "is_interactive": true
+  },
+  "Bedtime.dc.html": {
+   "x": 3290,
+   "y": 10700,
+   "w": 390,
+   "h": 1000,
+   "title": "O7 · Set bedtime",
+   "is_interactive": true
+  },
+  "Tonight.dc.html": {
+   "x": 0,
+   "y": 12130,
+   "w": 390,
+   "h": 1060,
+   "title": "N1 · Tonight (home)",
+   "is_interactive": true
+  },
+  "ReaderPicture.dc.html": {
+   "x": 470,
+   "y": 12130,
+   "w": 390,
+   "h": 844,
+   "title": "N2 · Reader: picture-book layout",
+   "is_interactive": true
+  },
+  "ReaderChapter.dc.html": {
+   "x": 940,
+   "y": 12130,
+   "w": 390,
+   "h": 960,
+   "title": "N3 · Reader: chapter layout",
+   "is_interactive": true
+  },
+  "PauseAsk.dc.html": {
+   "x": 1410,
+   "y": 12130,
+   "w": 390,
+   "h": 844,
+   "title": "N4 · Pause & ask",
+   "is_interactive": true
+  },
+  "ChoosePath.dc.html": {
+   "x": 1880,
+   "y": 12130,
+   "w": 390,
+   "h": 900,
+   "title": "N5 · The kids choose the path",
+   "is_interactive": true
+  },
+  "LastPage.dc.html": {
+   "x": 2350,
+   "y": 12130,
+   "w": 390,
+   "h": 1060,
+   "title": "N6 · Last page: missions + cliffhanger",
+   "is_interactive": true
+  },
+  "LampLit.dc.html": {
+   "x": 2820,
+   "y": 12130,
+   "w": 390,
+   "h": 900,
+   "title": "N7 · Lamp lit, goodnight",
+   "is_interactive": true
+  },
+  "LanternKit.dc.html": {
+   "x": 3290,
+   "y": 12130,
+   "w": 390,
+   "h": 1000,
+   "is_interactive": true,
+   "title": "N8 · Lantern design"
+  },
+  "SpottedIt.dc.html": {
+   "x": 0,
+   "y": 13560,
+   "w": 390,
+   "h": 960,
+   "title": "D1 · Did you spot it?",
+   "is_interactive": true
+  },
+  "LegendApprove.dc.html": {
+   "x": 470,
+   "y": 13560,
+   "w": 390,
+   "h": 900,
+   "title": "D2 · Approve tonight's legend",
+   "is_interactive": true
+  },
+  "KidsIdea.dc.html": {
+   "x": 940,
+   "y": 13560,
+   "w": 390,
+   "h": 960,
+   "title": "D3 · The idea jar (kids' imagination)",
+   "is_interactive": true
+  },
+  "TalkCards.dc.html": {
+   "x": 1410,
+   "y": 13560,
+   "w": 390,
+   "h": 900,
+   "title": "D4 · Car & dinner questions",
+   "is_interactive": true
+  },
+  "SpecialCreate.dc.html": {
+   "x": 1880,
+   "y": 13560,
+   "w": 390,
+   "h": 1100,
+   "title": "D5 · Tonight's special: something happened",
+   "is_interactive": true
+  },
+  "SpecialPreview.dc.html": {
+   "x": 2350,
+   "y": 13560,
+   "w": 390,
+   "h": 1100,
+   "title": "D6 · Parent previews the special story",
+   "is_interactive": true
+  },
+  "SundayPlan.dc.html": {
+   "x": 0,
+   "y": 15030,
+   "w": 390,
+   "h": 1100,
+   "title": "W1 · Sunday: the week ahead",
+   "is_interactive": true
+  },
+  "FridgeCard.dc.html": {
+   "x": 470,
+   "y": 15030,
+   "w": 390,
+   "h": 1000,
+   "title": "W2 · Fridge card (print)",
+   "is_interactive": true
+  },
+  "Booklet.dc.html": {
+   "x": 940,
+   "y": 15030,
+   "w": 390,
+   "h": 1000,
+   "title": "W3 · Weekly booklet (print)",
+   "is_interactive": true
+  },
+  "SaturdayTrial.dc.html": {
+   "x": 1410,
+   "y": 15030,
+   "w": 390,
+   "h": 960,
+   "title": "W4 · Saturday trial",
+   "is_interactive": true
+  },
+  "PrintHub.dc.html": {
+   "x": 0,
+   "y": 16500,
+   "w": 390,
+   "h": 1040,
+   "is_interactive": true,
+   "title": "R1 · Print something"
+  },
+  "FoldGuide.dc.html": {
+   "x": 470,
+   "y": 16500,
+   "w": 390,
+   "h": 1100,
+   "is_interactive": true,
+   "title": "R2 · How to fold the book"
+  },
+  "FoldSheet.dc.html": {
+   "x": 940,
+   "y": 16500,
+   "w": 1056,
+   "h": 816,
+   "is_interactive": true,
+   "title": "R3 · Fold-a-book print sheet (Letter)"
+  },
+  "HeroCards.dc.html": {
+   "x": 2076,
+   "y": 16500,
+   "w": 816,
+   "h": 1056,
+   "is_interactive": true,
+   "title": "R4 · Hero cards print sheet (Letter)"
+  },
+  "StoryMap.dc.html": {
+   "x": 0,
+   "y": 17970,
+   "w": 390,
+   "h": 1000,
+   "title": "P1 · Story map",
+   "is_interactive": true
+  },
+  "Shield.dc.html": {
+   "x": 470,
+   "y": 17970,
+   "w": 390,
+   "h": 1120,
+   "title": "P2 · Each child's shield",
+   "is_interactive": true
+  },
+  "HallOfDeeds.dc.html": {
+   "x": 940,
+   "y": 17970,
+   "w": 390,
+   "h": 1000,
+   "title": "P3 · Hall of Deeds",
+   "is_interactive": true
+  },
+  "SeasonFinale.dc.html": {
+   "x": 1410,
+   "y": 17970,
+   "w": 390,
+   "h": 1000,
+   "title": "P4 · Season finale",
+   "is_interactive": true
+  },
+  "Hardcover.dc.html": {
+   "x": 1880,
+   "y": 17970,
+   "w": 390,
+   "h": 1040,
+   "title": "P5 · Order the hardcover",
+   "is_interactive": true
+  },
+  "Classics.dc.html": {
+   "x": 0,
+   "y": 19460,
+   "w": 390,
+   "h": 1100,
+   "title": "L1 · Classics library",
+   "is_interactive": true
+  },
+  "RetoldShelf.dc.html": {
+   "x": 470,
+   "y": 19460,
+   "w": 390,
+   "h": 1000,
+   "title": "L2 · Classics retold, starring your kids",
+   "is_interactive": true
+  },
+  "ShareMessage.dc.html": {
+   "x": 0,
+   "y": 20930,
+   "w": 390,
+   "h": 900,
+   "title": "G1 · The text Grandma gets",
+   "is_interactive": true
+  },
+  "ReadAlong.dc.html": {
+   "x": 470,
+   "y": 20930,
+   "w": 390,
+   "h": 1040,
+   "title": "G2 · Grandma reads along",
+   "is_interactive": true
+  },
+  "RecordChapter.dc.html": {
+   "x": 940,
+   "y": 20930,
+   "w": 390,
+   "h": 960,
+   "title": "G3 · Record a chapter",
+   "is_interactive": true
+  },
+  "Gift.dc.html": {
+   "x": 1410,
+   "y": 20930,
+   "w": 390,
+   "h": 1100,
+   "title": "G4 · Give a year",
+   "is_interactive": true
+  },
+  "VoiceIntro.dc.html": {
+   "x": 0,
+   "y": 22400,
+   "w": 390,
+   "h": 1140,
+   "is_interactive": true,
+   "title": "F1 · Family story voice"
+  },
+  "VoiceCapture.dc.html": {
+   "x": 470,
+   "y": 22400,
+   "w": 390,
+   "h": 1040,
+   "is_interactive": true,
+   "title": "F2 · Grandma records (her phone)"
+  },
+  "VoiceReady.dc.html": {
+   "x": 940,
+   "y": 22400,
+   "w": 390,
+   "h": 1000,
+   "is_interactive": true,
+   "title": "F3 · Story voice ready"
+  },
+  "Paywall.dc.html": {
+   "x": 0,
+   "y": 23910,
+   "w": 390,
+   "h": 1100,
+   "title": "A1 · After chapter 3: keep going",
+   "is_interactive": true
+  },
+  "Settings.dc.html": {
+   "x": 470,
+   "y": 23910,
+   "w": 390,
+   "h": 1300,
+   "title": "A2 · Family settings",
+   "is_interactive": true
+  },
+  "Privacy.dc.html": {
+   "x": 940,
+   "y": 23910,
+   "w": 390,
+   "h": 1100,
+   "title": "A3 · Privacy & your data",
+   "is_interactive": true
+  },
+  "Voices.dc.html": {
+   "x": 1410,
+   "y": 23910,
+   "w": 390,
+   "h": 1080,
+   "title": "A4 · Family voices",
+   "is_interactive": true
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Home.dc.html",
+  "HowItWorks.dc.html",
+  "Research.dc.html",
+  "Pricing.dc.html",
+  "Faq.dc.html",
+  "About.dc.html",
+  "Grandparents.dc.html",
+  "Homeschool.dc.html",
+  "SampleChapter.dc.html",
+  "Strengths.dc.html",
+  "StrengthDetail.dc.html",
+  "LanternLoop.dc.html",
+  "IfThen.dc.html",
+  "RememberWhen.dc.html",
+  "Welcome.dc.html",
+  "DrawHero.dc.html",
+  "Favorites.dc.html",
+  "Sidekick.dc.html",
+  "Values.dc.html",
+  "MeetHeroes.dc.html",
+  "SaveFamily.dc.html",
+  "Bedtime.dc.html",
+  "Tonight.dc.html",
+  "ReaderPicture.dc.html",
+  "ReaderChapter.dc.html",
+  "PauseAsk.dc.html",
+  "ChoosePath.dc.html",
+  "LastPage.dc.html",
+  "LampLit.dc.html",
+  "LanternKit.dc.html",
+  "SpottedIt.dc.html",
+  "LegendApprove.dc.html",
+  "KidsIdea.dc.html",
+  "TalkCards.dc.html",
+  "SpecialCreate.dc.html",
+  "SpecialPreview.dc.html",
+  "SundayPlan.dc.html",
+  "FridgeCard.dc.html",
+  "Booklet.dc.html",
+  "SaturdayTrial.dc.html",
+  "PrintHub.dc.html",
+  "FoldGuide.dc.html",
+  "FoldSheet.dc.html",
+  "HeroCards.dc.html",
+  "StoryMap.dc.html",
+  "Shield.dc.html",
+  "HallOfDeeds.dc.html",
+  "SeasonFinale.dc.html",
+  "Hardcover.dc.html",
+  "Classics.dc.html",
+  "RetoldShelf.dc.html",
+  "ShareMessage.dc.html",
+  "ReadAlong.dc.html",
+  "RecordChapter.dc.html",
+  "Gift.dc.html",
+  "VoiceIntro.dc.html",
+  "VoiceCapture.dc.html",
+  "VoiceReady.dc.html",
+  "Paywall.dc.html",
+  "Settings.dc.html",
+  "Privacy.dc.html",
+  "Voices.dc.html"
+ ],
+ "notes": {
+  "t1": {
+   "x": 0,
+   "y": 1010,
+   "text": "1 · The website: win over a skeptical, tired parent in one scroll",
+   "kind": "title1",
+   "maxW": 4150
+  },
+  "s1": {
+   "x": 4230,
+   "y": 1260,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Parents decide in seconds. The homepage leads with their kids as the heroes and one button that starts the free experience. The research page is for skeptics, the grandparents page for the biggest gift buyers (they spend about $2,654/yr on grandkids, AARP 2026), and the homeschool page for early adopters (3.4M homeschoolers; classical education growing ~5%/yr). Copy never says 'written by people', because stories are drafted with AI and reviewed by a person; it says so plainly in the FAQ."
+  },
+  "t2": {
+   "x": 0,
+   "y": 8280,
+   "text": "2 · What they'll grow: 16 strengths, and how each one is taught",
+   "kind": "title1",
+   "maxW": 2270
+  },
+  "s2": {
+   "x": 2350,
+   "y": 8530,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: You asked for classical virtues that truly teach. The backbone is the four cardinal virtues, renamed in kid words (Brave, Steady, Kind & Fair, Wise) and grouped under the brand: Grit = strengths of will, Grace = strengths of heart and mind (Character Lab's model). Added the strengths the WEF expects to matter most by 2030: creative thinking, resilience, curiosity, empathy, focus. Each strength runs the Lantern Loop: meet it in a story where your child is the hero; name it with a phrase + gesture (Cook & Goldin-Meadow 2008); ask why instead of preaching (Walker & Lombrozo 2017); make an if-then plan (Gollwitzer & Sheeran 2006, 94 studies; Duckworth 2013); get spotted with effort praise, not prizes (Gunderson 2013; Warneken & Tomasello 2008); then it comes back weeks later (spacing effect, Cepeda 2006)."
+  },
+  "t3": {
+   "x": 0,
+   "y": 10450,
+   "text": "3 · The first two minutes: from stranger to \"that's me!\"",
+   "kind": "title1",
+   "maxW": 3680
+  },
+  "s3": {
+   "x": 3760,
+   "y": 10700,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: 55% of free-trial cancellations happen on day one (RevenueCat), so the kids must appear as heroes before any signup. Likeness matters: a story with the child's own face raised sharing; name-only did nothing (ECEJ 2025 vs. Kruse 2021). The avatar builder gives likeness with no photos (COPPA, biometric-law risk, and 72% of parents worry about photo privacy). The faith-friendly toggle lives here. The 'little details' step (favorite animal, what they love, one worry) makes every story feel written for them."
+  },
+  "t4": {
+   "x": 0,
+   "y": 11880,
+   "text": "4 · Every night: one tap, one chapter, one question",
+   "kind": "title1",
+   "maxW": 3680
+  },
+  "s4": {
+   "x": 3760,
+   "y": 12130,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: The chapter is written before bedtime, so there are no choices when parents are most tired. Continuing stories hold kids' engagement (Lu & Green 2025). Asking 'why?' beats stating the moral (Walker & Lombrozo 2017). Kids choosing the path adds imagination and a reason to come back. Rewards go to reading together (lamps), never to behavior (Warneken & Tomasello 2008). Five nights a week is the goal (Mindell 2015). Lanterns hang on a string across the week like festival lights. They count nights read together, never behavior; rest nights show a moon, not a gap."
+  },
+  "t5": {
+   "x": 0,
+   "y": 13310,
+   "text": "5 · During the day: what they did, what they dreamed, what happened",
+   "kind": "title1",
+   "maxW": 2740
+  },
+  "s5": {
+   "x": 2820,
+   "y": 13560,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Parents shape the story here, and they, not you, approve anything personal. 'Spotted it' turns real deeds into legends (recognition, not prizes). The idea jar puts kids' imagination into the story. 'Something happened today' is your original idea made safe: it becomes an adventure, not a retelling, because stories that are too close to real life teach less (Reading Psychology 2024), and the parent previews it before reading."
+  },
+  "t6": {
+   "x": 0,
+   "y": 14780,
+   "text": "6 · Every week: one strength, every child at their own level",
+   "kind": "title1",
+   "maxW": 1800
+  },
+  "s6": {
+   "x": 1880,
+   "y": 15030,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Your poster research: fewer concepts repeated, with an 'I can…' statement scaled to ages 3, 5 and 8, and skills shown in real life (Alpha's AlphaTest idea). Paper on the fridge keeps the lesson in the kitchen, not on a screen (AAP: no screens an hour before bed). The Sunday email is the re-engagement moment."
+  },
+  "t7": {
+   "x": 0,
+   "y": 16250,
+   "text": "7 · Print it, fold it, keep it",
+   "kind": "title1",
+   "maxW": 2892
+  },
+  "s7": {
+   "x": 2972,
+   "y": 16500,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Paper keeps screens out of the last hour before bed (AAP) and gives kids something to make and hold. The one-sheet fold-a-book is a classroom classic: one page, one snip, 8 pages. The right two boards are real Letter-size print pages (export them as PDF). Hero trading cards turn legends into something kids collect and show off, and every card repeats a power phrase, which works as spaced review. Paper nights still light a lantern. Printing costs almost nothing to offer and makes the Family plan feel worth paying for."
+  },
+  "t8": {
+   "x": 0,
+   "y": 17720,
+   "text": "8 · Keepsakes & progress: why families stay and renew",
+   "kind": "title1",
+   "maxW": 2270
+  },
+  "s8": {
+   "x": 2350,
+   "y": 17970,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Only ~24% of annual education-app plans renew (RevenueCat). Renewal needs something to lose: the story map and the kids' legends. The season finale is the natural renewal moment. The hardcover is a proven product (Wonderbly: 11M+ personalized books sold) and a keepsake worth paying for."
+  },
+  "t9": {
+   "x": 0,
+   "y": 19210,
+   "text": "9 · The library: real classics, paired and retold",
+   "kind": "title1",
+   "maxW": 860
+  },
+  "s9": {
+   "x": 940,
+   "y": 19460,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Your 60+ curated books stay central, paired with each week's virtue, with small affiliate income. Retold public-domain classics (Aesop, Andersen) star your kids, are reviewed once and cost almost nothing to serve. Pairings favor stories where virtue is rewarded, not vice punished (Lee 2014; Liang 2025)."
+  },
+  "t10": {
+   "x": 0,
+   "y": 20680,
+   "text": "10 · Grandparents: audience, narrator, gift-giver",
+   "kind": "title1",
+   "maxW": 1800
+  },
+  "s10": {
+   "x": 1880,
+   "y": 20930,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: A picture of the grandkids as heroes is the best free marketing there is, and it replaces the unproven podcast as the growth channel. Kids' brains light up for a family member's voice (Abrams 2016, PNAS), so grandparents recording chapters is both a feature and a bond. Gifting fits how grandparents already spend."
+  },
+  "t11": {
+   "x": 0,
+   "y": 22150,
+   "text": "11 · Family story voice: yes, with consent built in",
+   "kind": "title1",
+   "maxW": 1330
+  },
+  "s11": {
+   "x": 1410,
+   "y": 22400,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: Kids' brains respond more to a familiar family voice (Abrams 2016, PNAS), and grandparents are the biggest gift buyers, so it's worth building. But a cloned voice is sensitive: voiceprints count as biometrics under Illinois BIPA and similar laws, and deepfake worries are real. So consent is part of the design: the adult records it themselves on their own link and says yes out loud; never made from a child's voice; reads only our chapters (nothing typed in, no downloads); labeled every time; they can switch it off anytime. Real recorded chapters stay the gold option. Part of Heirloom ($89). Get a privacy lawyer's review before launch."
+  },
+  "t12": {
+   "x": 0,
+   "y": 23660,
+   "text": "12 · Plans, family settings & privacy",
+   "kind": "title1",
+   "maxW": 1800
+  },
+  "s12": {
+   "x": 1880,
+   "y": 23910,
+   "w": 380,
+   "fill": "blue",
+   "text": "WHY: The paywall comes after chapter 3, once they've felt the wow, a cliffhanger and a legend. $49/yr is market rate (Education median $43.94, Oscar $49) with every sibling included; founding families get $39. Heirloom ($89) raises spend per family without raising the entry price. Privacy is a feature: first names and drawings only, export and delete anytime."
+  }
+ },
+ "designSystems": []
+}

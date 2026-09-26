@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Print it</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;font-family:'Figtree',system-ui,sans-serif;color:#1F1A14;-webkit-font-smoothing:antialiased}
+a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
+.disp{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.01em}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.item{display:flex;gap:14px;align-items:center;border-radius:20px;background:#FFFCF5;border:1px solid #E7DCC7;padding:12px;color:#1F1A14}
+.item:hover{background:#FBF4E6;color:#1F1A14}
+.th{width:76px;height:76px;border-radius:14px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.tag{font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:4px 8px;border-radius:999px}
+.seg{flex:1;min-height:44px;border-radius:999px;border:none;font:700 13.5px 'Figtree',sans-serif;cursor:pointer}
+</style>
+</helmet>
+<div style="width:390px;height:1040px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
+  <div style="display:flex;align-items:center;padding:10px 0">
+    <a href="Tonight.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+  <div class="eyebrow" style="color:#8A5212">Paper, scissors, story</div>
+  <h1 class="disp" style="margin:6px 0 0;font-size:34px;line-height:1.05;font-weight:600">Print something for tonight.</h1>
+  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Everything is made for your kids, with their names and drawings. Paper nights still light a lantern.</p>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+    <a class="item" href="FoldGuide.dc.html">
+      <div class="th" style="background:#16203A"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#F2B559" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M16 10h22v32H16z"/><path d="M16 10l-5 3v32l5-3" fill="#2F3E62"/><path d="M22 20h10M22 25h10M22 30h6"/></svg></div>
+      <div style="flex:1"><div style="display:flex;gap:6px;align-items:center"><span style="font-weight:800;font-size:15.5px">Fold-a-book</span><span class="tag" style="background:#F3E1BE;color:#7A4A10">KIDS' FAVORITE</span></div><div style="font-size:13px;line-height:1.4;color:#4A4034;margin-top:3px">Tonight's chapter on one sheet. Fold, snip, and it's an 8-page book.</div></div>
+    </a>
+    <a class="item" href="HeroCards.dc.html">
+      <div class="th" style="background:#F6E5C4"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#8A5212" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="12" width="22" height="30" rx="3" transform="rotate(-10 19 27)" fill="#FFFCF5"/><rect x="22" y="10" width="22" height="30" rx="3" transform="rotate(8 33 25)" fill="#FFFCF5"/><circle cx="33" cy="20" r="4"/><path d="M27 32h12"/></svg></div>
+      <div style="flex:1"><div style="display:flex;gap:6px;align-items:center"><span style="font-weight:800;font-size:15.5px">Hero cards</span><span class="tag" style="background:#E7EEDD;color:#3F5739">3 NEW</span></div><div style="font-size:13px;line-height:1.4;color:#4A4034;margin-top:3px">Trading cards of their legends and strengths. Collect the season.</div></div>
+    </a>
+    <a class="item" href="FridgeCard.dc.html">
+      <div class="th" style="background:#D9E0E4"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#1F1A14" stroke-width="1.8" aria-hidden="true"><rect x="14" y="10" width="24" height="32" rx="2" fill="#FFFCF5"/><circle cx="26" cy="10" r="3.5" fill="#C8412E" stroke="none"/><path d="M19 20h14M19 26h14M19 32h8"/></svg></div>
+      <div style="flex:1"><div style="font-weight:800;font-size:15.5px">Fridge card + brave plans</div><div style="font-size:13px;line-height:1.4;color:#4A4034;margin-top:3px">This week's strength, each child's "I can" and if-then plan.</div></div>
+    </a>
+    <a class="item" href="Booklet.dc.html">
+      <div class="th" style="background:#E7EEDD"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#3F5739" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M26 16c-4-3-10-4-16-4v26c6 0 12 1 16 4 4-3 10-4 16-4V12c-6 0-12 1-16 4zM26 16v26"/></svg></div>
+      <div style="flex:1"><div style="font-weight:800;font-size:15.5px">The week as a booklet</div><div style="font-size:13px;line-height:1.4;color:#4A4034;margin-top:3px">Five chapters, stapled, with coloring pages. For screen-free weeks.</div></div>
+    </a>
+  </div>
+  <div class="eyebrow" style="color:#6A5D4B;margin-top:18px">Paper</div>
+  <div style="display:flex;gap:4px;margin-top:8px;background:#EFE4CE;border-radius:999px;padding:4px">
+    <sc-for list="{{papers}}" as="p" hint-placeholder-count="2"><button class="seg" onClick="{{p.pick}}" style="{{p.style}}">{{p.label}}</button></sc-for>
+  </div>
+  <div style="flex-grow:1"></div>
+  <div style="border-radius:18px;background:#16203A;color:#F4E9D2;padding:14px 16px;display:flex;gap:12px;align-items:center">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>
+    <div style="flex:1;font-size:13.5px;line-height:1.45"><b>Heirloom families</b> get the whole season as a real hardcover, printed and mailed.</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1040}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { p: 'US Letter' }; }
+  renderVals() {
+    const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
+    const off = { background: 'transparent', color: '#6A5D4B' };
+    return { papers: ['US Letter', 'A4'].map((label) => ({ label, style: this.state.p === label ? on : off, pick: () => this.setState({ p: label }) })) };
+  }
+}
+</script>
+</body>
+</html>

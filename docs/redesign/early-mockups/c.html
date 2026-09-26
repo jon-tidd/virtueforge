@@ -1,0 +1,85 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{background:#07090F;color:#F3E6C8}
+.scr{position:relative;min-height:0;padding-bottom:40px;padding:0 24px;overflow:hidden}
+.glow{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;pointer-events:none}
+.time{display:flex;justify-content:space-between;padding-top:20px;font:500 12px var(--sans);color:rgba(243,230,200,.45);letter-spacing:.06em}
+.lamp{width:74px;height:74px;margin:70px auto 0;border-radius:50%;background:radial-gradient(circle at 50% 55%,#FFE7A3 0%,#F4B64A 35%,rgba(212,140,40,.0) 70%);filter:blur(.3px);position:relative}
+.lamp:after{content:"";position:absolute;left:50%;top:50%;width:14px;height:22px;transform:translate(-50%,-40%);border-radius:50% 50% 45% 45%/60% 60% 40% 40%;background:radial-gradient(#fff 0%,#FFE9B0 50%,#F2A93B 100%)}
+h1{font:500 italic 50px/1 var(--display);text-align:center;margin-top:34px;color:#F7EBD0}
+.sub{font:400 15px/1.5 var(--sans);color:rgba(243,230,200,.6);text-align:center;margin:14px auto 0;max-width:300px}
+.ta{margin-top:28px;border:1px solid rgba(240,201,75,.3);background:rgba(255,236,190,.04);border-radius:16px;padding:16px 16px 14px;font:400 19px/1.45 var(--serif);color:#F7EBD0;min-height:112px}
+.ta .cur{display:inline-block;width:2px;height:20px;background:var(--gold2);vertical-align:-3px;margin-left:1px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{font:500 12.5px var(--sans);padding:7px 11px;border-radius:100px;border:1px solid rgba(243,230,200,.16);color:rgba(243,230,200,.65)}
+.row{display:flex;gap:10px;margin-top:16px}
+.in{flex:1;border-bottom:1px solid rgba(243,230,200,.25);padding:10px 2px;font:500 15px var(--sans);color:#F7EBD0}
+.in small{display:block;font:600 9.5px var(--sans);letter-spacing:.14em;color:rgba(243,230,200,.4);margin-bottom:4px}
+.light{margin-top:26px;border-radius:100px;padding:17px;text-align:center;font:600 16px var(--sans);color:#1A1206;background:linear-gradient(180deg,#FFD978,#E0A83C);box-shadow:0 0 40px rgba(240,180,60,.45),0 0 0 6px rgba(240,180,60,.08)}
+.foot{text-align:center;font:500 12px var(--sans);color:rgba(243,230,200,.35);margin-top:18px}
+.story{font:400 22px/1.6 var(--serif);color:#E9C9A0;margin-top:16px}
+.story p{margin-bottom:16px}
+.story b{font-weight:500;color:#F4D7AE}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(233,201,160,.25)}
+.dots i.on{background:#E9C9A0;width:18px;border-radius:4px}
+.mode{display:inline-flex;gap:6px;align-items:center;font:600 10.5px var(--sans);letter-spacing:.1em;color:rgba(233,160,110,.8);border:1px solid rgba(233,160,110,.3);padding:5px 10px;border-radius:100px}
+.lamps{display:flex;justify-content:space-between;margin-top:20px}
+.lp{display:flex;flex-direction:column;align-items:center;gap:8px;font:600 10px var(--sans);color:rgba(243,230,200,.45)}
+.lp i{width:30px;height:30px;border-radius:50%;border:1px solid rgba(243,230,200,.18)}
+.lp.on i{border:none;background:radial-gradient(circle,#FFE7A3 0%,#F4B64A 40%,rgba(244,182,74,0) 72%)}
+.lp.on{color:#F3D48A}
+.lp.tonight i{border:1.5px dashed #F0C94B}
+.card{margin-top:22px;border-radius:18px;background:rgba(255,236,190,.05);border:1px solid rgba(243,230,200,.1);padding:18px}
+</style></head><body>
+<div class="label"><b>OPTION C · RADICAL · "THE LAMP"</b><span>The site is the bedtime ritual</span><p>No marketing page. The first thing a parent sees is a question about their child's day, in a dark, calm room. The site turns into a nightlight reader, then tracks a nightly habit. The research and pricing move behind a small link.</p></div>
+
+<section class="scr">
+  <div class="glow" style="top:-120px;width:620px;height:620px;background:radial-gradient(circle,rgba(240,170,60,.20) 0%,rgba(240,170,60,.05) 40%,transparent 65%)"></div>
+  <div class="time"><span>BEDTIME VIRTUES</span><span>7:42 PM · ALMOST BEDTIME</span></div>
+  <div class="lamp"></div>
+  <h1>What happened today?</h1>
+  <p class="sub">One sentence is enough. We'll turn it into tonight's story.</p>
+  <div class="ta">Leo wouldn't share his trucks with his little sister, then cried when she took one<span class="cur"></span></div>
+  <div class="chips"><span class="chip">Told a fib</span><span class="chip">Gave up</span><span class="chip">Big meltdown</span><span class="chip">Was brave today</span><span class="chip">Scared of the dark</span></div>
+  <div class="row"><div class="in"><small>NAME</small>Leo</div><div class="in" style="flex:.5"><small>AGE</small>5</div></div>
+  <div class="light">Light the lamp</div>
+  <div class="foot">Free · Nothing to sign up for · Stays on your phone</div>
+</section>
+<div class="phone-sep" data-t="SCREEN 2 · AFTER TAPPING"></div>
+
+<section class="scr" style="background:#050302;min-height:700px">
+  <div class="glow" style="top:120px;width:520px;height:520px;background:radial-gradient(circle,rgba(200,90,30,.10) 0%,transparent 60%)"></div>
+  <div class="time"><span class="mode">◐ NIGHTLIGHT MODE · NO BLUE LIGHT</span><span>2 / 6</span></div>
+  <div style="font:600 italic 30px/1.1 var(--display);color:#E9C9A0;margin-top:34px;text-align:center">Leo and the Truck<br>That Rolled Downhill</div>
+  <div style="text-align:center;color:rgba(233,201,160,.4);letter-spacing:.4em;margin:8px 0 4px">❦</div>
+  <div class="story">
+    <p>Leo loved his red truck more than anything in the whole wide world. It had real rubber tires and a horn that went <i>bip-bip</i>.</p>
+    <p>So when little Nora reached for it, Leo held it tight against his chest. <b>"Mine,"</b> he said.</p>
+    <p>Nora's lip began to wobble. And just then, the truck slipped from Leo's hands…</p>
+  </div>
+  <div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <div class="foot" style="margin-top:14px">Swipe to turn the page · Screen dims itself</div>
+</section>
+<div class="phone-sep" data-t="SCREEN 3 · THE END"></div>
+
+<section class="scr" style="min-height:720px">
+  <div class="glow" style="top:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(240,170,60,.12) 0%,transparent 60%)"></div>
+  <div style="text-align:center;padding-top:44px">
+    <div class="eyebrow" style="color:rgba(243,230,200,.45)">Before you turn off the light</div>
+    <div style="font:500 italic 30px/1.2 var(--display);color:#F7EBD0;margin-top:14px">"Leo, when Nora cried, what did your heart want to do?"</div>
+    <p style="font:400 14px/1.5 var(--sans);color:rgba(243,230,200,.55);margin-top:12px">Just one question. Let him answer, then kiss him goodnight.</p>
+  </div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font:600 21px var(--display);color:#F7EBD0">Leo's week of lamps</div><div style="font:600 11px var(--sans);color:#F3D48A">4 NIGHTS</div></div>
+    <div class="lamps">
+      <div class="lp on"><i></i>M</div><div class="lp on"><i></i>T</div><div class="lp on"><i></i>W</div><div class="lp on tonight"><i></i>T</div><div class="lp"><i></i>F</div><div class="lp"><i></i>S</div><div class="lp"><i></i>S</div>
+    </div>
+    <p style="font:400 13.5px/1.5 var(--sans);color:rgba(243,230,200,.6);margin-top:16px">Aristotle said virtue is built by habit, not by lectures. Seven nights of stories is how that habit starts.</p>
+  </div>
+  <div class="card" style="display:flex;gap:14px;align-items:center">
+    <div class="cover" style="background:#2F5233;width:58px;height:86px;padding:8px 6px 6px 8px"><div class="t" style="font-size:10.5px">Stone Soup</div><div class="a" style="font-size:6px">M. Brown</div></div>
+    <div><div class="eyebrow" style="color:#F3D48A;font-size:9.5px">Tomorrow night</div><div style="font:600 18px/1.2 var(--display);color:#F7EBD0;margin-top:3px">A classic about sharing</div><p style="font:400 12.5px/1.4 var(--sans);color:rgba(243,230,200,.55);margin-top:3px">We'll remind you at 7:30.</p></div>
+  </div>
+  <div class="foot" style="margin-top:28px;letter-spacing:.04em">Why stories work · The library · Pricing</div>
+</section>
+</body></html>
