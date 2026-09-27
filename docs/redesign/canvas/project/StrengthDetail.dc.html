@@ -50,9 +50,9 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     <div class="blk" style="background:#16203A;border-color:#16203A;color:#F4E9D2"><div class="k" style="color:#E9A23B">THE IF-THEN PLAN</div><div class="story" style="font-size:17px;line-height:1.45;margin-top:4px">{{plan}}</div><a href="IfThen.dc.html" style="display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:14px;margin-top:4px;color:#E9A23B">Let them build their own plan</a></div>
   </div>
   <div style="padding:18px 20px 0">
-    <div class="eyebrow" style="color:#6A5D4B">Where they'll meet it</div>
-    <div class="blk" style="display:flex;gap:12px;align-items:center"><img src="/_blob/a1437857e9dfd88dc783c6e5dc0eb642" alt="" style="width:56px;height:56px;border-radius:12px;object-fit:cover;display:block"><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Ch. 7 · The Keeper's Riddle</div><div style="font-size:13px;line-height:1.4;color:#4A4034">Theo gets the riddle wrong twice, then tries it a third way.</div></div></div>
-    <div class="blk" style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:58px;border-radius:3px 8px 8px 3px;background:#4E6A45;flex-shrink:0"></div><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Paired classics</div><div style="font-size:13px;line-height:1.4;color:#4A4034"><i>The Carrot Seed</i> for Max, <i>The Little Engine That Could</i> for June, <i>After the Fall</i> for everyone.</div></div></div>
+    <div class="eyebrow" style="color:#6A5D4B">Where they met it</div>
+    <div class="blk" style="display:flex;gap:12px;align-items:center"><img src="/_blob/a1437857e9dfd88dc783c6e5dc0eb642" alt="" style="width:56px;height:56px;border-radius:12px;object-fit:cover;display:block"><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Ch. 24 · Pebble by Pebble</div><div style="font-size:13px;line-height:1.4;color:#4A4034">Alfie can't reach the tin, tries three ways, and the third one works.</div></div></div>
+    <div class="blk" style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:58px;border-radius:3px 8px 8px 3px;background:#4E6A45;flex-shrink:0"></div><div style="flex:1"><div style="font-weight:800;font-size:14.5px">Paired classics</div><div style="font-size:13px;line-height:1.4;color:#4A4034"><i>The Carrot Seed</i> for Clara, <i>The Little Engine That Could</i> for Alfie, <i>After the Fall</i> for everyone.</div></div></div>
   </div>
   <div style="padding:18px 20px 0">
     <div class="eyebrow" style="color:#6A5D4B">How you'll know it's growing</div>
@@ -63,7 +63,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     </div>
   </div>
   <div style="flex-grow:1"></div>
-  <div style="margin:16px 20px 0;border-radius:18px;background:#E7EEDD;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#3F5739"><b>What to say when you spot it:</b> praise the effort and the new way they tried ("You tried it a different way!"), not how smart they are. Toddlers who hear that kind of praise are more likely to enjoy challenges years later (Gunderson et al., 2013).</div>
+  <div style="margin:16px 20px 0;border-radius:18px;background:#E7EEDD;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#3F5739"><b>What to say when you spot it:</b> praise the effort and the new way they tried ("You tried a new way!"), not how smart they are. Toddlers who hear that kind of praise are more likely to enjoy challenges years later (Gunderson et al., 2013).</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1400}}'>
@@ -71,9 +71,9 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { a: 1 }; }
   renderVals() {
     const ages = [
-      { label: 'Max · 3', img: '/_blob/89224e240d4677b215293a2283578be4', ican: 'I can try one more time.', looks: 'Tries the puzzle piece again, a different way round, before handing it to you.', plan: 'If I feel grumpy, then I take a lantern breath and try once more.' },
-      { label: 'June · 5', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', ican: 'I can keep going when something is tricky.', looks: 'Finishes the row of letters, even the wobbly S, and asks for help on just that one.', plan: 'If I want to quit, then I say “not yet” and try a new way.' },
-      { label: 'Theo · 8', img: '/_blob/49c6eb96321a54a534a7d5155073c868', ican: 'I can stick with hard things and break them into small steps.', looks: 'Practices the tricky four bars of the piano piece, not the whole song, until they click.', plan: 'If I get stuck, then I try two different ways before I ask for help.' }
+      { label: 'Clara · 3', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', ican: 'I can try one more time.', looks: 'Turns the puzzle piece a new way before handing it to you, or tries the shoe again.', plan: 'If it’s hard, then I take a lantern breath and try one more time.' },
+      { label: 'Alfie · 5', img: '/_blob/89224e240d4677b215293a2283578be4', ican: 'I can keep going when something is tricky, and try a new way.', looks: 'Finishes the row of letters, even the wobbly S, and asks for help on just that one.', plan: 'If I want to quit, then I say “not yet” and try a new way.' },
+      { label: 'Hugh · 7', img: '/_blob/49c6eb96321a54a534a7d5155073c868', ican: 'I can break a hard thing into small steps and stick with it for days.', looks: 'Practices the tricky four bars of the piano piece, not the whole song, until they click.', plan: 'If it feels too big, then I do just the next small step.' }
     ];
     const on = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
     const c = ages[this.state.a];

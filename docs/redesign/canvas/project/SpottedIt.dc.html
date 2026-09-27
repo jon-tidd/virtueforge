@@ -25,10 +25,10 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 <div style="width:390px;height:960px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0">
     <a href="Tonight.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
-    <span style="font-size:13px;font-weight:700;color:#6A5D4B">Tuesday · 4:12 pm</span>
+    <span style="font-size:13px;font-weight:700;color:#6A5D4B">Wednesday · 4:12 pm</span>
     <span style="width:44px"></span>
   </div>
-  <div class="eyebrow" style="color:#8A5212;margin-top:6px">This week · Courage</div>
+  <div class="eyebrow" style="color:#8A5212;margin-top:6px">This week · Keep Going</div>
   <h1 class="disp" style="margin:8px 0 0;font-size:34px;line-height:1.06;font-weight:600">Did you spot it today?</h1>
   <div style="margin-top:14px;background:#FFFCF5;border:1px solid #E7DCC7;border-radius:20px;padding:4px 14px">
     <sc-for list="{{kids}}" as="k" hint-placeholder-count="3">
@@ -36,10 +36,10 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     </sc-for>
   </div>
   <label for="what" style="margin-top:18px;font-size:12px;font-weight:800;letter-spacing:.12em;color:#6A5D4B">WHAT HAPPENED?</label>
-  <textarea id="what" style="margin-top:8px;min-height:104px;border-radius:16px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:12px 14px;font:500 16px/1.5 'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box;width:100%;resize:none">Theo told me he broke the lamp before I even asked.</textarea>
+  <textarea id="what" style="margin-top:8px;min-height:104px;border-radius:16px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:12px 14px;font:500 16px/1.5 'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box;width:100%;resize:none">Hugh told me he broke the lamp before I even asked.</textarea>
   <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
     <button style="min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid #D8C9AB;background:#FFFCF5;font:700 13.5px 'Figtree',sans-serif;color:#4A4034;display:flex;align-items:center;gap:6px;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Say it instead</button>
-    <span style="min-height:44px;padding:0 14px;border-radius:999px;background:#E7EEDD;color:#3F5739;font-size:13.5px;font-weight:700;display:flex;align-items:center">Honesty · Courage</span>
+    <span style="min-height:44px;padding:0 14px;border-radius:999px;background:#E7EEDD;color:#3F5739;font-size:13.5px;font-weight:700;display:flex;align-items:center">Truth-Teller · Brave</span>
   </div>
   <div style="margin-top:14px;font-size:13.5px;line-height:1.5;color:#6A5D4B">We'll write it as a legend for tonight. You'll read it first.</div>
   <div style="flex-grow:1"></div>
@@ -48,12 +48,12 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { spotted: { Theo: true } }; }
+  constructor(props) { super(props); this.state = { spotted: { Hugh: true } }; }
   renderVals() {
     const list = [
-      { name: 'Theo', img: '/_blob/49c6eb96321a54a534a7d5155073c868', ican: 'Tell the truth about a mistake, even when it’s scary' },
-      { name: 'June', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', ican: 'Say my idea out loud at dinner' },
-      { name: 'Max', img: '/_blob/89224e240d4677b215293a2283578be4', ican: 'Try the big slide' }
+      { name: 'Hugh', img: '/_blob/49c6eb96321a54a534a7d5155073c868', ican: 'Break a hard thing into small steps and stick with it all week' },
+      { name: 'Alfie', img: '/_blob/89224e240d4677b215293a2283578be4', ican: 'Keep going when something is tricky, and try a new way' },
+      { name: 'Clara', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', ican: 'Try one more time' }
     ];
     const on = { background: '#4E6A45', borderColor: '#4E6A45', color: '#F4E9D2' };
     return { kids: list.map((k, i) => ({

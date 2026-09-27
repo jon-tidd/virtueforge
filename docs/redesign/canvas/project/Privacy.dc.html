@@ -29,21 +29,21 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     <div class="p"><span class="ic" style="background:#E7EEDD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5739" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>First names and drawings only.</b> No photos, no face scans, no birthdays. You draw each child; we never see what they look like.</span></div>
     <div class="p"><span class="ic" style="background:#E7EEDD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5739" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Kids never type or chat.</b> Grown-ups add everything, and you approve anything personal before it's read aloud.</span></div>
     <div class="p"><span class="ic" style="background:#E7EEDD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5739" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>How stories are made.</b> Each season is drafted with AI and reviewed by a person. Nightly details, like names and deeds, are woven in by AI, checked automatically, and shown to you first.</span></div>
-    <div class="p"><span class="ic" style="background:#E7EEDD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5739" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Voices stay in the family.</b> A story voice is made only by the grown-up it belongs to, after they say yes out loud, and never from a child. It reads only our stories, only for you, and they can switch it off anytime.</span></div>
+    <div class="p"><span class="ic" style="background:#E7EEDD"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5739" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b>Voices stay in the family.</b> A story voice is made only by the grown-up it belongs to, after they read a consent line aloud (kept, dated), and never from a child. It reads only our chapters, can't be downloaded, and they can switch it off anytime.</span></div>
     <div class="p" style="border-bottom:none"><span class="ic" style="background:#F6E1DA"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A3A22" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span><b>We never</b> sell your data, show ads, or train AI models on your family's stories.</span></div>
   </div>
   <div style="flex-grow:1"></div>
   <sc-if value="{{confirm}}" hint-placeholder-val="{{ false }}">
     <div style="border-radius:20px;background:#F6E1DA;padding:16px;margin-bottom:12px">
       <div style="font-weight:800;font-size:15.5px;color:#7A2E1A">Delete everything?</div>
-      <div style="font-size:14px;line-height:1.45;color:#5A2A1A;margin-top:4px">Drawings, legends, recordings and stories are erased within 30 days. We'll email you a copy first.</div>
+      <div style="font-size:14px;line-height:1.45;color:#5A2A1A;margin-top:4px">Drawings, legends, stories, voices, recordings: all erased within 30 days. We'll email your stories first.</div>
       <div style="display:flex;gap:8px;margin-top:12px">
         <button class="act" onClick="{{cancel}}" style="background:#FFFCF5;border:1.5px solid #D8C9AB;color:#1F1A14">Keep our family</button>
         <button class="act" style="background:#9A3A22;border:none;color:#FFFFFF">Delete</button>
       </div>
     </div>
   </sc-if>
-  <button class="act" style="background:#16203A;border:none;color:#F4E9D2">Download everything (PDF + files)</button>
+  <button class="act" style="background:#16203A;border:none;color:#F4E9D2">Download our stories (PDF + drawings)</button>
   <button class="act" onClick="{{ask}}" style="margin-top:10px;background:transparent;border:1.5px solid #C58B7A;color:#9A3A22">Delete our family's data</button>
   <div style="text-align:center;font-size:12.5px;color:#6A5D4B;margin-top:12px">Built to meet COPPA (US children's privacy law). Questions go straight to Jon.</div>
 </div>

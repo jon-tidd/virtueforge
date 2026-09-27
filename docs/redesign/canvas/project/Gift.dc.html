@@ -58,14 +58,14 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { plan: 'Heirloom', occ: 'Christmas morning' }; }
   renderVals() {
     const plans = [
-      { name: 'Family', price: '$49', note: 'A new chapter every night, every sibling' },
-      { name: 'Heirloom', price: '$89', note: 'Plus your voice, and a hardcover of their season' }
+      { name: 'Family', price: '$49', note: 'A new chapter each night they read, every child' },
+      { name: 'Heirloom', price: '$89', note: 'Plus the family story voice and a yearly hardcover' }
     ];
     const on = { borderColor: '#E9A23B', background: '#FBF1DC' };
     const dark = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     return {
       plans: plans.map((p) => ({ ...p, style: this.state.plan === p.name ? on : {}, pick: () => this.setState({ plan: p.name }) })),
-      occasions: ['Right now', 'Max’s birthday', 'Christmas morning'].map((label) => ({ label, style: this.state.occ === label ? dark : {}, pick: () => this.setState({ occ: label }) })),
+      occasions: ['Right now', 'Clara’s birthday', 'Christmas morning'].map((label) => ({ label, style: this.state.occ === label ? dark : {}, pick: () => this.setState({ occ: label }) })),
       total: this.state.plan === 'Heirloom' ? '$89' : '$49'
     };
   }

@@ -19,23 +19,23 @@ a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
 </helmet>
 <div style="width:390px;height:900px;background:#150F0A;color:#EAD9BC;display:flex;flex-direction:column;box-sizing:border-box;padding:22px 20px 20px">
   <div class="eyebrow" style="color:#E9A23B;text-align:center">You decide</div>
-  <h1 class="disp" style="margin:10px 0 0;font-size:32px;line-height:1.1;font-weight:600;text-align:center;color:#FBF0DA">On the far side, the road splits in two. Where should the heroes go tomorrow?</h1>
+  <h1 class="disp" style="margin:10px 0 0;font-size:32px;line-height:1.1;font-weight:600;text-align:center;color:#FBF0DA">On the far side of the old alder, the way splits in two. Where should the heroes go tomorrow?</h1>
   <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
-    <button class="opt" onClick="{{pickCave}}" style="{{caveStyle}}">
-      <svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 40c4-14 10-24 20-24s16 10 20 24z"/><path d="M16 40c1-7 4-11 8-11s7 4 8 11"/><path d="M34 10l2-4M38 14l4-2M30 8l0-4"/></svg>
-      <span class="disp" style="font-size:22px;font-weight:600">Down to the cave, where something sneezed</span>
-      <span style="font-size:14px;opacity:.8">Max's idea is waiting there…</span>
+    <button class="opt" onClick="{{pickReeds}}" style="{{reedsStyle}}">
+      <svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 44h40"/><path d="M14 44c0-8-1-15-2-21"/><rect x="9.5" y="11" width="5" height="12" rx="2.5"/><path d="M24 44V17"/><rect x="21.5" y="5" width="5" height="12" rx="2.5"/><path d="M34 44c0-8 1-14 2-19"/><rect x="33.5" y="13" width="5" height="12" rx="2.5"/><path d="M19 44c-1-5-4-9-8-11M29 44c1-5 4-9 9-11"/></svg>
+      <span class="disp" style="font-size:22px;font-weight:600">Follow Ember's nose through the reeds</span>
+      <span style="font-size:14px;opacity:.8">She can smell where the ground is firm. The little dragon rides in Alfie's backpack…</span>
     </button>
-    <button class="opt" onClick="{{pickTower}}" style="{{towerStyle}}">
-      <svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M18 44l3-28h6l3 28z"/><path d="M17 16h14l-2-6H19z"/><path d="M24 4v4M10 12l-4-2M38 12l4-2"/></svg>
-      <span class="disp" style="font-size:22px;font-weight:600">Up to the lighthouse on the cliff</span>
-      <span style="font-size:14px;opacity:.8">Its light went out last night.</span>
+    <button class="opt" onClick="{{pickStones}}" style="{{stonesStyle}}">
+      <svg width="46" height="46" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><ellipse cx="11" cy="40" rx="7" ry="3.5"/><ellipse cx="23" cy="31" rx="5.5" ry="2.8"/><ellipse cx="32" cy="23" rx="4.2" ry="2.2"/><ellipse cx="39" cy="16" rx="3.2" ry="1.7"/><path d="M28 40c3-2 6-2 9 0s6 2 9 0M3 30c2-1.5 4-1.5 6 0"/><path d="M6 9h14M26 6h10"/></svg>
+      <span class="disp" style="font-size:22px;font-weight:600">Stay on the Stepping Way</span>
+      <span style="font-size:14px;opacity:.8">Fifty-nine more stones, counted one by one by lantern light.</span>
     </button>
   </div>
   <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px">
-    <img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
-    <img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
-    <img src="/_blob/89224e240d4677b215293a2283578be4" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
+    <img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="Hugh" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
+    <img src="/_blob/89224e240d4677b215293a2283578be4" alt="Alfie" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
+    <img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="Clara" style="width:34px;height:34px;border-radius:50%;object-fit:cover;display:block">
     <span style="font-size:13.5px;color:#C9B89A">Everybody votes. Majority wins.</span>
   </div>
   <div style="flex-grow:1"></div>
@@ -44,16 +44,16 @@ a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { pick: 'cave' }; }
+  constructor(props) { super(props); this.state = { pick: 'reeds' }; }
   renderVals() {
     const on = { borderColor: '#E9A23B', background: '#2E2112', color: '#FBF0DA' };
     const p = this.state.pick;
     return {
-      pickCave: () => this.setState({ pick: 'cave' }),
-      pickTower: () => this.setState({ pick: 'tower' }),
-      caveStyle: p === 'cave' ? on : {},
-      towerStyle: p === 'tower' ? on : {},
-      cta: p === 'cave' ? 'To the cave! Finish the chapter' : 'To the lighthouse! Finish the chapter'
+      pickReeds: () => this.setState({ pick: 'reeds' }),
+      pickStones: () => this.setState({ pick: 'stones' }),
+      reedsStyle: p === 'reeds' ? on : {},
+      stonesStyle: p === 'stones' ? on : {},
+      cta: p === 'reeds' ? 'Through the reeds! Finish the chapter' : 'Along the stones! Finish the chapter'
     };
   }
 }

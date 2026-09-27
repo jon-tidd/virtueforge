@@ -26,12 +26,12 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div class="eyebrow" style="color:#8A5212">Classics retold</div>
   <h1 class="disp" style="margin:6px 0 0;font-size:32px;line-height:1.08;font-weight:600">Old stories, new heroes.</h1>
-  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Stories that have taught kids for centuries, with yours stepping inside. Each one is read and checked by a person before it's on the shelf.</p>
+  <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Stories that have taught kids for centuries, with yours stepping inside. Each one is reviewed by a person before it goes on the shelf.</p>
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px">
-    <a href="ReaderPicture.dc.html" class="cover" style="background:#4E6A45"><img src="/_blob/89224e240d4677b215293a2283578be4" alt=""><div class="star">STARRING MAX</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">The Tortoise, the Hare and Max</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#DCE6D2">Aesop · 5 min · Patience</div></a>
-    <a href="ReaderPicture.dc.html" class="cover" style="background:#8A5212"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt=""><div class="star">STARRING JUNE</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">The Lion, the Mouse and June</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#F3E1BE">Aesop · 5 min · Generosity</div></a>
-    <a href="ReaderPicture.dc.html" class="cover" style="background:#16203A"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt=""><div class="star">STARRING THEO</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">Theo and the Emperor's New Clothes</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#B8AE9A">Andersen · 9 min · Honesty</div></a>
-    <a href="ReaderPicture.dc.html" class="cover" style="background:#6B4E7A"><img src="/_blob/89224e240d4677b215293a2283578be4" alt=""><div class="star">WITH ALL THREE</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">The Shepherd Boy and the Giant</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#E4D6EA">1 Samuel 17 · 7 min · Courage</div></a>
+    <a href="ReaderPicture.dc.html" class="cover" style="background:#16203A"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt=""><div class="star">STARRING HUGH</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">Hugh and the Emperor's New Clothes</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#B8AE9A">Andersen · 9 min · Truth-Teller</div></a>
+    <a href="ReaderPicture.dc.html" class="cover" style="background:#8A5212"><img src="/_blob/89224e240d4677b215293a2283578be4" alt=""><div class="star">STARRING ALFIE</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">The Lion, the Mouse and Alfie</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#F3E1BE">Aesop · 5 min · Kind</div></a>
+    <a href="ReaderPicture.dc.html" class="cover" style="background:#4E6A45"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt=""><div class="star">STARRING CLARA</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">The Tortoise, the Hare and Clara</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#DCE6D2">Aesop · 5 min · Keep Going</div></a>
+    <a href="ReaderPicture.dc.html" class="cover" style="background:#6B4E7A"><img src="/_blob/89224e240d4677b215293a2283578be4" alt=""><div class="star">WITH ALL THREE</div><div class="disp" style="font-size:17px;font-weight:600;line-height:1.15;margin-top:4px">{{together.title}}</div><div style="flex-grow:1"></div><div style="font-size:11.5px;color:#E4D6EA">{{together.meta}}</div></a>
   </div>
   <div style="margin-top:18px;border-radius:20px;background:#FFFCF5;border:1px solid #E7DCC7;padding:16px">
     <div style="display:flex;gap:10px;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A5212" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg><span style="font-weight:800;font-size:15px">Where's The Boy Who Cried Wolf?</span></div>
@@ -43,7 +43,15 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) { super(props); this.state = { faith: true }; }
+  renderVals() {
+    // The Bible story shows only when the faith toggle is on (a weekly verse and Bible stories in the library).
+    // With it off, the slot shows a folk tale instead (The Lion and the Mouse is already on the shelf).
+    const together = this.state.faith
+      ? { title: 'The Shepherd Boy and the Giant', meta: '1 Samuel 17 · 7 min · Brave' }
+      : { title: 'The Enormous Turnip', meta: 'Folk tale · 6 min · Better Together' };
+    return { together };
+  }
 }
 </script>
 </body>

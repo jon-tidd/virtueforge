@@ -34,11 +34,11 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div style="margin:10px 20px 0;background:#16203A;color:#F4E9D2;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
-    <div style="font-size:13.5px;line-height:1.45"><b style="color:#E9A23B">Founding families:</b> the first 500 families pay $39/yr, locked in for as long as you stay.</div>
+    <div style="font-size:13.5px;line-height:1.45"><b style="color:#E9A23B">Founding price:</b> $39/yr for our first 500 founding families, our thank-you for joining early.</div>
   </div>
   <div style="margin:18px 20px 0;background:#EFE4CE;border-radius:999px;padding:4px;display:flex;gap:4px">
     <button class="seg" onClick="{{setMonthly}}" style="{{monthlyStyle}}">Monthly</button>
-    <button class="seg" onClick="{{setYearly}}" style="{{yearlyStyle}}">Yearly · save 30%</button>
+    <button class="seg" onClick="{{setYearly}}" style="{{yearlyStyle}}">Yearly · save 25%+</button>
   </div>
   <div style="padding:16px 20px;display:flex;flex-direction:column;gap:14px">
     <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px">
@@ -52,19 +52,19 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
       <div style="position:absolute;top:-12px;right:18px;background:#E9A23B;color:#16203A;font-size:11.5px;font-weight:800;letter-spacing:.08em;padding:6px 12px;border-radius:999px">MOST FAMILIES</div>
       <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="disp" style="font-size:26px;font-weight:600">Family</div><div style="font-size:26px;font-weight:800">{{familyPrice}}<span style="font-size:14px;font-weight:600">{{period}}</span></div></div>
       <div style="font-size:12.5px;color:#C9C0AE;margin-top:-6px">{{familyNote}}</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>A new chapter every night, all four seasons</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Up to 4 kids drawn in, every chapter</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>All four seasons, 60 chapters each, at your pace</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Every sibling drawn in, every chapter</div>
       <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Missions, legends, idea jar, story map</div>
       <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>"Something happened today" special stories</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Printable booklets and chapter-book mode for 6–9</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Printable booklets and chapter-book mode for 5–9</div>
       <a class="btn" href="Welcome.dc.html">Start free, upgrade anytime</a>
     </div>
     <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px">
       <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="disp" style="font-size:26px;font-weight:600">Heirloom</div><div style="font-size:26px;font-weight:800">{{heirloomPrice}}<span style="font-size:14px;font-weight:600">{{period}}</span></div></div>
       <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Everything in Family</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Chapters narrated in your voice or Grandma's</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>A narrator for nights you can't read</div>
-      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Your kids' season printed as a hardcover, every year</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>The family story voice: chapters in your own voice</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>Grandma can make hers from her own link</div>
+      <div class="li"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E6A45" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:1px"><path d="M5 12l5 5L20 7"/></svg>A hardcover every year, with your kids drawn in</div>
       <a class="ghost" href="Welcome.dc.html">Start free</a>
     </div>
   </div>
@@ -77,8 +77,8 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   <div style="padding:6px 20px 24px;display:flex;flex-direction:column;gap:12px">
     <div style="font-size:15px;font-weight:700">Good to know</div>
     <div style="font-size:13.5px;line-height:1.5;color:#4A4034"><b>Cancel anytime.</b> Your drawings and the chapters you've read stay yours; download them anytime.</div>
-    <div style="font-size:13.5px;line-height:1.5;color:#4A4034"><b>What happens after the free chapters?</b> The story pauses on a cliffhanger. You can keep reading free classics while you decide.</div>
-    <div style="font-size:13.5px;line-height:1.5;color:#4A4034"><b>For perspective:</b> $49 a year is less than two picture books.</div>
+    <div style="font-size:13.5px;line-height:1.5;color:#4A4034"><b>What happens after the free chapters?</b> The story pauses after Chapter 3, on a cliffhanger. You can keep reading free classics while you decide.</div>
+    <div style="font-size:13.5px;line-height:1.5;color:#4A4034"><b>For perspective:</b> $49 a year is under $1 a week, for all your kids.</div>
   </div>
   <div style="flex-grow:1;background:#16203A"></div>
 </div>
@@ -98,7 +98,7 @@ class Component extends DCLogic {
       familyPrice: y ? '$49' : '$5.99',
       heirloomPrice: y ? '$89' : '$9.99',
       period: y ? '/yr' : '/mo',
-      familyNote: y ? 'About $4 a month. Founding families: $39.' : 'Billed monthly. Switch to yearly anytime.'
+      familyNote: y ? 'About $4 a month. Founding families: $39/yr.' : 'Billed monthly. Switch to yearly anytime.'
     };
   }
 }

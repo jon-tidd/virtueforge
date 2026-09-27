@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Pick a sidekick</title>
+<title>Meet Ember</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 22px;border-radius:999px;background:#E9A23B;color:#16203A;font-weight:700;font-size:16.5px;text-decoration:none;box-sizing:border-box}
 .btn:hover{background:#F2B559;color:#16203A}
-.pet{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:140px;border-radius:22px;border:1.5px solid #E2D5BC;background:#FFFCF5;font:700 15px 'Figtree',sans-serif;color:#1F1A14;cursor:pointer;padding:12px}
+.pet{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:112px;border-radius:22px;border:1.5px solid #E2D5BC;background:#FFFCF5;font:700 15px 'Figtree',sans-serif;color:#1F1A14;cursor:pointer;padding:12px}
 </style>
 </helmet>
 <div style="width:390px;height:900px;background:#F7F1E5;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 24px">
@@ -28,32 +28,39 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
     <div class="eyebrow" style="color:#8A5212">Step 3 · A companion</div>
     <h1 class="disp" style="margin:0;font-size:36px;line-height:1.05;font-weight:600">Every hero needs a sidekick.</h1>
-    <p style="margin:0;font-size:15px;line-height:1.5;color:#4A4034">They'll travel with Theo, June and Max all season. Use your family pet if you have one.</p>
+    <p style="margin:0;font-size:15px;line-height:1.5;color:#4A4034">Ours is Ember, a red fox. She'll travel with Hugh, Alfie and Clara all season.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px">
-    <sc-for list="{{pets}}" as="p" hint-placeholder-count="4">
+  <div style="display:flex;align-items:center;gap:14px;margin-top:22px;padding:16px;border-radius:22px;background:#16203A;color:#F4E9D2">
+    <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;color:#E9A23B"><path d="M8 8l9 11h14l9-11v16L24 42 8 24z M18 26h2 M28 26h2 M22 36l2 2 2-2"/></svg>
+    <div style="display:flex;flex-direction:column;gap:3px">
+      <span style="font:700 17px 'Figtree',sans-serif">Ember, the fox</span>
+      <span style="font-size:13.5px;line-height:1.4;color:#A99F8C">Every family's sidekick. Polite, a bit grand, and she always knows the way home.</span>
+    </div>
+  </div>
+  <p style="margin:18px 0 0;font-size:15px;line-height:1.5;color:#4A4034">Add your family pet: they'll keep Grandma company by the fire.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px">
+    <sc-for list="{{pets}}" as="p" hint-placeholder-count="3">
       <button class="pet" onClick="{{p.pick}}" style="{{p.style}}">
         <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="{{p.icon}}"/></svg>
         <span>{{p.label}}</span>
       </button>
     </sc-for>
   </div>
-  <label for="petname" style="margin-top:20px;font-size:12px;font-weight:800;letter-spacing:.12em;color:#6A5D4B">NAME YOUR SIDEKICK</label>
-  <input id="petname" value="Pip" style="margin-top:8px;min-height:52px;border-radius:14px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:0 14px;font:700 17px 'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box;width:100%">
-  <div style="margin-top:14px;font-size:13.5px;line-height:1.45;color:#6A5D4B">Sidekicks help, joke and get into trouble. The brave choices always belong to your kids.</div>
+  <label for="petname" style="margin-top:20px;font-size:12px;font-weight:800;letter-spacing:.12em;color:#6A5D4B">YOUR PET'S NAME</label>
+  <input id="petname" value="" placeholder="Optional" style="margin-top:8px;min-height:52px;border-radius:14px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:0 14px;font:700 17px 'Figtree',sans-serif;color:#1F1A14;box-sizing:border-box;width:100%">
+  <div style="margin-top:14px;font-size:13.5px;line-height:1.45;color:#6A5D4B">Ember helps, jokes and gets into trouble. The brave choices always belong to your kids.</div>
   <div style="flex-grow:1"></div>
   <a class="btn" href="Values.dc.html">Continue</a>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { pet: 'A clever fox' }; }
+  constructor(props) { super(props); this.state = { pet: '' }; }
   renderVals() {
     const list = [
-      { label: 'A clever fox', icon: 'M8 14l6 8 10-6 10 6 6-8-2 16c-2 8-8 12-14 12S12 38 10 30z M18 30h2 M28 30h2 M22 36l2 2 2-2' },
       { label: 'Our dog', icon: 'M12 14c-4 0-6 6-4 12l4-2v8c0 6 5 10 12 10s12-4 12-10v-8l4 2c2-6 0-12-4-12l-6 4H18z M19 28h2 M27 28h2 M22 34h4' },
-      { label: 'A wise owl', icon: 'M12 10l6 6h12l6-6v18c0 8-5 14-12 14S12 36 12 28z M20 24a3 3 0 1 0 0.1 0 M28 24a3 3 0 1 0 0.1 0 M22 31l2 3 2-3' },
-      { label: 'No sidekick', icon: 'M12 36L36 12 M24 8a16 16 0 1 0 0.1 0' }
+      { label: 'Our cat', icon: 'M12 10l6 6h12l6-6v18c0 8-5 14-12 14S12 36 12 28z M19 26h3 M26 26h3 M22 32l2 2 2-2 M5 29l9 2 M5 35l9-2 M43 29l-9 2 M43 35l-9-2' },
+      { label: 'No pet', icon: 'M12 36L36 12 M24 8a16 16 0 1 0 0.1 0' }
     ];
     const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     return { pets: list.map((p) => ({ ...p, style: this.state.pet === p.label ? on : {}, pick: () => this.setState({ pet: p.label }) })) };

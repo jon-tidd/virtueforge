@@ -23,31 +23,32 @@ a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
 </style>
 </helmet>
 <div style="width:390px;height:1100px;background:#16203A;color:#F4E9D2;display:flex;flex-direction:column;box-sizing:border-box;padding:0 20px 22px">
-  <div style="position:relative;margin:0 -20px;height:210px;overflow:hidden">
-    <img src="/_blob/9f7b824c4366566e6fae1852352f50fb" alt="The kids by firelight" style="width:100%;height:210px;object-fit:cover;display:block;opacity:.75">
-    <div style="position:absolute;left:0;right:0;bottom:0;padding:16px 20px;background:#16203A;background:rgba(22,32,58,.85)">
+  <div style="position:relative;margin:0 -20px;overflow:hidden">
+    <img src="/_blob/9f7b824c4366566e6fae1852352f50fb" alt="A grown-up reading to a child by firelight" style="width:100%;height:210px;object-fit:cover;display:block;opacity:.75">
+    <div style="position:relative;margin-top:-64px;padding:16px 20px;background:#16203A;background:rgba(22,32,58,.85)">
       <div class="eyebrow" style="color:#E9A23B">End of Chapter 3</div>
-      <p class="story" style="margin:6px 0 0;font-size:16px;line-height:1.5;font-style:italic;color:#EAD9BC">…and far below the bridge, something in the dark opened one enormous eye.</p>
+      <p class="story" style="margin:6px 0 0;font-size:15px;line-height:1.5;font-style:italic;color:#EAD9BC">Hugh set the lantern down in the lee of the milestone, and he and Alfie made a wall with their backs to the wind. Clara was already asleep in Ember’s tail. Ember lifted her nose. “Someone else walked this road tonight,” she said. “Someone I know.” “Who?” whispered Alfie. “Sleep now.” The flame was only a blue bead. Would it hold till morning?</p>
     </div>
   </div>
   <h1 class="disp" style="margin:18px 0 0;font-size:32px;line-height:1.08;font-weight:600;color:#FBF3E2">Keep the lantern lit.</h1>
   <div style="display:flex;margin-top:14px;border-radius:18px;background:#1F2B48;border:1px solid #2F3E62;padding:14px 8px">
-    <div class="have"><div style="display:flex"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"><img src="/_blob/89224e240d4677b215293a2283578be4" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"></div>3 heroes drawn</div>
+    <div class="have"><div style="display:flex"><img src="/_blob/49c6eb96321a54a534a7d5155073c868" alt="Hugh" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block"><img src="/_blob/89224e240d4677b215293a2283578be4" alt="Alfie" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"><img src="/_blob/a40cd22c8b0131f6f805efbdc3aca9a8" alt="Clara" style="width:30px;height:30px;border-radius:50%;object-fit:cover;display:block;margin-left:-10px"></div>3 heroes drawn</div>
     <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">3</span>chapters read</div>
     <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">1</span>legend earned</div>
     <div class="have"><span class="disp" style="font-size:24px;font-weight:600;color:#F2B559;line-height:30px">1</span>idea waiting</div>
   </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;color:#EAD9BC"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M5 12l5 5L20 7"/></svg>Your vote is saved. It carries into Chapter 4.</div>
   <div style="display:flex;gap:4px;margin-top:16px;background:#131B31;border-radius:999px;padding:4px">
     <sc-for list="{{periods}}" as="p" hint-placeholder-count="2"><button class="seg" onClick="{{p.pick}}" style="{{p.style}}">{{p.label}}</button></sc-for>
   </div>
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
     <sc-for list="{{plans}}" as="p" hint-placeholder-count="2">
-      <button class="plan" onClick="{{p.pick}}" style="{{p.style}}"><span style="{{p.radio}}"></span><span style="flex:1"><span style="display:block;font-weight:800;font-size:16px">{{p.name}} <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#E9A23B;margin-left:4px">{{p.tag}}</span></span><span style="display:block;font-size:13px;color:#B8AE9A;margin-top:3px;line-height:1.35">{{p.what}}</span></span><span style="text-align:right"><span class="disp" style="display:block;font-size:22px;font-weight:600">{{p.price}}</span><span style="display:block;font-size:11.5px;color:#B8AE9A">{{p.sub}}</span></span></button>
+      <button class="plan" onClick="{{p.pick}}" style="{{p.style}}"><span style="{{p.radio}}"></span><span style="flex:1"><span style="display:block;font-weight:800;font-size:16px">{{p.name}} <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#E9A23B;margin-left:4px;white-space:nowrap">{{p.tag}}</span></span><span style="display:block;font-size:13px;color:#B8AE9A;margin-top:3px;line-height:1.35">{{p.what}}</span><span style="{{p.noteStyle}}">{{p.note}}</span></span><span style="text-align:right"><span class="disp" style="display:block;font-size:22px;font-weight:600">{{p.price}}</span><span style="display:block;font-size:11.5px;color:#B8AE9A">{{p.sub}}</span></span></button>
     </sc-for>
   </div>
   <div style="flex-grow:1"></div>
-  <a class="btn" href="ReaderPicture.dc.html">Read Chapter 4 tonight</a>
-  <div style="text-align:center;font-size:13px;line-height:1.5;color:#B8AE9A;margin-top:10px">Cancel in two taps. We email you 3 days before any charge.</div>
+  <a class="btn" href="ReaderPicture.dc.html" style="text-align:center">Read Chapter 4 · The Flame That Nearly Went Out · tonight</a>
+  <div style="text-align:center;font-size:13px;line-height:1.5;color:#B8AE9A;margin-top:10px">Cancel in two taps. We email you a week before any renewal.</div>
   <a href="Tonight.dc.html" style="text-align:center;font-weight:600;font-size:14.5px;padding:12px 0 0">Not now. Keep the free classics and fridge cards.</a>
 </div>
 </x-dc>
@@ -57,15 +58,16 @@ class Component extends DCLogic {
   renderVals() {
     const y = this.state.yearly;
     const plans = [
-      { name: 'Family', tag: 'FOUNDING PRICE', what: 'Every sibling, a chapter every night, all four seasons', price: y ? '$39' : '$5.99', sub: y ? 'first year, then $49' : 'per month' },
-      { name: 'Heirloom', tag: '', what: 'Plus Grandma’s voice and a hardcover of each season', price: y ? '$89' : '$9.99', sub: y ? 'per year' : 'per month' }
+      { name: 'Family', tag: y ? 'FOUNDING PRICE' : '', what: 'Every sibling, all four seasons, 60 chapters each', note: y ? '$39/yr for our first 500 founding families' : '', price: y ? '$39' : '$5.99', sub: y ? 'per year' : 'per month' },
+      { name: 'Heirloom', tag: '', what: 'Plus the family story voice and a yearly hardcover', note: '', price: y ? '$89' : '$9.99', sub: y ? 'per year' : 'per month' }
     ];
+    const noteStyle = (n) => n ? { display: 'block', fontSize: '12px', fontWeight: '700', color: '#E9A23B', marginTop: '4px', lineHeight: '1.35' } : { display: 'none' };
     const segOn = { background: '#E9A23B', color: '#16203A' };
     const segOff = { background: 'transparent', color: '#B8AE9A' };
     const radio = (on) => ({ width: '22px', height: '22px', borderRadius: '50%', flexShrink: 0, boxSizing: 'border-box', border: on ? '7px solid #E9A23B' : '2px solid #4A5878', background: '#16203A' });
     return {
-      periods: [{ label: 'Yearly · save 30%', v: true }, { label: 'Monthly', v: false }].map((p) => ({ label: p.label, style: y === p.v ? segOn : segOff, pick: () => this.setState({ yearly: p.v }) })),
-      plans: plans.map((p) => ({ ...p, style: this.state.plan === p.name ? { borderColor: '#E9A23B' } : {}, radio: radio(this.state.plan === p.name), pick: () => this.setState({ plan: p.name }) }))
+      periods: [{ label: 'Yearly · save 25%', v: true }, { label: 'Monthly', v: false }].map((p) => ({ label: p.label, style: y === p.v ? segOn : segOff, pick: () => this.setState({ yearly: p.v }) })),
+      plans: plans.map((p) => ({ ...p, noteStyle: noteStyle(p.note), style: this.state.plan === p.name ? { borderColor: '#E9A23B' } : {}, radio: radio(this.state.plan === p.name), pick: () => this.setState({ plan: p.name }) }))
     };
   }
 }

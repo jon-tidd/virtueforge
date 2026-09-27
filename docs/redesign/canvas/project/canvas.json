@@ -159,7 +159,7 @@
    "y": 10700,
    "w": 390,
    "h": 900,
-   "title": "O3 · Pick a sidekick",
+   "title": "O3 · Meet Ember (and your pet)",
    "is_interactive": true
   },
   "Values.dc.html": {
@@ -239,7 +239,7 @@
    "y": 12130,
    "w": 390,
    "h": 1060,
-   "title": "N6 · Last page: missions + cliffhanger",
+   "title": "N6 · Last page: missions + next time",
    "is_interactive": true
   },
   "LampLit.dc.html": {
@@ -593,7 +593,7 @@
    "y": 1260,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Parents decide in seconds. The homepage leads with their kids as the heroes and one button that starts the free experience. The research page is for skeptics, the grandparents page for the biggest gift buyers (they spend about $2,654/yr on grandkids, AARP 2026), and the homeschool page for early adopters (3.4M homeschoolers; classical education growing ~5%/yr). Copy never says 'written by people', because stories are drafted with AI and reviewed by a person; it says so plainly in the FAQ."
+   "text": "WHY: Parents decide in seconds. The homepage leads with their kids as the heroes of The Last Light of Candlemere (shown with the sample family, Hugh, Alfie and Clara) and one button that starts the free experience. The research page is for skeptics, the grandparents page for the biggest gift buyers (they spend about $2,654/yr on grandkids, AARP 2026), and the homeschool page for early adopters (3.4M homeschoolers; classical education growing ~5%/yr). Copy never says 'written by people': AI drafts each season from a story bible and a person reviews it, and the FAQ says so plainly."
   },
   "t2": {
    "x": 0,
@@ -607,7 +607,7 @@
    "y": 8530,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: You asked for classical virtues that truly teach. The backbone is the four cardinal virtues, renamed in kid words (Brave, Steady, Kind & Fair, Wise) and grouped under the brand: Grit = strengths of will, Grace = strengths of heart and mind (Character Lab's model). Added the strengths the WEF expects to matter most by 2030: creative thinking, resilience, curiosity, empathy, focus. Each strength runs the Lantern Loop: meet it in a story where your child is the hero; name it with a phrase + gesture (Cook & Goldin-Meadow 2008); ask why instead of preaching (Walker & Lombrozo 2017); make an if-then plan (Gollwitzer & Sheeran 2006, 94 studies; Duckworth 2013); get spotted with effort praise, not prizes (Gunderson 2013; Warneken & Tomasello 2008); then it comes back weeks later (spacing effect, Cepeda 2006)."
+   "text": "WHY: You asked for classical virtues that truly teach. The backbone is the four cardinal virtues in kid words, grouped under the brand: Grit = Brave + Steady (strengths of will), Grace = Kind & Fair + Wise (strengths of heart and mind), after Character Lab's model. Added the strengths the WEF expects to matter most by 2030: creative thinking, resilience, curiosity, empathy, focus. Each strength runs the Lantern Loop: meet it in a story where your child is the hero; name it with a phrase + gesture (Cook & Goldin-Meadow 2008); ask why instead of preaching (Walker & Lombrozo 2017); make an if-then plan (Gollwitzer & Sheeran 2006, 94 studies; Duckworth 2013); get spotted with effort praise, not prizes (Gunderson 2013; Warneken & Tomasello 2008); then Ember's 'remember when' brings it back weeks later (spacing effect, Cepeda 2006). Every chapter is tagged with its strength and the two failings it sits between (Aristotle's mean: Brave sits between timid and reckless), and carries a quiet classical echo."
   },
   "t3": {
    "x": 0,
@@ -621,7 +621,7 @@
    "y": 10700,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: 55% of free-trial cancellations happen on day one (RevenueCat), so the kids must appear as heroes before any signup. Likeness matters: a story with the child's own face raised sharing; name-only did nothing (ECEJ 2025 vs. Kruse 2021). The avatar builder gives likeness with no photos (COPPA, biometric-law risk, and 72% of parents worry about photo privacy). The faith-friendly toggle lives here. The 'little details' step (favorite animal, what they love, one worry) makes every story feel written for them."
+   "text": "WHY: 55% of free-trial cancellations happen on day one (RevenueCat), so the kids must appear as heroes before any signup. Likeness matters: a story with the child's own face raised sharing; name-only did nothing (ECEJ 2025 vs. Kruse 2021). The avatar builder gives likeness with no photos (COPPA, biometric-law risk, and 72% of parents worry about photo privacy). Ember the fox travels with every family; a family pet can join as a second companion. The faith toggle lives here: it adds a weekly verse and Bible stories in the library. The 'little details' step (favorite animal, what they love, one worry) makes every story feel written for them."
   },
   "t4": {
    "x": 0,
@@ -635,7 +635,7 @@
    "y": 12130,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: The chapter is written before bedtime, so there are no choices when parents are most tired. Continuing stories hold kids' engagement (Lu & Green 2025). Asking 'why?' beats stating the moral (Walker & Lombrozo 2017). Kids choosing the path adds imagination and a reason to come back. Rewards go to reading together (lanterns), never to behavior (Warneken & Tomasello 2008). Five nights a week is the goal (Mindell 2015). Lanterns hang on a string across the week like festival lights. They count nights read together, never behavior; rest nights show a moon, not a gap."
+   "text": "WHY: The chapter is written before bedtime, so there are no choices when parents are most tired. Continuing stories hold kids' engagement (Lu & Green 2025): a season is 12 weekly parts of 5 nightly chapters, about 7 minutes each. Asking 'why?' beats stating the moral (Walker & Lombrozo 2017). The Wednesday vote lets kids choose the path, which adds imagination and a reason to come back. Rewards go to reading together (lanterns), never to behavior (Warneken & Tomasello 2008). Five nights a week is the goal (Mindell 2015). Lanterns hang on a string across the week like festival lights; rest nights show a moon, not a gap, and the story waits until you read on."
   },
   "t5": {
    "x": 0,
@@ -649,7 +649,7 @@
    "y": 13560,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Parents shape the story here, and they, not you, approve anything personal. 'Spotted it' turns real deeds into legends (recognition, not prizes). The idea jar puts kids' imagination into the story. 'Something happened today' is your original idea made safe: it becomes an adventure, not a retelling, because stories that are too close to real life teach less (Reading Psychology 2024), and the parent previews it before reading."
+   "text": "WHY: Parents shape the story here, and they, not you, approve anything personal: AI weaves it in with safety checks, and you review each season once, never the daily stories. 'Spotted it' turns real deeds into legends (recognition, not prizes). The idea jar puts kids' imagination into Wednesday's chapter. 'Something happened today' is your original idea made safe: never a retelling, but an adventure where the kids help others make it right and nobody is the villain, because stories too close to real life teach less (Reading Psychology 2024). The parent previews it before reading."
   },
   "t6": {
    "x": 0,
@@ -663,7 +663,7 @@
    "y": 15030,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Your poster research: fewer concepts repeated, with an 'I can…' statement scaled to ages 3, 5 and 8, and skills shown in real life (Alpha's AlphaTest idea). Paper on the fridge keeps the lesson in the kitchen, not on a screen (AAP: no screens an hour before bed). The Sunday email is the re-engagement moment."
+   "text": "WHY: Your poster research: fewer concepts repeated (each strength runs about 3 weeks, then comes back), with an 'I can…' statement scaled to ages 3, 5 and 7 that stretches a Kindergartner and a 2nd grader, and skills shown in real life (Alpha's AlphaTest idea). Paper on the fridge keeps the lesson in the kitchen, not on a screen (AAP: no screens an hour before bed). The Sunday email is the re-engagement moment."
   },
   "t7": {
    "x": 0,
@@ -691,7 +691,7 @@
    "y": 17970,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Only ~24% of annual education-app plans renew (RevenueCat). Renewal needs something to lose: the story map and the kids' legends. The season finale is the natural renewal moment. The hardcover is a proven product (Wonderbly: 11M+ personalized books sold) and a keepsake worth paying for."
+   "text": "WHY: Only ~24% of annual education-app plans renew (RevenueCat). Renewal needs something to lose: the story map and the kids' legends. The season finale is the natural renewal moment, and it ends on the next season (Kind & Fair: The Broken Bridge). The hardcover is a proven product (Wonderbly: 11M+ personalized books sold) and a keepsake worth paying for; Heirloom includes one a year."
   },
   "t9": {
    "x": 0,
@@ -705,7 +705,7 @@
    "y": 19460,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Your 60+ curated books stay central, paired with each week's virtue, with small affiliate income. Retold public-domain classics (Aesop, Andersen) star your kids, are reviewed once and cost almost nothing to serve. Pairings favor stories where virtue is rewarded, not vice punished (Lee 2014; Liang 2025)."
+   "text": "WHY: Your 60+ curated books stay central, paired with each week's strength, with small affiliate income. Retold public-domain classics (Aesop, Andersen) star your kids, are reviewed once by a person and cost almost nothing to serve; with the faith toggle on, Bible stories join the shelf. Pairings favor stories where virtue is rewarded, not vice punished (Lee 2014; Liang 2025)."
   },
   "t10": {
    "x": 0,
@@ -719,7 +719,7 @@
    "y": 20930,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: A picture of the grandkids as heroes is the best free marketing there is, and it replaces the unproven podcast as the growth channel. Kids' brains light up for a family member's voice (Abrams 2016, PNAS), so grandparents recording chapters is both a feature and a bond. Gifting fits how grandparents already spend."
+   "text": "WHY: A picture of the grandkids as heroes is the best free marketing there is, and it replaces the unproven podcast as the growth channel. Their own grandparent is in the story too, keeping the last hearth lit in Candlemere, and a real voice note can become Monday's reply. Kids' brains light up for a family member's voice (Abrams 2016, PNAS), so grandparents recording chapters is both a feature and a bond. Gifting fits how grandparents already spend."
   },
   "t11": {
    "x": 0,
@@ -733,7 +733,7 @@
    "y": 22400,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: Kids' brains respond more to a familiar family voice (Abrams 2016, PNAS), and grandparents are the biggest gift buyers, so it's worth building. But a cloned voice is sensitive: voiceprints count as biometrics under Illinois BIPA and similar laws, and deepfake worries are real. So consent is part of the design: the adult records it themselves on their own link and says yes out loud; never made from a child's voice; reads only our chapters (nothing typed in, no downloads); labeled every time; they can switch it off anytime. Real recorded chapters stay the gold option. Part of Heirloom ($89). Get a privacy lawyer's review before launch."
+   "text": "WHY: Kids' brains respond more to a familiar family voice (Abrams 2016, PNAS), and grandparents are the biggest gift buyers, so it's worth building. But a cloned voice is sensitive: voiceprints count as biometrics under Illinois BIPA and similar laws, and deepfake worries are real. So consent is part of the design: the adult reads a consent statement aloud on their own link (kept with a timestamp), then about 3 minutes of guided reading; adults' own voices only, never a child's; reads only our chapters (nothing typed in, no downloads); labeled every time; they can switch it off anytime, and delete removes everything. Real recorded chapters stay the gold option. Part of Heirloom ($89/yr, with a yearly hardcover). Get a privacy lawyer's review before launch."
   },
   "t12": {
    "x": 0,
@@ -747,7 +747,7 @@
    "y": 23910,
    "w": 380,
    "fill": "blue",
-   "text": "WHY: The paywall comes after chapter 3, once they've felt the wow, a cliffhanger and a legend. $49/yr is market rate (Education median $43.94, Oscar $49) with every sibling included; founding families get $39. Heirloom ($89) raises spend per family without raising the entry price. Privacy is a feature: first names and drawings only, export and delete anytime."
+   "text": "WHY: The paywall comes after Chapter 3, once they've felt the wow, a cliffhanger and a legend. $49/yr or $5.99/mo is market rate (Education median $43.94, Oscar $49) with every sibling included; the first 500 founding families pay $39/yr. Heirloom ($89/yr or $9.99/mo: family story voice + a yearly hardcover) raises spend per family without raising the entry price. Privacy is a feature: first names and drawings only, never photos, export and delete anytime."
   }
  },
  "designSystems": []

@@ -48,10 +48,10 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { s: 0 }; }
   renderVals() {
     const steps = [
-      { eyebrow: 'Before we start · your permission', title: 'First, please read this out loud.', help: 'This is how we know it’s really you, and that you said yes.', script: '“I’m Ruth, and I’d like Grit & Grace to make my story voice, only for reading stories to Theo, June and Max. I can switch it off whenever I want.”', cta: 'Tap and read' },
-      { eyebrow: 'Step 2 of 3 · Warm-up', title: 'Now a little story, nice and slow.', help: 'Read like you would at bedtime. Pauses are good.', script: '“Once, in the village of Brindlewick, there lived a fox named Pip, who could find the way home from anywhere at all.”', cta: 'Tap and read' },
+      { eyebrow: 'Before we start · your permission', title: 'First, please read this out loud.', help: 'This shows it’s really you. We keep it with the time you said yes.', script: '“I’m Ruth, and I’d like Grit & Grace to make my story voice, only for reading stories to Hugh, Alfie and Clara. I can switch it off whenever I want.”', cta: 'Tap and read' },
+      { eyebrow: 'Step 2 of 3 · Warm-up', title: 'Now a little story, nice and slow.', help: 'Read like you would at bedtime. Pauses are good.', script: '“Once, in the village of Candlemere, there lived a fox named Ember, who could find the way home from anywhere at all.”', cta: 'Tap and read' },
       { eyebrow: 'Step 3 of 3 · Big feelings', title: 'Give the characters voices!', help: 'A whisper, a roar, a giggle. It helps your story voice sound like you.', script: '“‘I’m not scared,’ whispered the little dragon. Then, very loudly: ‘Okay. I’m a LITTLE bit scared.’”', cta: 'Tap and read' },
-      { eyebrow: 'All done · 3 minutes', title: 'Thank you, Ruth.', help: 'We’ll let you know when your story voice is ready, usually within the hour. Your recordings are kept private.', script: 'You can listen to it first, and switch it off anytime from this same link.', cta: 'Hear it when it’s ready' }
+      { eyebrow: 'All done · 3 minutes', title: 'Thank you, Ruth.', help: 'We’ll let you know when your story voice is ready. It only ever reads our chapters, and your recordings stay private.', script: 'You’ll hear it first. Switch it off, or delete it all, anytime from this same link.', cta: 'Hear it when it’s ready' }
     ];
     const s = this.state.s, cur = steps[s];
     const h = [10, 18, 28, 16, 34, 22, 12, 30, 40, 24, 14, 26, 36, 20, 10, 28, 38, 18, 12, 24, 32, 16, 22, 30, 14, 20, 12, 8];

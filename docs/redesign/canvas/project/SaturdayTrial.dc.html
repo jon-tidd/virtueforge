@@ -26,34 +26,34 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     <a href="SundayPlan.dc.html" aria-label="Back" style="color:#4A4034;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
   </div>
   <div class="eyebrow" style="color:#8A5212">Saturday trial · off the page, into real life</div>
-  <h1 class="disp" style="margin:8px 0 0;font-size:34px;line-height:1.06;font-weight:600">The Lantern Quest</h1>
-  <p class="story" style="margin:10px 0 0;font-size:16px;line-height:1.55;color:#4A4034">The Keeper has hidden the paper lantern somewhere in your house. Each hero earns a clue by doing one brave thing.</p>
+  <h1 class="disp" style="margin:8px 0 0;font-size:34px;line-height:1.06;font-weight:600">The Stepping-Stone Trail</h1>
+  <p class="story" style="margin:10px 0 0;font-size:16px;line-height:1.55;color:#4A4034">Ember has hidden the paper lantern on the far side of the marsh (somewhere in your house). Each hero earns a stepping stone by keeping going at one tricky thing.</p>
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
     <sc-for list="{{tasks}}" as="t" hint-placeholder-count="3">
-      <button class="task" onClick="{{t.toggle}}" style="{{t.style}}"><img src="{{t.img}}" alt=""><span style="flex:1"><span style="display:block;font-size:12px;font-weight:800;letter-spacing:.06em;color:#8A5212">{{t.name}} · CLUE {{t.n}}</span><span class="story" style="display:block;font-size:15px;line-height:1.4;margin-top:2px">{{t.text}}</span></span><span style="{{t.box}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFCF5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span></button>
+      <button class="task" onClick="{{t.toggle}}" style="{{t.style}}"><img src="{{t.img}}" alt=""><span style="flex:1"><span style="display:block;font-size:12px;font-weight:800;letter-spacing:.06em;color:#8A5212">{{t.name}} · STONE {{t.n}}</span><span class="story" style="display:block;font-size:15px;line-height:1.4;margin-top:2px">{{t.text}}</span></span><span style="{{t.box}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFCF5" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span></button>
     </sc-for>
   </div>
   <div style="margin-top:16px;border-radius:18px;background:#EFE4CE;padding:14px 16px;font-size:14px;line-height:1.5;color:#4A4034"><b>Grown-ups:</b> hide the lantern from this week's booklet (or any flashlight). About 20 minutes, no screens needed.</div>
   <div style="flex-grow:1"></div>
   <div style="text-align:center;font-size:14px;font-weight:700;color:#3F5739;margin-bottom:10px">{{status}}</div>
   <a class="btn" href="StoryMap.dc.html" style="{{cta}}">We found it! Stamp the map</a>
-  <div style="text-align:center;font-size:13px;color:#6A5D4B;margin-top:10px">Monday's chapter opens with the quest they just did.</div>
+  <div style="text-align:center;font-size:13px;color:#6A5D4B;margin-top:10px">Monday's chapter opens with the trail they just crossed.</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { done: { Max: true } }; }
+  constructor(props) { super(props); this.state = { done: { Clara: true } }; }
   renderVals() {
     const list = [
-      { name: 'Max', n: 1, img: '/_blob/89224e240d4677b215293a2283578be4', text: 'Say hello to a neighbor, with a grown-up close by.' },
-      { name: 'June', n: 2, img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', text: 'Order her own pancake at breakfast.' },
-      { name: 'Theo', n: 3, img: '/_blob/49c6eb96321a54a534a7d5155073c868', text: 'Tell the family one mistake from this week, and what he learned.' }
+      { name: 'Clara', n: 1, img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', text: 'Put on both shoes by herself, and try again if one goes on wrong.' },
+      { name: 'Alfie', n: 2, img: '/_blob/89224e240d4677b215293a2283578be4', text: 'Build a tower of 20 blocks. If it falls, try a new way.' },
+      { name: 'Hugh', n: 3, img: '/_blob/49c6eb96321a54a534a7d5155073c868', text: 'Practice one hard thing in three small parts for 15 minutes (four bars of a song, ten spelling words).' }
     ];
     const count = list.filter((k) => this.state.done[k.name]).length;
     const box = (on) => ({ width: '30px', height: '30px', borderRadius: '50%', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: on ? '#4E6A45' : '#FFFCF5', border: on ? '2px solid #4E6A45' : '2px solid #CFC3AA', boxSizing: 'border-box' });
     return {
       tasks: list.map((k) => ({ ...k, style: this.state.done[k.name] ? { borderColor: '#4E6A45', background: '#F1F5EA' } : {}, box: box(this.state.done[k.name]), toggle: () => this.setState({ done: { ...this.state.done, [k.name]: !this.state.done[k.name] } }) })),
-      status: count === 3 ? 'All three clues! The lantern is in the laundry basket.' : count + ' of 3 clues earned',
+      status: count === 3 ? 'All three stones! The lantern is in the laundry basket.' : count + ' of 3 stones earned',
       cta: count === 3 ? {} : { opacity: 0.45 }
     };
   }

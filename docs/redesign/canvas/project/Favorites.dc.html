@@ -45,26 +45,26 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     <p class="story" style="margin:8px 0 0;font-size:16.5px;line-height:1.6;color:#2A2118">{{preview}}</p>
   </div>
   <div style="flex-grow:1"></div>
-  <a class="btn" href="Sidekick.dc.html">Next: pick a sidekick</a>
+  <a class="btn" href="Sidekick.dc.html">Next: meet Ember</a>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1060}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { k: 'June', June: { a: 'Otters', l: 'Paint', w: 'The dark' }, Theo: { a: 'Owls', l: 'Build things', w: 'Making mistakes' }, Max: { a: 'Dinosaurs', l: 'Climb', w: 'Loud noises' } }; }
+  constructor(props) { super(props); this.state = { k: 'Alfie', Hugh: { a: 'Owls', l: 'Build things', w: 'Making mistakes' }, Alfie: { a: 'Otters', l: 'Paint', w: 'The dark' }, Clara: { a: 'Dinosaurs', l: 'Climb', w: 'Loud noises' } }; }
   renderVals() {
-    const imgs = { Theo: '/_blob/49c6eb96321a54a534a7d5155073c868', June: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', Max: '/_blob/89224e240d4677b215293a2283578be4' };
+    const imgs = { Hugh: '/_blob/49c6eb96321a54a534a7d5155073c868', Alfie: '/_blob/89224e240d4677b215293a2283578be4', Clara: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8' };
     const k = this.state.k, me = this.state[k];
     const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     const segOn = { background: '#FFFCF5', color: '#1F1A14', boxShadow: '0 1px 4px rgba(60,40,10,.15)' };
     const set = (field, v) => this.setState({ [k]: { ...me, [field]: me[field] === v ? '' : v } });
     const chips = (list, field) => list.map((label) => ({ label, style: me[field] === label ? on : {}, pick: () => set(field, label) }));
     const verbs = { 'Paint': 'painted', 'Build things': 'built', 'Climb': 'climbed', 'Sing': 'sang', 'Dance': 'danced' };
-    const things = { 'Paint': 'a door on the wall of the Hollow', 'Build things': 'a bridge out of fallen branches', 'Climb': 'right up the lookout tree', 'Sing': 'a song so bright the fog lifted', 'Dance': 'a dance that made the fireflies follow' };
+    const things = { 'Paint': "a door on the wall of Cuthbert's forge", 'Build things': 'a wall of stones against the wind', 'Climb': 'right up the old alder on Sedgefen', 'Sing': 'a song so bright the fog lifted', 'Dance': 'a dance that made the geese of Thornholt follow' };
     const animal = me.a || 'fox', love = me.l || 'Sing';
     const worry = me.w ? ' And when ' + me.w.toLowerCase() + ' felt big, ' + k + ' remembered the lantern breath.' : '';
     return {
       name: k,
-      kids: ['Theo', 'June', 'Max'].map((n) => ({ name: n, img: imgs[n], style: k === n ? segOn : {}, pick: () => this.setState({ k: n }) })),
+      kids: ['Hugh', 'Alfie', 'Clara'].map((n) => ({ name: n, img: imgs[n], style: k === n ? segOn : {}, pick: () => this.setState({ k: n }) })),
       animals: chips(['Otters', 'Owls', 'Dinosaurs', 'Horses', 'Dragons'], 'a'),
       loves: chips(['Paint', 'Build things', 'Climb', 'Sing', 'Dance'], 'l'),
       worries: chips(['The dark', 'Making mistakes', 'Loud noises', 'New places'], 'w'),

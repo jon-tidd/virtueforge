@@ -30,12 +30,12 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
     <div class="eyebrow" style="color:#8A5212">Step 4 · Your house</div>
-    <h1 class="disp" style="margin:0;font-size:34px;line-height:1.06;font-weight:600">Where should the adventure start?</h1>
-    <p style="margin:0;font-size:15px;line-height:1.5;color:#4A4034">Pick the season your family needs first. You'll get all four over the year.</p>
+    <h1 class="disp" style="margin:0;font-size:34px;line-height:1.06;font-weight:600">What matters in your house?</h1>
+    <p style="margin:0;font-size:15px;line-height:1.5;color:#4A4034">Every family starts with Season 1 · Brave, then Kind &amp; Fair, Wise and Steady, in order.</p>
   </div>
   <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px">
     <sc-for list="{{seasons}}" as="s" hint-placeholder-count="4">
-      <button class="tile" onClick="{{s.pick}}" style="{{s.style}}"><img src="{{s.img}}" alt=""><span><span style="display:block">{{s.label}}</span><span style="display:block;font-size:12px;font-weight:600;opacity:.7">{{s.sub}}</span></span></button>
+      <div class="tile" style="{{s.style}}"><img src="{{s.img}}" alt=""><span><span style="display:block">{{s.label}}</span><span style="display:block;font-size:12px;font-weight:600;opacity:.7">{{s.sub}}</span></span></div>
     </sc-for>
   </div>
   <a href="Strengths.dc.html" style="font-size:14px;font-weight:700;margin-top:10px;padding:8px 0">See all 16 strengths we teach</a>
@@ -45,7 +45,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div style="font-size:12.5px;color:#6A5D4B;margin-top:8px">We'll weave these into the story gently. Nobody gets called out.</div>
   <div style="margin-top:18px;background:#FFFCF5;border:1px solid #E7DCC7;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center">
-    <div style="flex:1"><div style="font-size:15px;font-weight:700">Faith-friendly touches</div><div style="font-size:13px;line-height:1.45;color:#4A4034;margin-top:2px">A short blessing at lights-out, and stories from Scripture in the rotation.</div></div>
+    <div style="flex:1"><div style="font-size:15px;font-weight:700">Faith-friendly touches</div><div style="font-size:13px;line-height:1.45;color:#4A4034;margin-top:2px">A weekly verse for the whole family, and Bible stories in the library.</div></div>
     <button onClick="{{toggleFaith}}" aria-label="Faith-friendly touches" aria-pressed="{{faith}}" style="{{faithTrack}}"><span style="{{faithKnob}}"></span></button>
   </div>
   <div style="flex-grow:1"></div>
@@ -54,15 +54,15 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { season: 'Brave', hard: { 'Giving up': true }, faith: true }; }
+  constructor(props) { super(props); this.state = { hard: { 'Giving up': true }, faith: false }; }
   renderVals() {
     const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     const seasons = [
       { label: 'Brave', sub: 'Courage', img: '/_blob/96b77cd46610c0a9e7acd723281b459b' },
       { label: 'Kind & Fair', sub: 'Justice', img: '/_blob/81fd8db7e5b784189ca3c59e5bb25b5c' },
-      { label: 'Wise', sub: 'Wisdom', img: '/_blob/87fa6a0f68a364726e3776ce8c5bcf09' },
-      { label: 'Steady', sub: 'Self-control', img: '/_blob/f9cbc04c35602906b8b5594a609a5e80' }
-    ].map((s) => ({ ...s, style: this.state.season === s.label ? on : {}, pick: () => this.setState({ season: s.label }) }));
+      { label: 'Wise', sub: 'Prudence', img: '/_blob/87fa6a0f68a364726e3776ce8c5bcf09' },
+      { label: 'Steady', sub: 'Temperance', img: '/_blob/f9cbc04c35602906b8b5594a609a5e80' }
+    ].map((s, i) => ({ ...s, style: i === 0 ? { ...on, cursor: 'default' } : { cursor: 'default' } }));
     const struggles = ['Sharing', 'Telling the truth', 'Giving up', 'Big feelings', 'Scared at night', 'Sibling fights'].map((label) => ({
       label, style: this.state.hard[label] ? on : {}, pick: () => this.setState({ hard: { ...this.state.hard, [label]: !this.state.hard[label] } })
     }));

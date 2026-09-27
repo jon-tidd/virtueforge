@@ -39,19 +39,19 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
         <g stroke="#5A3E1E" stroke-width="1.6"><path d="M112 108l-6-8M118 104l-3-9M126 103l0-9M134 104l3-9M142 108l6-8"/><path d="M202 108l-6-8M208 104l-3-9M216 103l0-9M224 104l3-9M232 108l6-8"/></g>
         <g fill="#1F1A14"><circle cx="140" cy="114" r="1.8"/><circle cx="206" cy="114" r="1.8"/></g>
       </svg>
-      <span style="position:absolute;left:12px;top:12px;background:#16203A;color:#E9A23B;font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 10px;border-radius:999px">SPECIAL · KIND WORDS · 6 MIN</span>
+      <span style="position:absolute;left:12px;top:12px;background:#16203A;color:#E9A23B;font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 10px;border-radius:999px">SPECIAL · KIND · 6 MIN</span>
     </div>
     <div style="padding:18px 20px 20px">
       <div class="disp" style="font-size:24px;font-weight:600">The Last Red Feather</div>
-      <p class="story" style="margin:10px 0 0;font-size:17px;line-height:1.65;color:#2A2118">There was one red feather left in Brindlewick market, and two hedgehogs grabbed it at once. "Let go, you slowpoke!" snapped Burr. Bramble's spines drooped flat.</p>
-      <p class="story" style="margin:10px 0 0;font-size:17px;line-height:1.65;color:#2A2118"><b style="background:#F1D9A6;padding:0 3px;border-radius:4px">June</b> knelt down. "Words can be prickly too," she said softly. And <b style="background:#F1D9A6;padding:0 3px;border-radius:4px">Max</b>, who had been thinking very hard, said, "What if the feather could be for both of you?"</p>
-      <div style="margin-top:14px;border-left:3px solid #E9A23B;padding:4px 0 4px 12px;font-size:14.5px;line-height:1.45;color:#5B4B33"><b>Pause and ask:</b> Why do you think Burr's words hurt more than his spines?</div>
+      <p class="story" style="margin:10px 0 0;font-size:17px;line-height:1.65;color:#2A2118">Once, back when every window in Candlemere was lit, two hedgehog brothers grabbed the last red feather at the market, both for their granny's hat. "Let go, you slowpoke!" snapped Tom, and Jack's spines drooped flat.</p>
+      <p class="story" style="margin:10px 0 0;font-size:17px;line-height:1.65;color:#2A2118"><b style="background:#F1D9A6;padding:0 3px;border-radius:4px">Alfie</b> knelt down by Jack. "Are you okay?" he asked softly. Then he turned to Tom. "What happened?" And <b style="background:#F1D9A6;padding:0 3px;border-radius:4px">Clara</b>, who had been thinking very hard, said, "What if the feather could be from both of you?"</p>
+      <div style="margin-top:14px;border-left:3px solid #E9A23B;padding:4px 0 4px 12px;font-size:14.5px;line-height:1.45;color:#5B4B33"><b>Pause and ask:</b> Why do you think Tom's words hurt more than his spines?</div>
     </div>
   </div>
   <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
     <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Kindness is shown, never preached</div>
     <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Nobody from real life plays the bad guy</div>
-    <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Words that suit ages 3 to 8</div>
+    <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Words that suit ages 3 to 9</div>
     <div class="ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Automatic safety checks passed</div>
   </div>
   <div style="display:flex;gap:8px;margin-top:18px">
@@ -67,7 +67,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { pick: '' }; }
   renderVals() {
-    const hints = { Gentler: 'Softer words, and Burr says sorry sooner.', Shorter: 'Trimmed to about 4 minutes for Max.', 'Try again': 'A fresh take, same lesson.' };
+    const hints = { Gentler: 'Softer words, and Tom says sorry sooner.', Shorter: 'Trimmed to about 4 minutes for Clara.', 'Try again': 'A fresh take, same strength.' };
     const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     return {
       opts: Object.keys(hints).map((label) => ({ label, style: this.state.pick === label ? on : {}, pick: () => this.setState({ pick: this.state.pick === label ? '' : label }) })),

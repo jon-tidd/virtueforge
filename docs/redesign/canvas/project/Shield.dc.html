@@ -31,7 +31,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
     <sc-for list="{{kids}}" as="k" hint-placeholder-count="3"><button class="kid" onClick="{{k.pick}}" style="{{k.style}}"><img src="{{k.img}}" alt="">{{k.name}}</button></sc-for>
   </div>
   <div style="display:flex;justify-content:center;margin-top:18px">
-    <svg width="230" height="270" viewBox="0 0 230 270" aria-label="Shield with four quarters: Prudence, Justice, Courage, Temperance">
+    <svg width="230" height="270" viewBox="0 0 230 270" aria-label="Shield with four quarters: Wise, Kind &amp; Fair, Brave, Steady">
       <defs><clipPath id="sh"><path d="M115 8l100 30v80c0 70-42 120-100 144C57 238 15 188 15 118V38z"/></clipPath></defs>
       <g clip-path="url(#sh)">
         <rect x="0" y="0" width="115" height="130" style="{{q1}}"/>
@@ -59,7 +59,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   <div class="eyebrow" style="color:#6A5D4B;margin-top:18px">Strengths found in Brave</div>
   <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
     <span class="gem" style="background:#16203A;color:#F2B559">Brave</span><span class="gem" style="background:#16203A;color:#F2B559">Keep Going</span>
-    <span class="gem" style="background:#16203A;color:#F2B559">Truth-Teller</span>
+    <sc-if value="{{truth}}" hint-placeholder-val="{{ true }}"><span class="gem" style="background:#16203A;color:#F2B559">Truth-Teller</span></sc-if>
     <span class="gem" style="background:#EFE4CE;color:#6A5D4B">Bounce Back · next week</span>
     
   </div>
@@ -71,12 +71,12 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1120}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { kid: 'Theo' }; }
+  constructor(props) { super(props); this.state = { kid: 'Hugh' }; }
   renderVals() {
     const data = {
-      Theo: { img: '/_blob/49c6eb96321a54a534a7d5155073c868', fill: [0, 0, 0.7, 0], c: '6 chapters · 2 legends', p: 'Season 3', j: 'Season 2', t: 'Season 4' },
-      June: { img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', fill: [0, 0, 0.55, 0], c: '6 chapters · 1 legend', p: 'Season 3', j: 'Season 2', t: 'Season 4' },
-      Max: { img: '/_blob/89224e240d4677b215293a2283578be4', fill: [0, 0, 0.6, 0], c: '6 chapters · 1 idea used', p: 'Season 3', j: 'Season 2', t: 'Season 4' }
+      Hugh: { img: '/_blob/49c6eb96321a54a534a7d5155073c868', fill: [0, 0, 0.7, 0], c: '27 chapters · 2 legends', p: 'Season 3', j: 'Season 2', t: 'Season 4', truth: true },
+      Alfie: { img: '/_blob/89224e240d4677b215293a2283578be4', fill: [0, 0.15, 0.55, 0], c: '27 chapters · 1 legend', p: 'Season 3', j: 'Season 2 · 1 legend', t: 'Season 4', truth: false },
+      Clara: { img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', fill: [0, 0, 0.6, 0], c: '27 chapters · 1 legend', p: 'Season 3', j: 'Season 2', t: 'Season 4', truth: false }
     };
     const d = data[this.state.kid];
     const cols = ['#6C8FB0', '#7E9A6E', '#C98A2B', '#A7869E'];
@@ -86,7 +86,7 @@ class Component extends DCLogic {
       kids: Object.keys(data).map((name) => ({ name, img: data[name].img, style: this.state.kid === name ? on : {}, pick: () => this.setState({ kid: name }) })),
       q1: q(0), q2: q(1), q3: q(2), q4: q(3),
       sub: 'Brave is glowing. Three quarters still to explore.',
-      c: d.c, p: d.p, j: d.j, t: d.t, name: this.state.kid
+      c: d.c, p: d.p, j: d.j, t: d.t, truth: d.truth, name: this.state.kid
     };
   }
 }

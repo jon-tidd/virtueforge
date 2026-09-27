@@ -32,9 +32,9 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="#E9A23B" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/></svg><span class="eyebrow" style="color:#8A5212">Tonight's special</span></div>
   <h1 class="disp" style="margin:8px 0 0;font-size:34px;line-height:1.06;font-weight:600">Something happen today?</h1>
-  <p style="margin:10px 0 0;font-size:15px;line-height:1.5;color:#4A4034">Tell us in a sentence. Tonight it comes back as an adventure in Brindlewick, with a lesson tucked inside.</p>
+  <p style="margin:10px 0 0;font-size:15px;line-height:1.5;color:#4A4034">Tell us in a sentence. Tonight it comes back as an adventure in Candlemere, where your kids help make it right.</p>
   <div style="position:relative;margin-top:16px">
-    <textarea aria-label="What happened" style="min-height:112px;width:100%;box-sizing:border-box;border-radius:18px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:14px 14px 48px;font:500 16px/1.5 'Figtree',sans-serif;color:#1F1A14;resize:none">June and Max fought over the red crayon and June said something mean.</textarea>
+    <textarea aria-label="What happened" style="min-height:112px;width:100%;box-sizing:border-box;border-radius:18px;border:1.5px solid #E2D5BC;background:#FFFCF5;padding:14px 14px 48px;font:500 16px/1.5 'Figtree',sans-serif;color:#1F1A14;resize:none">Alfie and Clara fought over the red crayon and Alfie said something mean.</textarea>
     <button aria-label="Say it instead" style="position:absolute;right:10px;bottom:10px;width:44px;height:44px;border-radius:50%;border:none;background:#16203A;color:#E9A23B;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
   </div>
   <div class="lbl">WHO WAS THERE?</div>
@@ -53,7 +53,7 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   <div style="margin-top:20px;background:#E7EEDD;border-radius:20px;padding:16px">
     <div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;color:#3F5739"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>How we keep it kind</div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
-      <div class="g"><span style="font-weight:800">1</span><span>It's never retold as it happened. Two hedgehogs squabble; June and Max help them make it right.</span></div>
+      <div class="g"><span style="font-weight:800">1</span><span>It's never retold as it happened. Two hedgehog brothers squabble at the Candlemere market; Alfie and Clara help them make it right.</span></div>
       <div class="g"><span style="font-weight:800">2</span><span>Your kids are never the villain. They get to be the ones who fix it.</span></div>
       <div class="g"><span style="font-weight:800">3</span><span>It ends with making up, not with punishment.</span></div>
     </div>
@@ -65,12 +65,12 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1100}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { who: { June: true, Max: true }, virtue: 'Kind words', tone: 'Gentle' }; }
+  constructor(props) { super(props); this.state = { who: { Alfie: true, Clara: true }, virtue: 'Kind', tone: 'Gentle' }; }
   renderVals() {
     const people = [
-      { name: 'Theo', img: '/_blob/49c6eb96321a54a534a7d5155073c868' },
-      { name: 'June', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8' },
-      { name: 'Max', img: '/_blob/89224e240d4677b215293a2283578be4' }
+      { name: 'Hugh', img: '/_blob/49c6eb96321a54a534a7d5155073c868' },
+      { name: 'Alfie', img: '/_blob/89224e240d4677b215293a2283578be4' },
+      { name: 'Clara', img: '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8' }
     ];
     const dark = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     const moss = { background: '#4E6A45', borderColor: '#4E6A45', color: '#F4E9D2' };
@@ -78,7 +78,7 @@ class Component extends DCLogic {
     const segOff = { background: 'transparent', color: '#6A5D4B' };
     return {
       kids: people.map((k) => ({ ...k, style: this.state.who[k.name] ? dark : {}, toggle: () => this.setState({ who: { ...this.state.who, [k.name]: !this.state.who[k.name] } }) })),
-      virtues: ['Kind words', 'Taking turns', 'Saying sorry'].map((label) => ({ label, style: this.state.virtue === label ? moss : {}, pick: () => this.setState({ virtue: label }) })),
+      virtues: ['Kind', 'Fair Play', 'Better Together'].map((label) => ({ label, style: this.state.virtue === label ? moss : {}, pick: () => this.setState({ virtue: label }) })),
       tones: ['Gentle', 'Funny', 'Adventurous'].map((label) => ({ label, style: this.state.tone === label ? segOn : segOff, pick: () => this.setState({ tone: label }) }))
     };
   }

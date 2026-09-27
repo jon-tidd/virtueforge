@@ -24,14 +24,14 @@ a{color:#E9A23B;text-decoration:none} a:hover{color:#F2B559}
   <div style="display:flex;align-items:center;padding:10px 0">
     <a href="Tonight.dc.html" aria-label="Back" style="color:#B8AE9A;min-height:44px;min-width:44px;display:flex;align-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></a>
   </div>
-  <div class="eyebrow" style="color:#E9A23B">Chapter 4 · 7 min</div>
+  <div class="eyebrow" style="color:#E9A23B">Chapter 28 · 7 min</div>
   <h1 class="disp" style="margin:6px 0 0;font-size:32px;line-height:1.08;font-weight:600;color:#FBF3E2">Who reads tonight?</h1>
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
     <sc-for list="{{voices}}" as="v" hint-placeholder-count="5">
       <button class="v" onClick="{{v.pick}}" style="{{v.style}}"><span class="av" style="{{v.avStyle}}">{{v.initial}}</span><span style="flex:1"><span style="display:block;font-weight:800;font-size:16px">{{v.name}}</span><span style="display:block;font-size:13px;color:#B8AE9A;margin-top:3px;line-height:1.35">{{v.note}}</span></span><span style="{{v.radio}}"></span></button>
     </sc-for>
   </div>
-  <a href="VoiceIntro.dc.html" style="margin-top:10px;min-height:52px;border-radius:999px;border:1.5px dashed #3A4A70;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px">+ Add a family voice</a>
+  <a href="VoiceIntro.dc.html" style="margin-top:10px;min-height:52px;border-radius:999px;border:1.5px dashed #3A4A70;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px">+ Add a grown-up’s voice</a>
   <div style="margin-top:14px;border-radius:18px;background:#131B31;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#B8AE9A">Your voice is best. Children's brains respond more strongly to a parent's voice than a stranger's. Recordings and the narrator are for nights you're away, or too tired to read.</div>
   <div style="flex-grow:1"></div>
   <a class="btn" href="{{href}}">{{cta}}</a>
@@ -42,11 +42,11 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { v: 'me' }; }
   renderVals() {
     const list = [
-      { id: 'me', initial: 'J', name: 'I’ll read it', note: 'Best most nights. Words sized for June and Max.', bg: '#E9A23B', fg: '#16203A', cta: 'Open the book', href: 'ReaderPicture.dc.html' },
-      { id: 'ruth', initial: 'R', name: 'Grandma Ruth, recorded', note: 'She read Chapter 4 herself on Tuesday · 6:48', bg: '#A7869E', fg: '#FBF3E2', cta: 'Play Grandma’s reading', href: 'ReaderPicture.dc.html' },
-      { id: 'ruthsv', initial: 'R', name: 'Grandma Ruth’s story voice', note: 'Reads any chapter. Made from her recording, with her permission', bg: '#A7869E', fg: '#FBF3E2', cta: 'Play in Grandma’s story voice', href: 'VoiceReady.dc.html' },
-      { id: 'dad', initial: 'J', name: 'Jon, recorded', note: 'For travel nights. Chapters 1–3 so far', bg: '#6C8FB0', fg: '#FBF3E2', cta: 'Record Chapter 4', href: 'RecordChapter.dc.html' },
-      { id: 'narr', initial: 'N', name: 'Story narrator', note: 'A warm reading voice. Clearly labelled as a narrator.', bg: '#4E6A45', fg: '#FBF3E2', cta: 'Play the narrator', href: 'ReaderPicture.dc.html' }
+      { id: 'me', initial: 'J', name: 'I’ll read it', note: 'Words sized for each child: chapter pages for Hugh and Alfie, pictures for Clara.', bg: '#E9A23B', fg: '#16203A', cta: 'Open the book', href: 'ReaderPicture.dc.html' },
+      { id: 'ruth', initial: 'R', name: 'Grandma Ruth, recorded', note: 'She read Chapter 28 herself on Tuesday · 6:48', bg: '#A7869E', fg: '#FBF3E2', cta: 'Play Grandma’s reading', href: 'ReaderPicture.dc.html' },
+      { id: 'ruthsv', initial: 'R', name: 'Grandma Ruth’s story voice', note: 'Reads any chapter. Made from Ruth’s recording, with her permission.', bg: '#A7869E', fg: '#FBF3E2', cta: 'Play in Grandma’s story voice', href: 'VoiceReady.dc.html' },
+      { id: 'dad', initial: 'J', name: 'Jon, recorded', note: 'For travel nights. Chapters 1–3 so far', bg: '#6C8FB0', fg: '#FBF3E2', cta: 'Record Chapter 28', href: 'RecordChapter.dc.html' },
+      { id: 'narr', initial: 'N', name: 'Story narrator', note: 'A warm reading voice. Clearly labeled as a narrator.', bg: '#4E6A45', fg: '#FBF3E2', cta: 'Play the narrator', href: 'ReaderPicture.dc.html' }
     ];
     const cur = list.find((x) => x.id === this.state.v);
     const radio = (on) => ({ width: '22px', height: '22px', borderRadius: '50%', flexShrink: 0, boxSizing: 'border-box', border: on ? '7px solid #E9A23B' : '2px solid #4A5878' });

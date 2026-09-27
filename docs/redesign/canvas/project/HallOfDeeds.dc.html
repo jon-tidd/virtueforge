@@ -26,9 +26,9 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
   </div>
   <div style="text-align:center">
     <svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="#B87718" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M32 6c-8 10-8 22 0 30 8-8 8-20 0-30zM20 16c-8 2-12 10-10 18 8 0 12-6 12-12M44 16c8 2 12 10 10 18-8 0-12-6-12-12"/></svg>
-    <div class="eyebrow" style="color:#8A5212">As told in Brindlewick</div>
+    <div class="eyebrow" style="color:#8A5212">As told in Candlemere</div>
     <h1 class="disp" style="margin:6px 0 0;font-size:36px;line-height:1.05;font-weight:600">The Hall of Deeds</h1>
-    <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Real things your kids did, told as legends. Nine so far.</p>
+    <p style="margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4A4034">Real things your kids did, told as legends. Five so far.</p>
   </div>
   <div style="display:flex;gap:8px;margin-top:16px;justify-content:center">
     <sc-for list="{{filters}}" as="f" hint-placeholder-count="4"><button class="chip" onClick="{{f.pick}}" style="{{f.style}}">{{f.label}}</button></sc-for>
@@ -46,18 +46,18 @@ a{color:#8A5212;text-decoration:none} a:hover{color:#6B3E0C}
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { who: 'All' }; }
   renderVals() {
-    const T = '/_blob/49c6eb96321a54a534a7d5155073c868', J = '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8', M = '/_blob/89224e240d4677b215293a2283578be4';
+    const H = '/_blob/49c6eb96321a54a534a7d5155073c868', A = '/_blob/89224e240d4677b215293a2283578be4', C = '/_blob/a40cd22c8b0131f6f805efbdc3aca9a8';
     const all = [
-      { who: 'Theo', img: T, title: 'Theo of the Lantern', text: 'Spoke the truth about the broken lamp before anyone asked.', when: 'Week 6 · Courage' },
-      { who: 'Max', img: M, title: 'Max Who Climbed', text: 'Went down the big slide with shaky knees, and then went again.', when: 'Week 6 · Courage' },
-      { who: 'June', img: J, title: 'June the Bold Voice', text: 'Shared her idea at dinner when the big kids were talking.', when: 'Week 5 · Courage' },
-      { who: 'Theo', img: T, title: 'Theo the Steady', text: 'Finished his whole reading log, even the boring page.', when: 'Week 4 · Perseverance' },
-      { who: 'June', img: J, title: 'June Who Shared', text: 'Gave Max the last strawberry without being asked.', when: 'Week 3 · Generosity' }
+      { who: 'Hugh', img: H, title: 'Hugh of the Lantern', text: 'Spoke the truth about the broken lamp before anyone asked.', when: 'Week 6 · Truth-Teller' },
+      { who: 'Clara', img: C, title: 'Clara Who Climbed', text: 'Climbed the tall slide ladder on shaky knees, then climbed it again.', when: 'Week 6 · Keep Going' },
+      { who: 'Alfie', img: A, title: 'Alfie the Bold Voice', text: 'Said his idea out loud at dinner while the big ones were talking.', when: 'Week 5 · Brave' },
+      { who: 'Hugh', img: H, title: 'Hugh Who Kept Going', text: 'Finished his whole reading log, even the boring page.', when: 'Week 4 · Keep Going' },
+      { who: 'Alfie', img: A, title: 'Alfie Who Shared', text: 'Gave Clara the last strawberry without being asked.', when: 'Week 1 · Kind' }
     ];
     const on = { background: '#16203A', borderColor: '#16203A', color: '#F4E9D2' };
     const list = this.state.who === 'All' ? all.slice(0, 4) : all.filter((d) => d.who === this.state.who);
     return {
-      filters: ['All', 'Theo', 'June', 'Max'].map((label) => ({ label, style: this.state.who === label ? on : {}, pick: () => this.setState({ who: label }) })),
+      filters: ['All', 'Hugh', 'Alfie', 'Clara'].map((label) => ({ label, style: this.state.who === label ? on : {}, pick: () => this.setState({ who: label }) })),
       deeds: list
     };
   }
