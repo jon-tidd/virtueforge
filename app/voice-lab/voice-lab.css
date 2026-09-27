@@ -1,0 +1,8 @@
+/* Voice lab type, after the voice mockups (Fraunces, Literata, Figtree). */
+.voice-lab { font-family: var(--font-figtree), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.voice-lab .font-display { font-family: var(--font-fraunces), Georgia, serif; letter-spacing: -0.01em; }
+.voice-lab .font-story { font-family: var(--font-literata), Georgia, serif; }
+.voice-lab .font-ui { font-family: var(--font-figtree), system-ui, sans-serif; }
+.voice-lab a { color: #E9A23B; }
+.voice-lab a:hover { color: #F2B559; }
+.voice-lab :focus-visible { outline: 2px solid #E9A23B; outline-offset: 2px; }

@@ -1,0 +1,84 @@
+{
+  "_source": "docs/redesign/voice/provider-research.md, section 3 (list prices read 26 Sep 2026). USD per 1,000 characters. Update here; engine ledger and scripts/voice-cost.mjs both read this file.",
+  "checkedOn": "2026-09-26",
+  "perThousandChars": {
+    "elevenlabs": {
+      "eleven_multilingual_v2": 0.1,
+      "eleven_v3": 0.1,
+      "eleven_flash_v2_5": 0.05
+    },
+    "chatterbox-fal": {
+      "fal-ai/chatterbox/text-to-speech": 0.025,
+      "resemble-ai/chatterboxhd/text-to-speech": 0.04
+    },
+    "chatterbox-http": {
+      "chatterbox": 0.0122,
+      "chatterbox-turbo": 0.0122
+    },
+    "mock": {
+      "mock-tone": 0
+    }
+  },
+  "scenarioRates": [
+    {
+      "name": "ElevenLabs v2/v3, list",
+      "perThousandChars": 0.1
+    },
+    {
+      "name": "ElevenLabs v2/v3, yearly plan fully used",
+      "perThousandChars": 0.083
+    },
+    {
+      "name": "ElevenLabs Flash v2.5, list",
+      "perThousandChars": 0.05
+    },
+    {
+      "name": "ElevenLabs Flash v2.5, yearly plan fully used",
+      "perThousandChars": 0.042
+    },
+    {
+      "name": "Chatterbox self-hosted, planning (L4)",
+      "perChapterUsd": 0.07
+    },
+    {
+      "name": "Chatterbox self-hosted, worst case (L40S)",
+      "perChapterUsd": 0.26
+    },
+    {
+      "name": "Chatterbox on fal.ai / Replicate",
+      "perThousandChars": 0.025
+    },
+    {
+      "name": "ChatterboxHD on fal.ai / chatterbox-pro",
+      "perThousandChars": 0.04
+    },
+    {
+      "name": "Azure personal voice (+$7.20/yr storage per voice)",
+      "perThousandChars": 0.024,
+      "perVoicePerYearUsd": 7.2
+    },
+    {
+      "name": "Speechify (Pro overage)",
+      "perThousandChars": 0.008
+    }
+  ],
+  "defaults": {
+    "charsPerChapter": 5750,
+    "chaptersPerYear": 240,
+    "heirloomPriceUsd": 89,
+    "marginGuideUsd": 30,
+    "scenarios": {
+      "light": 52,
+      "typical": 156,
+      "heavy": 240
+    },
+    "voicesPerFamily": [
+      1,
+      2,
+      3
+    ],
+    "tightMultipleOfMargin": 2,
+    "gpuUsdPerHour": 0.8,
+    "_gpuNote": "Self-hosted Chatterbox (chatterbox-http): voice:cost also prices measured generation time (ledger latencyMs) at gpuUsdPerHour (an L4 on Modal is about $0.80/h; --gpu-rate overrides). Excludes idle and warm-up time."
+  }
+}

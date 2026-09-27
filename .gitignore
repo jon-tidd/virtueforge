@@ -48,3 +48,9 @@ dev.sh
 
 # Jon's family test material: real names stay off the public repo
 docs/redesign/private/
+
+# family story voice prototype: recordings, consent, cached audio (never commit)
+.voice-data/
+
+# python bytecode (scripts/chatterbox_server.py)
+__pycache__/
