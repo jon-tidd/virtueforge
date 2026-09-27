@@ -699,7 +699,7 @@ The mockup shows mid-season: **Week 6 = Part 6, "Fog on Sedgefen" (Keep Going). 
 - **Chapter:** Ch. 28 · **Something Crying in the Fog**. The page says "This part was Clara's idea."
 - **Opening sentence** (replaces "Deep in the Hollow, something was crying. Not roaring. Crying."):
   > Somewhere out in the fog, something was crying: not roaring, not growling, just a small, wet sniffle, like someone who has lost their way and their mitten at the same time.
-- The same opening goes in the Booklet (W3), the FoldSheet (R3) and RecordChapter (G3).
+- The same opening goes in the Booklet (W3) and the FoldSheet (R3).
 
 ### Reader pages for Chapter 28 (N3, N2, N4)
 
@@ -749,10 +749,10 @@ The mockup shows mid-season: **Week 6 = Part 6, "Fog on Sedgefen" (Keep Going). 
   - "Tell it back: at breakfast, ask Clara to tell Grandma about the little dragon."
   - Blessing (faith toggle): "Let us not grow weary in doing good." (Galatians 6:9)
   - "NEXT TIME · Ch. 29 · Not Yet" (replaces "UNLOCKS TOMORROW NIGHT": chapters advance by reading, never by date)
-- **LampLit (N7):** "Wednesday's lantern is lit" · "Goodnight, Hugh, Alfie and Clara." · "Three lanterns this week. That's a great week." Days M, T, W lit. "Send tonight's picture to Grandma Ruth."
+- **LampLit (N7):** "Wednesday's lantern is lit" · "Goodnight, Hugh, Alfie and Clara." · "Three lanterns this week, and two nights still to go." Days M, T, W lit. "Send tonight's picture to Grandma Ruth."
 - **StrengthDetail (V2), Keep Going:** "Where they'll meet it: Ch. 7 · The Keeper's Riddle" → "**Where they met it: Ch. 24 · Pebble by Pebble.** Alfie can't reach the tin, tries three ways, and the third one works." Age tabs Clara · 3, Alfie · 5, Hugh · 7, from the ladder in section 5. Plans: Clara "If it's hard, then I take a lantern breath and try one more time." Alfie "If I want to quit, then I say 'not yet' and try a new way." Hugh "If it feels too big, then I do just the next small step." Paired classics: *The Carrot Seed* for Clara, *The Little Engine That Could* for Alfie, *After the Fall* for everyone.
 - **FridgeCard (W2):** "In our house this week · KEEP GOING". Hugh: "I can break a hard thing into small steps." Alfie: "I can try a new way when something is tricky." Clara: "I can try one more time." Dinner question: "What's one thing you kept going at today?" Verse (faith toggle): Galatians 6:9.
-- **TalkCards (D4):** "Let Alfie answer before his big brother. It's his mission this week."
+- **TalkCards (D4):** "Let Alfie answer first. If he gets stuck, give him time to say 'not yet' and try another answer. It's his mission this week."
 - **Booklet (W3):** "CHAPTER 28 · Something Crying in the Fog", with the opening sentence above.
 - **FoldSheet (R3):**
   - "THE LAST LIGHT OF CANDLEMERE · CHAPTER 28 · Something Crying in the Fog · starring Hugh, Alfie, Clara and Ember"
@@ -787,7 +787,7 @@ Legends tell the deed true, not bigger. They are tagged with the strength the de
    > In Candlemere they still tell of Clara Who Climbed, who looked up at the tall slide ladder, said "Not yet… keep going!", and climbed it with shaky knees. Then she climbed it again.
 
 - **LegendApprove (D2):** "A legend of Hugh" · the Hugh legend above · "Saved to Hugh's Hall of Deeds".
-- **Hall of Deeds (P3):** "As told in Candlemere." Swap names: "Theo the Steady" → "Hugh Who Kept Going" (Week 4 · Keep Going; "Steady" is the Season 4 strength family, so this legend doesn't use it). "June Who Shared: Gave Max the last strawberry without being asked." → "Alfie Who Shared: Gave Clara the last strawberry without being asked." (Week 3 · Kind). Week tags show the legend's own strength: Hugh of the Lantern · Week 6 · Truth-Teller; Clara Who Climbed · Week 6 · Keep Going; Alfie the Bold Voice · Week 5 · Brave.
+- **Hall of Deeds (P3):** "As told in Candlemere." Swap names: "Theo the Steady" → "Hugh Who Kept Going" (Week 4 · Keep Going; "Steady" is the Season 4 strength family, so this legend doesn't use it). "June Who Shared: Gave Max the last strawberry without being asked." → "Alfie Who Shared: Gave Clara the last strawberry without being asked." (Week 1 · Kind). Week tags show the legend's own strength: Hugh of the Lantern · Week 6 · Truth-Teller; Clara Who Climbed · Week 6 · Keep Going; Alfie the Bold Voice · Week 5 · Brave.
 - **SpottedIt (D1):** "This week · Keep Going". The example note stays, with names swapped.
 
 ### Hero trading cards (R4)
