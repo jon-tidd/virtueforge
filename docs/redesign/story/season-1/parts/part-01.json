@@ -1,0 +1,84 @@
+{
+  "status": "ok",
+  "part": 1,
+  "place": "Candlemere is a stone village round a still mere that holds every lit window upside down, and tonight its lamps go out one by one until only [[gp:called]]'s hearth is left. Indoors it is inglenook, hearth-rug and a latch low enough for the eldest to lift; outside, the lane is hushed and dim, doors shut, neighbors yawny and grey. Then the Keepers' Way runs west past hedgerows and carved milestones into the first windy night on the road, and the part ends at dusk at the bolted doors of Ashcombe.",
+  "hosts": [
+    {
+      "name": "[[gp:name]] (the grandparent, keeper of the last hearth, Ch 1 to 3)",
+      "voice": "Warm, unhurried and a little twinkly, in short sentences and old sayings: \"You've got your grandmother's tail.\" \"Sleep low, stay warm, wake bright.\" \"Nobody's too small to carry a light. But nobody carries it alone.\" Keeps Hild's secret: \"That's not mine to tell.\" Never scolds, never worried. Every sentence with the grandparent as subject sits in a grandparent block."
+    },
+    {
+      "name": "Ember (the guest at the window, then the guide)",
+      "voice": "Quick, polite and a little grand. First words ever: \"Good evening. I'm so sorry to bother you.\" Calls the children \"my lot\", fusses over her magnificent tail and wet paws, and can't count past four. Brings the news, never the answer. Grown-ups on the lane hear only fox yips."
+    },
+    {
+      "name": "Hild the wick-seller, with Dun (Ch 2 only)",
+      "voice": "Few words, all questions, comfortable silences. Asks the eldest alone, \"How big must a person be to carry a lantern?\", gives each child a pocket question, and gives the youngest a brass bell: \"Ring it if you ever lose them.\" Understands Ember and doesn't say why."
+    },
+    {
+      "name": "Reeve Osric (Ch 2)",
+      "voice": "Kind, busy, always halfway to somewhere else: \"We'll see to it tomorrow.\" Never mocked; he owns it himself in Ch 59."
+    },
+    {
+      "name": "The baker and the miller of Candlemere (unnamed, Ch 2)",
+      "voice": "Friendly and sorry, each with a real reason. The baker, floury and rushed: \"Not I. The bread won't bake itself.\" The miller, slow and creaky, rubbing his knees: \"Not I. These old knees won't climb Wardlow.\""
+    },
+    {
+      "name": "[[cast:Will]], the baker's boy (Ch 2)",
+      "voice": "Loud, quick and full of dares. Dashes into the dark with no light, is back in a minute, muddy, then proudly rings the youngest's bell all the way home. Helped, never laughed at."
+    },
+    {
+      "name": "Behind the door at Ashcombe (Ch 5)",
+      "voice": "Unseen and unheard in Part 1: a bolt sliding back and the smell of bread. Cuthbert speaks first in Ch 6."
+    }
+  ],
+  "modeled_behavior": "When something needs doing, be the first to say \"I'll help.\"",
+  "echo_plan": "Shapes and images only; story text never names a source. Ch 1 (Odyssey 1): the fox is let in and dried on the hearth-rug before anyone asks her news. Ch 2 (The Little Red Hen; Belling the Cat): \"Not I\" at every door; everyone agrees someone must go, nobody will. Reversed: nobody is shut out for it, [[cast:Will]] gets a job, and the lane climbs Wardlow in Ch 54. Hild's bell stays a safety bell, never a bell for a cat. Faith on: Isaiah 6:8 only in Ch 2's faith note. Ch 3 (Odyssey 2): setting out as night comes on. Reversed: Telemachus slips away without telling his mother; these children go with the grandparent's yes, and a scarf is cast on (Penelope's weaving, uncommented). Ch 4 (Vesta's hearth): the banking words and a thank-you keep the flame alive. Ch 5 (the old law of guests): a courteous knock at dusk, Ember's greeting on a child's lips, bread behind the door.",
+  "tuesday_pair": {
+    "too_little": "Timid: the grown-ups along the lane saying \"Not I\" (the baker is too busy, the miller's knees are too stiff, Reeve Osric says \"tomorrow\"). Each has a real reason and stays likable; nobody is mocked.",
+    "too_much": "Reckless: [[cast:Will]] the baker's boy runs into the dark with no light, and is back in a minute, muddy. He is helped straight away: the youngest gives him a hand and a job (\"You carry the bell.\"). The eldest finds the middle way at the hearth: \"I'll help.\""
+  },
+  "set_piece": "\"Good evening. I'm so sorry to bother you.\" Letting the fox in (Ch 1). At breakfast one child is the fox: tap, tap, tap on the table, then the line in Ember's grandest voice. The youngest looks back at a grown-up (\"She's cold!\"), waits for the nod, and says \"Come in, fox.\" The eldest lifts a pretend latch, and the fox shakes herself dry all over everyone. Swap parts and play it again.",
+  "clue": "[[gp:called]] and Hild can understand Ember; no other grown-up can (Ch 1 and 2). One name on the lantern's base is worn smooth, and [[gp:called]] says, \"That's not mine to tell.\" (Ch 3). Ember smells someone she knows on the road ahead: \"Someone else walked this road tonight. Someone I know.\" (Ch 3)",
+  "friday_question": "Why do you think every grown-up said \"Not I,\" and why did [[child:eldest]] say \"I'll help\"?",
+  "trial": {
+    "title": "I'll Help!",
+    "bands": {
+      "3-4": "Carry something to the table and say \"I'll help!\" first.",
+      "5-6": "Say \"I'll do it\" first for a job nobody wants, and do all of it.",
+      "7-9": "Offer a real job to a neighbor or to [[gp:real]] (with a grown-up) and do it."
+    },
+    "play_it_version": null,
+    "safety_line": "Grown-ups: pick something cool and unbreakable to carry, like napkins, spoons or a plastic cup, never a hot dish, a knife or glass, and stay right beside your child for any job done for a neighbor."
+  },
+  "i_can": {
+    "Little": "I can try something new with a grown-up close by.",
+    "Middle": "I can say my idea or my question out loud, even to grown-ups I don't know.",
+    "Big": "I can do a hard right thing even when I'm scared: speak up, go first, or ask someone new to play, and tell you afterwards what scared me.",
+    "Stretch": "I can be brave for someone else, even when others aren't."
+  },
+  "week_words": [
+    "flicker",
+    "willing"
+  ],
+  "in_real_life": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we only go out after dark with our grown-up.",
+    "In real life, we never let in, touch or go off with an animal we don't know; we tell a grown-up.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them.",
+    "In real life, we only knock on a door we don't know when our grown-up is right beside us."
+  ],
+  "flags_for_jon": [
+    "Letter home from Ch 5 (canon clash, resolved in the continuity pass without a canon change; please confirm). Canon §4 says every Monday from Ch 6 opens with the grandparent's reply, and the letter rule says Ember carries a letter only when the children are asleep indoors with a host. Ch 5 ends at a door just opening at dusk (hook: \"Who's behind the door?\"), but the children sleep under Cuthbert's roof that same night. So Ch 5's last page carries the letter as usual, Ember takes it by the fox-ways after they are asleep at Cuthbert's, and Ch 6 opens with the reply, as the canon says. The Part 2 sheet reads it the same way. Ch 5 must still end with every child together, hands held, in the warm light and bread smell of the opening door. If you'd rather the story never sends a letter from a roof we haven't seen yet, the fallbacks are (a) the Ch 25/26 pattern (the letter waits in the eldest's pocket and Ch 11 opens with both replies) or (b) Ch 6 opens with no reply and Ch 7 opens with it.",
+    "\"Lantern up!\" in Part 1. The modeled behavior is \"I'll help\", but checklist item 8 wants the week's phrase spoken and the gesture described in every chapter, and Ch 1's fixed sample page (canon §8) has neither. The canon never says where the phrase comes from in the story. Suggested: each chapter pairs them (a child says \"I'll help\" or does the brave thing, then \"Lantern up!\" with an invisible lantern held high and one step forward; the youngest uses the Little form, the lantern held high), and in Ch 1 it lands after the canon sample page. No canon change.",
+    "Ch 2's lane. The canon beat has the children and Ember go door to door along a dark lane with no grown-up named. It breaks no rule (they are together, never alone), but it is copyable, so the second \"In real life\" line covers it, and the drafter should keep every door in sight of [[gp:called]]'s lit window.",
+    "The third \"In real life\" line (letting an animal in) is the kit's open item 20 and is proposed, not settled. Ch 1's latch scene is safe on the page, because the youngest asks and the grandparent nods first. Drop the line if you say no.",
+    "Five \"In real life\" lines. Prompt 9a prints every one word for word on the dinner card, which will be crowded. Bible §5 allows the Sunday plan or a talk card; suggest letting prompt 9a put them on the Sunday plan when there are more than two. The fourth and fifth lines match Part 2's sheet word for word, for continuity.",
+    "Saturday trial. The canon's wording is kept, except that \"grandparent\" in the 7-9 task is written [[gp:real]] as FAMILY_FACTS requires, so a family with no living grandparent reads \"a grown-up who loves you\". The tasks are short; the twenty minutes comes from the grown-up lining up a few jobs and the family doing them together. The kit's schema has no Stretch band, so a child on Stretch does the 7-9 task.",
+    "Week words (proposed): \"flicker\" (the lamps that flicker and go out in Ch 1, the flame that flickers down to a blue bead in Ch 3 and steadies in Ch 4) and \"willing\" (the lane in Ch 2, setting out in Ch 3). Each must be used twice in its own chapter and come back once more in the part. Continuity pass: this sheet first picked \"courteous\", which Part 3 also picked. Part 3 keeps it, because polite words at the giant's gate are its modeled behavior, so Part 1 now sends home \"flicker\". No two parts share a week word.",
+    "Friday question. It is asked on Ch 5's last page about Ch 2. On the last page, [[child:eldest]] means the eldest child listening (kit section 3), so on a night the eldest isn't listening it would name the wrong child as the one who said \"I'll help\". Suggest code fills this marker from the story's eldest slot.",
+    "Old Brock (suggestion). Ch 57's payoff says Brock gets up for the youngest, \"who always stopped to pat him\". Part 1 is the only time before Ch 57 the children pass the Moot Hall step, so Ch 2 could show the youngest stopping to pat him on the way to Hild's tray. He is a known village dog, so this is not an animal the children don't know. A detail inside the beat; no canon change.",
+    "No previous part. Part 1 opens the season, so LAST PART was empty (the canon has no \"Part none\" row). Ch 1 has no \"Last time…\", no reply and no trial memory. No clash found between the kit and the canon on Part 1's story facts.",
+    "Turn child (continuity pass). By bible §5's order (eldest, youngest, middle, repeating; itself flagged) Part 1's turn child is the eldest. The if-then plan is built after Ch 2, and Ember's Ch 4 reminder uses the Brave Big plan from strengths.md: \"If I'm scared to do the right thing, then I ask 'What's the brave thing, and what's the silly thing?' and do the brave one.\" Ch 4 is led by the middle child, so the eldest's moment is small: kneeling in the wind by the milestone instead of running on to find shelter in the dark."
+  ]
+}

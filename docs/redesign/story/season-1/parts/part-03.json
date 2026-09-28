@@ -1,0 +1,60 @@
+{
+  "status": "ok",
+  "part": 3,
+  "place": "Ramsden is a high sheep valley between bare fells: stone walls, wet grass, and a wind off the tops that can turn to thunder fast. Its heart is Wistan's great roofed stone fold, dim and warm and smelling of straw, wool and warm milk, with one huge gate and forty-nine sheep and a lamb breathing all round. Outside, the hill is green and sunny by morning, and the whole valley feels like a place that was friendly once and went quiet because nobody visits any more.",
+  "hosts": [
+    {
+      "name": "Wistan",
+      "voice": "Few words, deep and slow, and sad underneath. Short plain sentences: \"Guests stay.\" \"No.\" \"Everybody goes. Nobody stays.\" He never shouts at the children and never touches them; his kindness leaks out sideways (warm milk, a blanket, a song to his sheep at dusk). His grumpiness is loneliness and being scared of the dark, and on Friday, beside the open gate, he says the most he has said all year: \"The old wick-woman came every winter with a light. Last winter she didn't.\""
+    }
+  ],
+  "modeled_behavior": "When something big scares you, take a lantern breath and use your polite words: \"Please may I…?\" Don't shove, and don't hide.",
+  "echo_plan": "The week runs on the shape of the Cyclops's cave: shelter from the storm in a big stranger's cave (Ch 11), a host who won't let his guests go (Ch 12), the flock counted and the big hand that pats only backs (Ch 13), out under the sheep at dawn (Ch 14). The ending is reversed (Ch 15): instead of shouting a boast from the ship, [[child:eldest]] goes quietly back to the gate with a light, asks first, and gives it. Around it: Gawain's courtesy to the huge stranger ([[child:eldest]]'s \"Thank you for the shelter, sir\" in Ch 12), the knights' mercy to anyone who asks (Ch 15), and the lion and the mouse (the promised log, paid back on Wardlow in Ch 54). It stays quiet because nothing is named or explained: no single eye, no blinding, no false name, no trick and no lie. The only nod to \"Nobody\" is that when Wistan rumbles \"Who's there?\", nobody answers. The children win by courtesy, cleverness and a gift of light, and the old tale's plunder becomes friendship: the fleece is given in thanks, and [[child:youngest]] gives it on later.",
+  "tuesday_pair": {
+    "too_little": "[[child:middle]] wants to hide in the straw (timid). He is likable and never laughed at, and by Wednesday he is out of the straw, counting the flock and finding the plan.",
+    "too_much": "[[child:eldest]] wants to shove the gate and shout (reckless: force and rudeness, not too much courage). He stops himself in the same chapter with his pocket question, a lantern breath and \"Lantern up!\", and asks politely instead, knees shaking."
+  },
+  "set_piece": "Out under the woolly bellies. A grown-up is Wistan, sitting with eyes shut, patting each \"sheep\" gently on the back as it goes by. The children creep under a blanket \"sheep\" (a blanket over two chairs, or a grown-up on hands and knees) past the giant, counting sheep-steps (\"One, two, three, four, lots!\"), with the youngest going six sheep-steps and a sibling right beside them. The giant rumbles \"Who's there?\", nobody answers, and everyone comes out saying \"It tickled!\"",
+  "clue": "Ch 15, at the open gate, as [[child:eldest]] offers the light, Wistan says: \"The old wick-woman came every winter with a light. Last winter she didn't.\" (Hild is not named, and she is absent all week.)",
+  "friday_question": "Why do you think [[cast:Wistan]] kept his gate shut?",
+  "trial": {
+    "title": "Under the Woolly Sheep",
+    "bands": {
+      "3-4": "Creep past the \"giant\" (a grown-up under a blanket) quiet as a mouse, holding a sibling's hand (or a teddy's paw, if nobody else is playing). Go again as many times as you like.",
+      "5-6": "Ask a grown-up you don't know well for something, politely: \"Please may I…?\" (a librarian, a shopkeeper, a neighbor at the door), with your own grown-up right beside you. Take a lantern breath first.",
+      "7-9": "Plan a clever way past the \"giant\", do it (creeping, not running or climbing), then say why it was brave and not reckless."
+    },
+    "play_it_version": "No new grown-up to ask this week? Play it: a grown-up in a hat, or a teddy, is the shopkeeper, and the asker takes a lantern breath and says \"Please may I have…?\" A played trial stamps the map too.",
+    "safety_line": "Grown-ups: the giant stays sitting, eyes shut, and only ever pats backs gently: no roaring, no grabbing, no chasing. Clear a creeping path on the floor first, and stay right beside your child when they ask a grown-up they don't know."
+  },
+  "i_can": {
+    "Little": "I can try something new with a grown-up close by.",
+    "Middle": "I can say my idea or my question out loud, even to grown-ups I don't know.",
+    "Big": "I can do a hard right thing even when I'm scared: speak up, go first, or ask someone new to play, and tell you afterwards what scared me.",
+    "Stretch": "I can be brave for someone else, even when others aren't."
+  },
+  "week_words": [
+    "courteous",
+    "lonely"
+  ],
+  "in_real_life": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we only go into someone's house with our grown-up.",
+    "In real life, we never climb on or hold on under an animal, even a gentle one.",
+    "In real life, if a grown-up won't let us leave, we tell our own grown-up straight away.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No Part 2 sheet was available at drafting time (parts were drafted in parallel), so this sheet was built from the canon's Part 2 rows. Checked in the continuity pass against the Part 2 sheet: Ch 11 opens with Grandma's reply to Ch 10's letter from Cuthbert's loft, and its \"Last time…\" carries Part 2's Stone Soup trial as a story memory. Ch 10's hook (\"Who sings to sheep in the dark?\") and Cuthbert's warning (a giant who \"hasn't said a kind word in a year\") are paid off by Wistan's dusk song in Ch 12. Part 2 took \"peer\" and \"generous\"; Part 1 had also picked \"courteous\" and now uses \"flicker\", so \"courteous\" belongs to this part alone.",
+    "The kit says trials are \"doable at home with nothing special\", but the canon's Middle trial (\"Ask a grown-up he doesn't know well…\") happens outside the home. The canon wins, so the task is kept. I added \"with your own grown-up right beside you\", some everyday examples, and a play-it version for weeks with no new grown-up around. \"He\" became a neutral imperative (\"you\") so the card suits any child. The canon's own table is unchanged.",
+    "The canon's Little trial says \"holding a sibling's hand\". An only child has no sibling, so I added \"or a teddy's paw\". Suggested for the canon: \"holding someone's hand\".",
+    "The kit asks for a play-it version only when a trial needs a real incident. None does here, but the Middle task needs a grown-up the child doesn't know. I gave a played version so every family can do it this week. Remove it if you'd rather keep play-it versions for incidents only.",
+    "Safety line: the grown-up playing the giant must never roar, grab or chase (bible §9: a chase or a grab is fear level 3). The canon trial doesn't say so, so the line spells it out.",
+    "\"In real life\" lines: five are needed. There are bible §5's lantern, house and talking-friend motifs, plus two that only Part 3 has: holding on under a sheep (Ch 13 and 14) and a grown-up who won't let the children leave (\"Guests stay\", Ch 12 to 14). The last two go beyond bible §5's list of four, so they are a production call, like kit open item 20. Continuity pass: the talking-friend line is now the same sentence every part uses (\"…a good friend never asks us to keep a secret from them.\"); this sheet's earlier \"foxes don't talk\" line was dropped, since the sheep line already covers touching animals. All five together are about 75 words, which won't fit the 50-word dinner talk card (kit 13.1). Suggested: the Sunday plan carries the lantern, house and friend lines, and the dinner card carries the sheep and gate lines.",
+    "The week words were chosen before the chapters are drafted. \"Courteous\" fits the modeled behavior and the eldest's words at the gate. \"Lonely\" is Wistan's trouble, and it helps a child answer the Friday question. Chapter drafting (1d) must use each one at least twice in one chapter and once more in the part. (\"Gentle\", the earlier fallback, is now Part 6's week word, so it is no longer free.)",
+    "Chapter drafting note (bible §9, rule 5: nobody enters where the children sleep). The canon allows Wistan's fold, but the children sleep there on Ch 11, 12 and 13, in a big stranger's fold. Suggested detail inside the beats: Wistan stays on his side of the gate at night, singing to the sheep over it. The hooks for Ch 12 and 13 should ask about the goal (\"How would they ever get past that gate?\"), never about anyone's safety.",
+    "The canon doesn't agree with itself about the lamb (kit open item 19). The Ch 13 beat says \"forty-nine sheep and a lamb\", and canon §8's home-page sample says \"the littlest lamb in the giant's fold\". This sheet follows the Ch 13 beat: one lamb, and never \"littlest\".",
+    "Letter home from Ch 15 (continuity pass). The canon says every Friday but Ch 25 and 55 sends the letter from under a host's roof, and Ch 16 arrives at Honeybourne at noon (the Ch 15 hook). So the children spend one last night in Wistan's fold as free guests, the gate open and Wistan on his side of it, and Ember carries the letter from there. Ch 16 opens with the reply.",
+    "Turn child (continuity pass): the middle child (bible §5 order, itself flagged). Ember's Ch 14 reminder uses the Brave Middle plan from strengths.md: \"If my voice wants to hide, then I take a lantern breath and say it anyway.\" Under the sheep, silence is the plan, so the moment must come after: suggested, on the sunny hill, when the big sad sound comes from the fold, [[child:middle]] takes a lantern breath and says out loud, \"I think he's crying.\" That sets up Ch 15 without taking the youngest's key act."
+  ]
+}

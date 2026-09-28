@@ -1,0 +1,67 @@
+{
+  "status": "ok",
+  "part": 4,
+  "place": "A warm, sleepy valley of bees, orchards and a slow stream, tucked where the wind never reaches. Every clock has stopped, the washing has hung out for days, and folk smile, yawn and forget what they were saying. It feels like a summer afternoon that forgot to end: lovely, drowsy, and too easy to stay in.",
+  "hosts": [
+    {
+      "name": "Dame Blythe",
+      "voice": "Glad and drowsy. Warm, slow sentences that trail into a yawn (\"Stay one more day, my dears… there's no…\"). Feeds guests before any question. Kind all through, and as forgetful as her guests. Her Friday \"Maybe\" is an honest maybe, never a promise."
+    },
+    {
+      "name": "Old Alric",
+      "voice": "A cheerful, puffing carter of few words: \"Nearly. One more shove. Same way's the right way.\" Never rests or asks for help until Ch 19; then he laughs, says thank you, and tries it their way."
+    },
+    {
+      "name": "The folk of Honeybourne",
+      "voice": "Smiling sleepers who yawn mid-word and never finish a sentence (\"We were going to… oh, what was it…\"). Gentle, and they wake up laughing."
+    }
+  ],
+  "modeled_behavior": "When fun pulls you away from a job, say \"First the job, then the fun.\"",
+  "echo_plan": "The Lotus-Eaters (Odyssey 9) is the shape: a sweet, kind welcome where travelers forget home, until one remembers and wakes the others (Ch 16, 18, 19). Reversed: nobody is dragged back; the youngest remembers through a gift kept for someone loved, and the valley is woken, not fled. The hare's nap (Aesop) is Ch 17's image; Ch 20 leaves at a steady walk. Quiet: no source named, no race, no tortoise. The food is never the trap: the sleepiness is the valley's tired-fire hush (canon §1).",
+  "tuesday_pair": {
+    "too_little": "The sleepers of Honeybourne, who have given up on everything (Ch 17). Helped in Ch 19, when the yawning contest wakes the valley laughing.",
+    "too_much": "[[cast:Old Alric]] pushing his stuck cart the same way for three days (Ch 17). Shown changing in Ch 19: pushed from the other side, it rolls."
+  },
+  "set_piece": "The yawning contest nobody wins, and the squashed slice in [[child:youngest]]'s pocket, wrapped \"for [[gp:called]]\".",
+  "clue": "[[cast:Dame Blythe]] yawns, in Ch 20, that an old woman with a donkey went west last winter with one stick, and came back slowly, alone. Said in passing; nobody names [[cast:Hild]] yet.",
+  "friday_question": "Why do you think [[child:youngest]] remembered home when everyone else forgot?",
+  "trial": {
+    "title": "First the Job",
+    "bands": {
+      "3-4": "Tidy the toys before snack. Say \"First the job, then the fun!\", tidy alongside a grown-up, then enjoy the snack together.",
+      "5-6": "Make the bed or set the table before play, with no reminder. Pick which one the night before.",
+      "7-9": "Set a timer, finish a 20-minute job, then the fun. Pick the job and the fun together first; if it feels long, do it in small parts."
+    },
+    "play_it_version": null,
+    "safety_line": "Grown-ups: for setting the table, hand over plates, cups and spoons only. Knives, glass and anything hot stay with you."
+  },
+  "i_can": {
+    "Little": "I can try one more time.",
+    "Middle": "I can keep going when something is tricky, and try a new way.",
+    "Big": "I can break a hard thing into small steps and stick with it for days.",
+    "Stretch": "I can make my own plan for a big goal and keep it up, even on days I don't feel like it."
+  },
+  "week_words": [
+    "drowsy",
+    "errand"
+  ],
+  "in_real_life": [
+    "In real life, we only go into someone's house with our grown-up.",
+    "In real life, we only eat food from someone new when our grown-up says yes.",
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet at drafting time: Parts 1 to 12 were drafted in parallel, so this sheet was built from the canon's Part 3 rows. Checked in the continuity pass against the Part 3 sheet: the Ch 15 hook (\"Why is a whole valley asleep at noon?\") means Ch 16 arrives at noon; the Ch 15 letter goes home from Wistan's fold, so Ch 16 opens with the grandparent's reply and the Part 3 trial memory (Under the Woolly Sheep); the youngest still carries Wistan's fleece (needed Ch 23) and Hild's bell. Turn child for Part 4 is the eldest (bible §5 order: eldest, youngest, middle), so Ember's Ch 19 reminder defaults to the Big plan, \"If it feels too big, then I do just the next small step.\"",
+    "Food and sleep (safety): the canon's part summary says Dame Blythe's honey-bread \"makes everyone sleepy and forgetful.\" Food from a new grown-up that makes children sleepy is a copyable, frightening motif. Canon unchanged; the echo plan has the drafts show the sleepiness as the valley's tired-fire hush (canon §1), with Dame Blythe as drowsy as her guests and nothing ever put in the food. I added a food line to in_real_life beyond the bible's four motifs. Please OK both.",
+    "Canon beat Ch 16, \"Alfie has three slices,\" clashes with CORE_RULES (\"Nothing is ever about how much a child eats\") and strengths.md rule 14. Canon wins, so 1d should say it once, plainly, with no joke, never link it to forgetting, and never bring it back. Suggest cutting the line from the beat.",
+    "\"Pinafore pocket\" (canon Ch 17, Ch 18 and the Part 4 set piece) is the sample youngest's avatar clothing, and FAMILY_FACTS allows looks only from each family's avatar. The sheet says \"pocket\"; 1d should do the same and bring the pinafore in only as a [[look:youngest|…]] touch.",
+    "Ch 17 (Tuesday): checklist item 5 needs a child to find the middle way, but the beat ends with the children sliding themselves (Hugh forgets the banking words, Alfie forgets to count) and only Clara's hand closing on the slice. Suggestion, adding detail without changing what happens: [[child:middle]] asks \"What else could we try?\" and offers Old Alric the other-side push; he waves it off (\"Same way's the right way\") until Ch 19. Otherwise accept that Tuesday only seeds the middle way this week.",
+    "Ch 20 letter: canon says every Friday except Ch 25 and 55 sends the letter from under a host's roof, and the letter waits on nights with no roof. So Ch 20 should end with one last night at Dame Blythe's by choice (packs by the door, fire banked with the banking words, leaving at dawn), with the road to Blakefell seen from her gate. That is resting, not forgetting, which fits Keep Going.",
+    "Ch 18 jar: canon §8's mockup jar card puts \"a paintbrush that paints real doors\" in Ch 18 (\"a painted door in Dame Blythe's house that really opens\"). That is a sample family's idea, not the default. If it's used, the jar brief should say the door opens only with Dame Blythe's yes, onto an ordinary room (folk-sized magic; the door rule).",
+    "Drafting safety for 1d: in Ch 19 the cart is on flat ground, Old Alric holds the shafts, and it rolls away from the children, never toward them. The bees are drowsy too; they never sting, and nobody touches a hive.",
+    "The ladder is copied word for word, as the kit asks. But the Little line (\"I can try one more time\") fits Part 4's modeled behavior and the Little trial (tidy the toys before snack) loosely, since strengths.md says \"First the job, then the fun\" seeds One Thing. Also, canon §8 (W1) shows the Big line as \"stick with it all week\"; the sheet uses canon §5's \"for days\".",
+    "Marker keys for two-word cast names: the sheet uses the canon spelling as the key ([[cast:Dame Blythe]], [[cast:Old Alric]]). cast_alternates in code should key on the same strings.",
+    "Modeled behavior (continuity pass): the field now holds canon §3's wording only, as every other sheet does, because prompt 9 prints it. The drafting note that went with it stays here: [[child:eldest]] says \"First the job, then the fun\" to [[cast:Dame Blythe]] in Ch 20, as the canon beat has it. The talking-friend \"In real life\" line now uses the wording every part shares (\"a good friend\")."
+  ]
+}

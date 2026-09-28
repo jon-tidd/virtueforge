@@ -1,0 +1,72 @@
+{
+  "status": "ok",
+  "part": 7,
+  "place": "Windley sits high on the open wold, a windmill village where the sails never stop turning and the grass all leans one way, and inside Aldwin's mill the winds hang tied in knots on cords, like strings of onions from a beam. West of it the high road runs over the wold under a huge sky, until the great wind sets everyone down at dawn on a hill they know, with the still, round mere of Candlemere far below and one lit window in the whole village: [[gp:called]]'s. From there the old keepers' road runs west beside the Swale, a quiet river road they walk along and never cross, with a milestone every so often and a carved lantern on every seventh.",
+  "hosts": [
+    {
+      "name": "Aldwin the miller of Windley (Ch 30 night to Ch 32 morning; on the page in Ch 31)",
+      "voice": "Weather-wise and exact, with floury hands and a habit of sniffing the air before he answers. Short, practical sentences, often counted off on his fingers, and he talks about the winds like livestock that need minding: \"That one's a grumbler. That one's a sulker. That one's a gentle one.\" He feeds them before he asks a thing, is courteous in the old way, and is very serious about his one rule: untie one knot for a kind wind, never all three. He likes a child who asks exactly how it works, and answers the middle child properly, step by step. He is not an old fire-carrier, so he hears Ember only as fox yips (he calls her \"good dog\" and offers her a biscuit; Ember is appalled, then eats it). His own line, from Ch 30: \"I can send you halfway to Wardlow in a day. But you must promise me one thing.\""
+    },
+    {
+      "name": "Hild, with Dun (Ch 35, by the seventh milestone on the keepers' road along the Swale)",
+      "voice": "Mostly short questions and long, easy silences. Plain facts about herself only when asked, and nothing yet about Wardlow or her own watch: the truth waits for Ch 45. She hears about the knots from the children first and never raises them herself. Her one teaching line is the canon's, asked after the danger, not during it: \"The wind wasn't yours to choose. What was?\" She never says the answer, never tells them what to do, and touches the carved lantern on the milestone like an old friend without explaining why."
+    },
+    {
+      "name": "The farm where Hild lodges (Ch 35 night, the hayloft)",
+      "voice": "The canon names nobody here, so nobody gets a new name. The farm folk stay offstage or give one plain line of welcome at most (\"There's hay in the loft and milk in the jug.\"), and Hild speaks for the house. The old law of the Keepers' Way vouches for them, and the children are together the whole night."
+    },
+    {
+      "name": "[[gp:name]], at home (Ch 34, seen only from the hill)",
+      "voice": "No words reach the hill. [[gp:called]] is only the lit window, the fire still burning, and the answer the vote chose: the bell rung back three times, or the window lamp raised three times. It must read to the children as \"I'm keeping the fire for you\", never as worry, sadness or a call to come home."
+    }
+  ],
+  "modeled_behavior": "After a mistake, say \"I did that,\" take a lantern breath, and take the first step back.",
+  "echo_plan": "Chapters 31 to 33 follow the shape of Aeolus's bag of winds (Odyssey 10): a kind host's gift of tied winds, a gentle wind that speeds them west, then the knots undone in a hurried moment and a great wind that blows them back within sight of home. Reversed where the old tale doesn't fit: there the crew open the bag behind their captain's back and the host turns them away; here the child who did it says so himself before anyone asks, nobody scolds, and the way back west is walked, not given. Ch 31 carries sailors' wind-knots (folklore) as an image and Ch 32 the gentle west wind as an image; Ch 32's mitten shrug has the shape of Aesop's The Fox and the Grapes (\"Didn't want it anyway\", bible 4.4). Epictetus (\"Some things are up to us, and some are not\") stays a shape only in Ch 34, where the children sort what they can still do from what they can't undo, and returns in Ch 35 only as Hild's canon question. Ch 35 is Odysseus setting out again after the setback, as a shape. How it stays quiet: nobody names Homer, Aeolus, Aesop or Epictetus, nobody says \"some things are up to us\", and the knots are never called a lesson; the wind never punishes, it sets them down gently. Faith toggle on only: the weekly verse key is Proverbs 24:16, and the grown-up faith note for Ch 34 to 35 may point to Jonah's second chance (Jonah 3:1, strengths.md, Proposed), never in story text.",
+  "tuesday_pair": {
+    "too_little": "Ember sulks all afternoon about her ears, blown inside out by the kind wind (falling apart: nose in the air, \"Ruined. Utterly ruined.\"). Nobody laughs at her; [[child:youngest]] gently turns them right way out, and Ember allows that her magnificent tail, at least, survived.",
+    "too_much": "[[child:middle]] loses a mitten on the high road and says \"Didn't want it anyway\" (shrugging it off), until that hand is cold. Shown changing in the same chapter: [[child:middle]] owns it (\"I let go of it to wave at the windmill\"), and the fix is shared: [[child:eldest]] lends one mitten, so each has one warm hand and the bare hands go in pockets. The middle way is [[child:youngest]] finding the lost bow in the hawthorn and laughing first: \"Oops… up again!\""
+  },
+  "set_piece": "Ember's ears blown inside out, and [[child:youngest]]'s bow in the hawthorn. At breakfast one child is Ember: hands flopped inside out on top of the head, nose in the air, sulking magnificently until someone gently turns the ears right way out. The others are the kind wind (a long, soft whoosh) that blows the youngest's bow (or hat, see flags) onto a chair-back \"hawthorn\"; the youngest hunts for it, finds it, laughs first, says \"Oops… up again!\" and springs up with arms wide. Nobody laughs at anyone who hasn't laughed first.",
+  "clue": "Hild sits by the carved lantern on the seventh milestone of the keepers' road along the Swale, and touches it like an old friend (Ch 35). Nobody explains it; the children only see it, and it points toward Hild once having walked this road herself, without saying so.",
+  "friday_question": "Why do you think [[child:eldest]] told the others the truth about the knots?",
+  "trial": {
+    "title": "The Three Knots",
+    "bands": {
+      "3-4": "When something falls down: a lantern breath, then build it again. Build a tower together out of big blocks, boxes or cushions and let it tumble; say \"Oops… up again!\", take one lantern breath with a grown-up (in slowly through the nose, out so gently a flame would only lean), and build it again, as many times as it stays fun.",
+      "5-6": "Play a game you might lose, say \"Good game,\" and play again. Pick a quick game with someone in the family that needs nothing special (rock, paper, scissors; tic-tac-toe; a hopping race to the door), play at least three rounds, and after every round, win or lose, say \"Good game\" and ask to play again.",
+      "7-9": "Redo something that went wrong, and say what you'll do differently. Pick one thing from this week that didn't come out right (a drawing, a block tower, a paper plane that nosedived, a tricky page of reading), say \"I did that,\" name one thing you'll change, then make it again and show a grown-up both tries."
+    },
+    "play_it_version": "Teddy's tower falls down (or Teddy loses a game, or Teddy's drawing goes wrong). Help Teddy take a lantern breath, say \"Oops… up again!\" or \"I did that,\" and try again.",
+    "safety_line": "Grown-ups: for the youngest, build with big blocks, boxes or cushions, nothing small enough to swallow, and clear a soft space for the tumble."
+  },
+  "i_can": {
+    "Little": "I can say how I feel and take a lantern breath with a grown-up, then try again.",
+    "Middle": "I can say \"Oops, I can fix it,\" and fix it myself, without being told, even when I'm cross.",
+    "Big": "I can get it wrong in front of others, calm myself without blaming anyone, and try again.",
+    "Stretch": "I can help someone else get back up, and laugh at my own mistakes."
+  },
+  "week_words": [
+    "sulk",
+    "mend"
+  ],
+  "in_real_life": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we only go into someone's house with our grown-up.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them.",
+    "In real life, we never follow an animal away from our grown-up, even a friendly one."
+  ],
+  "flags_for_jon": [
+    "The youngest's bow (Ch 32 and the set piece) is the sample family's avatar extra (Clara's red bow), so a youngest with no bow in the builder can't lose one (FAMILY_FACTS: looks only from avatar choices). The canon is unchanged; proposed: 1f writes a block keyed to the avatar, the bow when the youngest has one, otherwise the youngest's woolly hat (Westering clothing, not a likeness claim, like the middle child's mitten). The set piece and paper pieces say \"bow (or hat)\".",
+    "Knot count. The Part 7 row says Hugh \"unties all three\"; the chapter rows have one knot in Ch 32 and \"the other two\" in Ch 33, and never say who unties the first. Reading used here, with no canon change: the cord stays in the eldest's keeping, the eldest unties the one allowed knot in Ch 32 as Aldwin said, and the other two in Ch 33. Ember never touches the knots (she can't untie them).",
+    "Ch 33 (Wednesday, eldest-led): the lead's key act is the mistake itself, and the owning waits for Ch 34. So the week's phrase and gesture in Ch 33 must come from a different, earlier moment (suggested: the middle child's small recovery, prompted by the \"remember when\" of Ch 24, pebble by pebble), and the Pause & ask must never ask why the eldest untied the knots (bible 2).",
+    "Ch 33's great wind (fear level 2) against the kit's picture lock (\"carried off\") and bedtime rule 4: suggested drafting, with the canon beat unchanged. The others are asleep curled in Ember's tail in the lee of an empty shepherd's hut on the high road, the eldest unties the two knots beside them, and the wind lifts them all together, still asleep, \"like leaves\", in one or two lines; they wake at dawn, set down gently on the hill. The picture shows the dawn landing, never children in the air. The hook asks about the goal (home or west?), never their safety.",
+    "Where they sleep. From the canon's Part 6 rows: Ch 30 and Ch 31 nights at Aldwin's mill (Ch 25's letter \"goes home with Friday's letter from the mill\"). Ch 32 and Ch 33 nights are not given; the empty shepherd's hut above keeps the siblings together with no unknown grown-up. Ch 34 night is not given either; suggested: a hedge-bank or barn on the Swale road, all together round the lantern. Ch 35: the hayloft of Hild's farm (a roof and a host, so the Friday letter can go).",
+    "Canon wins over the kit's climbing rule (CORE_RULES: nothing higher than a low, wide tree or wall): the Ch 35 hayloft stays, but draft it as a low loft over the byre reached by a few wide steps, with Hild or the farm folk there and the youngest lifted up by a grown-up; no tall ladder in the text or the picture. If a ladder is drafted, add: \"In real life, we only climb a ladder when our grown-up says yes and is holding it.\"",
+    "The Friday question and Hild's Ch 35 question both touch the eldest's owned mistake (both canon, both about owning it and choosing again, not about why). So \"answers first\" must never be the eldest slot on those questions (1d's touches_mistake_of: eldest), and in a one-child family the grown-up answers first. \"Told the others\" needs a one-child version (told Ember). After Ch 34, nobody but the eldest brings the knots up again in this part, and they are never a \"remember when\" (strengths.md, Think It Through seeds).",
+    "Ch 31's opening block carries two grandparent replies (Ch 25's and Ch 30's letters) plus the Part 6 trial memory (the Stepping-Stone Trail) and \"Last time…\", within 120 words. The two default replies should be one short line each; if a real voice note is long, the legend waits (bible 2), and the grandparent's words are never trimmed.",
+    "Turn child: by the bible's rotation (bible 5, itself flagged), Part 7's turn is the eldest's, so Ember's Ch 34 plan reminder uses the Big plan (\"If I get it wrong in front of people, then I take a lantern breath, say 'I did that,' and try again.\"), which lands exactly on Ch 34's beat.",
+    "Continuity, taken from the canon's Part 6 rows at drafting time and now checked against the Part 6 sheet: the little dragon left in Ch 30; they arrive at the mill on the Ch 30 hook (Aldwin's promise), are fed and sleep under his roof, and Ch 31 opens there with both replies. Clara's bell (Ch 2) is used by vote 7 option A, and some of Wistan's fleece must still be in a pocket for Ch 44. The week words \"sulk\" and \"mend\" are checked: no other part sends them home.",
+    "Hild's spare tallow tin (continuity pass, from the Part 5 sheet). Hild gave it in Ch 21 \"for the next host\", and Alfie raised it from the crack in Ch 24, but Part 6 has no host. Proposed detail inside the Ch 31 beat: the children give the tin to Aldwin, a good guest leaving something behind (canon rule 4). The canon's \"He sets a fresh candle in the lantern\" is unchanged; only a grown-up opens the little door.",
+    "Continuity pass wording fixes: the talking-friend \"In real life\" line now uses the sentence every part shares (\"we tell our grown-ups… a good friend…\"), and the 5-6 trial says \"tic-tac-toe\" (house style is American spelling and usage)."
+  ]
+}

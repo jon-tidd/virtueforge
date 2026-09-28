@@ -1,0 +1,92 @@
+{
+  "status": "ok",
+  "part": 11,
+  "place": "Wardlow, the watch hill at the far western edge of the Westering: a long, bare green hill rising above Oxley's snowy fields, with the oxen's old cart track winding up it and, on the top, a great stone fire-bowl on a low stone step, older than anyone remembers. Up there the snow squeaks, the wind is cold and wide, and the whole dark Westering lies spread out below, with one small window shining far to the east. On the longest night it feels like the top of the world, huge and quiet and cold, until the lights come climbing and it becomes the warmest place in the land.",
+  "hosts": [
+    {
+      "name": "Ebba of Oxley (Ch 51 at dawn; Ch 55 on the wood-cart)",
+      "voice": "Humble and plain-spoken, in short farm sentences with no fuss: \"Snow's thick. Keep to the track. Oxen and cart will follow by dark.\" She trusts a child who tells the truth and says so by giving real work, never praise. Last up the hill in Ch 55, walking beside her white oxen."
+    },
+    {
+      "name": "Ember (the guide; no host lives on the hilltop)",
+      "voice": "Quick, polite and a little grand, even up to her ears in snow, and loudly unhappy about wet paws. Her ears twitch at a fib. In Ch 53 she speaks softly and slowly, handing each child a \"Remember when…?\", never the answer. In Ch 54 she gets to \"One, two, three, four…\" and cries \"Lots!\""
+    },
+    {
+      "name": "Cuthbert, the smith of Ashcombe (Ch 53 to 55)",
+      "voice": "Warm and few-worded, a deep voice that feeds you before it asks you anything. His lamp is the first light up the hill. His line when he reaches them is practical and kind (\"Here now. Hold it up for me.\"), and he holds his lamp to the dark lantern."
+    },
+    {
+      "name": "Wistan of Ramsden (Ch 54 to 55)",
+      "voice": "A huge, slow voice, gruff on top and soft underneath; few words, and all of them true. No longer scared of the dark, because he carries a lamp lit from theirs. He brings the biggest log in the Westering and sets it in the bowl as gently as a lamb."
+    },
+    {
+      "name": "Edith, the Goose-Wife of Thornholt (Ch 54 to 55)",
+      "voice": "Gruff and brisk, and funny without meaning to be. She understands Ember and answers her straight (\"Yes, yes, you're very magnificent. Move your tail.\"). Her geese flew to every village, so Honeybourne comes up yawning behind her."
+    },
+    {
+      "name": "The rest of the crowd: Dame Blythe and Honeybourne, Aldwin, Reeve Osric and Candlemere (Ch 54 to 55, no new scenes)",
+      "voice": "Each gets a line at most, in the voice already heard: Dame Blythe's slow, glad yawn; Aldwin's cheerful practical miller's talk; Reeve Osric busy and a little sheepish. His \"tomorrow\" apology waits for Ch 59."
+    },
+    {
+      "name": "Hild (Ch 55 only, riding on top of Ebba's wood-cart)",
+      "voice": "Old, quiet and unhurried. Her teaching lines are questions, and she lets the silence work. She may say plain facts about herself (her knees, the hill) and nothing that tells a child what it means. She lays the last stick only because the children ask her. Proposed: Ebba hands her the old walking stick from the farm door in one line on the cart, and it is the stick she lays last."
+    },
+    {
+      "name": "Ned, Ebba's grandson (Ch 55, riding with the cart)",
+      "voice": "Loud and quick, a boy who blurts, now eager to help. One line at most; he rides home with them in Ch 56."
+    }
+  ],
+  "modeled_behavior": "Say the hard true thing kindly, and say how you really feel.",
+  "echo_plan": "The spine is Odyssey 5, as a shape: the storm breaks the raft when all seems lost, and help comes that nobody looked for. Here the storm is one gust over the empty bowl (Ch 53), and the help is not a goddess but everyone the children helped, climbing with lamps lit from theirs (Ch 54). Reversed: the hero is not saved alone; help comes back because it was given. The Bundle of Sticks is an image, never a lesson: their own few sticks are not enough (Ch 52), and everyone's one stick makes the beacon (Ch 55). Nobody snaps sticks and no father lectures. Cicero's lamp returns as the Ch 54 turn: a flame they gave away hops back into the dark lantern. The Lion and the Mouse stays inside Wistan's log. Quiet: no source is named, and \"a light that's taken will not catch\" is not quoted as a moral. One beacon only: each hearth brightens where it stands, never a chain of fires hill to hill. Faith toggle (blessing keys only): John 1:5 on Ch 53, Matthew 5:15 on Ch 55.",
+  "tuesday_pair": {
+    "too_little": "Fibbing: [[child:middle]] says \"It's fine, it's enough!\" about their few sticks, and Ember's ears twitch (Ch 52). A gentle fib to make everyone feel better, never mocked. Shown changing by Ch 53, when [[child:middle]] says the true thing underneath.",
+    "too_much": "Blurting: [[child:eldest]] says \"It's useless. We came all this way for nothing,\" and [[child:youngest]]'s lip wobbles (Ch 52). Shown changing in the same chapter: [[child:eldest]] tries again, true and kind (\"It isn't enough wood. Not on our own.\"), and finds the middle way with the week's phrase and a hand on the heart."
+  },
+  "set_piece": "Counting the lights: one, ten, a hundred. [[child:middle]] counts \"One, two, three, four…\" and Ember shouts \"Lots!\" At breakfast the children make a hill with a blanket, and fingers (or spoons) become lamps climbing it, counted together, one, two, three, four, until everyone shouts \"Lots!\"",
+  "clue": "No new clue. The question is now \"Will anyone come this time?\" (the Ch 45 hook). Ch 51 and 52 keep it open: the empty bowl and only their own few sticks. Ch 53 gives the first answer: far below, one small light is climbing ([[cast:Cuthbert]]'s lamp, the first light up Wardlow). Ch 54 answers it with a hundred lamps, every one lit from theirs. Ch 55 closes it: [[cast:Hild]] rides up on [[cast:Ebba]]'s cart, and the children ask her to lay the last stick, so her stone can have its flame.",
+  "friday_question": "Why do you think all those people came up the hill?",
+  "trial": {
+    "title": "The Bundle of Sticks",
+    "bands": {
+      "3-4": "Say \"I'm tired,\" \"I'm sad\" or \"I'm scared\" in words. Warm up with a teddy: make a tired face, a sad face and a scared face together and name each one. Then, whenever a real feeling comes out in words today, say \"Thank you for telling me\" and add a stick to the family bundle.",
+      "5-6": "Tell a sibling one hard true thing kindly. Pick it first with a grown-up (\"I didn't like it when you took my blocks. Can we take turns?\"), then turn toward them and say it gently. No sibling at home? Tell a grown-up or a teddy. Then add a stick to the bundle.",
+      "7-9": "Say \"No, but…\" kindly and truthfully when it's hard. Practice first: a grown-up asks for things (\"Can I borrow your best pen?\" \"Will you play right now?\") and you answer with a true no and a kind but (\"No, but you can use this one.\"). Then look for a real one today, and add a stick to the bundle."
+    },
+    "play_it_version": "Act it out with toys: Teddy has climbed a big snowy hill and is cold and tired, but says \"It's fine!\" Help Teddy say what's true: \"I'm tired.\" Then two toys want the one blanket: help one say kindly, \"No, but we can share it.\" A played trial counts, and it adds a stick to the bundle too.",
+    "safety_line": "Grown-ups: you do the snapping at the end (one stick snaps, the whole bundle doesn't). Use dry spaghetti or thin, dry twigs no thicker than a pencil, snap them away from faces, and pick up every broken bit so none go in little mouths."
+  },
+  "i_can": {
+    "Little": "I can say \"I did it\" when something spills or breaks.",
+    "Middle": "I can tell what really happened, my part too, even if I might get in trouble.",
+    "Big": "I can tell the truth before anyone asks, and own my part.",
+    "Stretch": "I can tell a hard truth kindly, and I won't go along with a fib."
+  },
+  "week_words": [
+    "huddle",
+    "admit"
+  ],
+  "in_real_life": [
+    "In real life, only grown-ups carry a flame or light a fire, and we stand well back from a bonfire.",
+    "In real life, we never go walking in the dark or the snow without our grown-up, and we tell them straight away when we're cold or tired.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them.",
+    "In real life, telling a grown-up when someone is hurt, unsafe or scared is never tattling."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet at drafting time: parts were drafted in parallel, so this sheet was built from the canon's Part 10 rows; it has now been checked against the Part 10 sheet. Continuity carried in: Ch 50 ends at Ebba's farm in thickening snow, the oxen home, the wood-cart promised, Ebba's taper lit from the lantern, Ned's \"Sorry, [[child:youngest]]\", and Hild's stick by the door. Ember takes Ch 50's letter by the fox-ways and is back before dawn (Ch 51), so Ch 51 opens with the grandparent's reply and the Part 10 trial (The Open Gate) as a story memory, in 120 words or fewer. Ch 50's hook (\"What will they find at the top of Wardlow?\") is answered in Ch 52. The youngest still has Hild's bell; Wistan's fleece was used up in Ch 44.",
+    "Timeline, set in the continuity pass (the Part 9 and Part 10 sheets agree; please confirm). Ch 45 is \"six nights before the longest night\"; the walk from Stanbury takes two days off the page, and Part 10 covers three days at Oxley (Ch 46; Ch 47 and 48; Ch 49 and 50). So Ch 51 is the morning of the longest night and Ch 52 to 55 all fall on that one night. (This sheet first assumed five nights at Oxley; the count is corrected, and the result is the same.) The parents are due \"home by the longest night\" (canon §1) but are first seen home in Ch 60. This sheet keeps them off the page in Part 11, and no child worries about them.",
+    "Turn child: by bible §5 (eldest, youngest, middle, repeating) Part 11's turn child is the youngest, so Ember's Ch 54 reminder uses the Little plan, \"If I spill or break something, then I say 'I did it.'\" That plan, and the Little \"I can…\" line (copied word for word, as the kit asks), fit Part 10's open gate better than Part 11's \"say how you feel\", and the canon's Little trial is \"Say 'I'm tired,' 'I'm sad' or 'I'm scared' in words.\" Ch 54 must still give her a moment to use the plan. Options: (a) in Ch 54 she knocks their small pile of sticks off the step while pointing at the lights, says \"I did it,\" and everyone picks them up, with no fuss; or (b) Jon approves a Part 11 Little plan in strengths.md, for example \"If my grown-up asks how I feel, then I say it in words.\"",
+    "Refrain: canon Ch 54 says the flame \"hops home\" and Ch 55 says it \"leaps across\". Checklist item 20 needs \"…and the flame hopped across.\" every time a light is given. Suggest 1d writes the refrain exactly, then says it in the next sentence: \"…and the flame hopped across. It was home.\" Canon unchanged.",
+    "Fire safety on the hilltop (Ch 52, 53, 55): the lantern stays shut all night. In Ch 53 the gust puts the flame out through the chimney; nobody blows. Children lay sticks only in the cold, unlit bowl, and every stick, Hild's last one included, is laid before any flame. Then the children step back and hold the closed lantern up while Cuthbert and Hild hold their tapers to its chimney and then to the wood. In the line of lights only grown-ups carry lamps; village children carry sticks.",
+    "Ends warm: Ch 52 must end on the three holding hands in the lee of the fire-bowl with Ember's tail round them (bible §9). Ch 53 is fear level 2, the darkest hour, so it turns inside the chapter. Its last paragraph shows all three holding hands inside Ember's tail, looking at the small far light, and the hook asks who is carrying it, never whether they are safe. In the picture-book telling the last picture is that comfort image.",
+    "Tuesday: the canon shows the blurter changing in Ch 52 but not the fibber. Checklist item 5 says whoever went too far is helped or shown changing by the end of the part. Suggestion, as added detail inside the Ch 53 beat: [[child:middle]] says the truth under \"It's fine\" (\"It wasn't fine. I just wanted it to be.\"). Pause & ask questions about either boy's slip ask how he felt or what helped him, never why he did it.",
+    "Hild in Ch 55: the canon puts her there but gives her no question. Suggest the canon's own sample question 2, never yet asked in full: \"When you give some of your light away, what does your lantern lose?\", asked after the flame has come home, which is Cicero's lamp returning. The Ch 50 clue (her stick at Ebba's door) has no payoff in the canon. Continuity pass, agreed with the Part 10 sheet: Ebba brings the stick up on the cart and hands it back to her in one line, and it is the last stick she lays, the one she carried west last winter and never got to lay. (This sheet first said it was not burned; that is dropped so the two sheets agree.) Dun is not named on the hilltop, since the canon brings only the cart and Hild up in Ch 55.",
+    "Ch 53's big \"remember when\" (a moment for each child) needs reviewed defaults that hand back a good choice or a recovery, never a mistake, and best two to four weeks back. Suggested: [[child:eldest]], Ch 42 (\"I read hard words before. I can do it again\"); [[child:middle]], Ch 38 (knocking again: \"Can we start again?\"); [[child:youngest]], Ch 44 (the lantern breath, three things to tell [[gp:called]], wrapping soggy Ember herself). The knots and the gate stay out. Ember hands over memories only: the turn comes from [[child:youngest]]'s \"Look.\"",
+    "Ch 51 jar: the canon moves the jar and Vote 11 to Monday but gives no default scene for an empty jar. 1d should write a short reviewed default that starts and ends on the lower slopes. Suggestion: a white hare in the snow that the youngest asks \"Who needs help?\", which shows them the lee of an old wall to rest in. No guest follows them to the top or touches Ch 52 to 55. Vote 11 closes Ch 51 at the fork in the cart track, with both options using the chair route already in bible §6.",
+    "Ned and Reeve Osric: Ch 56 has Ned \"riding along\" on the ox-cart, so Ned should come up with Ebba in Ch 55 (one line). Reeve Osric arrives with Candlemere in Ch 54, but his apology belongs to Ch 59, so Part 11 gives him no sorry. In the crowd only Edith and Hild understand Ember (Grandma is at home); everyone else hears fox yips.",
+    "Wording: the canon's part-engine row has Hugh's line as \"We came for nothing\" but the Ch 52 beat has \"We came all this way for nothing\". This sheet uses the chapter beat. The Friday question is written out in full from the canon's \"…all those people came up the hill?\"",
+    "Trial: the canon's Bundle of Sticks row names no materials. This sheet uses dry spaghetti or thin twigs, one family bundle that grows by a stick for each true thing said kindly (never counted per child), and a grown-up who does the snapping. Please OK it.",
+    "Week words: \"huddle\" (Ch 52, 53, 55) and \"admit\" (Ch 52 and 53: [[child:eldest]] admits \"It isn't enough wood\" and \"I don't know what to do\", [[child:middle]] admits \"It wasn't fine\"; used only for saying a feeling or a fact, never for raising an owned mistake). This sheet first picked \"honest\", but the Part 10 sheet had left \"honest\" out on purpose, because \"honest girl\" would be praise of who a child is, so the continuity pass swapped it. \"Weary\" was the obvious pick for the climb, but Part 5 already sends it home.",
+    "Faith: Ch 53 takes John 1:5 and Ch 55 takes Matthew 5:15 as blessing keys in place of the weekly verse (bible §10, flagged there). Ephesians 4:25 is not printed until the house translation is picked (strengths flag 4).",
+    "Modeled behavior (continuity pass): the field now holds canon §3's wording only, as every other sheet does. The drafting note that was in it stays here: on the climb (Ch 51), \"I'm tired.\" \"Me too.\" [[child:youngest]] says it, and keeps walking. At the empty bowl (Ch 52), [[child:eldest]] tries again after blurting, true and kind: \"It isn't enough wood. Not on our own.\" When the flame goes out (Ch 53), [[child:eldest]] says \"It's out. I don't know what to do,\" and [[child:youngest]] says \"I'm scared,\" hand on heart. The friend \"In real life\" line uses the wording every part shares."
+  ]
+}

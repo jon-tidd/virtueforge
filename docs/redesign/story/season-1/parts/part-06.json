@@ -1,0 +1,68 @@
+{
+  "status": "ok",
+  "part": 6,
+  "place": "Sedgefen is a wide grey fen of sedge and reeds, so full of fog that the world seems to end three stones away. The Stepping Way crosses it: a hundred broad, flat stones over still water below a boot top, which rises over them for an hour every dusk and sinks back, and near the fortieth stone the lone old alder stands on its raised hummock, the only high, dry place. It feels hushed, damp and chilly, full of plips and reed-rustles, with the lantern making a small gold room in the grey and no roof until the windmill on the far side.",
+  "hosts": [
+    {
+      "name": "Ember (no host lives on Sedgefen, so hers is the week's steadiest voice)",
+      "voice": "Polite, a little grand, and grumbling about fog and wet paws (\"I don't like fog. I don't like wet paws.\"). Every count ends \"One, two, three, four, lots.\" Scared of deep water, so when the fen rises in Ch 27 the children are brave for her. Asked which way: \"I know the way home. The way on is yours.\""
+    },
+    {
+      "name": "The little dragon from the hills (the Chapter 28 guest, not a host)",
+      "voice": "Small, sniffly and honest about being scared, in lines of eight words or fewer: \"Everyone's too big and too loud.\" \"I'm not scared.\" Then, very loudly: \"Okay. I'm a LITTLE bit scared.\" Only the children understand it. Tier C defaults: a family's own guest replaces them, with one line from the backpack in Ch 29 and one goodbye line in Ch 30, neither depending on what the guest is."
+    },
+    {
+      "name": "[[cast:Aldwin]] the miller of Windley (Friday night's host, Ch 30 only)",
+      "voice": "Weather-wise and exact, as in Part 7: short, practical sentences, floury hands, and careful with a promise. He calls from the mill in the canon's words (\"I can send you halfway to Wardlow in a day. But you must promise me one thing.\"), feeds them before he asks a thing, and gives them Friday night under his roof. He is not an old fire-carrier, so Ember is only yips to him. His full voice belongs to Part 7."
+    }
+  ],
+  "modeled_behavior": "When it's long and hard, do just the next small step.",
+  "echo_plan": "Shapes only, never named. Odyssey 12 (holding on to the tree until the sea gives back the raft): the alder in Ch 27, holding on in Ch 29, the fen giving back the path at dawn in Ch 30. No whirlpool, sea or monster: the water only rises and sinks, as it does every dusk, and where the old hero clings alone, all three hold on together. Hansel and Gretel, marking the way only: a mark on every stone in Ch 26 (chalk, or a scratch he can feel); no witch, no birds, nobody left behind. The Queen Bee, Ch 28 only: the youngest is kind to a small creature, paid in trust, never treasure. No faith echo; blessing key Galatians 6:9.",
+  "tuesday_pair": {
+    "too_little": "[[child:middle]] wants to sit and wait to be fetched (giving up), in Ch 27 and again in Ch 29. Helped each time: the invisible ladder together, one stone at a time.",
+    "too_much": "[[child:eldest]] wants to push on though the water is rising (stubborn), and in Ch 29 wants to rush ahead alone, but never goes. Shown changing: holding on in the alder, lantern high and dry, then keeping pace stone by stone."
+  },
+  "set_piece": "Counting a hundred stones: \"One, two, three, four, lots!\" Lay a trail of stones (cushions or folded towels, nothing slippery) and cross it hand in hand, counting every stone aloud, while whoever plays Ember manages only \"One, two, three, four, lots.\" One stone is the alder: at \"The water's rising!\" everyone holds on there until it goes down, then takes the next small step.",
+  "clue": "Ch 30: asked who was on Wardlow the night the beacon went out, Ember says \"That's not mine to tell,\" and her ears stay up. She can't fib (a fib flattens her ears), so she knows, and it is someone else's story.",
+  "friday_question": "Why do you think they made it across, when stopping and rushing would both have gone wrong?",
+  "trial": {
+    "title": "The Stepping-Stone Trail",
+    "bands": {
+      "3-4": "Put on both shoes by yourself, and try again if one goes on wrong.",
+      "5-6": "Build a tower of twenty blocks. If it falls, try a new way.",
+      "7-9": "Practice one hard thing in three small parts for fifteen minutes (four bars of a song, ten spelling words)."
+    },
+    "play_it_version": null,
+    "safety_line": "Grown-ups: keep any block small enough to swallow away from little ones. If you set out the trail and hide a lantern at the end, use the paper lantern from the booklet or a flashlight, never a real candle, and make the stones from cushions or folded towels, nothing slippery."
+  },
+  "i_can": {
+    "Little": "I can try one more time.",
+    "Middle": "I can keep going when something is tricky, and try a new way.",
+    "Big": "I can break a hard thing into small steps and stick with it for days.",
+    "Stretch": "I can make my own plan for a big goal and keep it up, even on days I don't feel like it."
+  },
+  "week_words": [
+    "gentle",
+    "cling"
+  ],
+  "in_real_life": [
+    "In real life, we stay back from deep or rising water, and only go near water with our grown-up.",
+    "In real life, we don't touch or follow an animal we don't know; we show our grown-up instead.",
+    "In real life, only grown-ups carry a flame.",
+    "In real life, if we lose our grown-up, we stand still and call their name.",
+    "In real life, we only go into someone's house with our grown-up.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet was supplied at drafting time (parts drafted in parallel), so this sheet was built on the canon's Part 5 rows, and it has now been checked against the Part 5 sheet. Continuity: Ch 26 has no grandparent reply, and opens with the Blakefell letter still in [[child:eldest]]'s pocket (canon §4). Its trial memory is Part 5's \"Pebble by Pebble\". Both letters go home from under [[cast:Aldwin]]'s roof on Friday, and Ch 31 opens with both replies. Part 5's week words may come back as ordinary words (\"weary\" fits Ch 29: tired, cold, nearly across), but they are not this part's words.",
+    "Timeline proposal (adds detail inside the beats; please confirm). Ch 26 and Ch 27 are the same day: down off Blakefell in the morning, onto the stones, then dusk at the alder. They sleep on the alder's dry hummock, and in Ch 28 they are there again by dusk. Ch 28 happens in fog so thick the lantern is needed by day; the dragon is 'scared of the dark' of the fog. Ch 29 ends at dusk on a low gravel bank at the far end that the dusk water never covers (new detail). Ch 30 steps onto dry ground at dawn and reaches the mill by evening. There is no roof Monday to Thursday, so no letter goes until Friday, as the canon says.",
+    "Water rule for the chapter calls: the water beside the stones is still and below a boot top by day. On the stones the children hold hands, and nobody steps while the water is rising. Rising water is always met by going up onto the alder's hummock and waiting (bible §9). The alder is low and wide, and everyone is on it together.",
+    "The fog rule and the too-little side look alike. Standing still and waiting to be found when you are lost is right (the fog rule, the bell, and the \"In real life\" line). [[child:middle]]'s failing in Ch 27 is giving up on a step the children can take. Ch 27's middle way (climb up, hold on, go on when the water sinks) should read as an active plan (\"We hold on now. The next step is when the water goes down.\"), never as waiting to be fetched.",
+    "Kit and canon differ on the I can lines. I copied them from the ladder (canon §5 = strengths.md). Canon §8's Sunday plan gives the Big line as \"…stick with it all week\" (the ladder says \"for days\"), and its fridge card rewords the Middle line (\"I can try a new way when something is tricky\"). Which wording should prompt 9 print?",
+    "The trial copies canon §3 and §8, with two changes. The 3-4 task's \"herself\" became \"by yourself\", so it works for any child in that band, and the numbers are spelled out in words. The canon's W4 intro (\"Each hero earns a stepping stone\") breaks the never-earned, never-per-child rule, so prompt 9a should use the bible's suggested wording, \"Every stone you cross together is one tricky thing someone kept going at.\", unless you'd rather keep the canon's. Suggested trail framing for 9a, from canon §8: Ember has hidden the paper lantern on the far side of the marsh (somewhere in the house), and each tricky thing someone keeps going at lays one stone toward it.",
+    "Week words: \"gentle\" (Ch 28's soft voice and held-out hand) and \"cling\" (clinging to the alder while the water rises in Ch 27, and clinging on stone by stone in Ch 29). This sheet first picked \"peer\", but Part 2 already sends \"peer\" home (faces peering from Ashcombe's windows, its Tuesday), so the continuity pass swapped it. I avoided \"steady\" because it names the Season 4 strength family, and \"stubborn\" because it names the failing and shouldn't sit on a fridge next to a child's name. Chapter drafts must use each word twice in its chapter and again within the part.",
+    "\"In real life\" lines: six are needed. Water and the fog rule are this part's own; the unknown animal is Ch 28 and the reed route; the house line was added in the continuity pass, because [[cast:Aldwin]] feeds them under his roof on Ch 30's night (the Part 7 sheet has him feed them first); the flame and the talking friend recur every week, and the friend line now uses the wording every part shares (\"a good friend\"). That is too long for one dinner card (talk cards are 50 words or fewer), so prompt 9 could put them on the Sunday plan instead, or you could approve one standing flame line and one standing friend line for every part.",
+    "Canon vs bible on Ch 28: in the canon, the youngest holds out a hand to a creature she doesn't know. In a normal jar scene the bible fails any child reaching toward an unknown animal. The canon wins, and the animal \"In real life\" line covers it. Separately, canon §8's Pause & ask for the youngest reads \"Can you do the lantern breath…?\", but the kit requires \"Show me…\", never \"Can you…?\" (the kit's own Chapter 28 example already uses \"Show me\"). Should Ch 28 use the kit's wording?",
+    "Turn child (continuity pass): the middle child, as the kit's SLOTS example for Ch 28 shows. Ember's Ch 29 reminder uses the Keep Going Middle plan from strengths.md, \"If I want to quit, then I say 'not yet' and try a new way.\", which lands exactly on the Ch 29 beat (he wants to stop; \"Not yet… keep going!\")."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "ok",
+  "part": 8,
+  "place": "Thornholt is a thorny wood by the Swale, all bare blackthorn and hawthorn hung with red haws, with one narrow path that folk walk quickly past because of the stories they tell about the Goose-Wife. At its heart, in a muddy clearing, stands Edith's low thatched cottage: an old gate propped wide in the thorn hedge, a herb bed by the door, a long beech hedge that keeps its dry brown leaves all winter, feather beds airing on the line, thin grey smoke from a tired chimney, and a hundred white geese who honk at everyone. It sounds fierce and turns out homely, loud and muddy and busy by day, and by night warm with feather beds, a small fire and a gruff old woman who hasn't laughed in years.",
+  "hosts": [
+    {
+      "name": "Edith, the Goose-Wife of Thornholt (behind the door in Ch 36; the host Ch 37 to 40)",
+      "voice": "Gruff, short sentences that soften as the week goes on, never more than three at once. At first she barks from the doorway (\"Who's that? What do you want?\"), and when she thinks she's being laughed at she shuts the door; she never shouts at a child, never threatens, and never claims to turn anyone into anything (at most she waves the rumor off). Ch 38, after the sorry: \"Hmph. Come in, then.\" She feeds them first (\"Eat first. Then work.\"), then says the canon line, \"And you can come out from under that cloak, Ember.\" Ch 39: her first laugh in years, a big surprised honk of a laugh at the feather snow, and then, plainly, that her hearth is nearly out. Ch 40, plain and warm: \"Wardlow. The longest night. One stick each.\" and \"Anyone who ever carried fire up Wardlow can. Your [[gp:called]]. Me. And Hild.\" Underneath she is lonely and tired, like her fire, never cruel. She walked fire up Wardlow as a girl, so she understands Ember."
+    },
+    {
+      "name": "The hundred geese (not hosts; the week's noise and, on Friday, its messengers)",
+      "voice": "They don't talk. They honk all at once at every newcomer, and at exactly the wrong moment (right behind [[child:middle]] in Ch 37). They waddle after Edith in a long line, flap, and settle. They never peck, nip, hiss at or chase anyone. In Ch 39 the goslings follow [[child:youngest]] in a wobbly line; in Ch 40 they rise honking over the wood and fly to every village with the message. Sound words: honk, flap."
+    },
+    {
+      "name": "Ember (hiding, then found out)",
+      "voice": "Polite and a little grand, but loud noises are her scaredy thing, so the honking sends her under [[child:youngest]]'s cloak with only her magnificent tail sticking out. If she tries \"I'm not hiding,\" her ears go flat and she sneezes. Under the hedge she says the canon line, \"Tomorrow is another knock.\" She is astonished, and rather pleased, when Edith answers her in Ch 38. She never chooses for the children."
+    }
+  ],
+  "modeled_behavior": "If you get off on the wrong foot, say sorry and ask \"Can we start again?\"",
+  "echo_plan": "Ch 36 and 37, Odyssey 10, Circe: the shape of a feared house in a wood with animals all round its door (the tame beasts become a hundred honking geese) and a bad first meeting with a host who seems dangerous. Reversed: nobody is turned into anything, there is no drug, no magic herb and no sword; the rumor stays only what people say and is shown false, and where the old hero forces the host's hand, the children go back with a sorry. Ch 38 and 39, Grimm, Mother Holle: the shape of the willing worker in a gruff old woman's house, and one image, shaking the feather beds until it snows. Softened: no well, no fall, no teeth, no lazy sister and no pitch; the golden shower becomes Edith's laugh, her trust and her geese. Ch 40, Odyssey 10: Circe sends the hero on to those who came before, as Edith sends them to the Keepers' Stones at Stanbury. The wood has no will of its own and no thorn ever catches at anyone. Story text never names Homer or Grimm; only the Sunday plan's grown-up note may. Faith (toggle on): blessing key Proverbs 24:16, nothing in the story.",
+  "tuesday_pair": {
+    "too_little": "[[child:middle]] falls apart under the hedge after the door slams, sure he has spoiled everything, and wants to stay down (falling apart). Helped: squashed in beside the others out of the rain, and next morning he is the one who knocks again (Ch 38).",
+    "too_much": "[[child:eldest]] shrugs: \"She's just grumpy. Let's go.\" (shrugging it off). Shown changing, proposed: in Ch 38 Ember's \"remember when\" hands him back his own Ch 15 moment of going back to Wistan's gate, and he stands beside [[child:middle]] for the second knock instead of walking on."
+  },
+  "set_piece": "Shaking the feather beds until it \"snows.\" Two people hold the ends of a blanket or duvet and shake it gently up and down while everyone calls \"It's snowing in Thornholt!\" Then the smallest leads a line of honking goslings round the table, and whoever plays Ember hides under a coat until the honking stops. Grown-ups: shake only a blanket or a duvet in its cover; never open a pillow, and keep loose feathers away from little ones.",
+  "clue": "Ch 38: Edith understands Ember (\"And you can come out from under that cloak, Ember.\"), though only children and the old fire-carriers can. Ch 40: asked how, she says, \"Anyone who ever carried fire up Wardlow can. Your [[gp:called]]. Me. And Hild.\" The children already know Hild hears Ember (Ch 2), so now they know Hild once carried fire up Wardlow, and wonder why she never said (the Ch 40 hook). Nobody explains it; Part 9 does.",
+  "friday_question": "Why do you think [[cast:Edith]] let them in the second time?",
+  "trial": {
+    "title": "Start Again",
+    "bands": {
+      "3-4": "Say sorry and help pick it up.",
+      "5-6": "After a squabble, ask \"Can we start again?\" and do it.",
+      "7-9": "Make up after a fight with a sibling: say sorry, fix it, play again."
+    },
+    "play_it_version": "Play it with toys. Teddy bumps Rabbit's block tower and it falls: help Teddy say sorry and pick the blocks up (3-4). Teddy and Rabbit both grab the same block: help them ask \"Can we start again?\" and take turns (5-6). Act out a squabble between two toys, then help them say sorry, build the tower again together and play on (7-9). A played trial stamps the map too.",
+    "safety_line": "Grown-ups: for the toy version, use soft toys or blocks too big to swallow."
+  },
+  "i_can": {
+    "Little": "I can say how I feel and take a lantern breath with a grown-up, then try again.",
+    "Middle": "I can say \"Oops, I can fix it,\" and fix it myself, without being told, even when I'm cross.",
+    "Big": "I can get it wrong in front of others, calm myself without blaming anyone, and try again.",
+    "Stretch": "I can help someone else get back up, and laugh at my own mistakes."
+  },
+  "week_words": [
+    "gruff",
+    "flustered"
+  ],
+  "in_real_life": [
+    "In real life, we only go near geese and other farm animals with our grown-up, and only when the farmer says yes.",
+    "In real life, we only knock on a door we don't know, or go inside, when our grown-up is right beside us.",
+    "In real life, we only stay out after dark with our grown-up.",
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet at drafting time (parts drafted in parallel): continuity was taken from the canon's Part 7 rows and has been checked against the Part 7 sheet (the Ch 35 hayloft is a roof and a host, and Part 7's turn was the eldest's). Ch 35's letter goes home from the hayloft of the farm where Hild lodges, so Ch 36 opens with Grandma's reply, then 'Last time…' carrying 'The Three Knots' trial. Ch 35's hook ('Why would anyone keep a hundred geese?') is answered across the week: the feather beds, then the messenger geese in Ch 40. Hild stays behind at the farm and is absent all of Part 8 (canon 1), so every chapter's story question is a child's pocket question.",
+    "Proposed timeline inside the canon beats: Ch 36 ends at dusk with the polite knock, and Ch 37's door opens the same evening. The night after the door slams is spent under the hedge, and Ch 38 is the next morning. Ch 39 ends in Edith's feather beds, and Ch 40's letter goes home from under her roof.",
+    "The night under the hedge (Ch 37) is canon. Proposed: it is Edith's old beech hedge, which keeps its dry brown leaves all winter, so there is a dry hollow with no thorns, the closed lantern set in the lee, and [[child:youngest]] curled in Ember's tail for the warm last paragraph. The in-real-life line about staying out after dark covers it.",
+    "Tuesday's middle way: the canon gives the turning line to Ember ('Tomorrow is another knock'), but checklist item 5 needs a child to find the middle way. Proposed: [[child:youngest]], squashed under the hedge, says plainly 'I squashed her flowers,' feels it without falling apart, and then Ember's line follows. Owned, then over. Across the season the eldest and middle now lean both ways: [[child:eldest]] fell apart in Ch 34 and shrugs here; [[child:middle]] shrugged in Ch 32 and falls apart here.",
+    "Ch 38's 'remember when' is Ch 15, which is [[child:eldest]]'s own moment (going back to Wistan's gate, brave and not reckless). The proposal hands it to him, which is how his shrug is shown changing, and it is a good choice, never a mistake (strengths rule 14). [[child:middle]] still does the key act: the knock, the sorry and 'Can we start again?'",
+    "Food before work: the canon says Edith lets them in 'but only to work'. Bible 4.3 says food at a welcome is hospitality given before any deed. Proposed: Edith feeds them first, gruffly ('Eat first. Then work.'), so the work is never payment for the food. The canon beat is unchanged.",
+    "Doors and gates: CORE_RULES says no child opens a door without a grown-up's yes, and Part 10's open gate is Clara's season mistake. Proposed: Edith's gate stands propped wide, full of geese, so in Ch 36 no child opens anything; they knock on the cottage door and Edith opens it.",
+    "Vote 8 against the set piece: the Ch 39 beat has the feather beds making 'snow', but option B is mending the goose fence. Proposed: the beds are shaken on both routes. On route A it is the day's work; on route B, after the fence, Edith says beds get shaken before anyone sleeps in them, and they shake them at dusk. So Edith's laugh and the snow hold either way, and the canon's 'what stays the same' is unchanged.",
+    "Turn child: [[child:youngest]] (the order Hugh, Clara, Alfie from bible 5, itself flagged). The Ch 39 plan reminder uses her Little plan, 'If my tower falls, then I say \"Oops… up again!\"' Proposed moment for both routes: at bedtime she stacks the plumped pillows into a tower on Edith's settle, and it topples. Ember says the 'if' half, she says the line, and they stack it again.",
+    "Ember hides under 'Clara's cloak' (Ch 36 and 38), but in the sample family's avatar the cloak is Hugh's and Clara wears a pinafore. Treat it as the winter travel cloak every child wears on the road, not an avatar item, so it never counts as a likeness touch. The variants step needs a version for a youngest child in a wheelchair: under the blanket on her knees works the same.",
+    "Edith's Ch 40 line 'Your Grandma. Me. And Hild.' becomes 'Your [[gp:called]]. …' inside a grandparent block. Nan carried fire as a girl (canon 1), so the Nan and remembered versions read 'Your Nan.' For two grandparents Jon must decide whether both carried fire as children. The Carrying was every Candlemere child's walk, so 'Your [[gp:both]].' is proposed.",
+    "The rumor that Edith turns rude travelers into geese (from the Ch 35 hook) sits against CORE_RULES ('Nobody is turned into anything'). Bible 7 allows it only as what people say. Keep it to a line or two of hearsay and show it false. Proposed: in Ch 39 someone asks, and Edith says gruffly, 'People say a lot of things. These are just geese.' Her first laugh stays with the feather snow, as the canon has it.",
+    "Goslings (Ch 39) in the last days before the longest night: real geese hatch in spring. The canon wins and the sheet keeps 'goslings'. If Jon wants it true to life: 'this year's young geese, still grey.' Real geese can nip, so the story geese never peck, hiss or chase, and the geese line leads the in-real-life list: [[child:youngest]] leading them is the likeliest thing a toddler copies.",
+    "How the geese carry the message isn't in the canon. Proposed detail inside the Ch 40 beat, which also gives the lead his act and the week's 'Your line': [[child:eldest]] writes 'Wardlow. The longest night. One stick each.' in his best letters on strips of cloth, and Edith ties one to each goose's leg. Edith's taper takes the flame from the lantern's chimney. No child touches it.",
+    "Pause & ask: Ch 37's question touches [[child:middle]]'s own mistake (the giggle), and Ch 38's may too. So touches_mistake_of is middle, the question asks how his tummy felt or what helped him knock again, never why he giggled, and he doesn't answer first. After Ch 38 the giggle is not raised again, except by [[child:middle]] himself in Ch 50, as the canon has it. Strengths also notes it is not a Pause Button seed.",
+    "Trial: the canon's three tasks are copied word for word. The 5-6 and 7-9 tasks assume a sibling, so a one-child family needs a swap ('with a friend, a cousin or a grown-up'). The 7-9 task says 'fight' where the strengths ladder says 'quarrel', which may read more gently on a fridge card. Both are Jon's call. The play-it version is added because the tasks need a real incident (canon 3), and the safety line covers only its blocks.",
+    "Week words: 'gruff' (Edith's voice) and 'flustered' (the giggle that won't stop). Both are everyday words a child can use tomorrow. Checked in the continuity pass: no other part sends either home (the other parts' words are flicker, willing, peer, generous, courteous, lonely, drowsy, errand, weary, sturdy, gentle, cling, sulk, mend, homesick, proud, trust, wander, huddle, admit, boast, familiar). Part 7's 'mend' comes back naturally on vote 8's route B (mending the goose fence).",
+    "Blessing key Proverbs 24:16 (canon 3; strengths quote check: 'matches the NIV, trimmed'). No faith line is in story text. The Sunday plan's grown-up note may name Circe and Mother Holle (bible 4.4, itself flagged).",
+    "Kit and canon: no clash on story facts was found for Part 8. The two canon-against-bible tensions above (food before work, the rumor) are resolved inside the beats, with nothing about what happens changed.",
+    "Continuity pass: Edith's voice note now says she never claims to turn anyone into anything, so it agrees with the proposed Ch 39 line that waves the rumor off ('People say a lot of things. These are just geese.'). The talking-friend \"In real life\" line uses the wording every part shares."
+  ]
+}

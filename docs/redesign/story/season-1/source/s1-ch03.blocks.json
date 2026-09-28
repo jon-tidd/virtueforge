@@ -1,0 +1,605 @@
+{
+ "status": "ok",
+ "chapter": 3,
+ "blocks": [
+  {
+   "id": "ch3.p1.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "After lunch, [[gp:called]] took down the old brass lantern. \"The Keepers' Lantern,\" she said.",
+    "one.he": "After lunch, [[gp:called]] took down the old brass lantern. \"The Keepers' Lantern,\" he said.",
+    "one.they": "After lunch, [[gp:called]] took down the old brass lantern. \"The Keepers' Lantern,\" they said.",
+    "two": "After lunch, [[gp:both]] took down the old brass lantern. \"The Keepers' Lantern,\" said [[gp:called.1]].",
+    "nan": "After lunch, [[gp:called]] took down the old brass lantern. \"The Keepers' Lantern,\" she said.",
+    "remembered": "After lunch, [[gp:called]] took down the old brass lantern. \"The Keepers' Lantern,\" she said."
+   }
+  },
+  {
+   "id": "ch3.p2.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" she said. \"It has to be given, and somebody has to ask.\"",
+    "one.he": "[[gp:called]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" he said. \"It has to be given, and somebody has to ask.\"",
+    "one.they": "[[gp:called]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" they said. \"It has to be given, and somebody has to ask.\"",
+    "two": "[[gp:called.1]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" said [[gp:called.1]]. \"It has to be given, and somebody has to ask.\"",
+    "nan": "[[gp:called]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" she said. \"It has to be given, and somebody has to ask.\"",
+    "remembered": "[[gp:called]] opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" she said. \"It has to be given, and somebody has to ask.\""
+   }
+  },
+  {
+   "id": "ch3.small",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]]",
+    "2": "[[child:youngest]]",
+    "3": "[[child:youngest]]",
+    "4": "[[child:youngest]]"
+   }
+  },
+  {
+   "id": "ch3.p5.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"Now, the lantern breath,\" said [[gp:called]]. \"In slowly through your nose. Out so gently that a flame would only lean.\"",
+    "two": "\"Now, the lantern breath,\" said [[gp:called.1]]. \"In slowly through your nose. Out so gently that a flame would only lean.\"",
+    "nan": "\"Now, the lantern breath,\" said [[gp:called]]. \"In slowly through your nose. Out so gently that a flame would only lean.\"",
+    "remembered": "\"Now, the lantern breath,\" said [[gp:called]]. \"In slowly through your nose. Out so gently that a flame would only lean.\""
+   }
+  },
+  {
+   "id": "ch3.p7.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "Then [[gp:called]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" she said. \"I carried this lantern to Wardlow when I was seven.\"",
+    "one.he": "Then [[gp:called]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" he said. \"I carried this lantern to Wardlow when I was seven.\"",
+    "one.they": "Then [[gp:called]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" they said. \"I carried this lantern to Wardlow when I was seven.\"",
+    "two": "Then [[gp:both]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" said [[gp:called.1]]. \"I carried this lantern to Wardlow when I was seven.\"",
+    "nan": "Then [[gp:called]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" she said. \"I carried this lantern to Wardlow when I was a girl.\"",
+    "remembered": "Then [[gp:called]] turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" she said. \"I carried this lantern to Wardlow when I was a girl.\""
+   }
+  },
+  {
+   "id": "ch3.asker",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]]",
+    "2": "[[child:youngest]]",
+    "3": "[[child:middle]]",
+    "4": "[[child:middle]]"
+   }
+  },
+  {
+   "id": "ch3.p10.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]] ran a thumb over the smooth place. \"That's not mine to tell.\"",
+    "two": "[[gp:called.1]] ran a thumb over the smooth place. \"That's not mine to tell.\"",
+    "nan": "[[gp:called]] ran a thumb over the smooth place. \"That's not mine to tell.\"",
+    "remembered": "[[gp:called]] ran a thumb over the smooth place. \"That's not mine to tell.\""
+   }
+  },
+  {
+   "id": "ch3.p12.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"By the old law,\" said [[gp:called]], \"any child who carries this lantern is fed and housed at every door on the Keepers' Way.\" Then [[gp:called]] cast on a red scarf. \"One row for every night you're away.\"",
+    "two": "\"By the old law,\" said [[gp:called.1]], \"any child who carries this lantern is fed and housed at every door on the Keepers' Way.\" Then [[gp:called.2]] cast on a red scarf. \"One row for every night you're away.\"",
+    "nan": "\"By the old law,\" said [[gp:called]], \"any child who carries this lantern is fed and housed at every door on the Keepers' Way.\" Then [[gp:called]] cast on a red scarf. \"One row for every night you're away.\"",
+    "remembered": "\"By the old law,\" said [[gp:called]], \"any child who carries this lantern is fed and housed at every door on the Keepers' Way.\" Then [[gp:called]] cast on a red scarf. \"One row for every night you're away.\""
+   }
+  },
+  {
+   "id": "ch3.p13",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "At the gate there were hugs all round, and a proper goodbye. Then off they went in the gold of the afternoon, Ember in front and [[child:eldest]] carrying the lantern as steady as steady.",
+    "2": "At the gate there were hugs all round, and a proper goodbye. Then off they went in the gold of the afternoon, [[child:eldest]] carrying the lantern as steady as steady.",
+    "3": "At the gate there were hugs all round, and a proper goodbye. Then off they went in the gold of the afternoon, [[child:eldest]] carrying the lantern as steady as steady.",
+    "4": "At the gate there were hugs all round, and a proper goodbye. Then off they went in the gold of the afternoon, [[child:eldest]] carrying the lantern as steady as steady."
+   }
+  },
+  {
+   "id": "ch3.p21",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "\"The silly thing is running on in the dark,\" said [[child:eldest]] slowly. \"The brave thing is stopping here, and keeping the flame out of the wind.\"",
+    "wheelchair": "\"The silly thing is running on in the dark,\" said [[child:eldest]] slowly. \"The brave thing is stopping here, and keeping the flame out of the wind.\"",
+    "hearing": "\"The silly thing is running on in the dark,\" said [[child:eldest]] slowly. \"The brave thing is stopping here, and keeping the flame out of the wind.\"",
+    "low_vision": "\"The silly thing is running on in the dark,\" said [[child:eldest]] slowly. \"The brave thing is stopping here, and keeping the flame out of the wind.\"",
+    "signs": "[[child:eldest]] signed it slowly: *The silly thing is running on in the dark. The brave thing is stopping here, and keeping the flame out of the wind.*",
+    "talker": "[[child:eldest]] pressed [[pro:eldest.pos]] talker, slowly: *The silly thing is running on in the dark. The brave thing is stopping here, and keeping the flame out of the wind.*"
+   }
+  },
+  {
+   "id": "ch3.p22.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]]",
+    "two": "[[gp:both]]",
+    "nan": "Nan",
+    "remembered": "Nan"
+   }
+  },
+  {
+   "id": "ch3.p24.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]]'s",
+    "two": "[[gp:both]]'s",
+    "nan": "Nan's",
+    "remembered": "Nan's"
+   }
+  },
+  {
+   "id": "ch3.p27.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]]'s",
+    "two": "[[gp:both]]'s",
+    "nan": "Nan's",
+    "remembered": "Nan's"
+   }
+  },
+  {
+   "id": "ch3.p22b",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "Then Ember pointed her nose at something big and grey, close by the road.",
+    "2": "[[block:ch3.p22b.y]]",
+    "3": "[[block:ch3.p22b.y]]",
+    "4": "[[block:ch3.p22b.y]]"
+   }
+  },
+  {
+   "id": "ch3.p22b.y",
+   "varies_by": "access:youngest",
+   "versions": {
+    "default": "\"Big stone!\" said [[child:youngest]], pointing.",
+    "wheelchair": "\"Big stone!\" said [[child:youngest]], pointing.",
+    "hearing": "\"Big stone!\" said [[child:youngest]], pointing.",
+    "low_vision": "\"Big stone!\" said [[child:youngest]], patting its cold side with one hand.",
+    "signs": "[[child:youngest]] tugged a sleeve and pointed, then signed: *Big stone!*",
+    "talker": "[[child:youngest]] pointed, and pressed [[pro:youngest.pos]] talker: *Big stone!*"
+   }
+  },
+  {
+   "id": "ch3.g.mid",
+   "varies_by": "age_band:middle",
+   "versions": {
+    "3-4": "[[block:ch3.g.mid.little]]",
+    "5-6": "[[block:ch3.g.mid.big]]",
+    "7-9": "[[block:ch3.g.mid.big]]"
+   }
+  },
+  {
+   "id": "ch3.g.mid.little",
+   "varies_by": "access:middle",
+   "versions": {
+    "default": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "wheelchair": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "hearing": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "low_vision": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "signs": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and signed: *I'll help! Lantern up!*",
+    "talker": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high and pressed [[pro:middle.pos]] talker: *I'll help! Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.g.mid.big",
+   "varies_by": "access:middle",
+   "versions": {
+    "default": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "wheelchair": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, rolled one push toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "hearing": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "low_vision": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "signs": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, took one step toward the milestone, and signed: *I'll help. Lantern up!*",
+    "talker": "[[child:middle]] looked at the dark, and [[pro:middle.pos]] tummy went wobbly. Then [[child:middle]] held an invisible lantern up high, took one step toward the milestone, and pressed [[pro:middle.pos]] talker: *I'll help. Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.g.yng",
+   "varies_by": "age_band:youngest",
+   "versions": {
+    "3-4": "[[block:ch3.g.yng.little]]",
+    "5-6": "[[block:ch3.g.yng.big]]",
+    "7-9": "[[block:ch3.g.yng.big]]"
+   }
+  },
+  {
+   "id": "ch3.g.yng.little",
+   "varies_by": "access:youngest",
+   "versions": {
+    "default": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "wheelchair": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "hearing": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "low_vision": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "signs": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and signed: *I'll help! Lantern up!*",
+    "talker": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high and pressed [[pro:youngest.pos]] talker: *I'll help! Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.g.yng.big",
+   "varies_by": "access:youngest",
+   "versions": {
+    "default": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "wheelchair": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, rolled one push toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "hearing": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "low_vision": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "signs": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, took one step toward the milestone, and signed: *I'll help. Lantern up!*",
+    "talker": "[[child:youngest]] looked at the dark, and [[pro:youngest.pos]] tummy went wobbly. Then [[child:youngest]] held an invisible lantern up high, took one step toward the milestone, and pressed [[pro:youngest.pos]] talker: *I'll help. Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.g.eld",
+   "varies_by": "age_band:eldest",
+   "versions": {
+    "3-4": "[[block:ch3.g.eld.little]]",
+    "5-6": "[[block:ch3.g.eld.big]]",
+    "7-9": "[[block:ch3.g.eld.big]]"
+   }
+  },
+  {
+   "id": "ch3.g.eld.little",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "wheelchair": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "hearing": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "low_vision": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and said, \"I'll help! Lantern up!\"",
+    "signs": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and signed: *I'll help! Lantern up!*",
+    "talker": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high and pressed [[pro:eldest.pos]] talker: *I'll help! Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.g.eld.big",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "wheelchair": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, rolled one push toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "hearing": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "low_vision": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\"",
+    "signs": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, took one step toward the milestone, and signed: *I'll help. Lantern up!*",
+    "talker": "[[child:eldest]] looked at the dark, and [[pro:eldest.pos]] tummy went wobbly. Then [[child:eldest]] held an invisible lantern up high, took one step toward the milestone, and pressed [[pro:eldest.pos]] talker: *I'll help. Lantern up!*"
+   }
+  },
+  {
+   "id": "ch3.p26",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[block:ch3.g.eld]]",
+    "2": "[[block:ch3.g.yng]]",
+    "3": "[[block:ch3.g.mid]]",
+    "4": "[[block:ch3.g.mid]] [[child:middle2]] said it too."
+   }
+  },
+  {
+   "id": "ch3.p28",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "Ember wrapped that magnificent red tail round [[child:eldest]]'s shoulders like a scarf. \"Night night, little flame,\" whispered [[child:eldest]].",
+    "2": "[[child:youngest]] gave a yawn as big as a barn door, so Ember wrapped that magnificent red tail round [[pro:youngest.obj]] like a scarf. \"Night night, little flame,\" whispered [[child:youngest]].",
+    "3": "[[child:youngest]] gave a yawn as big as a barn door, so Ember wrapped that magnificent red tail round [[pro:youngest.obj]] like a scarf. \"Night night, little flame,\" whispered [[child:youngest]].",
+    "4": "[[child:youngest]] gave a yawn as big as a barn door, so Ember wrapped that magnificent red tail round [[pro:youngest.obj]] like a scarf. \"Night night, little flame,\" whispered [[child:youngest]]."
+   }
+  },
+  {
+   "id": "ch3.p32.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "Far behind them, [[gp:called]] would be knitting the first row of the red scarf, by a fire that stayed awake. [[child:eldest]] held on to that, the way you hold a warm cup in cold hands.",
+    "two": "Far behind them, [[gp:both]] would be knitting the first row of the red scarf, by a fire that stayed awake. [[child:eldest]] held on to that, the way you hold a warm cup in cold hands.",
+    "nan": "Far behind them, [[gp:called]] would be knitting the first row of the red scarf, by a fire that stayed awake. [[child:eldest]] held on to that, the way you hold a warm cup in cold hands.",
+    "remembered": "Far behind them, [[gp:called]] would be knitting the first row of the red scarf, by a fire that stayed awake. [[child:eldest]] held on to that, the way you hold a warm cup in cold hands."
+   }
+  },
+  {
+   "id": "ch3.p33",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[block:ch3.sd1]] Ember curled close, warm as a scarf.",
+    "2": "[[block:ch3.sd1]] [[child:youngest]] was already asleep in Ember's tail.",
+    "3": "[[block:ch3.sd3]] [[child:youngest]] was already asleep in Ember's tail.",
+    "4": "[[block:ch3.sd4]] [[child:youngest]] was already asleep in Ember's tail."
+   }
+  },
+  {
+   "id": "ch3.sd1",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "[[child:eldest]] set the lantern down in the lee of the milestone, and knelt beside it with [[pro:eldest.pos]] back to the wind, making a wall.",
+    "wheelchair": "[[child:eldest]] set the lantern down in the lee of the milestone, and turned [[pro:eldest.pos]] chair so its back made a wall against the wind.",
+    "hearing": "[[child:eldest]] set the lantern down in the lee of the milestone, and knelt beside it with [[pro:eldest.pos]] back to the wind, making a wall.",
+    "low_vision": "[[child:eldest]] set the lantern down in the lee of the milestone, and knelt beside it with [[pro:eldest.pos]] back to the wind, making a wall.",
+    "signs": "[[child:eldest]] set the lantern down in the lee of the milestone, and knelt beside it with [[pro:eldest.pos]] back to the wind, making a wall.",
+    "talker": "[[child:eldest]] set the lantern down in the lee of the milestone, and knelt beside it with [[pro:eldest.pos]] back to the wind, making a wall."
+   }
+  },
+  {
+   "id": "ch3.sd3",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "[[child:eldest]] set the lantern down in the lee of the milestone[[block:ch3.sd3.pro]]",
+    "wheelchair": "[[child:eldest]] set the lantern down in the lee of the milestone, and turned [[pro:eldest.pos]] chair so its back made a wall against the wind. [[child:middle]] knelt close beside, back to the wind too.",
+    "hearing": "[[child:eldest]] set the lantern down in the lee of the milestone[[block:ch3.sd3.pro]]",
+    "low_vision": "[[child:eldest]] set the lantern down in the lee of the milestone[[block:ch3.sd3.pro]]",
+    "signs": "[[child:eldest]] set the lantern down in the lee of the milestone[[block:ch3.sd3.pro]]",
+    "talker": "[[child:eldest]] set the lantern down in the lee of the milestone[[block:ch3.sd3.pro]]"
+   }
+  },
+  {
+   "id": "ch3.sd3.pro",
+   "varies_by": "pronoun:eldest",
+   "versions": {
+    "he": ", and he and [[child:middle]] made a wall with their backs to the wind.",
+    "she": ", and she and [[child:middle]] made a wall with their backs to the wind.",
+    "they": ". Then [[child:eldest]] and [[child:middle]] made a wall with their backs to the wind."
+   }
+  },
+  {
+   "id": "ch3.sd4",
+   "varies_by": "access:eldest",
+   "versions": {
+    "default": "[[child:eldest]] set the lantern down in the lee of the milestone. Then [[block:ch3.sd4.pro]], [[child:middle]] and [[child:middle2]] made a wall with their backs to the wind.",
+    "wheelchair": "[[child:eldest]] set the lantern down in the lee of the milestone, and turned [[pro:eldest.pos]] chair so its back made a wall against the wind. [[child:middle]] and [[child:middle2]] knelt close beside.",
+    "hearing": "[[child:eldest]] set the lantern down in the lee of the milestone. Then [[block:ch3.sd4.pro]], [[child:middle]] and [[child:middle2]] made a wall with their backs to the wind.",
+    "low_vision": "[[child:eldest]] set the lantern down in the lee of the milestone. Then [[block:ch3.sd4.pro]], [[child:middle]] and [[child:middle2]] made a wall with their backs to the wind.",
+    "signs": "[[child:eldest]] set the lantern down in the lee of the milestone. Then [[block:ch3.sd4.pro]], [[child:middle]] and [[child:middle2]] made a wall with their backs to the wind.",
+    "talker": "[[child:eldest]] set the lantern down in the lee of the milestone. Then [[block:ch3.sd4.pro]], [[child:middle]] and [[child:middle2]] made a wall with their backs to the wind."
+   }
+  },
+  {
+   "id": "ch3.sd4.pro",
+   "varies_by": "pronoun:eldest",
+   "versions": {
+    "he": "he",
+    "she": "she",
+    "they": "[[child:eldest]]"
+   }
+  },
+  {
+   "id": "ch3.who",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]]",
+    "2": "[[child:eldest]]",
+    "3": "[[child:middle]]",
+    "4": "[[child:middle]]"
+   }
+  },
+  {
+   "id": "ch3.jar.p5",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "Ember hummed a hearth song from home to every cow they passed, and every cow looked up to listen. [[child:eldest]] counted the cows.",
+    "2": "[[child:youngest]] hummed a hearth song from home to every cow they passed, and every cow looked up to listen. [[child:eldest]] counted the cows.",
+    "3": "[[child:youngest]] hummed a hearth song from home to every cow they passed, and every cow looked up to listen. [[child:middle]] counted the cows.",
+    "4": "[[child:youngest]] hummed a hearth song from home to every cow they passed, and every cow looked up to listen. [[child:middle]] counted the cows, and [[child:middle2]] counted the calves."
+   }
+  },
+  {
+   "id": "pic3.p2.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]] held it close to the fire. \"Somebody has to ask.\"",
+    "two": "[[gp:called.1]] held it close to the fire. \"Somebody has to ask.\"",
+    "nan": "[[gp:called]] held it close to the fire. \"Somebody has to ask.\"",
+    "remembered": "[[gp:called]] held it close to the fire. \"Somebody has to ask.\""
+   }
+  },
+  {
+   "id": "pic3.small",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]]",
+    "2": "[[child:youngest]]",
+    "3": "[[child:youngest]]",
+    "4": "[[child:youngest]]"
+   }
+  },
+  {
+   "id": "pic3.p10.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"That's not mine to tell,\" said [[gp:called]].",
+    "two": "\"That's not mine to tell,\" said [[gp:called.1]].",
+    "nan": "\"That's not mine to tell,\" said [[gp:called]].",
+    "remembered": "\"That's not mine to tell,\" said [[gp:called]]."
+   }
+  },
+  {
+   "id": "pic3.p13.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "At the gate there were hugs, and a proper goodbye. [[gp:called]] waved and waved.",
+    "two": "At the gate there were hugs, and a proper goodbye. [[gp:both]] waved and waved.",
+    "nan": "At the gate there were hugs, and a proper goodbye. [[gp:called]] waved and waved.",
+    "remembered": "At the gate there were hugs, and a proper goodbye. [[gp:called]] waved and waved."
+   }
+  },
+  {
+   "id": "pic3.p26",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "\"I'll help,\" said [[child:eldest]], holding an invisible lantern up high. \"Lantern up!\"",
+    "2": "\"I'll help,\" said [[child:youngest]], holding an invisible lantern up high. \"Lantern up!\"",
+    "3": "\"I'll help,\" said [[child:middle]], holding an invisible lantern up high. \"Lantern up!\"",
+    "4": "\"I'll help,\" said [[child:middle]], holding an invisible lantern up high. \"Lantern up!\""
+   }
+  },
+  {
+   "id": "pic3.end",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "Ember curled round [[child:eldest]], warm as a scarf.",
+    "2": "[[child:youngest]] fell asleep in Ember's tail.",
+    "3": "[[child:youngest]] fell asleep in Ember's tail.",
+    "4": "[[child:youngest]] fell asleep in Ember's tail."
+   }
+  }
+ ],
+ "looks": [],
+ "one_child_she_version": [
+  {
+   "id": "open.last_time",
+   "text": "Last time: at every door on the lane the answer was \"Not I,\" until Robin said, \"I'll help.\""
+  },
+  {
+   "id": "p1",
+   "text": "Today the flame would leave Candlemere. After lunch, Grandma took down the old brass lantern. \"The Keepers' Lantern,\" she said."
+  },
+  {
+   "id": "p2",
+   "text": "Grandma opened the little door, which only grown-ups ever open, and held the lantern close to the hearth. \"Fire won't be taken,\" she said. \"It has to be given, and somebody has to ask.\""
+  },
+  {
+   "id": "p3",
+   "text": "\"Please,\" whispered Robin."
+  },
+  {
+   "id": "p4",
+   "text": "Everyone waited in a hush, the way you wait for a sneeze…and the flame hopped across. The whole lantern glowed like a jar of honey."
+  },
+  {
+   "id": "p5",
+   "text": "\"I wasn't worried at all,\" said Ember, from behind the log basket. Her ears went flat. *Atchoo!*"
+  },
+  {
+   "id": "p6",
+   "text": "\"Now, the lantern breath,\" said Grandma. \"In slowly through your nose. Out so gently that a flame would only lean.\""
+  },
+  {
+   "id": "p7",
+   "text": "Everyone tried it, even Ember, who was always willing. Nothing happened at all, and she looked terribly pleased."
+  },
+  {
+   "id": "p8",
+   "text": "Then Grandma turned the lantern over. Underneath were names, scratched into the brass. \"That one's mine,\" she said. \"I carried this lantern to Wardlow when I was seven.\""
+  },
+  {
+   "id": "p9",
+   "text": "Robin read the names, sounding out the hard ones. One was worn so smooth that nobody could read it."
+  },
+  {
+   "id": "p10",
+   "text": "\"Whose is that one, worn smooth?\" asked Robin."
+  },
+  {
+   "id": "p11",
+   "text": "Grandma ran a thumb over the smooth place. \"That's not mine to tell.\""
+  },
+  {
+   "id": "p12",
+   "text": "Ember looked at the smooth name for a long moment, and said nothing at all."
+  },
+  {
+   "id": "p13",
+   "text": "\"By the old law,\" said Grandma, \"any child who carries this lantern is fed and housed at every door on the Keepers' Way.\" Then Grandma cast on a red scarf. \"One row for every night you're away.\""
+  },
+  {
+   "id": "p14",
+   "text": "At the gate there were hugs all round, and a proper goodbye. Then off they went in the gold of the afternoon, Ember in front and Robin carrying the lantern as steady as steady."
+  },
+  {
+   "id": "p15",
+   "text": "All afternoon the Keepers' Way ran west between tall hedges, past stubble fields and a mill-pond and a line of old grey milestones. Ember trotted in front with her tail up like a flag, and stepped round every single puddle. \"Wet paws,\" she said, \"are the enemy of a good fox.\"\n\nThe hedges were full of rosehips, as red as Ember's coat. A robin followed them for a whole field, as if it wanted to see where the lantern was going.\n\nOnce, a brown hare peeked out of the hedge, stared at the lantern, and lolloped off as if it had just remembered a kettle on the boil.\n\nEmber bowed to it most politely, but it did not bow back. \"No manners at all,\" she sniffed.\n\nRobin read every milestone out loud, sounding out the old carved letters: how far to the next village, and how far back home. Home was already quite a long way.\n\nEmber hummed a hearth song from home to every cow they passed, and every cow looked up to listen. Robin counted the cows.\n\n\"One, two, three, four, lots,\" said Ember, helping.\n\nAnd in the bottom of the backpack, under the apples, rode one small treasure from home: a smooth grey pebble from the cottage path, for luck.\n\nBy the time the sun was low and orange, Candlemere was only a smudge of roofs behind them. Nobody talked about it, but everyone looked back once."
+  },
+  {
+   "id": "p16",
+   "text": "At sunset the road passed a hollow oak as wide as a doorway. Far ahead stood a shepherd's hut. Then the wind began to rise."
+  },
+  {
+   "id": "p17",
+   "text": "*Whoo*, went the wind. Inside the lantern the flame began to flicker, and shrank and shrank, until it was only a tiny blue bead."
+  },
+  {
+   "id": "p18",
+   "text": "Robin's heart thumped. Part of her wanted to dash on into the dark. And part of her wanted to run all the way home."
+  },
+  {
+   "id": "p19",
+   "text": "Hild's pocket question was still there, like a smooth stone. Robin asked it out loud: \"What's the brave thing, and what's the silly thing?\""
+  },
+  {
+   "id": "p20",
+   "text": "The wind only blew harder. \"Excuse me,\" said Ember to the wind, very grandly. \"That is my tail, and I should like it back.\""
+  },
+  {
+   "id": "p21",
+   "text": "\"Ember, what should we do?\" asked Robin."
+  },
+  {
+   "id": "p22",
+   "text": "\"I know the way home,\" said Ember gently. \"The way on is yours.\""
+  },
+  {
+   "id": "p23",
+   "text": "\"The silly thing is running on in the dark,\" said Robin slowly. \"The brave thing is stopping here, and keeping the flame out of the wind.\""
+  },
+  {
+   "id": "p24",
+   "text": "Robin took a lantern breath, the way Grandma had shown them, and looked around."
+  },
+  {
+   "id": "p25",
+   "text": "Then Ember pointed her nose at something big and grey, close by the road."
+  },
+  {
+   "id": "p26",
+   "text": "It was an old grey milestone, with a little lantern carved on top. Robin read the carving: \"West to Wardlow. East to home.\" The wind roared past one side. On the other, it was almost still."
+  },
+  {
+   "id": "p27",
+   "text": "\"The lee,\" said Robin. That was Grandma's word for the side of a wall the wind can't reach."
+  },
+  {
+   "id": "p28",
+   "text": "Ember sat down on the still side. \"Much better,\" she said. \"My tail agrees.\""
+  },
+  {
+   "id": "p29",
+   "text": "Robin looked at the dark, and her tummy went wobbly. Then Robin held an invisible lantern up high, took one step toward the milestone, and said, \"I'll help. Lantern up!\""
+  },
+  {
+   "id": "p30",
+   "text": "Ember wrapped that magnificent red tail round Robin's shoulders like a scarf. \"Night night, little flame,\" whispered Robin."
+  },
+  {
+   "id": "p31",
+   "text": "Overhead the stars came out, until the sky was sprinkled like sugar on a dark loaf. Even Ember didn't try to count them."
+  },
+  {
+   "id": "p32",
+   "text": "Inside the lantern the blue bead flickered and bowed, like someone very tired, but it stayed steady."
+  },
+  {
+   "id": "p33",
+   "text": "Far behind them, Grandma would be knitting the first row of the red scarf, by a fire that stayed awake. Robin held on to that, the way you hold a warm cup in cold hands."
+  },
+  {
+   "id": "p34",
+   "text": "Robin wanted to cup the little flame in both hands. But hands go on your knees, never on the lantern: that was Grandma's rule."
+  },
+  {
+   "id": "p35",
+   "text": "Robin set the lantern down in the lee of the milestone, and knelt beside it with her back to the wind, making a wall. Ember curled close, warm as a scarf."
+  },
+  {
+   "id": "p36",
+   "text": "Ember lifted her nose. \"Someone else walked this road tonight,\" she said. \"Someone I know.\""
+  },
+  {
+   "id": "p37",
+   "text": "\"Who?\" whispered Robin."
+  },
+  {
+   "id": "p38",
+   "text": "\"Sleep now.\" The flame was only a blue bead. Would it hold till morning?"
+  }
+ ],
+ "longest_combination_words": 848,
+ "shortest_combination_words": 773,
+ "flags_for_jon": [
+  "one_child_she_version is rendered by render-chapter.py's own code for a one-child 'she' family (eldest band 7-9, grandparent 'Grandma', two parents). It includes the jar default.",
+  "The eldest's key act (setting the lantern down in the lee) reads the same at every band; the wheelchair version turns the chair so its back makes the wall. The youngest's \"Big stone!\" has low-vision, signing and talker versions. The 'they' version of ch3.sd3.pro starts a new sentence so long names stay under 28 words.",
+  "Picture blocks (pic3.*) carry the grandparent's lines, the youngest's asking, the middle child's gesture and the ending for every family size. The pictures reuse the master's own blocks where a picture line is the master's line (ch3.p5.gp, the lantern breath; ch3.p21, the eldest's middle-way line; ch3.p22b, the youngest's \"Big stone!\"), so they keep the access versions. pic3.p1.gp and pic3.p22b were dropped when prompt 1e was rerun, because no picture uses them now."
+ ]
+}

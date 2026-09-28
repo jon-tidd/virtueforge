@@ -1,0 +1,75 @@
+{
+  "status": "ok",
+  "part": 2,
+  "place": "Ashcombe is a ring of stone cottages deep in a narrow valley under tall grey ash trees, with a small square in the middle and Cuthbert's cold forge at the bottom of the lane. Every door is bolted and every shutter shut, and the only sounds are a latch clicking and a whisper behind a window, so the whole village feels as if it is holding its breath. It is a hush, never a threat: tired lamps and grey faces peering out, until by Thursday the square smells of soup and is full of people laughing.",
+  "hosts": [
+    {
+      "name": "Cuthbert (the smith, Ch 6 to 10)",
+      "voice": "Old, slow and warm, with few words, like a man who talks to iron more than to people. He feeds first and asks after: \"Eat. Questions keep.\" Never more than three short sentences at once. He calls the children \"travelers\", never by a word that needs a pronoun, and he stands with them at every door they knock on in Ch 8 and 9."
+    },
+    {
+      "name": "The reeve of Ashcombe (unnamed, Ch 8 and 9)",
+      "voice": "Tired and clipped, scared of the dark underneath, speaking round a half-open door: \"Go home.\" He never shouts and is never mean. He is the too-little side grown up, and in Ch 9 he comes out last, with something for the pot."
+    },
+    {
+      "name": "The big boy of Ashcombe (unnamed, Ch 7 to 9)",
+      "voice": "Loud and quick, all dares: \"Bet nobody can run across in the dark!\" After he trips over the pot he goes quiet, then says yes when [[child:middle]] asks him to help carry it. Nobody laughs at him. In a one-child family he takes the sibling beats (bible §6)."
+    },
+    {
+      "name": "The folk at the windows, the baker and the miller (unnamed, Ch 7 to 9)",
+      "voice": "Whispers and clicking shutters at first. When a door opens they speak shyly, then all at once: \"I've got a carrot.\" \"Barley!\" Vote 2 picks whose door opens first."
+    },
+    {
+      "name": "Hild (not a host; the mentor, Ch 10 only)",
+      "voice": "Short questions and plain facts about herself: \"Heavier than it looks.\" \"What did your lantern lose?\" She never tells a child what anything means."
+    }
+  ],
+  "modeled_behavior": "Say hello first, and say your idea out loud, even if your voice comes out small.",
+  "echo_plan": "Shapes and images only; no story text names Homer, Aesop, Cicero or a book. Ch 6: food before questions (Nestor feeds his guest first): Cuthbert sets down bowls and asks nothing until they are empty. Ch 7 to 9: the stone-soup shape, told honestly. Nobody is tricked: the stone is big and washed, stays in the pot, is never eaten, and the children say plainly what they want. Ch 8: shy Telemachus finds his words, shown as a small, wobbly voice that is still heard. Ch 9 and 10: Cicero's lamp as an image: the flame hops across and the lantern burns no dimmer, and Hild's question lets a child notice it. Ch 10: the bundle of sticks is only planted (\"one stick each\"), never shown or explained; it pays off in Part 11.",
+  "tuesday_pair": {
+    "too_little": "Timid: faces that duck away from the window. The folk of Ashcombe peer out at the pot, then vanish behind their shutters when the children look up. They are scared of the dark, not unkind, and they open their doors in Ch 9.",
+    "too_much": "Reckless: a big boy who dares everyone to run across the dark square and trips over the pot. It is showing off, not courage. Nobody laughs at him; [[child:middle]] asks him to help carry the pot to the middle of the square, and he does, so he is helped and changing the same night."
+  },
+  "set_piece": "Stone soup: everyone brings one thing. At breakfast a big bowl is the pot and an apple is the stone. Each person knocks on the table, says \"Good morning!\" first, asks \"Can you bring one carrot?\", and drops in one pretend thing, saying what it is.",
+  "clue": "Hild knows how heavy the lantern is (Ch 10). At the edge of the firelight she lifts the Keepers' Lantern by its ring as if she knows its weight and says, \"Heavier than it looks.\" Nobody told her. The story doesn't explain it; the answer waits for Chapter 45.",
+  "friday_question": "Why do you think Ashcombe opened their doors for [[child:middle]], even though [[pro:middle.pos]] voice was small?",
+  "trial": {
+    "title": "Stone Soup",
+    "bands": {
+      "3-4": "Say hello to a neighbor, holding a grown-up's hand. Then put one thing into the family's stone soup pot before it goes on the stove.",
+      "5-6": "Ask a shopkeeper or librarian a question all by yourself, with your grown-up close by. Then ask for one thing for the family's stone soup, out loud.",
+      "7-9": "Invite someone new to share the soup or to play (ask your grown-up first). Say hello first, and say the invitation yourself."
+    },
+    "play_it_version": "No neighbor, shop or new friend handy? Play it. A grown-up or a teddy is the neighbor behind a cupboard door, the shopkeeper at a toy shop on the table, or the new friend at the edge of the rug. Knock, say hello first, ask your question, give your invitation, and make the soup with toy food. A played trial stamps the map too.",
+    "safety_line": "Grown-ups: you do all the stove work and carry the hot pot. For the stone, use a scrubbed stone bigger than a toilet-roll tube is wide, and lift it out before serving, or use a big potato instead. Stay right beside your child for every hello, question and invitation."
+  },
+  "i_can": {
+    "Little": "I can try something new with a grown-up close by.",
+    "Middle": "I can say my idea or my question out loud, even to grown-ups I don't know.",
+    "Big": "I can do a hard right thing even when I'm scared: speak up, go first, or ask someone new to play, and tell you afterwards what scared me.",
+    "Stretch": "I can be brave for someone else, even when others aren't."
+  },
+  "week_words": [
+    "peer",
+    "generous"
+  ],
+  "in_real_life": [
+    "In real life, we only go into someone's house with our grown-up.",
+    "In real life, we only knock on a door we don't know when our grown-up is right beside us.",
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet at drafting time: parts were drafted in parallel, so LAST PART came from canon §4's Part 1 rows (Ch 1 to 5). Checked in the continuity pass against the Part 1 sheet: Ch 5's letter goes home from under Cuthbert's roof that night, so Ch 6 opens with the grandparent's reply and Part 1's \"I'll Help!\" trial as a story memory. Part 1's week words are now \"flicker\" and \"willing\", so none of this part's words repeat.",
+    "The trial isn't fully \"doable at home\" as the kit asks. All three canon Stone Soup tasks need someone outside the family (a neighbor, a shopkeeper or librarian, someone new). The canon tasks are kept because the canon wins, and the play-it version makes the trial doable at home.",
+    "One wording change to a canon trial line: the Middle task's \"all by himself\" is now \"all by yourself\", so it fits any child on the trial card. Jon to confirm.",
+    "The canon gives no safety line for Part 2. The kit requires one for heat and small objects, so one was added, reusing Part 5's stone size (\"bigger than a toilet-roll tube is wide\").",
+    "Cuthbert's voice is proposed. Bible §3 gives voices for Ember, Hild, Grandma, Reeve Osric, Wistan and Edith, but not for Cuthbert.",
+    "Ashcombe's reeve, the big boy, the baker and the miller stay unnamed. Any name for them needs the formal name check first. The story says \"the reeve of Ashcombe\", never \"Reeve\" as a title, so he can't be confused with Reeve Osric.",
+    "Detail added inside beats (the world's fire rule: a struck spark won't take, and a flame lives only if it is given). Ashcombe's hearths are low and tired, and Cuthbert's forge is cold. His Ch 6 supper (the bread smell of Ch 5) comes from his last low kitchen fire. The soup pot stands cold in the square through Ch 7 and 8, with no fire under it until the flame hops to Cuthbert's taper in Ch 9, and then Cuthbert lights it. The reeve of Ashcombe brings something to the pot in Ch 9, so the too-little side is shown changing.",
+    "The Friday question uses [[child:middle]], who speaks up in Ch 8. For families with no middle slot, 1f needs a family-size block that names whoever fills that role in Ch 8's lead_by_size.",
+    "Week words: \"generous\" goes with acts and gifts (\"a generous bowl\", \"that was generous of Cuthbert\"), never a child's nature, to keep the identity-praise rule. \"Courteous\" was left for Part 3 (Gawain's courtesy, polite words at the gate), so the two parts don't send home the same word.",
+    "\"In real life\" for a talking friend: Ember is in every part, so this line could repeat every week. Should it run only in parts where the grown-ups can't understand her on the page? This ties to kit open item 20 on letting an animal in.",
+    "Drafting note: under bible §5's turn order (eldest, youngest, then middle), Part 2's turn child is the youngest. So Ember's Thursday plan reminder in Ch 9 (lead: youngest) uses that child's plan, or the Brave Little default: \"If we come to something new, then I say 'Lantern up!'\""
+  ]
+}

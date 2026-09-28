@@ -1,0 +1,583 @@
+{
+ "status": "ok",
+ "chapter": 1,
+ "blocks": [
+  {
+   "id": "ch1.p1.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:name]]'s fire",
+    "two": "[[gp:both]]'s fire",
+    "nan": "Nan's fire",
+    "remembered": "Nan's fire"
+   }
+  },
+  {
+   "id": "ch1.p3",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]] leaned close to the glass[[look:eldest|look1.2]]. \"Foxes don't talk,\" [[block:ch1.p3.eld]]",
+    "2": "[[child:eldest]] came to stand beside [[pro:lead.obj]], and leaned close to the glass[[look:eldest|look1.2]]. \"Foxes don't talk,\" [[block:ch1.p3.eld]]",
+    "3": "[[child:eldest]] came to stand beside [[pro:lead.obj]].[[look:middle|look1.1]] \"Foxes don't talk,\" [[block:ch1.p3.mid]]",
+    "4": "[[child:eldest]] and [[child:middle2]] came to stand beside [[pro:lead.obj]].[[look:middle|look1.1]] \"Foxes don't talk,\" [[block:ch1.p3.mid]]"
+   }
+  },
+  {
+   "id": "ch1.p3.mid",
+   "varies_by": "pronoun:middle",
+   "versions": {
+    "he": "he said.",
+    "she": "she said.",
+    "they": "[[child:middle]] said."
+   }
+  },
+  {
+   "id": "ch1.p3.eld",
+   "varies_by": "pronoun:eldest",
+   "versions": {
+    "he": "he said.",
+    "she": "she said.",
+    "they": "[[child:eldest]] said."
+   }
+  },
+  {
+   "id": "ch1.p5.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"[[gp:called]], she's cold!\"",
+    "two": "\"[[gp:called.1]], she's cold!\"",
+    "nan": "\"[[gp:called]], she's cold!\"",
+    "remembered": "\"[[gp:called]], she's cold!\""
+   }
+  },
+  {
+   "id": "ch1.p6.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] was already smiling at the fox, and she nodded.",
+    "one.he": "[[gp:called]] was already smiling at the fox, and he nodded.",
+    "one.they": "[[gp:called]] was already smiling at the fox, and they nodded.",
+    "two": "[[gp:both]] were already smiling at the fox, and they nodded.",
+    "nan": "[[gp:called]] was already smiling at the fox, and she nodded.",
+    "remembered": "[[gp:called]] was already smiling at the fox, and she nodded."
+   }
+  },
+  {
+   "id": "ch1.p7",
+   "varies_by": "access:lead",
+   "versions": {
+    "default": "\"Come in, fox,\" said [[child:lead]].",
+    "wheelchair": "\"Come in, fox,\" said [[child:lead]].",
+    "hearing": "\"Come in, fox,\" said [[child:lead]].",
+    "low_vision": "\"Come in, fox,\" said [[child:lead]].",
+    "signs": "[[child:lead]] signed it, clear as clear: *Come in, fox.*",
+    "talker": "[[child:lead]] pressed [[pro:lead.pos]] talker: *Come in, fox.*"
+   }
+  },
+  {
+   "id": "ch1.p8",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]] lifted the latch, and [[block:ch1.p8.in]] and all over [[block:ch1.slippers]].",
+    "2": "[[child:eldest]] lifted the latch, and [[block:ch1.p8.in]] and all over [[block:ch1.slippers]].",
+    "3": "[[child:eldest]] lifted the latch, and [[block:ch1.p8.in]] and all over [[child:middle]].",
+    "4": "[[child:eldest]] lifted the latch, and [[block:ch1.p8.in]] and all over [[child:middle]]. [[child:middle2]] got splashed too."
+   }
+  },
+  {
+   "id": "ch1.p8.in",
+   "varies_by": "pronoun:eldest",
+   "versions": {
+    "he": "in she came, and shook herself dry all over the hearth-rug,",
+    "she": "in came the fox, and shook herself dry all over the hearth-rug,",
+    "they": "in she came, and shook herself dry all over the hearth-rug,"
+   }
+  },
+  {
+   "id": "ch1.slippers",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]]'s slippers",
+    "two": "[[gp:called.1]]'s slippers",
+    "nan": "Nan's slippers",
+    "remembered": "Nan's slippers"
+   }
+  },
+  {
+   "id": "ch1.p9.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\"",
+    "one.he": "[[gp:called]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" he said. \"You've got your grandmother's tail.\"",
+    "one.they": "[[gp:called]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" they said. \"You've got your grandmother's tail.\"",
+    "two": "[[gp:both]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" said [[gp:called.1]]. \"You've got your grandmother's tail.\"",
+    "nan": "[[gp:called]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\"",
+    "remembered": "[[gp:called]] looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\""
+   }
+  },
+  {
+   "id": "ch1.p11",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]] looked at Ember, and Ember looked back. And that is how it began.",
+    "2": "[[child:lead]] looked at [[child:eldest]]. [[child:eldest]] looked at Ember. And that is how it began.",
+    "3": "[[child:lead]] looked at [[child:eldest]]. [[child:eldest]] looked at [[child:middle]]. And that is how it began.",
+    "4": "[[child:lead]] looked at [[child:eldest]]. [[child:eldest]] looked at [[child:middle]] and [[child:middle2]]. And that is how it began."
+   }
+  },
+  {
+   "id": "ch1.p12",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "For a moment nobody said a word, and a hush fell over the cottage. The fox dripped on the rug. So did [[block:ch1.slippers]].",
+    "2": "For a moment nobody said a word, and a hush fell over the cottage. The fox dripped on the rug. So did [[block:ch1.slippers]].",
+    "3": "For a moment nobody said a word, and a hush fell over the cottage. The fox dripped on the rug. So did [[child:middle]].",
+    "4": "For a moment nobody said a word, and a hush fell over the cottage. The fox dripped on the rug. So did [[child:middle]] and [[child:middle2]]."
+   }
+  },
+  {
+   "id": "ch1.p14.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"Food first,\" said [[gp:called]]. \"Questions after. What does a cold fox like to eat?\"",
+    "two": "\"Food first,\" said [[gp:called.1]]. \"Questions after. What does a cold fox like to eat?\"",
+    "nan": "\"Food first,\" said [[gp:called]]. \"Questions after. What does a cold fox like to eat?\"",
+    "remembered": "\"Food first,\" said [[gp:called]]. \"Questions after. What does a cold fox like to eat?\""
+   }
+  },
+  {
+   "id": "ch1.p17",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "Ember shuffled a little closer to the fire. For a moment [[child:eldest]] wanted to dash straight in without looking. Instead, [[child:eldest]] stopped and said, \"I'll help!\"",
+    "2": "Ember shuffled a little closer to the fire. [[child:eldest]] was already jumping up to dash straight in without looking. But [[child:lead]] spoke first: \"I'll help!\"",
+    "3": "[[child:middle]] shuffled a little closer to the fire. [[child:eldest]] was already jumping up to dash straight in without looking. But [[child:lead]] spoke first: \"I'll help!\"",
+    "4": "[[child:middle]] and [[child:middle2]] shuffled a little closer to the fire. [[child:eldest]] was already jumping up to dash straight in without looking. But [[child:lead]] spoke first: \"I'll help!\""
+   }
+  },
+  {
+   "id": "ch1.p18",
+   "varies_by": "age_band:lead",
+   "versions": {
+    "3-4": "[[block:ch1.p18.little]]",
+    "5-6": "[[block:ch1.p18.big]]",
+    "7-9": "[[block:ch1.p18.big]]"
+   }
+  },
+  {
+   "id": "ch1.p18.little",
+   "varies_by": "access:lead",
+   "versions": {
+    "default": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and whispered it: \"Lantern up!\"",
+    "wheelchair": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and whispered it: \"Lantern up!\"",
+    "hearing": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and whispered it: \"Lantern up!\"",
+    "low_vision": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and whispered it: \"Lantern up!\"",
+    "signs": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and signed it: *Lantern up!*",
+    "talker": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high and pressed [[pro:lead.pos]] talker: *Lantern up!*"
+   }
+  },
+  {
+   "id": "ch1.p18.big",
+   "varies_by": "access:lead",
+   "versions": {
+    "default": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, took one step forward, and whispered it: \"Lantern up!\"",
+    "wheelchair": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, rolled forward one push, and whispered it: \"Lantern up!\"",
+    "hearing": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, took one step forward, and whispered it: \"Lantern up!\"",
+    "low_vision": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, took one step forward, and whispered it: \"Lantern up!\"",
+    "signs": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, took one step forward, and signed it: *Lantern up!*",
+    "talker": "[[child:lead]]'s tummy gave a wobble, but Candlemere had an old saying for dim places. So [[child:lead]] held an invisible lantern up high, took one step forward, and pressed [[pro:lead.pos]] talker: *Lantern up!*"
+   }
+  },
+  {
+   "id": "ch1.p19.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]] waited in the pantry doorway, the way grown-ups wait when they know you can do it.",
+    "two": "[[gp:both]] waited in the pantry doorway, the way grown-ups wait when they know you can do it.",
+    "nan": "[[gp:called]] waited in the pantry doorway, the way grown-ups wait when they know you can do it.",
+    "remembered": "[[gp:called]] waited in the pantry doorway, the way grown-ups wait when they know you can do it."
+   }
+  },
+  {
+   "id": "ch1.p22c.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] shook her head. \"Not this one,\" she said. \"It has never once gone out.\"",
+    "one.he": "[[gp:called]] shook his head. \"Not this one,\" he said. \"It has never once gone out.\"",
+    "one.they": "[[gp:called]] shook their head. \"Not this one,\" they said. \"It has never once gone out.\"",
+    "two": "[[gp:both]] shook their heads. \"Not this one,\" said [[gp:called.1]]. \"It has never once gone out.\"",
+    "nan": "[[gp:called]] shook her head. \"Not this one,\" she said. \"It has never once gone out.\"",
+    "remembered": "[[gp:called]] shook her head. \"Not this one,\" she said. \"It has never once gone out.\""
+   }
+  },
+  {
+   "id": "ch1.window",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]]'s window",
+    "two": "[[gp:both]]'s window",
+    "nan": "Nan's window",
+    "remembered": "Nan's window"
+   }
+  },
+  {
+   "id": "ch1.asker",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "[[child:eldest]]",
+    "2": "[[child:eldest]]",
+    "3": "[[child:middle]]",
+    "4": "[[child:middle]]"
+   }
+  },
+  {
+   "id": "ch1.p25.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]] had understood every word the fox said.",
+    "two": "[[gp:both]] had understood every word the fox said.",
+    "nan": "[[gp:called]] had understood every word the fox said.",
+    "remembered": "[[gp:called]] had understood every word the fox said."
+   }
+  },
+  {
+   "id": "ch1.p27.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] only smiled. \"I've known a fox or two,\" she said, and put another log on the fire.",
+    "one.he": "[[gp:called]] only smiled. \"I've known a fox or two,\" he said, and put another log on the fire.",
+    "one.they": "[[gp:called]] only smiled. \"I've known a fox or two,\" they said, and put another log on the fire.",
+    "two": "[[gp:both]] only smiled. \"We've known a fox or two,\" said [[gp:called.1]], and put another log on the fire.",
+    "nan": "[[gp:called]] only smiled. \"I've known a fox or two,\" she said, and put another log on the fire.",
+    "remembered": "[[gp:called]] only smiled. \"I've known a fox or two,\" she said, and put another log on the fire."
+   }
+  },
+  {
+   "id": "ch1.p29.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "[[gp:called]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" she said. \"But not tonight.\"",
+    "one.he": "[[gp:called]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" he said. \"But not tonight.\"",
+    "one.they": "[[gp:called]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" they said. \"But not tonight.\"",
+    "two": "[[gp:both]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" said [[gp:called.1]]. \"But not tonight.\"",
+    "nan": "[[gp:called]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" she said. \"But not tonight.\"",
+    "remembered": "[[gp:called]] looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" she said. \"But not tonight.\""
+   }
+  },
+  {
+   "id": "ch1.p30.par",
+   "varies_by": "parents",
+   "versions": {
+    "two": "On the mantel stood the note [[parents:called]] had left when they went over the fells with the flocks.",
+    "one.she": "On the mantel stood the note [[parents:called]] had left when she went over the fells with the flocks.",
+    "one.he": "On the mantel stood the note [[parents:called]] had left when he went over the fells with the flocks.",
+    "one.they": "On the mantel stood the note [[parents:called]] had left when they went over the fells with the flocks.",
+    "none_set": "On the mantel stood the note from home, left when the flocks went over the fells."
+   }
+  },
+  {
+   "id": "ch1.p32.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one.she": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:called]] didn't hurry. She tucked the coals under their blanket of ash, and everyone said the banking words with her: \"Sleep low, stay warm, wake bright.\"",
+    "one.he": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:called]] didn't hurry. He tucked the coals under their blanket of ash, and everyone said the banking words with him: \"Sleep low, stay warm, wake bright.\"",
+    "one.they": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:called]] didn't hurry. They tucked the coals under their blanket of ash, and everyone said the banking words with them: \"Sleep low, stay warm, wake bright.\"",
+    "two": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:both]] didn't hurry. They tucked the coals under their blanket of ash, and everyone said the banking words with them: \"Sleep low, stay warm, wake bright.\"",
+    "nan": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:called]] didn't hurry. She tucked the coals under their blanket of ash, and everyone said the banking words with her: \"Sleep low, stay warm, wake bright.\"",
+    "remembered": "Just then the fire gave a flicker, low and blue, like a candle in a draft. [[gp:called]] didn't hurry. She tucked the coals under their blanket of ash, and everyone said what [[gp:remembered]] always said: \"Sleep low, stay warm, wake bright.\""
+   }
+  },
+  {
+   "id": "ch1.p32b.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[child:lead]] was loudest of all on the very last word. Then [[gp:called]] thanked the fire, the way you thank a friend, and it settled down like a cat on a cushion.",
+    "two": "[[child:lead]] was loudest of all on the very last word. Then [[gp:both]] thanked the fire, the way you thank a friend, and it settled down like a cat on a cushion.",
+    "nan": "[[child:lead]] was loudest of all on the very last word. Then [[gp:called]] thanked the fire, the way you thank a friend, and it settled down like a cat on a cushion.",
+    "remembered": "[[child:lead]] was loudest of all on the very last word. Then [[gp:called]] thanked the fire, the way you thank a friend, and it settled down like a cat on a cushion."
+   }
+  },
+  {
+   "id": "ch1.quilt",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "[[gp:called]] spread a quilt on the hearth-rug",
+    "two": "[[gp:both]] spread a quilt on the hearth-rug",
+    "nan": "[[gp:called]] spread a quilt on the hearth-rug",
+    "remembered": "[[gp:called]] spread a quilt on the hearth-rug"
+   }
+  },
+  {
+   "id": "ch1.p33",
+   "varies_by": "family_size",
+   "versions": {
+    "1": "That night nobody went up to bed. [[block:ch1.quilt]], and Ember curled round [[child:eldest]] on it like a warm red scarf. In the hush, [[child:eldest]] was the last to close [[pro:eldest.pos]] eyes. Somebody would have to carry a light all the way to Wardlow. But who?",
+    "2": "That night nobody went up to bed. [[block:ch1.quilt]], and everyone slept by the fire. Ember curled round [[child:lead]] like a warm red scarf. In the hush, [[child:eldest]] was the last to close [[pro:eldest.pos]] eyes. Somebody would have to carry a light all the way to Wardlow. But who?",
+    "3": "That night nobody went up to bed. [[block:ch1.quilt]], and everyone slept by the fire. Ember curled round [[child:lead]] like a warm red scarf, her tail over [[child:middle]]'s toes. In the hush, [[child:eldest]] was the last to close [[pro:eldest.pos]] eyes. Somebody would have to carry a light all the way to Wardlow. But who?",
+    "4": "That night nobody went up to bed. [[block:ch1.quilt]], and everyone slept by the fire. Ember curled round [[child:lead]] like a warm red scarf, her tail over [[child:middle]]'s toes and [[child:middle2]]'s knees. In the hush, [[child:eldest]] was the last to close [[pro:eldest.pos]] eyes. Somebody would have to carry a light all the way to Wardlow. But who?"
+   }
+  },
+  {
+   "id": "ch1.pa.pro",
+   "varies_by": "pronoun:lead",
+   "versions": {
+    "he": "he",
+    "she": "she",
+    "they": "[[child:lead]]"
+   }
+  },
+  {
+   "id": "ch1.stretch.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "Why do you think [[gp:called]] fed the fox before asking a single question?",
+    "two": "Why do you think [[gp:both]] fed the fox before asking a single question?",
+    "nan": "Why do you think [[gp:called]] fed the fox before asking a single question?",
+    "remembered": "Why do you think [[gp:called]] fed the fox before asking a single question?"
+   }
+  },
+  {
+   "id": "pic1.p5.gp",
+   "varies_by": "grandparent",
+   "versions": {
+    "one": "\"[[gp:called]], the fox is cold!\"",
+    "two": "\"[[gp:called.1]], the fox is cold!\"",
+    "nan": "\"[[gp:called]], the fox is cold!\"",
+    "remembered": "\"[[gp:called]], the fox is cold!\""
+   }
+  }
+ ],
+ "looks": [
+  {
+   "id": "look1.1",
+   "slot": "middle",
+   "options": {
+    "glasses": " [[child:middle]] pushed [[pro:middle.pos]] glasses up [[pro:middle.pos]] nose.",
+    "wheelchair": " [[child:middle]] rolled up close to the glass.",
+    "hearing aids": " [[child:middle]] leaned in close to the glass.",
+    "curls": " [[child:middle]] pushed [[pro:middle.pos]] curls out of [[pro:middle.pos]] eyes.",
+    "long": " [[child:middle]] tucked [[pro:middle.pos]] hair behind [[pro:middle.pos]] ears.",
+    "braids": " [[child:middle]] tugged the end of one braid.",
+    "short": " [[child:middle]] leaned in close to the glass.",
+    "straight": " [[child:middle]] leaned in close to the glass.",
+    "wavy": " [[child:middle]] leaned in close to the glass.",
+    "puffs": " [[child:middle]] leaned in close to the glass.",
+    "locs": " [[child:middle]] leaned in close to the glass.",
+    "coils": " [[child:middle]] leaned in close to the glass.",
+    "twists": " [[child:middle]] leaned in close to the glass.",
+    "buzz": " [[child:middle]] leaned in close to the glass.",
+    "bald": " [[child:middle]] leaned in close to the glass.",
+    "headscarf": " [[child:middle]] leaned in close to the glass.",
+    "freckles": " [[child:middle]] wrinkled [[pro:middle.pos]] freckled nose.",
+    "hooded cloak": " [[child:middle]] pulled [[pro:middle.pos]] hood back to see better.",
+    "pinafore": " [[child:middle]] leaned in close to the glass.",
+    "small backpack": " [[child:middle]] leaned in close to the glass.",
+    "none": ""
+   }
+  },
+  {
+   "id": "look1.2",
+   "slot": "eldest",
+   "options": {
+    "glasses": ", pushing [[pro:eldest.pos]] glasses up [[pro:eldest.pos]] nose",
+    "freckles": ", [[pro:eldest.pos]] freckled nose almost touching it",
+    "curls": ", [[pro:eldest.pos]] curls against the cold pane",
+    "hooded cloak": ", [[pro:eldest.pos]] hood slipping back",
+    "none": ""
+   }
+  }
+ ],
+ "one_child_she_version": [
+  {
+   "id": "p1",
+   "text": "The lights of Candlemere were going out, one by one, and nobody knew why. Tonight Robin watched from the window as the lamp over the Moot Hall door shrank to the size of a seed, and went out. Now the only light left in the whole village was Grandma's fire, crackling behind her. Then something tapped on the glass. *tap. tap. tap.*"
+  },
+  {
+   "id": "p2",
+   "text": "Robin pulled back the curtain. On the sill sat a red fox, wet to the ears, with a leaf stuck to one of them. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\""
+  },
+  {
+   "id": "p3",
+   "text": "Robin leaned close to the glass, her freckled nose almost touching it. \"Foxes don't talk,\" she said."
+  },
+  {
+   "id": "p4",
+   "text": "\"This one does,\" said the fox. \"And she is very cold.\""
+  },
+  {
+   "id": "p5",
+   "text": "Robin looked back. \"Grandma, she's cold!\""
+  },
+  {
+   "id": "p6",
+   "text": "Grandma was already smiling at the fox, and she nodded."
+  },
+  {
+   "id": "p7",
+   "text": "\"Come in, fox,\" said Robin."
+  },
+  {
+   "id": "p8",
+   "text": "Robin lifted the latch, and in came the fox, and shook herself dry all over the hearth-rug, and all over Grandma's slippers."
+  },
+  {
+   "id": "p9",
+   "text": "Grandma looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\""
+  },
+  {
+   "id": "p10",
+   "text": "\"Everyone says that,\" said the fox. \"My name is Ember. And the beacon on Wardlow has gone out.\""
+  },
+  {
+   "id": "p11",
+   "text": "Robin looked at Ember, and Ember looked back. And that is how it began."
+  },
+  {
+   "id": "p12",
+   "text": "For a moment nobody said a word, and a hush fell over the cottage. The fox dripped on the rug. So did Grandma's slippers."
+  },
+  {
+   "id": "p13",
+   "text": "Ember turned round three times in front of the fire and spread out her tail to dry. It was a very bedraggled tail, all drips and droops. \"Do mind my magnificent tail,\" she said. Soon she began to steam gently, like a pudding."
+  },
+  {
+   "id": "p14",
+   "text": "\"You're steaming,\" said Robin."
+  },
+  {
+   "id": "p15",
+   "text": "\"I am not steaming,\" said Ember. \"Foxes don't steam. Foxes glow.\""
+  },
+  {
+   "id": "p16",
+   "text": "Then Ember's tummy went *rrrumble*. She looked up at the ceiling, as if the sound had come from somewhere else entirely."
+  },
+  {
+   "id": "p17",
+   "text": "\"Food first,\" said Grandma. \"Questions after. What does a cold fox like to eat?\""
+  },
+  {
+   "id": "p18",
+   "text": "\"Sausages,\" said Ember at once. \"Or cheese rinds. I'm not fussy.\" She thought about it. \"Sausages.\""
+  },
+  {
+   "id": "p19",
+   "text": "\"We haven't got any sausages,\" said Robin."
+  },
+  {
+   "id": "p20",
+   "text": "\"Then I shall be very brave about it,\" said Ember."
+  },
+  {
+   "id": "p21",
+   "text": "There was a cheese rind on the pantry shelf. But the pantry candle had flickered low that afternoon, like all the others, and gone *pfft*. Now the pantry was as dark as the inside of a boot."
+  },
+  {
+   "id": "p22",
+   "text": "Ember shuffled a little closer to the fire. For a moment Robin wanted to dash straight in without looking. Instead, Robin stopped and said, \"I'll help!\""
+  },
+  {
+   "id": "p23",
+   "text": "Robin's tummy gave a wobble, but Candlemere had an old saying for dim places. So Robin held an invisible lantern up high, took one step forward, and whispered it: \"Lantern up!\""
+  },
+  {
+   "id": "p24",
+   "text": "Grandma waited in the pantry doorway, the way grown-ups wait when they know you can do it. Back came Robin with the rind in both hands."
+  },
+  {
+   "id": "p25",
+   "text": "The bedraggled fox ate it in one gulp. Then she licked her whiskers and bowed, rather grandly. \"Thank you,\" she said. \"That was the finest cheese rind in the whole Westering.\""
+  },
+  {
+   "id": "p26",
+   "text": "\"I couldn't possibly have another,\" said Ember. Then she gazed at the pantry door for a long, hopeful while."
+  },
+  {
+   "id": "p27",
+   "text": "\"How can a faraway fire make our lamps go out?\" asked Robin."
+  },
+  {
+   "id": "p28",
+   "text": "Ember sat up very straight. \"All the fires in the Westering are one family,\" she said, \"and the beacon on Wardlow is their grandmother. When she went out, they all grew tired and sad. And one by one, they began to fall asleep.\""
+  },
+  {
+   "id": "p29",
+   "text": "\"Poor fires,\" whispered Robin, and laid a hand on the fox's warm side."
+  },
+  {
+   "id": "p30",
+   "text": "Grandma shook her head. \"Not this one,\" she said. \"It has never once gone out.\""
+  },
+  {
+   "id": "p31",
+   "text": "Down below, the mere lay black and still. Once it had held every lit window in Candlemere upside down. Tonight it held only one: Grandma's window."
+  },
+  {
+   "id": "p32",
+   "text": "Robin counted the dark windows, one finger for each: the mill, the bakehouse, the Moot Hall. Soon there were no fingers left."
+  },
+  {
+   "id": "p33",
+   "text": "\"One, two, three, four, lots,\" said Ember sadly."
+  },
+  {
+   "id": "p34",
+   "text": "\"Lots isn't a number,\" said Robin."
+  },
+  {
+   "id": "p35",
+   "text": "\"It is a very large number,\" said Ember, \"and it gets larger every night.\""
+  },
+  {
+   "id": "p36",
+   "text": "Then Robin noticed something: Grandma had understood every word the fox said."
+  },
+  {
+   "id": "p37",
+   "text": "\"You can understand Ember too,\" said Robin."
+  },
+  {
+   "id": "p38",
+   "text": "Grandma only smiled. \"I've known a fox or two,\" she said, and put another log on the fire."
+  },
+  {
+   "id": "p39",
+   "text": "\"What happens if nobody lights the beacon again?\" asked Robin."
+  },
+  {
+   "id": "p40",
+   "text": "Grandma looked into the fire for a long while. \"Then one night, this fire will grow tired too,\" she said. \"But not tonight.\""
+  },
+  {
+   "id": "p41",
+   "text": "On the mantel stood the note Mom and Dad had left when they went over the fells with the flocks. Robin read it out loud: \"Home by the longest night. Keep warm, and look after each other.\""
+  },
+  {
+   "id": "p42",
+   "text": "Ember's ears went up. \"The longest night,\" she said softly. \"That is Beacon Night. That is when the children of Candlemere carried the flame up Wardlow.\""
+  },
+  {
+   "id": "p43",
+   "text": "Robin sat up very straight. Children had carried the flame!"
+  },
+  {
+   "id": "p44",
+   "text": "Just then the fire gave a flicker, low and blue, like a candle in a draft. Grandma didn't hurry. She tucked the coals under their blanket of ash, and everyone said the banking words with her: \"Sleep low, stay warm, wake bright.\""
+  },
+  {
+   "id": "p45",
+   "text": "Robin was loudest of all on the very last word. Then Grandma thanked the fire, the way you thank a friend, and it settled down like a cat on a cushion."
+  },
+  {
+   "id": "p46",
+   "text": "That night nobody went up to bed. Grandma spread a quilt on the hearth-rug, and Ember curled round Robin on it like a warm red scarf. In the hush, Robin was the last to close her eyes. Somebody would have to carry a light all the way to Wardlow. But who?"
+  }
+ ],
+ "longest_combination_words": 1093,
+ "shortest_combination_words": 965,
+ "flags_for_jon": [
+  "look1.1 options are whole sentences so the canon's glasses sentence stays word for word (see the chapter flags).",
+  "one_child_she_version is rendered by render-chapter.py's own code for a one-child 'she' family (eldest band 7-9, grandparent 'Grandma', two parents), with the canon sound word written \"*tap. tap. tap.*\" in this field only (see the chapter's tool note).",
+  "Picture blocks (pic1.*) carry the grandparent's and the latch-lifter's lines in the picture-book telling."
+ ]
+}

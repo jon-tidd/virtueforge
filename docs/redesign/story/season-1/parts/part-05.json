@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "part": 5,
+  "place": "Blakefell is a long, bare, brown fell above Honeybourne: heather and grey rock, sheep tracks, rain puddles in the cracks, and a line of cairns (plain piles of stones that show the path) marching along the top under a huge sky. The wind is the loudest thing up there, and it sings, but its song is only sleepy: once your ears are covered it turns out to be whistling through gaps in the crags. It is cold, tiring and cozy-hard, the kind of hill you climb one pile of stones at a time, and at the top, at dawn, you can see a grey fen lost in fog below.",
+  "hosts": [
+    {
+      "name": "Hild (with Dun), Ch 21 only",
+      "voice": "Few words, slow and plain. Her teaching lines are only questions (\"How do you climb a hill that's too big?\"), and she waits and lets the silence work. She may say plain facts (\"Dun doesn't do fells.\") and sets the fresh tallow candle in herself, because only grown-ups open the lantern's little door. She never fibs about Wardlow: she just turns to Dun. Dun says nothing and plants his hooves where the path turns steep."
+    },
+    {
+      "name": "The shepherd coming down (unnamed, Ch 22; too little)",
+      "voice": "Weary and kind, shaking his head: \"Too far. Too cold. Nobody crosses Blakefell this late in the year.\" Never mocked. Proposed: after he watches [[child:youngest]] walk ten more steps herself, he says maybe he'll try just to the next cairn tomorrow."
+    },
+    {
+      "name": "The puffing walker (unnamed, Ch 22; too much)",
+      "voice": "Cheery, big pack, talks in short gasps from flat on a rock: \"Didn't… stop… once.\" Never mocked. She gets up and tries [[child:eldest]]'s cairn trick, resting at each pile of stones."
+    },
+    {
+      "name": "The singing wind (not a host; a sound, Ch 23)",
+      "voice": "Sings only the canon words, \"Stay… rest here… sleep a while.\" Drowsy, never cruel, never a will of its own, and sillier than it sounded once the ears are covered."
+    }
+  ],
+  "modeled_behavior": "When the first way doesn't work, try a new way.",
+  "echo_plan": "Ch 21, Odyssey 7: a helper met where the road turns steep. Hild helps only with a candle and one question; no disguise, no magic, and she doesn't lead them up. Ch 22, Odyssey 5: the long swim becomes the long climb, cairn by cairn; \"Just to the next pile of stones\" is the stroke-by-stroke line. Ch 23, the Sirens: one image only, ears stopped with Wistan's fleece, every ear including Ember's. Nobody is tied up, nothing is wrecked, and nobody chooses to listen out of pride (the reversal). Ch 24, The Crow and the Pitcher: the shape exactly, pebble by pebble; the fable's moral is never spoken, and [[child:middle]]'s pocket question does the work. Ch 25, Odyssey 5: the raft plank by plank becomes the wall stone by stone, rebuilt a new way. Story text never names Homer or Aesop; only the Sunday plan's grown-up note may. Faith (toggle on): blessing key Galatians 6:9, nothing in the story.",
+  "tuesday_pair": {
+    "too_little": "A shepherd coming down who turned back at the first cairn and says it's too far (giving up).",
+    "too_much": "A walker who charged up without resting and now lies flat on a rock, puffing (stubborn: never resting). [[child:eldest]] offers the cairn trick, and the walker gets up and tries it."
+  },
+  "set_piece": "Pebble by pebble: a plastic bowl of water, a cork, and big stones or bath toys. Drop them in one at a time, counting (\"One, two, three, four, lots!\"), until the cork floats up to the top.",
+  "clue": "Hild sells lamp-wicks, but her own lamp is cold, and she won't look west when Wardlow is named (Ch 21). The children notice both things; nobody explains them.",
+  "friday_question": "Why do you think the wall stood up the second time?",
+  "trial": {
+    "title": "Pebble by Pebble",
+    "bands": {
+      "3-4": "With a grown-up, drop big stones (bigger than a toilet-roll tube is wide) or bath toys into a plastic cup or bowl until the cork floats to the top.",
+      "5-6": "Try three different ways to do something tricky.",
+      "7-9": "Build a paper tower that holds up a book; when it falls, change one thing and try again."
+    },
+    "play_it_version": null,
+    "safety_line": "Grown-ups: use a plastic cup. Pick stones too big to swallow. A cork is small enough to choke on, so for little ones float a bath toy instead, or keep the cork in your hand between tries. Stay beside them while the water is out."
+  },
+  "i_can": {
+    "Little": "I can try one more time.",
+    "Middle": "I can keep going when something is tricky, and try a new way.",
+    "Big": "I can break a hard thing into small steps and stick with it for days.",
+    "Stretch": "I can make my own plan for a big goal and keep it up, even on days I don't feel like it."
+  },
+  "week_words": [
+    "weary",
+    "sturdy"
+  ],
+  "in_real_life": [
+    "In real life, we never put anything inside our ears; if a noise is too much, we cover our ears with our hands.",
+    "In real life, we only go up hills, and stay out after dark, with our grown-up.",
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "flags_for_jon": [
+    "No previous part sheet at drafting time (parts drafted in parallel): continuity was taken from the canon's Part 4 rows and has now been checked against the Part 4 sheet. Ch 21 opens with Grandma's reply to the Ch 20 letter from Dame Blythe's roof (Part 4 has them spend one last night there by choice), then 'Last time…' carrying the 'First the Job' trial, and answers Ch 20's hook: Hild asks the same question.",
+    "Part 5 has no host village, so 'hosts' lists the folk met on the fell. The shepherd and the walker stay unnamed, so no new names need a name check. The shepherd's small change of heart is proposed (bible 4.1: whoever leans too far is helped or shown changing); the canon beat is unchanged.",
+    "In real life: Part 5 has four motifs: the lantern, a night out on the fell guided by a fox, stopping ears with fleece, and the talking friend. The talking-friend line (the same sentence every part uses) was missing and was added in the continuity pass, since Ember talks every night. Stopping ears with fleece is new and easy for a toddler to copy, so the ears line should lead. Proposed detail inside the Ch 23 beat: Clara tucks the tufts over each ear, under hoods and caps, not pushed inside.",
+    "Cairns are only path-marker piles of stones, never grave cairns (bible: no graves). The fell has no will of its own and no trapping snowstorm, which keeps it clear of Tolkien's hostile mountain. Both vote-5 routes (the windy ridge and the sheep path) are broad paths with no drop, and the Ch 24 crack is hand-sized, not a chasm.",
+    "Odyssey 7 echo: in the canon, Athena 'shows him the way', but Hild is never a guide (canon 1, bible 4.5). The sheet plays it as a single question; she stays at the foot of the fell.",
+    "Turn child: Clara (order Hugh, Clara, Alfie per bible 5, itself flagged). So Ch 24's plan reminder uses her canon Little plan, which strengths flag 13 says breaks the one-action shape. Proposed Ch 24 moment that leaves Alfie's key act alone: Clara's first pebble bounces off the rock, she takes a lantern breath and tries one more time, and it goes plip.",
+    "i_can copies the strengths ladder word for word. The canon 8 mockup copy differs: the Sunday plan has Hugh 'stick with it all week', and the fridge card shortens Big and Middle. The Parts 4 to 6 fridge card needs one wording.",
+    "Trial safety line: the canon's two sentences, plus two proposed ones: a cork is a choking-size object for a 3-year-old (so a floating bath toy, or the cork kept in a grown-up's hand), and 'Stay beside them while the water is out.' Blessing key Galatians 6:9 still carries strengths flag 4 (a blend of translations).",
+    "Letter: Ch 25 ends on top of Blakefell with no roof, so Ember carries no letter. The letter is written, stays in Hugh's pocket (Ch 26), and goes home with Friday's letter from the mill. Ch 25 still announces the Saturday trial.",
+    "Open threads, settled in the continuity pass. The spare tallow tin is 'for the next host', but Part 6 has none; the Part 7 sheet now carries it: the children give it to Aldwin in Ch 31, a good guest leaving something behind. Clara uses only tufts of Wistan's fleece in Ch 23, because 'the last of' it wraps Ember in Ch 44 (the Parts 7, 9 and 11 sheets agree). Ch 23's 'remember when' hands Alfie back his Ch 4 moment (getting the flame out of the wind), never Clara's key act.",
+    "Week words 'weary' and 'sturdy' are both everyday words, and 'sturdy' ties to the 7-9 paper tower. 'Weary' echoes the Galatians verse, but no line depends on the faith toggle. Checked in the continuity pass: no other part sends either word home (Part 11 passed over 'weary' for this reason)."
+  ]
+}

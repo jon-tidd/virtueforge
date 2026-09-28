@@ -1,0 +1,98 @@
+{
+  "status": "ok",
+  "part": 12,
+  "place": "Home Again begins on the long road east from Oxley, travelled all night in Ebba's ox-cart past window after window lit again, with the children asleep in the straw and the lantern shut and swinging from the cart's front post. At dawn comes the familiar village: stone cottages round the still mere, which holds every lit window upside down again, the Moot Hall lamp burning over Old Brock on the step, and [[gp:called]]'s cottage with its big inglenook and a scarf as long as the lane. It feels like coming in from the cold: warm and bright, a little shy at first, and full of people who want to hear the tale.",
+  "hosts": [
+    {
+      "name": "Ebba of Oxley (Ch 56)",
+      "voice": "Humble and plain-spoken, few words, as slow and kind as her white oxen. She drives the ox-cart east through the night (proposed; see flags) and hums to the oxen. She lets the children tell the tale themselves and never prompts the eldest to put it right."
+    },
+    {
+      "name": "[[cast:Ned]], Ebba's grandson (Ch 56)",
+      "voice": "Quick, loud and eager, now friendly. He wants the biggest version of every story (\"Did you really…?\"), then likes the true one better, and says he'll tell it true to his friends at home. Nobody mentions Ch 47 to him."
+    },
+    {
+      "name": "Old Brock, the Moot Hall dog (Ch 57)",
+      "voice": "Doesn't talk and never gets up for anyone. For [[child:youngest]], who always stopped to pat him, he gets up, wags, and settles back down on the warm step, happy and well."
+    },
+    {
+      "name": "The village children of Candlemere (Ch 57 and 59)",
+      "voice": "Excited, crowding, all talking at once, wanting a bigger tale: \"Did you fight a dragon? Did you fight the giant?\" Likable and never mocked. By the meeting in Ch 59 they are leaning in to the true tale and repeating its small true details."
+    },
+    {
+      "name": "[[gp:name]], the grandparent (Ch 57 to 60)",
+      "voice": "Warm, twinkly and full of old sayings. Plays at not knowing \"these tall travelers\", eyes twinkling, and ends the game the moment Ember sneezes, with the question only [[gp:called]]'s own grandchildren could answer: \"What do we say when we bank the fire?\" Never scolds, and hugs the eldest hardest after the knots are told. Every grandparent sentence sits in a grandparent block."
+    },
+    {
+      "name": "Ember (all week)",
+      "voice": "Home at last, and grand about it. She tries to play along with the grandparent's game (\"Never seen them before\"), and her ears go flat and she sneezes at once. Other grown-ups still hear fox yips."
+    },
+    {
+      "name": "Reeve Osric (Ch 59, and at the feast in Ch 60)",
+      "voice": "Kind and busy. His \"We'll see to it tomorrow\" turns around at last: \"You went when I kept saying tomorrow. I'm sorry.\" Short and plain, never mocked. Proposed: the children answer as Ebba once answered them, \"Thank you for telling us.\""
+    },
+    {
+      "name": "Hild, with Dun (Ch 60)",
+      "voice": "Quiet, mostly short questions, comfortable silences. Proposed question: \"Who carries it next year?\" The children's answer (everyone, by turns) is where the village agrees to take turns. Her worn name is cut fresh on the lantern."
+    },
+    {
+      "name": "The parents (Ch 60)",
+      "voice": "Home from the drove for the Beacon Feast, named only in the family's own words ([[parents:called]]) and only inside a parents block. Glad, warm, never a worry."
+    }
+  ],
+  "modeled_behavior": "Tell what happened truly: not bigger, not smaller, and say who helped.",
+  "echo_plan": "Shapes and images only. Story text never names Homer, Arthur, Aristotle or Scripture. Ch 56 (Odyssey 13): carried home asleep by a kind host. Reversed: Odysseus wakes and spins tall tales; the eldest starts one, stops, and tells it true. Ch 57 (Odyssey 17): the old dog knows the traveler. Stop at the wag: Brock gets up, wags and settles down again, happy. Ch 58 (Odyssey 19 and 23): the scarf is the weaving, one row a night, shown and never explained. The secret test is the banking words: a game from the first twinkle, never real doubt. Ch 59 (the knights home at Camelot telling their quests truly; the truthful teller between the boaster and the falsely modest): the mean lives in the telling itself, never named. Ch 60 (Odyssey 24, and gratitude to those who came before): peace at home, and new names under the old names, with Hild's cut fresh. Faith on only: the week's verse is Ephesians 4:25. A Ch 58 grown-up faith note on the son who comes home and owns what he did, and the father who runs to meet him (Luke 15), is proposed.",
+  "tuesday_pair": {
+    "too_little": "Making it smaller: [[child:middle]] says, \"We just walked.\" (Ch 57). It is shy, not a fib, but it leaves out the hard parts and everyone who helped. [[child:middle]] is shown changing in Ch 59, telling the whole tale in order, not bigger and not smaller.",
+    "too_much": "Making it bigger: the village children crowd round, \"Did you fight a dragon? Did you fight the giant?\" (Ch 57). They are excited and likable. The fault is a boastful, made-up tale, never too much truth. [[child:youngest]] finds the middle way, hand on heart: \"We walked a long way, and the giant was nice.\" The eldest's \"I held back the whole wind!\" in Ch 56 is the same lean, caught and put right by the eldest."
+  },
+  "set_piece": "The grandparent's secret question and the banking words (Ch 58). At breakfast, someone plays [[gp:called]] at the door, eyes twinkling: \"Well, well. Who are these tall travelers?\" One child is Ember, who tries \"Never seen them before!\" and sneezes, ah-choo. Then comes the question: \"What do we say when we bank the fire?\" Everyone together: \"Sleep low, stay warm, wake bright!\" Finish by laying the longest scarf, belt or line of socks in the house across the floor, as long as the lane. Swap parts and play it again.",
+  "clue": "Hild's worn name is cut fresh on the lantern (Ch 60). [[gp:called]] scratches the children's names on the lantern's base, under the grandparent's own name and all the old ones, and cuts the name worn almost smooth so it can be read again. It is the name that was \"not mine to tell\" in Ch 3, and the last thread of the mystery.",
+  "friday_question": "Why do you think [[child:eldest]] told the story true instead of bigger?",
+  "trial": {
+    "title": "The True Tale",
+    "bands": {
+      "3-4": "Tell [[gp:real]] one part of the story. Let the child pick the part (the fox at the window, the giant's sheep, the lights climbing the hill) and tell it in their own words, in person or on a call a grown-up makes, pointing at the story map or a fold-a-book. The listener says, \"Thank you for telling me.\"",
+      "5-6": "Tell the season's story in order, and include one mistake a hero made. Walk the story map, or lay the booklets in a row, from Candlemere to Wardlow and home again, and tell what happened at each place. When you reach a mistake, tell it plainly, with how it was put right, the way the heroes told their own at the Moot Hall.",
+      "7-9": "Tell or write the tale in five sentences, not bigger and not smaller, and name who helped. Tell it to the family, or have a grown-up write it down as you say it. Then check it together for anything made bigger or smaller, and for anyone who helped but wasn't named."
+    },
+    "play_it_version": null,
+    "safety_line": null
+  },
+  "i_can": {
+    "Little": "I can say \"I did it\" when something spills or breaks.",
+    "Middle": "I can tell what really happened, my part too, even if I might get in trouble.",
+    "Big": "I can tell the truth before anyone asks, and own my part.",
+    "Stretch": "I can tell a hard truth kindly, and I won't go along with a fib."
+  },
+  "week_words": [
+    "boast",
+    "familiar"
+  ],
+  "in_real_life": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them.",
+    "In real life, we only go for a ride with a grown-up our own grown-ups have said yes to.",
+    "In real life, we ask a dog's grown-up before we pat it, even a friendly dog."
+  ],
+  "flags_for_jon": [
+    "Kit and canon differ on retelling a mistake (the canon wins). CORE_RULES says never bring a child's mistake up again after it is owned. But the canon has the eldest tell the grandparent about the knots in Ch 58, and in Ch 59 \"Hugh adds his knots, Clara adds her gate\". The Part 12 Middle trial also asks for \"one mistake a hero made\". Reading used, with no canon change: the rule stops anyone else from raising a child's mistake. A child choosing to tell their own mistake, whole and true, is this week's modeled behavior. So in Part 12 only the child who made a mistake tells it. Nobody reacts with blame. It is never a \"remember when\", and no Pause & ask asks why they did it. In the Middle trial, the mistake is told with how it was put right. Suggest the CORE_RULES line read: \"Nobody else brings up a child's mistake after it is owned.\"",
+    "Tag order. The Part 12 tag names the too-much side first, so tuesday_pair follows the Sides line in strengths.md: too_little = making it smaller (\"We just walked.\"), too_much = making it bigger (\"Did you fight a dragon?\"). It never follows word order.",
+    "Modeled behavior wording. The canon's Part 12 row says \"Tell it true: not bigger, not smaller, and say who helped.\" Canon section 3's modeled-behavior table and strengths.md say \"Tell what happened truly: not bigger, not smaller, and say who helped.\" The table's wording is used here. Please pick one for the fridge card and the Sunday plan.",
+    "Letter home in Ch 60. The canon's exceptions list only Ch 25 and Ch 55, and \"every other Friday sends a letter home from under a host's roof\". But in Ch 60 the children are home, with the grandparent right there. Suggest that Ch 60's job list has no letter_home. The true tale and the share message to the grandparent (G1) do that job this week. Ch 56 has no grandparent reply (a canon exception).",
+    "The Part 12 trial has no Monday. Prompt 9a's trial card footer (\"Monday's chapter opens with the trial you just did.\") and its Monday memory don't fit, and checklist item 3 bars \"Last time…\" in a Chapter 1. Suggest a Part 12 footer that points to the season finale screen, for example \"Stamp the map. The last stop is home.\" Also, Ch 60's trial announcement should bring in The True Tale as the season's last trial.",
+    "Real-life lines in the trial. The canon says \"Tell Grandma one part of the story\". It is written [[gp:real]] here, as FAMILY_FACTS and bible section 6 require, so a family with no living grandparent reads \"a grown-up who loves you\". The kit's schema has no Stretch band, so a child on Stretch does the 7-9 task. The trial needs no real incident, so it has no play-it version. It uses no water, small objects or heat, so it needs no safety line.",
+    "The default if-then plan fits Part 10 better than Part 12. By the bible's turn rotation (itself flagged), Part 12's turn is the middle child's. So Ember's Ch 59 reminder uses the Middle plan copied from strengths.md: \"If I want to say 'not me,' then I say what really happened, my part too.\" Its \"then\" half lands on Ch 59, where the middle child tells the tale in order, but its \"if\" doesn't name making it smaller. The plan is not reworded here. If you want one, a Part 12 plan could be added to strengths.md, for example \"If I want to make it smaller, then I tell it all, and who helped.\"",
+    "The idea-jar guest. Ch 28's guest is a Tier C slot, so in some families it was not a little dragon. Any retelling this week (Ch 56 to Ned, Ch 59 at the Moot Hall) names the Ch 28 guest only through [[tierc:guest|default:ch28.guest]], or not at all. The village children's \"Did you fight a dragon?\" stays word for word, because it is their own guess, and no answer this week says the heroes met a dragon.",
+    "The grandparent's game in Ch 58. It should read as a pretend game from the first line (eyes twinkling), and Ember's sneeze ends it within a few lines, so the youngest never believes for a moment that [[gp:called]] doesn't know them. Fear level 0. It is pretend play, not a fib, and the checker shouldn't flag it in a Truth-Teller week.",
+    "The parents' timing. They were due \"home by the longest night\", but the canon brings them home only for the feast in Ch 60. Suggest one line in Ch 57 or 58, inside a parents block, that they are on their way over the fells with the drove and will be home for the feast, so their absence is never a worry. A family with no parents set gets the none-set version.",
+    "Ch 56 details inside the canon beat (proposed): Ebba drives the cart and Ned rides along, so no unknown grown-up is alone with the children. The lantern rides shut, hung on the cart's front post by Ebba, never in the straw beside the sleeping children. In a one-child family, Ned takes the sibling beats on the ride (bible section 6). The Ch 56 \"Last time…\" carries the Part 11 trial (The Bundle of Sticks) as a story memory, for example the hundred sticks laid in the fire-bowl together, not one of them alone.",
+    "Friday question. It touches the eldest's own near-boast (Ch 56) and the knots (Ch 58), so 1d marks touches_mistake_of: eldest, and the eldest never answers first. In a one-child family the grown-up answers first. As Part 1's sheet flagged, [[child:eldest]] on the last page means the eldest child listening; suggest code fill it from the story's eldest slot.",
+    "Continuity, taken from the canon's Part 11 rows, because parts are drafted in parallel. Part 11 ends on Wardlow with the beacon blazing and Ember's \"Now, let's go home\", with no letter sent. Hild rode up on the wood-cart, so she is not on the cart home and arrives with Dun in Ch 60. Brock's welcome needs an earlier plant: \"who always stopped to pat him\" (Part 1's sheet suggests Ch 2). Suggested payoff inside a beat: the youngest's \"three things I'll tell Grandma\" from Ch 44 get told in Ch 57 or 58.",
+    "Ch 58's \"remember when\" is from Ch 1, but the canon doesn't say whose moment it is. Suggest the youngest's \"Come in, fox\", handed back at the same hearth where it began, which brings the season full circle. It is a good choice, not a mistake. This is for the job list (1b), and it is well past the usual two-to-four-week window, which is a canon choice.",
+    "Hild's Ch 60 question is proposed, because the canon puts her there but gives no question: \"Who carries it next year?\" The children answer, and the village agrees to take turns (canon), so the children solve it and Hild only asks. It also sets up Season 4's promise.",
+    "Week words (proposed): \"boast\" (Ch 56 and 57, and back in Ch 59) and \"familiar\" (the lane at dawn in Ch 56, Brock in Ch 57, the grandparent's question in Ch 58). Checked in the continuity pass: no other part sends either home. Like Part 7's \"sulk\", \"boast\" names the failing (Part 6 passed over \"stubborn\" for that reason), so the fridge card and talk cards use it only about a story character's words, never beside a child's name.",
+    "\"In real life\" lines. The lantern line and the new-friend line match Part 1's wording, for continuity. The ride line (Ch 56, carried home in a host's cart at night) and the dog line (Ch 57, patting the Moot Hall dog) are new. Neither motif is on bible section 5's list, but both are copyable at home. Drop either if you say no.",
+    "No previous part sheet at drafting time, because parts were drafted in parallel. The canon's Part 11 rows stood in for LAST PART, and the continuity pass has checked this sheet against the Part 11 sheet: Ch 55 sends no letter, Hild rode up on the cart and laid the last stick, and Ember's \"Now, let's go home\" leads straight into Ch 56. No other clash was found between the kit and the canon on Part 12's story facts."
+  ]
+}

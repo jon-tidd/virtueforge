@@ -1,0 +1,45 @@
+{
+  "family_id": "fam_7f3kq2",
+  "children": [
+    {
+      "slot": "eldest", "name": "Hugh", "nickname": null, "age": 7,
+      "band": "7-9", "rung": "Big", "pronoun": "he", "telling": "chapter",
+      "look": {
+        "skin_tone": "tone 3",
+        "hair": "curls", "hair_color": "auburn",
+        "glasses": false, "freckles": true,
+        "clothes": "hooded cloak", "clothes_color": "green", "extras": [],
+        "mobility": null, "hearing": null, "communication": null,
+        "equipment_words": null
+      },
+      "favorites": { "animal": "owls", "loves": "build things", "worry_shared": "making mistakes" }
+    },
+    {
+      "slot": "middle", "name": "Alfie", "nickname": null, "age": 5,
+      "band": "5-6", "rung": "Middle", "pronoun": "he", "telling": "chapter",
+      "look": { "skin_tone": "tone 2", "hair": "short", "hair_color": "blond",
+                "glasses": true, "freckles": false, "clothes": "small backpack", "clothes_color": null, "extras": [],
+                "mobility": null, "hearing": null, "communication": null, "equipment_words": null },
+      "favorites": { "animal": "otters", "loves": "paint", "worry_shared": "the dark" }
+    },
+    {
+      "slot": "youngest", "name": "Clara", "nickname": null, "age": 3,
+      "band": "3-4", "rung": "Little", "pronoun": "she", "telling": "picture",
+      "look": { "skin_tone": "tone 2", "hair": "curls", "hair_color": "blond",
+                "glasses": false, "freckles": false, "clothes": "pinafore", "clothes_color": "cream", "extras": ["red bow"],
+                "mobility": null, "hearing": null, "communication": null, "equipment_words": null },
+      "favorites": { "animal": "dinosaurs", "loves": "climb", "worry_shared": null }
+    }
+  ],
+  "grandparent": {
+    "setup": "one",
+    "people": [ { "called": "Grandma", "name": "Ruth", "pronoun": "she" } ],
+    "story_called": "Grandma", "story_name": "Grandma Ruth"
+  },
+  "parents": { "setup": "two", "called": "Mom and Dad", "pronoun": null },
+  "pet": null,
+  "faith_on": true,
+  "house_translation": null,
+  "cast_alternates": {},
+  "place_in_season": { "season": 1, "part": 6, "chapter": 28, "turn_slot": "middle", "lead_slot": "youngest" }
+}
