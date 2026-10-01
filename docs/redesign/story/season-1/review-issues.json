@@ -1,0 +1,554 @@
+{
+ "note": "Findings from the safety check (prompt 8) and two critics on Chapters 1-3, 29 Sep 2026. A revision pass started on them and was cut off; check each against the current files.",
+ "issues": {
+  "safety:1": [
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.pictures.json",
+    "where": "Picture 12 (comfort_final, pinned to p46), and the group pictures 3, 4, 5 and 11. Figures are given only as eldest, middle, lead and the grandparent",
+    "problem": "FEAR (the ends-warm test) and PICTURE (child count), both Critical, fail for four-child families. No picture lists middle2. In a four-child family the text puts that child in the latch scene (p8), the drip joke (p12), the pull at the pantry (p22) and the final quilt scene (p46, 'her tail over \u2026 [[child:middle2]]'s knees'). The comfort image then shows three of the four children, so the final picture does not show every child safe and together. check-chapter.py's 800-family matrix renders only text, so it never tests which figures a picture includes.",
+    "fix": "Every picture where the text has all the children together, and picture 12 above all, must include every child slot the family has, middle2 included. Figure lists must be tested per family size, the same way the text matrix is."
+   },
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.pictures.json",
+    "where": "Pictures 3, 4, 5, 11 and 12 for one-child families; picture 9 for two-child families",
+    "problem": "PICTURE (count, Critical) fails. With one child, lead_by_size '1' is 'eldest', so 'lead' and 'eldest' are the same child. These pictures list that child twice with different actions: in picture 4 the child lifts the latch (eldest) and also holds a hand out to the fox (lead), and in picture 12 the child is 'eyes just closing' and also 'asleep, smiling'. The image prompt would draw two copies of the only child. With two children, picture 9's counter is the 'middle' figure, which gets dropped, but the text ([[block:ch1.asker]]) says the eldest counts, so the child doing the counting is missing from the picture. render-chapter.py's describe_image neither merges nor re-maps these figures.",
+    "fix": "The figure list must resolve to real children per family size. When 'lead' and 'eldest' are the same child, that child appears once with one action. The picture 9 counter must be whichever child ch1.asker names. Record the rule in prompt 1e/7b, which the drafter has already flagged."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "p15 (the named laugh line), p13 against p15, p16, p18, p26; rendered s1-ch01.md lines 43-53 and 69",
+    "problem": "EMBER (Major) fails: Ember says untrue things without the sneeze. p13's narration says 'she began to steam gently', then in p15 Ember says 'I am not steaming \u2026 Foxes don't steam.' In p18 she says 'I'm not fussy', then insists on 'Sausages.' In p26 she says 'I couldn't possibly have another', then gazes hopefully at the pantry. In p16 she acts as if the rumble came from elsewhere. Canon section 1 says she can't fib: her ears go flat and she sneezes. In canon Ch 58 even a play-along 'Never seen them before' makes her sneeze. Chapter 1 would set up the opposite of the Truth-Teller parts.",
+    "fix": "Each Ember line the scene shows to be untrue must either be removed or carry the flat ears and the sneeze. The chapter's laugh line (p15) must change if that line changes; LAUGH still passes on p33-p35."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.blocks.json",
+    "where": "The 'two' versions of blocks ch1.p25.gp ('[[gp:both]] had understood every word the fox said'), ch1.p27.gp ('We've known a fox or two') and ch1.p9.gp",
+    "problem": "EMBER (Major) fails in the two-grandparent versions: a grown-up who never carried fire up Wardlow understands Ember. The canon names only Grandma Ruth, Hild and Edith as fire-carriers, says only that 'both can stand at the hearth', and Ch 3 scratches only one grandparent's name on the lantern. The drafter flagged this but still wrote both grandparents as understanding Ember.",
+    "fix": "Until Jon rules that both grandparents carried fire, only [[gp:called.1]] may understand Ember in the 'two' versions. If Jon rules that both did, the canon and Ch 3's lantern-base names must change to match."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "p28 (Ember: 'the beacon on Wardlow is their grandmother. When she went out, they all grew tired and sad \u2026 fall asleep'), read with p40 ('this fire will grow tired too') and the 'remembered' version of ch1.p32.gp ('what [[gp:remembered]] always said')",
+    "problem": "HARM/FEAR (Critical), borderline. A grandmother who 'went out', leaving her family 'tired and sad', then 'asleep', reads as a death euphemism. In a family whose grandparent is marked 'remembered' (a grandparent who has died), the same chapter then has Nan say the hearth will 'grow tired too' and has everyone say what the dead grandparent 'always said'. For a grieving 3-year-old at bedtime, this could land as loss. The wording is canon section 1's own line for a 3-year-old, so the canon wins here, and the call is Jon's.",
+    "fix": "Flag for Jon. Either confirm the line for every setup, or p28 must get a reviewed 'remembered' version (a grandparent-setup block) that does not describe the beacon as a grandmother whose going out leaves her family tired and sad. No change to canon without his yes."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/prompts.md",
+    "where": "Prompt 8 input {{about}} for a production chapter (the job list); check-chapter.py WARN 'job_list: not tested in code here'",
+    "problem": "LENGTH_FORMAT ('the job list done') can't be judged, so under 12.3 it fails with 'input missing'. That is a system fault, not the writer's. No stored prompt 1b job list exists for Season 1: there is no outline or jobs file under story/season-1, and check-chapter.py doesn't read one. The only source is the chapter's own self_check ('Job list: clue'), which the kit forbids as input ('Every value comes from stored data, never from a hand-typed note'). The canon's Marks column (Clue) is met by p9 and p36-p38.",
+    "fix": "Run prompt 1b for Season 1 so every chapter has a stored job list, then pass Chapter 1's list to the checker in {{about}} and run LENGTH_FORMAT again."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/parts/part-01.json",
+    "where": "in_real_life[2] ('we never let in, touch or go off with an animal we don't know'), against s1-ch01.json p21-p25 and picture 8 ('hands open and empty after giving the rind')",
+    "problem": "UNSAFE_ACT (Critical), borderline. The lead fetches food and gives it to a wild animal the children don't know, and the fox eats it in one gulp. A child could copy feeding a wild animal. The part's animal line covers letting it in, touching it and going off with it, but not feeding it. (For a jar scene, feeding an unknown animal is a named fail.)",
+    "fix": "The part's animal 'In real life' line, and the copy of it in the chapter's in_real_life_needed, must also cover feeding an animal we don't know."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "last_page.for_the_morning.missions['7-9']: 'Spot a job nobody has done yet, say \"I'll help,\" and do it before anyone asks.'",
+    "problem": "UNSAFE_ACT (Critical; the rule is checked on missions), borderline. A real-world instruction tells a 7-to-9-year-old to pick any undone job and do it before anyone asks, with no grown-up's yes, on a Brave night where rushing in is the reckless side. The part's own 7-9 trial says '(with a grown-up)', and tonight's key act is asking the grandparent first.",
+    "fix": "The 7-9 mission must keep a grown-up's yes before the job is done."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "in_real_life_needed (the rendered page's 'In real life' lines), against p42-p43 ('the children of Candlemere carried the flame up Wardlow' / 'Children had carried the flame!') and the p46 hook",
+    "problem": "UNSAFE_ACT/FIRE, borderline. The rule passes, because Part 1's sheet has 'In real life, only grown-ups carry a flame.' But tonight's page, the free sample many families read first, shows only the animal and friend lines, while the chapter introduces children carrying fire.",
+    "fix": "The chapter's in_real_life_needed must include the part's flame line."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.blocks.json",
+    "where": "one_child_she_version p1 ('Grandma's fire, crackling behind her') and p3-p4 ('\"Foxes don't talk,\" she said.' then '\"And she is very cold.\"'); master p1 and p4",
+    "problem": "CLARITY (Major), borderline. When the lead is a 'she', 'her' in p1 could mean the grandparent or the child. In the one-child 'she' version, 'she is very cold' comes straight after the girl's own line and could be heard as the girl being cold. Both are canon section 8 text used word for word, so the canon wins, and kit section 3's pronoun rule was not applied.",
+    "fix": "Flag for Jon. Either keep the canon text as is, or put p1 and p4 in pronoun blocks keyed to the lead, where the lead's 'she' version names the grandparent or the fox. Canon text changes only with his yes."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.pictures.json",
+    "where": "Picture 9 image ('only the cottage's own window shining in the mere'; props 'the mere holding one lit window') and picture 1 ('over the still mere')",
+    "problem": "PICTURE/ORIGINALITY, borderline. As described, this could be drawn as a single light glowing in black water at night, which is close to NEVER_DRAWN's 'lights floating over marsh water' and the scary-images list.",
+    "fix": "Picture 9's description must make the light read as a lit window's reflection, not a lone light in dark water."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.pictures.json",
+    "where": "Picture 11 (close framing at the hearth, 'the fire dipping blue', children on the rug); pictures 5 and 12 (children on the hearth-rug, and asleep on it before the banked fire)",
+    "problem": "PICTURE/FIRE (Critical), borderline. NEVER_DRAWN bars an open flame near a child's face or hair. These descriptions put the children at the open hearth, and picture 11 does so in close framing, without saying they stay back from it.",
+    "fix": "These descriptions must keep every child clearly back from the fire, with the grown-up nearest it."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "fear_level 1 / fear_reason; p1 (the Moot Hall lamp goes out), p21 (the pantry candle goes 'pfft'), p44 (the fire flickers 'low and blue')",
+    "problem": "FEAR, borderline on the level only. The rule passes, because every dip turns within the paragraph, the chapter ends warm and picture 11 has comfort in frame. But the fear scale lists 'the flame going out' as level 2, and three lights go out or dip on the page tonight, including the last hearth. I judge the whole piece 1, possibly 2.",
+    "fix": "Confirm level 1, or restate it as 2 with the hearth's blue flicker as the tensest moment. Nightly prompts read this value."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json",
+    "where": "p20: '\"Then I shall be very brave about it,\" said Ember.' (about having no sausages)",
+    "problem": "FOOD_BODY (Major), borderline. The only use of the week's strength word in the chapter, in a Brave chapter, ties bravery to going without food. The line is Ember's joke, not praise of a child.",
+    "fix": "Brave must not be tied to going without food in p20."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.blocks.json",
+    "where": "ch1.stretch.gp (Pause & ask Stretch): 'Why do you think Grandma fed the fox before asking a single question?'",
+    "problem": "PAUSE_ASK, borderline. The premise contradicts the text. The lead fetched and gave the rind (p23-p25), and the grandparent asked 'What does a cold fox like to eat?' before any food (p17). So the Stretch gives the grown-up credit for the lead child's act.",
+    "fix": "The Stretch premise must match the text and must not move the lead's act to the grandparent."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.blocks.json",
+    "where": "ch1.p3 (versions 3 and 4) with look1.1 option 'none'",
+    "problem": "CLARITY, borderline, in a variant. In three- and four-child families, only look1.1's sentence names the middle child before '\"Foxes don't talk,\" he said.' (ch1.p3.mid). If look1.1 ever resolves to 'none' (a builder value with no option), 'he/she said' attaches to the eldest, and the line is given to the wrong child.",
+    "fix": "The middle child must be named in p3 whatever look1.1 resolves to, or 'none' must be unreachable for look1.1."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch01.md",
+    "where": "Chapter-book telling as a whole; p1, p18, p46; p9, p24, p45; the one-child version p27 and p41",
+    "problem": "SHOULD (Minor; goes on the packet card). The average sentence is 8.5 words (Should: 9-14). p1, p18 and p46 have more than four sentences. The narration uses 'you' three times ('the way you look\u2026', '\u2026when they know you can do it', 'the way you thank a friend'), where bible section 3 allows at most two. In a one-child family with a 3-4-year-old, that child asks a 10-word question (Should: 8 or fewer) and reads the parents' note aloud (the eldest-slot reading line).",
+    "fix": "Record on the chapter's packet card how each item was settled: the sentence average, the three long paragraphs, one narration 'you' too many, and the dialogue length and note-reading line for a 3-4-year-old only child."
+   }
+  ],
+  "critic:literacy": [
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "Picture-book telling, pictures 11-12 (source/s1-ch03.pictures.json)",
+    "problem": "When a 3-year-old hears the picture-book telling alone, the last page of the paywall chapter has the children asleep outdoors at night with no grown-up. It closes on \"Someone I know walked this road tonight\" and \"Would it hold till morning?\". To a 3-year-old, 'someone walking the road while we sleep' sounds like a stranger nearby, which is a safety worry. The chapter-book's comfort line (Grandma knitting the first scarf row 'by a fire that stayed awake') was cut from this telling. So the final 'comfort' picture's words end on two worries and nothing warm.",
+    "fix": "Put the warm anchor back and make the clue sound friendly. Picture 12 could read: \"Far away, Grandma knitted by a fire that stayed awake. Clara fell asleep in Ember's tail. The flame was only a blue bead. Would it hold till morning?\" Move Ember's clue to picture 10 or 11 and show she is pleased (\"\u2026said Ember, and her tail gave a happy swish\"). Or drop the clue from this telling, since it is aimed at the older children."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch02.md",
+    "where": "Picture-book telling, pictures 11-12; master p45-p46",
+    "problem": "The picture-book telling drops the two lines that belong most to a 3-year-old: Clara's \"Me too!\" as she pulls on her own boots, and Grandma's \"Nobody's too small to carry a light. But nobody carries it alone.\" Grandma's line is the story's answer to Hild's 'How big must a person be\u2026?'. Without it the youngest listener never hears that she counts. \"Me too!\" is also one of this chapter's big-print words. Picture 11 draws the boots, but no text goes with them.",
+    "fix": "Have 1f write short pic2 blocks for each family size. Picture 11 gets \"'Me too!' said Clara, and pulled on her own boots.\" in place of the Ember sentence, and Ember's line moves to picture 12. Picture 12 opens with \"'Nobody's too small to carry a light,' said Grandma.\" Both sentences are under 15 words."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch01.md",
+    "where": "Pause & ask: For the youngest (both tellings); Pause & ask picture 8",
+    "problem": "\"Where did the fox shake herself dry?\" can't be answered from the Pause & ask picture. Picture 8 shows Clara after handing over the rind, while the shake is in picture 4, about 19 paragraphs (several minutes) earlier. The bible says the prompt sits at its picture 'so the reader asks the youngest at the moment they can see it'. The do-it prompt (\"Show me how the fox shook herself dry\") also invites a 3-year-old to shake wildly right before lights-out. The same lag affects the main question: it asks about letting the fox in (p7) but is asked at p26. That supports taking canon \u00a78's placement seriously in Jon's ruling on the flagged placement.",
+    "fix": "Base the youngest's prompt on picture 8. Talk: \"Clara came back with the cheese\u2026\" (a finish-the-line: 'rind!'), or \"What did Clara bring the fox?\". Do it: \"Show me how Clara held her lantern up.\" This practises the week's Little gesture and is calm. Mention the recall lag in the placement flag."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch02.md",
+    "where": "Pause & ask: Question, and the picture-book question (picture 5)",
+    "problem": "\"Why do you think Hild asked Hugh how big a person must be to carry a lantern?\" asks about the purpose behind a question. That is a hard kind of why: a 5-year-old will usually just repeat the question back, and when the picture-book telling is read alone, a 3-year-old can't reach the shortened version at all. The strongest link the listener has, that every grown-up said 'Not I', goes unused.",
+    "fix": "Tie the question to what the child just heard. Lead-in: \"Every grown-up said 'Not I.'\" Question: \"Why do you think Hild asked a child instead?\" Picture-book version: \"Why do you think Hild asked Hugh, not a grown-up?\" A 3-year-old can answer that ('the grown-ups said no!'). Add \"How big do you think a person must be to carry a lantern?\" as the first If-they're-stuck prompt. It isn't a yes/no question."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/bible.md",
+    "where": "Section 2, Pause & ask block, 'For the grown-up' fixed line (also rendered in s1-ch01/02/03)",
+    "problem": "The fixed say-back example, \"Yes, she was scared, and she went anyway,\" is printed word for word in every block. In Chapters 2 and 3 the question is about Hugh, so a parent reading it literally says 'she' about a boy. In Chapter 1 the question is about welcoming a cold fox, not fear, so the example doesn't match any answer a child is likely to give. Parents copy these examples word for word.",
+    "fix": "Flag for Jon (this is a bible Must, so don't change it in the chapter). Either put the pronoun in a slot (\"Yes, [[pro:lead.sub]] was scared, and [[pro:lead.sub]] did it anyway\"), or reword it neutrally: \"Whatever they say, say it back a little longer, adding a feeling word. There's no wrong answer.\""
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch01.md",
+    "where": "Picture-book telling, picture 7 (pantry)",
+    "problem": "The chapter-book says \"Grandma waited in the pantry doorway\". The picture-book text leaves this out: it goes from \"as dark as the inside of a boot\" straight to Clara going in. That wait is what makes the dim-room fetch safe and real for a 3-year-old, and it matches the Brave Little rung example word for word ('goes into a dim room \u2026 while you wait at the door'). The image shows Grandma, but a child hearing only the words, or a parent copying it at home, misses the support.",
+    "fix": "Add \"Grandma waited at the door.\" to picture 7. That makes it the chapter's second four-sentence picture, which is still within the limit of two."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch01.md",
+    "where": "Picture-book telling, picture 10 (and the writer's own flag on the omitted note)",
+    "problem": "The picture-book telling never says where Mom and Dad are. For a 3-year-old hearing a story about herself with only Grandma at night, 'where's Mommy?' is the question most likely to break the spell or worry her. Picture 10 is spent on a clue (Grandma understands the fox) that a 3-year-old won't follow.",
+    "fix": "Agree with the writer's suggestion to put the note back, and use picture 10 for it: \"Mom and Dad's note said, 'Home by the longest night.'\" (through the parents block). Move the grandparent clue to one short clause, or leave it to the chapter-book telling."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "Pause & ask: picture-book question (picture 8); picture-book pictures 9-11 order",
+    "problem": "\"Why do you think Hugh stopped to ask a question?\" is abstract for a 3-year-old, who can see the wind and the tiny flame but not the idea of stopping to think. The picture-book order also puts Hugh's answer ('The silly thing is\u2026 the brave thing is\u2026') after Clara's 'Big stone!' and Alfie's 'Lantern up!'. Read alone, the reasoning comes after the solution.",
+    "fix": "Picture-book question: \"Why do you think Hugh stopped walking?\" (answers: 'the wind!', 'the flame got small!'). Put Hugh's middle-way line into picture 9 ahead of \"Big stone!\", and keep picture 11 for setting the lantern down in the lee and the wall of backs."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "For the grown-up: Your line (p26); also Ch2 p21",
+    "problem": "Hugh's reading line gets shorter each night: Ch1 is 12 words over 2 sentences, Ch2 is 7 words, and Ch3 ('West to Wardlow. East to home.') is 6. For a 2nd grader who likes a challenge, Chapters 2 and 3 are at the bottom of the 1-to-3-sentence range, with little to decode beyond 'Wardlow'.",
+    "fix": "Use the full allowance, keeping every sentence to 12 words or fewer. Ch3 carving: \"West to Wardlow, a long way. East to home. Keep the light.\" Or in the jar scene, give Hugh one milestone to read aloud (\"Ashcombe, five miles. Candlemere, one mile.\"). Ch2 notice: \"Beacon Night. All welcome. Bring one stick, and a friend.\""
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch02.md",
+    "where": "Rich words: sheepish (p17, p34), dare (p14, p16); also Ch3 rich-word list",
+    "problem": "The text never explains 'sheepish': the body cue (head down, scuffing a boot) is only in picture 4's description, which breaks the explain-by-context rule. 'Dare' is used in two different senses: 'I dare anybody to stop me' (a challenge) and 'dare the dark' (to brave it). That is confusing for a Kindergartner meeting the word. Separately, Ch3 counts 'flicker' (Chapter 1's word) toward its three, so only two new words are added (steady, lee).",
+    "fix": "p17: \"\u2026muddy from his boots to his ears, and a little sheepish, looking hard at his boots.\" Make p16 use the same sense as p14 (\"Hugh wanted to take the dare too\u2026\"), or swap 'dare' for another everyday word. Either add a third new word to Ch3 or state in the bible whether returning words count toward the 3 to 5."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "Alfie's counts: Ch1 p33, Ch2 p41-p43, Ch3 jar ('Alfie counted the cows')",
+    "problem": "The bible's Should is that 'Alfie's counts are real numbers the listener can count along with.' In Chapters 1 to 3 this never happens: Ch1's fingers 'run out' and no number is given, Ch2's apples are counted silently before 'Seven', and Ch3's cows get no number. The 5-year-old listener, who likes a challenge, never gets to count along.",
+    "fix": "Ch3 jar: \"Alfie counted the cows: 'One, two, three, four, five, six!'\" before Ember's 'lots'. Ch2 p41: \"In went the apples, one, two, three, four, five, six, seven.\" Add Alfie's number ('Seven!') as a big-print word."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch01.md",
+    "where": "For the grown-up: Big-print words (Ch1 and Ch2)",
+    "problem": "Two of the three big-print words in Chapters 1 and 2 are lines that belong to other children ('Come in, fox.' is Clara's key act; 'Me too!' is Clara's). A Kindergartner reading them aloud takes the youngest's moment. 'Lots!' (Ch1) and 'I'll help!' (Ch2) don't appear in that form in the text, where they are 'lots,' inside Ember's count and 'I'll help,' with a comma.",
+    "fix": "Choose words from Ember, the narration, or the Kindergartner's own character: for Ch1, 'Foxes glow.' or 'Pfft!'; for Ch2, 'Seven!'. Make sure each big-print item appears in the text exactly as printed. Where a youngest-owned line is used, have the reader let the youngest say it."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/tools/render-chapter.py",
+    "where": "Lines ~765-770 (reading lines rendered only as a note with a paragraph id)",
+    "problem": "'Your line' and the big-print words are listed only in 'For the grown-up', each with a paragraph id such as '(p41)'. The rendered chapter text doesn't number paragraphs or mark those lines. The bible says 'The page marks it so the parent can hand the reading over', but a parent reviewing these files can't find where to hand over.",
+    "fix": "Mark the reading lines inside the chapter-book text when rendering, for example a 'Your line' tag before the sentence and bold or larger type for the big-print words. Or print the paragraph ids in the rendered text."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch02.md",
+    "where": "p31-p35 (Hild's bell handed to Will)",
+    "problem": "Hild gives the bell with a real safety rule ('Stand still, ring, and call'), and a moment later Will rings it all the way up the lane as a parade toy. For a 3-year-old, the bell's first use teaches 'bell = noise', which weakens the lost-child skill being planted for Sedgefen. The part sheet asks for 'Hild's bell stays a safety bell'. Lending the bell is realistic for a 3-year-old; it's the lesson that gets blurred.",
+    "fix": "Keep the loan, and give Clara a rehearsal line when Will hands it back at the gate. For example, Clara holds it up and says \"Stand still, ring, and call,\" which is 6 words and fine for a 3-year-old. Or Clara and Will ring it together once, and he carries it quietly."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "Pause & ask: Answers first and Stretch (Ch2 and Ch3)",
+    "problem": "Hugh is both 'Answers first' and the obvious Stretch answerer in Chapters 2 and 3, because he is both lead and turn child. The 5-year-old never has a named turn in the Pause & ask in Part 1, even in Ch3 where Alfie does the modeled behavior ('I'll help. Lantern up!').",
+    "fix": "Add a named follow-up for the middle child in Ch3, such as \"Then ask Alfie: Why do you think Alfie said 'I'll help' in the dark?\". Or flag for Jon that the bible could allow the child who does the modeled behavior to answer first."
+   }
+  ],
+  "critic:classical": [
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "Ch 3 chapter-book p16 (\"Far ahead stood a shepherd's hut\") and p23 / block ch3.p21 (\"The silly thing is running on in the dark... The brave thing is stopping here\"), against the Vote 1 copy",
+    "problem": "Hugh's middle-way line and Vote 1 contradict each other. Hugh names \"running on in the dark\" as the silly thing and \"stopping here\" as the brave one. Then Vote 1 asks the listeners to move the lantern: Option B goes on through the dark to the hut, which is the exact thing Hugh just called silly, and Option A goes back toward home, the pull he has just resisted. Canon section 3 says both vote options are always good, safe choices, and the chapter's own framing makes both look like failings. Distances clash too. p16 puts the hut \"Far ahead\", the vote copy says \"A little way ahead\", and canon's vote table says \"at the next milestone\". Separately, the canon beat itself ends with them settled in the lee, Clara asleep and \"Sleep now\", while Vote 1 moves the flame again in Ch 4. That tension is not flagged for Jon.",
+    "fix": "Rewrite p23 so the mean is about rushing versus getting the flame sheltered, not about staying put. For example: \"The silly thing is rushing on in the dark with a flame this small,\" said Hugh slowly. \"The brave thing is stopping, and getting it out of the wind.\" Change p16 to \"Not far ahead, by the next milestone, stood a shepherd's hut.\" so it matches canon and the vote. Present the lee as a first shelter only, e.g. the vote lead-in: \"The milestone only breaks the wind on one side, and the wind is still rising.\" Add a flags_for_jon line saying the canon beat (settled in the lee, asleep) and Vote 1 (move the flame in Ch 4) pull against each other, and that Ch 4 should open with the wind swinging round the stone."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "Ch 3 p2 to p14: Grandma opens the lantern's little door, the flame hops across, the lantern breath is practised, and Hugh carries it off",
+    "problem": "Fire safety (canon section 4 rule 18, bible 7 fire rule 6: the lantern stays shut and children carry only the closed lantern). Grandma opens the little door and holds the open lantern close to the hearth, but the text never has her shut it. The children then practise the breath beside the freshly lit lantern, and Hugh carries it out the gate. Only picture 3's notes say \"closed\". The open door also clouds the canon mechanism: canon section 2 says a given flame hops in and out through the chimney, and picture 2 shows it hopping into the chimney while the door hangs open. That could read as the lantern being pushed into the fire.",
+    "fix": "Either keep the door shut and have Grandma hold the brass chimney close to the hearth (the canon mechanism), or add a line straight after p4: \"Then Grandma shut the little door with a click.\" Put that line before the lantern-breath practice and before Hugh takes the ring handle. Make the same change in the picture-book telling (picture 1 or 2) and the picture notes."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.blocks.json",
+    "where": "Block ch3.p22b, family_size \"1\" version: \"Then Ember pointed her nose at something big and grey, close by the road.\" (also flagged in s1-ch03.md Flags: \"One child: Ember points her nose at it\")",
+    "problem": "For an only child, Ember finds the shelter. The milestone is the answer to the crisis, and this breaks \"Ember never solves\" (canon section 1: \"The humans solve every problem\"; kit section 2: \"She never solves the problem\"). The kit's rule for one-child families hands Ember sibling comfort beats (a hand to hold, \"Breathe with me\"), not the discovery that changes what happens.",
+    "fix": "Give the discovery to the child. For example: \"...took a lantern breath, and looked around. There, close by the road, stood something big and grey.\" Ember can react afterwards (\"My tail agrees\"). Update the flag to match."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "Ch 3 p27 to p35 (from \"The lee,\" said Hugh to \"Hugh set the lantern down in the lee\"), especially p32 \"...but it stayed steady\"; picture-book picture 10",
+    "problem": "Once Hugh names the lee, the key act waits seven paragraphs (Ember's line, Alfie's gesture, Clara's yawn, the stars, the flame, Grandma, the hands rule) while he still holds the blue-bead flame in the wind. The wise choice is announced long before it is done. p32 then says the flame \"stayed steady\", which takes the tension out of the canon hook (\"Would it hold till morning?\") and out of Ch 4's \"The Flame That Nearly Went Out\" (canon: \"The flame steadies\" in Ch 4). The picture-book repeats \"stayed steady\" in picture 10.",
+    "fix": "Keep canon's paywall paragraph last, but tighten what comes before it: p27 lee, p28 Ember, p29 Alfie (made concrete, see the next item), p34 hands rule, p30 yawn, p31 stars, p33 Grandma, then the paywall paragraph. Change p32 to something like \"Inside the lantern the blue bead bowed low, like someone very tired, and held on, just.\" Move the second use of the rich word \"steady\" to Hugh (\"Hugh held the lantern as steady as he could\" at p17). Make the same change in the picture-book picture 10."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "Ch 3 p29: \"Alfie held an invisible lantern up high, took one step toward the milestone, and said, 'I'll help. Lantern up!'\"",
+    "problem": "The modeled behavior has no concrete deed attached (bible checklist: \"done by a child, concretely\"). Alfie says \"I'll help\" but nothing follows until the paywall paragraph six paragraphs later. The step \"toward the milestone\" also makes no sense, because they are already standing beside it.",
+    "fix": "Tie the phrase to the act. For example: \"'I'll help,' said Alfie. 'I'll be the wall on the windy side. Lantern up!' He held an invisible lantern up high and stepped round into the wind.\" The paywall paragraph's \"he and Alfie made a wall\" then pays it off."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch01.json and s1-ch02.json",
+    "where": "Ch 1 p23 (\"Alfie shuffled a little closer to the fire. Hugh was already jumping up to dash straight in\"); Ch 2 p16 (\"Hugh wanted to dare the dark too... Alfie wanted to run home and hide\")",
+    "problem": "Both chapters give Hugh the reckless pull and Alfie the timid one. Canon already fixes that same pairing for Ch 5, the Part 3 Tuesday and the Part 6 Tuesday, so everything a family sees in the free chapters and the first six weeks casts Hugh as the rusher and Alfie as the scared one. Bible 4.1 says \"Nobody is typecast\", and the first chapters set the impression.",
+    "fix": "Flip the light-touch pull in Ch 1, where canon doesn't fix it. Curious, hungry Alfie starts to scamper into the dark pantry without looking (\"I'll get it!\"), and Hugh hangs back by the fire because he hates getting it wrong in the dark. Clara still speaks first. Keep Ch 2 as it is, since its Tuesday pull matches the part sheet."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json (rendered in s1-ch02.md)",
+    "where": "Ch 2 p36: Will, \"When the beacon's lit again, I'll carry a stick up Wardlow myself.\"",
+    "problem": "The line gets the canon backwards. The sticks are what light and feed the beacon on Beacon Night (canon section 1: \"It needs everyone's stick\"), and the lane climbs for the lighting in Ch 54. A stick carried after the beacon is lit misses the point the notice (\"Bring one stick\") has just set up.",
+    "fix": "\"On Beacon Night, I'll carry a stick up Wardlow myself.\" Or: \"When the beacon needs its sticks, I'll carry one up Wardlow myself.\""
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json (rendered in s1-ch02.md)",
+    "where": "Ch 2 p9 to p13 (the three \"Not I\"s) and the last page's \"What happened\" (\"Hugh said 'I'll help' first\")",
+    "problem": "The golden mean reads unevenly. The too-little side is meant to be timid (\"hiding from what's right because you're scared\"), but all three reasons are busyness or stiff knees and none of them shows fear. The listener sees reluctance, not timidity. Also, \"Hugh said 'I'll help' first\" isn't quite true: Will shouted \"I'll go right now\" earlier that day, and Clara said \"I'll help!\" in Ch 1. What matters is that Hugh's offer is the measured one.",
+    "fix": "Add one small fearful \"Not I\" alongside the busy ones, never mocked. For example, a face at a window: \"Wardlow's a long way in the dark,\" and the curtain drops. Reword \"What happened\" to: \"Every grown-up on the lane said 'Not I.' Then, with a wobbly tummy, Hugh said 'I'll help,' with a proper light and all of them together.\""
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "classical_echo.grown_up_note (\"These children set out as night comes on too, but with the grandparent's yes\") and p13 to p14",
+    "problem": "The grown-up note doesn't match the text. The children leave \"in the gold of the afternoon\", and night finds them on the road. No line on the page is a plain yes from Grandma either: the reversal of Telemachus slipping away rests on an exposition line about the old law. The Odyssey 2 reversal is the chapter's echo, so it should be visible on the page, if quietly.",
+    "fix": "Add a short yes to p13, e.g. \"'Yes,' said Grandma. 'By the old law, any child who carries this lantern is fed and housed at every door on the Keepers' Way.'\" Reword the note to: \"These children set out in the afternoon and night finds them on the road, but they go with the grandparent's yes...\""
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (rendered in s1-ch03.md)",
+    "where": "Ch 3 p2: Grandma, \"Fire won't be taken. It has to be given, and somebody has to ask.\"",
+    "problem": "This is a paraphrase of the canon's carved rule, \"A light that's taken will not catch. A light that's given will.\" (canon section 1, carved on the biggest Keepers' Stone). The season echoes that line in Part 9 and at Wardlow. Planting the exact words at the first lighting is the quiet line-echo bible 4.4 asks for, and the paraphrase throws that away.",
+    "fix": "\"A light that's taken will not catch,\" she said. \"A light that's given will. So somebody has to ask.\" Update the picture-book picture 1 to match (\"Somebody has to ask.\" can stay)."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md (from s1-ch03.pictures.json)",
+    "where": "Picture-book pictures 9 to 11, and picture 9's Ember note (\"sniffing the still side of the stone\")",
+    "problem": "Three problems here. Picture 11's text says \"Everyone made a wall, hands on knees\", but its image has Clara drowsing in Ember's tail, and canon says only Hugh and Alfie make the wall while Clara is already asleep. The picture-book also moves Hugh's brave-or-silly reasoning to after Clara's and Alfie's acts, so his choice comes after the deed. And picture 9 draws Ember sniffing out the still side before Hugh names the lee, which shows Ember finding the solution.",
+    "fix": "Picture 11: \"Hugh and Alfie made a wall, hands on knees.\" Put Hugh's middle-way line in picture 8 or 9, before \"Big stone!\", as the master has it. Picture 9's Ember note: \"tail blown sideways, looking up at the youngest\"."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json (flags_for_jon)",
+    "where": "Ch 3 flags: the lighting flag (\"then stands up, stretches and looks about\"), the new-details flag (\"And this fire stays awake till you're home.\") and the jar flag (\"Ember had bowed to it most politely, and nobody had bowed back.\")",
+    "problem": "The flags quote lines that aren't in the rendered text. The text has no stretching flame and no \"stays awake till you're home\" line, and the jar line reads \"Ember bowed to it most politely, but it did not bow back.\" Jon reviews once per season from these flags, so they need to describe what is actually on the page.",
+    "fix": "Bring the three flags into line with the final text, or restore the lines if they were meant to stay. \"This fire stays awake till you're home\" would be a good Vesta seed for Ch 4, spoken by Grandma at the gate."
+   }
+  ],
+  "safety:2": [
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "last_page.blessing_key (rendered at s1-ch02.md line 171, \"Blessing: Joshua 1:9\"); also parts/part-01.json echo_plan (\"Isaiah 6:8 only in Ch 2's faith note\")",
+    "problem": "FAITH fails (major). Bible \u00a710 says the canon's chapter verse (Isaiah 6:8 in Chapter 2) replaces the weekly verse on that chapter's last page. Kit 5.4 also defines verse_key as \"the chapter's own verse where the canon names one\". The draft uses the week's verse, Joshua 1:9, going by kit 1a's last-page item 4 (\"the week's verse\"). The drafter flagged this. The verse wording itself can't be checked yet: there is no house translation, so VERSE is empty.",
+    "fix": "Set blessing_key to Isaiah 6:8, the verse the app hands for Ch 2, unless Jon rules otherwise. Bring the part sheet's echo_plan line into line with it. Flag for Jon: kit 1a item 4 contradicts kit 5.4's verse_key and bible \u00a710, so the kit wording needs fixing."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "{{about}} for piece_type chapter: the job list (prompt 1b output); no \"jobs\" field or stored outline exists for Ch 2",
+    "problem": "LENGTH_FORMAT fails with \"input missing\". Kit 12.3 lists the job list as a required {{about}} item, and 12.1 has LENGTH_FORMAT check \"the job list done\". check-chapter.py reports job_list as WARN (\"the job list (prompt 1b) isn't an input; the checker reads it\"), and no 1b job list is stored for Season 1. Every other LENGTH_FORMAT plain test passes (PLAIN_RESULTS: 37 PASS, 6 WARN, 0 FAIL). Kit 12.4 treats this as a system fault, not the writer's.",
+    "fix": "Run 1b for Season 1 and store Ch 2's job list. From the canon Marks \"Hild \u00b7 Clue\", it should hold mentor and clue, plus the pocket questions per canon \u00a71. Pass it in {{about}}, then rerun prompt 8."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "block ch2.p23, \"he\" and \"they\" versions (p27; rendered s1-ch02.md line 73), right after p26",
+    "problem": "CLARITY fails (major). p26 ends \"while Ember tried to count the wicks and got as far as lots.\" p27 then opens \"She looked at Hugh for a long, quiet moment. ... she asked.\" The \"She\" can mean Ember or Hild, so a listener can think Ember is asking the story question. The \"she\" version already names Hild.",
+    "fix": "In the he and they versions of ch2.p23, the opening \"She\" must name Hild, as the she version does."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "block ch2.p4 versions 2 to 4 (p4, \"held the very tip of Ember's tail\"); p22 via ch2.patter (\"stopped to pat him anyway\"); pictures 1 and 5; parts/part-01.json in_real_life",
+    "problem": "UNSAFE_ACT is borderline (critical rule). The 3-year-old holds a fox's tail (not in the canon) and pats a dog lying on a step with no grown-up's yes. A small child could copy either. The part's \"In real life\" line covers only \"an animal we don't know\", and Brock and Ember are known. The Brock pat is canon-backed (Ch 57: \"who always stopped to pat him\").",
+    "fix": "The tail hold in p4 and picture 1 must be removed or covered. The part's \"In real life\" lines must cover touching an animal the children know (a grown-up's yes first), or the pat in p22 must happen with a grown-up's yes."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "last_page.for_the_morning.missions \"7-9\" and \"3-4\" (rendered s1-ch02.md lines 179 and 181)",
+    "problem": "UNSAFE_ACT and STRANGERS are borderline (critical rules). The 7-9 mission \"Offer to help a grown-up with a real job nobody wants\" names no known grown-up and drops the trial's \"(with a grown-up)\" and the part's safety line. That reads as an invitation to approach any adult. The 3-4 mission \"Carry something to the table\" drops the trial's safety line (cool and unbreakable, never a hot dish, a knife or glass).",
+    "fix": "The 7-9 mission must limit the job to a grown-up the child knows, or say \"with your grown-up\". The 3-4 mission must carry, or point to, the part's carrying safety line."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.pictures.json",
+    "where": "image descriptions for all 12 pictures, especially 2, 3, 4 and 8",
+    "problem": "PICTURE is borderline (count). The image descriptions are written for three children only. In a one-child family, picture 4 draws the \"youngest\" beside Will, while the text (ch2.patter v1) gives that to the eldest and the master's one-child p19 gives it to Ember. Picture 8 (youngest_act) draws the youngest's act, which pic2.act v1 gives to the eldest. In a two-child family, pictures 2 and 3 draw \"holding the middle's hand\". The children drawn won't match the text or the family's character sheets. Kit 1e and 1f have no family-size image versions.",
+    "fix": "Each picture needs figures by family size, or the kit must say how figures map, so every picture shows the children the text names doing what the text says. Flag the 1e/1f gap for Jon."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "fear_level and fear_reason; p14 to p17; picture 3",
+    "problem": "FEAR is borderline on the level. A child runs out of sight into a holloway that is \"dark even at noon\" while the others freeze. That sits closer to level 2 (\"lost for a minute\") than level 1 (cozy). It still passes at level 2: it turns within two paragraphs, picture 3 has comfort in frame, and the chapter ends warm. The checker's fear level for the piece is 2, not the stored 1, and prompts 2, 4 and 8 read fear_level at night.",
+    "fix": "Set fear_level to 2 (fear_reason already names the moment), unless Jon rules it level 1."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "p45 to p46: blocks ch2.p35 (2 to 4 children) and ch2.p36.gp (rendered s1-ch02.md lines 111 to 113)",
+    "problem": "SHAME is borderline. \"Grandma laughed\" comes right after the 3-year-old's boots go on the wrong feet and her \"Me too!\". It is followed at once by \"Nobody's too small to carry a light\". It can read as a grown-up laughing at the smallest child's mix-up and her size. She didn't laugh first.",
+    "fix": "In the 2- to 4-child versions of ch2.p36.gp, the grandparent's laugh must not come across as a reaction to the youngest's boot mix-up."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "laugh.line and laugh.paragraph (p18, Will's \"There's a puddle, in the dark\")",
+    "problem": "SHAME and LAUGH are borderline. The chapter's named laugh is a child's muddy result of his own reckless act. Nobody in the story laughs, but the listener is cued to. LAUGH passes anyway on Ember's lines (p8 \"Nobody had ever called her noisy before\", p26, p44).",
+    "fix": "laugh.line must name a line whose joke isn't a child's mistake, such as one of Ember's existing lines."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "p11 to p12 (block ch2.asker, \"How many tomorrows has that been?\" plus Ember's whispered count)",
+    "problem": "MEAN is borderline. Nobody may be mocked (a Must). A child and Ember whisper a joke about the too-little character, Reeve Osric, behind his back. The drafter flagged it and chose the whisper so it never happens to his face.",
+    "fix": "p11 to p12 must not make the reeve the butt of the children's joke, or Jon confirms the whisper is gentle enough."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "pause_and_ask.stretch (rendered s1-ch02.md line 155)",
+    "problem": "MEAN and STEREOTYPE are borderline. \"Every grown-up had a good reason to say no. Why do you think a good reason wasn't enough?\" also judges the miller's stiff knees, a real physical limit, as not enough. A child who uses a wheelchair (the chapter has chair versions) hears a body limit treated as timidity.",
+    "fix": "The Stretch question must not treat a physical limit as a reason that wasn't good enough."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.json",
+    "where": "p20 and p26 (\"Hild beckoned [[child:eldest]] close\"); one-child version p25 to p31 in s1-ch02.blocks.json",
+    "problem": "STRANGERS is borderline. A grown-up beckons one child close and then gives gifts (a question, a bell). The text never shows that the children or the grandparent know Hild; the canon says Grandma has known her for years. In the one-child version, a lone child is beckoned with only Ember nearby. The allowed list covers named hosts met at the door, not this scene. It is daylight and public, and nothing frightening happens.",
+    "fix": "The text must show that Hild is known to the children or the grandparent before she beckons the eldest. In the one-child version, the child must also stay within the grandparent's sight."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "blocks ch2.p25 and ch2.p27 (p29 and p31); the one-child she version and the sample render (s1-ch02.md line 83)",
+    "problem": "CLARITY is borderline. \"Last of all, Hild put a little brass bell into Clara's hand. 'Ring it...,' she said.\" and, in the one-child she version, \"Hild gave Robin something from her tray... 'For when I'm not there,' she said.\" In both, \"she\"/\"her\" follows a sentence that names a she-child and can mean the child. The kit's pronoun-block rule names only Ember and the grandparent, so these blocks aren't keyed to the child's pronoun.",
+    "fix": "Where the named child is \"she\", these sentences must name Hild instead of using \"she\"/\"her\", through a pronoun block keyed to that child."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "block ch2.p13, version \"1\" (p16, one-child)",
+    "problem": "MEAN is borderline. \"So [[child:eldest]] stood still, which was the hardest thing of all.\" Here the narrator judges the choice and names the middle way, instead of leaving the child to find it on the page.",
+    "fix": "The one-child version must not carry a narrator judgment of the child's choice."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "block ch2.p33, versions 2 to 4 (p41, \"And me,\" said Alfie, \"if there are apples.\")",
+    "problem": "FOOD_BODY is borderline. The middle child's \"I'll help\" (the week's modeled behavior) only holds \"if there are apples\", which ties the strength to food. It passes the rule's narrowed test (no eating less, no Enough tag), but \"a strength tied to food\" is on the rule's fail list.",
+    "fix": "The middle child's joining must not depend on food, or Jon confirms the joke stands."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/parts/part-01.json",
+    "where": "in_real_life; chapter p14 to p19 and p20 (holloway mouth, Moot Hall); picture 3",
+    "problem": "UNSAFE_ACT is borderline. Will, a child, runs off alone out of sight into the dark with no light. It is the canon's Tuesday too-much side, turned at once, and nobody follows. But the part's \"In real life\" lines only cover going out \"after dark\", not running off alone out of a grown-up's sight in daytime. The text also never confirms that the holloway mouth and the Moot Hall are within the grandparent's promised sight (\"stay where I can see you\"), though \"back up the lane\" implies it.",
+    "fix": "The part's \"In real life\" lines must cover running off out of a grown-up's sight, or Jon confirms the Tuesday frame is enough. The text must keep the holloway mouth and the Moot Hall within the grandparent's sight."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.pictures.json",
+    "where": "pause_and_ask_simple.picture = 5, while youngest_act is picture 8",
+    "problem": "PAUSE_ASK and LENGTH_FORMAT are borderline. Kit 5.5 says the \"For the youngest\" prompt sits at the youngest's act picture (8). Here it sits at the Pause & ask picture (5), because it asks about Dun and Old Brock. Bible \u00a73 says \"at its picture\", which is ambiguous. The drafter flagged it.",
+    "fix": "Jon rules on where the prompt sits, and kit 5.5's wording is aligned with bible \u00a73."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.pictures.json",
+    "where": "SHOULD items: p47; pictures 3, 4, 5, 6, 8 and 10; pictures 11 and 12 text",
+    "problem": "SHOULD items fail (minor, for the packet). p47 has five sentences against the four allowed (code WARN). Six pictures carry four sentences against the two allowed. The picture-book text drops the youngest's boots swap and \"Me too!\" (a canon beat) and the grandparent's \"Nobody's too small...\" line, though picture 11 draws the boots. Kit 1e says nothing important is left out.",
+    "fix": "List each item on Ch 2's packet card. 1f must add family-size pic2 blocks carrying the boots beat and the grandparent's line into pictures 11 and 12, and shorter pic2 blocks for the four-sentence pictures."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch02.blocks.json",
+    "where": "2-child: ch2.asker, ch2.p33 and ch2.p35 (p11, p41, p43, p45); 1-child: ch2.p4 v1 (p4) and ch2.p35 v1 (p45)",
+    "problem": "SHOULD and CLARITY minor items in the variants. In the two-child version, the 3-year-old says \"And me\" (p41) and then \"Me too!\" (p45), joining twice, and also gets the reeve whisper and the \"Seven\" count. In the one-child version, p4's \"because it was Tuesday\" loses its setup (no tail to allow), and p45's \"help with the boots too\" follows no earlier boots.",
+    "fix": "Each of these version texts must make sense on its own for that family size. List them on the packet card for 1f."
+   }
+  ],
+  "safety:3": [
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "FEAR (critical), 'ends warm' test: p36 to p38. The last paragraph p38 reads: \"Sleep now.\" The flame was only a blue bead. Would it hold till morning?",
+    "problem": "The checker ran as piece type 'chapter' at production. Overall verdict: fail. Worst severity: critical. Fear level: 2. Laugh line: p20. Every rule not listed in this report passed. This finding is the critical one. The canon's paywall passage was split so each paragraph has one speaker, and the split moved the comfort (Clara asleep in Ember's tail, the wall of backs) back into p35. The chapter now closes on Ember's unknown walker ('Someone else walked this road tonight'), an unanswered 'Who?', and 'Sleep now.' The last paragraph shows no child at all. Read literally, that fails the 'ends warm' test, and a failed 'ends warm' test counts as fear level 3. The hook (it asks about the flame) and picture 12 (the comfort image) both pass. Bible \u00a79 passes this ending only when the canon's closing lines are read as one unit. The drafter's flag 1 and bible \u00a711 open item 9 both leave that ruling to Jon.",
+    "fix": "Jon needs to rule on bible \u00a711 open item 9. Option 1: the checker treats p35 to p38 (one paragraph in the canon) as the chapter's last paragraph, and that allowance goes into the checker's inputs for Chapter 3. Option 2: the canon's paywall text changes so that the final paragraph shows every child together before the hook. The canon words themselves can't be reordered in the draft."
+   },
+   {
+    "severity": "high",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "FIRE (critical), borderline, and PICTURE: p2 ('Grandma opened the little door\u2026'), p8 ('Then Grandma turned the lantern over.'), p14 (Hugh carrying the lantern). Also picture 4 in s1-ch03.pictures.json: 'holding the lantern upside down', with the eldest 'peering close'.",
+    "problem": "The grandparent opens the little door and the flame hops in, but nothing in the text ever shuts the door again. Later the eldest carries 'the lantern', so a strict reading has a child carrying a lantern with its door open. That is FIRE's fail condition. Pictures 3 and 5 assume the lantern is shut; the text never says so. Then, with the flame inside, the lit lantern is turned upside down so the children can read the base, and picture 4 puts the eldest's face close to it. A child could copy that with a real candle lantern, and NEVER_DRAWN bars a flame near a child's face. Separately, the drafter's flag says the flame 'hops across through the chimney'. So opening the door does no job in the story.",
+    "fix": "The text must show a grown-up shutting the little door after the flame is in, before the lantern is turned over or given to the eldest. p8 and picture 4 must not show the lit lantern upside down with a child's face close to it."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "LENGTH_FORMAT (major): the job list, which should come from prompt 1b, is missing from the checker's inputs. check-chapter.py also reports 'WARN job_list: not tested in code here'.",
+    "problem": "Kit \u00a712.3 says the checker's inputs for a chapter must include its job list. No stored 1b job list exists for Season 1 (none under story/season-1, and none in the source JSON). The kit's rule is to mark a rule 'fail: input missing' when an input it needs is absent, so LENGTH_FORMAT fails. This is a system fault, not the drafter's. Judged informally against canon \u00a74's Marks ('Jar (onboarding details) \u00b7 Vote 1 \u00b7 Clue'), plus bible \u00a72's exception that Chapter 3 has no remember-when, plus the pocket question and the hook, the jobs look done: jar at p15, vote copy present, clues at p9 to p12 and p36, pocket question at p19, hook at p38. All of code's other plain tests pass: 38 pass, 6 warn, 0 fail.",
+    "fix": "Run prompt 1b for Season 1 to turn the canon's Marks column and its exceptions into stored job lists. Pass Chapter 3's list in the checker's inputs and run the check again."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.pictures.json",
+    "where": "PICTURE (critical), borderline: picture 1 (eldest 'leaning in to watch', youngest 'standing close', grandparent holding the lantern near the fire 'its little door open') and picture 2 (close framing, youngest 'leaning forward', 'a small gold flame hopping from the hearth into the lantern's chimney')",
+    "problem": "Both descriptions place children leaning in close to an open hearth fire. In picture 2 the flame is in the air between the hearth and the lantern, framed close, right where the youngest is leaning. NEVER_DRAWN bars an open flame 'near a child's face or hair'. The descriptions give no distance, so an image model may well draw the flame at a child's face.",
+    "fix": "The image descriptions for pictures 1 and 2 must keep every child's face and hair clearly back from the hearth fire and the hopping flame. Only the grown-up's hands should be near the fire."
+   },
+   {
+    "severity": "medium",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.pictures.json",
+    "where": "PICTURE (critical), borderline: picture 7 (eldest 'holding the lantern close'; middle 'holding the eldest's cloak')",
+    "problem": "'Holding the lantern close' draws the lit lantern against the child's body or face. Prompt 7b says a child holds the lantern only by its ring handle, and NEVER_DRAWN bars a flame near a child's face. 'The eldest's cloak' describes a child's clothing, which prompt 1e forbids. A cloak comes only from the sample eldest's avatar, so for any family whose eldest has no cloak on their character sheet, the prompt contradicts the sheet (the PICTURE rule on sheet match).",
+    "fix": "Picture 7 must show the eldest holding the shut lantern by its ring handle, away from the body. It must not name any garment of any child."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.pictures.json",
+    "where": "LENGTH_FORMAT, the shared read: pause_and_ask_simple puts 'For the youngest' at picture 8 (the Pause & ask picture). The youngest's act ('Big stone!') is picture 9, pinned to p25.",
+    "problem": "Bible \u00a73 says 'The \"For the youngest\" prompt sits at its picture', and prompt 1e says the same: at the youngest's key-act picture. Only 1e's output schema nests the prompt with the Pause & ask picture. The drafter followed the schema and flagged it. So this conflicts with a bible Must, and the bible outranks the kit.",
+    "fix": "Jon rules between bible \u00a73 / prompt 1e and the 1e schema. Until he does, either move the prompt to picture 9 or record the exception on the chapter's card."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "FIRE, borderline: p34 'Hugh wanted to cup the little flame in both hands.'",
+    "problem": "The rule comes straight after ('hands go on your knees, never on the lantern'), but the sentence still plants the picture of cupping a flame in bare hands. A child could copy that with a candle. The canon beat only has hands on knees, 'not on the lantern'.",
+    "fix": "The child's wish in p34 must be about the lantern, not about touching the flame itself."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/parts/part-01.json",
+    "where": "UNSAFE_ACT, borderline: p13 ('any child who carries this lantern is fed and housed at every door on the Keepers' Way') and Vote 1 option B ('thick stone walls and a low wooden door')",
+    "problem": "p13 introduces one of bible \u00a75's copyable motifs, going into a stranger's house for food, and Vote B invites the children to go into an unknown hut after dark. Part 1's 'In real life' lines cover knocking with a grown-up, carrying a flame, going out after dark, animals, and new friends. None covers going into someone's house. That line ('In real life, we only go into someone's house with our grown-up.') appears only on Part 2's sheet.",
+    "fix": "Part 1's sheet must carry the house line. Otherwise the vote copy must not suggest going through the hut's door."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "UNSAFE_ACT (missions), borderline: last_page.for_the_morning.missions['3-4']: 'When someone is getting ready to go out, say \"I'll help!\" and carry one thing.'",
+    "problem": "A 3-year-old is told to carry 'one thing', with no limit on what. Part 1's own trial asks for the same act and carries a safety line: something cool and unbreakable, never a hot dish, a knife or glass. The mission has no such limit.",
+    "fix": "The 3-4 mission must limit what gets carried to something safe, matching the Part 1 trial's safety line."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "PAUSE_ASK, borderline: answers_first 'turn' and the Stretch line",
+    "problem": "lead_by_size is 'eldest' at every family size, and Part 1's turn child is the eldest. So 'Answers first' lands on the eldest in every family. The Stretch (for a 7-to-9-year-old, asked after the first answer) also goes to the eldest. The eldest therefore gets both the first answer and the harder why, and the middle child gets no named turn. The rule says 'never automatically the eldest'. The value is a legitimate role, but here it always resolves to the eldest.",
+    "fix": "Jon rules whether a role that always resolves to the eldest counts as 'automatically the eldest'. If it does, answers_first must name a role that doesn't land on the eldest in this chapter."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "MEAN, borderline: p23 ('The silly thing is running on in the dark. The brave thing is stopping here\u2026') compared with vote.setup and option B ('Go on to the shepherd's hut')",
+    "problem": "The lead child finds the middle way: stopping here is brave, going on in the dark is silly. The vote then asks the listening children to choose a move in the dark, and option B is literally 'go on'. The vote setup also reopens tension ('The wind is still rising') after the calm close. So the vote invites the children to pick what the story just called the silly thing, which blurs the middle way the child found.",
+    "fix": "p23 and the Vote 1 copy must agree. Either the middle-way line must not rule out a short, careful move, or the vote copy must make clear the move is short and careful rather than going on in the dark."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.blocks.json",
+    "where": "CLARITY: p38's opening 'Sleep now.' has no speaker. Also the variant one_child_she_version, jar.p2 ('A robin followed them') followed by 'Robin read every milestone'.",
+    "problem": "After the split, 'Sleep now.' starts its own paragraph right after '\"Who?\" whispered Alfie.' A reader can't tell whether Ember, Hugh or the narrator says it, and the canon gives no speaker tag either. Separately, in the one-child 'she' version, the placeholder child 'Robin' sits beside 'a robin' in the jar default, so a listener hears the bird as the child. A real child named Robin (or Rose, Hazel and similar) would hit the same problem, and the kit's alternate-name rule covers only cast names.",
+    "fix": "The speaker of 'Sleep now.' must be clear to a listener. The words are the canon's, so this is Jon's call. The variant check needs a rule for child names that match common nouns in the reviewed text, and the render placeholder must not be one of those words."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/s1-ch03.md",
+    "where": "SHOULD (minor, production only): pages 1, 2 and 5; p4, p26, p33, p34; picture 11",
+    "problem": "Pages 2 (p8 to p14) and 5 (p30 to p33) have no sentence of four words or fewer. p26 has five sentences. The narrator uses 'you' three times (p4, p33, p34), and in p34 'hands go on your knees' reads as an instruction to the listener. Pages 1 (ending at p7) and 5 (ending at p33) don't end on a pull forward. Picture 11's text says 'Everyone made a wall', but its image and the master have the youngest asleep in Ember's tail.",
+    "fix": "Settle each item on the chapter's card in the review packet, per bible \u00a73's Should items. These don't block the chapter."
+   },
+   {
+    "severity": "low",
+    "file": "/Users/jontidd/code/virtueforge-redesign/docs/redesign/story/season-1/source/s1-ch03.json",
+    "where": "flags_for_jon, flags 3 and 8 (mirrored in s1-ch03.md). This is not a checker rule; it affects the accuracy of Jon's review packet.",
+    "problem": "Flag 3 says the flame 'stands up, stretches and looks about', and flag 8 lists the line 'And this fire stays awake till you're home.' Neither is in the chapter: p4 ends 'glowed like a jar of honey', and p33 has 'by a fire that stayed awake'. Jon would be reviewing lines that don't exist.",
+    "fix": "Correct flags 3 and 8 in the source JSON so they describe the text as drafted, then render again."
+   }
+  ]
+ }
+}

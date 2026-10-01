@@ -1,526 +1,888 @@
 {
- "status": "ok",
- "chapter": 1,
- "pictures": [
-  {
-   "n": 1,
-   "pinned_to": "p1",
-   "text": "[[tierc:legend|default:none]] One by one, the lights of Candlemere were going out. Soon the only light left was [[block:ch1.p1.gp]]. Then something tapped on the glass: *tap, tap, tap.*",
-   "roles": [],
-   "image": {
-    "setting": "the cottage window at night, over the still mere and dark cottages",
-    "light": "hearth glow behind; the Moot Hall lamp a tiny seed",
-    "figures": [
-     {
-      "who": "lead",
-      "position": "center, at the window",
-      "doing": "hands on the sill",
-      "feeling_shown": "very still, head tilted"
-     },
-     {
-      "who": "grandparent",
-      "position": "right, by the hearth",
-      "doing": "knitting",
-      "feeling_shown": "calm"
-     }
-    ],
-    "props": [
-     "the Moot Hall lamp"
-    ],
-    "ember": "just one small wet red ear at the corner of the glass",
-    "framing": "wide",
-    "comfort_in_frame": "the grandparent close by"
-   }
+  "status": "ok",
+  "chapter": 1,
+  "pictures": [
+    {
+      "n": 1,
+      "pinned_to": "p1",
+      "text": "[[tierc:legend|default:none]] One by one, the lights of Candlemere were going out. Soon the only light left was [[block:ch1.p1.gp]]. Then something tapped on the glass: *tap, tap, tap.*",
+      "roles": [],
+      "image": {
+        "setting": "the cottage window at night, over the still mere and dark cottages",
+        "light": "hearth glow behind; the Moot Hall lamp a tiny seed",
+        "figures": [
+          {
+            "who": "lead",
+            "position": "center, at the window",
+            "doing": "hands on the sill",
+            "feeling_shown": "very still, head tilted"
+          },
+          {
+            "who": "grandparent",
+            "position": "right, by the hearth",
+            "doing": "knitting",
+            "feeling_shown": "calm"
+          }
+        ],
+        "props": [
+          "the Moot Hall lamp"
+        ],
+        "ember": "just one small wet red ear at the corner of the glass",
+        "framing": "wide",
+        "comfort_in_frame": "the grandparent close by"
+      }
+    },
+    {
+      "n": 2,
+      "pinned_to": "p2",
+      "text": "[[child:lead]] pulled back the curtain, and there sat a wet red fox. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\"",
+      "roles": [],
+      "image": {
+        "setting": "the low window from inside, the curtain pulled back",
+        "light": "the hearth fire, low and orange; the window dark blue",
+        "figures": [
+          {
+            "who": "lead",
+            "position": "left",
+            "doing": "holding the curtain open with both hands",
+            "feeling_shown": "mouth a round O, eyebrows up"
+          }
+        ],
+        "props": [
+          "the curtain",
+          "a leaf stuck to one of the fox's ears"
+        ],
+        "ember": "sitting very politely on the sill outside, wet to the ears, one paw lifted in greeting",
+        "framing": "close",
+        "comfort_in_frame": "the hearth glow warm on the child"
+      }
+    },
+    {
+      "n": 3,
+      "pinned_to": "p5",
+      "text": "[[child:lead]] looked back. [[block:pic1.p5.gp]] [[block:ch1.p6.gp]]",
+      "roles": [],
+      "image": {
+        "setting": "the cottage room, window left, hearth right",
+        "light": "the hearth fire, low and orange; the window dark blue",
+        "figures": [
+          {
+            "who": "eldest",
+            "position": "left",
+            "doing": "beside the lead",
+            "feeling_shown": "watching the fox"
+          },
+          {
+            "who": "middle",
+            "position": "left, behind",
+            "doing": "peering",
+            "feeling_shown": "puzzled frown"
+          },
+          {
+            "who": "lead",
+            "position": "center",
+            "doing": "looking back at the grandparent",
+            "feeling_shown": "eyebrows asking"
+          },
+          {
+            "who": "grandparent",
+            "position": "right",
+            "doing": "nodding",
+            "feeling_shown": "smiling at the fox"
+          }
+        ],
+        "props": [
+          "the window"
+        ],
+        "ember": "on the sill outside, dripping, ears drooping",
+        "framing": "wide",
+        "comfort_in_frame": "the grandparent's nod",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "lead",
+              "position": "center, at the window",
+              "doing": "looking back at the grandparent",
+              "feeling_shown": "eyebrows asking"
+            },
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "nodding",
+              "feeling_shown": "smiling at the fox"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "beside the lead",
+              "feeling_shown": "watching the fox"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "looking back at the grandparent",
+              "feeling_shown": "eyebrows asking"
+            },
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "nodding",
+              "feeling_shown": "smiling at the fox"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "beside the lead",
+              "feeling_shown": "watching the fox"
+            },
+            {
+              "who": "middle2",
+              "position": "left, behind",
+              "doing": "standing on tiptoe to see",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "middle",
+              "position": "left, behind",
+              "doing": "peering",
+              "feeling_shown": "puzzled frown"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "looking back at the grandparent",
+              "feeling_shown": "eyebrows asking"
+            },
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "nodding",
+              "feeling_shown": "smiling at the fox"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 4,
+      "pinned_to": "p7",
+      "text": "[[block:ch1.p7]] Then [[child:eldest]] lifted the latch. In came the fox, and shook dry all over the hearth-rug.",
+      "roles": [
+        "youngest_act"
+      ],
+      "image": {
+        "setting": "the open window and the hearth-rug",
+        "light": "the hearth fire, low and orange; the window dark blue",
+        "figures": [
+          {
+            "who": "eldest",
+            "position": "left",
+            "doing": "lifting the latch",
+            "feeling_shown": "smiling"
+          },
+          {
+            "who": "lead",
+            "position": "center",
+            "doing": "one hand out, welcoming the fox",
+            "feeling_shown": "chin up"
+          },
+          {
+            "who": "middle",
+            "position": "right",
+            "doing": "hands up against the drips",
+            "feeling_shown": "laughing, eyes shut"
+          },
+          {
+            "who": "grandparent",
+            "position": "back",
+            "doing": "watching",
+            "feeling_shown": "smiling"
+          }
+        ],
+        "props": [
+          "the latch",
+          "the hearth-rug"
+        ],
+        "ember": "mid-shake on the hearth-rug, fur puffed out, drips flying",
+        "framing": "middle",
+        "comfort_in_frame": "the grandparent close behind",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "lead",
+              "position": "center, by the window",
+              "doing": "lifting the latch with one hand, the other held out to welcome the fox",
+              "feeling_shown": "chin up, smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "lifting the latch",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "one hand out, welcoming the fox",
+              "feeling_shown": "chin up"
+            },
+            {
+              "who": "grandparent",
+              "position": "back",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "lifting the latch",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "one hand out, welcoming the fox",
+              "feeling_shown": "chin up"
+            },
+            {
+              "who": "middle",
+              "position": "right",
+              "doing": "hands up against the drips",
+              "feeling_shown": "laughing, eyes shut"
+            },
+            {
+              "who": "middle2",
+              "position": "far right",
+              "doing": "ducking the drips",
+              "feeling_shown": "giggling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 5,
+      "pinned_to": "p10",
+      "text": "\"My name is Ember,\" said the fox. \"And the beacon on Wardlow has gone out.\" Then Ember spread her magnificent tail by the fire to dry.",
+      "roles": [],
+      "image": {
+        "setting": "the hearth-rug, a step back from the hearth",
+        "light": "the hearth fire, low and orange",
+        "figures": [
+          {
+            "who": "eldest",
+            "position": "left",
+            "doing": "sitting",
+            "feeling_shown": "listening hard"
+          },
+          {
+            "who": "middle",
+            "position": "center",
+            "doing": "kneeling",
+            "feeling_shown": "eyes wide"
+          },
+          {
+            "who": "lead",
+            "position": "right",
+            "doing": "cross-legged",
+            "feeling_shown": "leaning in"
+          },
+          {
+            "who": "grandparent",
+            "position": "right, in the chair nearest the fire",
+            "doing": "leaning in to listen",
+            "feeling_shown": "calm"
+          }
+        ],
+        "props": [
+          "steam rising from the fox's tail"
+        ],
+        "ember": "sitting tall between the children and the fire, damp tail spread to dry",
+        "framing": "wide",
+        "comfort_in_frame": "everyone close on the rug",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "lead",
+              "position": "left",
+              "doing": "cross-legged",
+              "feeling_shown": "leaning in"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in the chair nearest the fire",
+              "doing": "leaning in to listen",
+              "feeling_shown": "calm"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "sitting",
+              "feeling_shown": "listening hard"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "cross-legged",
+              "feeling_shown": "leaning in"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in the chair nearest the fire",
+              "doing": "leaning in to listen",
+              "feeling_shown": "calm"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "sitting",
+              "feeling_shown": "listening hard"
+            },
+            {
+              "who": "middle",
+              "position": "center left",
+              "doing": "kneeling",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "hugging knees",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "lead",
+              "position": "center right",
+              "doing": "cross-legged",
+              "feeling_shown": "leaning in"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in the chair nearest the fire",
+              "doing": "leaning in to listen",
+              "feeling_shown": "calm"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 6,
+      "pinned_to": "p21",
+      "text": "Then Ember's tummy went *rrrumble*. There was a cheese rind in the pantry. But the pantry candle had given one last flicker and gone out.",
+      "roles": [],
+      "image": {
+        "setting": "the hearth-rug, with the pantry door open at the back",
+        "light": "firelight on the rug; the pantry doorway grey and dim",
+        "figures": [
+          {
+            "who": "lead",
+            "position": "left",
+            "doing": "looking toward the pantry door",
+            "feeling_shown": "one hand on tummy"
+          },
+          {
+            "who": "grandparent",
+            "position": "right",
+            "doing": "smiling at the rumble",
+            "feeling_shown": "kind, amused eyes"
+          }
+        ],
+        "props": [
+          "the open pantry door",
+          "a cold, unlit candle stub on the pantry shelf"
+        ],
+        "ember": "looking down at her own rumbling tummy with great dignity, ears up",
+        "framing": "middle",
+        "comfort_in_frame": "the grandparent close by, the fire warm"
+      }
+    },
+    {
+      "n": 7,
+      "pinned_to": "p23",
+      "text": "The pantry was as dark as the inside of a boot. \"I'll help!\" said [[child:lead]], with a wobbly tummy. [[block:pic1.wait.gp]] Then [[child:lead]] held an invisible lantern up high: \"Lantern up!\"",
+      "roles": [],
+      "image": {
+        "setting": "the pantry doorway, the dim shelves inside",
+        "light": "firelight from behind; the pantry grey, not black",
+        "figures": [
+          {
+            "who": "grandparent",
+            "position": "left, standing in the doorway",
+            "doing": "waiting",
+            "feeling_shown": "smiling, sure"
+          },
+          {
+            "who": "lead",
+            "position": "center, on the threshold",
+            "doing": "one empty hand held high, as if holding a lantern",
+            "feeling_shown": "knees a little bent, a small brave frown"
+          }
+        ],
+        "props": [
+          "the pantry doorway",
+          "a cheese rind on the shelf"
+        ],
+        "ember": "sitting just behind the child, nose lifted hopefully",
+        "framing": "middle",
+        "comfort_in_frame": "the grandparent right there in the doorway"
+      }
+    },
+    {
+      "n": 8,
+      "pinned_to": "p26",
+      "text": "Back came [[child:lead]] with the rind in both hands. Ember ate it in one gulp. \"I will not ask for another,\" said Ember.",
+      "roles": [
+        "pause_and_ask"
+      ],
+      "image": {
+        "setting": "the hearth-rug by the pantry door",
+        "light": "the hearth fire, low and orange; the window dark blue",
+        "figures": [
+          {
+            "who": "lead",
+            "position": "left",
+            "doing": "hands open and empty after giving the rind",
+            "feeling_shown": "proud grin"
+          },
+          {
+            "who": "grandparent",
+            "position": "back, in the pantry doorway",
+            "doing": "watching",
+            "feeling_shown": "smiling"
+          }
+        ],
+        "props": [
+          "the pantry door, ajar"
+        ],
+        "ember": "bowing rather grandly, one eye still on the pantry door",
+        "framing": "middle",
+        "comfort_in_frame": "the firelight on them all"
+      }
+    },
+    {
+      "n": 9,
+      "pinned_to": "p33",
+      "text": "\"All the fires are one family,\" said Ember, \"and they are falling asleep.\" [[block:ch1.asker]] counted the dark windows, one finger for each. \"One, two, three, four, lots,\" said Ember.",
+      "roles": [],
+      "image": {
+        "setting": "the low window: the dark village and the still mere below",
+        "light": "hearth glow behind; the cottage's lit window reflected in the mere, square and framed",
+        "figures": [
+          {
+            "who": "middle",
+            "position": "left",
+            "doing": "counting on fingers at the glass",
+            "feeling_shown": "puzzled frown"
+          },
+          {
+            "who": "lead",
+            "position": "center",
+            "doing": "one hand on the fox's warm side",
+            "feeling_shown": "gentle"
+          }
+        ],
+        "props": [
+          "dark cottages"
+        ],
+        "ember": "front paws on the sill, counting along, ears a little flat",
+        "framing": "middle",
+        "comfort_in_frame": "a hand on Ember; the fire behind",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "lead",
+              "position": "center, at the glass",
+              "doing": "counting on one hand, the other on the fox's side",
+              "feeling_shown": "puzzled frown"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "counting on fingers at the glass",
+              "feeling_shown": "puzzled frown"
+            },
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "one hand on the fox's warm side",
+              "feeling_shown": "gentle"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 10,
+      "pinned_to": "p41",
+      "text": "[[block:pic1.clue.gp]] [[block:pic1.note]]",
+      "roles": [],
+      "image": {
+        "setting": "the hearth and the mantel",
+        "light": "firelight brightening as a new log catches",
+        "figures": [
+          {
+            "who": "eldest",
+            "position": "left, by the mantel",
+            "doing": "holding the parents' folded note",
+            "feeling_shown": "eyebrows up, noticing"
+          },
+          {
+            "who": "grandparent",
+            "position": "right, by the fire",
+            "doing": "putting another log on",
+            "feeling_shown": "a small, secret smile"
+          }
+        ],
+        "props": [
+          "a folded note with no readable words",
+          "a log"
+        ],
+        "ember": "sitting beside the grandparent, head tilted, like an old friend",
+        "framing": "middle",
+        "comfort_in_frame": "the grandparent's smile, the fire growing"
+      }
+    },
+    {
+      "n": 11,
+      "pinned_to": "p44",
+      "text": "Then the fire gave a flicker, low and blue. Everyone joined in with the old banking words: \"Sleep low, stay warm, wake bright.\" And the fire settled down like a cat on a cushion.",
+      "roles": [],
+      "image": {
+        "setting": "the hearth, the children on the rug a step back",
+        "light": "the fire dipping blue, then warm orange",
+        "figures": [
+          {
+            "who": "grandparent",
+            "position": "left, nearest the fire",
+            "doing": "banking the coals with the shovel",
+            "feeling_shown": "calm"
+          },
+          {
+            "who": "eldest",
+            "position": "center left",
+            "doing": "saying the words",
+            "feeling_shown": "steady"
+          },
+          {
+            "who": "middle",
+            "position": "center right",
+            "doing": "saying the words",
+            "feeling_shown": "leaning close"
+          },
+          {
+            "who": "lead",
+            "position": "right",
+            "doing": "saying them loudest",
+            "feeling_shown": "mouth wide"
+          }
+        ],
+        "props": [
+          "the hearth shovel"
+        ],
+        "ember": "ears forward, watching the flame settle",
+        "framing": "middle",
+        "comfort_in_frame": "everyone together, the grandparent between them and the fire",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "grandparent",
+              "position": "left, nearest the fire",
+              "doing": "banking the coals with the shovel",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "lead",
+              "position": "right",
+              "doing": "saying them loudest",
+              "feeling_shown": "mouth wide"
+            }
+          ],
+          "2": [
+            {
+              "who": "grandparent",
+              "position": "left, nearest the fire",
+              "doing": "banking the coals with the shovel",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "saying the words",
+              "feeling_shown": "steady"
+            },
+            {
+              "who": "lead",
+              "position": "right",
+              "doing": "saying them loudest",
+              "feeling_shown": "mouth wide"
+            }
+          ],
+          "4": [
+            {
+              "who": "grandparent",
+              "position": "left, nearest the fire",
+              "doing": "banking the coals with the shovel",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "eldest",
+              "position": "center left",
+              "doing": "saying the words",
+              "feeling_shown": "steady"
+            },
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "saying the words",
+              "feeling_shown": "leaning close"
+            },
+            {
+              "who": "middle2",
+              "position": "center right",
+              "doing": "saying the words",
+              "feeling_shown": "leaning close"
+            },
+            {
+              "who": "lead",
+              "position": "right",
+              "doing": "saying them loudest",
+              "feeling_shown": "mouth wide"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 12,
+      "pinned_to": "p46",
+      "text": "[[block:ch1.quilt]], and everyone slept by the fire. Ember curled round [[child:lead]] like a warm red scarf. Somebody would have to carry a light all the way to Wardlow. But who?",
+      "roles": [
+        "comfort_final"
+      ],
+      "image": {
+        "setting": "the inglenook at night, a quilt on the rug well back from the fire",
+        "light": "the banked fire, low and golden",
+        "figures": [
+          {
+            "who": "eldest",
+            "position": "left",
+            "doing": "eyes just closing",
+            "feeling_shown": "peaceful"
+          },
+          {
+            "who": "middle",
+            "position": "center",
+            "doing": "asleep",
+            "feeling_shown": "peaceful"
+          },
+          {
+            "who": "lead",
+            "position": "right",
+            "doing": "asleep",
+            "feeling_shown": "smiling"
+          },
+          {
+            "who": "grandparent",
+            "position": "back, in the chair",
+            "doing": "dozing under a shawl",
+            "feeling_shown": "content"
+          }
+        ],
+        "props": [
+          "the quilt"
+        ],
+        "ember": "curled round the lead like a red scarf, tail across the quilt",
+        "framing": "wide",
+        "comfort_in_frame": "every child asleep together on one quilt",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "lead",
+              "position": "center",
+              "doing": "eyes just closing",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair",
+              "doing": "dozing under a shawl",
+              "feeling_shown": "content"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "eyes just closing",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "lead",
+              "position": "right",
+              "doing": "asleep",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair",
+              "doing": "dozing under a shawl",
+              "feeling_shown": "content"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "eyes just closing",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "middle",
+              "position": "center left",
+              "doing": "asleep",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "middle2",
+              "position": "center right",
+              "doing": "asleep",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "lead",
+              "position": "right",
+              "doing": "asleep",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair",
+              "doing": "dozing under a shawl",
+              "feeling_shown": "content"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pause_and_ask_simple": {
+    "picture": 8,
+    "question": "Why do you think [[child:lead]] let the cold fox in?",
+    "for_the_youngest": {
+      "talk": "What did [[child:lead]] bring the fox?",
+      "do_it": "Show me how [[child:lead]] held up the invisible lantern."
+    }
   },
-  {
-   "n": 2,
-   "pinned_to": "p2",
-   "text": "[[child:lead]] pulled back the curtain, and there sat a wet red fox. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\"",
-   "roles": [],
-   "image": {
-    "setting": "the low window from inside, the curtain pulled back",
-    "light": "the hearth fire, low and orange; the window dark blue",
-    "figures": [
-     {
-      "who": "lead",
-      "position": "left",
-      "doing": "holding the curtain open with both hands",
-      "feeling_shown": "mouth a round O, eyebrows up"
-     }
-    ],
-    "props": [
-     "the curtain",
-     "a leaf stuck to one of the fox's ears"
-    ],
-    "ember": "sitting very politely on the sill outside, wet to the ears, one paw lifted in greeting",
-    "framing": "close",
-    "comfort_in_frame": "the hearth glow warm on the child"
-   }
-  },
-  {
-   "n": 3,
-   "pinned_to": "p5",
-   "text": "[[child:lead]] looked back. [[block:pic1.p5.gp]] [[block:ch1.p6.gp]]",
-   "roles": [],
-   "image": {
-    "setting": "the cottage room, window left, hearth right",
-    "light": "the hearth fire, low and orange; the window dark blue",
-    "figures": [
-     {
-      "who": "eldest",
-      "position": "left",
-      "doing": "beside the lead",
-      "feeling_shown": "watching the fox"
-     },
-     {
-      "who": "middle",
-      "position": "left, behind",
-      "doing": "peering",
-      "feeling_shown": "puzzled frown"
-     },
-     {
-      "who": "lead",
-      "position": "center",
-      "doing": "looking back at the grandparent",
-      "feeling_shown": "eyebrows asking"
-     },
-     {
-      "who": "grandparent",
-      "position": "right",
-      "doing": "nodding",
-      "feeling_shown": "smiling at the fox"
-     }
-    ],
-    "props": [
-     "the window"
-    ],
-    "ember": "on the sill outside, dripping, ears drooping",
-    "framing": "wide",
-    "comfort_in_frame": "the grandparent's nod"
-   }
-  },
-  {
-   "n": 4,
-   "pinned_to": "p7",
-   "text": "[[block:ch1.p7]] Then [[child:eldest]] lifted the latch. In came the fox, and shook dry all over the hearth-rug.",
-   "roles": [
-    "youngest_act"
-   ],
-   "image": {
-    "setting": "the open window and the hearth-rug",
-    "light": "the hearth fire, low and orange; the window dark blue",
-    "figures": [
-     {
-      "who": "eldest",
-      "position": "left",
-      "doing": "lifting the latch",
-      "feeling_shown": "smiling"
-     },
-     {
-      "who": "lead",
-      "position": "center",
-      "doing": "one hand out, welcoming the fox",
-      "feeling_shown": "chin up"
-     },
-     {
-      "who": "middle",
-      "position": "right",
-      "doing": "hands up against the drips",
-      "feeling_shown": "laughing, eyes shut"
-     },
-     {
-      "who": "grandparent",
-      "position": "back",
-      "doing": "watching",
-      "feeling_shown": "smiling"
-     }
-    ],
-    "props": [
-     "the latch",
-     "the hearth-rug"
-    ],
-    "ember": "mid-shake, fur puffed out, drips flying",
-    "framing": "middle",
-    "comfort_in_frame": "the grandparent close behind"
-   }
-  },
-  {
-   "n": 5,
-   "pinned_to": "p10",
-   "text": "\"My name is Ember,\" said the fox. \"And the beacon on Wardlow has gone out.\" Then Ember spread her magnificent tail by the fire to dry.",
-   "roles": [],
-   "image": {
-    "setting": "by the hearth, everyone on the hearth-rug",
-    "light": "the hearth fire, low and orange; the window dark blue",
-    "figures": [
-     {
-      "who": "eldest",
-      "position": "left",
-      "doing": "sitting on the rug",
-      "feeling_shown": "listening hard"
-     },
-     {
-      "who": "middle",
-      "position": "center",
-      "doing": "kneeling",
-      "feeling_shown": "eyes wide"
-     },
-     {
-      "who": "lead",
-      "position": "right",
-      "doing": "sitting cross-legged",
-      "feeling_shown": "hands in lap, leaning in"
-     },
-     {
-      "who": "grandparent",
-      "position": "back, in the chair",
-      "doing": "leaning forward to listen",
-      "feeling_shown": "calm"
-     }
-    ],
-    "props": [
-     "the hearth",
-     "a little steam rising from the fox's tail"
-    ],
-    "ember": "sitting tall and grand, her damp tail spread out toward the fire",
-    "framing": "wide",
-    "comfort_in_frame": "everyone close together on the rug"
-   }
-  },
-  {
-   "n": 6,
-   "pinned_to": "p21",
-   "text": "Then Ember's tummy went *rrrumble*. There was a cheese rind in the pantry. But the pantry candle had given one last flicker and gone out.",
-   "roles": [],
-   "image": {
-    "setting": "the hearth-rug, with the pantry door open at the back",
-    "light": "firelight on the rug; the pantry doorway grey and dim",
-    "figures": [
-     {
-      "who": "lead",
-      "position": "left",
-      "doing": "looking toward the pantry door",
-      "feeling_shown": "one hand on tummy"
-     },
-     {
-      "who": "grandparent",
-      "position": "right",
-      "doing": "smiling at the rumble",
-      "feeling_shown": "kind, amused eyes"
-     }
-    ],
-    "props": [
-     "the open pantry door",
-     "a cold, unlit candle stub on the pantry shelf"
-    ],
-    "ember": "looking up at the ceiling, as if the rumble came from somewhere else",
-    "framing": "middle",
-    "comfort_in_frame": "the grandparent close by, the fire warm"
-   }
-  },
-  {
-   "n": 7,
-   "pinned_to": "p23",
-   "text": "The pantry was as dark as the inside of a boot. \"I'll help!\" said [[child:lead]], with a wobbly tummy. Then [[child:lead]] held an invisible lantern up high: \"Lantern up!\"",
-   "roles": [],
-   "image": {
-    "setting": "the pantry doorway, the dim shelves inside",
-    "light": "firelight from behind; the pantry grey, not black",
-    "figures": [
-     {
-      "who": "grandparent",
-      "position": "left, standing in the doorway",
-      "doing": "waiting",
-      "feeling_shown": "smiling, sure"
-     },
-     {
-      "who": "lead",
-      "position": "center, on the threshold",
-      "doing": "one empty hand held high, as if holding a lantern",
-      "feeling_shown": "knees a little bent, a small brave frown"
-     }
-    ],
-    "props": [
-     "the pantry doorway",
-     "a cheese rind on the shelf"
-    ],
-    "ember": "sitting just behind the child, nose lifted hopefully",
-    "framing": "middle",
-    "comfort_in_frame": "the grandparent right there in the doorway"
-   }
-  },
-  {
-   "n": 8,
-   "pinned_to": "p26",
-   "text": "Back came [[child:lead]] with the rind in both hands. Ember ate it in one gulp. \"I couldn't possibly have another,\" said Ember.",
-   "roles": [
-    "pause_and_ask"
-   ],
-   "image": {
-    "setting": "the hearth-rug by the pantry door",
-    "light": "the hearth fire, low and orange; the window dark blue",
-    "figures": [
-     {
-      "who": "lead",
-      "position": "left",
-      "doing": "hands open and empty after giving the rind",
-      "feeling_shown": "proud grin"
-     },
-     {
-      "who": "grandparent",
-      "position": "back, in the pantry doorway",
-      "doing": "watching",
-      "feeling_shown": "smiling"
-     }
-    ],
-    "props": [
-     "the pantry door, ajar"
-    ],
-    "ember": "bowing rather grandly, one eye still on the pantry door",
-    "framing": "middle",
-    "comfort_in_frame": "the firelight on them all"
-   }
-  },
-  {
-   "n": 9,
-   "pinned_to": "p33",
-   "text": "\"All the fires in the Westering are one family,\" said Ember. \"And one by one, the fires are falling asleep.\" [[block:ch1.asker]] counted the dark windows, one finger for each. \"One, two, three, four, lots,\" said Ember.",
-   "roles": [],
-   "image": {
-    "setting": "the low window: the dark village below and the black mere",
-    "light": "the hearth fire behind them; outside, only the cottage's own window shining in the mere",
-    "figures": [
-     {
-      "who": "middle",
-      "position": "left",
-      "doing": "counting on fingers at the glass",
-      "feeling_shown": "puzzled frown"
-     },
-     {
-      "who": "lead",
-      "position": "center",
-      "doing": "one hand on the fox's warm side",
-      "feeling_shown": "gentle"
-     }
-    ],
-    "props": [
-     "dark cottages",
-     "the mere holding one lit window"
-    ],
-    "ember": "front paws on the sill, counting along, ears a little flat",
-    "framing": "middle",
-    "comfort_in_frame": "the child's hand on Ember; the fire bright behind"
-   }
-  },
-  {
-   "n": 10,
-   "pinned_to": "p38",
-   "text": "[[child:eldest]] noticed something: [[block:ch1.p25.gp]] [[block:ch1.p27.gp]]",
-   "roles": [],
-   "image": {
-    "setting": "the hearth",
-    "light": "firelight brightening as a new log catches",
-    "figures": [
-     {
-      "who": "eldest",
-      "position": "left",
-      "doing": "looking from the fox to the grandparent",
-      "feeling_shown": "eyebrows up, noticing"
-     },
-     {
-      "who": "grandparent",
-      "position": "right",
-      "doing": "putting another log on the fire",
-      "feeling_shown": "a small, secret smile"
-     }
-    ],
-    "props": [
-     "a log",
-     "the hearth"
-    ],
-    "ember": "sitting beside the grandparent, head tilted, like an old friend",
-    "framing": "middle",
-    "comfort_in_frame": "the grandparent's smile, the fire growing"
-   }
-  },
-  {
-   "n": 11,
-   "pinned_to": "p44",
-   "text": "Then the fire gave a flicker, low and blue. Everyone joined in with the old banking words: \"Sleep low, stay warm, wake bright.\" And the fire settled down like a cat on a cushion.",
-   "roles": [],
-   "image": {
-    "setting": "the hearth, close",
-    "light": "the fire dipping blue, then settling warm orange",
-    "figures": [
-     {
-      "who": "grandparent",
-      "position": "left",
-      "doing": "tucking ash over the coals with the hearth shovel",
-      "feeling_shown": "calm, unhurried"
-     },
-     {
-      "who": "eldest",
-      "position": "center left, on the rug",
-      "doing": "saying the words",
-      "feeling_shown": "steady"
-     },
-     {
-      "who": "middle",
-      "position": "center right",
-      "doing": "saying the words",
-      "feeling_shown": "leaning close to the others"
-     },
-     {
-      "who": "lead",
-      "position": "right",
-      "doing": "saying the words loudest",
-      "feeling_shown": "mouth wide"
-     }
-    ],
-    "props": [
-     "the hearth shovel",
-     "the banked coals"
-    ],
-    "ember": "ears forward, watching the flame settle",
-    "framing": "close",
-    "comfort_in_frame": "everyone together on the rug round the grandparent"
-   }
-  },
-  {
-   "n": 12,
-   "pinned_to": "p46",
-   "text": "[[block:ch1.quilt]], and everyone slept by the fire. Ember curled round [[child:lead]] like a warm red scarf. Somebody would have to carry a light all the way to Wardlow. But who?",
-   "roles": [
-    "comfort_final"
-   ],
-   "image": {
-    "setting": "the inglenook at night, a quilt on the hearth-rug",
-    "light": "the banked fire, low and golden",
-    "figures": [
-     {
-      "who": "eldest",
-      "position": "left",
-      "doing": "eyes just closing, head on the quilt",
-      "feeling_shown": "peaceful"
-     },
-     {
-      "who": "middle",
-      "position": "center",
-      "doing": "asleep",
-      "feeling_shown": "peaceful"
-     },
-     {
-      "who": "lead",
-      "position": "right",
-      "doing": "asleep",
-      "feeling_shown": "smiling in sleep"
-     },
-     {
-      "who": "grandparent",
-      "position": "back, in the chair",
-      "doing": "dozing under a shawl",
-      "feeling_shown": "content"
-     }
-    ],
-    "props": [
-     "the quilt",
-     "the banked fire"
-    ],
-    "ember": "curled round the lead like a red scarf, her tail over the middle child's toes",
-    "framing": "wide",
-    "comfort_in_frame": "everyone asleep together by the fire"
-   }
-  }
- ],
- "pause_and_ask_simple": {
-  "picture": 8,
-  "question": "Why do you think [[child:lead]] let the cold fox in?",
-  "for_the_youngest": {
-   "talk": "Where did the fox shake herself dry?",
-   "do_it": "Show me how the fox shook herself dry."
-  }
- },
- "rich_word": "flicker",
- "word_count": 327,
- "self_check": [
-  {
-   "item": "same story",
-   "ok": true,
-   "note": "Same events and choices as the master, in its order: the lamps going out, the tap, the fox's greeting, the youngest looking back and the grandparent's nod, \"Come in, fox\", the latch, Ember's name and news, the dark pantry, \"I'll help!\" and \"Lantern up!\", the rind fetched, the fires as one family, the grandparent understanding Ember (the canon's clue), the banking words, sleep by the fire and the goal hook. Nothing new happens."
-  },
-  {
-   "item": "length",
-   "ok": true,
-   "note": "327 words for the sample family over 12 pictures; 326 to 356 across every family the checker builds (1 to 4 children, every grandparent and parents setup, long names). Pictures 9 and 12 carry four sentences; the rest carry two or three."
-  },
-  {
-   "item": "sentences",
-   "ok": true,
-   "note": "No sentence over 15 words in any family version. The longest are the grandparent's reviewed line in picture 10 (ch1.p27.gp, 15 words) and picture 10's clue line with two grandparents and a three-word name (15). Picture 11's banking-words line (14) and picture 12's quilt line (13) run over the 12-word Should."
-  },
-  {
-   "item": "pinning",
-   "ok": true,
-   "note": "Every picture is pinned to one master paragraph. youngest_act is picture 4 on p7 (the key act), pause_and_ask is picture 8 on p26 (the Pause & ask sits after p26), comfort_final is picture 12 on p46 (last). The youngest's talk and do-it prompts are about the shake on the hearth-rug in picture 4."
-  },
-  {
-   "item": "legend slot",
-   "ok": true,
-   "note": "Picture 1 starts with the legend slot (tierc:legend, default none)."
-  },
-  {
-   "item": "Pause & ask (simplified)",
-   "ok": true,
-   "note": "\"Why do you think Clara let the cold fox in?\" for the sample family (10 words), from the master's question; the youngest's prompts are the master's, word for word."
-  },
-  {
-   "item": "week's phrase and the youngest's act",
-   "ok": true,
-   "note": "\"Lantern up!\" with the invisible lantern held high (picture 7); \"Come in, fox\" through the master's own access block ch1.p7 (picture 4)."
-  },
-  {
-   "item": "rich word",
-   "ok": true,
-   "note": "flicker: said in pictures 6 and 11, shown in picture 11 (the fire dipping blue)."
-  },
-  {
-   "item": "sound words",
-   "ok": true,
-   "note": "Two: tap and rrrumble."
-  },
-  {
-   "item": "one speaker a picture",
-   "ok": true,
-   "note": "One speaker in every picture. check-chapter.py warns on picture 10 because \"every word the fox said\" (inside ch1.p25.gp) reads to code as a second speaker; only the grandparent speaks there."
-  },
-  {
-   "item": "echo",
-   "ok": true,
-   "note": "Shape only: the stranger at the window is let in, dried by the fire and fed, and nobody asks her anything first."
-  },
-  {
-   "item": "fear and comfort",
-   "ok": true,
-   "note": "Every tense picture has comfort in its frame: the grandparent by the hearth at the tapping window (1), the grandparent beside the dark pantry (6, 7), everyone together at the blue flicker (11). The last picture is everyone asleep by the fire."
-  },
-  {
-   "item": "pronouns and markers",
-   "ok": true,
-   "note": "No child, grandparent or parents subject pronoun outside a block; every grandparent mention is a reviewed block (ch1.p1.gp, pic1.p5.gp, ch1.p6.gp, ch1.p25.gp, ch1.p27.gp, ch1.quilt); the middle slot only through the family-size block ch1.asker. No new block is needed."
-  },
-  {
-   "item": "image descriptions",
-   "ok": true,
-   "note": "All 80 words or fewer. No child's hair, skin, clothes or glasses. Nothing from the never-drawn list: no flame near a child (the pantry candle is a cold stub, the grandparent banks the fire), no readable words, no child alone in the dark."
-  }
- ],
- "flags_for_jon": [
-  "Left out of the picture-book telling to fit 12 pictures, four sentences a picture and 15 words a sentence: the \"Foxes don't talk\" exchange, \"You've got your grandmother's tail\", the steaming (\"Foxes glow\") laugh, \"Food first. Questions after.\" as a line (the echo stays as a shape), the pull at the pantry door (a Monday Should in the master), \"Lots isn't a number\", the grandparent's \"not tonight\" lines, and the parents' note with Beacon Night (children once carried the flame up Wardlow). The note is the one I'd put back if you want it: it would have to take another picture's place, most easily picture 5's second sentence or picture 6.",
-  "\"Grandma, the fox is cold!\" (the reviewed picture block pic1.p5.gp) in place of the canon's \"Grandma, she's cold!\". The canon line is word for word in the master, where canon text wins. Canon section 8 holds no picture-book text for Chapter 1, so here the kit's Ember-pronoun rule applies: the lead's name is in the sentence before, so the fox is named.",
-  "Rich word: \"flicker\", the Part 1 week word that goes home on the fridge card, rather than the master's \"hush\" or \"bedraggled\", so neither of those appears in this telling.",
-  "Figures by slot. \"lead\" is the chapter's lead from lead_by_size (the youngest in families of two to four, the eldest for an only child). A figure whose slot a family doesn't have is left out. Picture 9's counter is whoever the ch1.asker block names (the middle child, or the eldest in families of one or two), so the illustration step should draw \"middle\" there the same way. Suggest prompt 7b states this rule.",
-  "Access. \"Come in, fox\" uses the master's access block ch1.p7, so signing and talker children get their own words, and \"Lantern up!\" is quoted with no speech verb. \"'I'll help!' said\" with the lead's name follows the master's p22, which has no access versions either; 1f may want signing and talker versions of both.",
-  "Pins that carry a neighbor's text: picture 4 (p7) also carries p8 (the latch and the shake), picture 6 (p21) carries p16 (the rumble), picture 9 (p33) carries Ember's p28 line, and picture 10 (p38) carries p36 (the clue).",
-  "No clash between the kit and the canon on story facts in this telling."
- ]
+  "rich_word": "flicker",
+  "word_count": 316,
+  "self_check": [
+    {
+      "item": "same story",
+      "ok": true,
+      "note": "Same events and choices as the master, in its order: the lamps going out, the tap, the fox's greeting, the youngest looking back and the grandparent's nod, \"Come in, fox\", the latch, Ember's name and news, the dark pantry, \"I'll help!\" and \"Lantern up!\", the rind fetched, the fires as one family, the grandparent understanding Ember (the canon's clue), the banking words, sleep by the fire and the goal hook. Nothing new happens."
+    },
+    {
+      "item": "length",
+      "ok": true,
+      "note": "327 words for the sample family over 12 pictures; 326 to 356 across every family the checker builds (1 to 4 children, every grandparent and parents setup, long names). Pictures 7 and 12 carry four sentences; the rest carry two or three."
+    },
+    {
+      "item": "sentences",
+      "ok": true,
+      "note": "No sentence over 15 words in any family version. The longest are the grandparent's reviewed line in picture 10 (ch1.p27.gp, 15 words) and picture 10's clue line with two grandparents and a three-word name (15). Picture 11's banking-words line (14) and picture 12's quilt line (13) run over the 12-word Should."
+    },
+    {
+      "item": "pinning",
+      "ok": true,
+      "note": "Every picture is pinned to one master paragraph. youngest_act is picture 4 on p7 (the key act), pause_and_ask is picture 8 on p26 (the Pause & ask sits after p26), comfort_final is picture 12 on p46 (last). The youngest's talk and do-it prompts are about picture 8 itself: the rind the lead has just brought, and the invisible lantern from picture 7."
+    },
+    {
+      "item": "legend slot",
+      "ok": true,
+      "note": "Picture 1 starts with the legend slot (tierc:legend, default none)."
+    },
+    {
+      "item": "Pause & ask (simplified)",
+      "ok": true,
+      "note": "\"Why do you think Clara let the cold fox in?\" for the sample family (10 words), from the master's question; the youngest's prompts are the master's, word for word."
+    },
+    {
+      "item": "week's phrase and the youngest's act",
+      "ok": true,
+      "note": "\"Lantern up!\" with the invisible lantern held high (picture 7); \"Come in, fox\" through the master's own access block ch1.p7 (picture 4)."
+    },
+    {
+      "item": "rich word",
+      "ok": true,
+      "note": "flicker: said in pictures 6 and 11, shown in picture 11 (the fire dipping blue)."
+    },
+    {
+      "item": "sound words",
+      "ok": true,
+      "note": "Two: tap and rrrumble."
+    },
+    {
+      "item": "one speaker a picture",
+      "ok": true,
+      "note": "One speaker in every picture. check-chapter.py warns on picture 10 because \"every word the fox said\" (inside ch1.p25.gp) reads to code as a second speaker; only the grandparent speaks there."
+    },
+    {
+      "item": "echo",
+      "ok": true,
+      "note": "Shape only: the stranger at the window is let in, dried by the fire and fed, and nobody asks her anything first."
+    },
+    {
+      "item": "fear and comfort",
+      "ok": true,
+      "note": "Every tense picture has comfort in its frame: the grandparent by the hearth at the tapping window (1), the grandparent beside the dark pantry (6, 7), everyone together at the blue flicker (11). The last picture is everyone asleep by the fire."
+    },
+    {
+      "item": "pronouns and markers",
+      "ok": true,
+      "note": "No child, grandparent or parents subject pronoun outside a block; every grandparent mention is a reviewed block (ch1.p1.gp, pic1.p5.gp, ch1.p6.gp, ch1.p25.gp, ch1.p27.gp, ch1.quilt); the middle slot only through the family-size block ch1.asker. No new block is needed."
+    },
+    {
+      "item": "image descriptions",
+      "ok": true,
+      "note": "All 80 words or fewer. No child's hair, skin, clothes or glasses. Nothing from the never-drawn list: no flame near a child (the pantry candle is a cold stub, the grandparent banks the fire), no readable words, no child alone in the dark."
+    }
+  ],
+  "flags_for_jon": [
+    "Left out of the picture-book telling to fit 12 pictures, four sentences a picture and 15 words a sentence: the \"Foxes don't talk\" exchange, \"You've got your grandmother's tail\", the steaming laugh and Ember's first sneeze, \"Food first. Questions after.\" as a line (the echo stays as a shape), the pull at the pantry door (a Monday Should in the master), \"Lots isn't a number\", the grandparent's \"not tonight\" lines, and Beacon Night (children once carried the flame up Wardlow).",
+    "Put back in the checker pass: the parents' note (picture 10, through the parents block pic1.note: \"Home by the longest night.\"), so a 3-year-old hearing only this telling knows where Mom and Dad are; the clue is now one short line in the same picture (pic1.clue.gp). The grandparent waiting at the pantry door is in picture 7's words (pic1.wait.gp), which is the Brave Little rung's own example.",
+    "\"Grandma, the fox is cold!\" (the reviewed picture block pic1.p5.gp) in place of the canon's \"Grandma, she's cold!\". The canon line is word for word in the master, where canon text wins. Canon section 8 holds no picture-book text for Chapter 1, so here the kit's Ember-pronoun rule applies: the lead's name is in the sentence before, so the fox is named.",
+    "Rich word: \"flicker\", the Part 1 week word that goes home on the fridge card, rather than the master's \"hush\" or \"bedraggled\", so neither of those appears in this telling.",
+    "Figures by family size are now data: each group picture has image.figures_by_size for one, two and four children, and render-chapter.py draws the list for the family's size, with \"lead\" turned into its child. With one child, the latch-lifter and the welcomer are the same child and appear once (picture 4); picture 9's counter is whoever ch1.asker names (the eldest in families of one and two); every child, middle2 included, is in pictures 3, 4, 5, 11 and 12. check-chapter.py tests every list for every family size (pictures.figures). Prompts 1e and 7b state the rule.",
+    "Access. \"Come in, fox\" uses the master's access block ch1.p7, so signing and talker children get their own words, and \"Lantern up!\" is quoted with no speech verb. \"'I'll help!' said\" with the lead's name follows the master's p22, which has no access versions either; 1f may want signing and talker versions of both.",
+    "Pins that carry a neighbor's text: picture 4 (p7) also carries p8 (the latch and the shake), picture 6 (p21) carries p16 (the rumble), picture 9 (p33) carries Ember's p28 line, and picture 10 (p41) carries p36 (the clue).",
+    "Fire and faces: the children sit a good step back from the hearth in pictures 5, 11 and 12, with the grandparent nearest the fire, and picture 11 is framed middle, not close. Picture 9's light is the cottage's lit window reflected in the still mere, square and framed, never a lone light on dark water.",
+    "No clash between the kit and the canon on story facts in this telling."
+  ]
 }

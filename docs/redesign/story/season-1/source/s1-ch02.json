@@ -1,635 +1,676 @@
 {
- "status": "ok",
- "chapter": 2,
- "part": 1,
- "day": "Tue",
- "title": "I'll Help!",
- "lead": "eldest",
- "lead_by_size": {
-  "1": "eldest",
-  "2": "eldest",
-  "3": "eldest",
-  "4": "eldest"
- },
- "tag": "Brave · between timid and reckless",
- "fear_level": 1,
- "fear_reason": "Will runs into a dark holloway with no light and is back in under a minute, muddy but fine; everything else happens in grey daylight with the grandparent watching the lane.",
- "opening_block": {
-  "legend": "[[tierc:legend|default:none]]",
-  "gp_reply": null,
-  "last_time": "Last time: a cold, wet fox tapped at the last lit window in Candlemere, with news that the beacon on Wardlow had gone out."
- },
- "paragraphs": [
-  {
-   "id": "p1",
-   "page": 1,
-   "text": "In the morning, Candlemere was grey. No chimney smoked, not one lamp flickered, and every window on the lane looked as sleepy as a yawn. Somebody had to carry [[block:ch2.flame]] to Wardlow, and soon.",
-   "marks": [
-    "problem",
-    "rich:flicker"
-   ]
+  "status": "ok",
+  "chapter": 2,
+  "part": 1,
+  "day": "Tue",
+  "title": "I'll Help!",
+  "lead": "eldest",
+  "lead_by_size": {
+    "1": "eldest",
+    "2": "eldest",
+    "3": "eldest",
+    "4": "eldest"
   },
-  {
-   "id": "p2",
-   "page": 1,
-   "text": "\"Let's ask the neighbors,\" said [[child:eldest]]. \"A grown-up will go.\"",
-   "marks": []
+  "tag": "Brave · between timid and reckless",
+  "fear_level": 2,
+  "fear_reason": "Will runs out of sight into the dark holloway with no light (lost for a minute, fear scale 2). He is back before anyone can count to twenty, muddy but fine, and is helped at once; everything else happens in grey daylight, in sight of the grandparent's doorway.",
+  "opening_block": {
+    "legend": "[[tierc:legend|default:none]]",
+    "gp_reply": null,
+    "last_time": "Last time: a cold, wet fox tapped at the last lit window in Candlemere, with news that the beacon on Wardlow had gone out."
   },
-  {
-   "id": "p3",
-   "page": 1,
-   "text": "[[block:ch2.p3.gp]]",
-   "marks": [
-    "safety"
-   ]
-  },
-  {
-   "id": "p4",
-   "page": 1,
-   "text": "[[block:ch2.p4]]",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p5",
-   "page": 1,
-   "text": "The baker opened the bakehouse door in a puff of flour. \"Someone should,\" he said. \"But not I. The bread won't bake itself.\"",
-   "marks": [
-    "mean:too_little",
-    "echo"
-   ]
-  },
-  {
-   "id": "p6",
-   "page": 2,
-   "text": "\"Good morning,\" said Ember, very politely.",
-   "marks": []
-  },
-  {
-   "id": "p7",
-   "page": 2,
-   "text": "But all the baker heard was *yip, yip*. \"Noisy fox,\" he said, not unkindly, and shut the door.",
-   "marks": [
-    "clue",
-    "sound"
-   ]
-  },
-  {
-   "id": "p8",
-   "page": 2,
-   "text": "Ember sniffed. Nobody had ever called her noisy before.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p9",
-   "page": 2,
-   "text": "Next door, the miller came out slowly, rubbing his knees. \"Not I,\" he said. \"These old knees won't climb Wardlow.\"",
-   "marks": [
-    "mean:too_little",
-    "echo"
-   ]
-  },
-  {
-   "id": "p10",
-   "page": 2,
-   "text": "Then [[cast:Reeve Osric]] hurried past with his arms full of tally-sticks. \"Yes, yes,\" he said. \"We'll see to it tomorrow.\"",
-   "marks": [
-    "mean:too_little"
-   ]
-  },
-  {
-   "id": "p11",
-   "page": 2,
-   "text": "\"How many tomorrows has that been?\" whispered [[block:ch2.asker]].",
-   "marks": []
-  },
-  {
-   "id": "p12",
-   "page": 2,
-   "text": "\"One, two, three, four, lots,\" whispered Ember.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p13",
-   "page": 2,
-   "text": "And so it went, all along the lane. Everybody agreed that someone should go. But nobody was willing to be the one. At every door the answer was the same: \"Not I.\"",
-   "marks": [
-    "rich:willing",
-    "echo"
-   ]
-  },
-  {
-   "id": "p14",
-   "page": 3,
-   "text": "Then [[cast:Will]], the baker's boy, came pelting round the corner. \"I'll go right now,\" he shouted, \"and I dare anybody to stop me!\" Off he ran into the old holloway, with no light at all.",
-   "marks": [
-    "mean:too_much",
-    "rich:dare"
-   ]
-  },
-  {
-   "id": "p15",
-   "page": 3,
-   "text": "The holloway was a sunken lane under the trees, dark even at noon.",
-   "marks": []
-  },
-  {
-   "id": "p16",
-   "page": 3,
-   "text": "[[block:ch2.p13]]",
-   "marks": [
-    "mean:pull",
-    "rich:dare"
-   ]
-  },
-  {
-   "id": "p17",
-   "page": 3,
-   "text": "*Splosh!* Before anyone could count to twenty, [[cast:Will]] came back out of the dark, muddy from his boots to his ears, and a little sheepish.",
-   "marks": [
-    "rich:sheepish",
-    "sound"
-   ]
-  },
-  {
-   "id": "p18",
-   "page": 3,
-   "text": "\"There's a puddle,\" said [[cast:Will]], \"in the dark.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p19",
-   "page": 3,
-   "text": "[[block:ch2.p16b]]",
-   "marks": [
-    "mean:helped"
-   ]
-  },
-  {
-   "id": "p20",
-   "page": 4,
-   "text": "By the Moot Hall door sat old [[cast:Hild]] the wick-woman, with her tray of needles, thread and lamp-wicks. Her donkey, [[cast:Dun]], dozed at her side. On the door behind her hung an old notice.",
-   "marks": [
-    "mentor"
-   ]
-  },
-  {
-   "id": "p21",
-   "page": 4,
-   "text": "[[child:eldest]] read it out loud: \"Beacon Night. All welcome. Bring one stick.\"",
-   "marks": [
-    "your_line"
-   ]
-  },
-  {
-   "id": "p22",
-   "page": 4,
-   "text": "[[cast:Old Brock]] lay on the step, the way the old dog always did, and did not get up for anyone. [[block:ch2.patter]] stopped to pat him anyway.",
-   "marks": []
-  },
-  {
-   "id": "p23",
-   "page": 4,
-   "text": "\"Good morning,\" said Ember.",
-   "marks": []
-  },
-  {
-   "id": "p24",
-   "page": 4,
-   "text": "\"Good morning, fox,\" said [[cast:Hild]], as if foxes wished her good morning every day of the week.",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p25",
-   "page": 4,
-   "text": "[[block:ch2.p21]]",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p26",
-   "page": 4,
-   "text": "Then [[cast:Hild]] beckoned [[child:eldest]] close, while Ember tried to count the wicks and got as far as lots.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p27",
-   "page": 4,
-   "text": "[[block:ch2.p23]]",
-   "marks": [
-    "story_question",
-    "mentor"
-   ]
-  },
-  {
-   "id": "p28",
-   "page": 4,
-   "text": "[[child:eldest]] opened [[pro:eldest.pos]] mouth, and shut it again. [[cast:Hild]] only waited, the way old folk wait for a kettle to sing.",
-   "marks": [
-    "mentor"
-   ]
-  },
-  {
-   "id": "p29",
-   "page": 5,
-   "text": "[[block:ch2.p25]]",
-   "marks": [
-    "pocket_questions"
-   ]
-  },
-  {
-   "id": "p30",
-   "page": 5,
-   "text": "[[block:ch2.p26]]",
-   "marks": [
-    "pocket_questions"
-   ]
-  },
-  {
-   "id": "p31",
-   "page": 5,
-   "text": "[[block:ch2.p27]]",
-   "marks": [
-    "bell"
-   ]
-  },
-  {
-   "id": "p32",
-   "page": 5,
-   "text": "Then [[cast:Hild]] went back to her wicks, as if nothing much had happened at all.",
-   "marks": []
-  },
-  {
-   "id": "p33",
-   "page": 5,
-   "text": "[[block:ch2.p28]]",
-   "marks": [
-    "mean:helped",
-    "youngest_act",
-    "rich:bedraggled"
-   ]
-  },
-  {
-   "id": "p34",
-   "page": 5,
-   "text": "[[cast:Will]] took the bell, and the hand. *Ting-a-ling!* Not one bit sheepish now, [[cast:Will]] rang it all the way back up the lane, very loudly and very proudly. It was the only bright sound in the whole grey lane, and here and there a curtain twitched.",
-   "marks": [
-    "reward",
-    "sound",
-    "rich:sheepish"
-   ]
-  },
-  {
-   "id": "p35",
-   "page": 5,
-   "text": "Ember trotted beside him with her ears folded flat, looking pained.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p36",
-   "page": 5,
-   "text": "At the cottage gate, [[cast:Will]] gave the bell back with a grin. \"When the beacon's lit again,\" he said, \"I'll carry a stick up Wardlow myself.\"",
-   "marks": [
-    "reward"
-   ]
-  },
-  {
-   "id": "p37",
-   "page": 6,
-   "text": "[[block:ch2.p30.gp]]",
-   "marks": []
-  },
-  {
-   "id": "p38",
-   "page": 6,
-   "text": "[[block:ch2.p31]]",
-   "marks": [
-    "key_act",
-    "rich:willing"
-   ]
-  },
-  {
-   "id": "p39",
-   "page": 6,
-   "text": "[[block:ch2.p32]]",
-   "marks": [
-    "key_act",
-    "modeled_behavior",
-    "phrase",
-    "join_in"
-   ]
-  },
-  {
-   "id": "p40",
-   "page": 6,
-   "text": "A hush fell over the cottage. Then the fire gave a small pop, as if it agreed.",
-   "marks": [
-    "rich:hush"
-   ]
-  },
-  {
-   "id": "p41",
-   "page": 6,
-   "text": "[[block:ch2.p33]]",
-   "marks": []
-  },
-  {
-   "id": "p42",
-   "page": 6,
-   "text": "[[block:ch2.p34]]",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p43",
-   "page": 6,
-   "text": "\"Seven,\" said [[block:ch2.asker]].",
-   "marks": []
-  },
-  {
-   "id": "p44",
-   "page": 6,
-   "text": "\"And I shall come too,\" said Ember. \"Somebody has to know the way, and foxes are extremely good at roads.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p45",
-   "page": 6,
-   "text": "[[block:ch2.p35]]",
-   "marks": []
-  },
-  {
-   "id": "p46",
-   "page": 6,
-   "text": "[[block:ch2.p36]]",
-   "marks": [
-    "reward"
-   ]
-  },
-  {
-   "id": "p47",
-   "page": 6,
-   "text": "[[block:ch2.p37]]",
-   "marks": [
-    "warm_end"
-   ]
-  }
- ],
- "story_question": {
-  "asked_by": "Hild",
-  "text": "How big must a person be to carry a lantern?",
-  "paragraph": "p27"
- },
- "pause_and_ask": {
-  "after_paragraph": "p28",
-  "position_pct": 56,
-  "position_pct_with_jar": null,
-  "touches_mistake_of": null,
-  "in_the_story": "[[cast:Hild]] asks [[child:lead]], \"How big must a person be to carry a lantern?\"",
-  "question": "Why do you think [[cast:Hild]] asked [[child:lead]] how big a person must be to carry a lantern?",
-  "answers_first": "turn",
-  "if_stuck": [
-   "What did the grown-ups on the lane say when they were asked?",
-   "When have you done a job that felt too big for you?"
+  "paragraphs": [
+    {
+      "id": "p1",
+      "page": 1,
+      "text": "In the morning, Candlemere was grey. No chimney smoked, not one lamp flickered, and every window on the lane looked as sleepy as a yawn. Somebody had to carry [[block:ch2.flame]] to Wardlow, and soon.",
+      "marks": [
+        "problem",
+        "rich:flicker"
+      ]
+    },
+    {
+      "id": "p2",
+      "page": 1,
+      "text": "\"Let's ask the neighbors,\" said [[child:eldest]]. \"A grown-up will go.\"",
+      "marks": []
+    },
+    {
+      "id": "p3",
+      "page": 1,
+      "text": "[[block:ch2.p3.gp]]",
+      "marks": [
+        "safety"
+      ]
+    },
+    {
+      "id": "p4",
+      "page": 1,
+      "text": "[[block:ch2.p4]]",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p5",
+      "page": 1,
+      "text": "The baker opened the bakehouse door in a puff of flour. \"Someone should,\" he said. \"But not I. The bread won't bake itself.\"",
+      "marks": [
+        "mean:too_little",
+        "echo"
+      ]
+    },
+    {
+      "id": "p6",
+      "page": 2,
+      "text": "\"Good morning,\" said Ember, very politely.",
+      "marks": []
+    },
+    {
+      "id": "p7",
+      "page": 2,
+      "text": "But all the baker heard was *yip, yip*. \"Noisy fox,\" he said, not unkindly, and shut the door.",
+      "marks": [
+        "clue",
+        "sound"
+      ]
+    },
+    {
+      "id": "p8",
+      "page": 2,
+      "text": "Ember sniffed. Nobody had ever called her noisy before.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p9",
+      "page": 2,
+      "text": "Next door, the miller came out slowly, rubbing his knees. \"Not I,\" he said. \"These old knees won't climb Wardlow.\"",
+      "marks": [
+        "mean:too_little",
+        "echo"
+      ]
+    },
+    {
+      "id": "p10",
+      "page": 2,
+      "text": "Then [[cast:Reeve Osric]] hurried past with his arms full of tally-sticks. \"Yes, yes,\" he said. \"We'll see to it tomorrow.\"",
+      "marks": [
+        "mean:too_little"
+      ]
+    },
+    {
+      "id": "p10b",
+      "page": 2,
+      "text": "At one window a face peeped out. \"Too far, in the dark,\" it whispered, and the curtain dropped.",
+      "marks": [
+        "mean:too_little"
+      ]
+    },
+    {
+      "id": "p11",
+      "page": 2,
+      "text": "\"How many dark windows will there be by tomorrow?\" whispered [[block:ch2.asker]].",
+      "marks": []
+    },
+    {
+      "id": "p12",
+      "page": 2,
+      "text": "\"One, two, three, four, lots,\" whispered Ember.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p13",
+      "page": 2,
+      "text": "Everybody agreed that someone should go. But nobody was willing to be the one. At every door the answer was the same: \"Not I.\"",
+      "marks": [
+        "rich:willing",
+        "echo"
+      ]
+    },
+    {
+      "id": "p14",
+      "page": 3,
+      "text": "Then [[cast:Will]], the baker's boy, came pelting round the corner. \"I'll go right now,\" he shouted, \"and I dare anybody to stop me!\" Off he ran into the old holloway, with no light at all.",
+      "marks": [
+        "mean:too_much",
+        "rich:dare"
+      ]
+    },
+    {
+      "id": "p15",
+      "page": 3,
+      "text": "The holloway, a sunken track under the trees, was dark even at noon, though its mouth was in sight of [[block:ch2.door.gp]].",
+      "marks": []
+    },
+    {
+      "id": "p16",
+      "page": 3,
+      "text": "[[block:ch2.p13]]",
+      "marks": [
+        "mean:pull",
+        "rich:dare"
+      ]
+    },
+    {
+      "id": "p17",
+      "page": 3,
+      "text": "*Splosh!* Before anyone could count to twenty, [[cast:Will]] was back, muddy from top to toe, a little sheepish, and looking hard at his boots.",
+      "marks": [
+        "rich:sheepish",
+        "sound"
+      ]
+    },
+    {
+      "id": "p18",
+      "page": 3,
+      "text": "\"There's a puddle,\" said [[cast:Will]], \"in the dark.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p19",
+      "page": 3,
+      "text": "[[block:ch2.p16b]]",
+      "marks": [
+        "mean:helped"
+      ]
+    },
+    {
+      "id": "p20",
+      "page": 4,
+      "text": "By the Moot Hall door, in plain sight of [[block:ch2.door.gp]], sat old [[cast:Hild]] the wick-woman with her tray of wicks. [[block:ch2.hild.gp]] [[cast:Hild]]'s donkey, [[cast:Dun]], dozed at her side. On the door behind her hung an old notice.",
+      "marks": [
+        "mentor"
+      ]
+    },
+    {
+      "id": "p21",
+      "page": 4,
+      "text": "[[child:eldest]] read it out loud: \"Beacon Night. All welcome. Bring one stick, and a friend.\"",
+      "marks": [
+        "your_line"
+      ]
+    },
+    {
+      "id": "p22",
+      "page": 4,
+      "text": "[[cast:Old Brock]] lay on the step, and did not get up for anyone. [[block:ch2.patter]] stopped to pat him anyway.",
+      "marks": []
+    },
+    {
+      "id": "p23",
+      "page": 4,
+      "text": "\"Good morning,\" said Ember.",
+      "marks": []
+    },
+    {
+      "id": "p24",
+      "page": 4,
+      "text": "\"Good morning, fox,\" said [[cast:Hild]], as if foxes said good morning to her every day.",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p25",
+      "page": 4,
+      "text": "[[block:ch2.p21]]",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p26",
+      "page": 4,
+      "text": "Then [[cast:Hild]] beckoned [[child:eldest]] close, while Ember tried to count the wicks and got as far as lots.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p27",
+      "page": 4,
+      "text": "[[block:ch2.p23]]",
+      "marks": [
+        "story_question",
+        "mentor"
+      ]
+    },
+    {
+      "id": "p28",
+      "page": 4,
+      "text": "[[child:eldest]] opened [[pro:eldest.pos]] mouth, and shut it again. [[cast:Hild]] only waited, the way old folk wait for a kettle to sing.",
+      "marks": [
+        "mentor"
+      ]
+    },
+    {
+      "id": "p29",
+      "page": 5,
+      "text": "[[block:ch2.p25]]",
+      "marks": [
+        "pocket_questions"
+      ]
+    },
+    {
+      "id": "p30",
+      "page": 5,
+      "text": "[[block:ch2.p26]]",
+      "marks": [
+        "pocket_questions"
+      ]
+    },
+    {
+      "id": "p31",
+      "page": 5,
+      "text": "[[block:ch2.p27]]",
+      "marks": [
+        "bell"
+      ]
+    },
+    {
+      "id": "p33",
+      "page": 5,
+      "text": "[[block:ch2.p28]]",
+      "marks": [
+        "mean:helped",
+        "youngest_act",
+        "rich:bedraggled"
+      ]
+    },
+    {
+      "id": "p34",
+      "page": 5,
+      "text": "[[cast:Will]] took the bell, and the hand. *Ting-a-ling!* Not one bit sheepish now, [[cast:Will]] rang it all the way back up the lane, loud and proud. Here and there a curtain twitched.",
+      "marks": [
+        "reward",
+        "sound",
+        "rich:sheepish"
+      ]
+    },
+    {
+      "id": "p35",
+      "page": 5,
+      "text": "Ember trotted beside him with her ears folded flat, looking pained.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p36",
+      "page": 5,
+      "text": "At the cottage gate, [[cast:Will]] gave the bell back with a grin. \"On Beacon Night,\" he said, \"I'll carry a stick up Wardlow myself.\"",
+      "marks": [
+        "reward"
+      ]
+    },
+    {
+      "id": "p36b",
+      "page": 5,
+      "text": "[[block:ch2.bellback]]",
+      "marks": [
+        "bell"
+      ]
+    },
+    {
+      "id": "p37",
+      "page": 6,
+      "text": "[[block:ch2.p30.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p38",
+      "page": 6,
+      "text": "[[block:ch2.p31]]",
+      "marks": [
+        "key_act",
+        "rich:willing"
+      ]
+    },
+    {
+      "id": "p39",
+      "page": 6,
+      "text": "[[block:ch2.p32]]",
+      "marks": [
+        "key_act",
+        "modeled_behavior",
+        "phrase",
+        "join_in"
+      ]
+    },
+    {
+      "id": "p40",
+      "page": 6,
+      "text": "A hush fell over the cottage. Then the fire gave a small pop, as if it agreed.",
+      "marks": [
+        "rich:hush"
+      ]
+    },
+    {
+      "id": "p41",
+      "page": 6,
+      "text": "[[block:ch2.p33]]",
+      "marks": []
+    },
+    {
+      "id": "p42",
+      "page": 6,
+      "text": "[[block:ch2.p34]]",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p43",
+      "page": 6,
+      "text": "\"Seven!\" said [[block:ch2.asker]].",
+      "marks": []
+    },
+    {
+      "id": "p44",
+      "page": 6,
+      "text": "\"And I shall come too,\" said Ember. \"Somebody has to know the way, and foxes are extremely good at roads.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p45",
+      "page": 6,
+      "text": "[[block:ch2.p35]]",
+      "marks": []
+    },
+    {
+      "id": "p46",
+      "page": 6,
+      "text": "[[block:ch2.p36]]",
+      "marks": [
+        "reward"
+      ]
+    },
+    {
+      "id": "p47",
+      "page": 6,
+      "text": "[[block:ch2.p37]]",
+      "marks": [
+        "warm_end"
+      ]
+    }
   ],
-  "for_the_youngest": {
-   "talk": "Where was Dun the donkey?",
-   "do_it": "Show me how Old Brock lay on the step."
+  "story_question": {
+    "asked_by": "Hild",
+    "text": "How big must a person be to carry a lantern?",
+    "paragraph": "p27"
   },
-  "stretch": "Every grown-up had a good reason to say no. Why do you think a good reason wasn't enough?",
-  "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
- },
- "modeled_behavior": {
-  "slot": "eldest",
-  "phrase": "Lantern up!",
-  "gesture_text": "An invisible lantern held up high, then one step forward, as the eldest says \"I'll help\" first.",
-  "paragraph": "p39"
- },
- "key_act": {
-  "slot": "eldest",
-  "paragraph": "p39",
-  "summary": "After every grown-up on the lane has said \"Not I,\" says \"I'll help\" first, with a wobbly tummy, by the fire."
- },
- "laugh": {
-  "paragraph": "p18",
-  "line": "\"There's a puddle,\" said Will, \"in the dark.\""
- },
- "join_in": {
-  "paragraph": "p39",
-  "line": "Lantern up!"
- },
- "reading_lines": {
-  "your_line": {
-   "paragraph": "p21",
-   "text": "Beacon Night. All welcome. Bring one stick."
+  "pause_and_ask": {
+    "after_paragraph": "p28",
+    "position_pct": 59,
+    "position_pct_with_jar": null,
+    "touches_mistake_of": null,
+    "in_the_story": "[[cast:Hild]] asks [[child:lead]], \"How big must a person be to carry a lantern?\"",
+    "question": "Every grown-up said 'Not I.' Why do you think [[cast:Hild]] asked [[child:lead]] instead?",
+    "answers_first": "middle",
+    "if_stuck": [
+      "How big do you think a person must be to carry a lantern?",
+      "When have you done a job that felt too big for you?"
+    ],
+    "for_the_youngest": {
+      "talk": "Where was Dun the donkey?",
+      "do_it": "Show me how Old Brock lay on the step."
+    },
+    "stretch": "Nobody on the lane could do the whole job alone. What small part could each of them have done?",
+    "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
   },
-  "big_print": [
-   "Not I.",
-   "I'll help!",
-   "Me too!"
+  "modeled_behavior": {
+    "slot": "eldest",
+    "phrase": "Lantern up!",
+    "gesture_text": "An invisible lantern held up high, then one step forward, as the eldest says \"I'll help\" first.",
+    "paragraph": "p39"
+  },
+  "key_act": {
+    "slot": "eldest",
+    "paragraph": "p39",
+    "summary": "After every grown-up on the lane has said \"Not I,\" says \"I'll help\" first, with a wobbly tummy, by the fire."
+  },
+  "laugh": {
+    "paragraph": "p8",
+    "line": "Nobody had ever called her noisy before."
+  },
+  "join_in": {
+    "paragraph": "p39",
+    "line": "Lantern up!"
+  },
+  "reading_lines": {
+    "your_line": {
+      "paragraph": "p21",
+      "text": "Beacon Night. All welcome. Bring one stick, and a friend."
+    },
+    "big_print": [
+      "Not I.",
+      "Ting-a-ling!",
+      "Seven!"
+    ]
+  },
+  "rich_words": [
+    {
+      "word": "willing",
+      "everyday": true,
+      "paragraphs": [
+        "p13",
+        "p38"
+      ]
+    },
+    {
+      "word": "dare",
+      "everyday": true,
+      "paragraphs": [
+        "p14",
+        "p16"
+      ]
+    },
+    {
+      "word": "sheepish",
+      "everyday": true,
+      "paragraphs": [
+        "p17",
+        "p34"
+      ]
+    }
+  ],
+  "sound_words": [
+    "Yip",
+    "Splosh",
+    "Ting-a-ling"
+  ],
+  "classical_echo": {
+    "source": "Folk tale, The Little Red Hen; Aesop, Belling the Cat",
+    "move": "shape",
+    "where": [
+      "p5",
+      "p9",
+      "p10",
+      "p10b",
+      "p13",
+      "p39"
+    ],
+    "grown_up_note": "Three doors, three kind, busy \"Not I\"s, and everyone agreeing that someone should go: The Little Red Hen and Belling the Cat. Reversed on purpose: nobody is shut out for saying no, the reckless boy is given a job, and the old notice (\"Bring one stick\") waits for the whole lane to climb Wardlow in Chapter 54.",
+    "faith_note": "Faith toggle: \"Here am I; send me\" (Isaiah 6:8), the canon's chapter echo, sits quietly under the eldest's \"I'll help.\" It is also tonight's blessing, in place of the week's verse (bible §10; kit 5.4's verse_key)."
+  },
+  "hook": null,
+  "last_page": {
+    "why_question": "Why do you think [[cast:Will]] ran into the dark holloway with no light at all?",
+    "what_happened": "Every grown-up on the lane said \"Not I.\" Then, with a wobbly tummy, [[child:lead]] said \"I'll help,\" with a proper light and all of them together.",
+    "blessing_key": "Isaiah 6:8",
+    "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
+    "next_time": "Ch. 3 · The First Night on the Keepers' Way",
+    "for_the_morning": {
+      "missions": {
+        "3-4": "Carry something cool and unbreakable to the table, like napkins or spoons (never anything hot, sharp or glass), and say \"I'll help!\" before anyone asks.",
+        "5-6": "When a job needs doing, be the first to say \"I'll do it,\" and do all of it.",
+        "7-9": "Offer to help your grown-up with a real job nobody wants, and see it through."
+      },
+      "tell_it_back": "At breakfast, ask [[child:youngest]] to tell [[gp:real]] about the little brass bell."
+    }
+  },
+  "vote": null,
+  "remember_when": null,
+  "plan_reminder": null,
+  "letter_home": null,
+  "tier_c_defaults": [],
+  "jar_brief": null,
+  "canon_quoted": [],
+  "in_real_life_needed": [
+    "In real life, we stay where our grown-up can see us, and we only go out after dark with our grown-up.",
+    "In real life, we never let in, feed, touch or go off with an animal we don't know, and we ask a grown-up before we pat one we do know.",
+    "In real life, we only knock on a door we don't know when our grown-up is right beside us."
+  ],
+  "word_count": 990,
+  "word_count_without_jar": null,
+  "self_check": [
+    {
+      "item": 1,
+      "ok": true,
+      "note": "Tag copied from the canon row."
+    },
+    {
+      "item": 2,
+      "ok": true,
+      "note": "Title, Tue, lead eldest (Hugh) as canon."
+    },
+    {
+      "item": 3,
+      "ok": true,
+      "note": "Opening block: legend slot and one-sentence Last time (no reply on a Tuesday)."
+    },
+    {
+      "item": 4,
+      "ok": true,
+      "note": "The problem (nobody to carry the flame) is in the first paragraph."
+    },
+    {
+      "item": 5,
+      "ok": true,
+      "note": "Tuesday pair as the canon's Sides: too little is four \"Not I\"s (three busy, one frightened face at a window), too much is Will running into the dark; both likable; the children feel both pulls; the eldest finds the middle way with \"I'll help\"."
+    },
+    {
+      "item": 6,
+      "ok": true,
+      "note": "Hild asks her canon question out loud, only questions plus one safety instruction for the bell; she appears on a Tuesday, not mid-crisis (Will is already back)."
+    },
+    {
+      "item": 7,
+      "ok": true,
+      "note": "Pause & ask after p28, 59%. Every Pause & ask prompt can be answered at that point."
+    },
+    {
+      "item": 8,
+      "ok": true,
+      "note": "The eldest says \"I'll help\" first, stands, holds an invisible lantern high, steps forward: \"Lantern up!\""
+    },
+    {
+      "item": 9,
+      "ok": true,
+      "note": "\"I'll help\" is what sends them to Wardlow; the youngest's question, hand and job change Will's day."
+    },
+    {
+      "item": 10,
+      "ok": true,
+      "note": "All three act: the eldest reads the notice and says \"I'll help\"; the middle asks about the dark windows, packs and counts the apples; the youngest pats Brock, stands by Will, gives him the bell and her hand, says the bell's rule back at the gate, and swaps her own boots."
+    },
+    {
+      "item": 11,
+      "ok": true,
+      "note": "Ember: \"Nobody had ever called her noisy before\" (tonight's named laugh), the lots count, her pained ears at the bell, \"foxes are extremely good at roads\", her nose in a boot (one child)."
+    },
+    {
+      "item": 12,
+      "ok": true,
+      "note": "The Little Red Hen and Belling the Cat as shape only, reversed so nobody is shut out."
+    },
+    {
+      "item": 13,
+      "ok": true,
+      "note": "Your line (the old notice), three big-print items, join-in \"Lantern up!\"."
+    },
+    {
+      "item": 14,
+      "ok": true,
+      "note": "willing, dare, sheepish: each twice; hush, flicker and bedraggled come back from Chapter 1."
+    },
+    {
+      "item": 15,
+      "ok": true,
+      "note": "Job list (story/season-1/outline.json, 1b): mentor (Hild), pocket questions for every child, clue (Hild understands Ember; the baker hears only yips)."
+    },
+    {
+      "item": 16,
+      "ok": true,
+      "note": "Should: Will's grin and promise; the fire's pop."
+    },
+    {
+      "item": 17,
+      "ok": true,
+      "note": "Last paragraph: the bell on the mantel, everyone asleep, Ember round the youngest, the eldest asleep last with Hild's question."
+    },
+    {
+      "item": 18,
+      "ok": true,
+      "note": "990 words; every version 967 to 1097; no sentence over 28."
+    },
+    {
+      "item": 19,
+      "ok": true,
+      "note": "New dialogue within the band limits."
+    },
+    {
+      "item": 20,
+      "ok": true,
+      "note": "Refrains exact: \"Lantern up!\", \"One, two, three, four, lots.\", the canon's \"Not I\" lines."
+    }
+  ],
+  "flags_for_jon": [
+    "Verse (changed in the checker pass). Bible §10 says the canon's chapter verse replaces the week's verse on that chapter's last page, and kit 5.4 defines verse_key as \"the chapter's own verse where the canon names one\", so blessing_key is now Isaiah 6:8, not Joshua 1:9, and Part 1's echo_plan says the same. Kit 1a's last-page item 4 (\"Blessing: the week's verse\") contradicts both and needs rewording. Isaiah 6:8's wording can't be checked until the house translation is chosen (VERSE is empty), and its familiar wording is KJV, which bible §10 allows only where the old wording is the point. Rule otherwise if you'd rather keep Joshua 1:9 tonight.",
+    "Safety on the lane (part sheet flag 3). The door-to-door walk happens in grey daylight, the grandparent stands in the doorway where the whole lane can be seen (\"Stay where I can see you.\"), and the text now says the holloway's mouth is \"in sight of\" that doorway and that Hild's tray is \"in plain sight of\" it. In real life lines: staying in sight (which also covers Will running off out of sight) (and going out after dark only with a grown-up), the animal line (now covering a pat for an animal we know: Old Brock) and the knocking line.",
+    "Hild is known before she beckons: the grandparent \"had bought wicks from her for years\" (canon §1: Grandma has known her for years), she sits in plain sight of the grandparent's doorway, and she only asks. Her one instruction is the canon's safety skill for the bell, \"Stand still, ring, and call\". In the one-child version the child is beckoned in the same place, in sight of the doorway.",
+    "The mean, made visible: too little is four \"Not I\"s, three busy (baker, miller, reeve) and one frightened (a face at a window: \"Too far, in the dark,\" and the curtain drops), so the timid side shows fear as well as busyness; nobody is mocked. Too much is Will running into the dark with no light. The children feel both pulls (\"Hugh wanted to take the dare too, and run in after him. Alfie wanted to run home and hide under the quilt.\"). Will is helped at once, and the eldest's \"I'll help\" names a plan (\"With a proper light, and all of us together\").",
+    "The reeve is no longer the butt of the children's joke. The middle child's whisper is now about the stakes (\"How many dark windows will there be by tomorrow?\"), and Ember's lots count answers that; the reeve owns his \"tomorrow\" himself in Ch 59.",
+    "New details inside the beat, no canon change: the old notice, \"Beacon Night. All welcome. Bring one stick, and a friend.\" (the eldest's line, now using its full length, and a seed for the sticks on Wardlow); Will's promise, now \"On Beacon Night, I'll carry a stick up Wardlow myself\" (the sticks feed the beacon on the night itself); the youngest saying the bell's rule back at the gate (\"Stand still, ring, and call\"), so the bell's first lesson is the safety skill for Sedgefen, not a parade toy; the youngest patting Old Brock (for Ch 57); curtains twitching at the bell.",
+    "Holding Ember's tail is gone (a 3-year-old could copy holding a fox's tail). The youngest now walks beside Ember, who holds her magnificent tail high out of the puddles; \"because it was Tuesday\" went with it, which also mends the one-child version.",
+    "The youngest's acts are all her own: she stands beside muddy Will, asks her new pocket question (\"Who needs help?\") the moment she has it, gives Will the bell and her hand, says its rule back at the gate, and swaps her own wrong-footed boots with no help. The grandparent now smiles at them all rather than laughing straight after the boots, so the laugh can't read as being at the smallest child. She falls asleep with one boot still on.",
+    "Family sizes. One child: Hild gives the eldest's question now, with \"There will be more, one day\" (bible §6), and the bell (\"Ring it if you ever lose your way\"); Ember stands beside muddy Will; the eldest packs the apples and counts them, pulls on the boots while Ember gets her nose stuck in one, and says the bell's rule. Two children: the eldest asks about the dark windows and says \"Seven!\", so the 3-year-old no longer joins twice. Four children: the second middle child gets \"Who's been forgotten?\" (bible §6, flagged there).",
+    "The last page's what_happened uses the lead marker, not the eldest marker, so a night when the eldest isn't listening still names the child who said \"I'll help\" (the part sheet's flag 8 raises the same problem for the Friday question). It no longer says the lead said \"I'll help\" first: Will shouted \"I'll go\" earlier, and what matters is that the eldest's offer is the measured one.",
+    "Pause & ask: the question now starts from what the listener just heard: \"Every grown-up said 'Not I.' Why do you think Hild asked Hugh instead?\" (the picture-book version: \"…asked Hugh, not a grown-up?\"), and Hild's own question is the first \"If they're stuck\" prompt. The Stretch no longer treats the miller's stiff knees as a reason that wasn't good enough: \"Nobody on the lane could do the whole job alone. What small part could each of them have done?\" Answers first is now the middle child, so the eldest doesn't answer a question about himself first (families without a middle child fall back to the turn child); please confirm, since bible §2 names the turn or lead child.",
+    "Where the \"For the youngest\" prompt sits. Kit 5.5 says it sits at the youngest's act picture; bible §3 (the shared read) says \"at its picture, so the reader asks the youngest at the moment they can see it\", and 1e's schema and the checker put it at the Pause & ask picture. The prompts ask about Dun and Old Brock, who are in the Pause & ask picture (5), so pause_and_ask_simple.picture stays 5. Please rule, and kit 5.5 will be reworded to match.",
+    "Laugh line: now Ember's \"Nobody had ever called her noisy before\" (p8). Will's \"There's a puddle, in the dark\" stays in the story, but the chapter's named laugh is no longer a child's muddy mistake.",
+    "Rich words: willing, dare and sheepish (new), with Chapter 1's flicker, hush and bedraggled brought back. \"Dare\" is now used in one sense both times (Will's dare, and the eldest wanting to take the dare too), and \"sheepish\" is shown on the page (\"looking hard at his boots\"). willing comes back in Chapter 3; dare and sheepish are left for Chapters 4 and 5.",
+    "Counting: the apples go in aloud, \"one, two, three, four, five, six, seven\", so the listener can count along, then Ember's lots, then the counting child's \"Seven!\" (a big-print word). Big-print words are now \"Not I.\", \"Ting-a-ling!\" and \"Seven!\", each in the text exactly as printed; \"Me too!\" is left to the youngest.",
+    "The middle child's joining no longer hangs on apples: \"And me,\" and then the apples go in.",
+    "Fear level is now 2, not 1: a child out of sight in the dark for a minute is \"lost for a minute\" on the fear scale. It turns within two paragraphs, picture 3 has comfort in frame, and the chapter ends warm.",
+    "Job list: this chapter is now tested against story/season-1/outline.json, the first run of prompt 1b for Season 1.",
+    "The 3-4 morning mission now carries the part's carrying line (\"cool and unbreakable\", \"never a hot dish, a knife or glass\") in the child's words, and the 7-9 mission names \"your grown-up\", so neither invites a child to approach an adult they don't know or carry anything hot, sharp or breakable.",
+    "The picture-book telling now has the bell's rule said back at the gate (picture 9), so a 3-year-old hearing only that telling meets the bell as a safety bell, not a parade toy. Ember's flat ears stay in picture 9's image."
+  ],
+  "packet_card": [
+    {
+      "item": "p47 had five sentences (Should: four).",
+      "settled": "Now four in every version: the eldest falls asleep last \"with Hild's question still there\", in one sentence, which also drops a narration \"you\"."
+    },
+    {
+      "item": "Four-sentence pictures (Should: two at most).",
+      "settled": "Now two for the sample family (6 and 10); picture 3's two pulls are one sentence (pic2.pull), picture 4's splash joins Will's return, and every other picture carries three at most. A family of four hears picture 6 at four sentences too, because the second middle child's pocket question needs its own line; picture 6 drops its lead-in sentence for that size."
+    },
+    {
+      "item": "The picture-book telling had no boots and no \"Nobody's too small…\".",
+      "settled": "Put back through family-size pic2 blocks: picture 11 is the apples counted aloud and \"Me too!\" with the youngest's own boots (Ember's nose in a boot for one child), and picture 12 opens with the grandparent's \"Nobody's too small to carry a light.\""
+    },
+    {
+      "item": "Family-size versions that didn't stand alone.",
+      "settled": "Two children: the 3-year-old no longer joins twice (the eldest packs and counts), and the whisper and \"Seven!\" go to the eldest. One child: p4 no longer says \"because it was Tuesday\", and p45's boots now start with the child pulling them on."
+    }
   ]
- },
- "rich_words": [
-  {
-   "word": "willing",
-   "everyday": true,
-   "paragraphs": [
-    "p13",
-    "p38"
-   ]
-  },
-  {
-   "word": "dare",
-   "everyday": true,
-   "paragraphs": [
-    "p14",
-    "p16"
-   ]
-  },
-  {
-   "word": "sheepish",
-   "everyday": true,
-   "paragraphs": [
-    "p17",
-    "p34"
-   ]
-  }
- ],
- "sound_words": [
-  "Yip",
-  "Splosh",
-  "Ting-a-ling"
- ],
- "classical_echo": {
-  "source": "Folk tale, The Little Red Hen; Aesop, Belling the Cat",
-  "move": "shape",
-  "where": [
-   "p5",
-   "p9",
-   "p10",
-   "p13",
-   "p39"
-  ],
-  "grown_up_note": "Three doors, three kind, busy \"Not I\"s, and everyone agreeing that someone should go: The Little Red Hen and Belling the Cat. Reversed on purpose: nobody is shut out for saying no, the reckless boy is given a job, and the old notice (\"Bring one stick\") waits for the whole lane to climb Wardlow in Chapter 54.",
-  "faith_note": "Faith toggle: \"Here am I; send me\" (Isaiah 6:8), canon's chapter echo, sits quietly under the eldest's \"I'll help.\" The blessing stays the week's verse."
- },
- "hook": null,
- "last_page": {
-  "why_question": "Why do you think [[cast:Will]] ran into the dark holloway with no light at all?",
-  "what_happened": "Every grown-up on the lane said \"Not I.\" Then, with a wobbly tummy, [[child:lead]] said \"I'll help\" first.",
-  "blessing_key": "Joshua 1:9",
-  "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
-  "next_time": "Ch. 3 · The First Night on the Keepers' Way",
-  "for_the_morning": {
-   "missions": {
-    "3-4": "Carry something to the table and say \"I'll help!\" before anyone asks.",
-    "5-6": "When a job needs doing, be the first to say \"I'll do it,\" and do all of it.",
-    "7-9": "Offer to help a grown-up with a real job nobody wants, and see it through."
-   },
-   "tell_it_back": "At breakfast, ask [[child:youngest]] to tell [[gp:real]] about the little brass bell."
-  }
- },
- "vote": null,
- "remember_when": null,
- "plan_reminder": null,
- "letter_home": null,
- "tier_c_defaults": [],
- "jar_brief": null,
- "canon_quoted": [],
- "in_real_life_needed": [
-  "In real life, we only knock on a door we don't know when our grown-up is right beside us."
- ],
- "word_count": 986,
- "word_count_without_jar": null,
- "self_check": [
-  {
-   "item": 1,
-   "ok": true,
-   "note": "Tag copied from the canon row."
-  },
-  {
-   "item": 2,
-   "ok": true,
-   "note": "Title, Tue, lead eldest (Hugh) as canon."
-  },
-  {
-   "item": 3,
-   "ok": true,
-   "note": "Opening block: legend slot and one-sentence Last time (no reply on a Tuesday)."
-  },
-  {
-   "item": 4,
-   "ok": true,
-   "note": "The problem (nobody to carry the flame) is in the first paragraph."
-  },
-  {
-   "item": 5,
-   "ok": true,
-   "note": "Tuesday pair exactly as the canon's Sides: too little \"Not I\" at every door, too much Will running into the dark; both likable; the children feel both pulls; the eldest finds the middle way with \"I'll help\"."
-  },
-  {
-   "item": 6,
-   "ok": true,
-   "note": "Hild asks her canon question out loud, only questions plus one safety instruction for the bell; she appears on a Tuesday, not mid-crisis (Will is already back)."
-  },
-  {
-   "item": 7,
-   "ok": true,
-   "note": "Pause & ask after p28, 56%. Every Pause & ask prompt can be answered at that point."
-  },
-  {
-   "item": 8,
-   "ok": true,
-   "note": "The eldest says \"I'll help\" first, stands, holds an invisible lantern high, steps forward: \"Lantern up!\""
-  },
-  {
-   "item": 9,
-   "ok": true,
-   "note": "\"I'll help\" is what sends them to Wardlow; the youngest's question, hand and job change Will's day."
-  },
-  {
-   "item": 10,
-   "ok": true,
-   "note": "All three act: the eldest reads the notice and says \"I'll help\"; the middle counts doors, whispers about tomorrows and packs apples; the youngest pats Brock, gives Will the bell and swaps her own boots."
-  },
-  {
-   "item": 11,
-   "ok": true,
-   "note": "\"There's a puddle, in the dark.\", \"How many tomorrows?\" / \"One, two, three, four, lots.\", Ember's pained ears at the bell, \"foxes are extremely good at roads\" (one child)."
-  },
-  {
-   "item": 12,
-   "ok": true,
-   "note": "The Little Red Hen and Belling the Cat as shape only, reversed so nobody is shut out."
-  },
-  {
-   "item": 13,
-   "ok": true,
-   "note": "Your line (the old notice), three big-print items, join-in \"Lantern up!\"."
-  },
-  {
-   "item": 14,
-   "ok": true,
-   "note": "willing, dare, sheepish: each twice; hush, flicker and bedraggled come back from Chapter 1."
-  },
-  {
-   "item": 15,
-   "ok": true,
-   "note": "Job list: mentor (Hild), pocket questions, bell, clue (Hild understands Ember; the baker hears only yips)."
-  },
-  {
-   "item": 16,
-   "ok": true,
-   "note": "Should: Will's grin and promise; the fire's pop."
-  },
-  {
-   "item": 17,
-   "ok": true,
-   "note": "Last paragraph: the bell on the mantel, everyone asleep, Ember round the youngest, the eldest asleep last."
-  },
-  {
-   "item": 18,
-   "ok": true,
-   "note": "986 words; every version 962 to 1085; no sentence over 28."
-  },
-  {
-   "item": 19,
-   "ok": true,
-   "note": "New dialogue within the band limits."
-  },
-  {
-   "item": 20,
-   "ok": true,
-   "note": "Refrains exact: \"Lantern up!\", \"One, two, three, four, lots.\", the canon's \"Not I\" lines."
-  }
- ],
- "flags_for_jon": [
-  "Verse. The canon's chapter echo is \"Here am I; send me\" (Isaiah 6:8), marked \"faith toggle\". It sits in classical_echo.faith_note, and blessing_key keeps the week's verse (Joshua 1:9), as the kit's last-page item 4 says (\"Blessing: the week's verse\"). The heart draft used Isaiah 6:8 as the blessing; the other two drafts used Joshua 1:9. Isaiah 6:8's wording is KJV, which bible §10 allows only where the old wording is the point. Please rule if you'd rather the blessing be Isaiah 6:8 tonight.",
-  "Safety on the lane (part sheet flag 3). The door-to-door walk happens in grey daylight, and the grandparent stands in the doorway where the whole lane can be seen: \"Stay where I can see you.\" In real life line: \"In real life, we only knock on a door we don't know when our grown-up is right beside us.\"",
-  "New details inside the beat, no canon change: the old notice on the Moot Hall door, \"Beacon Night. All welcome. Bring one stick.\" (the eldest's line, and a seed for the sticks on Wardlow); the holloway, a sunken lane that is dark even at noon; the middle child's whispered \"How many tomorrows has that been?\" after Reeve Osric's \"tomorrow\", answered by Ember's count (whispered, so the reeve is never laughed at to his face; he owns it himself in Chapter 59); Will's promise, \"When the beacon's lit again, I'll carry a stick up Wardlow myself\" (a seed for Chapter 54); the youngest patting Old Brock (part sheet suggestion 9, for Chapter 57); curtains twitching at the bell (the lane waking a little).",
-  "The mean, made visible: too little is three kind, busy \"Not I\"s (baker, miller, reeve; nobody mocked); too much is Will running into the dark with no light. The children feel both pulls from the inside (\"Hugh wanted to dare the dark too, and run in after him. Alfie wanted to run home and hide under the quilt. Nobody moved.\"). Will is helped at once: nobody laughs, the youngest stands right beside him so he isn't muddy on his own, and then gives him a hand and a job. At the hearth the eldest's \"I'll help\" names a plan (\"With a proper light, and all of us together\"), not a moral.",
-  "Hild asks the eldest alone, but in daylight, by the Moot Hall door, with the others a step away, and she only asks. Her one instruction is the canon's practical safety skill for the bell, \"Stand still, ring, and call\" (checklist item 6 allows a practical safety instruction), planted for the fog on Sedgefen.",
-  "The youngest's acts are all her own: she asks her new pocket question (\"Who needs help?\") the moment she has it, gives Will the bell and her hand, and swaps her own wrong-footed boots with no help (the grandparent no longer swaps them). She falls asleep with one boot still on.",
-  "\"Which Ember allowed, because it was Tuesday\" is kept (two judges' best moment). It is the story's own Tuesday (canon's day for Chapter 2), so it still reads right on a catch-up night; one judge asked to drop it. Your call.",
-  "Family sizes. One child: Hild gives the eldest's question now, with \"There will be more, one day\" (bible §6), and the bell (\"Ring it if you ever lose your way\"); Ember stands beside muddy Will; the eldest's own pocket question starts the bell hand-over; Ember's nose in the boot takes the youngest's boots joke. Four children: the second middle child gets \"Who's been forgotten?\" (bible §6, flagged there).",
-  "The last page's what_happened uses the lead marker, not the eldest marker, so a night when the eldest isn't listening still names the child who said \"I'll help\" (the part sheet's flag 8 raises the same problem for the Friday question).",
-  "Rich words: willing, dare and sheepish (new), with Chapter 1's flicker, hush and bedraggled brought back. willing comes back in Chapter 3; dare and sheepish are left for Chapters 4 and 5."
- ]
 }

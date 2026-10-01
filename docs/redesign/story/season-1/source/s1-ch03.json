@@ -1,694 +1,734 @@
 {
- "status": "ok",
- "chapter": 3,
- "part": 1,
- "day": "Wed",
- "title": "The First Night on the Keepers' Way",
- "lead": "eldest",
- "lead_by_size": {
-  "1": "eldest",
-  "2": "eldest",
-  "3": "eldest",
-  "4": "eldest"
- },
- "tag": "Brave · between timid and reckless",
- "fear_level": 2,
- "fear_reason": "Night, a rising wind and the flame shrinking to a blue bead; it turns within the page as the eldest finds the lee of the milestone, and the chapter ends with everyone together, sheltered and falling asleep.",
- "opening_block": {
-  "legend": "[[tierc:legend|default:none]]",
-  "gp_reply": null,
-  "last_time": "Last time: at every door on the lane the answer was \"Not I,\" until [[child:eldest]] said, \"I'll help.\""
- },
- "paragraphs": [
-  {
-   "id": "p1",
-   "page": 1,
-   "text": "Today the flame would leave Candlemere. [[block:ch3.p1.gp]]",
-   "marks": [
-    "problem"
-   ]
+  "status": "ok",
+  "chapter": 3,
+  "part": 1,
+  "day": "Wed",
+  "title": "The First Night on the Keepers' Way",
+  "lead": "eldest",
+  "lead_by_size": {
+    "1": "eldest",
+    "2": "eldest",
+    "3": "eldest",
+    "4": "eldest"
   },
-  {
-   "id": "p2",
-   "page": 1,
-   "text": "[[block:ch3.p2.gp]]",
-   "marks": [
-    "fire_safety"
-   ]
+  "tag": "Brave · between timid and reckless",
+  "fear_level": 2,
+  "fear_reason": "Night, a rising wind and the flame shrinking to a blue bead; it turns within the page as the eldest finds the lee of the milestone, and the chapter ends with everyone together, sheltered and falling asleep.",
+  "opening_block": {
+    "legend": "[[tierc:legend|default:none]]",
+    "gp_reply": null,
+    "last_time": "Last time: at every door on the lane the answer was \"Not I,\" until [[child:eldest]] said, \"I'll help.\""
   },
-  {
-   "id": "p3",
-   "page": 1,
-   "text": "\"Please,\" whispered [[block:ch3.small]].",
-   "marks": [
-    "youngest_act"
-   ]
-  },
-  {
-   "id": "p4",
-   "page": 1,
-   "text": "Everyone waited in a hush, the way you wait for a sneeze…and the flame hopped across. The whole lantern glowed like a jar of honey.",
-   "marks": [
-    "refrain",
-    "rich:hush"
-   ]
-  },
-  {
-   "id": "p5",
-   "page": 1,
-   "text": "\"I wasn't worried at all,\" said Ember, from behind the log basket. Her ears went flat. *Atchoo!*",
-   "marks": [
-    "laugh",
-    "sound"
-   ]
-  },
-  {
-   "id": "p6",
-   "page": 1,
-   "text": "[[block:ch3.p5.gp]]",
-   "marks": [
-    "lantern_breath"
-   ]
-  },
-  {
-   "id": "p7",
-   "page": 1,
-   "text": "Everyone tried it, even Ember, who was always willing. Nothing happened at all, and she looked terribly pleased.",
-   "marks": [
-    "laugh",
-    "rich:willing"
-   ]
-  },
-  {
-   "id": "p8",
-   "page": 2,
-   "text": "[[block:ch3.p7.gp]]",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p9",
-   "page": 2,
-   "text": "[[child:eldest]] read the names, sounding out the hard ones. One was worn so smooth that nobody could read it.",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p10",
-   "page": 2,
-   "text": "\"Whose is that one, worn smooth?\" asked [[block:ch3.asker]].",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p11",
-   "page": 2,
-   "text": "[[block:ch3.p10.gp]]",
-   "marks": [
-    "clue",
-    "refrain"
-   ]
-  },
-  {
-   "id": "p12",
-   "page": 2,
-   "text": "Ember looked at the smooth name for a long moment, and said nothing at all.",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p13",
-   "page": 2,
-   "text": "[[block:ch3.p12.gp]]",
-   "marks": [
-    "echo"
-   ]
-  },
-  {
-   "id": "p14",
-   "page": 2,
-   "text": "[[block:ch3.p13]]",
-   "marks": [
-    "echo",
-    "rich:steady"
-   ]
-  },
-  {
-   "id": "p15",
-   "page": 3,
-   "text": "[[tierc:jar|default:ch3.jar]]",
-   "marks": [
-    "jar"
-   ]
-  },
-  {
-   "id": "p16",
-   "page": 3,
-   "text": "At sunset the road passed a hollow oak as wide as a doorway. Far ahead stood a shepherd's hut. Then the wind began to rise.",
-   "marks": [
-    "vote_setup"
-   ]
-  },
-  {
-   "id": "p17",
-   "page": 3,
-   "text": "*Whoo*, went the wind. Inside the lantern the flame began to flicker, and shrank and shrank, until it was only a tiny blue bead.",
-   "marks": [
-    "rich:flicker",
-    "sound"
-   ]
-  },
-  {
-   "id": "p18",
-   "page": 3,
-   "text": "[[child:eldest]]'s heart thumped. Part of [[pro:eldest.obj]] wanted to dash on into the dark. And part of [[pro:eldest.obj]] wanted to run all the way home.",
-   "marks": [
-    "mean:pull"
-   ]
-  },
-  {
-   "id": "p19",
-   "page": 3,
-   "text": "[[cast:Hild]]'s pocket question was still there, like a smooth stone. [[child:eldest]] asked it out loud: \"What's the brave thing, and what's the silly thing?\"",
-   "marks": [
-    "story_question"
-   ]
-  },
-  {
-   "id": "p20",
-   "page": 4,
-   "text": "The wind only blew harder. \"Excuse me,\" said Ember to the wind, very grandly. \"That is my tail, and I should like it back.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p21",
-   "page": 4,
-   "text": "\"Ember, what should we do?\" asked [[child:eldest]].",
-   "marks": []
-  },
-  {
-   "id": "p22",
-   "page": 4,
-   "text": "\"I know the way home,\" said Ember gently. \"The way on is yours.\"",
-   "marks": [
-    "refrain"
-   ]
-  },
-  {
-   "id": "p23",
-   "page": 4,
-   "text": "[[block:ch3.p21]]",
-   "marks": [
-    "mean:middle_way"
-   ]
-  },
-  {
-   "id": "p24",
-   "page": 4,
-   "text": "[[child:eldest]] took a lantern breath, the way [[block:ch3.p22.gp]] had shown them, and looked around.",
-   "marks": []
-  },
-  {
-   "id": "p25",
-   "page": 4,
-   "text": "[[block:ch3.p22b]]",
-   "marks": [
-    "youngest_act"
-   ]
-  },
-  {
-   "id": "p26",
-   "page": 4,
-   "text": "It was an old grey milestone, with a little lantern carved on top. [[child:eldest]] read the carving: \"West to Wardlow. East to home.\" The wind roared past one side. On the other, it was almost still.",
-   "marks": [
-    "your_line",
-    "clue"
-   ]
-  },
-  {
-   "id": "p27",
-   "page": 4,
-   "text": "\"The lee,\" said [[child:eldest]]. That was [[block:ch3.p24.gp]] word for the side of a wall the wind can't reach.",
-   "marks": [
-    "rich:lee"
-   ]
-  },
-  {
-   "id": "p28",
-   "page": 4,
-   "text": "Ember sat down on the still side. \"Much better,\" she said. \"My tail agrees.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p29",
-   "page": 4,
-   "text": "[[block:ch3.p26]]",
-   "marks": [
-    "modeled_behavior",
-    "phrase",
-    "gesture",
-    "join_in"
-   ]
-  },
-  {
-   "id": "p30",
-   "page": 5,
-   "text": "[[block:ch3.p28]]",
-   "marks": []
-  },
-  {
-   "id": "p31",
-   "page": 5,
-   "text": "Overhead the stars came out, until the sky was sprinkled like sugar on a dark loaf. Even Ember didn't try to count them.",
-   "marks": [
-    "laugh",
-    "wonder"
-   ]
-  },
-  {
-   "id": "p32",
-   "page": 5,
-   "text": "Inside the lantern the blue bead flickered and bowed, like someone very tired, but it stayed steady.",
-   "marks": [
-    "rich:flicker",
-    "rich:steady"
-   ]
-  },
-  {
-   "id": "p33",
-   "page": 5,
-   "text": "[[block:ch3.p32.gp]]",
-   "marks": []
-  },
-  {
-   "id": "p34",
-   "page": 6,
-   "text": "[[child:eldest]] wanted to cup the little flame in both hands. But hands go on your knees, never on the lantern: that was [[block:ch3.p27.gp]] rule.",
-   "marks": [
-    "fire_safety"
-   ]
-  },
-  {
-   "id": "p35",
-   "page": 6,
-   "text": "[[block:ch3.p33]]",
-   "marks": [
-    "key_act",
-    "rich:lee"
-   ]
-  },
-  {
-   "id": "p36",
-   "page": 6,
-   "text": "Ember lifted her nose. \"Someone else walked this road tonight,\" she said. \"Someone I know.\"",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p37",
-   "page": 6,
-   "text": "\"Who?\" whispered [[block:ch3.who]].",
-   "marks": []
-  },
-  {
-   "id": "p38",
-   "page": 6,
-   "text": "\"Sleep now.\" The flame was only a blue bead. Would it hold till morning?",
-   "marks": [
-    "hook",
-    "warm_end"
-   ]
-  }
- ],
- "story_question": {
-  "asked_by": "eldest",
-  "text": "What's the brave thing, and what's the silly thing?",
-  "paragraph": "p19"
- },
- "pause_and_ask": {
-  "after_paragraph": "p19",
-  "position_pct": 63,
-  "position_pct_with_jar": {
-   "150": 59,
-   "250": 63
-  },
-  "touches_mistake_of": null,
-  "in_the_story": "[[child:lead]] asks, \"What's the brave thing, and what's the silly thing?\"",
-  "question": "Why do you think [[child:lead]] stopped to ask a question, instead of dashing on in the dark?",
-  "answers_first": "turn",
-  "if_stuck": [
-   "What would the wind have done to the little flame out on the open road?",
-   "When have you stopped to think before you rushed?"
-  ],
-  "for_the_youngest": {
-   "talk": "What color is the little flame now?",
-   "do_it": "Show me the lantern breath, so gently a flame would only lean."
-  },
-  "stretch": "Running all the way home would have been easy too. Why do you think [[child:lead]] didn't?",
-  "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
- },
- "modeled_behavior": {
-  "slot": "middle",
-  "phrase": "Lantern up!",
-  "gesture_text": "An invisible lantern held up high, then one step toward the milestone (the Little form: the lantern held up high), with \"I'll help\" said first.",
-  "paragraph": "p29"
- },
- "key_act": {
-  "slot": "eldest",
-  "paragraph": "p35",
-  "summary": "Stops instead of rushing on or turning back, asks the pocket question, finds the lee of the milestone and sets the lantern down out of the wind."
- },
- "laugh": {
-  "paragraph": "p20",
-  "line": "\"Excuse me,\" said Ember to the wind, very grandly. \"That is my tail, and I should like it back.\""
- },
- "join_in": {
-  "paragraph": "p29",
-  "line": "Lantern up!"
- },
- "reading_lines": {
-  "your_line": {
-   "paragraph": "p26",
-   "text": "West to Wardlow. East to home."
-  },
-  "big_print": [
-   "Please.",
-   "Lantern up!",
-   "Sleep now."
-  ]
- },
- "rich_words": [
-  {
-   "word": "steady",
-   "everyday": true,
-   "paragraphs": [
-    "p14",
-    "p32"
-   ]
-  },
-  {
-   "word": "flicker",
-   "everyday": true,
-   "paragraphs": [
-    "p17",
-    "p32"
-   ]
-  },
-  {
-   "word": "lee",
-   "everyday": true,
-   "paragraphs": [
-    "p27",
-    "p35"
-   ]
-  }
- ],
- "sound_words": [
-  "Atchoo",
-  "Whoo"
- ],
- "classical_echo": {
-  "source": "Odyssey 2: Telemachus slips away by night",
-  "move": "shape, reversed",
-  "where": [
-   "p13",
-   "p14",
-   "p16"
-  ],
-  "grown_up_note": "Telemachus steals away at nightfall without telling his mother. These children set out as night comes on too, but with the grandparent's yes, the old law of the road behind them, hugs and a proper goodbye at the gate, and a scarf cast on at home: one row for every night they are away (Penelope's weaving, never commented on).",
-  "faith_note": null
- },
- "hook": "The flame was only a blue bead. Would it hold till morning?",
- "last_page": {
-  "why_question": "Why do you think Ember wouldn't choose the way on for them?",
-  "what_happened": "In the dark and the wind, with a thumping heart, [[child:lead]] stopped to think. Then [[child:lead]] found the lee of the milestone for the little flame.",
-  "blessing_key": "Joshua 1:9",
-  "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
-  "next_time": "Ch. 4 · The Flame That Nearly Went Out",
-  "for_the_morning": {
-   "missions": {
-    "3-4": "When someone is getting ready to go out, say \"I'll help!\" and carry one thing.",
-    "5-6": "When a grown-up is packing up, be first to say \"I'll help,\" and carry your own things all the way.",
-    "7-9": "Before you rush at something, ask \"What's the brave thing, and what's the silly thing?\" Then help with the brave one."
-   },
-   "tell_it_back": "At breakfast, ask [[child:eldest]] to tell [[gp:real]] where the little flame spent the night."
-  }
- },
- "vote": {
-  "number": 1,
-  "setup": "The wind is still rising, and the flame is only a blue bead. Where should the heroes carry the lantern, to get it right out of the wind?",
-  "options": [
-   {
-    "key": "A",
-    "title": "Carry the lantern back to the hollow oak by the road.",
-    "line": "A little way back the way they came, with a trunk as wide as a doorway.",
-    "button": "To the hollow oak!"
-   },
-   {
-    "key": "B",
-    "title": "Go on to the shepherd's hut at the next milestone.",
-    "line": "A little way ahead, with thick stone walls and a low wooden door.",
-    "button": "To the shepherd's hut!"
-   }
-  ]
- },
- "remember_when": null,
- "plan_reminder": null,
- "letter_home": null,
- "tier_c_defaults": [
-  {
-   "slot": "jar",
-   "id": "ch3.jar",
-   "words": 164,
-   "paragraphs": [
+  "paragraphs": [
     {
-     "id": "jar.p1",
-     "text": "All afternoon the Keepers' Way ran west between tall hedges, past stubble fields and a mill-pond and a line of old grey milestones. Ember trotted in front with her tail up like a flag, and stepped round every single puddle. \"Wet paws,\" she said, \"are the enemy of a good fox.\""
+      "id": "p1",
+      "page": 1,
+      "text": "Today the flame would leave Candlemere. [[block:ch3.p1.gp]]",
+      "marks": [
+        "problem"
+      ]
     },
     {
-     "id": "jar.p2",
-     "text": "The hedges were full of rosehips, as red as Ember's coat. A robin followed them for a whole field, as if it wanted to see where the lantern was going."
+      "id": "p2",
+      "page": 1,
+      "text": "[[block:ch3.p2.gp]]",
+      "marks": [
+        "fire_safety"
+      ]
     },
     {
-     "id": "jar.p3",
-     "text": "[[tierc:favorite|default:ch3.fav.animal]]"
+      "id": "p3",
+      "page": 1,
+      "text": "\"Please,\" whispered [[block:ch3.small]].",
+      "marks": [
+        "youngest_act"
+      ]
     },
     {
-     "id": "jar.p3b",
-     "text": "Ember bowed to it most politely, but it did not bow back. \"No manners at all,\" she sniffed."
+      "id": "p4",
+      "page": 1,
+      "text": "Everyone waited in a hush, the way you wait for a sneeze…and the flame hopped across. In it went, through the chimney, and the whole lantern glowed like a jar of honey.",
+      "marks": [
+        "refrain",
+        "rich:hush"
+      ]
     },
     {
-     "id": "jar.p4",
-     "text": "[[child:eldest]] read every milestone out loud, sounding out the old carved letters: how far to the next village, and how far back home. Home was already quite a long way."
+      "id": "p5",
+      "page": 1,
+      "text": "\"I wasn't worried at all,\" said Ember, from behind the log basket. Her ears went flat. *Atchoo!*",
+      "marks": [
+        "laugh",
+        "sound"
+      ]
     },
     {
-     "id": "jar.p5",
-     "text": "[[block:ch3.jar.p5]]"
+      "id": "p6",
+      "page": 1,
+      "text": "[[block:ch3.p5.gp]]",
+      "marks": [
+        "lantern_breath"
+      ]
     },
     {
-     "id": "jar.p6",
-     "text": "\"One, two, three, four, lots,\" said Ember, helping."
+      "id": "p7",
+      "page": 1,
+      "text": "Everyone tried it, even Ember, who was always willing. Nothing happened at all, and she looked terribly pleased.",
+      "marks": [
+        "laugh",
+        "rich:willing"
+      ]
     },
     {
-     "id": "jar.p7",
-     "text": "[[tierc:favorite|default:ch3.fav.thing]]"
+      "id": "p8",
+      "page": 2,
+      "text": "[[block:ch3.p7.gp]]",
+      "marks": [
+        "clue"
+      ]
     },
     {
-     "id": "jar.p8",
-     "text": "By the time the sun was low and orange, Candlemere was only a smudge of roofs behind them. Nobody talked about it, but everyone looked back once."
+      "id": "p9",
+      "page": 2,
+      "text": "[[child:eldest]] read the names, sounding out the hard ones. One was worn so smooth that nobody could read it.",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p10",
+      "page": 2,
+      "text": "\"Whose is that one, worn smooth?\" asked [[block:ch3.asker]].",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p11",
+      "page": 2,
+      "text": "[[block:ch3.p10.gp]]",
+      "marks": [
+        "clue",
+        "refrain"
+      ]
+    },
+    {
+      "id": "p12",
+      "page": 2,
+      "text": "Ember looked at the smooth name. She said nothing at all.",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p13",
+      "page": 2,
+      "text": "[[block:ch3.p12.gp]]",
+      "marks": [
+        "echo"
+      ]
+    },
+    {
+      "id": "p14",
+      "page": 2,
+      "text": "[[block:ch3.p13]]",
+      "marks": [
+        "echo",
+        "rich:steady"
+      ]
+    },
+    {
+      "id": "p15",
+      "page": 3,
+      "text": "[[tierc:jar|default:ch3.jar]]",
+      "marks": [
+        "jar"
+      ]
+    },
+    {
+      "id": "p16",
+      "page": 3,
+      "text": "At sunset the road passed a hollow oak as wide as a doorway. Further on, by a milestone, stood a shepherd's hut. Then the wind rose, gust by gust.",
+      "marks": [
+        "vote_setup",
+        "rich:gust"
+      ]
+    },
+    {
+      "id": "p17",
+      "page": 3,
+      "text": "*Whoo*, went the wind, and inside the lantern the flame began to flicker. It shrank and shrank to a tiny blue bead.",
+      "marks": [
+        "rich:flicker",
+        "sound"
+      ]
+    },
+    {
+      "id": "p18",
+      "page": 3,
+      "text": "[[child:eldest]]'s heart thumped. Part of [[pro:eldest.obj]] wanted to dash on into the dark. And part of [[pro:eldest.obj]] wanted to run home.",
+      "marks": [
+        "mean:pull"
+      ]
+    },
+    {
+      "id": "p19",
+      "page": 3,
+      "text": "[[cast:Hild]]'s pocket question was still there, like a smooth stone. [[child:eldest]] asked it out loud: \"What's the brave thing, and what's the silly thing?\"",
+      "marks": [
+        "story_question"
+      ]
+    },
+    {
+      "id": "p20",
+      "page": 4,
+      "text": "Another gust came, harder. \"Excuse me,\" said Ember to the wind, very grandly. \"That is my tail, and I should like it back.\"",
+      "marks": [
+        "laugh",
+        "rich:gust"
+      ]
+    },
+    {
+      "id": "p21",
+      "page": 4,
+      "text": "\"Ember, what should we do?\" asked [[child:eldest]].",
+      "marks": []
+    },
+    {
+      "id": "p22",
+      "page": 4,
+      "text": "\"I know the way home,\" said Ember gently. \"The way on is yours.\"",
+      "marks": [
+        "refrain"
+      ]
+    },
+    {
+      "id": "p23",
+      "page": 4,
+      "text": "[[block:ch3.p21]]",
+      "marks": [
+        "mean:middle_way"
+      ]
+    },
+    {
+      "id": "p24",
+      "page": 4,
+      "text": "[[child:eldest]] held the lantern steady, took a lantern breath, the way [[block:ch3.p22.gp]] had shown them, and looked around.",
+      "marks": [
+        "rich:steady"
+      ]
+    },
+    {
+      "id": "p25",
+      "page": 4,
+      "text": "[[block:ch3.p22b]]",
+      "marks": [
+        "youngest_act"
+      ]
+    },
+    {
+      "id": "p26",
+      "page": 4,
+      "text": "It was an old grey milestone, with a little lantern carved on top. [[child:eldest]] read the carving: \"West to Wardlow, a long way. East to home. Keep the light.\"",
+      "marks": [
+        "your_line",
+        "clue"
+      ]
+    },
+    {
+      "id": "p27",
+      "page": 4,
+      "text": "The wind roared past one side of the stone, but the other side was still. \"The lee,\" said [[child:eldest]], and carried the lantern round into it: [[block:ch3.p24.gp]] word for the side the wind can't reach.",
+      "marks": [
+        "rich:lee"
+      ]
+    },
+    {
+      "id": "p28",
+      "page": 4,
+      "text": "Ember sat down on the still side. \"Much better,\" she said. \"My tail agrees.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p29",
+      "page": 4,
+      "text": "[[block:ch3.p26]]",
+      "marks": [
+        "modeled_behavior",
+        "phrase",
+        "gesture",
+        "join_in"
+      ]
+    },
+    {
+      "id": "p34",
+      "page": 5,
+      "text": "[[child:eldest]] wanted to keep holding the lantern, just to be sure. But [[block:ch3.p27.gp]] rule was hands on knees, never on a lantern once it was set down.",
+      "marks": [
+        "fire_safety"
+      ]
+    },
+    {
+      "id": "p30",
+      "page": 5,
+      "text": "[[block:ch3.p28]]",
+      "marks": []
+    },
+    {
+      "id": "p32",
+      "page": 5,
+      "text": "Inside the lantern the blue bead flickered and bowed low, like someone very tired. It held on, just.",
+      "marks": [
+        "rich:flicker"
+      ]
+    },
+    {
+      "id": "p33",
+      "page": 5,
+      "text": "[[block:ch3.p32.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p35",
+      "page": 6,
+      "text": "[[block:ch3.p33]]",
+      "marks": [
+        "key_act",
+        "rich:lee"
+      ]
+    },
+    {
+      "id": "p36",
+      "page": 6,
+      "text": "Ember lifted her nose. \"Someone else walked this road tonight,\" she said. \"Someone I know.\"",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p37",
+      "page": 6,
+      "text": "\"Who?\" whispered [[block:ch3.who]].",
+      "marks": []
+    },
+    {
+      "id": "p38",
+      "page": 6,
+      "text": "\"Sleep now.\" The flame was only a blue bead. Would it hold till morning?",
+      "marks": [
+        "hook",
+        "warm_end"
+      ]
     }
-   ]
+  ],
+  "story_question": {
+    "asked_by": "eldest",
+    "text": "What's the brave thing, and what's the silly thing?",
+    "paragraph": "p19"
   },
-  {
-   "slot": "favorite",
-   "id": "ch3.fav.animal",
-   "words": 27,
-   "text": "Once, a brown hare peeked out of the hedge, stared at the lantern, and lolloped off as if it had just remembered a kettle on the boil."
+  "pause_and_ask": {
+    "after_paragraph": "p19",
+    "position_pct": 64,
+    "position_pct_with_jar": {
+      "150": 60,
+      "250": 64
+    },
+    "touches_mistake_of": null,
+    "in_the_story": "[[child:lead]] asks, \"What's the brave thing, and what's the silly thing?\"",
+    "question": "Why do you think [[child:lead]] stopped to ask a question, instead of dashing on in the dark?",
+    "answers_first": "middle",
+    "if_stuck": [
+      "What would the wind have done to the little flame out on the open road?",
+      "When have you stopped to think before you rushed?"
+    ],
+    "for_the_youngest": {
+      "talk": "What color is the little flame now?",
+      "do_it": "Show me the lantern breath, so gently a flame would only lean."
+    },
+    "stretch": "Running all the way home would have been easy too. Why do you think [[child:lead]] didn't?",
+    "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
   },
-  {
-   "slot": "favorite",
-   "id": "ch3.fav.thing",
-   "words": 26,
-   "text": "And in the bottom of the backpack, under the apples, rode one small treasure from home: a smooth grey pebble from the cottage path, for luck."
-  }
- ],
- "jar_brief": {
-  "beat": "Grandma lights the Keepers' Lantern from her hearth, teaches the lantern breath, and shows her own name on its base. \"Whose is that one, worn smooth?\" asks Alfie. \"That's not mine to tell,\" says Grandma. She casts on a scarf, and they set out in the afternoon. Night falls on the road, the wind rises, and the flame shrinks to a blue bead. Hugh sets the lantern down in the lee of a milestone, and he and Alfie kneel round it with their backs to the wind, hands on their knees, not on the lantern. Clara is already asleep in Ember's tail. Ember lifts her nose: \"Someone else walked this road tonight. Someone I know.\" \"Who?\" \"Sleep now.\"",
-  "chapter_acts": [
-   {
-    "slot": "eldest",
-    "act": "carries the closed lantern; reads the names on its base and the milestone; asks the pocket question aloud; says the brave thing is stopping; finds the lee and sets the lantern down there"
-   },
-   {
+  "modeled_behavior": {
     "slot": "middle",
-    "act": "asks whose name is worn smooth; says \"I'll help\" first and \"Lantern up!\" in the dark; makes a wall against the wind; asks \"Who?\""
-   },
-   {
-    "slot": "youngest",
-    "act": "says \"Please\" so the flame is given; spots the milestone (\"Big stone!\"); says goodnight to the little flame; falls asleep in Ember's tail"
-   }
+    "phrase": "Lantern up!",
+    "gesture_text": "An invisible lantern held up high, then one step round into the wind (the Little form: the lantern held up high), with \"I'll help\" said first and the job named: \"I'll be the wall.\"",
+    "paragraph": "p29"
+  },
+  "key_act": {
+    "slot": "eldest",
+    "paragraph": "p35",
+    "summary": "Stops instead of rushing on or turning back, asks the pocket question, finds the lee of the milestone, carries the lantern round into it and sets it down there, out of the wind."
+  },
+  "laugh": {
+    "paragraph": "p20",
+    "line": "\"Excuse me,\" said Ember to the wind, very grandly. \"That is my tail, and I should like it back.\""
+  },
+  "join_in": {
+    "paragraph": "p29",
+    "line": "Lantern up!"
+  },
+  "reading_lines": {
+    "your_line": {
+      "paragraph": "p26",
+      "text": "West to Wardlow, a long way. East to home. Keep the light."
+    },
+    "big_print": [
+      "Please.",
+      "Lantern up!",
+      "Sleep now."
+    ]
+  },
+  "rich_words": [
+    {
+      "word": "steady",
+      "everyday": true,
+      "paragraphs": [
+        "p14",
+        "p24"
+      ]
+    },
+    {
+      "word": "gust",
+      "everyday": true,
+      "paragraphs": [
+        "p16",
+        "p20"
+      ]
+    },
+    {
+      "word": "lee",
+      "everyday": true,
+      "paragraphs": [
+        "p27",
+        "p35"
+      ]
+    },
+    {
+      "word": "flicker",
+      "everyday": true,
+      "paragraphs": [
+        "p17",
+        "p32"
+      ]
+    }
   ],
-  "do_not_touch": [
-   "the Keepers' Lantern: nobody but a grown-up opens its little door, and no child touches the flame",
-   "\"Fire won't be taken. It has to be given, and somebody has to ask.\"",
-   "the names on the lantern's base and the one worn smooth (whose name it is)",
-   "\"That's not mine to tell\"",
-   "the scarf: one row for every night they are away",
-   "the flame: small and gold now, a blue bead after nightfall; whether it holds",
-   "the lantern breath",
-   "the hollow oak and the shepherd's hut (Vote 1), passed just before sunset",
-   "the milestone with the carved lantern, and its lee (after nightfall)",
-   "Ember's clue: someone she knows walked this road tonight",
-   "anything eaten or picked from the hedges"
+  "sound_words": [
+    "Atchoo",
+    "Whoo"
   ],
-  "setting_rules": [
-   "the afternoon of setting out, on the Keepers' Way west of Candlemere, in daylight",
-   "everyone walks together on the road; the eldest carries the closed lantern; Ember trots in front",
-   "no roof tonight: they will shelter by a milestone after dark",
-   "nothing leaves the road, and nothing comes to where they will sleep"
+  "classical_echo": {
+    "source": "Odyssey 2: Telemachus slips away by night",
+    "move": "shape, reversed",
+    "where": [
+      "p13",
+      "p14",
+      "p16"
+    ],
+    "grown_up_note": "Telemachus steals away at nightfall without telling his mother. These children set out in the afternoon, and night finds them on the road, but they go with the grandparent's plain yes (\"You have my yes\"), the old law of the road behind them, hugs and a proper goodbye at the gate, and a scarf cast on at home: one row for every night they are away (Penelope's weaving, never commented on).",
+    "faith_note": null
+  },
+  "hook": "The flame was only a blue bead. Would it hold till morning?",
+  "last_page": {
+    "why_question": "Why do you think Ember wouldn't choose the way on for them?",
+    "what_happened": "In the dark and the wind, with a thumping heart, [[child:lead]] stopped to think. Then [[child:lead]] found the lee of the milestone for the little flame.",
+    "blessing_key": "Joshua 1:9",
+    "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
+    "next_time": "Ch. 4 · The Flame That Nearly Went Out",
+    "for_the_morning": {
+      "missions": {
+        "3-4": "When someone is getting ready to go out, say \"I'll help!\" and carry one safe thing, like a hat or a scarf.",
+        "5-6": "When a grown-up is packing up, be first to say \"I'll help,\" and carry your own things all the way.",
+        "7-9": "Before you rush at something, ask \"What's the brave thing, and what's the silly thing?\" Then help with the brave one."
+      },
+      "tell_it_back": "At breakfast, ask [[child:eldest]] to tell [[gp:real]] where the little flame spent the night."
+    }
+  },
+  "vote": {
+    "number": 1,
+    "setup": "The milestone only breaks the wind on one side, and the wind is still rising. The hollow oak is a short walk back, and the shepherd's hut is at the next milestone, a short walk on. Where should the heroes carefully carry the lantern, to get it right out of the wind?",
+    "options": [
+      {
+        "key": "A",
+        "title": "Carry the lantern back to the hollow oak by the road.",
+        "line": "A short, careful walk back, to a trunk as wide as a doorway.",
+        "button": "To the hollow oak!"
+      },
+      {
+        "key": "B",
+        "title": "Go on to the shepherd's hut at the next milestone.",
+        "line": "A short, careful walk on, to thick stone walls that stop the wind.",
+        "button": "To the shepherd's hut!"
+      }
+    ]
+  },
+  "remember_when": null,
+  "plan_reminder": null,
+  "letter_home": null,
+  "tier_c_defaults": [
+    {
+      "slot": "jar",
+      "id": "ch3.jar",
+      "words": 164,
+      "paragraphs": [
+        {
+          "id": "jar.p1",
+          "text": "All afternoon the Keepers' Way ran west between tall hedges, past stubble fields and a mill-pond and a line of old grey milestones. Ember trotted in front with her tail up like a flag, and stepped round every single puddle. \"Wet paws,\" she said, \"are the enemy of a good fox.\""
+        },
+        {
+          "id": "jar.p2",
+          "text": "The hedges were full of rosehips, as red as Ember's coat. A blackbird followed them for a whole field, as if it wanted to see where the lantern was going."
+        },
+        {
+          "id": "jar.p3",
+          "text": "[[tierc:favorite|default:ch3.fav.animal]]"
+        },
+        {
+          "id": "jar.p3b",
+          "text": "Ember bowed to it most politely, but it did not bow back. \"No manners at all,\" she sniffed."
+        },
+        {
+          "id": "jar.p4",
+          "text": "[[child:eldest]] read every milestone out loud, sounding out the old carved letters: how far to the next village, and how far back home. Home was already quite a long way."
+        },
+        {
+          "id": "jar.p5",
+          "text": "[[block:ch3.jar.p5]]"
+        },
+        {
+          "id": "jar.p6",
+          "text": "\"One, two, three, four, lots,\" said Ember, helping."
+        },
+        {
+          "id": "jar.p7",
+          "text": "[[tierc:favorite|default:ch3.fav.thing]]"
+        },
+        {
+          "id": "jar.p8",
+          "text": "By the time the sun was low and orange, Candlemere was only a smudge of roofs behind them. Nobody talked about it, but everyone looked back once."
+        }
+      ]
+    },
+    {
+      "slot": "favorite",
+      "id": "ch3.fav.animal",
+      "words": 27,
+      "text": "Once, a brown hare peeked out of the hedge, stared at the lantern, and lolloped off as if it had just remembered a kettle on the boil."
+    },
+    {
+      "slot": "favorite",
+      "id": "ch3.fav.thing",
+      "words": 26,
+      "text": "And in the bottom of the backpack, under the apples, rode one small treasure from home: a smooth grey pebble from the cottage path, for luck."
+    }
   ],
-  "places_ahead": [
-   "a milestone on the Keepers' Way at nightfall (this chapter)",
-   "the hollow oak or the shepherd's hut, by vote (Chapter 4)",
-   "the shut doors of Ashcombe at dusk (Chapter 5)"
+  "jar_brief": {
+    "beat": "Grandma lights the Keepers' Lantern from her hearth, teaches the lantern breath, and shows her own name on its base. \"Whose is that one, worn smooth?\" asks Alfie. \"That's not mine to tell,\" says Grandma. She casts on a scarf, and they set out in the afternoon. Night falls on the road, the wind rises, and the flame shrinks to a blue bead. Hugh sets the lantern down in the lee of a milestone, and he and Alfie kneel round it with their backs to the wind, hands on their knees, not on the lantern. Clara is already asleep in Ember's tail. Ember lifts her nose: \"Someone else walked this road tonight. Someone I know.\" \"Who?\" \"Sleep now.\"",
+    "chapter_acts": [
+      {
+        "slot": "eldest",
+        "act": "carries the shut lantern by its ring handle; reads the names on its base and the milestone; asks the pocket question aloud; says the silly thing is rushing on and the brave thing is stopping; finds the lee and sets the lantern down there"
+      },
+      {
+        "slot": "middle",
+        "act": "asks whose name is worn smooth; counts the cows; says \"I'll help, and I'll be the wall. Lantern up!\" in the dark; makes a wall against the wind; asks \"Who?\""
+      },
+      {
+        "slot": "youngest",
+        "act": "says \"Please\" so the flame is given; hums to the cows; spots the milestone (\"Big stone!\"); says goodnight to the little flame; falls asleep in Ember's tail"
+      }
+    ],
+    "do_not_touch": [
+      "the Keepers' Lantern: it stays shut; nobody but a grown-up opens its little door, and no child touches the flame",
+      "\"A light that's taken will not catch. A light that's given will. So somebody has to ask.\"",
+      "the names on the lantern's base and the one worn smooth (whose name it is)",
+      "\"That's not mine to tell\"",
+      "the scarf: one row for every night they are away",
+      "the flame: small and gold now, a blue bead after nightfall; whether it holds",
+      "the lantern breath",
+      "the hollow oak (passed at sunset) and the shepherd's hut by a milestone further on (Vote 1)",
+      "the milestone with the carved lantern, and its lee (after nightfall)",
+      "Ember's clue: someone she knows walked this road tonight",
+      "anything eaten or picked from the hedges",
+      "the middle child's count of the cows (six)"
+    ],
+    "setting_rules": [
+      "the afternoon of setting out, on the Keepers' Way west of Candlemere, in daylight",
+      "everyone walks together on the road; the eldest carries the shut lantern by its ring handle; Ember trots in front",
+      "no roof tonight: they will shelter by a milestone after dark",
+      "nothing leaves the road, and nothing comes to where they will sleep"
+    ],
+    "places_ahead": [
+      "a milestone on the Keepers' Way at nightfall (this chapter)",
+      "the hollow oak or the shepherd's hut, by vote (Chapter 4)",
+      "the shut doors of Ashcombe at dusk (Chapter 5)"
+    ]
+  },
+  "allowed_names": [
+    "Keepers'"
+  ],
+  "canon_quoted": [
+    "Hugh set the lantern down in the lee of the milestone, and he and Alfie made a wall with their backs to the wind. Clara was already asleep in Ember's tail. Ember lifted her nose. \"Someone else walked this road tonight,\" she said. \"Someone I know.\" \"Who?\" whispered Alfie. \"Sleep now.\" The flame was only a blue bead. Would it hold till morning?"
+  ],
+  "in_real_life_needed": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we stay where our grown-up can see us, and we only go out after dark with our grown-up.",
+    "In real life, we only go into someone's house with our grown-up."
+  ],
+  "word_count": 1028,
+  "word_count_without_jar": 782,
+  "self_check": [
+    {
+      "item": 1,
+      "ok": true,
+      "note": "Tag copied from the canon row."
+    },
+    {
+      "item": 2,
+      "ok": true,
+      "note": "Title, Wed, lead eldest (Hugh) as canon."
+    },
+    {
+      "item": 3,
+      "ok": true,
+      "note": "Opening block: legend slot and one-sentence Last time."
+    },
+    {
+      "item": 4,
+      "ok": true,
+      "note": "The problem (the flame must leave home today) is the first sentence."
+    },
+    {
+      "item": 5,
+      "ok": true,
+      "note": "Should: the eldest feels both pulls, running on in the dark and running home."
+    },
+    {
+      "item": 6,
+      "ok": true,
+      "note": "Hild is absent; the eldest asks his own pocket question out loud."
+    },
+    {
+      "item": 7,
+      "ok": true,
+      "note": "Pause & ask after p19: 64% as drafted, 60% with a 150-word jar scene, 64% with 250."
+    },
+    {
+      "item": 8,
+      "ok": true,
+      "note": "The middle child says \"I'll help\" first, names the job (\"I'll be the wall\") and says \"Lantern up!\" with the gesture (Little form under 5); the paywall paragraph's wall pays it off."
+    },
+    {
+      "item": 9,
+      "ok": true,
+      "note": "The eldest stops, finds the lee of the milestone the youngest spotted (the child's own find in a one-child family), carries the lantern round into it at once, and sets it down there."
+    },
+    {
+      "item": 10,
+      "ok": true,
+      "note": "All three act: the eldest carries, reads and chooses; the middle asks about the worn name and helps; the youngest says \"Please\", spots the milestone and says goodnight to the flame."
+    },
+    {
+      "item": 11,
+      "ok": true,
+      "note": "Ember: the fib-sneeze (her second; the first is in Ch 1), the lantern breath, \"That is my tail, and I should like it back.\", \"My tail agrees.\", the happy clue."
+    },
+    {
+      "item": 12,
+      "ok": true,
+      "note": "Odyssey 2 as shape, reversed: they leave with the grandparent's yes and a proper goodbye."
+    },
+    {
+      "item": 13,
+      "ok": true,
+      "note": "Your line (the milestone carving), three big-print items, join-in \"Lantern up!\"."
+    },
+    {
+      "item": 14,
+      "ok": true,
+      "note": "steady, gust and lee (new) and flicker (Part 1's week word, returning): each at least twice outside the jar scene; hush and willing come back from Chapters 1 and 2."
+    },
+    {
+      "item": 15,
+      "ok": true,
+      "note": "Job list (story/season-1/outline.json, 1b): jar (onboarding details), Vote 1, clue (the worn name; \"Someone I know\"), the eldest's pocket question, hook. No remember when (bible §2 exception)."
+    },
+    {
+      "item": 16,
+      "ok": true,
+      "note": "Should: the old law's welcome; Ember's trust (\"The way on is yours\")."
+    },
+    {
+      "item": 17,
+      "ok": true,
+      "note": "Ends on the canon's hook about the flame; the canon's closing lines (p35 to p38) show everyone together in the lee, the youngest asleep in Ember's tail (last_paragraph_unit, pending Jon's ruling)."
+    },
+    {
+      "item": 18,
+      "ok": true,
+      "note": "782 words without the jar default (1028 with it); every version 771 to 849 without it."
+    },
+    {
+      "item": 19,
+      "ok": true,
+      "note": "New dialogue within the band limits; the eldest's middle-way line is the one longer key-act line."
+    },
+    {
+      "item": 20,
+      "ok": true,
+      "note": "Refrains exact: \"…and the flame hopped across.\", \"That's not mine to tell.\", \"The way on is yours.\", \"Lantern up!\", \"One, two, three, four, lots.\""
+    }
+  ],
+  "flags_for_jon": [
+    "The paywall ending (canon §8, used word for word) is split into four paragraphs so each has one speaker, as kit 1d allows. Read literally, the last paragraph is then \"Sleep now.\" plus the hook, with no child in it, which fails the ends-warm test. Bible §9 passes the ending only when the canon's closing lines are read as one unit, and that is bible §11 open item 9, your call. Proposed (option 1): the source names p35 to p38 as last_paragraph_unit, and check-chapter.py reads them as one; it warns until you rule. Option 2 is a canon change (the final paragraph shows every child before the hook), which I haven't made. The picture-book telling no longer depends on this: its last picture now opens on the grandparent knitting by a fire that stayed awake and the youngest asleep in Ember's tail.",
+    "\"Sleep now.\" has no speaker in the canon, and after the split it starts its own paragraph, so a listener can't tell whether Ember, the eldest or the narrator says it. The words are the canon's, so it stays; your call whether it should be Ember's (\"said Ember\" would be a canon change).",
+    "Two canon wordings for the same moment: the chapter table says they kneel round the lantern \"hands on their knees, not on the lantern\"; the paywall text says they \"made a wall with their backs to the wind\". Both are kept: the hands rule now comes earlier (p34, the grandparent's rule for a lantern once it's set down), and the paywall words describe the wall, which the middle child has just offered to be (\"I'll be the wall\").",
+    "Lighting the lantern (fire canon, changed in the checker pass). The lantern's little door stays shut the whole time: the grandparent holds the lantern close to the hearth, says the carved rule word for word (\"A light that's taken will not catch. A light that's given will. So somebody has to ask.\", canon §1, planted here for Part 9 and Wardlow), the youngest asks (\"Please\"), and the flame hops across by itself, in through the lantern's chimney. The grandparent then sets the shut lantern on the table, and the names are read round its base there; nobody turns a lit lantern over. The eldest carries it by its ring handle. Ember's fib-sneeze (\"I wasn't worried at all\") is her second; her first is in Ch 1.",
+    "Part 1's jar slot (\"onboarding details\") is a reviewed side scene on the afternoon road (ch3.jar, 150 to 250 words) holding two favorites slots with reviewed defaults: a favorite animal peeking out (ch3.fav.animal, a hare) and a small treasure in the backpack (ch3.fav.thing), as canon §3 describes. Ember's reaction after the animal (\"Ember bowed to it most politely, but it did not bow back. 'No manners at all,' she sniffed.\") is written to fit any animal a family's favorite puts there. Prompt 2 takes one FAVORITE_SLOT a night, so either it fills both, or code picks one and the other runs its default. The middle child now counts the cows out loud (\"One, two, three, four, five, six!\") before Ember's lots, so the listener can count along; the robin is now a blackbird, so a child named Robin never hears the bird as themselves.",
+    "The Pause & ask comes straight after the eldest asks the pocket question, before Ember's \"The way on is yours\", and its question is about that stop, so every prompt can be answered at that point: the youngest is asked the flame's color (blue). It stays inside 35% to 65% with any jar scene. Answers first is now the middle child (families without one fall back to the turn child), so the eldest, who is both the lead and Part 1's turn child, doesn't get both the first answer and the Stretch; bible §2 says \"never automatically the eldest\", so please confirm. The picture-book question is now \"Why do you think Hugh stopped walking?\", which a 3-year-old can answer (\"the wind!\").",
+    "The youngest's act at the crisis: in the dark, the youngest spots the milestone (\"Big stone!\"), and that is where the eldest finds the lee. One child: the child finds it (\"There, close by the road, stood something big and grey.\"), because Ember never solves the problem; she only agrees afterwards (\"My tail agrees.\"). In a one-child family the child is still holding the real lantern at the gesture, so the gesture uses the free hand (\"held his free hand up high, like a second lantern\"), and in a two-child family the youngest steps round into the wind rather than closer to the lit lantern.",
+    "Vote 1 and the middle way now agree. The eldest's line is \"The silly thing is rushing on in the dark with a flame this small. The brave thing is stopping, and getting it out of the wind.\", so the mean is rushing against sheltering, not moving against staying put. The vote asks for a short, careful move to better shelter (\"The milestone only breaks the wind on one side, and the wind is still rising\"), and both options say \"a short, careful walk\". At sunset the hut is \"further on, by a milestone\", which is the next milestone from where they stop, as canon's vote table has it. Canon tension, unflagged until now: the canon beat ends with them settled in the lee, Clara asleep and \"Sleep now\", while Vote 1 moves the flame in Ch 4. Suggest Ch 4 opens with the wind swinging round the stone, so the move is plainly needed.",
+    "New details inside the beat, no canon change: the youngest's \"Please\" as the flame is given; the milestone carving \"West to Wardlow, a long way. East to home. Keep the light.\" (the eldest's line, now using its full length); Ember to the wind, \"That is my tail, and I should like it back.\"; the middle child's \"I'll help, and I'll be the wall. Lantern up!\" in the dark; the youngest's \"Night night, little flame\"; the grandparent knitting the first row of the scarf far behind them, \"by a fire that stayed awake\". A line such as \"This fire stays awake till you're home\" would make a good Vesta seed for Ch 4, spoken by the grandparent at the gate; it is not in this chapter.",
+    "The grandparent's yes is now on the page (\"You have my yes\"), followed by the old law of the Keepers' Way (any child carrying the lantern is fed and housed at every door), hugs and a proper goodbye at the gate. That reverses Telemachus slipping away unseen. The scarf is cast on at home, one row a night. Because the old law promises houses, Part 1's sheet now carries Part 2's house line (\"In real life, we only go into someone's house with our grown-up.\"), and tonight's page prints it.",
+    "Ember and the choice: asked what to do, Ember answers only \"I know the way home. The way on is yours.\", and the eldest says the brave thing out loud himself. No narrator states it.",
+    "The eldest's wish at the lee is about the lantern (\"wanted to keep holding the lantern, just to be sure\"), not about cupping the flame or hugging a lit lantern for warmth, and the rule reads \"hands on knees, never on a lantern once it was set down\", so it is no longer an instruction to the listener.",
+    "The key act no longer waits seven paragraphs: the eldest carries the lantern round into the lee as soon as he names it, and the hands rule now comes before the yawn. The stars paragraph is cut, to keep the chapter inside 750 to 850 words and the Pause & ask inside 65%. The flame \"flickered and bowed low… It held on, just.\", so it no longer \"stayed steady\" before the hook asks whether it will hold; \"steady\" is now the eldest holding the lantern steady (p24).",
+    "Vote 1 copy: the canon's two options as titles, with a calm, short-and-careful line each. Neither route needs an access version (bible §6 lists only votes 5, 6 and 11).",
+    "Rich words: steady, gust and lee (new), with flicker (Part 1's week word) returning, and hush and willing brought back from Chapters 1 and 2. The bible doesn't say whether a returning word counts toward the 3 to 5; with gust added, tonight has three new ones either way. steady and lee are left to come back in Chapters 4 and 5.",
+    "Tool notes: check-chapter.py scores the whole jar default as one paragraph when it looks for speakers, so the default keeps Ember as its only tagged speaker (\"hummed\", not \"sang\"). It can't match the apostrophe in \"Keepers'\" as a place name, so the source lists \"Keepers'\" in allowed_names (all three drafts did this). The picture-book jar pictures name no animal, so they fit whatever favorite a family's jar scene shows."
+  ],
+  "last_paragraph_unit": [
+    "p35",
+    "p36",
+    "p37",
+    "p38"
+  ],
+  "last_paragraph_unit_note": "canon §8's paywall paragraph, used word for word and split only so each paragraph has one speaker (kit 1d). Bible §9 passes this ending when the canon's closing lines are read as one unit (Hugh and Alfie's wall and Clara asleep in Ember's tail, then the hook). Proposed, pending Jon's ruling on bible §11 open item 9.",
+  "packet_card": [
+    {
+      "item": "Pages without a sentence of four words or fewer (Should).",
+      "settled": "Page 2 now has \"She said nothing at all.\" (p12) and page 5 \"It held on, just.\" (p32)."
+    },
+    {
+      "item": "Paragraphs over four sentences: p15 and p26.",
+      "settled": "p26 is now four (the wind moves to p27). p15 is the whole jar default, which code scores as one paragraph; each of its own paragraphs is four sentences or fewer."
+    },
+    {
+      "item": "Narration \"you\" (bible §3: two at most).",
+      "settled": "Now one: \"the way you wait for a sneeze\" (p4). p34's \"hands go on your knees\" is now \"hands on knees\", and p33's warm-cup line is cut for length."
+    },
+    {
+      "item": "Pages that don't end on a pull forward: page 1 (p7) and page 5 (p33).",
+      "settled": "Kept. Page 1 ends on Ember's laugh before the names on the lantern, and page 5 on the grandparent's fire far behind them, the one warm beat before the canon's closing lines."
+    },
+    {
+      "item": "Picture 11's words said \"Everyone made a wall\", but the youngest is asleep in Ember's tail.",
+      "settled": "Now the eldest sets the lantern down and the middle child helps make the wall (both middle children in a family of four; with one or two children, \"Hands went on knees, never on the lantern\"), and the youngest is asleep in Ember's tail, as canon has it."
+    },
+    {
+      "item": "\"For the youngest\" in the picture-book Pause & ask sits with the Pause & ask picture (8), not at the youngest's act picture (9), as bible §3 and prompt 1e's wording ask.",
+      "settled": "Exception recorded here until Jon rules between bible §3 / 1e's wording and 1e's schema (which nests it in pause_and_ask_simple with the Pause & ask picture's number, and the checker wants that). The talk prompt (\"What color is the little flame now?\") answers the same at both pictures."
+    }
   ]
- },
- "allowed_names": [
-  "Keepers'"
- ],
- "canon_quoted": [
-  "Hugh set the lantern down in the lee of the milestone, and he and Alfie made a wall with their backs to the wind. Clara was already asleep in Ember's tail. Ember lifted her nose. \"Someone else walked this road tonight,\" she said. \"Someone I know.\" \"Who?\" whispered Alfie. \"Sleep now.\" The flame was only a blue bead. Would it hold till morning?"
- ],
- "in_real_life_needed": [
-  "In real life, only grown-ups carry a flame.",
-  "In real life, we only go out after dark with our grown-up."
- ],
- "word_count": 1019,
- "word_count_without_jar": 779,
- "self_check": [
-  {
-   "item": 1,
-   "ok": true,
-   "note": "Tag copied from the canon row."
-  },
-  {
-   "item": 2,
-   "ok": true,
-   "note": "Title, Wed, lead eldest (Hugh) as canon."
-  },
-  {
-   "item": 3,
-   "ok": true,
-   "note": "Opening block: legend slot and one-sentence Last time."
-  },
-  {
-   "item": 4,
-   "ok": true,
-   "note": "The problem (the flame must leave home today) is the first sentence."
-  },
-  {
-   "item": 5,
-   "ok": true,
-   "note": "Should: the eldest feels both pulls, running on in the dark and running home."
-  },
-  {
-   "item": 6,
-   "ok": true,
-   "note": "Hild is absent; the eldest asks his own pocket question out loud."
-  },
-  {
-   "item": 7,
-   "ok": true,
-   "note": "Pause & ask after p19: 63% as drafted, 59% with a 150-word jar scene, 63% with 250."
-  },
-  {
-   "item": 8,
-   "ok": true,
-   "note": "The middle child says \"I'll help\" first and \"Lantern up!\" with the gesture (Little form under 5)."
-  },
-  {
-   "item": 9,
-   "ok": true,
-   "note": "The eldest stops, finds the lee of the milestone the youngest spotted, and sets the lantern down there, out of the wind."
-  },
-  {
-   "item": 10,
-   "ok": true,
-   "note": "All three act: the eldest carries, reads and chooses; the middle asks about the worn name and helps; the youngest says \"Please\", spots the milestone and says goodnight to the flame."
-  },
-  {
-   "item": 11,
-   "ok": true,
-   "note": "Ember: the fib-sneeze, the lantern breath, \"That is my tail, and I should like it back.\", \"My tail agrees.\", \"Even Ember didn't try.\""
-  },
-  {
-   "item": 12,
-   "ok": true,
-   "note": "Odyssey 2 as shape, reversed: they leave with the grandparent's yes and a proper goodbye."
-  },
-  {
-   "item": 13,
-   "ok": true,
-   "note": "Your line (the milestone carving), three big-print items, join-in \"Lantern up!\"."
-  },
-  {
-   "item": 14,
-   "ok": true,
-   "note": "steady, flicker, lee: each at least twice outside the jar scene; hush and willing come back from Chapters 1 and 2."
-  },
-  {
-   "item": 15,
-   "ok": true,
-   "note": "Job list: jar (onboarding details), Vote 1 (set up in the story), clue (the worn name; \"Someone I know\"), hook. No remember when (canon exception)."
-  },
-  {
-   "item": 16,
-   "ok": true,
-   "note": "Should: the old law's welcome; Ember's trust (\"The way on is yours\")."
-  },
-  {
-   "item": 17,
-   "ok": true,
-   "note": "Ends on the canon's hook about the flame; everyone together in the lee, the youngest asleep in Ember's tail (see flag 1)."
-  },
-  {
-   "item": 18,
-   "ok": true,
-   "note": "779 words without the jar default (1019 with it); every version 773 to 848 without it."
-  },
-  {
-   "item": 19,
-   "ok": true,
-   "note": "New dialogue within the band limits; the eldest's middle-way line is the one longer key-act line."
-  },
-  {
-   "item": 20,
-   "ok": true,
-   "note": "Refrains exact: \"…and the flame hopped across.\", \"That's not mine to tell.\", \"The way on is yours.\", \"Lantern up!\", \"One, two, three, four, lots.\""
-  }
- ],
- "flags_for_jon": [
-  "The paywall ending (canon §8, used word for word) is split into four paragraphs so each has one speaker, as kit 1d allows. The last paragraph is then \"Sleep now.\" The flame was only a blue bead. Would it hold till morning?\", and the picture of everyone together (the lantern in the lee, the wall of backs, the youngest asleep in Ember's tail) sits two paragraphs before. Suggest the checker reads the canon's closing lines as one unit.",
-  "Two canon wordings for the same moment: the chapter table says they kneel round the lantern \"hands on their knees, not on the lantern\"; the paywall text says they \"made a wall with their backs to the wind\". Both are kept: the hands rule comes just before the paywall paragraph, as the grandparent's rule, and the paywall words describe the wall.",
-  "Lighting the lantern (fire canon). The grandparent opens the little door and holds the lantern close to the hearth; nobody holds a taper or an open flame. The grandparent says the world's rule (\"Fire won't be taken. It has to be given, and somebody has to ask.\"), the youngest asks (\"Please\"), and the flame hops across by itself through the chimney, then stands up, stretches and looks about. Ember's first fib-sneeze follows (\"I wasn't worried at all\"). New lines inside the beat; no canon change.",
-  "Part 1's jar slot (\"onboarding details\") is a reviewed side scene on the afternoon road (ch3.jar, 150 to 250 words) holding two favorites slots with reviewed defaults: a favorite animal peeking out (ch3.fav.animal, a hare) and a small treasure in the backpack (ch3.fav.thing), as canon §3 describes. Ember's reaction after the animal (\"Ember had bowed to it most politely, and nobody had bowed back. 'No manners at all.'\") is written to fit any animal a family's favorite puts there. Prompt 2 takes one FAVORITE_SLOT a night, so either it fills both, or code picks one and the other runs its default.",
-  "The Pause & ask comes straight after the eldest asks the pocket question, before Ember's \"The way on is yours\", and its question is about that stop (\"Why do you think Hugh stopped to ask a question, instead of dashing on in the dark?\"), so every prompt can be answered at that point: the youngest is asked the flame's color (blue). It stays inside 35% to 65% with any jar scene (59% with 150 words, 63% with 250).",
-  "The youngest's act at the crisis: in the dark, the youngest spots the milestone (\"Big stone!\"), and that is where the eldest finds the lee. One child: Ember points her nose at it (no sibling is invented).",
-  "Vote 1 is set up in the story: just before sunset they pass a hollow oak by the road, and a shepherd's hut stands far ahead by the next milestone. The milestone they shelter by has a little lantern carved on its top (canon §2, every seventh milestone), a quiet seed for Hild's Chapter 35 clue.",
-  "New details inside the beat, no canon change: the youngest's \"Please\" as the flame is given; the milestone carving \"West to Wardlow. East to home.\" (the eldest's line); Ember to the wind, \"That is my tail, and I should like it back.\"; the middle child's \"I'll help. Lantern up!\" in the dark; the youngest's \"Night night, little flame\"; the stars; the grandparent knitting the first row of the scarf far behind them; \"And this fire stays awake till you're home.\"",
-  "The grandparent says yes by naming the old law of the Keepers' Way (any child carrying the lantern is fed and housed at every door), and there are hugs and a proper goodbye at the gate. That reverses Telemachus slipping away unseen. The scarf is cast on at home, one row a night.",
-  "Ember and the choice: asked what to do, Ember answers only \"I know the way home. The way on is yours.\", and the eldest says the brave thing out loud himself (\"The silly thing is running on in the dark. The brave thing is stopping here, and keeping the flame out of the wind.\"). No narrator states it.",
-  "Vote 1 copy: the canon's two options as titles, with a calm line each. Neither route needs an access version (bible §6 lists only votes 5, 6 and 11).",
-  "Rich words: steady and lee (new), with flicker (Part 1's week word), hush and willing brought back from Chapters 1 and 2. steady and lee are left to come back in Chapters 4 and 5.",
-  "Tool notes: check-chapter.py scores the whole jar default as one paragraph when it looks for speakers, so the default keeps Ember as its only tagged speaker (\"hummed\", not \"sang\"). It can't match the apostrophe in \"Keepers'\" as a place name, so the source lists \"Keepers'\" in allowed_names (all three drafts did this). The picture-book jar pictures name no animal, so they fit whatever favorite a family's jar scene shows."
- ]
 }

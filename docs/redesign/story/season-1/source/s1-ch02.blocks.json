@@ -1,529 +1,634 @@
 {
- "status": "ok",
- "chapter": 2,
- "blocks": [
-  {
-   "id": "ch2.flame",
-   "varies_by": "grandparent",
-   "versions": {
-    "one": "[[gp:called]]'s flame",
-    "two": "[[gp:both]]'s flame",
-    "nan": "Nan's flame",
-    "remembered": "Nan's flame"
-   }
-  },
-  {
-   "id": "ch2.p3.gp",
-   "varies_by": "grandparent",
-   "versions": {
-    "one.she": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\"",
-    "one.he": "[[gp:called]] stood in the doorway, where he could see the whole lane. \"Every door,\" he said. \"And stay where I can see you.\"",
-    "one.they": "[[gp:called]] stood in the doorway, where they could see the whole lane. \"Every door,\" they said. \"And stay where I can see you.\"",
-    "two": "[[gp:both]] stood in the doorway, where they could see the whole lane. \"Every door,\" said [[gp:called.1]]. \"And stay where we can see you.\"",
-    "nan": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\"",
-    "remembered": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\""
-   }
-  },
-  {
-   "id": "ch2.p4",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "So off went [[child:eldest]] down the lane, with Ember trotting close beside, her tail held high, because it was Tuesday.",
-    "2": "So off they went down the lane. [[child:eldest]] went in front, and [[child:youngest]] held the very tip of Ember's tail, which Ember allowed, because it was Tuesday.",
-    "3": "So off they went down the lane. [[child:eldest]] went in front, and [[child:middle]] counted the doors. [[child:youngest]] held the very tip of Ember's tail, which Ember allowed, because it was Tuesday.",
-    "4": "So off they went down the lane. [[child:eldest]] went in front, [[child:middle]] counted the doors, and [[child:middle2]] counted the chimneys. [[child:youngest]] held the very tip of Ember's tail, which Ember allowed, because it was Tuesday."
-   }
-  },
-  {
-   "id": "ch2.asker",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[child:eldest]]",
-    "2": "[[child:youngest]]",
-    "3": "[[child:middle]]",
-    "4": "[[child:middle]]"
-   }
-  },
-  {
-   "id": "ch2.p13",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[child:eldest]] wanted to dare the dark too, and run in after him. But part of [[pro:eldest.obj]] wanted to run home and hide. So [[child:eldest]] stood still, which was the hardest thing of all.",
-    "2": "[[child:eldest]] wanted to dare the dark too, and run in after him. [[child:youngest]] wanted to run home and hide under the quilt. Nobody moved.",
-    "3": "[[child:eldest]] wanted to dare the dark too, and run in after him. [[child:middle]] wanted to run home and hide under the quilt. Nobody moved.",
-    "4": "[[child:eldest]] wanted to dare the dark too, and run in after him. [[child:middle]] and [[child:middle2]] wanted to run home and hide under the quilt. Nobody moved."
-   }
-  },
-  {
-   "id": "ch2.p16b",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Nobody laughed. Ember went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own. [[child:eldest]] wiped the worst of the mud off with a sleeve.",
-    "2": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own.",
-    "3": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own.",
-    "4": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own."
-   }
-  },
-  {
-   "id": "ch2.patter",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[child:eldest]]",
-    "2": "[[child:youngest]]",
-    "3": "[[child:youngest]]",
-    "4": "[[child:youngest]]"
-   }
-  },
-  {
-   "id": "ch2.p21",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[child:eldest]] stared. The wick-woman could understand Ember too!",
-    "2": "[[child:eldest]] and [[child:youngest]] stared. The wick-woman could understand Ember too!",
-    "3": "[[child:eldest]] and [[child:middle]] stared. The wick-woman could understand Ember too!",
-    "4": "[[child:eldest]], [[child:middle]] and [[child:middle2]] stared. The wick-woman could understand Ember too!"
-   }
-  },
-  {
-   "id": "ch2.p23",
-   "varies_by": "pronoun:eldest",
-   "versions": {
-    "he": "She looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" she asked.",
-    "she": "[[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked [[cast:Hild]].",
-    "they": "She looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" she asked."
-   }
-  },
-  {
-   "id": "ch2.p25",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Then [[cast:Hild]] gave [[child:eldest]] something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" she said. \"There will be more, one day.\"",
-    "2": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" she said.",
-    "3": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" she said.",
-    "4": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" she said."
-   }
-  },
-  {
-   "id": "ch2.p26",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\"",
-    "2": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" And to [[child:youngest]]: \"Who needs help?\"",
-    "3": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" To [[child:middle]]: \"What else could we try?\" And to [[child:youngest]]: \"Who needs help?\"",
-    "4": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" To [[child:middle]]: \"What else could we try?\" To [[child:middle2]]: \"Who's been forgotten?\" And to [[child:youngest]]: \"Who needs help?\""
-   }
-  },
-  {
-   "id": "ch2.p27",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Last of all, [[cast:Hild]] put a little brass bell into [[child:eldest]]'s hand. \"Ring it if you ever lose your way,\" she said. \"Stand still, ring, and call.\"",
-    "2": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose each other,\" she said. \"Stand still, ring, and call.\"",
-    "3": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose them,\" she said. \"Stand still, ring, and call.\"",
-    "4": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose them,\" she said. \"Stand still, ring, and call.\""
-   }
-  },
-  {
-   "id": "ch2.p28",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[block:ch2.p28.eldest]]",
-    "2": "[[block:ch2.p28.youngest]]",
-    "3": "[[block:ch2.p28.youngest]]",
-    "4": "[[block:ch2.p28.youngest]]"
-   }
-  },
-  {
-   "id": "ch2.p28.youngest",
-   "varies_by": "access:youngest",
-   "versions": {
-    "default": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "wheelchair": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "hearing": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "low_vision": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "signs": "[[child:youngest]] signed *Who needs help?*, looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*",
-    "talker": "[[child:youngest]] pressed [[pro:youngest.pos]] talker: *Who needs help?*, looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*"
-   }
-  },
-  {
-   "id": "ch2.p28.eldest",
-   "varies_by": "access:eldest",
-   "versions": {
-    "default": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "wheelchair": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "hearing": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "low_vision": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
-    "signs": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*",
-    "talker": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too, and a press on the talker: *You carry the bell.*"
-   }
-  },
-  {
-   "id": "ch2.p30.gp",
-   "varies_by": "grandparent",
-   "versions": {
-    "one": "Back by the fire, [[gp:called]] listened to all of it.",
-    "two": "Back by the fire, [[gp:both]] listened to all of it.",
-    "nan": "Back by the fire, [[gp:called]] listened to all of it.",
-    "remembered": "Back by the fire, [[gp:called]] listened to all of it."
-   }
-  },
-  {
-   "id": "ch2.p31",
-   "varies_by": "age_band:eldest",
-   "versions": {
-    "3-4": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] held an invisible lantern up high.",
-    "5-6": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] [[block:ch2.p31.step]]",
-    "7-9": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] [[block:ch2.p31.step]]"
-   }
-  },
-  {
-   "id": "ch2.p31.step",
-   "varies_by": "access:eldest",
-   "versions": {
-    "default": "stood up, held an invisible lantern up high, and took one step forward.",
-    "wheelchair": "held an invisible lantern up high, and rolled forward one push.",
-    "hearing": "stood up, held an invisible lantern up high, and took one step forward.",
-    "low_vision": "stood up, held an invisible lantern up high, and took one step forward.",
-    "signs": "stood up, held an invisible lantern up high, and took one step forward.",
-    "talker": "stood up, held an invisible lantern up high, and took one step forward."
-   }
-  },
-  {
-   "id": "ch2.p32",
-   "varies_by": "access:eldest",
-   "versions": {
-    "default": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
-    "wheelchair": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
-    "hearing": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
-    "low_vision": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
-    "signs": "[[child:eldest]] signed it, clear and slow: *I'll help. With a proper light, and all of us together. Lantern up!*",
-    "talker": "[[child:eldest]] pressed [[pro:eldest.pos]] talker: *I'll help. With a proper light, and all of us together. Lantern up!*"
-   }
-  },
-  {
-   "id": "ch2.p32.pro",
-   "varies_by": "pronoun:eldest",
-   "versions": {
-    "he": "he said.",
-    "she": "she said.",
-    "they": "[[child:eldest]] said."
-   }
-  },
-  {
-   "id": "ch2.p33",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[child:eldest]] packed the little backpack, and in went the apples, one at a time.",
-    "2": "\"And me,\" said [[child:youngest]], \"if there are apples.\" In went the apples, one at a time.",
-    "3": "\"And me,\" said [[child:middle]], \"if there are apples.\" In went the apples, one at a time.",
-    "4": "\"And me,\" said [[child:middle]], \"if there are apples.\" In went the apples, one at a time."
-   }
-  },
-  {
-   "id": "ch2.p34",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "\"One, two, three, four, lots,\" said Ember helpfully.",
-    "2": "\"One, two, three, four, lots,\" said Ember helpfully.",
-    "3": "\"One, two, three, four, lots,\" said Ember helpfully.",
-    "4": "\"One, two, three, four, lots,\" said Ember helpfully, while [[child:middle2]] fetched everybody's scarves."
-   }
-  },
-  {
-   "id": "ch2.p35",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Ember tried to help with the boots too, and got her nose stuck in one.",
-    "2": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]].",
-    "3": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]].",
-    "4": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]]."
-   }
-  },
-  {
-   "id": "ch2.p36",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[block:ch2.p36.one]]",
-    "2": "[[block:ch2.p36.gp]]",
-    "3": "[[block:ch2.p36.gp]]",
-    "4": "[[block:ch2.p36.gp]]"
-   }
-  },
-  {
-   "id": "ch2.p36.gp",
-   "varies_by": "grandparent",
-   "versions": {
-    "one.she": "[[gp:called]] laughed. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
-    "one.he": "[[gp:called]] laughed. \"Nobody's too small to carry a light,\" he said. \"But nobody carries it alone.\"",
-    "one.they": "[[gp:called]] laughed. \"Nobody's too small to carry a light,\" they said. \"But nobody carries it alone.\"",
-    "two": "[[gp:both]] laughed. \"Nobody's too small to carry a light,\" said [[gp:called.1]]. \"But nobody carries it alone.\"",
-    "nan": "[[gp:called]] laughed. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
-    "remembered": "[[gp:called]] laughed. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
-   }
-  },
-  {
-   "id": "ch2.p36.one",
-   "varies_by": "grandparent",
-   "versions": {
-    "one.she": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
-    "one.he": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" he said. \"But nobody carries it alone.\"",
-    "one.they": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" they said. \"But nobody carries it alone.\"",
-    "two": "[[gp:both]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" said [[gp:called.1]]. \"But nobody carries it alone.\"",
-    "nan": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
-    "remembered": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
-   }
-  },
-  {
-   "id": "ch2.p37",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "That night the little brass bell sat on the mantel, next to the note from home. Ember slept curled on the quilt like a warm red scarf, and the apples slept in the backpack. [[child:eldest]] fell asleep last. [[cast:Hild]]'s question was still there, the way a smooth stone stays in your pocket.",
-    "2": "That night the little brass bell sat on the mantel, next to the note from home. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last. [[cast:Hild]]'s question was still there, the way a smooth stone stays in your pocket.",
-    "3": "That night the little brass bell sat on the mantel, next to the note from home. [[child:middle]] used the backpack for a pillow. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last. [[cast:Hild]]'s question was still there, the way a smooth stone stays in your pocket.",
-    "4": "That night the little brass bell sat on the mantel, next to the note from home. [[child:middle]] and [[child:middle2]] shared the backpack for a pillow. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last. [[cast:Hild]]'s question was still there, the way a smooth stone stays in your pocket."
-   }
-  },
-  {
-   "id": "pic2.p1.gp",
-   "varies_by": "grandparent",
-   "versions": {
-    "one": "[[gp:called]] watched from the doorway.",
-    "two": "[[gp:both]] watched from the doorway.",
-    "nan": "[[gp:called]] watched from the doorway.",
-    "remembered": "[[gp:called]] watched from the doorway."
-   }
-  },
-  {
-   "id": "pic2.bell",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Then [[cast:Hild]] gave [[child:eldest]] a little brass bell. \"Ring it if you ever lose your way. Stand still, ring, and call.\"",
-    "2": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose each other. Stand still, ring, and call.\"",
-    "3": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose them. Stand still, ring, and call.\"",
-    "4": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose them. Stand still, ring, and call.\""
-   }
-  },
-  {
-   "id": "pic2.act",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "[[cast:Will]] was still muddy and sad. So [[child:eldest]] gave [[cast:Will]] the bell, and a hand to hold. \"You carry the bell.\"",
-    "2": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! Out went the bell, and a hand to hold. \"You carry the bell.\"",
-    "3": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! Out went the bell, and a hand to hold. \"You carry the bell.\"",
-    "4": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! Out went the bell, and a hand to hold. \"You carry the bell.\""
-   }
-  },
-  {
-   "id": "pic2.end",
-   "varies_by": "family_size",
-   "versions": {
-    "1": "Ember curled round [[child:eldest]] like a warm red scarf.",
-    "2": "Ember curled round [[child:youngest]] like a warm red scarf.",
-    "3": "Ember curled round [[child:youngest]] like a warm red scarf.",
-    "4": "Ember curled round [[child:youngest]] like a warm red scarf."
-   }
-  }
- ],
- "looks": [],
- "one_child_she_version": [
-  {
-   "id": "open.last_time",
-   "text": "Last time: a cold, wet fox tapped at the last lit window in Candlemere, with news that the beacon on Wardlow had gone out."
-  },
-  {
-   "id": "p1",
-   "text": "In the morning, Candlemere was grey. No chimney smoked, not one lamp flickered, and every window on the lane looked as sleepy as a yawn. Somebody had to carry Grandma's flame to Wardlow, and soon."
-  },
-  {
-   "id": "p2",
-   "text": "\"Let's ask the neighbors,\" said Robin. \"A grown-up will go.\""
-  },
-  {
-   "id": "p3",
-   "text": "Grandma stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\""
-  },
-  {
-   "id": "p4",
-   "text": "So off went Robin down the lane, with Ember trotting close beside, her tail held high, because it was Tuesday."
-  },
-  {
-   "id": "p5",
-   "text": "The baker opened the bakehouse door in a puff of flour. \"Someone should,\" he said. \"But not I. The bread won't bake itself.\""
-  },
-  {
-   "id": "p6",
-   "text": "\"Good morning,\" said Ember, very politely."
-  },
-  {
-   "id": "p7",
-   "text": "But all the baker heard was *yip, yip*. \"Noisy fox,\" he said, not unkindly, and shut the door."
-  },
-  {
-   "id": "p8",
-   "text": "Ember sniffed. Nobody had ever called her noisy before."
-  },
-  {
-   "id": "p9",
-   "text": "Next door, the miller came out slowly, rubbing his knees. \"Not I,\" he said. \"These old knees won't climb Wardlow.\""
-  },
-  {
-   "id": "p10",
-   "text": "Then Reeve Osric hurried past with his arms full of tally-sticks. \"Yes, yes,\" he said. \"We'll see to it tomorrow.\""
-  },
-  {
-   "id": "p11",
-   "text": "\"How many tomorrows has that been?\" whispered Robin."
-  },
-  {
-   "id": "p12",
-   "text": "\"One, two, three, four, lots,\" whispered Ember."
-  },
-  {
-   "id": "p13",
-   "text": "And so it went, all along the lane. Everybody agreed that someone should go. But nobody was willing to be the one. At every door the answer was the same: \"Not I.\""
-  },
-  {
-   "id": "p14",
-   "text": "Then Will, the baker's boy, came pelting round the corner. \"I'll go right now,\" he shouted, \"and I dare anybody to stop me!\" Off he ran into the old holloway, with no light at all."
-  },
-  {
-   "id": "p15",
-   "text": "The holloway was a sunken lane under the trees, dark even at noon."
-  },
-  {
-   "id": "p16",
-   "text": "Robin wanted to dare the dark too, and run in after him. But part of her wanted to run home and hide. So Robin stood still, which was the hardest thing of all."
-  },
-  {
-   "id": "p17",
-   "text": "*Splosh!* Before anyone could count to twenty, Will came back out of the dark, muddy from his boots to his ears, and a little sheepish."
-  },
-  {
-   "id": "p18",
-   "text": "\"There's a puddle,\" said Will, \"in the dark.\""
-  },
-  {
-   "id": "p19",
-   "text": "Nobody laughed. Ember went and stood right next to the muddy boy, so Will wouldn't be muddy all on his own. Robin wiped the worst of the mud off with a sleeve."
-  },
-  {
-   "id": "p20",
-   "text": "By the Moot Hall door sat old Hild the wick-woman, with her tray of needles, thread and lamp-wicks. Her donkey, Dun, dozed at her side. On the door behind her hung an old notice."
-  },
-  {
-   "id": "p21",
-   "text": "Robin read it out loud: \"Beacon Night. All welcome. Bring one stick.\""
-  },
-  {
-   "id": "p22",
-   "text": "Old Brock lay on the step, the way the old dog always did, and did not get up for anyone. Robin stopped to pat him anyway."
-  },
-  {
-   "id": "p23",
-   "text": "\"Good morning,\" said Ember."
-  },
-  {
-   "id": "p24",
-   "text": "\"Good morning, fox,\" said Hild, as if foxes wished her good morning every day of the week."
-  },
-  {
-   "id": "p25",
-   "text": "Robin stared. The wick-woman could understand Ember too!"
-  },
-  {
-   "id": "p26",
-   "text": "Then Hild beckoned Robin close, while Ember tried to count the wicks and got as far as lots."
-  },
-  {
-   "id": "p27",
-   "text": "Hild looked at Robin for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked Hild."
-  },
-  {
-   "id": "p28",
-   "text": "Robin opened her mouth, and shut it again. Hild only waited, the way old folk wait for a kettle to sing."
-  },
-  {
-   "id": "p29",
-   "text": "Then Hild gave Robin something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" she said. \"There will be more, one day.\""
-  },
-  {
-   "id": "p30",
-   "text": "To Robin: \"What's the brave thing, and what's the silly thing?\""
-  },
-  {
-   "id": "p31",
-   "text": "Last of all, Hild put a little brass bell into Robin's hand. \"Ring it if you ever lose your way,\" she said. \"Stand still, ring, and call.\""
-  },
-  {
-   "id": "p32",
-   "text": "Then Hild went back to her wicks, as if nothing much had happened at all."
-  },
-  {
-   "id": "p33",
-   "text": "Robin looked at the bell, and then at Will, muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\""
-  },
-  {
-   "id": "p34",
-   "text": "Will took the bell, and the hand. *Ting-a-ling!* Not one bit sheepish now, Will rang it all the way back up the lane, very loudly and very proudly. It was the only bright sound in the whole grey lane, and here and there a curtain twitched."
-  },
-  {
-   "id": "p35",
-   "text": "Ember trotted beside him with her ears folded flat, looking pained."
-  },
-  {
-   "id": "p36",
-   "text": "At the cottage gate, Will gave the bell back with a grin. \"When the beacon's lit again,\" he said, \"I'll carry a stick up Wardlow myself.\""
-  },
-  {
-   "id": "p37",
-   "text": "Back by the fire, Grandma listened to all of it."
-  },
-  {
-   "id": "p38",
-   "text": "Robin looked into the fire, thinking about the long road and the dark, and her tummy went wobbly. Nobody on the whole lane had been willing. Then Robin stood up, held an invisible lantern up high, and took one step forward."
-  },
-  {
-   "id": "p39",
-   "text": "\"I'll help,\" she said. \"With a proper light, and all of us together. Lantern up!\""
-  },
-  {
-   "id": "p40",
-   "text": "A hush fell over the cottage. Then the fire gave a small pop, as if it agreed."
-  },
-  {
-   "id": "p41",
-   "text": "Robin packed the little backpack, and in went the apples, one at a time."
-  },
-  {
-   "id": "p42",
-   "text": "\"One, two, three, four, lots,\" said Ember helpfully."
-  },
-  {
-   "id": "p43",
-   "text": "\"Seven,\" said Robin."
-  },
-  {
-   "id": "p44",
-   "text": "\"And I shall come too,\" said Ember. \"Somebody has to know the way, and foxes are extremely good at roads.\""
-  },
-  {
-   "id": "p45",
-   "text": "Ember tried to help with the boots too, and got her nose stuck in one."
-  },
-  {
-   "id": "p46",
-   "text": "Grandma laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
-  },
-  {
-   "id": "p47",
-   "text": "That night the little brass bell sat on the mantel, next to the note from home. Ember slept curled on the quilt like a warm red scarf, and the apples slept in the backpack. Robin fell asleep last. Hild's question was still there, the way a smooth stone stays in your pocket."
-  }
- ],
- "longest_combination_words": 1085,
- "shortest_combination_words": 962,
- "flags_for_jon": [
-  "one_child_she_version is rendered by render-chapter.py's own code for a one-child 'she' family (eldest band 7-9, grandparent 'Grandma', two parents).",
-  "The signs and talker versions of the youngest's \"Who needs help?\" and \"You carry the bell\" keep the same act and result.",
-  "Picture blocks (pic2.*) carry the grandparent, the bell, the youngest's act and the ending for every family size."
- ]
+  "status": "ok",
+  "chapter": 2,
+  "blocks": [
+    {
+      "id": "ch2.flame",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "[[gp:called]]'s flame",
+        "two": "[[gp:both]]'s flame",
+        "nan": "Nan's flame",
+        "remembered": "Nan's flame"
+      }
+    },
+    {
+      "id": "ch2.p3.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one.she": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\"",
+        "one.he": "[[gp:called]] stood in the doorway, where he could see the whole lane. \"Every door,\" he said. \"And stay where I can see you.\"",
+        "one.they": "[[gp:called]] stood in the doorway, where they could see the whole lane. \"Every door,\" they said. \"And stay where I can see you.\"",
+        "two": "[[gp:both]] stood in the doorway, where they could see the whole lane. \"Every door,\" said [[gp:called.1]]. \"And stay where we can see you.\"",
+        "nan": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\"",
+        "remembered": "[[gp:called]] stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\""
+      }
+    },
+    {
+      "id": "ch2.door.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "[[gp:called]]'s doorway",
+        "two": "[[gp:both]]'s doorway",
+        "nan": "Nan's doorway",
+        "remembered": "Nan's doorway"
+      }
+    },
+    {
+      "id": "ch2.hild.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "[[gp:called]] had bought wicks from her for years.",
+        "two": "[[gp:both]] had bought wicks from her for years.",
+        "nan": "Nan had bought wicks from her for years.",
+        "remembered": "Nan had bought wicks from her for years."
+      }
+    },
+    {
+      "id": "ch2.p4",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "So off went [[child:eldest]] down the lane, with Ember trotting close beside, her magnificent tail held high out of the puddles.",
+        "2": "So off they went down the lane. [[child:eldest]] went in front, and [[child:youngest]] walked beside Ember, who held her magnificent tail high out of the puddles.",
+        "3": "So off they went down the lane. [[child:eldest]] went in front, and [[child:middle]] counted the doors. [[child:youngest]] walked beside Ember, who held her magnificent tail high out of the puddles.",
+        "4": "So off they went down the lane. [[child:eldest]] went in front, [[child:middle]] counted the doors, and [[child:middle2]] counted the chimneys. [[child:youngest]] walked beside Ember, who held her magnificent tail high out of the puddles."
+      }
+    },
+    {
+      "id": "ch2.asker",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[child:eldest]]",
+        "2": "[[child:eldest]]",
+        "3": "[[child:middle]]",
+        "4": "[[child:middle]]"
+      }
+    },
+    {
+      "id": "ch2.p13",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[child:eldest]] wanted to take the dare too, and run in after him. But part of [[pro:eldest.obj]] wanted to run home and hide under the quilt. [[child:eldest]] didn't move, and neither did Ember.",
+        "2": "[[child:eldest]] wanted to take the dare too, and run in after him. [[child:youngest]] wanted to run home and hide under the quilt. Nobody moved.",
+        "3": "[[child:eldest]] wanted to take the dare too, and run in after him. [[child:middle]] wanted to run home and hide under the quilt. Nobody moved.",
+        "4": "[[child:eldest]] wanted to take the dare too, and run in after him. [[child:middle]] and [[child:middle2]] wanted to run home and hide under the quilt. Nobody moved."
+      }
+    },
+    {
+      "id": "ch2.p16b",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Nobody laughed. Ember went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own. [[child:eldest]] wiped the worst of the mud off with a sleeve.",
+        "2": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own.",
+        "3": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own.",
+        "4": "Nobody laughed. [[child:youngest]] went and stood right next to the muddy boy, so [[cast:Will]] wouldn't be muddy all on his own."
+      }
+    },
+    {
+      "id": "ch2.patter",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[child:eldest]]",
+        "2": "[[child:youngest]]",
+        "3": "[[child:youngest]]",
+        "4": "[[child:youngest]]"
+      }
+    },
+    {
+      "id": "ch2.p21",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[child:eldest]] stared. The wick-woman could understand Ember too!",
+        "2": "[[child:eldest]] and [[child:youngest]] stared. The wick-woman could understand Ember too!",
+        "3": "[[child:eldest]] and [[child:middle]] stared. The wick-woman could understand Ember too!",
+        "4": "[[child:eldest]], [[child:middle]] and [[child:middle2]] stared. The wick-woman could understand Ember too!"
+      }
+    },
+    {
+      "id": "ch2.p23",
+      "varies_by": "pronoun:eldest",
+      "versions": {
+        "he": "[[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" she asked.",
+        "she": "[[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked [[cast:Hild]].",
+        "they": "[[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" she asked."
+      }
+    },
+    {
+      "id": "ch2.p25",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Then [[cast:Hild]] gave [[child:eldest]] something from the tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" said [[cast:Hild]]. \"There will be more, one day.\"",
+        "2": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" said [[cast:Hild]].",
+        "3": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" said [[cast:Hild]].",
+        "4": "Then [[cast:Hild]] gave each of them something from her tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" said [[cast:Hild]]."
+      }
+    },
+    {
+      "id": "ch2.p26",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\"",
+        "2": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" And to [[child:youngest]]: \"Who needs help?\"",
+        "3": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" To [[child:middle]]: \"What else could we try?\" And to [[child:youngest]]: \"Who needs help?\"",
+        "4": "To [[child:eldest]]: \"What's the brave thing, and what's the silly thing?\" To [[child:middle]]: \"What else could we try?\" To [[child:middle2]]: \"Who's been forgotten?\" And to [[child:youngest]]: \"Who needs help?\""
+      }
+    },
+    {
+      "id": "ch2.p27",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Last of all, [[cast:Hild]] put a little brass bell into [[child:eldest]]'s hand. \"Ring it if you ever lose your way,\" said [[cast:Hild]]. \"Stand still, ring, and call.\"",
+        "2": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose each other,\" said [[cast:Hild]]. \"Stand still, ring, and call.\"",
+        "3": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose them,\" said [[cast:Hild]]. \"Stand still, ring, and call.\"",
+        "4": "Last of all, [[cast:Hild]] put a little brass bell into [[child:youngest]]'s hand. \"Ring it if you ever lose them,\" said [[cast:Hild]]. \"Stand still, ring, and call.\""
+      }
+    },
+    {
+      "id": "ch2.p28",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[block:ch2.p28.eldest]]",
+        "2": "[[block:ch2.p28.youngest]]",
+        "3": "[[block:ch2.p28.youngest]]",
+        "4": "[[block:ch2.p28.youngest]]"
+      }
+    },
+    {
+      "id": "ch2.p28.youngest",
+      "varies_by": "access:youngest",
+      "versions": {
+        "default": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "wheelchair": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "hearing": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "low_vision": "\"Who needs help?\" whispered [[child:youngest]], looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "signs": "[[child:youngest]] signed *Who needs help?*, looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*",
+        "talker": "[[child:youngest]] pressed [[pro:youngest.pos]] talker: *Who needs help?*, looking at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*"
+      }
+    },
+    {
+      "id": "ch2.p28.eldest",
+      "varies_by": "access:eldest",
+      "versions": {
+        "default": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "wheelchair": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "hearing": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "low_vision": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\"",
+        "signs": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too: *You carry the bell.*",
+        "talker": "[[child:eldest]] looked at the bell, and then at [[cast:Will]], muddy and bedraggled on the step. Then out went the bell, and a hand too, and a press on the talker: *You carry the bell.*"
+      }
+    },
+    {
+      "id": "ch2.bellback",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "\"Stand still, ring, and call,\" said [[child:eldest]], and put the bell safe in a pocket.",
+        "2": "\"Stand still, ring, and call,\" said [[child:youngest]], holding the bell up high.",
+        "3": "\"Stand still, ring, and call,\" said [[child:youngest]], holding the bell up high.",
+        "4": "\"Stand still, ring, and call,\" said [[child:youngest]], holding the bell up high."
+      }
+    },
+    {
+      "id": "ch2.p30.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "Back by the fire, [[gp:called]] listened to all of it.",
+        "two": "Back by the fire, [[gp:both]] listened to all of it.",
+        "nan": "Back by the fire, [[gp:called]] listened to all of it.",
+        "remembered": "Back by the fire, [[gp:called]] listened to all of it."
+      }
+    },
+    {
+      "id": "ch2.p31",
+      "varies_by": "age_band:eldest",
+      "versions": {
+        "3-4": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] held an invisible lantern up high.",
+        "5-6": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] [[block:ch2.p31.step]]",
+        "7-9": "[[child:eldest]] looked into the fire, thinking about the long road and the dark, and [[pro:eldest.pos]] tummy went wobbly. Nobody on the whole lane had been willing. Then [[child:eldest]] [[block:ch2.p31.step]]"
+      }
+    },
+    {
+      "id": "ch2.p31.step",
+      "varies_by": "access:eldest",
+      "versions": {
+        "default": "stood up, held an invisible lantern up high, and took one step forward.",
+        "wheelchair": "held an invisible lantern up high, and rolled forward one push.",
+        "hearing": "stood up, held an invisible lantern up high, and took one step forward.",
+        "low_vision": "stood up, held an invisible lantern up high, and took one step forward.",
+        "signs": "stood up, held an invisible lantern up high, and took one step forward.",
+        "talker": "stood up, held an invisible lantern up high, and took one step forward."
+      }
+    },
+    {
+      "id": "ch2.p32",
+      "varies_by": "access:eldest",
+      "versions": {
+        "default": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
+        "wheelchair": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
+        "hearing": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
+        "low_vision": "\"I'll help,\" [[block:ch2.p32.pro]] \"With a proper light, and all of us together. Lantern up!\"",
+        "signs": "[[child:eldest]] signed it, clear and slow: *I'll help. With a proper light, and all of us together. Lantern up!*",
+        "talker": "[[child:eldest]] pressed [[pro:eldest.pos]] talker: *I'll help. With a proper light, and all of us together. Lantern up!*"
+      }
+    },
+    {
+      "id": "ch2.p32.pro",
+      "varies_by": "pronoun:eldest",
+      "versions": {
+        "he": "he said.",
+        "she": "she said.",
+        "they": "[[child:eldest]] said."
+      }
+    },
+    {
+      "id": "ch2.p33",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[child:eldest]] packed the little backpack. In went the apples, one, two, three, four, five, six, seven.",
+        "2": "[[child:eldest]] packed the little backpack. In went the apples, one, two, three, four, five, six, seven.",
+        "3": "\"And me,\" said [[child:middle]]. In went the apples, one, two, three, four, five, six, seven.",
+        "4": "\"And me,\" said [[child:middle]]. In went the apples, one, two, three, four, five, six, seven."
+      }
+    },
+    {
+      "id": "ch2.p34",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "\"One, two, three, four, lots,\" said Ember helpfully.",
+        "2": "\"One, two, three, four, lots,\" said Ember helpfully.",
+        "3": "\"One, two, three, four, lots,\" said Ember helpfully.",
+        "4": "\"One, two, three, four, lots,\" said Ember helpfully, while [[child:middle2]] fetched everybody's scarves."
+      }
+    },
+    {
+      "id": "ch2.p35",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[block:ch2.p35.one]]",
+        "2": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]].",
+        "3": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]].",
+        "4": "[[child:youngest]] pulled on [[pro:youngest.pos]] boots, wrong feet first, and swapped them round with no help at all. \"Me too!\" said [[child:youngest]]."
+      }
+    },
+    {
+      "id": "ch2.p35.one",
+      "varies_by": "pronoun:eldest",
+      "versions": {
+        "he": "[[child:eldest]] pulled on [[pro:eldest.pos]] boots. Ember tried to help, and got her nose stuck in one.",
+        "she": "[[child:eldest]] pulled on [[pro:eldest.pos]] boots. Ember tried to help, and got a fox's nose stuck in one.",
+        "they": "[[child:eldest]] pulled on [[pro:eldest.pos]] boots. Ember tried to help, and got her nose stuck in one."
+      }
+    },
+    {
+      "id": "ch2.p36",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[block:ch2.p36.one]]",
+        "2": "[[block:ch2.p36.gp]]",
+        "3": "[[block:ch2.p36.gp]]",
+        "4": "[[block:ch2.p36.gp]]"
+      }
+    },
+    {
+      "id": "ch2.p36.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one.she": "[[gp:called]] smiled at them all. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
+        "one.he": "[[gp:called]] smiled at them all. \"Nobody's too small to carry a light,\" he said. \"But nobody carries it alone.\"",
+        "one.they": "[[gp:called]] smiled at them all. \"Nobody's too small to carry a light,\" they said. \"But nobody carries it alone.\"",
+        "two": "[[gp:both]] smiled at them all. \"Nobody's too small to carry a light,\" said [[gp:called.1]]. \"But nobody carries it alone.\"",
+        "nan": "[[gp:called]] smiled at them all. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
+        "remembered": "[[gp:called]] smiled at them all. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
+      }
+    },
+    {
+      "id": "ch2.p36.one",
+      "varies_by": "grandparent",
+      "versions": {
+        "one.she": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
+        "one.he": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" he said. \"But nobody carries it alone.\"",
+        "one.they": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" they said. \"But nobody carries it alone.\"",
+        "two": "[[gp:both]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" said [[gp:called.1]]. \"But nobody carries it alone.\"",
+        "nan": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\"",
+        "remembered": "[[gp:called]] laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
+      }
+    },
+    {
+      "id": "ch2.p37",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "That night the brass bell sat on the mantel by the note from home. Ember slept curled on the quilt like a warm red scarf, and the apples slept in the backpack. [[child:eldest]] fell asleep last, with [[cast:Hild]]'s question still there, like a smooth stone in a pocket.",
+        "2": "That night the brass bell sat on the mantel by the note from home. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last, with [[cast:Hild]]'s question still there, like a smooth stone in a pocket.",
+        "3": "That night the brass bell sat on the mantel by the note from home. [[child:middle]] used the backpack for a pillow. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last, with [[cast:Hild]]'s question still there, like a smooth stone in a pocket.",
+        "4": "That night the brass bell sat on the mantel by the note from home. [[child:middle]] and [[child:middle2]] shared the backpack for a pillow. [[child:youngest]] fell asleep with one boot still on, and Ember curled round [[pro:youngest.obj]] like a warm red scarf. [[child:eldest]] fell asleep last, with [[cast:Hild]]'s question still there, like a smooth stone in a pocket."
+      }
+    },
+    {
+      "id": "pic2.p1.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "[[gp:called]] watched from the doorway.",
+        "two": "[[gp:both]] watched from the doorway.",
+        "nan": "[[gp:called]] watched from the doorway.",
+        "remembered": "[[gp:called]] watched from the doorway."
+      }
+    },
+    {
+      "id": "pic2.bell",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Then [[cast:Hild]] gave [[child:eldest]] a little brass bell. \"Ring it if you ever lose your way. Stand still, ring, and call.\"",
+        "2": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose each other. Stand still, ring, and call.\"",
+        "3": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose them. Stand still, ring, and call.\"",
+        "4": "Then [[cast:Hild]] gave [[child:youngest]] a little brass bell. \"Ring it if you ever lose them. Stand still, ring, and call.\""
+      }
+    },
+    {
+      "id": "pic2.act",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "[[cast:Will]] was still muddy and sad. So [[child:eldest]] gave him the bell and a hand: \"You carry the bell.\"",
+        "2": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! So out went the bell and a hand: \"You carry the bell.\"",
+        "3": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! So out went the bell and a hand: \"You carry the bell.\"",
+        "4": "\"Who needs help?\" whispered [[child:youngest]]. [[cast:Will]] did! So out went the bell and a hand: \"You carry the bell.\""
+      }
+    },
+    {
+      "id": "pic2.end",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Ember slept curled on the quilt like a warm red scarf.",
+        "2": "Ember curled round [[child:youngest]] like a warm red scarf.",
+        "3": "Ember curled round [[child:youngest]] like a warm red scarf.",
+        "4": "Ember curled round [[child:youngest]] like a warm red scarf."
+      }
+    },
+    {
+      "id": "pic2.stood",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "No one laughed, and Ember stood right next to the muddy boy.",
+        "2": "No one laughed, and [[child:youngest]] stood right next to the muddy boy.",
+        "3": "No one laughed, and [[child:youngest]] stood right next to the muddy boy.",
+        "4": "No one laughed, and [[child:youngest]] stood right next to the muddy boy."
+      }
+    },
+    {
+      "id": "pic2.pq",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Next, [[cast:Hild]] gave [[child:eldest]] a pocket question: \"What's the brave thing, and what's the silly thing?\"",
+        "2": "Next, [[cast:Hild]] handed out pocket questions. [[block:ch2.p26]]",
+        "3": "Next, [[cast:Hild]] handed out pocket questions. [[block:ch2.p26]]",
+        "4": "[[block:ch2.p26]]"
+      }
+    },
+    {
+      "id": "pic2.pull",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "Part of [[child:eldest]] wanted to run after him, and part wanted to run home. Nobody moved.",
+        "2": "[[child:eldest]] wanted to run after him, and [[child:youngest]] wanted to run home. Nobody moved.",
+        "3": "[[child:eldest]] wanted to run after him, and [[child:middle]] wanted to run home. Nobody moved.",
+        "4": "[[child:eldest]] wanted to run after him, and [[child:middle]] and [[child:middle2]] wanted to run home. Nobody moved."
+      }
+    },
+    {
+      "id": "pic2.bellback",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "At the gate, [[child:eldest]] held up the bell and said, \"Stand still, ring, and call.\"",
+        "2": "At the gate, [[child:youngest]] held up the bell and said, \"Stand still, ring, and call.\"",
+        "3": "At the gate, [[child:youngest]] held up the bell and said, \"Stand still, ring, and call.\"",
+        "4": "At the gate, [[child:youngest]] held up the bell and said, \"Stand still, ring, and call.\""
+      }
+    },
+    {
+      "id": "pic2.p11",
+      "varies_by": "family_size",
+      "versions": {
+        "1": "In went the apples, one, two, three, four, five, six, seven. Ember tried to help with the boots, and got her nose stuck in one.",
+        "2": "In went the apples, one, two, three, four, five, six, seven. \"Me too!\" said [[child:youngest]], and pulled on [[pro:youngest.pos]] own boots.",
+        "3": "In went the apples, one, two, three, four, five, six, seven. \"Me too!\" said [[child:youngest]], and pulled on [[pro:youngest.pos]] own boots.",
+        "4": "In went the apples, one, two, three, four, five, six, seven. \"Me too!\" said [[child:youngest]], and pulled on [[pro:youngest.pos]] own boots."
+      }
+    },
+    {
+      "id": "pic2.p12.gp",
+      "varies_by": "grandparent",
+      "versions": {
+        "one": "\"Nobody's too small to carry a light,\" said [[gp:called]].",
+        "two": "\"Nobody's too small to carry a light,\" said [[gp:called.1]].",
+        "nan": "\"Nobody's too small to carry a light,\" said Nan.",
+        "remembered": "\"Nobody's too small to carry a light,\" said Nan."
+      }
+    }
+  ],
+  "looks": [],
+  "one_child_she_version": [
+    {
+      "id": "open.last_time",
+      "text": "Last time: a cold, wet fox tapped at the last lit window in Candlemere, with news that the beacon on Wardlow had gone out."
+    },
+    {
+      "id": "p1",
+      "text": "In the morning, Candlemere was grey. No chimney smoked, not one lamp flickered, and every window on the lane looked as sleepy as a yawn. Somebody had to carry Grandma's flame to Wardlow, and soon."
+    },
+    {
+      "id": "p2",
+      "text": "\"Let's ask the neighbors,\" said Tamsin. \"A grown-up will go.\""
+    },
+    {
+      "id": "p3",
+      "text": "Grandma stood in the doorway, where she could see the whole lane. \"Every door,\" she said. \"And stay where I can see you.\""
+    },
+    {
+      "id": "p4",
+      "text": "So off went Tamsin down the lane, with Ember trotting close beside, her magnificent tail held high out of the puddles."
+    },
+    {
+      "id": "p5",
+      "text": "The baker opened the bakehouse door in a puff of flour. \"Someone should,\" he said. \"But not I. The bread won't bake itself.\""
+    },
+    {
+      "id": "p6",
+      "text": "\"Good morning,\" said Ember, very politely."
+    },
+    {
+      "id": "p7",
+      "text": "But all the baker heard was *yip, yip*. \"Noisy fox,\" he said, not unkindly, and shut the door."
+    },
+    {
+      "id": "p8",
+      "text": "Ember sniffed. Nobody had ever called her noisy before."
+    },
+    {
+      "id": "p9",
+      "text": "Next door, the miller came out slowly, rubbing his knees. \"Not I,\" he said. \"These old knees won't climb Wardlow.\""
+    },
+    {
+      "id": "p10",
+      "text": "Then Reeve Osric hurried past with his arms full of tally-sticks. \"Yes, yes,\" he said. \"We'll see to it tomorrow.\""
+    },
+    {
+      "id": "p10b",
+      "text": "At one window a face peeped out. \"Too far, in the dark,\" it whispered, and the curtain dropped."
+    },
+    {
+      "id": "p11",
+      "text": "\"How many dark windows will there be by tomorrow?\" whispered Tamsin."
+    },
+    {
+      "id": "p12",
+      "text": "\"One, two, three, four, lots,\" whispered Ember."
+    },
+    {
+      "id": "p13",
+      "text": "Everybody agreed that someone should go. But nobody was willing to be the one. At every door the answer was the same: \"Not I.\""
+    },
+    {
+      "id": "p14",
+      "text": "Then Will, the baker's boy, came pelting round the corner. \"I'll go right now,\" he shouted, \"and I dare anybody to stop me!\" Off he ran into the old holloway, with no light at all."
+    },
+    {
+      "id": "p15",
+      "text": "The holloway, a sunken track under the trees, was dark even at noon, though its mouth was in sight of Grandma's doorway."
+    },
+    {
+      "id": "p16",
+      "text": "Tamsin wanted to take the dare too, and run in after him. But part of her wanted to run home and hide under the quilt. Tamsin didn't move, and neither did Ember."
+    },
+    {
+      "id": "p17",
+      "text": "*Splosh!* Before anyone could count to twenty, Will was back, muddy from top to toe, a little sheepish, and looking hard at his boots."
+    },
+    {
+      "id": "p18",
+      "text": "\"There's a puddle,\" said Will, \"in the dark.\""
+    },
+    {
+      "id": "p19",
+      "text": "Nobody laughed. Ember went and stood right next to the muddy boy, so Will wouldn't be muddy all on his own. Tamsin wiped the worst of the mud off with a sleeve."
+    },
+    {
+      "id": "p20",
+      "text": "By the Moot Hall door, in plain sight of Grandma's doorway, sat old Hild the wick-woman with her tray of wicks. Grandma had bought wicks from her for years. Hild's donkey, Dun, dozed at her side. On the door behind her hung an old notice."
+    },
+    {
+      "id": "p21",
+      "text": "Tamsin read it out loud: \"Beacon Night. All welcome. Bring one stick, and a friend.\""
+    },
+    {
+      "id": "p22",
+      "text": "Old Brock lay on the step, and did not get up for anyone. Tamsin stopped to pat him anyway."
+    },
+    {
+      "id": "p23",
+      "text": "\"Good morning,\" said Ember."
+    },
+    {
+      "id": "p24",
+      "text": "\"Good morning, fox,\" said Hild, as if foxes said good morning to her every day."
+    },
+    {
+      "id": "p25",
+      "text": "Tamsin stared. The wick-woman could understand Ember too!"
+    },
+    {
+      "id": "p26",
+      "text": "Then Hild beckoned Tamsin close, while Ember tried to count the wicks and got as far as lots."
+    },
+    {
+      "id": "p27",
+      "text": "Hild looked at Tamsin for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked Hild."
+    },
+    {
+      "id": "p28",
+      "text": "Tamsin opened her mouth, and shut it again. Hild only waited, the way old folk wait for a kettle to sing."
+    },
+    {
+      "id": "p29",
+      "text": "Then Hild gave Tamsin something from the tray that wasn't on it at all: a question, to keep in a pocket. \"For when I'm not there,\" said Hild. \"There will be more, one day.\""
+    },
+    {
+      "id": "p30",
+      "text": "To Tamsin: \"What's the brave thing, and what's the silly thing?\""
+    },
+    {
+      "id": "p31",
+      "text": "Last of all, Hild put a little brass bell into Tamsin's hand. \"Ring it if you ever lose your way,\" said Hild. \"Stand still, ring, and call.\""
+    },
+    {
+      "id": "p33",
+      "text": "Tamsin looked at the bell, and then at Will, muddy and bedraggled on the step. Then out went the bell, and a hand too. \"You carry the bell.\""
+    },
+    {
+      "id": "p34",
+      "text": "Will took the bell, and the hand. *Ting-a-ling!* Not one bit sheepish now, Will rang it all the way back up the lane, loud and proud. Here and there a curtain twitched."
+    },
+    {
+      "id": "p35",
+      "text": "Ember trotted beside him with her ears folded flat, looking pained."
+    },
+    {
+      "id": "p36",
+      "text": "At the cottage gate, Will gave the bell back with a grin. \"On Beacon Night,\" he said, \"I'll carry a stick up Wardlow myself.\""
+    },
+    {
+      "id": "p36b",
+      "text": "\"Stand still, ring, and call,\" said Tamsin, and put the bell safe in a pocket."
+    },
+    {
+      "id": "p37",
+      "text": "Back by the fire, Grandma listened to all of it."
+    },
+    {
+      "id": "p38",
+      "text": "Tamsin looked into the fire, thinking about the long road and the dark, and her tummy went wobbly. Nobody on the whole lane had been willing. Then Tamsin stood up, held an invisible lantern up high, and took one step forward."
+    },
+    {
+      "id": "p39",
+      "text": "\"I'll help,\" she said. \"With a proper light, and all of us together. Lantern up!\""
+    },
+    {
+      "id": "p40",
+      "text": "A hush fell over the cottage. Then the fire gave a small pop, as if it agreed."
+    },
+    {
+      "id": "p41",
+      "text": "Tamsin packed the little backpack. In went the apples, one, two, three, four, five, six, seven."
+    },
+    {
+      "id": "p42",
+      "text": "\"One, two, three, four, lots,\" said Ember helpfully."
+    },
+    {
+      "id": "p43",
+      "text": "\"Seven!\" said Tamsin."
+    },
+    {
+      "id": "p44",
+      "text": "\"And I shall come too,\" said Ember. \"Somebody has to know the way, and foxes are extremely good at roads.\""
+    },
+    {
+      "id": "p45",
+      "text": "Tamsin pulled on her boots. Ember tried to help, and got a fox's nose stuck in one."
+    },
+    {
+      "id": "p46",
+      "text": "Grandma laughed, and pulled the boot off Ember's nose. \"Nobody's too small to carry a light,\" she said. \"But nobody carries it alone.\""
+    },
+    {
+      "id": "p47",
+      "text": "That night the brass bell sat on the mantel by the note from home. Ember slept curled on the quilt like a warm red scarf, and the apples slept in the backpack. Tamsin fell asleep last, with Hild's question still there, like a smooth stone in a pocket."
+    }
+  ],
+  "longest_combination_words": 1097,
+  "shortest_combination_words": 967,
+  "flags_for_jon": [
+    "one_child_she_version is rendered by render-chapter.py's own code for a one-child 'she' family (eldest band 7-9, grandparent 'Grandma', two parents), named with the checker's placeholder (now \"Tamsin\").",
+    "The signs and talker versions of the youngest's \"Who needs help?\" and \"You carry the bell\" keep the same act and result.",
+    "Picture blocks (pic2.*) carry the grandparent, the bell, the pocket questions, the youngest's act, the apples and boots, the grandparent's \"Nobody's too small…\" and the ending for every family size.",
+    "New in the checker pass: ch2.door.gp and ch2.hild.gp (Hild known to the grandparent, and everything in sight of the doorway), ch2.bellback (the bell's rule said back at the gate), ch2.p35.one (the one-child boots, with a \"she\" version that names the fox's nose).",
+    "New in the revision pass: pic2.pull (picture 3's two pulls in one sentence, so the sample family has two four-sentence pictures, not three) and pic2.bellback (the bell's rule said back at the gate in picture 9). pic2.end's one-child version now matches the master (Ember on the quilt)."
+  ]
 }

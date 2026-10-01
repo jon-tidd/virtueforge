@@ -675,6 +675,8 @@ PINNING (the shared read)
 EACH PICTURE'S DESCRIPTION (for the illustration prompt)
 - Setting and light: where, what time of day, what the light comes from (lantern, hearth, dawn).
 - Who is in it, by slot ("youngest", "middle", "Ember", "Cuthbert"), where each stands from left to right, and what each is doing.
+- Figures by family size. `figures` is the three-child picture. Wherever the picture changes for a family of one, two or four children, add `figures_by_size` with that size's whole list ("1", "2", "4"), and code draws the list for the family's size. Every list names only slots that family has, and each child once: with one child, "lead" and "eldest" are the same child, so that child appears once, with one action. A figure that does what a block gives to a child (the counter, the asker) is the child that block names at that size. Every child the picture's words name is drawn, and every child the family has is drawn in the comfort image and in any picture whose words say "everyone". Code tests every list for every family size (section 14).
+- Keep every child's face and hair clearly back from an open fire or a hopping flame; only a grown-up's hands are near it.
 - Feelings shown in bodies and faces: "eyes wide, holding the eldest's cloak", never "scared".
 - Props that matter, and Ember's pose.
 - Framing: wide, middle or close.
@@ -684,7 +686,7 @@ EACH PICTURE'S DESCRIPTION (for the illustration prompt)
 YOUR OUTPUT (JSON)
 {"status": "ok", "chapter": N,
  "pictures": [
-   {"n": 1, "pinned_to": "p1", "text": "...", "roles": [], "image": {"setting": "...", "light": "...", "figures": [{"who": "youngest", "position": "left", "doing": "...", "feeling_shown": "..."}], "props": ["..."], "ember": "...", "framing": "wide", "comfort_in_frame": "..."}}
+   {"n": 1, "pinned_to": "p1", "text": "...", "roles": [], "image": {"setting": "...", "light": "...", "figures": [{"who": "youngest", "position": "left", "doing": "...", "feeling_shown": "..."}], "figures_by_size": {"1": [{"who": "eldest", "position": "left", "doing": "...", "feeling_shown": "..."}]}, "props": ["..."], "ember": "...", "framing": "wide", "comfort_in_frame": "..."}}
  ],
  "pause_and_ask_simple": {"picture": 6, "question": "...", "for_the_youngest": {"talk": "...", "do_it": "Show me..."}},
  "rich_word": "...",
@@ -722,7 +724,7 @@ For every [[block:ID]] in the chapter, write each version it needs:
 4. Family size. The one-child, two-child and four-child versions of any beat that changes (bible §6). With one child, sibling beats go to Ember, or to the canon's local child where there is one. No new travelling companion is invented. A beat that landed on a sibling lands on someone or something else in the scene, never back on the lead child ("shook herself dry all over the hearth-rug, and all over [[gp:called]]'s slippers", not "all over [[child:eldest]]"). With four, the second middle child gets their own beats.
 5. Age bands. The key act in a version for every band that could fill its slot (3-4, 5-6, 7-9): the same job, the same strength, the same result.
 6. Access. Every key act that depends on seeing, hearing, walking, climbing or speaking gets a wheelchair, hearing-aid, low-vision, signing and talker version with the same act and the same result, and so does each option of a vote. The equipment is ordinary, never explained or pitied. Eye contact is never required: write "turned toward them and listened".
-7. Likeness touches. For each [[look:SLOT|ID]], one option for every builder value that fits the moment (every hair style, glasses, freckles, each kind of clothing, a wheelchair, hearing aids), and "none". Each option is a phrase with no subject that joins the end of the sentence before it (", pushing [[pro:middle.pos]] glasses up [[pro:middle.pos]] nose"). List each look's options in the order you want them preferred.
+7. Likeness touches. For each [[look:SLOT|ID]], one option for every builder value that fits the moment (every hair style, glasses, freckles, each kind of clothing, a wheelchair, hearing aids), and "none". Each option is a phrase with no subject that joins the end of the sentence before it (", pushing [[pro:middle.pos]] glasses up [[pro:middle.pos]] nose"). List each look's options in the order you want them preferred. "none" is normally empty. When a kept sentence needs its subject whatever the look (a canon sentence held whole, like Chapter 1's glasses line), "none" holds a plain version of the sentence with no likeness in it; code uses it whenever no touch is placed, so the sentence is never lost.
 
 Blocks nest. Each block varies on one axis only. A version may hold markers and smaller blocks of its own: a family-size version may hold a pronoun block, a grandparent block, a parents block or a look marker. Code picks from the outer block inward.
 
@@ -1505,6 +1507,7 @@ You write one prompt for an image model, for one picture in a children's bedtime
 
 RULES
 - Name the exact number of people and animals in the picture, and list every figure once, left to right, with where they are and what they are doing.
+- Draw the figures code resolved for this family (the scene's `figures_by_size` list for the family's number of children, else its `figures`, with each role turned into its child). Each child appears once. Never add a child the list leaves out, and never draw one child twice.
 - Describe each figure with its sheet sentence word for word. Never add, drop or change a feature on a sheet. Never describe a child from anything but the sheet.
 - Keep heights true to the sheets' height notes.
 - Show feelings the way the scene gives them, in bodies and faces: wide eyes, a held hand, a small smile. Never make a child look terrified, hurt or in pain.
@@ -2000,7 +2003,7 @@ Production is the season text, tested once in every version. Nightly is what a f
 | Test | At production | At night |
 |---|---|---|
 | Chapter-book telling | 900 to 1,100 words; with a jar slot, 750 to 850 words without the jar default; no sentence over 28 words | Length is a warning to the team, never a fail. After a jar scene or a legend is placed: 900 to 1,100 words (hard fail; the item goes back or waits) |
-| Picture-book telling | 300 to 450 words; 8 to 12 pictures; no sentence over 15 words; every picture pinned to an existing paragraph; `youngest_act`, `pause_and_ask` and `comfort_final` each on exactly one picture, and `comfort_final` is the last; every default jar picture has the role `jar` | After a jar scene or a legend is placed: 300 to 450 words, 8 to 12 pictures, every picture pinned to an existing paragraph or jar-scene paragraph id |
+| Picture-book telling | 300 to 450 words; 8 to 12 pictures; no sentence over 15 words; every picture pinned to an existing paragraph; `youngest_act`, `pause_and_ask` and `comfort_final` each on exactly one picture, and `comfort_final` is the last; every default jar picture has the role `jar`; for every family size, each picture's figures name only slots the family has, draw each child once, draw every child the picture's words name, and draw every child in the comfort image and wherever the words say "everyone" | After a jar scene or a legend is placed: 300 to 450 words, 8 to 12 pictures, every picture pinned to an existing paragraph or jar-scene paragraph id |
 | One speaker | Code flags any paragraph with two or more speakers, and the checker confirms | n/a |
 | Name repetition | In every version, and in 1f's one-child "she" version: a child's name appears at most twice in a paragraph, and never starts two sentences in a row | On the filled text: a warning to the team |
 | Special | n/a | 700 to 900 words; picture-book 250 to 350 words over 8 to 10 pictures |
@@ -2019,6 +2022,8 @@ Production is the season text, tested once in every version. Nightly is what a f
 | Grandparent's name | The grandparent's first name never appears without the called word right before it | The same, on the filled text |
 | Special: not retold | n/a | (1) No run of three or more words in a row shared with the parent's note (see flag 5 in section 15). (2) Code scans the story text for the note's object, setting and act words (teeth, brushing, crayon, home). A hit is not a fail by itself: it goes to the checker, which judges under SPECIAL whether the real object or setting has come back (a red feather after a red crayon is fine; a crayon is not). The model's own `transform` fields are never the test. (3) The slot whose `real_role` is "did the wrong thing" has `story_role` "noticer". (4) `stand_in` is in `transform.story_characters` and is not a family child. Whether any family child does the story's wrong act is judged under SPECIAL |
 | Names | Every capitalized name is in `allowed_names`, the cast, the gazetteer or a reviewed list; no sample-family name outside a marker | The same, and nothing from `private_terms` appears. Skip the first word of every sentence and of every line of dialogue, and, in a legend, the frame and the epithet (taken from the output's `epithet` field) |
+| Job list | The chapter against its row in the stored outline (1b): each job code can see is done (clue and mentor marks, the pocket question, the jar slot and brief, the vote's number, the remember when, the reply, the plan, the letter, the hook as the last sentence); no vote, jar or remember when the list doesn't ask for; `lead_by_size` and `fear_level` match the outline | n/a |
+| Ends warm | The last paragraph names every child, or says "everyone", in every version. A chapter whose canon closing lines were split for one speaker a paragraph may name that run of paragraphs as `last_paragraph_unit`, with its reason in `last_paragraph_unit_note`; the test then reads the run as one, and warns until Jon has ruled on it (bible §11, open item 9) | n/a |
 | Markers | Every marker is one the kit defines; every child-slot marker whose slot a family may lack sits inside a family-size block | No `[[ ]]` marker is left in the output. Before prompt 2 runs: the chapter has markers, and no sample-family name sits outside one |
 | Slot integrity | n/a | The text outside slots equals the app's own code-built text from the selected blocks, character for character |
 | Seen by parent | n/a | At render, in every output path: every Tier C slot shown has `seen_by_parent = true` (and approval, for legends and specials); otherwise its default renders |

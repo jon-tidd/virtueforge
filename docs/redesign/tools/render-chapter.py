@@ -22,7 +22,7 @@ The output is the Markdown the voice engine's loader reads (lib/voice/chapters.t
 front matter, "## Chapter-book telling" (with a "[[Pause & ask]]" paragraph after
 pause_and_ask.after_paragraph), "## Picture-book telling", "## Pause & ask",
 "## Last page", then reviewer sections: "## For the grown-up", "## Vote",
-"## Remember when", "## Pictures", "## Defaults", "## Flags for Jon".
+"## Remember when", "## Pictures", "## Defaults", "## Flags for Jon", "## Packet card".
 
 It fails loudly (exit 2, nothing written) on an unknown marker, a missing block or
 block version, a missing Tier C default, a slot the family doesn't have, or any
@@ -499,7 +499,11 @@ class Renderer:
                     self.look_count[telling] = self.look_count.get(telling, 0) + 1
             self.used_looks.append((lid, chosen, telling))
             if chosen == "none":
-                return ""
+                # "none" is normally empty. When a kept sentence needs its subject whatever the
+                # look (a canon sentence held whole), "none" holds a plain version with no
+                # likeness in it, used whenever no touch is placed (prompts.md 5.6, item 7).
+                plain_txt = lk["options"].get("none") or ""
+                return self.fill(plain_txt, ctx, telling, depth + 1) if plain_txt else ""
             return self.fill(lk["options"][chosen], ctx, telling, depth + 1)
         if kind == "gp":
             s = self.gp["setup"]
@@ -594,7 +598,38 @@ def quoted(s):
     return f"\"{s}\""
 
 
-def describe_image(img, r):
+def resolve_figures(img, r, where="picture"):
+    """The figures one family's picture draws (prompts.md 5.5): image.figures_by_size[N] when
+    the picture has a list for this family's number of children (N is 1 to 4), else
+    image.figures. A role (lead, turn) becomes the slot it lands on for this family.
+    Returns [(slot or cast name, figure)]. Fails on a child slot this family doesn't have,
+    and on a child drawn twice (with one child, "lead" and "eldest" are the same child)."""
+    if not isinstance(img, dict):
+        return []
+    n = str(min(r.slots["size"], 4))
+    by_size = img.get("figures_by_size") or {}
+    figs = by_size[n] if n in by_size else (img.get("figures") or [])
+    out, seen = [], {}
+    for fg in figs:
+        who = fg.get("who", "?")
+        slot = who
+        if who in ROLE_SLOTS:
+            if who == "lead" and r.slots["lead_all"]:
+                raise RenderError(f"{where}: a \"lead\" figure in a chapter led by all the children")
+            slot = r.slots["lead"] if who == "lead" else r.slots["turn"]
+        if slot in CHILD_SLOTS:
+            if slot not in r.slots["by_slot"]:
+                raise RenderError(f"{where}: figure {who!r} is a slot a family of {n} doesn't have "
+                                  f"(give image.figures_by_size[\"{n}\"])")
+            if slot in seen:
+                raise RenderError(f"{where}: draws the {slot} child twice ({seen[slot]!r} and {who!r}) in a "
+                                  f"family of {n} (give image.figures_by_size[\"{n}\"])")
+            seen[slot] = who
+        out.append((slot, fg))
+    return out
+
+
+def describe_image(img, r, where="picture"):
     if not isinstance(img, dict):
         return str(img or "")
     parts = []
@@ -602,10 +637,11 @@ def describe_image(img, r):
         if img.get(key):
             parts.append(f"{key}: {img[key]}")
     figs = []
-    for fg in img.get("figures") or []:
+    for slot, fg in resolve_figures(img, r, where):
         who = fg.get("who", "?")
-        if who in CHILD_SLOTS and who in r.slots["by_slot"]:
-            who = f"{who} ({child_name(r.slots['by_slot'][who])})"
+        if slot in CHILD_SLOTS:
+            label = f"{slot} ({child_name(r.slots['by_slot'][slot])})"
+            who = label if who == slot else f"{who}: {label}"
         bits = [who]
         for k in ("position", "doing", "feeling_shown"):
             if fg.get(k):
@@ -815,7 +851,7 @@ def render_markdown(source, blocks_json, pictures, family, route="A", season=Non
         out += ["No pictures JSON was given.", ""]
     for pic in pics:
         roles = ", ".join(pic.get("roles") or []) or "none"
-        desc = describe_image(pic.get("image"), r) or "(no image description)"
+        desc = describe_image(pic.get("image"), r, f"picture {pic.get('n')}") or "(no image description)"
         out.append(f"- **{pic.get('n')}** · pinned to {pic.get('pinned_to')} · roles: {roles} · {desc}")
     if pics:
         out.append("")
@@ -855,6 +891,22 @@ def render_markdown(source, blocks_json, pictures, family, route="A", season=Non
         out += [f"- {f}" for f in flags]
     else:
         out.append("None.")
+    out.append("")
+
+    # Should items and how each was settled (prompts.md 12.2: a minor fail goes on the
+    # chapter's card in the review packet).
+    out += ["## Packet card", ""]
+    card = []
+    for obj in (source, pictures or {}, blocks_json or {}):
+        for it in obj.get("packet_card") or []:
+            if isinstance(it, dict):
+                card.append(f"**{it.get('item', '')}** {it.get('settled', '')}".strip())
+            else:
+                card.append(str(it))
+    if card:
+        out += [f"- {c}" for c in card]
+    else:
+        out.append("Nothing to settle.")
     out.append("")
 
     md = "\n".join(out)

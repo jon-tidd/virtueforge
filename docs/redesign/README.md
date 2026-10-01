@@ -4,7 +4,7 @@ Planning, research and mockups for the Grit & Grace redesign. Nothing in this fo
 
 ## Start here
 
-- **Live mockup (62 screens, clickable):** https://claude.ai/artifact/VFzzJNTnkhvaLpmZjon3E4 (private to Jon until shared)
+- **Live mockup (63 boards, clickable):** https://claude.ai/artifact/VFzzJNTnkhvaLpmZjon3E4 (private to Jon until shared)
 - **`feature-plan.md`**: every feature, why it exists, screen inventory and phasing.
 
 ## Folders
@@ -19,6 +19,8 @@ Planning, research and mockups for the Grit & Grace redesign. Nothing in this fo
 
 ## Status
 
-- Nothing here is approved or built yet. The live site on `main` is unchanged.
+- Current state, next steps and commands are in `HANDOFF.md` at the repo root. Settled decisions are in `decisions.md`.
+- Work is on branch `claude/grit-grace-phase0`. The live site on `main` is unchanged.
 - Backup of production before this work: branch `backup/main-2026-09-26`.
 - The auto-merge workflow (`.github/workflows/auto-merge-claude.yml`) was removed on this branch, so pushes to `claude/*` branches never merge into `main` automatically.
+- This repo is public: committed files use the sample family (Hugh, Alfie, Clara). `private/` is gitignored.

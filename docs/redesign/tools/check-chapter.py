@@ -111,7 +111,18 @@ REVIEWED_WORDS = {"I", "I'm", "I'll", "I'd", "I've", "Mon", "Tue", "Wed", "Thu",
                   "Hand", "Sleep", "Fire", "Good", "One", "The", "That's", "Chapter", "Ch", "Show",
                   "Why", "What", "Where", "When", "How", "Who", "Tell", "Ask", "Yes", "No", "OK", "Okay"}
 SAMPLE_NAMES = ["Hugh", "Alfie", "Clara", "Ruth"]
-PLACEHOLDER = "Robin"
+# The stand-in child name for scans and the stored one-child version. It must not be a
+# word the reviewed text also uses as a common noun (see COMMON_NOUN_NAMES).
+PLACEHOLDER = "Tamsin"
+# Given names that are also everyday words. A family whose child has one of these names
+# hears the word as the child wherever the text uses it ("A robin followed them").
+# Grow the list; the test only warns, and the checker settles each hit.
+COMMON_NOUN_NAMES = ["Robin", "Rose", "Hazel", "Holly", "Ivy", "Rowan", "Heather", "Daisy", "Poppy", "Violet",
+                     "Iris", "Lily", "Willow", "Jasper", "Autumn", "Summer", "Sky", "Hunter", "Wren", "Lark",
+                     "Ash", "Birch", "Reed", "Brook", "River", "Rain", "Hope", "Joy", "Star", "Bear", "Fox",
+                     "Pearl", "Ruby", "Amber", "Coral", "Sage", "Dawn", "Stone", "Storm", "Forest"]
+assert PLACEHOLDER not in COMMON_NOUN_NAMES
+EVERYONE_RE = re.compile(r"\b(everyone|everybody)\b", re.I)
 YESNO_START = {"is", "are", "was", "were", "do", "does", "did", "can", "could", "will", "would", "has", "have", "should"}
 SUBJECT_PRONOUNS = re.compile(r"\b(he|she|they|he's|she's|they're|he'd|she'd|they'd|he'll|she'll|they'll|"
                               r"they've|himself|herself|themselves|themself)\b", re.I)
@@ -641,7 +652,9 @@ def run(args):
         rep.check("canon.text", probs, f"{len(source.get('canon_quoted') or [])} canon_quoted passage(s) found word for word")
 
     # -- the matrix
-    matrix_stats = {"cb": [], "pb": [], "open": [], "fails": {}, "long_sent": [], "names": [], "n": 0}
+    matrix_stats = {"cb": [], "pb": [], "open": [], "fails": {}, "long_sent": [], "names": [], "n": 0,
+                    "figures": {}, "ending": {}}
+    ending_unit = list(source.get("last_paragraph_unit") or ids[-1:])
     if not args.no_matrix:
         for label, fam, route in matrix_families(bool(route_blocks)):
             matrix_stats["n"] += 1
@@ -664,6 +677,12 @@ def run(args):
             names = [rc.child_name(c) for c in fam["children"]]
             for pid, t in items:
                 matrix_stats["names"] += name_repetition(pid, t, names, label)
+            if pictures:
+                for msg, lab in picture_figure_problems(pictures, r, label):
+                    matrix_stats["figures"].setdefault(msg, []).append(lab)
+            missing = ending_names(items, ending_unit, names)
+            if missing:
+                matrix_stats["ending"].setdefault(f"leaves out {len(missing)} of {len(names)} children", []).append(label)
         fails = [f"{msg} [{len(labels)} famil{'y' if len(labels) == 1 else 'ies'}, e.g. {labels[0]}]"
                  for msg, labels in matrix_stats["fails"].items()]
         rep.check("variants.coverage", fails,
@@ -834,8 +853,15 @@ def run(args):
         first = pics[0].get("text", "") if pics else ""
         if pics and not first.startswith("[[tierc:legend|"):
             rep.fail("picture_book.legend_slot", "the first picture's text doesn't start with [[tierc:legend|default:none]]")
-        long_img = [f"picture {p.get('n')}: {wc(json.dumps(p.get('image'), ensure_ascii=False))} words"
-                    for p in pics if wc(" ".join(str(v) for v in flatten(p.get("image")))) > 80]
+        def img_words(img):
+            """The longest description any family's image prompt gets: the shared fields plus
+            one family size's figure list."""
+            if not isinstance(img, dict):
+                return wc(str(img or ""))
+            base = {k: v for k, v in img.items() if k not in ("figures", "figures_by_size")}
+            lists = [img.get("figures") or []] + list((img.get("figures_by_size") or {}).values())
+            return max(wc(" ".join(str(v) for v in flatten({**base, "figures": fl}))) for fl in lists)
+        long_img = [f"picture {p.get('n')}: {img_words(p.get('image'))} words" for p in pics if img_words(p.get("image")) > 80]
         if long_img:
             rep.warn("picture_book.image_length", "image descriptions over 80 words: " + ", ".join(long_img))
         if pictures.get("rich_word"):
@@ -1214,13 +1240,187 @@ def run(args):
     quiet = [n for n, c in kids_named.items() if c == 0]
     if quiet:
         rep.warn("every_child", "never named in the chapter-book telling (Should: every child says or does something): " + ", ".join(quiet))
-    rep.warn("job_list", "not tested in code here: the job list (prompt 1b) isn't an input; the checker reads it")
+    # -- the picture figures, per family size
+    if pictures:
+        probs = [f"{m} [{len(v)} famil{'y' if len(v) == 1 else 'ies'}, e.g. {v[0]}]" for m, v in matrix_stats["figures"].items()]
+        probs += [f"{m} (sample family)" for m, _ in picture_figure_problems(pictures, r_a, "sample family")]
+        rep.check("pictures.figures", sorted(set(probs)),
+                  "every picture's figures resolve to real children for every family size: no slot a family lacks, "
+                  "nobody drawn twice, every child the words name drawn, every child in the comfort image")
+
+    # -- ends warm, test 1 (bible §9): the last paragraph shows every child
+    probs = []
+    if ending_unit != ids[len(ids) - len(ending_unit):]:
+        probs.append(f"last_paragraph_unit {ending_unit} is not the chapter's last paragraphs in order")
+    miss = ending_names(items_a, ending_unit, names)
+    if miss:
+        probs.append(f"the ending names neither every child nor \"everyone\" for the sample family (no {', '.join(miss)})")
+    probs += [f"the ending {m} [{len(v)} families, e.g. {v[0]}]" for m, v in matrix_stats["ending"].items()]
+    rep.check("ends_warm.children", probs, "the last paragraph" + (f"s ({', '.join(ending_unit)}, read as one unit)" if len(ending_unit) > 1 else f" ({ending_unit[0]})")
+              + (" name" if len(ending_unit) > 1 else " names") + " every child, in every version")
+    if len(ending_unit) > 1:
+        rep.warn("ends_warm.unit", f"the ending is read as one unit, {', '.join(ending_unit)}: "
+                 + (source.get("last_paragraph_unit_note") or "the source gives no reason"))
+
+    # -- the job list (prompt 1b)
+    try:
+        outline, opath = load_outline(args.outline, source.get("season") or 1)
+    except rc.RenderError as e:
+        rep.fail("job_list", str(e))
+        outline = None
+        opath = True
+    if outline is None and opath is None:
+        rep.warn("job_list", "no stored outline (prompt 1b) for this season, so the job list can't be tested")
+    elif outline is not None:
+        row_ = next((c for c in outline.get("chapters") or [] if c.get("chapter") == ch), None)
+        if not row_:
+            rep.warn("job_list", f"the outline {Path(opath).name} has no row for chapter {ch}")
+        else:
+            probs, done, untested = job_problems(source, row_, has_jar)
+            rep.check("job_list", probs, f"jobs from {Path(opath).name}: " + (", ".join(done) or "none")
+                      + ("; lead_by_size and fear level match" if "lead_by_size" in row_ else ""))
+            if untested:
+                rep.warn("job_list.untested", "jobs code can't see; the checker confirms: " + ", ".join(untested))
+
+    # -- names that are also everyday words
+    hits = {}
+    for where, t in story_strings:
+        low = rc.MARKER_RE.sub(" ", plain(t)).lower()
+        for nm in COMMON_NOUN_NAMES:
+            if re.search(r"\b" + nm.lower() + r"s?\b", low):
+                hits.setdefault(nm, set()).add(where.split("[")[0])
+    if hits:
+        rep.warn("names.common_nouns", "a child with one of these names would hear the word as the child; the checker "
+                 "confirms each (a reviewed alternate word, or fine as it is): "
+                 + "; ".join(f"{nm}: {', '.join(sorted(w)[:4])}" for nm, w in sorted(hits.items())))
 
     # -- the rendered Markdown
     if args.md:
         md_checks(rep, args.md, source, blocks_json, pictures, family)
 
     return 1 if rep.print() else 0
+
+
+# ---------------------------------------------------------------------------
+# Pictures, job list and ending
+
+def picture_figure_problems(pictures, r, label):
+    """Every picture's figures resolve to real children for this family (prompts.md 5.5):
+    no slot the family lacks, no child drawn twice, every child the picture's words name is
+    drawn, and every child is drawn in the comfort image and in a picture whose words say
+    "everyone"."""
+    probs = []
+    kids = {c["slot"]: rc.child_name(c) for c in r.slots["ordered"]}
+    for pic in (pictures or {}).get("pictures") or []:
+        where = f"picture {pic.get('n')}"
+        try:
+            figs = rc.resolve_figures(pic.get("image"), r, where)
+        except rc.RenderError as e:
+            probs.append((str(e), label))
+            continue
+        drawn = {slot for slot, _ in figs if slot in rc.CHILD_SLOTS}
+        try:
+            text = plain(r.fill(pic.get("text", ""), "story", "picture"))
+        except rc.RenderError:
+            continue
+        need = {}
+        if "comfort_final" in (pic.get("roles") or []):
+            need.update({s: "the comfort image" for s in kids})
+        elif EVERYONE_RE.search(text):
+            need.update({s: "\"everyone\" in its words" for s in kids})
+        for s_, nm in kids.items():
+            if re.search(r"\b" + re.escape(nm) + r"\b", text):
+                need.setdefault(s_, "its words name them")
+        for s_ in sorted(set(need) - drawn):
+            probs.append((f"{where}: the {s_} child isn't drawn ({need[s_]}) in a family of {min(len(kids), 4)}", label))
+    return probs
+
+
+JOB_KINDS = ("gp_reply", "trial_memory", "jar", "rw", "vote", "pocket_question", "mentor", "plan_reminder",
+             "letter_home", "trial_announcement", "clue", "hook")
+
+
+def load_outline(path, season):
+    if path:
+        p = Path(path)
+    else:
+        p = REDESIGN / "story" / f"season-{season}" / "outline.json"
+        if not p.exists():
+            return None, None
+    try:
+        return json.loads(p.read_text(encoding="utf-8")), p
+    except (OSError, ValueError) as e:
+        raise rc.RenderError(f"can't read the outline {p}: {e}")
+
+
+def job_problems(source, row, has_jar):
+    """The chapter against its stored job list (prompt 1b): each job done where code can see
+    it, and no vote, jar or remember-when the list doesn't ask for."""
+    probs, untested, done = [], [], []
+    paras = source.get("paragraphs") or []
+    marks = [m for p in paras for m in (p.get("marks") or [])]
+    jobs = row.get("jobs") or []
+    kinds = [j.get("job") for j in jobs]
+    for j in jobs:
+        k = j.get("job")
+        if k not in JOB_KINDS:
+            probs.append(f"unknown job {k!r}")
+            continue
+        ok = None
+        if k == "clue":
+            ok = "clue" in marks
+        elif k == "mentor":
+            ok = "mentor" in marks and any("[[cast:Hild]]" in (p.get("text") or "") for p in paras)
+        elif k == "pocket_question":
+            if j.get("slot") == "all":
+                ok = "pocket_questions" in marks
+            else:
+                sq = source.get("story_question") or {}
+                ok = bool(sq.get("text")) and sq.get("asked_by") == j.get("slot") and \
+                    any(p.get("id") == sq.get("paragraph") for p in paras)
+        elif k == "jar":
+            ok = has_jar and bool(source.get("jar_brief"))
+        elif k == "vote":
+            v = source.get("vote") or {}
+            ok = v.get("number") == j.get("number") and len(v.get("options") or []) == 2
+        elif k == "rw":
+            rw = source.get("remember_when") or {}
+            ok = bool(rw.get("text")) and rw.get("slot") == j.get("slot") and rw.get("from_chapter") == j.get("from_chapter")
+        elif k == "gp_reply":
+            ok = bool((source.get("opening_block") or {}).get("gp_reply"))
+        elif k == "plan_reminder":
+            ok = bool(source.get("plan_reminder"))
+        elif k == "letter_home":
+            ok = bool(source.get("letter_home"))
+        elif k == "hook":
+            hook = source.get("hook") or ""
+            last = (paras[-1].get("text") or "") if paras else ""
+            ok = bool(hook) and norm(neutral(hook)) in norm(neutral(last)) + " " + norm(last)
+        else:
+            untested.append(k)
+            continue
+        (done if ok else probs).append(k if ok else f"job {k}" + (f" ({j.get('slot') or j.get('number')})" if j.get("slot") or j.get("number") else "") + " not done")
+    if source.get("vote") and "vote" not in kinds:
+        probs.append("the chapter has a vote the job list doesn't ask for")
+    if has_jar and "jar" not in kinds:
+        probs.append("the chapter has a jar slot the job list doesn't ask for")
+    if source.get("remember_when") and "rw" not in kinds:
+        probs.append("the chapter has a remember-when the job list doesn't ask for")
+    if "mentor" in marks and "mentor" not in kinds:
+        probs.append("Hild appears (a \"mentor\" mark), but the job list has no mentor job")
+    for key in ("lead_by_size", "fear_level"):
+        if key in row and source.get(key) != row[key]:
+            probs.append(f"{key} {source.get(key)!r} differs from the outline's {row[key]!r}")
+    return probs, done, untested
+
+
+def ending_names(items, unit, names):
+    """Which children the ending (the last paragraph, or the unit of paragraphs the source
+    names) leaves out. "everyone" or "everybody" counts as every child."""
+    text = " ".join(t for pid, t in items if pid in unit)
+    if EVERYONE_RE.search(plain(text)):
+        return []
+    return [n for n in names if not re.search(r"\b" + re.escape(n) + r"\b", text)]
 
 
 # ---------------------------------------------------------------------------
@@ -1300,7 +1500,8 @@ REFRAIN_ANCHORS = {
     "Hand on heart: I'll say what's true.": r"\bhand on heart\b",
     "Sleep low, stay warm, wake bright.": r"\bsleep low\b",
     "Good evening. I'm so sorry to bother you.": r"\bso sorry to bother you\b",
-    "One, two, three, four, lots.": r"\bone\W+two\W+three\W+four\b",
+    # A child's real count past four ("one, two, three, four, five, six, seven") is not Ember's refrain.
+    "One, two, three, four, lots.": r"\bone\W+two\W+three\W+four\b(?!\W+five\b)",
     "The way on is yours.": r"\bway on is yours\b",
     "That's not mine to tell.": r"\bnot mine to tell\b",
     "…and the flame hopped across.": r"\bflame hopped across\b",
@@ -1542,7 +1743,7 @@ def md_checks(rep, md_path, source, blocks_json, pictures, family):
         probs.append(f"tag {fm['tag']!r} isn't the strength from the tag line")
     secs, order = rc_sections(md)
     want = ["Chapter-book telling", "Picture-book telling", "Pause & ask", "Last page", "For the grown-up", "Vote",
-            "Remember when", "Pictures", "Defaults", "Flags for Jon"]
+            "Remember when", "Pictures", "Defaults", "Flags for Jon", "Packet card"]
     if order != want:
         probs.append(f"sections are {order}; want {want}")
     telling = paragraphs_of(secs.get("chapter-book telling", ""))
@@ -1603,6 +1804,8 @@ def main(argv=None):
     ap.add_argument("--md", help="a rendered .md (render-chapter.py) to test as well")
     ap.add_argument("--family", default=str(DEFAULT_FAMILY), help="FAMILY JSON (default: story/sample-family.json)")
     ap.add_argument("--canon", default=str(DEFAULT_CANON), help="canon.md, for the chapter table and the Tolkien list")
+    ap.add_argument("--outline", help="the season outline with every chapter's job list, lead_by_size and fear level "
+                    "(prompt 1b; default: story/season-N/outline.json when it exists)")
     ap.add_argument("--no-matrix", action="store_true", help="skip rendering for the made-up families")
     ap.add_argument("--quiet", action="store_true", help="print only WARN and FAIL lines")
     return run(ap.parse_args(argv))

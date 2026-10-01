@@ -1,0 +1,60 @@
+{
+  "status": "ok",
+  "season": 1,
+  "scope": "Prompt 1b for Season 1, run only for what the canon doesn't already hold (kit 5.2): each chapter's job list (the canon's Marks column and its exceptions, as data), lead_by_size and fear level. This first run covers Part 1's drafted chapters, 1 to 3. Chapters 4 to 60 are still to run before they are drafted.",
+  "chapters": [
+    {
+      "chapter": 1, "part": 1, "day": "Mon", "title": "The Fox at the Window",
+      "lead": "youngest",
+      "lead_by_size": { "1": "eldest", "2": "youngest", "3": "youngest", "4": "youngest" },
+      "fear_level": 2,
+      "fear_reason": "The lamps go out one by one and the grandparent's fire dips low and blue (the flame going out, fear scale 2); it is banked at once with the old words and settles, and everyone falls asleep by it.",
+      "beat": "Candlemere's lamps are going out, and only the grandparent's fire is left. A wet red fox taps at the glass; the youngest asks the grandparent, then says \"Come in, fox,\" and the eldest lifts the latch. Ember brings the news that the beacon on Wardlow has gone out, and the grandparent understands her.",
+      "echo": "Odyssey 1: the stranger at the door, welcomed before any questions",
+      "faith_echo": null,
+      "tag": "Brave · between timid and reckless",
+      "jobs": [
+        { "job": "clue", "note": "the grandparent understands Ember (canon Marks: Clue)" }
+      ]
+    },
+    {
+      "chapter": 2, "part": 1, "day": "Tue", "title": "I'll Help!",
+      "lead": "eldest",
+      "lead_by_size": { "1": "eldest", "2": "eldest", "3": "eldest", "4": "eldest" },
+      "fear_level": 2,
+      "fear_reason": "Will runs out of sight into the dark holloway with no light (lost for a minute, fear scale 2); he is back before anyone can count to twenty, muddy and fine, and is helped at once.",
+      "beat": "Door to door along the lane, every grown-up says \"Not I,\" and Will runs off into the dark and comes back muddy. At her tray by the Moot Hall door, Hild asks the eldest, \"How big must a person be to carry a lantern?\", gives each child a pocket question, and gives the youngest a bell. At the grandparent's hearth the eldest says, \"I'll help.\"",
+      "echo": "Folk tale, The Little Red Hen; Aesop, Belling the Cat",
+      "faith_echo": "Isaiah 6:8, \"Here am I; send me\" (the canon's chapter verse)",
+      "tag": "Brave · between timid and reckless",
+      "jobs": [
+        { "job": "mentor", "note": "Hild appears (canon Marks: Hild)" },
+        { "job": "pocket_question", "slot": "all", "note": "Hild gives each child a pocket question (canon §1); from Chapter 3 a child asks their own whenever Hild is away" },
+        { "job": "clue", "note": "Hild understands Ember; the baker hears only yips (canon Marks: Clue)" }
+      ]
+    },
+    {
+      "chapter": 3, "part": 1, "day": "Wed", "title": "The First Night on the Keepers' Way",
+      "lead": "eldest",
+      "lead_by_size": { "1": "eldest", "2": "eldest", "3": "eldest", "4": "eldest" },
+      "fear_level": 2,
+      "fear_reason": "Night, a rising wind and the flame shrinking to a blue bead (the flame going out, fear scale 2); it turns within the page as the eldest finds the lee of the milestone.",
+      "beat": "The grandparent lights the Keepers' Lantern from the hearth, teaches the lantern breath and shows the names on its base; one is worn smooth, and \"That's not mine to tell.\" They set out in the afternoon; at nightfall the wind shrinks the flame to a blue bead, and the eldest sets the lantern down in the lee of a milestone. Ember smells someone she knows on the road.",
+      "echo": "Odyssey 2: Telemachus slips away by night",
+      "faith_echo": null,
+      "tag": "Brave · between timid and reckless",
+      "jobs": [
+        { "job": "jar", "note": "onboarding details (canon Marks: Jar)" },
+        { "job": "vote", "number": 1 },
+        { "job": "clue", "note": "the worn-smooth name; \"Someone I know\" (canon Marks: Clue)" },
+        { "job": "pocket_question", "slot": "eldest", "note": "Hild is away, so the eldest asks their own pocket question (canon §1, the question rule)" },
+        { "job": "hook", "note": "the canon's paywall hook: \"The flame was only a blue bead. Would it hold till morning?\"" }
+      ],
+      "exceptions": ["No remember when: Chapter 3 is the bible §2 exception."]
+    }
+  ],
+  "flags_for_jon": [
+    "Only Chapters 1 to 3 have rows so far. Run 1b for Chapters 4 to 60 before they are drafted; check-chapter.py reads this file for every chapter's job list, lead_by_size and fear level.",
+    "Fear levels: all three Part 1 chapters are level 2 (the flame going out, and Will out of sight for a minute), each turning within the page and ending warm. Chapter 1's draft had said 1."
+  ]
+}

@@ -8,41 +8,108 @@
       "roles": [],
       "text": "[[tierc:legend|default:none]] Today the flame would leave Candlemere, in the old brass Keepers' Lantern. [[block:pic3.p2.gp]]",
       "image": {
-        "setting": "the cottage hearth",
-        "light": "warm honey hearth light, afternoon sun through the window",
+        "setting": "the cottage hearth, the children a step back",
+        "light": "honey hearth light, afternoon sun",
         "figures": [
           {
             "who": "eldest",
             "position": "left",
-            "doing": "leaning in to watch",
+            "doing": "watching",
             "feeling_shown": "eyes on the lantern"
           },
           {
             "who": "middle",
-            "position": "left of center",
-            "doing": "kneeling on the hearth-rug",
+            "position": "left of center, on the rug",
+            "doing": "kneeling",
             "feeling_shown": "chin in hands"
           },
           {
             "who": "youngest",
             "position": "center",
-            "doing": "standing close",
+            "doing": "standing back",
             "feeling_shown": "hands clasped"
           },
           {
             "who": "grandparent",
-            "position": "right",
-            "doing": "holding the brass lantern near the fire, its little door open",
+            "position": "right, nearest the fire",
+            "doing": "holding the shut lantern near the hearth",
             "feeling_shown": "calm, a small smile"
           }
         ],
         "props": [
-          "the Keepers' Lantern, little door open",
-          "the hearth fire"
+          "the lantern, its little door shut"
         ],
-        "ember": "sitting by the log basket, ears up",
+        "ember": "by the log basket, ears up",
         "framing": "middle",
-        "comfort_in_frame": "the grandparent right beside the children"
+        "comfort_in_frame": "the grandparent between the children and the fire",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "watching",
+              "feeling_shown": "eyes on the lantern"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern near the hearth",
+              "feeling_shown": "calm, a small smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "watching",
+              "feeling_shown": "eyes on the lantern"
+            },
+            {
+              "who": "youngest",
+              "position": "center",
+              "doing": "standing back",
+              "feeling_shown": "hands clasped"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern near the hearth",
+              "feeling_shown": "calm, a small smile"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "watching",
+              "feeling_shown": "eyes on the lantern"
+            },
+            {
+              "who": "middle",
+              "position": "left of center",
+              "doing": "kneeling",
+              "feeling_shown": "chin in hands"
+            },
+            {
+              "who": "middle2",
+              "position": "center left",
+              "doing": "kneeling",
+              "feeling_shown": "chin in hands"
+            },
+            {
+              "who": "youngest",
+              "position": "center",
+              "doing": "standing back",
+              "feeling_shown": "hands clasped"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern near the hearth",
+              "feeling_shown": "calm, a small smile"
+            }
+          ]
+        }
       }
     },
     {
@@ -52,17 +119,17 @@
       "text": "\"Please,\" whispered [[block:pic3.small]]. Everyone waited in a hush…and the flame hopped across. The whole lantern glowed like a jar of honey.",
       "image": {
         "setting": "the cottage hearth",
-        "light": "warm honey hearth light, afternoon sun through the window, and now the lantern's gold glow",
+        "light": "hearth light, and the lantern's gold glow",
         "figures": [
           {
             "who": "youngest",
-            "position": "center",
+            "position": "center, on the rug, well back",
             "doing": "whispering, hands clasped",
-            "feeling_shown": "hopeful, leaning forward"
+            "feeling_shown": "hopeful"
           },
           {
             "who": "eldest",
-            "position": "left",
+            "position": "left, on the rug",
             "doing": "watching",
             "feeling_shown": "eyes wide"
           },
@@ -74,17 +141,85 @@
           },
           {
             "who": "grandparent",
-            "position": "right",
-            "doing": "holding the lantern by the fire",
+            "position": "right, nearest the fire",
+            "doing": "holding the shut lantern by the hearth",
             "feeling_shown": "calm"
           }
         ],
         "props": [
-          "a small gold flame hopping from the hearth into the lantern's chimney"
+          "a small gold flame hopping from the hearth into the shut lantern's chimney"
         ],
-        "ember": "peeking out from behind the log basket",
-        "framing": "close",
-        "comfort_in_frame": "everyone close together at the hearth"
+        "ember": "peeking from behind the log basket",
+        "framing": "middle",
+        "comfort_in_frame": "the grandparent nearest the fire",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center, on the rug, well back",
+              "doing": "whispering, hands clasped",
+              "feeling_shown": "hopeful"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern by the hearth",
+              "feeling_shown": "calm"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "center, on the rug, well back",
+              "doing": "whispering, hands clasped",
+              "feeling_shown": "hopeful"
+            },
+            {
+              "who": "eldest",
+              "position": "left, on the rug",
+              "doing": "watching",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern by the hearth",
+              "feeling_shown": "calm"
+            }
+          ],
+          "4": [
+            {
+              "who": "youngest",
+              "position": "center, well back",
+              "doing": "whispering",
+              "feeling_shown": "hopeful"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "watching",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "middle",
+              "position": "left, behind",
+              "doing": "watching",
+              "feeling_shown": "mouth open"
+            },
+            {
+              "who": "middle2",
+              "position": "left, behind",
+              "doing": "watching",
+              "feeling_shown": "mouth open"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, nearest the fire",
+              "doing": "holding the shut lantern by the hearth",
+              "feeling_shown": "calm"
+            }
+          ]
+        }
       }
     },
     {
@@ -126,17 +261,85 @@
         ],
         "ember": "trying the breath too, looking very pleased",
         "framing": "middle",
-        "comfort_in_frame": "everyone sitting close on the rug"
+        "comfort_in_frame": "everyone sitting close on the rug",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "showing a slow breath, lips soft",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "breathing out gently",
+              "feeling_shown": "shoulders low"
+            }
+          ],
+          "2": [
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "showing a slow breath, lips soft",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "breathing out gently",
+              "feeling_shown": "shoulders low"
+            },
+            {
+              "who": "youngest",
+              "position": "center front",
+              "doing": "trying it too",
+              "feeling_shown": "eyes shut tight"
+            }
+          ],
+          "4": [
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "showing a slow breath, lips soft",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "breathing out gently",
+              "feeling_shown": "shoulders low"
+            },
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "breathing in",
+              "feeling_shown": "cheeks puffed"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "breathing in",
+              "feeling_shown": "cheeks puffed"
+            },
+            {
+              "who": "youngest",
+              "position": "center front",
+              "doing": "trying it too",
+              "feeling_shown": "eyes shut tight"
+            }
+          ]
+        }
       }
     },
     {
       "n": 4,
       "pinned_to": "p11",
       "roles": [],
-      "text": "Names were scratched on the lantern's base, and one was worn smooth. [[block:pic3.p10.gp]] Ember looked at it for a long time, and said nothing.",
+      "text": "Names were scratched round the lantern's brass base, and one was worn smooth. [[block:pic3.p10.gp]] Ember looked at it for a long time, and said nothing.",
       "image": {
         "setting": "the table by the window",
-        "light": "warm honey hearth light, afternoon sun through the window",
+        "light": "hearth light, afternoon sun",
         "figures": [
           {
             "who": "middle",
@@ -146,23 +349,60 @@
           },
           {
             "who": "eldest",
-            "position": "left",
-            "doing": "peering close",
+            "position": "left, a step back",
+            "doing": "reading the names",
             "feeling_shown": "frowning to read"
           },
           {
             "who": "grandparent",
             "position": "right",
-            "doing": "holding the lantern upside down, thumb on one smooth place",
+            "doing": "one finger on a smooth place on the lantern's base",
             "feeling_shown": "gentle, a secret smile"
           }
         ],
         "props": [
-          "tiny scratched marks on the lantern's base, too small to read"
+          "the shut lantern on the table",
+          "tiny marks round its base, too small to read"
         ],
         "ember": "very still, gazing at the smooth place",
-        "framing": "close",
-        "comfort_in_frame": "everyone close round the table"
+        "framing": "middle",
+        "comfort_in_frame": "everyone close round the table",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left, a step back",
+              "doing": "reading the names",
+              "feeling_shown": "frowning to read"
+            },
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "one finger on a smooth place on the lantern's base",
+              "feeling_shown": "gentle, a secret smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "center",
+              "doing": "pointing at the lantern's base",
+              "feeling_shown": "curious"
+            },
+            {
+              "who": "eldest",
+              "position": "left, a step back",
+              "doing": "reading the names",
+              "feeling_shown": "frowning to read"
+            },
+            {
+              "who": "grandparent",
+              "position": "right",
+              "doing": "one finger on a smooth place on the lantern's base",
+              "feeling_shown": "gentle, a secret smile"
+            }
+          ]
+        }
       }
     },
     {
@@ -171,14 +411,14 @@
       "roles": [],
       "text": "[[block:pic3.p13.gp]] Off went everyone, with [[child:eldest]] carrying the lantern as steady as steady.",
       "image": {
-        "setting": "the cottage gate, the road running west between hedges",
-        "light": "late afternoon on the road, low gold sun",
+        "setting": "the cottage gate, the road running west",
+        "light": "late afternoon, low gold sun",
         "figures": [
           {
             "who": "eldest",
             "position": "center",
             "doing": "carrying the shut lantern by its ring",
-            "feeling_shown": "steady, careful steps"
+            "feeling_shown": "careful steps"
           },
           {
             "who": "middle",
@@ -195,7 +435,7 @@
           {
             "who": "grandparent",
             "position": "back, at the gate",
-            "doing": "waving, red wool on knitting needles",
+            "doing": "waving, red wool on needles",
             "feeling_shown": "warm"
           }
         ],
@@ -205,7 +445,75 @@
         ],
         "ember": "trotting ahead, tail up like a flag",
         "framing": "wide",
-        "comfort_in_frame": "the grandparent at the gate behind them"
+        "comfort_in_frame": "the grandparent at the gate behind them",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "carrying the shut lantern by its ring",
+              "feeling_shown": "careful steps"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, at the gate",
+              "doing": "waving, red wool on needles",
+              "feeling_shown": "warm"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "carrying the shut lantern by its ring",
+              "feeling_shown": "careful steps"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "walking beside the eldest",
+              "feeling_shown": "waving back"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, at the gate",
+              "doing": "waving, red wool on needles",
+              "feeling_shown": "warm"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "carrying the shut lantern by its ring",
+              "feeling_shown": "careful steps"
+            },
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "walking, looking back",
+              "feeling_shown": "big wave"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "walking, looking back",
+              "feeling_shown": "big wave"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "walking beside the eldest",
+              "feeling_shown": "waving back"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, at the gate",
+              "doing": "waving, red wool on needles",
+              "feeling_shown": "warm"
+            }
+          ]
+        }
       }
     },
     {
@@ -222,7 +530,7 @@
           {
             "who": "eldest",
             "position": "left",
-            "doing": "carrying the shut lantern, looking back",
+            "doing": "carrying the shut lantern by its ring, looking back",
             "feeling_shown": "quiet"
           },
           {
@@ -240,48 +548,147 @@
         ],
         "props": [
           "a puddle on the road",
-          "a robin on a gatepost"
+          "a blackbird on a gatepost"
         ],
         "ember": "stepping daintily round a puddle",
         "framing": "wide",
-        "comfort_in_frame": "hands held, everyone close"
+        "comfort_in_frame": "hands held, everyone close",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "carrying the shut lantern by its ring, looking back",
+              "feeling_shown": "quiet"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "carrying the shut lantern by its ring, looking back",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding the eldest's free hand",
+              "feeling_shown": "looking back"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "carrying the shut lantern by its ring, looking back",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "looking back",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "looking back",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding the middle one's hand",
+              "feeling_shown": "looking back"
+            }
+          ]
+        }
       }
     },
     {
       "n": 7,
       "pinned_to": "p17",
       "roles": [],
-      "text": "At sunset everyone passed a hollow oak, as wide as a doorway. Far ahead stood a shepherd's hut. Then *whoo*, the wind rose, and the flame shrank to a tiny blue bead.",
+      "text": "At sunset everyone passed a hollow oak, as wide as a doorway. Further on stood a shepherd's hut. Then *whoo*, the wind rose, and the flame shrank to a tiny blue bead.",
       "image": {
-        "setting": "the open road, a hollow oak at the roadside, a small hut far ahead",
-        "light": "sunset going to dusk; the lantern's tiny blue glow",
+        "setting": "the open road, a hollow oak, a small hut further on",
+        "light": "dusk; the lantern's tiny blue glow",
         "figures": [
           {
             "who": "eldest",
             "position": "center",
-            "doing": "holding the lantern close",
+            "doing": "holding the shut lantern out by its ring, away from the body",
             "feeling_shown": "worried eyebrows"
           },
           {
             "who": "middle",
             "position": "left",
-            "doing": "holding the eldest's cloak",
+            "doing": "holding the eldest's free hand",
             "feeling_shown": "eyes wide"
           },
           {
             "who": "youngest",
             "position": "right",
             "doing": "holding the middle one's hand",
-            "feeling_shown": "leaning close"
+            "feeling_shown": "shoulders hunched against the wind"
           }
         ],
         "props": [
-          "the lantern with a tiny blue flame",
           "hedges bending in the wind"
         ],
-        "ember": "tail blown sideways, ears back at the wind",
+        "ember": "tail blown sideways, ears back",
         "framing": "middle",
-        "comfort_in_frame": "hands held, Ember pressed close"
+        "comfort_in_frame": "hands held, Ember pressed close",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding the shut lantern out by its ring, away from the body",
+              "feeling_shown": "worried eyebrows"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding the shut lantern out by its ring, away from the body",
+              "feeling_shown": "worried eyebrows"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding the eldest's free hand",
+              "feeling_shown": "shoulders hunched against the wind"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding the shut lantern out by its ring, away from the body",
+              "feeling_shown": "worried eyebrows"
+            },
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "holding the eldest's free hand",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "holding the middle one's hand",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding a sibling's hand",
+              "feeling_shown": "shoulders hunched against the wind"
+            }
+          ]
+        }
       }
     },
     {
@@ -290,7 +697,7 @@
       "roles": [
         "pause_and_ask"
       ],
-      "text": "[[child:eldest]]'s heart thumped in the dark. Then [[child:eldest]] stopped, and asked the pocket question out loud. \"What's the brave thing, and what's the silly thing?\"",
+      "text": "In the dark, [[child:eldest]] stopped, and asked the pocket question. \"What's the brave thing, and what's the silly thing?\" [[block:pic3.mean]]",
       "image": {
         "setting": "the dark road",
         "light": "night on the road; stars, and the lantern's tiny blue glow",
@@ -319,7 +726,57 @@
         ],
         "ember": "sitting close, looking up at the eldest",
         "framing": "middle",
-        "comfort_in_frame": "hands held, Ember's tail round their feet"
+        "comfort_in_frame": "hands held, Ember's tail round their feet",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "standing still, hand on chest",
+              "feeling_shown": "thinking hard, chin down"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "standing still, hand on chest",
+              "feeling_shown": "thinking hard, chin down"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding the eldest's hand",
+              "feeling_shown": "sleepy"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "standing still, hand on chest",
+              "feeling_shown": "thinking hard, chin down"
+            },
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "looking up at the eldest",
+              "feeling_shown": "waiting"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "looking up",
+              "feeling_shown": "waiting"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding the middle one's hand",
+              "feeling_shown": "sleepy"
+            }
+          ]
+        }
       }
     },
     {
@@ -355,16 +812,66 @@
         "props": [
           "the lantern"
         ],
-        "ember": "sniffing the still side of the stone",
+        "ember": "tail blown sideways, looking up at the child who spotted the stone",
         "framing": "middle",
-        "comfort_in_frame": "everyone close together"
+        "comfort_in_frame": "everyone close together",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "pointing at the milestone",
+              "feeling_shown": "eyes bright"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "pointing at the milestone",
+              "feeling_shown": "proud, eyes bright"
+            },
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "turning to look",
+              "feeling_shown": "surprised"
+            }
+          ],
+          "4": [
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "pointing at the milestone",
+              "feeling_shown": "proud, eyes bright"
+            },
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "turning to look",
+              "feeling_shown": "surprised"
+            },
+            {
+              "who": "middle",
+              "position": "right",
+              "doing": "looking where the youngest points",
+              "feeling_shown": "mouth open"
+            },
+            {
+              "who": "middle2",
+              "position": "right",
+              "doing": "looking too",
+              "feeling_shown": "mouth open"
+            }
+          ]
+        }
       }
     },
     {
       "n": 10,
       "pinned_to": "p29",
       "roles": [],
-      "text": "[[block:pic3.p26]] The blue flame flickered and bowed, like someone very tired, but it stayed steady.",
+      "text": "[[block:pic3.p26]] The blue flame flickered and bowed, like someone very tired, but it held on.",
       "image": {
         "setting": "beside the milestone",
         "light": "night on the road; stars, and the lantern's tiny blue glow",
@@ -372,13 +879,13 @@
           {
             "who": "middle",
             "position": "center",
-            "doing": "holding an invisible lantern up high, one step forward",
+            "doing": "holding an invisible lantern up high, stepping round into the wind",
             "feeling_shown": "knees wobbly, chin up"
           },
           {
             "who": "eldest",
             "position": "left",
-            "doing": "watching",
+            "doing": "holding the shut lantern out by its ring",
             "feeling_shown": "a proud smile"
           },
           {
@@ -394,22 +901,72 @@
         ],
         "ember": "sitting on the still side, tail round her paws",
         "framing": "middle",
-        "comfort_in_frame": "the eldest close beside"
+        "comfort_in_frame": "the eldest close beside",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding the shut lantern out by its ring, the other hand up high",
+              "feeling_shown": "knees wobbly, chin up"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "center",
+              "doing": "holding an invisible lantern up high",
+              "feeling_shown": "knees wobbly, chin up"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "holding the shut lantern out by its ring",
+              "feeling_shown": "a proud smile"
+            }
+          ],
+          "4": [
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "holding an invisible lantern up high, stepping round into the wind",
+              "feeling_shown": "knees wobbly, chin up"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "saying it too",
+              "feeling_shown": "chin up"
+            },
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "holding the shut lantern out by its ring",
+              "feeling_shown": "a proud smile"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "yawning",
+              "feeling_shown": "sleepy"
+            }
+          ]
+        }
       }
     },
     {
       "n": 11,
       "pinned_to": "p35",
       "roles": [],
-      "text": "[[block:ch3.p21]] [[child:eldest]] set the lantern down in the lee. Everyone made a wall, hands on knees.",
+      "text": "[[child:eldest]] set the lantern down in the lee. [[block:pic3.wall]] \"Someone I know walked this road,\" said Ember, with a happy swish.",
       "image": {
         "setting": "the lee of the milestone",
-        "light": "night on the road; stars, and the lantern's tiny blue glow",
+        "light": "night; stars, and the lantern's blue glow",
         "figures": [
           {
             "who": "eldest",
             "position": "center",
-            "doing": "setting the lantern down on the grass",
+            "doing": "setting the lantern down on the grass, then kneeling",
             "feeling_shown": "careful, calm"
           },
           {
@@ -421,16 +978,66 @@
           {
             "who": "youngest",
             "position": "right",
-            "doing": "snuggling into the fox's tail",
-            "feeling_shown": "eyes drooping"
+            "doing": "asleep in the fox's tail",
+            "feeling_shown": "peaceful"
           }
         ],
         "props": [
-          "the lantern in the stone's shelter, its tiny blue flame standing straight"
+          "the lantern on the grass in the stone's shelter"
         ],
-        "ember": "wrapping her tail round the youngest",
+        "ember": "tail round the youngest (the child, for one child), tail swishing",
         "framing": "middle",
-        "comfort_in_frame": "everyone tucked close in the stone's shelter"
+        "comfort_in_frame": "everyone tucked close in the stone's shelter",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "kneeling by the lantern, back to the wind, hands on knees",
+              "feeling_shown": "careful, calm"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "kneeling, back to the wind, hands on knees",
+              "feeling_shown": "careful, calm"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep in the fox's tail",
+              "feeling_shown": "peaceful"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "kneeling, hands on knees",
+              "feeling_shown": "calm"
+            },
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "kneeling, back to the wind",
+              "feeling_shown": "steady"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "kneeling, back to the wind",
+              "feeling_shown": "steady"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep in the fox's tail",
+              "feeling_shown": "peaceful"
+            }
+          ]
+        }
       }
     },
     {
@@ -439,10 +1046,10 @@
       "roles": [
         "comfort_final"
       ],
-      "text": "[[block:pic3.end]] \"Someone I know walked this road tonight,\" said Ember. The flame was only a blue bead. Would it hold till morning?",
+      "text": "[[block:pic3.far.gp]] [[block:pic3.end]] The flame was only a blue bead. Would it hold till morning?",
       "image": {
         "setting": "the lee of the milestone, under the stars",
-        "light": "night on the road; stars, and the lantern's tiny blue glow",
+        "light": "night; stars, and the lantern's blue glow",
         "figures": [
           {
             "who": "eldest",
@@ -464,24 +1071,74 @@
           }
         ],
         "props": [
-          "the lantern on the grass with its tiny blue flame"
+          "the lantern with its tiny blue flame"
         ],
-        "ember": "curled round the youngest, nose lifted to the wind",
+        "ember": "curled round the youngest (the child, for one child)",
         "framing": "close",
-        "comfort_in_frame": "everyone huddled together, tucked in the fox's tail"
+        "comfort_in_frame": "everyone huddled together in the fox's tail",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "asleep in the fox's tail",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "kneeling, hands on knees, nodding off",
+              "feeling_shown": "sleepy"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep in the fox's tail",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "kneeling, nodding off",
+              "feeling_shown": "sleepy"
+            },
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "leaning on the eldest",
+              "feeling_shown": "sleepy"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "leaning on the middle",
+              "feeling_shown": "sleepy"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep in the fox's tail",
+              "feeling_shown": "smiling"
+            }
+          ]
+        }
       }
     }
   ],
   "pause_and_ask_simple": {
     "picture": 8,
-    "question": "Why do you think [[child:lead]] stopped to ask a question?",
+    "question": "Why do you think [[child:lead]] stopped walking?",
     "for_the_youngest": {
       "talk": "What color is the little flame now?",
       "do_it": "Show me the lantern breath, so gently a flame would only lean."
     }
   },
   "rich_word": "steady",
-  "word_count": 329,
+  "word_count": 330,
   "self_check": [
     {
       "item": "same events",
@@ -491,7 +1148,7 @@
     {
       "item": "length",
       "ok": true,
-      "note": "329 words for the sample family over 12 pictures (301 without the jar picture); every matrix family 329 to 360. 20 to 41 words a picture."
+      "note": "About 330 words for the sample family over 12 pictures; every matrix family is inside the band (the checker tests each). 20 to 41 words a picture."
     },
     {
       "item": "sentences",
@@ -506,7 +1163,7 @@
     {
       "item": "rich word",
       "ok": true,
-      "note": "\"steady\" said three times (pictures 5 and 10), shown in the eldest's careful carrying and the flame standing up in the lee."
+      "note": "\"steady\" said twice (\"as steady as steady\", picture 5) and shown there in the eldest's careful carrying."
     },
     {
       "item": "sound words",
@@ -521,7 +1178,7 @@
     {
       "item": "markers",
       "ok": true,
-      "note": "Same markers as the master. Grandparent lines sit in blocks (pic3.p2.gp, ch3.p5.gp, pic3.p10.gp, pic3.p13.gp); the youngest's and middle child's lines sit in family-size blocks (pic3.small, ch3.p22b, pic3.p26, pic3.end); the eldest's middle-way line reuses the master's access block ch3.p21."
+      "note": "Same markers as the master. Grandparent lines sit in blocks (pic3.p2.gp, ch3.p5.gp, pic3.p10.gp, pic3.p13.gp); the youngest's and middle child's lines sit in family-size blocks (pic3.small, ch3.p22b, pic3.p26, pic3.end); the eldest's middle way sits in its own short picture block with access versions (pic3.mean)."
     },
     {
       "item": "pinning",
@@ -536,7 +1193,7 @@
     {
       "item": "image descriptions",
       "ok": true,
-      "note": "Setting, light, figures by slot left to right, feelings in bodies, props, Ember's pose and framing; no child's looks; nothing on the never-drawn list (only the grandparent holds the open lantern; the names on the base and the milestone show no readable letters; nobody in water). Each 80 words or fewer."
+      "note": "Setting, light, figures by slot left to right, feelings in bodies, props, Ember's pose and framing; no child's looks; nothing on the never-drawn list (the lantern's little door is shut in every picture, only the grandparent's hands are near the hearth, every child stands well back from the fire, and a child holds the lantern only by its ring, away from the body; the names on the base and the milestone show no readable letters; nobody in water). Each 80 words or fewer."
     }
   ],
   "flags_for_jon": [
@@ -544,8 +1201,10 @@
     "Canon §8's picture-book layout (N2) shows a \"Last time\" line on the picture-book page. 1e's schema has no field for it and the first picture must start with the legend slot, so no \"Last time\" line is in the picture text; suggest the app shows the master's opening_block.last_time above picture 1, as the N2 layout does.",
     "Kit wording: 1e says the \"For the youngest\" prompt sits at the youngest's act picture, but the schema nests it in pause_and_ask_simple with the Pause & ask picture's number (and the checker wants that). Kept as the schema. The talk prompt (\"What color is the little flame now?\") answers the same at pictures 8 and 9, since the flame is a blue bead in both.",
     "The master marks two youngest acts: \"Please\" as the flame is given (p3) and \"Big stone!\" at the crisis (p25). The youngest_act role goes to \"Big stone!\" (picture 9, p25), the act that changes what happens; \"Please\" has its own picture (2). The key act is the eldest's, so the checker confirms this pin by judgment.",
-    "Simplified for one speaker a picture and four sentences at most: Ember's clue is \"Someone I know walked this road tonight\" (canon: \"Someone else walked this road tonight. Someone I know.\"), and \"Who?\" and \"Sleep now.\" are left out. The eldest's middle-way line rides with the key act in picture 11 (pinned to p35), so the brave choice and the act sit together. Left out of the words (kept in the master): Ember's fib-sneeze, the old law of the road, and \"That is my tail, and I should like it back.\" The laugh is Ember stepping round every puddle, and her wind-blown tail in picture 7's image.",
+    "Simplified for one speaker a picture and four sentences at most. The eldest's middle way now comes before the youngest's act, in picture 8, in short words (\"The answer came: 'Rushing on is silly. Stopping is brave.'\"), so the reasoning comes before the deed. Picture 11 is the lantern set down, the wall (the middle child helps; the youngest is asleep) and Ember's clue as a friendly one (\"Someone I know walked this road tonight,\" with a happy swish of her tail). The last picture now opens on the warm anchor from the master, the grandparent knitting \"by a fire that stayed awake\", then the youngest asleep in Ember's tail and the canon's hook, so a 3-year-old hearing only this telling ends on home and sleep, not on someone walking the road. Left out of the words (kept in the master): Ember's fib-sneeze, the old law of the road, \"That is my tail, and I should like it back\", \"Who?\" and \"Sleep now.\"",
     "The favorite-animal slot in the jar default (jar.p3) is neither named in picture 6's words nor drawn, so a family's own favorite never contradicts the picture. Drawing a family's favorite would need a Tier C picture.",
+    "Fire and faces: the children stand a good step back on the rug in pictures 1 and 2, with the grandparent nearest the fire and only the grandparent's hands near the hopping flame (framed middle, not close); the lantern's little door is shut in every picture; the names are read on the shut lantern standing on the table (picture 4); the eldest holds the lantern out by its ring handle, away from the body (picture 7); no picture names a child's clothes.",
+    "Figures by family size are now data (image.figures_by_size for one, two and four children), and check-chapter.py tests every list for every family size.",
     "For the variants step (1f): pic3.p26 (\"I'll help… Lantern up!\") and pic3.small (\"whispered\") have no access versions. The master's own gesture block (ch3.p26) is too long for the 15-word cap, so pic3.p26 needs signs and talker versions of its own. The two picture blocks no picture uses now (pic3.p1.gp and pic3.p22b) were removed from s1-ch03.blocks.json, since picture 9 uses the master's ch3.p22b, which has the access versions."
   ]
 }

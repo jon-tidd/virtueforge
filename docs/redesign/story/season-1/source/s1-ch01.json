@@ -1,609 +1,644 @@
 {
- "status": "ok",
- "chapter": 1,
- "part": 1,
- "day": "Mon",
- "title": "The Fox at the Window",
- "lead": "youngest",
- "lead_by_size": {
-  "1": "eldest",
-  "2": "youngest",
-  "3": "youngest",
-  "4": "youngest"
- },
- "tag": "Brave · between timid and reckless",
- "fear_level": 1,
- "fear_reason": "A tap at a dark window turns out to be a polite, wet fox; the dim pantry is fetched from with the grandparent waiting in the doorway, and the fire's blue flicker is banked at once.",
- "opening_block": {
-  "legend": "[[tierc:legend|default:none]]",
-  "gp_reply": null,
-  "last_time": null
- },
- "paragraphs": [
-  {
-   "id": "p1",
-   "page": 1,
-   "text": "The lights of Candlemere were going out, one by one, and nobody knew why. Tonight [[child:lead]] watched from the window as the lamp over the Moot Hall door shrank to the size of a seed, and went out. Now the only light left in the whole village was [[block:ch1.p1.gp]], crackling behind [[pro:lead.obj]]. Then something tapped on the glass. *Tap. Tap. Tap.*",
-   "marks": [
-    "problem",
-    "sound"
-   ]
+  "status": "ok",
+  "chapter": 1,
+  "part": 1,
+  "day": "Mon",
+  "title": "The Fox at the Window",
+  "lead": "youngest",
+  "lead_by_size": {
+    "1": "eldest",
+    "2": "youngest",
+    "3": "youngest",
+    "4": "youngest"
   },
-  {
-   "id": "p2",
-   "page": 1,
-   "text": "[[child:lead]] pulled back the curtain. On the sill sat a red fox, wet to the ears, with a leaf stuck to one of them. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\"",
-   "marks": []
+  "tag": "Brave · between timid and reckless",
+  "fear_level": 2,
+  "fear_reason": "The lamps go out one by one, and the grandparent's fire gives a low blue flicker (the flame going out, fear scale 2). It is banked at once with the old words and settles like a cat on a cushion, and the chapter ends with everyone asleep by it. The tap at the dark window turns out to be a polite, wet fox, and the dim pantry is fetched from with the grandparent waiting in the doorway.",
+  "opening_block": {
+    "legend": "[[tierc:legend|default:none]]",
+    "gp_reply": null,
+    "last_time": null
   },
-  {
-   "id": "p3",
-   "page": 1,
-   "text": "[[block:ch1.p3]]",
-   "marks": [
-    "look"
-   ]
-  },
-  {
-   "id": "p4",
-   "page": 1,
-   "text": "\"This one does,\" said the fox. \"And she is very cold.\"",
-   "marks": []
-  },
-  {
-   "id": "p5",
-   "page": 2,
-   "text": "[[child:lead]] looked back. [[block:ch1.p5.gp]]",
-   "marks": []
-  },
-  {
-   "id": "p6",
-   "page": 2,
-   "text": "[[block:ch1.p6.gp]]",
-   "marks": []
-  },
-  {
-   "id": "p7",
-   "page": 2,
-   "text": "[[block:ch1.p7]]",
-   "marks": [
-    "key_act",
-    "echo"
-   ]
-  },
-  {
-   "id": "p8",
-   "page": 2,
-   "text": "[[block:ch1.p8]]",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p9",
-   "page": 2,
-   "text": "[[block:ch1.p9.gp]]",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p10",
-   "page": 2,
-   "text": "\"Everyone says that,\" said the fox. \"My name is Ember. And the beacon on Wardlow has gone out.\"",
-   "marks": []
-  },
-  {
-   "id": "p11",
-   "page": 2,
-   "text": "[[block:ch1.p11]]",
-   "marks": [
-    "page_pull"
-   ]
-  },
-  {
-   "id": "p12",
-   "page": 3,
-   "text": "[[block:ch1.p12]]",
-   "marks": [
-    "rich:hush",
-    "laugh"
-   ]
-  },
-  {
-   "id": "p13",
-   "page": 3,
-   "text": "Ember turned round three times in front of the fire and spread out her tail to dry. It was a very bedraggled tail, all drips and droops. \"Do mind my magnificent tail,\" she said. Soon she began to steam gently, like a pudding.",
-   "marks": [
-    "rich:bedraggled"
-   ]
-  },
-  {
-   "id": "p14",
-   "page": 3,
-   "text": "\"You're steaming,\" said [[block:ch1.asker]].",
-   "marks": []
-  },
-  {
-   "id": "p15",
-   "page": 3,
-   "text": "\"I am not steaming,\" said Ember. \"Foxes don't steam. Foxes glow.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p16",
-   "page": 3,
-   "text": "Then Ember's tummy went *rrrumble*. She looked up at the ceiling, as if the sound had come from somewhere else entirely.",
-   "marks": [
-    "laugh",
-    "sound"
-   ]
-  },
-  {
-   "id": "p17",
-   "page": 3,
-   "text": "[[block:ch1.p14.gp]]",
-   "marks": [
-    "echo"
-   ]
-  },
-  {
-   "id": "p18",
-   "page": 3,
-   "text": "\"Sausages,\" said Ember at once. \"Or cheese rinds. I'm not fussy.\" She thought about it. \"Sausages.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p19",
-   "page": 3,
-   "text": "\"We haven't got any sausages,\" said [[block:ch1.asker]].",
-   "marks": []
-  },
-  {
-   "id": "p20",
-   "page": 3,
-   "text": "\"Then I shall be very brave about it,\" said Ember.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p21",
-   "page": 4,
-   "text": "There was a cheese rind on the pantry shelf. But the pantry candle had flickered low that afternoon, like all the others, and gone *pfft*. Now the pantry was as dark as the inside of a boot.",
-   "marks": [
-    "rich:flicker",
-    "sound"
-   ]
-  },
-  {
-   "id": "p22",
-   "page": 4,
-   "text": "[[block:ch1.p17]]",
-   "marks": [
-    "mean:pull",
-    "modeled_behavior"
-   ]
-  },
-  {
-   "id": "p23",
-   "page": 4,
-   "text": "[[block:ch1.p18]]",
-   "marks": [
-    "modeled_behavior",
-    "phrase",
-    "gesture"
-   ]
-  },
-  {
-   "id": "p24",
-   "page": 4,
-   "text": "[[block:ch1.p19.gp]] Back came [[child:lead]] with the rind in both hands.",
-   "marks": []
-  },
-  {
-   "id": "p25",
-   "page": 4,
-   "text": "The bedraggled fox ate it in one gulp. Then she licked her whiskers and bowed, rather grandly. \"Thank you,\" she said. \"That was the finest cheese rind in the whole Westering.\"",
-   "marks": [
-    "reward",
-    "rich:bedraggled"
-   ]
-  },
-  {
-   "id": "p26",
-   "page": 4,
-   "text": "\"I couldn't possibly have another,\" said Ember. Then she gazed at the pantry door for a long, hopeful while.",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p27",
-   "page": 5,
-   "text": "\"How can a faraway fire make our lamps go out?\" asked [[block:ch1.asker]].",
-   "marks": []
-  },
-  {
-   "id": "p28",
-   "page": 5,
-   "text": "Ember sat up very straight. \"All the fires in the Westering are one family,\" she said, \"and the beacon on Wardlow is their grandmother. When she went out, they all grew tired and sad. And one by one, they began to fall asleep.\"",
-   "marks": []
-  },
-  {
-   "id": "p29",
-   "page": 5,
-   "text": "\"Poor fires,\" whispered [[child:lead]], and laid a hand on the fox's warm side.",
-   "marks": []
-  },
-  {
-   "id": "p30",
-   "page": 5,
-   "text": "[[block:ch1.p22c.gp]]",
-   "marks": []
-  },
-  {
-   "id": "p31",
-   "page": 5,
-   "text": "Down below, the mere lay black and still. Once it had held every lit window in Candlemere upside down. Tonight it held only one: [[block:ch1.window]].",
-   "marks": []
-  },
-  {
-   "id": "p32",
-   "page": 5,
-   "text": "[[block:ch1.asker]] counted the dark windows, one finger for each: the mill, the bakehouse, the Moot Hall. Soon there were no fingers left.",
-   "marks": []
-  },
-  {
-   "id": "p33",
-   "page": 5,
-   "text": "\"One, two, three, four, lots,\" said Ember sadly.",
-   "marks": []
-  },
-  {
-   "id": "p34",
-   "page": 5,
-   "text": "\"Lots isn't a number,\" said [[block:ch1.asker]].",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p35",
-   "page": 5,
-   "text": "\"It is a very large number,\" said Ember, \"and it gets larger every night.\"",
-   "marks": [
-    "laugh"
-   ]
-  },
-  {
-   "id": "p36",
-   "page": 6,
-   "text": "Then [[child:eldest]] noticed something: [[block:ch1.p25.gp]]",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p37",
-   "page": 6,
-   "text": "\"You can understand Ember too,\" said [[child:eldest]].",
-   "marks": []
-  },
-  {
-   "id": "p38",
-   "page": 6,
-   "text": "[[block:ch1.p27.gp]]",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p39",
-   "page": 6,
-   "text": "\"What happens if nobody lights the beacon again?\" asked [[child:eldest]].",
-   "marks": []
-  },
-  {
-   "id": "p40",
-   "page": 6,
-   "text": "[[block:ch1.p29.gp]]",
-   "marks": [
-    "stakes"
-   ]
-  },
-  {
-   "id": "p41",
-   "page": 6,
-   "text": "[[block:ch1.p30.par]] [[child:eldest]] read it out loud: \"Home by the longest night. Keep warm, and look after each other.\"",
-   "marks": [
-    "your_line"
-   ]
-  },
-  {
-   "id": "p42",
-   "page": 6,
-   "text": "Ember's ears went up. \"The longest night,\" she said softly. \"That is Beacon Night. That is when the children of Candlemere carried the flame up Wardlow.\"",
-   "marks": [
-    "clue"
-   ]
-  },
-  {
-   "id": "p43",
-   "page": 6,
-   "text": "[[child:eldest]] sat up very straight. Children had carried the flame!",
-   "marks": []
-  },
-  {
-   "id": "p44",
-   "page": 6,
-   "text": "[[block:ch1.p32.gp]]",
-   "marks": [
-    "join_in",
-    "rich:flicker"
-   ]
-  },
-  {
-   "id": "p45",
-   "page": 6,
-   "text": "[[block:ch1.p32b.gp]]",
-   "marks": [
-    "seed:ch4"
-   ]
-  },
-  {
-   "id": "p46",
-   "page": 6,
-   "text": "[[block:ch1.p33]]",
-   "marks": [
-    "warm_end",
-    "hook",
-    "rich:hush"
-   ]
-  }
- ],
- "story_question": null,
- "pause_and_ask": {
-  "after_paragraph": "p26",
-  "position_pct": 55,
-  "position_pct_with_jar": null,
-  "touches_mistake_of": null,
-  "in_the_story": null,
-  "question": "[[child:lead]] let a cold, wet fox into the house. Why do you think [[block:ch1.pa.pro]] did?",
-  "answers_first": "lead",
-  "if_stuck": [
-   "What would you say to a fox who was cold and wet?",
-   "When has somebody let you in out of the cold?"
+  "paragraphs": [
+    {
+      "id": "p1",
+      "page": 1,
+      "text": "The lights of Candlemere were going out, one by one, and nobody knew why. Tonight [[child:lead]] watched from the window as the lamp over the Moot Hall door shrank to the size of a seed, and went out. Now the only light left in the whole village was [[block:ch1.p1.gp]], crackling behind [[pro:lead.obj]]. Then something tapped on the glass. *Tap. Tap. Tap.*",
+      "marks": [
+        "problem",
+        "sound"
+      ]
+    },
+    {
+      "id": "p2",
+      "page": 1,
+      "text": "[[child:lead]] pulled back the curtain. On the sill sat a red fox, wet to the ears, with a leaf stuck to one of them. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\"",
+      "marks": []
+    },
+    {
+      "id": "p3",
+      "page": 1,
+      "text": "[[block:ch1.p3]]",
+      "marks": [
+        "look"
+      ]
+    },
+    {
+      "id": "p4",
+      "page": 1,
+      "text": "[[block:ch1.p4]]",
+      "marks": []
+    },
+    {
+      "id": "p5",
+      "page": 2,
+      "text": "[[child:lead]] looked back. [[block:ch1.p5.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p6",
+      "page": 2,
+      "text": "[[block:ch1.p6.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p7",
+      "page": 2,
+      "text": "[[block:ch1.p7]]",
+      "marks": [
+        "key_act",
+        "echo"
+      ]
+    },
+    {
+      "id": "p8",
+      "page": 2,
+      "text": "[[block:ch1.p8]]",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p9",
+      "page": 2,
+      "text": "[[block:ch1.p9.gp]]",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p10",
+      "page": 2,
+      "text": "\"Everyone says that,\" said the fox. \"My name is Ember. And the beacon on Wardlow has gone out.\"",
+      "marks": []
+    },
+    {
+      "id": "p11",
+      "page": 2,
+      "text": "[[block:ch1.p11]]",
+      "marks": [
+        "page_pull"
+      ]
+    },
+    {
+      "id": "p12",
+      "page": 3,
+      "text": "[[block:ch1.p12]]",
+      "marks": [
+        "rich:hush",
+        "laugh"
+      ]
+    },
+    {
+      "id": "p13",
+      "page": 3,
+      "text": "Ember turned round three times in front of the fire and spread out her tail to dry. It was a very bedraggled tail, all drips and droops. \"Do mind my magnificent tail,\" she said. Soon she began to steam gently, like a pudding.",
+      "marks": [
+        "rich:bedraggled"
+      ]
+    },
+    {
+      "id": "p14",
+      "page": 3,
+      "text": "\"You're steaming,\" said [[block:ch1.asker]].",
+      "marks": []
+    },
+    {
+      "id": "p15",
+      "page": 3,
+      "text": "\"I am not steaming,\" said Ember. Then her ears went flat, and she sneezed, because Ember could never fib without sneezing. \"Very well. I am steaming magnificently.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p16",
+      "page": 3,
+      "text": "Then Ember's tummy went *rrrumble*. \"That was my tummy,\" said Ember with dignity. \"A very honest tummy.\"",
+      "marks": [
+        "laugh",
+        "sound"
+      ]
+    },
+    {
+      "id": "p17",
+      "page": 3,
+      "text": "[[block:ch1.p14.gp]]",
+      "marks": [
+        "echo"
+      ]
+    },
+    {
+      "id": "p18",
+      "page": 3,
+      "text": "\"Sausages,\" said Ember at once. \"Or cheese rinds.\" She thought about it. \"Sausages.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p19",
+      "page": 3,
+      "text": "\"We haven't got any sausages,\" said [[block:ch1.asker]].",
+      "marks": []
+    },
+    {
+      "id": "p20",
+      "page": 3,
+      "text": "\"Then I shall dream about them,\" said Ember.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p21",
+      "page": 4,
+      "text": "There was a cheese rind on the pantry shelf. But the pantry candle had flickered low that afternoon, like all the others, and gone *pfft*. Now the pantry was as dark as the inside of a boot.",
+      "marks": [
+        "rich:flicker",
+        "sound"
+      ]
+    },
+    {
+      "id": "p22",
+      "page": 4,
+      "text": "[[block:ch1.p17]]",
+      "marks": [
+        "mean:pull",
+        "modeled_behavior"
+      ]
+    },
+    {
+      "id": "p23",
+      "page": 4,
+      "text": "[[block:ch1.p18]]",
+      "marks": [
+        "modeled_behavior",
+        "phrase",
+        "gesture"
+      ]
+    },
+    {
+      "id": "p24",
+      "page": 4,
+      "text": "[[block:ch1.p19.gp]] Back came [[child:lead]] with the rind in both hands.",
+      "marks": []
+    },
+    {
+      "id": "p25",
+      "page": 4,
+      "text": "The bedraggled fox ate it in one gulp. Then she licked her whiskers and bowed, rather grandly. \"Thank you,\" she said. \"That was the finest cheese rind in the whole Westering.\"",
+      "marks": [
+        "reward",
+        "rich:bedraggled"
+      ]
+    },
+    {
+      "id": "p26",
+      "page": 4,
+      "text": "\"I will not ask for another,\" said Ember. Then she gazed at the pantry door for a long, hopeful while.",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p27",
+      "page": 5,
+      "text": "\"How can a faraway fire make our lamps go out?\" asked [[block:ch1.asker]].",
+      "marks": []
+    },
+    {
+      "id": "p28",
+      "page": 5,
+      "text": "[[block:ch1.p28.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p29",
+      "page": 5,
+      "text": "\"Poor fires,\" whispered [[child:lead]], and laid a hand on the fox's warm side.",
+      "marks": []
+    },
+    {
+      "id": "p30",
+      "page": 5,
+      "text": "[[block:ch1.p22c.gp]]",
+      "marks": []
+    },
+    {
+      "id": "p31",
+      "page": 5,
+      "text": "Down below, the mere lay black and still. Once it had held every lit window in Candlemere upside down. Tonight it held only one: [[block:ch1.window]].",
+      "marks": []
+    },
+    {
+      "id": "p32",
+      "page": 5,
+      "text": "[[block:ch1.asker]] counted the dark windows, one finger for each: the mill, the bakehouse, the Moot Hall. Soon there were no fingers left.",
+      "marks": []
+    },
+    {
+      "id": "p33",
+      "page": 5,
+      "text": "\"One, two, three, four, lots,\" said Ember sadly.",
+      "marks": []
+    },
+    {
+      "id": "p34",
+      "page": 5,
+      "text": "\"Lots isn't a number,\" said [[block:ch1.asker]].",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p35",
+      "page": 5,
+      "text": "\"It is a very large number,\" said Ember, \"and it gets larger every night.\"",
+      "marks": [
+        "laugh"
+      ]
+    },
+    {
+      "id": "p36",
+      "page": 6,
+      "text": "Then [[child:eldest]] noticed something: [[block:ch1.p25.gp]]",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p37",
+      "page": 6,
+      "text": "\"You can understand Ember too,\" said [[child:eldest]].",
+      "marks": []
+    },
+    {
+      "id": "p38",
+      "page": 6,
+      "text": "[[block:ch1.p27.gp]]",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p39",
+      "page": 6,
+      "text": "\"What happens if nobody lights the beacon again?\" asked [[child:eldest]].",
+      "marks": []
+    },
+    {
+      "id": "p40",
+      "page": 6,
+      "text": "[[block:ch1.p29.gp]]",
+      "marks": [
+        "stakes"
+      ]
+    },
+    {
+      "id": "p41",
+      "page": 6,
+      "text": "[[block:ch1.p30.par]] [[child:eldest]] read it out loud: \"Home by the longest night. Keep warm, and look after each other.\"",
+      "marks": [
+        "your_line"
+      ]
+    },
+    {
+      "id": "p42",
+      "page": 6,
+      "text": "Ember's ears went up. \"The longest night,\" she said softly. \"That is Beacon Night. That is when the children of Candlemere carried the flame up Wardlow.\"",
+      "marks": [
+        "clue"
+      ]
+    },
+    {
+      "id": "p43",
+      "page": 6,
+      "text": "[[child:eldest]] sat up very straight. Children had carried the flame!",
+      "marks": []
+    },
+    {
+      "id": "p44",
+      "page": 6,
+      "text": "[[block:ch1.p32.gp]]",
+      "marks": [
+        "join_in",
+        "rich:flicker"
+      ]
+    },
+    {
+      "id": "p45",
+      "page": 6,
+      "text": "[[block:ch1.p32b.gp]]",
+      "marks": [
+        "seed:ch4"
+      ]
+    },
+    {
+      "id": "p46",
+      "page": 6,
+      "text": "[[block:ch1.p33]]",
+      "marks": [
+        "warm_end",
+        "hook",
+        "rich:hush"
+      ]
+    }
   ],
-  "for_the_youngest": {
-   "talk": "Where did the fox shake herself dry?",
-   "do_it": "Show me how the fox shook herself dry."
+  "story_question": null,
+  "pause_and_ask": {
+    "after_paragraph": "p26",
+    "position_pct": 56,
+    "position_pct_with_jar": null,
+    "touches_mistake_of": null,
+    "in_the_story": null,
+    "question": "[[child:lead]] let a cold, wet fox into the house. Why do you think [[block:ch1.pa.pro]] did?",
+    "answers_first": "lead",
+    "if_stuck": [
+      "What would you say to a fox who was cold and wet?",
+      "When has somebody let you in out of the cold?"
+    ],
+    "for_the_youngest": {
+      "talk": "What did [[child:lead]] bring the fox?",
+      "do_it": "Show me how [[child:lead]] held up the invisible lantern."
+    },
+    "stretch": "[[block:ch1.stretch.gp]]",
+    "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
   },
-  "stretch": "[[block:ch1.stretch.gp]]",
-  "for_the_grown_up": "Whatever they say, say it back a little longer: 'Yes, she was scared, and she went anyway.' There's no wrong answer."
- },
- "modeled_behavior": {
-  "slot": "lead",
-  "phrase": "Lantern up!",
-  "gesture_text": "An invisible lantern held up high, then one step forward (the Little form: the lantern held up high), after the lead says \"I'll help!\" first.",
-  "paragraph": "p23"
- },
- "key_act": {
-  "slot": "youngest",
-  "paragraph": "p7",
-  "summary": "Asks the grandparent first, then says \"Come in, fox,\" and the cold fox is let in from the dark."
- },
- "laugh": {
-  "paragraph": "p15",
-  "line": "\"I am not steaming,\" said Ember. \"Foxes don't steam. Foxes glow.\""
- },
- "join_in": {
-  "paragraph": "p44",
-  "line": "Sleep low, stay warm, wake bright."
- },
- "reading_lines": {
-  "your_line": {
-   "paragraph": "p41",
-   "text": "Home by the longest night. Keep warm, and look after each other."
+  "modeled_behavior": {
+    "slot": "lead",
+    "phrase": "Lantern up!",
+    "gesture_text": "An invisible lantern held up high, then one step forward (the Little form: the lantern held up high), after the lead says \"I'll help!\" first.",
+    "paragraph": "p23"
   },
-  "big_print": [
-   "Tap. Tap. Tap.",
-   "Come in, fox.",
-   "Lots!"
+  "key_act": {
+    "slot": "youngest",
+    "paragraph": "p7",
+    "summary": "Asks the grandparent first, then says \"Come in, fox,\" and the cold fox is let in from the dark."
+  },
+  "laugh": {
+    "paragraph": "p15",
+    "line": "\"Very well. I am steaming magnificently.\""
+  },
+  "join_in": {
+    "paragraph": "p44",
+    "line": "Sleep low, stay warm, wake bright."
+  },
+  "reading_lines": {
+    "your_line": {
+      "paragraph": "p41",
+      "text": "Home by the longest night. Keep warm, and look after each other."
+    },
+    "big_print": [
+      "Tap. Tap. Tap.",
+      "Sausages.",
+      "Lots isn't a number"
+    ]
+  },
+  "rich_words": [
+    {
+      "word": "hush",
+      "everyday": true,
+      "paragraphs": [
+        "p12",
+        "p46"
+      ]
+    },
+    {
+      "word": "bedraggled",
+      "everyday": true,
+      "paragraphs": [
+        "p13",
+        "p25"
+      ]
+    },
+    {
+      "word": "flicker",
+      "everyday": true,
+      "paragraphs": [
+        "p21",
+        "p44"
+      ]
+    }
+  ],
+  "sound_words": [
+    "Tap",
+    "Rrrumble",
+    "Pfft"
+  ],
+  "classical_echo": {
+    "source": "Odyssey 1: the stranger at the door, welcomed before any questions",
+    "move": "shape",
+    "where": [
+      "p7",
+      "p8",
+      "p17",
+      "p25"
+    ],
+    "grown_up_note": "As in the opening of the Odyssey, the stranger is let in, dried by the fire and fed before anyone asks for her news: \"Food first. Questions after.\"",
+    "faith_note": null
+  },
+  "hook": "Somebody would have to carry a light all the way to Wardlow. But who?",
+  "last_page": {
+    "why_question": "Why do you think the fox tapped on this window, and not on another one?",
+    "what_happened": "[[child:lead]] let a cold fox in from the dark. Then, with a wobbly tummy, [[child:lead]] went into the dim pantry to fetch the fox some supper.",
+    "blessing_key": "Joshua 1:9",
+    "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
+    "next_time": "Ch. 2 · I'll Help!",
+    "for_the_morning": {
+      "missions": {
+        "3-4": "When a grown-up needs something fetched, say \"I'll help!\" first.",
+        "5-6": "Be the first to say \"I'll help\" for a job at breakfast, and do all of it.",
+        "7-9": "Spot a job that needs doing, ask your grown-up \"Can I help with that?\", and when they say yes, do all of it."
+      },
+      "tell_it_back": "At breakfast, ask [[child:youngest]] to tell [[gp:real]] how the fox came in out of the cold."
+    }
+  },
+  "vote": null,
+  "remember_when": null,
+  "plan_reminder": null,
+  "letter_home": null,
+  "tier_c_defaults": [],
+  "jar_brief": null,
+  "canon_quoted": [
+    "The lights of Candlemere were going out, one by one, and nobody knew why. Tonight Clara watched from the window as the lamp over the Moot Hall door shrank to the size of a seed, and went out. Now the only light left in the whole village was Grandma Ruth's fire, crackling behind her. Then something tapped on the glass. Tap. Tap. Tap.",
+    "Clara pulled back the curtain. On the sill sat a red fox, wet to the ears, with a leaf stuck to one of them. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\" Hugh came to stand beside her. Alfie pushed his glasses up his nose. \"Foxes don't talk,\" he said. \"This one does,\" said the fox. \"And she is very cold.\" Clara looked back. \"Grandma, she's cold!\" Grandma was already smiling at the fox, and she nodded. \"Come in, fox,\" said Clara. Hugh lifted the latch, and in she came, and shook herself dry all over the hearth-rug, and all over Alfie.",
+    "Grandma looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\" \"Everyone says that,\" said the fox. \"My name is Ember. And the beacon on Wardlow has gone out.\" Clara looked at Hugh. Hugh looked at Alfie. And that is how it began."
+  ],
+  "in_real_life_needed": [
+    "In real life, only grown-ups carry a flame.",
+    "In real life, we never let in, feed, touch or go off with an animal we don't know, and we ask a grown-up before we pat one we do know.",
+    "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
+  ],
+  "word_count": 981,
+  "word_count_without_jar": null,
+  "self_check": [
+    {
+      "item": 1,
+      "ok": true,
+      "note": "Tag copied from the canon row."
+    },
+    {
+      "item": 2,
+      "ok": true,
+      "note": "Title, Mon, lead youngest (Clara) as canon."
+    },
+    {
+      "item": 3,
+      "ok": true,
+      "note": "Opening block is the legend slot only; Chapter 1 has no Last time, reply or trial memory."
+    },
+    {
+      "item": 4,
+      "ok": true,
+      "note": "The problem is the first sentence (canon)."
+    },
+    {
+      "item": 5,
+      "ok": true,
+      "note": "Should: at the dim pantry the middle child jumps up to dash in without looking and the eldest shuffles closer to the fire (flipped from the first draft, so the eldest isn't always the rusher); the lead speaks first."
+    },
+    {
+      "item": 6,
+      "ok": true,
+      "note": "No story question in Chapter 1 (the pocket questions start in Chapter 2)."
+    },
+    {
+      "item": 7,
+      "ok": true,
+      "note": "Pause & ask after p26, 56% (moved from the sample page's spot; flagged)."
+    },
+    {
+      "item": 8,
+      "ok": true,
+      "note": "The lead says \"I'll help!\" first, then \"Lantern up!\" with the lantern held high (and the step, from 5)."
+    },
+    {
+      "item": 9,
+      "ok": true,
+      "note": "\"Come in, fox\": the cold fox is let in, and the whole season starts."
+    },
+    {
+      "item": 10,
+      "ok": true,
+      "note": "All three speak and act: the curtain and the pantry, the latch and the note, the counting and the questions."
+    },
+    {
+      "item": 11,
+      "ok": true,
+      "note": "Ember, and every line of hers true or caught by the sneeze: \"I am not steaming\" (ears flat, a sneeze), \"I am steaming magnificently\", \"a very honest tummy\", \"Sausages\", \"Lots isn't a number\", \"I will not ask for another\"."
+    },
+    {
+      "item": 12,
+      "ok": true,
+      "note": "Odyssey 1, quiet: dried and fed before the news is asked for (\"Food first. Questions after.\")."
+    },
+    {
+      "item": 13,
+      "ok": true,
+      "note": "Your line (the note on the mantel), three big-print items, join-in on the banking words."
+    },
+    {
+      "item": 14,
+      "ok": true,
+      "note": "hush, bedraggled, flicker: each at least twice here; all three come back in Chapter 2, and flicker again in Chapter 3."
+    },
+    {
+      "item": 15,
+      "ok": true,
+      "note": "Job list (story/season-1/outline.json, 1b): clue (the grandparent understands Ember)."
+    },
+    {
+      "item": 16,
+      "ok": true,
+      "note": "Should: Ember's thanks and a bow for the child who fetched her supper."
+    },
+    {
+      "item": 17,
+      "ok": true,
+      "note": "Last paragraph: everyone asleep by the fire on one quilt, Ember round the lead; the hook asks about the goal."
+    },
+    {
+      "item": 18,
+      "ok": true,
+      "note": "981 words; every version 974 to 1095; no sentence over 28."
+    },
+    {
+      "item": 19,
+      "ok": true,
+      "note": "New dialogue within the band limits."
+    },
+    {
+      "item": 20,
+      "ok": true,
+      "note": "Refrains exact: Ember's greeting, \"One, two, three, four, lots.\", \"Lantern up!\", the banking words."
+    }
+  ],
+  "flags_for_jon": [
+    "Pause & ask placement (kit vs canon). Canon §8's sample page puts the Pause & ask straight after the latch paragraph, about 15% of the way into a full chapter. Checklist item 7 needs 35% to 65%, so in the full chapter it follows the cheese-rind scene (after p26, 55%). The question is canon §8's, word for word. The M9 and O5 sample page can still show it where the canon puts it; please rule on which the sample shows.",
+    "\"Alfie pushed his glasses up his nose.\" is kept word for word (kit 1d: canon text word for word), so look1.1's options are whole sentences, one for every avatar value. Kit 1f wants a look to be a phrase with no subject, and kit 5.6's own example rewrites this canon line, which check-chapter.py's canon.text test fails. Canon wins here. Families of one and two children get the ordinary phrase form (look1.2).",
+    "\"Lantern up!\" in Chapter 1 (part sheet flag 2). The canon never says where the phrase comes from, so it is written as an old Candlemere saying for dim places that the lead already knows (\"But Candlemere had an old saying for dim places.\"). No grown-up teaches it on the spot, so the grandparent never turns mentor and the phrase belongs to the child. It is used on the Brave Little rung's own example (\"goes into a dim room to fetch something while you wait at the door\"). Children under 5 use the Little gesture; 5 and up add the step forward. New detail, no canon change; please confirm.",
+    "The fire's blue flicker, banked with the old words (the join-in). The grandparent tucks the coals, everyone says the banking words together, the lead is loudest on the last word, and the grandparent thanks the fire \"the way you thank a friend\". This seeds Grandma's trick that the middle child remembers in Chapter 4 (out of the wind, the banking words, a thank-you) and canon §1's rule that a thank-you makes a flame stand taller. The stakes stay on the fire, never on the grandparent.",
+    "New details inside the beat, no canon change: \"Food first. Questions after.\" (the guest-law echo); the parents' note reads \"Home by the longest night. Keep warm, and look after each other.\" (the eldest's line; none-set families read \"the note from home\"); the mere holding only the grandparent's window; the grandparent's \"I've known a fox or two\" when the eldest notices the clue; the eldest learning that children once carried the flame (sets up Chapter 2); everyone sleeping on a quilt on the hearth-rug.",
+    "Ending. The last paragraph shows every child asleep together by the fire on the grandparent's quilt, with Ember curled round the lead, and closes on the goal hook (\"Somebody would have to carry a light all the way to Wardlow. But who?\"), which Chapter 2 opens on.",
+    "No favorites line in Chapter 1 (kit open item 26 is still unanswered).",
+    "Tool note: check-chapter.py's name_repetition test reads canon's sound word *Tap. Tap. Tap.* in the one-child version as a name said three times. As the kit writer did, one_child_she_version writes it \"*tap. tap. tap.*\" in that field only; the chapter text and every block keep canon's capitals. Suggest the checker skip a chapter's own sound_words.",
+    "The mean made visible (a Should on a Monday). One line shows both pulls at the dim pantry door: the middle child jumps up to dash in without looking, the eldest shuffles closer to the fire, and the lead speaks first. It was the other way round in the first draft; it is flipped here because canon fixes Hugh as the rusher and Alfie as the timid one in Ch 2 and Ch 5, and Ch 1 is where canon leaves it free (bible 4.1, nobody is typecast). Nobody is mocked. One child: Ember shuffles, and the child feels the dash and stops. Two children: Ember takes the shuffle and the eldest the dash.",
+    "Ember can't fib (canon §1), so every line of hers is either true or caught. \"I am not steaming\" now gets the flat ears and the sneeze, with the one line that tells a new listener why (\"because Ember could never fib without sneezing\"), and she owns it: \"Very well. I am steaming magnificently.\" That is tonight's named laugh. The tummy rumble is owned (\"a very honest tummy\"), \"I'm not fussy\" is gone, and \"I couldn't possibly have another\" is now \"I will not ask for another\", which is true while she gazes at the pantry. Ch 1 now holds Ember's first fib-sneeze; Ch 3's (\"I wasn't worried at all\") is her second.",
+    "\"Then I shall be very brave about it\" (having no sausages) is now \"Then I shall dream about them\", so the week's strength is never tied to going without food.",
+    "Two grandparents: only old fire-carriers understand Ember (canon §1), and Ch 3 scratches only the first grandparent's name on the lantern. So in the \"two\" versions only the first grandparent looks at Ember like an old friend, answers her, and is the one the eldest notices understanding her; both grandparents still feed her, wait at the pantry and bank the fire. If you rule that both carried fire, the canon and Ch 3's lantern names change to match.",
+    "A \"remembered\" family (a grandparent who has died). Canon §1's 3-year-old line has the beacon as the fires' \"grandmother\" who \"went out\", leaving them \"tired and sad\" until they \"fall asleep\", and in the same chapter the family hears what the remembered grandparent \"always said\". For a grieving 3-year-old that can land as loss. The line stays word for word for every other setup; the \"remembered\" version of ch1.p28.gp says the beacon is \"the oldest fire of all\" and that, since nobody has fed it, the others have grown tired and begun to doze, and ch1.p29.gp's \"remembered\" version says the fire will \"doze off\" rather than \"grow tired\". Please confirm the reviewed version, or confirm canon's line for every setup.",
+    "\"Crackling behind her\" (p1, canon §8, word for word). When the lead is a \"she\", \"her\" could be heard as the grandparent. The canon's own sample (Clara) is that case, so the line stays until you say otherwise; the fix would be a pronoun block where the lead's \"she\" version names the grandparent's fire \"behind the window seat\" or similar. Separately, p4's \"And she is very cold\" now sits in a pronoun block keyed to whoever spoke just before (the eldest in families of one and two, the middle child in three and four): when that child is a \"she\", the fox says \"And this fox is very cold\", as the kit's pronoun rule asks. The sample family hears canon's words.",
+    "Stretch: \"Why do you think the grandparent wanted the fox fed before any questions?\" (the grandparent's own \"Food first. Questions after.\") The first draft asked why the grandparent \"fed the fox\", but the lead fetched and gave the rind; the grandparent only asked what a cold fox likes to eat.",
+    "For the youngest: now \"What did the lead bring the fox?\" and \"Show me how the lead held up the invisible lantern.\" (the week's Little gesture, and calm before lights-out), both answerable from the Pause & ask picture (8), where the youngest has just given the rind. The first draft asked where the fox shook herself dry, which is in picture 4, about nineteen paragraphs earlier. The same recall lag touches the main question (it asks about letting the fox in, p7, at p26), which is one more reason to weigh canon §8's placement in your ruling on the Pause & ask position (flag 1).",
+    "Bible §2's fixed \"For the grown-up\" line reads \"Yes, she was scared, and she went anyway.\" It is printed word for word in every chapter (the checker requires it), so on a night the question is about a boy the parent says \"she\", and tonight's question is about welcoming a cold fox rather than fear. Suggest either a slot (\"Yes, he or she (by the lead's pronoun) was scared, and did it anyway\") or a neutral line (\"Whatever they say, say it back a little longer, adding a feeling word. There's no wrong answer.\"). This is a bible Must, so it is unchanged here; it applies to Ch 2 and Ch 3 too.",
+    "Fear level is now 2, not 1: the fear scale lists \"the flame going out\" as level 2, and three lights go out or dip tonight, ending with the hearth's blue flicker. It turns at once and the chapter ends warm, so it passes at 2.",
+    "Big-print words are now \"Tap. Tap. Tap.\", \"Sausages.\" and \"Lots isn't a number\" (the counting child's own line, which is the Kindergartner's in a family of three), each in the text exactly as printed (the text has \"Lots isn't a number,\" with a comma, so the big-print item carries no stop). \"Come in, fox.\" is the youngest's key act and is left to the youngest.",
+    "In real life lines: the flame line (children carry the flame up Wardlow in tonight's talk), the animal line, now covering feeding (the cheese rind) and patting a known animal, and the part sheet's friend line (a talking fox most grown-ups can't understand).",
+    "Job list: this chapter is now tested against story/season-1/outline.json, the first run of prompt 1b for Season 1 (Chapters 1 to 3).",
+    "Tool note (render-chapter.py): \"Your line\" and the big-print words are listed only under For the grown-up, with a paragraph id (\"(p41)\"), and the rendered chapter text neither numbers paragraphs nor marks those lines, so a parent can't see where to hand the reading over (bible: \"The page marks it\"). Suggest the renderer tag the line in the chapter-book text (a \"Your line\" tag before the sentence, bold for big-print words) or print paragraph ids. Not changed in this chapter pass; it touches every chapter.",
+    "Counting along. Tonight's count is Ember's refrain \"One, two, three, four, lots\", real numbers a listener can count with; the counting child's fingers run out on the dark windows, which is the joke. The bible's \"Alfie's counts are real numbers\" Should is not yet met in Ch 2 (the apples counted silently before \"Seven\") or Ch 3 (the cows get no number); those fixes belong to those chapters."
+  ],
+  "packet_card": [
+    {
+      "item": "Sentence average 8.5 words (Should 9 to 14).",
+      "settled": "Kept. Canon §8's sample page is short-sentenced by design, and Ember's jokes are short; the new lines (p15, p16) lengthen it a little."
+    },
+    {
+      "item": "Paragraphs over four sentences: p1 and p46.",
+      "settled": "p1 is canon §8, word for word. p46 is the goodnight and the hook, which the kit fixes as its last two sentences; every child is named in it, so it stays whole. p18 is now four sentences."
+    },
+    {
+      "item": "Narration \"you\" (bible §3: two at most).",
+      "settled": "Now two: canon's \"the way you look at an old friend\" (p9) and \"the way you thank a friend\" (p45). p24 now reads \"the way grown-ups wait for someone they know can do it\"."
+    },
+    {
+      "item": "A 3-4-year-old only child.",
+      "settled": "In the one-child version that child asks \"How can a faraway fire make our lamps go out?\" (ten words; Should: eight or fewer) and holds the eldest's reading line. Proposed: the app offers \"Your line\" only to a child in the 5-6 or 7-9 band, so a 3-year-old only child hears the grown-up read the note; the question stays as it is, since the canon asks it of the eldest."
+    },
+    {
+      "item": "Four-sentence pictures (Should: two at most).",
+      "settled": "Two: picture 7 (the grandparent waiting at the pantry door is back in the words) and picture 12 (the goodnight and the hook). Picture 9 is three."
+    }
   ]
- },
- "rich_words": [
-  {
-   "word": "hush",
-   "everyday": true,
-   "paragraphs": [
-    "p12",
-    "p46"
-   ]
-  },
-  {
-   "word": "bedraggled",
-   "everyday": true,
-   "paragraphs": [
-    "p13",
-    "p25"
-   ]
-  },
-  {
-   "word": "flicker",
-   "everyday": true,
-   "paragraphs": [
-    "p21",
-    "p44"
-   ]
-  }
- ],
- "sound_words": [
-  "Tap",
-  "Rrrumble",
-  "Pfft"
- ],
- "classical_echo": {
-  "source": "Odyssey 1: the stranger at the door, welcomed before any questions",
-  "move": "shape",
-  "where": [
-   "p7",
-   "p8",
-   "p17",
-   "p25"
-  ],
-  "grown_up_note": "As in the opening of the Odyssey, the stranger is let in, dried by the fire and fed before anyone asks for her news: \"Food first. Questions after.\"",
-  "faith_note": null
- },
- "hook": "Somebody would have to carry a light all the way to Wardlow. But who?",
- "last_page": {
-  "why_question": "Why do you think the fox tapped on this window, and not on another one?",
-  "what_happened": "[[child:lead]] let a cold fox in from the dark. Then, with a wobbly tummy, [[child:lead]] went into the dim pantry to fetch the fox some supper.",
-  "blessing_key": "Joshua 1:9",
-  "calm_close": "Fire banked. Sleep low, stay warm, wake bright.",
-  "next_time": "Ch. 2 · I'll Help!",
-  "for_the_morning": {
-   "missions": {
-    "3-4": "When a grown-up needs something fetched, say \"I'll help!\" first.",
-    "5-6": "Be the first to say \"I'll help\" for a job at breakfast, and do all of it.",
-    "7-9": "Spot a job nobody has done yet, say \"I'll help,\" and do it before anyone asks."
-   },
-   "tell_it_back": "At breakfast, ask [[child:youngest]] to tell [[gp:real]] how the fox came in out of the cold."
-  }
- },
- "vote": null,
- "remember_when": null,
- "plan_reminder": null,
- "letter_home": null,
- "tier_c_defaults": [],
- "jar_brief": null,
- "canon_quoted": [
-  "The lights of Candlemere were going out, one by one, and nobody knew why. Tonight Clara watched from the window as the lamp over the Moot Hall door shrank to the size of a seed, and went out. Now the only light left in the whole village was Grandma Ruth's fire, crackling behind her. Then something tapped on the glass. Tap. Tap. Tap.",
-  "Clara pulled back the curtain. On the sill sat a red fox, wet to the ears, with a leaf stuck to one of them. \"Good evening,\" said the fox. \"I'm so sorry to bother you.\" Hugh came to stand beside her. Alfie pushed his glasses up his nose. \"Foxes don't talk,\" he said. \"This one does,\" said the fox. \"And she is very cold.\" Clara looked back. \"Grandma, she's cold!\" Grandma was already smiling at the fox, and she nodded. \"Come in, fox,\" said Clara. Hugh lifted the latch, and in she came, and shook herself dry all over the hearth-rug, and all over Alfie.",
-  "Grandma looked at the fox for a long moment, the way you look at an old friend. \"Well,\" she said. \"You've got your grandmother's tail.\" \"Everyone says that,\" said the fox. \"My name is Ember. And the beacon on Wardlow has gone out.\" Clara looked at Hugh. Hugh looked at Alfie. And that is how it began."
- ],
- "in_real_life_needed": [
-  "In real life, we never let in, touch or go off with an animal we don't know; we tell a grown-up.",
-  "In real life, we tell our grown-ups about every new friend, and a good friend never asks us to keep a secret from them."
- ],
- "word_count": 973,
- "word_count_without_jar": null,
- "self_check": [
-  {
-   "item": 1,
-   "ok": true,
-   "note": "Tag copied from the canon row."
-  },
-  {
-   "item": 2,
-   "ok": true,
-   "note": "Title, Mon, lead youngest (Clara) as canon."
-  },
-  {
-   "item": 3,
-   "ok": true,
-   "note": "Opening block is the legend slot only; Chapter 1 has no Last time, reply or trial memory."
-  },
-  {
-   "item": 4,
-   "ok": true,
-   "note": "The problem is the first sentence (canon)."
-  },
-  {
-   "item": 5,
-   "ok": true,
-   "note": "Should: at the dim pantry the middle child shuffles toward the fire and the eldest jumps up to dash in; the lead speaks first."
-  },
-  {
-   "item": 6,
-   "ok": true,
-   "note": "No story question in Chapter 1 (the pocket questions start in Chapter 2)."
-  },
-  {
-   "item": 7,
-   "ok": true,
-   "note": "Pause & ask after p26, 55% (moved from the sample page's spot; flagged)."
-  },
-  {
-   "item": 8,
-   "ok": true,
-   "note": "The lead says \"I'll help!\" first, then \"Lantern up!\" with the lantern held high (and the step, from 5)."
-  },
-  {
-   "item": 9,
-   "ok": true,
-   "note": "\"Come in, fox\": the cold fox is let in, and the whole season starts."
-  },
-  {
-   "item": 10,
-   "ok": true,
-   "note": "All three speak and act: the curtain and the pantry, the latch and the note, the counting and the questions."
-  },
-  {
-   "item": 11,
-   "ok": true,
-   "note": "Ember: \"Foxes don't steam. Foxes glow.\", \"Sausages\", \"Lots isn't a number\", \"I couldn't possibly have another\"."
-  },
-  {
-   "item": 12,
-   "ok": true,
-   "note": "Odyssey 1, quiet: dried and fed before the news is asked for (\"Food first. Questions after.\")."
-  },
-  {
-   "item": 13,
-   "ok": true,
-   "note": "Your line (the note on the mantel), three big-print items, join-in on the banking words."
-  },
-  {
-   "item": 14,
-   "ok": true,
-   "note": "hush, bedraggled, flicker: each at least twice here; all three come back in Chapter 2, and flicker again in Chapter 3."
-  },
-  {
-   "item": 15,
-   "ok": true,
-   "note": "Job list: clue (the grandparent understands Ember)."
-  },
-  {
-   "item": 16,
-   "ok": true,
-   "note": "Should: Ember's thanks and a bow for the child who fetched her supper."
-  },
-  {
-   "item": 17,
-   "ok": true,
-   "note": "Last paragraph: everyone asleep by the fire on one quilt, Ember round the lead; the hook asks about the goal."
-  },
-  {
-   "item": 18,
-   "ok": true,
-   "note": "973 words; every version 965 to 1093; no sentence over 28."
-  },
-  {
-   "item": 19,
-   "ok": true,
-   "note": "New dialogue within the band limits."
-  },
-  {
-   "item": 20,
-   "ok": true,
-   "note": "Refrains exact: Ember's greeting, \"One, two, three, four, lots.\", \"Lantern up!\", the banking words."
-  }
- ],
- "flags_for_jon": [
-  "Pause & ask placement (kit vs canon). Canon §8's sample page puts the Pause & ask straight after the latch paragraph, about 15% of the way into a full chapter. Checklist item 7 needs 35% to 65%, so in the full chapter it follows the cheese-rind scene (after p26, 55%). The question is canon §8's, word for word. The M9 and O5 sample page can still show it where the canon puts it; please rule on which the sample shows.",
-  "\"Alfie pushed his glasses up his nose.\" is kept word for word (kit 1d: canon text word for word), so look1.1's options are whole sentences, one for every avatar value. Kit 1f wants a look to be a phrase with no subject, and kit 5.6's own example rewrites this canon line, which check-chapter.py's canon.text test fails. Canon wins here. Families of one and two children get the ordinary phrase form (look1.2).",
-  "\"Lantern up!\" in Chapter 1 (part sheet flag 2). The canon never says where the phrase comes from, so it is written as an old Candlemere saying for dim places that the lead already knows (\"But Candlemere had an old saying for dim places.\"). No grown-up teaches it on the spot, so the grandparent never turns mentor and the phrase belongs to the child. It is used on the Brave Little rung's own example (\"goes into a dim room to fetch something while you wait at the door\"). Children under 5 use the Little gesture; 5 and up add the step forward. New detail, no canon change; please confirm.",
-  "The mean made visible (a Should on a Monday). One line shows both pulls at the dim pantry door: the middle child shuffles closer to the fire, the eldest jumps up to dash in without looking, and the lead speaks first. Nobody is mocked. One child: Ember shuffles, and the child feels the dash and stops. Two children: Ember takes the middle child's shuffle.",
-  "The fire's blue flicker, banked with the old words (the join-in). The grandparent tucks the coals, everyone says the banking words together, the lead is loudest on the last word, and the grandparent thanks the fire \"the way you thank a friend\". This seeds Grandma's trick that the middle child remembers in Chapter 4 (out of the wind, the banking words, a thank-you) and canon §1's rule that a thank-you makes a flame stand taller. The stakes stay on the fire, never on the grandparent.",
-  "New details inside the beat, no canon change: \"Food first. Questions after.\" (the guest-law echo); the parents' note reads \"Home by the longest night. Keep warm, and look after each other.\" (the eldest's line; none-set families read \"the note from home\"); the mere holding only the grandparent's window; the grandparent's \"I've known a fox or two\" when the eldest notices the clue; the eldest learning that children once carried the flame (sets up Chapter 2); everyone sleeping on a quilt on the hearth-rug.",
-  "Ending. The last paragraph shows every child asleep together by the fire on the grandparent's quilt, with Ember curled round the lead, and closes on the goal hook (\"Somebody would have to carry a light all the way to Wardlow. But who?\"), which Chapter 2 opens on.",
-  "Two grandparents: both are written as understanding Ember, and both bank the fire together. The canon says only old fire-carriers understand her; please confirm that in a two-grandparent family both count (Chapter 3 scratches only the first one's name on the lantern).",
-  "No favorites line in Chapter 1 (kit open item 26 is still unanswered).",
-  "In real life lines used: the animal line (kit open item 20, proposed) and the part sheet's friend line (\"a good friend never asks us to keep a secret from them\"), because a talking fox most grown-ups can't understand appears tonight.",
-  "Tool note: check-chapter.py's name_repetition test reads canon's sound word *Tap. Tap. Tap.* in the one-child version as a name said three times. As the kit writer did, one_child_she_version writes it \"*tap. tap. tap.*\" in that field only; the chapter text and every block keep canon's capitals. Suggest the checker skip a chapter's own sound_words."
- ]
 }

@@ -26,7 +26,7 @@
           {
             "who": "youngest",
             "position": "right",
-            "doing": "holding the tip of the fox's tail",
+            "doing": "walking beside the fox",
             "feeling_shown": "eyes wide"
           },
           {
@@ -39,9 +39,77 @@
         "props": [
           "dark windows along the lane"
         ],
-        "ember": "trotting, tail held low and patient",
+        "ember": "trotting, magnificent tail held high out of the puddles",
         "framing": "wide",
-        "comfort_in_frame": "the grandparent watching from the doorway"
+        "comfort_in_frame": "the grandparent watching from the doorway",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leading the way",
+              "feeling_shown": "chin up, eager"
+            },
+            {
+              "who": "grandparent",
+              "position": "far back, in the cottage doorway",
+              "doing": "watching",
+              "feeling_shown": "warm smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leading the way",
+              "feeling_shown": "chin up, eager"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "walking beside the fox",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "grandparent",
+              "position": "far back, in the cottage doorway",
+              "doing": "watching",
+              "feeling_shown": "warm smile"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leading the way",
+              "feeling_shown": "chin up"
+            },
+            {
+              "who": "middle",
+              "position": "center left",
+              "doing": "counting doors",
+              "feeling_shown": "curious"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "counting chimneys",
+              "feeling_shown": "curious"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "walking beside the fox",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "grandparent",
+              "position": "far back, in the doorway",
+              "doing": "watching",
+              "feeling_shown": "warm smile"
+            }
+          ]
+        }
       }
     },
     {
@@ -51,12 +119,12 @@
       "roles": [],
       "image": {
         "setting": "the lane: bakehouse and mill",
-        "light": "grey morning; oven light at the bakehouse",
+        "light": "grey morning",
         "figures": [
           {
             "who": "the baker",
             "position": "far left, in his doorway",
-            "doing": "shaking his head in flour",
+            "doing": "shaking his floury head",
             "feeling_shown": "busy"
           },
           {
@@ -93,16 +161,120 @@
         "props": [],
         "ember": "counting on one paw, giving up",
         "framing": "wide",
-        "comfort_in_frame": "the children together"
+        "comfort_in_frame": "the children together",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "the baker",
+              "position": "far left, in his doorway",
+              "doing": "shaking his floury head",
+              "feeling_shown": "busy"
+            },
+            {
+              "who": "eldest",
+              "position": "front center",
+              "doing": "looking door to door",
+              "feeling_shown": "shoulders drooping"
+            },
+            {
+              "who": "the miller",
+              "position": "back center",
+              "doing": "rubbing his knees",
+              "feeling_shown": "sorry"
+            },
+            {
+              "who": "Reeve Osric",
+              "position": "right",
+              "doing": "hurrying past with tally-sticks",
+              "feeling_shown": "busy"
+            }
+          ],
+          "2": [
+            {
+              "who": "the baker",
+              "position": "far left, in his doorway",
+              "doing": "shaking his floury head",
+              "feeling_shown": "busy"
+            },
+            {
+              "who": "eldest",
+              "position": "front left",
+              "doing": "looking door to door",
+              "feeling_shown": "shoulders drooping"
+            },
+            {
+              "who": "youngest",
+              "position": "front center",
+              "doing": "holding the eldest's hand",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "the miller",
+              "position": "back center",
+              "doing": "rubbing his knees",
+              "feeling_shown": "sorry"
+            },
+            {
+              "who": "Reeve Osric",
+              "position": "right",
+              "doing": "hurrying past with tally-sticks",
+              "feeling_shown": "busy"
+            }
+          ],
+          "4": [
+            {
+              "who": "the baker",
+              "position": "far left, in his doorway",
+              "doing": "shaking his floury head",
+              "feeling_shown": "busy"
+            },
+            {
+              "who": "eldest",
+              "position": "front left",
+              "doing": "looking door to door",
+              "feeling_shown": "shoulders drooping"
+            },
+            {
+              "who": "middle",
+              "position": "front center",
+              "doing": "looking door to door",
+              "feeling_shown": "frowning"
+            },
+            {
+              "who": "middle2",
+              "position": "front center",
+              "doing": "looking about",
+              "feeling_shown": "frowning"
+            },
+            {
+              "who": "youngest",
+              "position": "front center",
+              "doing": "holding the middle's hand",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "the miller",
+              "position": "back center",
+              "doing": "rubbing his knees",
+              "feeling_shown": "sorry"
+            },
+            {
+              "who": "Reeve Osric",
+              "position": "right",
+              "doing": "hurrying past with tally-sticks",
+              "feeling_shown": "busy"
+            }
+          ]
+        }
       }
     },
     {
       "n": 3,
       "pinned_to": "p16",
-      "text": "Then [[cast:Will]], the baker's boy, ran into the dark holloway with no light! [[block:ch2.p13]]",
+      "text": "Then [[cast:Will]], the baker's boy, ran into the dark holloway with no light! [[block:pic2.pull]]",
       "roles": [],
       "image": {
-        "setting": "the mouth of the holloway, a sunken lane under trees",
+        "setting": "the holloway's mouth under the trees",
         "light": "grey daylight; shade under the trees",
         "figures": [
           {
@@ -125,21 +297,89 @@
           },
           {
             "who": "Will",
-            "position": "far right, from behind, still in daylight",
+            "position": "far right, from behind",
             "doing": "running for the holloway",
             "feeling_shown": "arms flung out"
           }
         ],
         "props": [],
-        "ember": "ears flat, tail curled round the youngest",
+        "ember": "ears flat, tail curled round the smallest child",
         "framing": "wide",
-        "comfort_in_frame": "hands held; Ember's tail round the youngest"
+        "comfort_in_frame": "hands held; Ember's tail round the smallest",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leaning forward, then planting both feet",
+              "feeling_shown": "fists tight"
+            },
+            {
+              "who": "Will",
+              "position": "far right, from behind",
+              "doing": "running for the holloway",
+              "feeling_shown": "arms flung out"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leaning forward, one foot lifted",
+              "feeling_shown": "fists tight"
+            },
+            {
+              "who": "youngest",
+              "position": "center",
+              "doing": "stepping back toward home, holding the eldest's hand",
+              "feeling_shown": "shoulders hunched"
+            },
+            {
+              "who": "Will",
+              "position": "far right, from behind",
+              "doing": "running for the holloway",
+              "feeling_shown": "arms flung out"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "leaning forward, one foot lifted",
+              "feeling_shown": "fists tight"
+            },
+            {
+              "who": "middle",
+              "position": "center",
+              "doing": "stepping back toward home",
+              "feeling_shown": "shoulders hunched"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "holding the middle's hand",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "youngest",
+              "position": "beside the middle",
+              "doing": "holding the middle's hand",
+              "feeling_shown": "eyes wide"
+            },
+            {
+              "who": "Will",
+              "position": "far right, from behind",
+              "doing": "running for the holloway",
+              "feeling_shown": "arms flung out"
+            }
+          ]
+        }
       }
     },
     {
       "n": 4,
       "pinned_to": "p19",
-      "text": "*Splosh!* Back came [[cast:Will]], muddy to the ears and a little sheepish. \"There's a puddle,\" said [[cast:Will]], \"in the dark.\" No one laughed, and [[block:ch2.patter]] stood right next to the muddy boy.",
+      "text": "*Splosh!* went the holloway, and back came [[cast:Will]], muddy and a little sheepish. \"There's a puddle,\" said [[cast:Will]], \"in the dark.\" [[block:pic2.stood]]",
       "roles": [],
       "image": {
         "setting": "the lane by the holloway's mouth",
@@ -160,7 +400,7 @@
           {
             "who": "Will",
             "position": "center",
-            "doing": "muddy from boots to ears, scuffing one boot",
+            "doing": "muddy from top to toe, looking hard at his boots",
             "feeling_shown": "head down, sheepish half-smile"
           },
           {
@@ -174,21 +414,89 @@
           "mud",
           "a puddle far back in the holloway, nobody in it"
         ],
-        "ember": "sitting close, nose wrinkled at the mud",
+        "ember": "sitting close to Will, nose wrinkled at the mud",
         "framing": "middle",
-        "comfort_in_frame": "the youngest right beside Will"
+        "comfort_in_frame": "someone right beside Will",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "wiping mud off Will with a sleeve",
+              "feeling_shown": "kind, no smile at Will"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "muddy from top to toe, looking hard at his boots",
+              "feeling_shown": "head down, sheepish half-smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "listening",
+              "feeling_shown": "kind, no smile at Will"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "muddy from top to toe, looking hard at his boots",
+              "feeling_shown": "head down, sheepish half-smile"
+            },
+            {
+              "who": "youngest",
+              "position": "right, close beside Will",
+              "doing": "standing shoulder to shoulder with him",
+              "feeling_shown": "looking up, gentle"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "listening",
+              "feeling_shown": "kind"
+            },
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "listening",
+              "feeling_shown": "eyebrows up"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "listening",
+              "feeling_shown": "eyebrows up"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "muddy from top to toe, looking hard at his boots",
+              "feeling_shown": "head down, sheepish half-smile"
+            },
+            {
+              "who": "youngest",
+              "position": "right, close beside Will",
+              "doing": "standing shoulder to shoulder with him",
+              "feeling_shown": "looking up, gentle"
+            }
+          ]
+        }
       }
     },
     {
       "n": 5,
       "pinned_to": "p28",
-      "text": "Old [[cast:Hild]] sat by the Moot Hall door, with [[cast:Dun]] the donkey. [[cast:Old Brock]] the dog lay on the step. [[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked [[cast:Hild]].",
+      "text": "Old [[cast:Hild]] sat by the Moot Hall door, with [[cast:Dun]] and [[cast:Old Brock]]. [[cast:Hild]] looked at [[child:eldest]] for a long, quiet moment. \"How big must a person be to carry a lantern?\" asked [[cast:Hild]].",
       "roles": [
         "pause_and_ask"
       ],
       "image": {
-        "setting": "the Moot Hall door; an old notice, no readable words",
-        "light": "grey morning; the door lamp unlit",
+        "setting": "the Moot Hall door; a notice with no readable words",
+        "light": "grey morning",
         "figures": [
           {
             "who": "youngest",
@@ -216,19 +524,87 @@
           }
         ],
         "props": [
-          "Hild's tray of needles, thread and wicks",
+          "Hild's tray",
           "Dun dozing",
-          "Old Brock flat on the step"
+          "Old Brock on the step"
         ],
-        "ember": "by the tray, trying to count the wicks",
+        "ember": "by the tray, counting wicks",
         "framing": "middle",
-        "comfort_in_frame": "the others a step away"
+        "comfort_in_frame": "the others a step away; the grandparent's doorway in sight",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center, facing Hild",
+              "doing": "mouth just shut",
+              "feeling_shown": "thinking hard"
+            },
+            {
+              "who": "Hild",
+              "position": "right, behind her tray",
+              "doing": "looking at the eldest",
+              "feeling_shown": "patient"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "left, on the step",
+              "doing": "patting the old dog",
+              "feeling_shown": "gentle"
+            },
+            {
+              "who": "eldest",
+              "position": "center, facing Hild",
+              "doing": "mouth just shut",
+              "feeling_shown": "thinking hard"
+            },
+            {
+              "who": "Hild",
+              "position": "right, behind her tray",
+              "doing": "looking at the eldest",
+              "feeling_shown": "patient"
+            }
+          ],
+          "4": [
+            {
+              "who": "youngest",
+              "position": "left, on the step",
+              "doing": "patting the old dog",
+              "feeling_shown": "gentle"
+            },
+            {
+              "who": "middle",
+              "position": "left, behind",
+              "doing": "watching",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "middle2",
+              "position": "left, behind",
+              "doing": "watching",
+              "feeling_shown": "quiet"
+            },
+            {
+              "who": "eldest",
+              "position": "center, facing Hild",
+              "doing": "mouth just shut",
+              "feeling_shown": "thinking hard"
+            },
+            {
+              "who": "Hild",
+              "position": "right, behind her tray",
+              "doing": "looking at the eldest",
+              "feeling_shown": "patient"
+            }
+          ]
+        }
       }
     },
     {
       "n": 6,
       "pinned_to": "p30",
-      "text": "Next, [[cast:Hild]] handed out pocket questions. [[block:ch2.p26]]",
+      "text": "[[block:pic2.pq]]",
       "roles": [],
       "image": {
         "setting": "beside the Moot Hall door",
@@ -264,7 +640,75 @@
         ],
         "ember": "head tilted, listening",
         "framing": "middle",
-        "comfort_in_frame": "Hild close and kind"
+        "comfort_in_frame": "Hild close and kind",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "one hand pressed to a pocket",
+              "feeling_shown": "serious, thoughtful"
+            },
+            {
+              "who": "Hild",
+              "position": "center right",
+              "doing": "leaning forward, one finger raised",
+              "feeling_shown": "warm"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "one hand pressed to a pocket",
+              "feeling_shown": "serious"
+            },
+            {
+              "who": "Hild",
+              "position": "center right",
+              "doing": "leaning forward, one finger raised",
+              "feeling_shown": "warm"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "both hands pressed to a pocket",
+              "feeling_shown": "proud"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "hand on a pocket",
+              "feeling_shown": "serious"
+            },
+            {
+              "who": "middle",
+              "position": "center left",
+              "doing": "hand on a pocket",
+              "feeling_shown": "curious"
+            },
+            {
+              "who": "middle2",
+              "position": "center",
+              "doing": "hand on a pocket",
+              "feeling_shown": "curious"
+            },
+            {
+              "who": "Hild",
+              "position": "center right",
+              "doing": "leaning forward, one finger raised",
+              "feeling_shown": "warm"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "both hands on a pocket",
+              "feeling_shown": "proud"
+            }
+          ]
+        }
       }
     },
     {
@@ -301,7 +745,23 @@
         ],
         "ember": "sniffing the bell, one ear back",
         "framing": "close",
-        "comfort_in_frame": "Hild's hands round the youngest's"
+        "comfort_in_frame": "Hild's hands round the youngest's",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding a little brass bell in both hands",
+              "feeling_shown": "mouth a round O"
+            },
+            {
+              "who": "Hild",
+              "position": "right",
+              "doing": "folding the eldest's fingers round the bell",
+              "feeling_shown": "smiling"
+            }
+          ]
+        }
       }
     },
     {
@@ -346,16 +806,84 @@
         ],
         "ember": "tail swishing",
         "framing": "middle",
-        "comfort_in_frame": "the youngest's hand in Will's"
+        "comfort_in_frame": "the youngest's hand in Will's",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "holding out the bell and a hand",
+              "feeling_shown": "leaning in, kind face"
+            },
+            {
+              "who": "Will",
+              "position": "center, muddy, sitting on the step",
+              "doing": "reaching for the bell",
+              "feeling_shown": "surprised, starting to smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "holding out the bell and a hand",
+              "feeling_shown": "leaning in, kind face"
+            },
+            {
+              "who": "Will",
+              "position": "center, muddy, sitting on the step",
+              "doing": "reaching for the bell",
+              "feeling_shown": "surprised, starting to smile"
+            },
+            {
+              "who": "eldest",
+              "position": "right",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "4": [
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "holding out the bell and a hand",
+              "feeling_shown": "kind face"
+            },
+            {
+              "who": "Will",
+              "position": "center, muddy, sitting on the step",
+              "doing": "reaching for the bell",
+              "feeling_shown": "surprised, starting to smile"
+            },
+            {
+              "who": "eldest",
+              "position": "right",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "middle",
+              "position": "right",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "middle2",
+              "position": "right",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ]
+        }
       }
     },
     {
       "n": 9,
-      "pinned_to": "p34",
-      "text": "*Ting-a-ling!* Not one bit sheepish now, [[cast:Will]] rang the bell all the way home. Ember's ears went flat, and here and there a curtain twitched.",
+      "pinned_to": "p36b",
+      "text": "*Ting-a-ling!* Not one bit sheepish now, [[cast:Will]] rang the bell all the way home. [[block:pic2.bellback]]",
       "roles": [],
       "image": {
-        "setting": "the lane, walking back toward the grandparent's cottage",
+        "setting": "the lane, at the grandparent's cottage gate",
         "light": "grey daylight; a curtain twitching at one window",
         "figures": [
           {
@@ -388,7 +916,75 @@
         ],
         "ember": "trotting beside them, ears folded flat, looking pained",
         "framing": "wide",
-        "comfort_in_frame": "hands held"
+        "comfort_in_frame": "hands held",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "walking beside Will",
+              "feeling_shown": "grinning"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "ringing the bell high",
+              "feeling_shown": "chin up, proud"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left, a step behind",
+              "doing": "walking",
+              "feeling_shown": "grinning"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "ringing the bell high",
+              "feeling_shown": "chin up, proud"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding Will's other hand",
+              "feeling_shown": "happy, skipping"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "walking",
+              "feeling_shown": "grinning"
+            },
+            {
+              "who": "middle",
+              "position": "left-center",
+              "doing": "marching",
+              "feeling_shown": "grinning"
+            },
+            {
+              "who": "middle2",
+              "position": "left-center",
+              "doing": "marching",
+              "feeling_shown": "grinning"
+            },
+            {
+              "who": "Will",
+              "position": "center",
+              "doing": "ringing the bell high",
+              "feeling_shown": "chin up, proud"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "holding Will's other hand",
+              "feeling_shown": "skipping"
+            }
+          ]
+        }
       }
     },
     {
@@ -397,8 +993,8 @@
       "text": "By the fire, [[child:eldest]] felt wobbly inside, and held up an invisible lantern. [[block:ch2.p32]]",
       "roles": [],
       "image": {
-        "setting": "the grandparent's cottage, by the big inglenook hearth",
-        "light": "warm firelight, amber and honey",
+        "setting": "the cottage hearth, the children a step back",
+        "light": "warm firelight",
         "figures": [
           {
             "who": "middle",
@@ -430,13 +1026,81 @@
         ],
         "ember": "sitting up very straight, tail round her paws",
         "framing": "middle",
-        "comfort_in_frame": "the grandparent close"
+        "comfort_in_frame": "the grandparent close",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding an invisible lantern up high",
+              "feeling_shown": "knees a little wobbly, chin up"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in a chair by the hearth",
+              "doing": "listening",
+              "feeling_shown": "soft smile"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "looking up at the eldest",
+              "feeling_shown": "mouth open"
+            },
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding an invisible lantern up high",
+              "feeling_shown": "knees a little wobbly, chin up"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in a chair by the hearth",
+              "doing": "listening",
+              "feeling_shown": "soft smile"
+            }
+          ],
+          "4": [
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "looking up at the eldest",
+              "feeling_shown": "wide eyes"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "looking up at the eldest",
+              "feeling_shown": "wide eyes"
+            },
+            {
+              "who": "youngest",
+              "position": "left",
+              "doing": "looking up",
+              "feeling_shown": "mouth open"
+            },
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding an invisible lantern up high",
+              "feeling_shown": "knees a little wobbly, chin up"
+            },
+            {
+              "who": "grandparent",
+              "position": "right, in a chair by the hearth",
+              "doing": "listening",
+              "feeling_shown": "soft smile"
+            }
+          ]
+        }
       }
     },
     {
       "n": 11,
-      "pinned_to": "p41",
-      "text": "[[block:ch2.p33]] And Ember was coming too, because foxes are extremely good at roads.",
+      "pinned_to": "p45",
+      "text": "[[block:pic2.p11]]",
       "roles": [],
       "image": {
         "setting": "the cottage hearth",
@@ -446,12 +1110,12 @@
             "who": "middle",
             "position": "left",
             "doing": "dropping apples one at a time into the backpack",
-            "feeling_shown": "tongue out, counting"
+            "feeling_shown": "counting"
           },
           {
             "who": "youngest",
             "position": "center, on the floor",
-            "doing": "pulling on boots, wrong feet first",
+            "doing": "pulling on boots, all alone",
             "feeling_shown": "frowning hard, determined"
           },
           {
@@ -462,9 +1126,9 @@
           },
           {
             "who": "grandparent",
-            "position": "back, by the hearth",
+            "position": "back, in the chair by the hearth",
             "doing": "watching",
-            "feeling_shown": "laughing"
+            "feeling_shown": "smiling"
           }
         ],
         "props": [
@@ -472,20 +1136,88 @@
           "the backpack",
           "boots"
         ],
-        "ember": "nose in the apple pile, trying to count",
+        "ember": "nose deep in a boot",
         "framing": "middle",
-        "comfort_in_frame": "everyone together by the fire"
+        "comfort_in_frame": "everyone together by the fire",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "holding the backpack open, one boot on",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the hearth",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "2": [
+            {
+              "who": "youngest",
+              "position": "center, on the floor",
+              "doing": "pulling on boots, all alone",
+              "feeling_shown": "determined"
+            },
+            {
+              "who": "eldest",
+              "position": "right",
+              "doing": "dropping apples into the backpack",
+              "feeling_shown": "counting"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the hearth",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ],
+          "4": [
+            {
+              "who": "middle",
+              "position": "left",
+              "doing": "dropping apples into the backpack",
+              "feeling_shown": "counting"
+            },
+            {
+              "who": "middle2",
+              "position": "left",
+              "doing": "carrying everybody's scarves",
+              "feeling_shown": "busy"
+            },
+            {
+              "who": "youngest",
+              "position": "center, on the floor",
+              "doing": "pulling on boots, all alone",
+              "feeling_shown": "determined"
+            },
+            {
+              "who": "eldest",
+              "position": "right",
+              "doing": "holding the backpack open",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the hearth",
+              "doing": "watching",
+              "feeling_shown": "smiling"
+            }
+          ]
+        }
       }
     },
     {
       "n": 12,
       "pinned_to": "p47",
-      "text": "That night the brass bell sat on the mantel, by the note from home. Everyone fell asleep by the low fire, ready for the long road. [[block:pic2.end]]",
+      "text": "[[block:pic2.p12.gp]] That night everyone fell asleep by the low fire. [[block:pic2.end]]",
       "roles": [
         "comfort_final"
       ],
       "image": {
-        "setting": "the cottage at night, by the inglenook",
+        "setting": "the cottage at night, well back from the banked fire",
         "light": "the banked fire, low and golden",
         "figures": [
           {
@@ -505,28 +1237,101 @@
             "position": "right",
             "doing": "asleep, one boot still on",
             "feeling_shown": "smiling"
+          },
+          {
+            "who": "grandparent",
+            "position": "back, in the chair by the fire",
+            "doing": "knitting",
+            "feeling_shown": "content"
           }
         ],
         "props": [
-          "the little brass bell on the mantel",
-          "the note from home"
+          "the little brass bell on the mantel"
         ],
-        "ember": "curled round the youngest like a red scarf, one ear up",
+        "ember": "curled round the smallest child like a red scarf",
         "framing": "wide",
-        "comfort_in_frame": "everyone asleep together, Ember round the youngest"
+        "comfort_in_frame": "everyone asleep together",
+        "figures_by_size": {
+          "1": [
+            {
+              "who": "eldest",
+              "position": "center",
+              "doing": "falling asleep",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the fire",
+              "doing": "knitting",
+              "feeling_shown": "content"
+            }
+          ],
+          "2": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "falling asleep last",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep, one boot on",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the fire",
+              "doing": "knitting",
+              "feeling_shown": "content"
+            }
+          ],
+          "4": [
+            {
+              "who": "eldest",
+              "position": "left",
+              "doing": "falling asleep last",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "middle",
+              "position": "center left",
+              "doing": "asleep on the backpack",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "middle2",
+              "position": "center right",
+              "doing": "asleep on the backpack",
+              "feeling_shown": "peaceful"
+            },
+            {
+              "who": "youngest",
+              "position": "right",
+              "doing": "asleep, one boot on",
+              "feeling_shown": "smiling"
+            },
+            {
+              "who": "grandparent",
+              "position": "back, in the chair by the fire",
+              "doing": "knitting",
+              "feeling_shown": "content"
+            }
+          ]
+        }
       }
     }
   ],
   "pause_and_ask_simple": {
     "picture": 5,
-    "question": "Why do you think [[cast:Hild]] asked [[child:lead]] about carrying a lantern?",
+    "question": "Why do you think [[cast:Hild]] asked [[child:lead]], not a grown-up?",
     "for_the_youngest": {
       "talk": "Where was Dun the donkey?",
       "do_it": "Show me how Old Brock lay on the step."
     }
   },
   "rich_word": "sheepish",
-  "word_count": 349,
+  "word_count": 321,
   "self_check": [
     {
       "item": "same story",
@@ -536,7 +1341,7 @@
     {
       "item": "length",
       "ok": true,
-      "note": "349 words over 12 pictures for the sample family; 343 to 392 across the checker's family matrix. No sentence over 15 words for the sample family."
+      "note": "321 words over 12 pictures for the sample family; 315 to 360 across the checker's family matrix. No sentence over 15 words; two pictures (6 and 10) carry four sentences, the rest three or fewer."
     },
     {
       "item": "pinning and roles",
@@ -571,10 +1376,13 @@
   ],
   "flags_for_jon": [
     "Fresh run of 1e from the final master. Changes from the earlier picture plan: the three \"Not I\"s share one picture (three short reasons, then \"At every door, the answer was the same: 'Not I.'\"), which frees a picture for the middle child's apples and Ember joining; the rich word is now \"sheepish\" (drawable on Will in picture 4, said again in picture 9) instead of \"willing\", which this telling no longer uses; nothing is added that the master doesn't have (the earlier plan's \"no coat\" is gone).",
-    "Left out of the text because no existing block carries them for every family size: the youngest's boots, swapped with no help, and \"Me too!\" (p45), and the grandparent's \"Nobody's too small to carry a light. But nobody carries it alone.\" (p46). ch2.p35 has a 17-word sentence (over the picture-book cap of 15), and ch2.p36's one-child version depends on Ember's nose in the boot. Picture 11 draws the boots. Proposed: 1f adds a family-size pic2 block for each, and pictures 11 and 12 take them.",
-    "Four sentences on six pictures (3, 4, 5, 6, 8, 10) against the Should of two at most. Most come from reused blocks with three or four very short sentences (ch2.p13, ch2.p26, pic2.act, ch2.p32); picture 4's fourth is the sound word. In a four-child family picture 6 has five, because ch2.p26 adds the second middle child's question. Shorter pic2 blocks from 1f would fix it.",
-    "Picture 4 uses the ch2.patter block for the child who stands next to muddy Will. In a one-child family that is the only child; the master's one-child version has Ember stand next to Will while the child wipes off the mud. Close, but not the same beat.",
+    "Put back in the checker pass, through family-size pic2 blocks: picture 11 is the apples counted aloud (one to seven) and \"Me too!\" as the youngest pulls on her own boots (Ember's nose in a boot for one child); picture 12 opens with the grandparent's \"Nobody's too small to carry a light.\" Ember's \"foxes are extremely good at roads\" is left to the master.",
+    "Four sentences on two pictures for the sample family (6 and 10); pictures 3, 4, 5 and 8 were trimmed to three. Picture 6 drops its lead-in for a family of four, so the second middle child's question fits in four.",
+    "Picture 4's words follow the master for every size: the youngest stands next to muddy Will, and in a one-child family Ember does (pic2.stood), while the child wipes off the mud in the picture.",
     "Where the \"For the youngest\" prompt sits. Kit 5.5 says it sits at the youngest's act picture; bible §3 (the shared read) says \"at its picture, so the reader asks the youngest at the moment they can see it\". The master's prompts ask about Dun and Old Brock, who are in the Pause & ask picture, so pause_and_ask_simple.picture is 5. The kit line needs rewording to match the bible.",
-    "The part's look (scene_art_notes) isn't in part-01.json. It was taken from canon §2 (Candlemere: stone cottages, the mere, the Moot Hall and its unlit door lamp, the mill on the stream, the bakehouse, the grandparent's inglenook) and from the master's own light: grey daylight in the lane, firelight at home."
+    "Figures by family size are now data (image.figures_by_size for one, two and four children), so every picture draws the children the words name, doing what the words say, and each child once. check-chapter.py tests every list for every family size.",
+    "The part's look (scene_art_notes) isn't in part-01.json. It was taken from canon §2 (Candlemere: stone cottages, the mere, the Moot Hall and its unlit door lamp, the mill on the stream, the bakehouse, the grandparent's inglenook) and from the master's own light: grey daylight in the lane, firelight at home.",
+    "No child holds Ember's tail any more (picture 1): the youngest walks beside her.",
+    "Picture 9 (revision pass) ends on the bell's rule said back at the gate (pic2.bellback), so the picture-book telling keeps Hild's bell a safety bell; it is now pinned to p36b, the last paragraph it tells. Ember's flat ears and the twitching curtain stay in its image. Picture 3's two pulls are now one sentence (pic2.pull), and picture 4's splash joins Will's return, so only pictures 6 and 10 carry four sentences for the sample family."
   ]
 }
